@@ -24,6 +24,10 @@ public class ItemInit {
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
     public static Item POUNDED_SORREL = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item POUNDED_MARJORAM = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+            .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item POUNDED_CHERVIL = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+            .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
 
     public static void init () {
@@ -34,6 +38,8 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_chives"), POUNDED_CHIVES);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_verbena"), POUNDED_VERBENA);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_sorrel"), POUNDED_SORREL);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_marjoram"), POUNDED_MARJORAM);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_chervil"), POUNDED_CHERVIL);
     }
 
 }

@@ -28,6 +28,10 @@ public class BlockInit {
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
     public static FlowerBlock SORREL =
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
+    public static FlowerBlock MARJORAM =
+            new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
+    public static FlowerBlock CHERVIL =
+            new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
 
     public static FlowerPotBlock POTTED_ROSEMARY =
             new FlowerPotBlock(ROSEMARY, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
@@ -43,6 +47,10 @@ public class BlockInit {
             new FlowerPotBlock(VERBENA, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
     public static FlowerPotBlock POTTED_SORREL =
             new FlowerPotBlock(SORREL, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
+    public static FlowerPotBlock POTTED_MARJORAM =
+            new FlowerPotBlock(MARJORAM, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
+    public static FlowerPotBlock POTTED_CHERVIL =
+            new FlowerPotBlock(CHERVIL, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
 
     public static SaplingBlock MYQUESTE_SAPLING = new SaplingBlock(new MyquesteSaplingGenerator(),
             FabricBlockSettings.copy(Blocks.SPRUCE_SAPLING).ticksRandomly().nonOpaque());
@@ -76,6 +84,10 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "verbena"), new BlockItem(VERBENA, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "sorrel"), SORREL);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "sorrel"), new BlockItem(SORREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "marjoram"), MARJORAM);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "marjoram"), new BlockItem(MARJORAM, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "chervil"), CHERVIL);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "chervil"), new BlockItem(CHERVIL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_rosemary"), POTTED_ROSEMARY);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_thyme"), POTTED_THYME);
@@ -84,6 +96,8 @@ public class BlockInit {
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_chives"), POTTED_CHIVES);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_verbena"), POTTED_VERBENA);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_sorrel"), POTTED_SORREL);
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_marjoram"), POTTED_MARJORAM);
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_chervil"), POTTED_CHERVIL);
 
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_myqueste_sapling"), POTTED_MYQUESTE_SAPLING);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "myqueste_sapling"), MYQUESTE_SAPLING);

@@ -52,6 +52,14 @@ public class FeaturesInit {
             ConfiguredFeatures.register(HIBERNAL_HERBS_ID + ":herb_sorrel_configured", Feature.FLOWER,
                     ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.SORREL)))));
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> MARJORAM_CONFIGURED =
+            ConfiguredFeatures.register(HIBERNAL_HERBS_ID + ":herb_marjoram_configured", Feature.FLOWER,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.MARJORAM)))));
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> CHERVIL_CONFIGURED =
+            ConfiguredFeatures.register(HIBERNAL_HERBS_ID + ":herb_chervil_configured", Feature.FLOWER,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.CHERVIL)))));
 
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> MYQUESTE_CONFIGURED =
             ConfiguredFeatures.register(HIBERNAL_HERBS_ID + ":tree_myqueste_configured", Feature.TREE, (new TreeFeatureConfig.Builder(BlockStateProvider.of
@@ -93,6 +101,12 @@ public class FeaturesInit {
     public static final RegistryEntry<PlacedFeature> SORREL_PLACED = PlacedFeatures.register(HIBERNAL_HERBS_ID + ":sorrel_placed",
             SORREL_CONFIGURED, RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+    public static final RegistryEntry<PlacedFeature> MARJORAM_PLACED = PlacedFeatures.register(HIBERNAL_HERBS_ID + ":marjoram_placed",
+            MARJORAM_CONFIGURED, RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+    public static final RegistryEntry<PlacedFeature> CHERVIL_PLACED = PlacedFeatures.register(HIBERNAL_HERBS_ID + ":chervil_placed",
+            CHERVIL_CONFIGURED, RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> MYQUESTE_PLACED =
             PlacedFeatures.register(HIBERNAL_HERBS_ID + ":myqueste_placed", MYQUESTE_SPAWN,
@@ -115,6 +129,10 @@ public class FeaturesInit {
                 GenerationStep.Feature.VEGETAL_DECORATION, VERBENA_PLACED.getKey().get());
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.VILLAGE_SNOWY_HAS_STRUCTURE),
                 GenerationStep.Feature.VEGETAL_DECORATION, SORREL_PLACED.getKey().get());
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.VILLAGE_SNOWY_HAS_STRUCTURE),
+                GenerationStep.Feature.VEGETAL_DECORATION, MARJORAM_PLACED.getKey().get());
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.VILLAGE_SNOWY_HAS_STRUCTURE),
+                GenerationStep.Feature.VEGETAL_DECORATION, CHERVIL_PLACED.getKey().get());
 
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.VILLAGE_SNOWY_HAS_STRUCTURE),
                 GenerationStep.Feature.VEGETAL_DECORATION, MYQUESTE_PLACED.getKey().get());
