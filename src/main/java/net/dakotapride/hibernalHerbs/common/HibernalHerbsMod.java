@@ -8,8 +8,6 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class HibernalHerbsMod implements ModInitializer {
 	public static final String HIBERNAL_HERBS_ID = "hibernalherbs";
@@ -46,15 +44,16 @@ public class HibernalHerbsMod implements ModInitializer {
 						new Identifier(HIBERNAL_HERBS_ID, "herbs"))
 				.icon(() -> new ItemStack(BlockInit.TARRAGON.asItem()))
 				.appendItems(itemStacks -> {
-					itemStacks.add(new ItemStack(BlockInit.ROSEMARY));
-					itemStacks.add(new ItemStack(BlockInit.THYME));
-					itemStacks.add(new ItemStack(BlockInit.TARRAGON));
-					itemStacks.add(new ItemStack(BlockInit.CHAMOMILE));
-					itemStacks.add(new ItemStack(BlockInit.CHIVES));
-					itemStacks.add(new ItemStack(BlockInit.VERBENA));
-					itemStacks.add(new ItemStack(BlockInit.SORREL));
-					itemStacks.add(new ItemStack(BlockInit.MARJORAM));
-					itemStacks.add(new ItemStack(BlockInit.CHERVIL));
+					itemStacks.add(new ItemStack(BlockInit.ROSEMARY.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.THYME.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.TARRAGON.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHAMOMILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHIVES.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.VERBENA.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.SORREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MARJORAM.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHERVIL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.FENNSEL.asItem()));
 				}).build();
 
 		public static ItemGroup POUNDED_HERBS = FabricItemGroupBuilder.create(
@@ -70,6 +69,7 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_SORREL));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_MARJORAM));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHERVIL));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_FENNSEL));
 				}).build();
 	}
 

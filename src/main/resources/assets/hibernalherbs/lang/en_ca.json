@@ -8,6 +8,7 @@
   "block.hibernalherbs.sorrel": "Sorrel",
   "block.hibernalherbs.marjoram": "Marjoram",
   "block.hibernalherbs.chervil": "Chervil",
+  "block.hibernalherbs.fennsel": "Fennsel",
 
   "item.hibernalherbs.pounded_rosemary": "Pounded Rosemary",
   "item.hibernalherbs.pounded_thyme": "Pounded Thyme",
@@ -18,6 +19,7 @@
   "item.hibernalherbs.pounded_sorrel": "Pounded Sorrel",
   "item.hibernalherbs.pounded_marjoram": "Pounded Marjoram",
   "item.hibernalherbs.pounded_chervil": "Pounded Chervil",
+  "item.hibernalherbs.pounded_fennsel": "Pounded fennsel",
 
   "block.hibernalherbs.potted_rosemary": "Potted Rosemary",
   "block.hibernalherbs.potted_thyme": "Potted Thyme",
@@ -28,6 +30,7 @@
   "block.hibernalherbs.potted_sorrel": "Potted Sorrel",
   "block.hibernalherbs.potted_marjoram": "Potted Marjoram",
   "block.hibernalherbs.potted_chervil": "Potted Chervil",
+  "block.hibernalherbs.potted_fennsel": "Potted fennsel",
 
   "item.hibernalherbs.herb_fertilizer": "Herb Fertilizer",
 
