@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#hibernalherbs:myqueste_logs",
+    "hibernalherbs:myqueste_fence",
+    "hibernalherbs:myqueste_fence_gate",
+    "hibernalherbs:myqueste_door",
+    "hibernalherbs:myqueste_trapdoor",
+    "hibernalherbs:myqueste_slab",
+    "hibernalherbs:myqueste_stairs"
+  ]
+}

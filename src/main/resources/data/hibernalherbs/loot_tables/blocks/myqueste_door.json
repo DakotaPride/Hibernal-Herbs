@@ -2,28 +2,28 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "rolls": 1,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "hibernalherbs:myqueste_door",
           "conditions": [
             {
-              "block": "minecraft:spruce_door",
               "condition": "minecraft:block_state_property",
+              "block": "hibernalherbs:myqueste_door",
               "properties": {
                 "half": "lower"
               }
             }
-          ],
-          "name": "hibernalherbs:myqueste_door"
+          ]
         }
       ],
-      "rolls": 1.0
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
     }
   ]
 }

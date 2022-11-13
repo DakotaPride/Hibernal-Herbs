@@ -19,6 +19,8 @@ public class HibernalHerbsMod implements ModInitializer {
 						new Identifier(HIBERNAL_HERBS_ID, "hibernal_herbs"))
 				.icon(() -> new ItemStack(BlockInit.MYQUESTE_LOG.asItem()))
 				.appendItems(itemStacks -> {
+					itemStacks.add(new ItemStack(ItemInit.HERB_FERTILIZER));
+
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SAPLING));
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LEAVES));
 
