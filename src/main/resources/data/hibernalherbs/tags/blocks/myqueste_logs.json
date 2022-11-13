@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:myqueste_log",
+    "hibernalherbs:stripped_myqueste_log",
+    "hibernalherbs:myqueste_wood",
+    "hibernalherbs:stripped_myqueste_wood"
+  ]
+}

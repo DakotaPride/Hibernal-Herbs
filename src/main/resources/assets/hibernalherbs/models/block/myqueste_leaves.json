@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "hibernalherbs:block/myqueste_leaves"
+  }
+}

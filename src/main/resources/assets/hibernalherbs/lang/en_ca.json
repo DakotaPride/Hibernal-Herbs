@@ -1,0 +1,41 @@
+{
+  "block.hibernalherbs.rosemary": "Rosemary",
+  "block.hibernalherbs.thyme": "Thyme",
+  "block.hibernalherbs.tarragon": "Tarragon",
+  "block.hibernalherbs.chamomile": "Chamomile",
+  "block.hibernalherbs.chives": "Chives",
+  "block.hibernalherbs.verbena": "Verbena",
+
+  "item.hibernalherbs.pounded_rosemary": "Pounded Rosemary",
+  "item.hibernalherbs.pounded_thyme": "Pounded Thyme",
+  "item.hibernalherbs.pounded_tarragon": "Pounded Tarragon",
+  "item.hibernalherbs.pounded_chamomile": "Pounded Chamomile",
+  "item.hibernalherbs.pounded_chives": "Pounded Chives",
+  "item.hibernalherbs.pounded_verbena": "Pounded Verbena",
+
+  "block.hibernalherbs.potted_rosemary": "Potted Rosemary",
+  "block.hibernalherbs.potted_thyme": "Potted Thyme",
+  "block.hibernalherbs.potted_tarragon": "Potted Tarragon",
+  "block.hibernalherbs.potted_chamomile": "Potted Chamomile",
+  "block.hibernalherbs.potted_chives": "Potted Chives",
+  "block.hibernalherbs.potted_verbena": "Potted Verbena",
+
+  "block.hibernalherbs.potted_myqueste_sapling": "Potted Myqueste Sapling",
+  "block.hibernalherbs.myqueste_log": "Myqueste Log",
+  "block.hibernalherbs.stripped_myqueste_log": "Stripped Myqueste Log",
+  "block.hibernalherbs.myqueste_wood": "Myqueste Wood",
+  "block.hibernalherbs.stripped_myqueste_wood": "Stripped Myqueste Wood",
+  "block.hibernalherbs.myqueste_stairs": "Myqueste Stairs",
+  "block.hibernalherbs.myqueste_slab": "Myqueste Slab",
+  "block.hibernalherbs.myqueste_fence": "Myqueste Fence",
+  "block.hibernalherbs.myqueste_fence_gate": "Myqueste Fence Gate",
+  "block.hibernalherbs.myqueste_door": "Myqueste Door",
+  "block.hibernalherbs.myqueste_trapdoor": "Myqueste Trapdoor",
+  "block.hibernalherbs.myqueste_sapling": "Myqueste Sapling",
+  "block.hibernalherbs.myqueste_planks": "Myqueste Planks",
+  "block.hibernalherbs.myqueste_leaves": "Myqueste Leaves",
+
+  "itemGroup.hibernalherbs.hibernal_herbs": "Hibernal Herbs - Misc",
+  "itemGroup.hibernalherbs.herbs": "Hibernal Herbs - Herbs",
+  "itemGroup.hibernalherbs.pounded_herbs": "Hibernal Herbs - Pounded Herbs"
+}

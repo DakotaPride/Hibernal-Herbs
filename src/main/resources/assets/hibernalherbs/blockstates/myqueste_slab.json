@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hibernalherbs:block/myqueste_slab"
+    },
+    "type=double": {
+      "model": "hibernalherbs:block/myqueste_planks"
+    },
+    "type=top": {
+      "model": "hibernalherbs:block/myqueste_slab_top"
+    }
+  }
+}
