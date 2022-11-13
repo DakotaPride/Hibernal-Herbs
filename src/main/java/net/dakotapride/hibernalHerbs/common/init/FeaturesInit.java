@@ -40,6 +40,18 @@ public class FeaturesInit {
             ConfiguredFeatures.register(HIBERNAL_HERBS_ID + ":herb_chamomile_configured", Feature.FLOWER,
                     ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.CHAMOMILE)))));
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> CHIVES_CONFIGURED =
+            ConfiguredFeatures.register(HIBERNAL_HERBS_ID + ":herb_chives_configured", Feature.FLOWER,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.CHIVES)))));
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> VERBENA_CONFIGURED =
+            ConfiguredFeatures.register(HIBERNAL_HERBS_ID + ":herb_verbena_configured", Feature.FLOWER,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.VERBENA)))));
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> SORREL_CONFIGURED =
+            ConfiguredFeatures.register(HIBERNAL_HERBS_ID + ":herb_sorrel_configured", Feature.FLOWER,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.SORREL)))));
 
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> MYQUESTE_CONFIGURED =
             ConfiguredFeatures.register(HIBERNAL_HERBS_ID + ":tree_myqueste_configured", Feature.TREE, (new TreeFeatureConfig.Builder(BlockStateProvider.of
@@ -72,6 +84,15 @@ public class FeaturesInit {
     public static final RegistryEntry<PlacedFeature> CHAMOMILE_PLACED = PlacedFeatures.register(HIBERNAL_HERBS_ID + ":chamomile_placed",
             CHAMOMILE_CONFIGURED, RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+    public static final RegistryEntry<PlacedFeature> CHIVES_PLACED = PlacedFeatures.register(HIBERNAL_HERBS_ID + ":chives_placed",
+            CHIVES_CONFIGURED, RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+    public static final RegistryEntry<PlacedFeature> VERBENA_PLACED = PlacedFeatures.register(HIBERNAL_HERBS_ID + ":verbena_placed",
+            VERBENA_CONFIGURED, RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+    public static final RegistryEntry<PlacedFeature> SORREL_PLACED = PlacedFeatures.register(HIBERNAL_HERBS_ID + ":sorrel_placed",
+            SORREL_CONFIGURED, RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> MYQUESTE_PLACED =
             PlacedFeatures.register(HIBERNAL_HERBS_ID + ":myqueste_placed", MYQUESTE_SPAWN,
@@ -88,6 +109,12 @@ public class FeaturesInit {
                 GenerationStep.Feature.VEGETAL_DECORATION, TARRAGON_PLACED.getKey().get());
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.VILLAGE_SNOWY_HAS_STRUCTURE),
                 GenerationStep.Feature.VEGETAL_DECORATION, CHAMOMILE_PLACED.getKey().get());
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.VILLAGE_SNOWY_HAS_STRUCTURE),
+                GenerationStep.Feature.VEGETAL_DECORATION, CHIVES_PLACED.getKey().get());
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.VILLAGE_SNOWY_HAS_STRUCTURE),
+                GenerationStep.Feature.VEGETAL_DECORATION, VERBENA_PLACED.getKey().get());
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.VILLAGE_SNOWY_HAS_STRUCTURE),
+                GenerationStep.Feature.VEGETAL_DECORATION, SORREL_PLACED.getKey().get());
 
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.VILLAGE_SNOWY_HAS_STRUCTURE),
                 GenerationStep.Feature.VEGETAL_DECORATION, MYQUESTE_PLACED.getKey().get());

@@ -36,7 +36,8 @@
     "fabricloader": "*",
     "fabric": "*",
     "minecraft": "~1.19",
-    "java": ">=17"
+    "java": ">=17",
+    "nbtcrafting": "*"
   },
   "suggests": {
     "another-mod": "*"

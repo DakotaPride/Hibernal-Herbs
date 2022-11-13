@@ -50,6 +50,7 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(BlockInit.CHAMOMILE));
 					itemStacks.add(new ItemStack(BlockInit.CHIVES));
 					itemStacks.add(new ItemStack(BlockInit.VERBENA));
+					itemStacks.add(new ItemStack(BlockInit.SORREL));
 				}).build();
 
 		public static ItemGroup POUNDED_HERBS = FabricItemGroupBuilder.create(
@@ -62,6 +63,7 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHAMOMILE));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHIVES));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_VERBENA));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_SORREL));
 				}).build();
 	}
 

@@ -5,6 +5,7 @@
   "block.hibernalherbs.chamomile": "Chamomile",
   "block.hibernalherbs.chives": "Chives",
   "block.hibernalherbs.verbena": "Verbena",
+  "block.hibernalherbs.sorrel": "Sorrel",
 
   "item.hibernalherbs.pounded_rosemary": "Pounded Rosemary",
   "item.hibernalherbs.pounded_thyme": "Pounded Thyme",
@@ -12,6 +13,7 @@
   "item.hibernalherbs.pounded_chamomile": "Pounded Chamomile",
   "item.hibernalherbs.pounded_chives": "Pounded Chives",
   "item.hibernalherbs.pounded_verbena": "Pounded Verbena",
+  "item.hibernalherbs.pounded_sorrel": "Pounded Sorrel",
 
   "block.hibernalherbs.potted_rosemary": "Potted Rosemary",
   "block.hibernalherbs.potted_thyme": "Potted Thyme",
@@ -19,6 +21,7 @@
   "block.hibernalherbs.potted_chamomile": "Potted Chamomile",
   "block.hibernalherbs.potted_chives": "Potted Chives",
   "block.hibernalherbs.potted_verbena": "Potted Verbena",
+  "block.hibernalherbs.potted_sorrel": "Potted Sorrel",
 
   "block.hibernalherbs.potted_myqueste_sapling": "Potted Myqueste Sapling",
   "block.hibernalherbs.myqueste_log": "Myqueste Log",
