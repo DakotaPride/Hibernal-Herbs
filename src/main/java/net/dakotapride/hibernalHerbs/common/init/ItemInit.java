@@ -30,6 +30,12 @@ public class ItemInit {
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
     public static Item POUNDED_FENNSEL = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item POUNDED_CEILLIS = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+            .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item POUNDED_PUNUEL = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+            .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item POUNDED_ESSITTE = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+            .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
     public static Item HERB_FERTILIZER = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
@@ -45,6 +51,9 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_marjoram"), POUNDED_MARJORAM);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_chervil"), POUNDED_CHERVIL);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_fennsel"), POUNDED_FENNSEL);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_ceillis"), POUNDED_CEILLIS);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_punuel"), POUNDED_PUNUEL);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_essitte"), POUNDED_ESSITTE);
 
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "herb_fertilizer"), HERB_FERTILIZER);
     }

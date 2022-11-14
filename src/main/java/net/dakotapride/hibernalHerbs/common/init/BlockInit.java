@@ -34,6 +34,12 @@ public class BlockInit {
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
     public static FlowerBlock FENNSEL =
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
+    public static FlowerBlock CEILLIS =
+            new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
+    public static FlowerBlock PUNUEL =
+            new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
+    public static FlowerBlock ESSITTE =
+            new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
 
     public static FlowerPotBlock POTTED_ROSEMARY =
             new FlowerPotBlock(ROSEMARY, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
@@ -55,6 +61,12 @@ public class BlockInit {
             new FlowerPotBlock(CHERVIL, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
     public static FlowerPotBlock POTTED_FENNSEL =
             new FlowerPotBlock(FENNSEL, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
+    public static FlowerPotBlock POTTED_CEILLIS =
+            new FlowerPotBlock(CEILLIS, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
+    public static FlowerPotBlock POTTED_PUNUEL =
+            new FlowerPotBlock(PUNUEL, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
+    public static FlowerPotBlock POTTED_ESSITTE =
+            new FlowerPotBlock(ESSITTE, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
 
     public static SaplingBlock MYQUESTE_SAPLING = new SaplingBlock(new MyquesteSaplingGenerator(),
             FabricBlockSettings.copy(Blocks.SPRUCE_SAPLING).ticksRandomly().nonOpaque());
@@ -94,6 +106,12 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "chervil"), new BlockItem(CHERVIL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "fennsel"), FENNSEL);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "fennsel"), new BlockItem(FENNSEL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "ceillis"), CEILLIS);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "ceillis"), new BlockItem(CEILLIS, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "punuel"), PUNUEL);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "punuel"), new BlockItem(PUNUEL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "essitte"), ESSITTE);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "essitte"), new BlockItem(ESSITTE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_rosemary"), POTTED_ROSEMARY);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_thyme"), POTTED_THYME);
@@ -105,6 +123,9 @@ public class BlockInit {
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_marjoram"), POTTED_MARJORAM);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_chervil"), POTTED_CHERVIL);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_fennsel"), POTTED_FENNSEL);
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_ceillis"), POTTED_CEILLIS);
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_punuel"), POTTED_PUNUEL);
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_essitte"), POTTED_ESSITTE);
 
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_myqueste_sapling"), POTTED_MYQUESTE_SAPLING);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "myqueste_sapling"), MYQUESTE_SAPLING);

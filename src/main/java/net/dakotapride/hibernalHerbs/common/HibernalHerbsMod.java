@@ -44,32 +44,36 @@ public class HibernalHerbsMod implements ModInitializer {
 						new Identifier(HIBERNAL_HERBS_ID, "herbs"))
 				.icon(() -> new ItemStack(BlockInit.TARRAGON.asItem()))
 				.appendItems(itemStacks -> {
-					itemStacks.add(new ItemStack(BlockInit.ROSEMARY.asItem()));
-					itemStacks.add(new ItemStack(BlockInit.THYME.asItem()));
-					itemStacks.add(new ItemStack(BlockInit.TARRAGON.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CEILLIS.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.CHAMOMILE.asItem()));
-					itemStacks.add(new ItemStack(BlockInit.CHIVES.asItem()));
-					itemStacks.add(new ItemStack(BlockInit.VERBENA.asItem()));
-					itemStacks.add(new ItemStack(BlockInit.SORREL.asItem()));
-					itemStacks.add(new ItemStack(BlockInit.MARJORAM.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.CHERVIL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHIVES.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.FENNSEL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MARJORAM.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.PUNUEL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.ROSEMARY.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.SORREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.TARRAGON.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.THYME.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.VERBENA.asItem()));
 				}).build();
 
 		public static ItemGroup POUNDED_HERBS = FabricItemGroupBuilder.create(
 						new Identifier(HIBERNAL_HERBS_ID, "pounded_herbs"))
 				.icon(() -> new ItemStack(ItemInit.POUNDED_TARRAGON.asItem()))
 				.appendItems(itemStacks -> {
-					itemStacks.add(new ItemStack(ItemInit.POUNDED_ROSEMARY));
-					itemStacks.add(new ItemStack(ItemInit.POUNDED_THYME));
-					itemStacks.add(new ItemStack(ItemInit.POUNDED_TARRAGON));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_CEILLIS));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHAMOMILE));
-					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHIVES));
-					itemStacks.add(new ItemStack(ItemInit.POUNDED_VERBENA));
-					itemStacks.add(new ItemStack(ItemInit.POUNDED_SORREL));
-					itemStacks.add(new ItemStack(ItemInit.POUNDED_MARJORAM));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHERVIL));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHIVES));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_FENNSEL));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_MARJORAM));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_PUNUEL));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_ROSEMARY));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_SORREL));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_TARRAGON));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_THYME));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_VERBENA));
 				}).build();
 	}
 
