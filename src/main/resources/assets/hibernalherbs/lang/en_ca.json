@@ -10,6 +10,8 @@
   "block.hibernalherbs.chervil": "Chervil",
   "block.hibernalherbs.fennsel": "Fennsel",
   "block.hibernalherbs.ceillis": "Ceillis",
+  "block.hibernalherbs.essitte": "Essitte",
+  "block.hibernalherbs.punuel": "Punuel",
 
   "item.hibernalherbs.pounded_rosemary": "Pounded Rosemary",
   "item.hibernalherbs.pounded_thyme": "Pounded Thyme",
@@ -22,6 +24,8 @@
   "item.hibernalherbs.pounded_chervil": "Pounded Chervil",
   "item.hibernalherbs.pounded_fennsel": "Pounded Fennsel",
   "item.hibernalherbs.pounded_ceillis": "Pounded Ceillis",
+  "item.hibernalherbs.pounded_punuel": "Pounded Punuel",
+  "item.hibernalherbs.pounded_essitte": "Pounded Essitte",
 
   "block.hibernalherbs.potted_rosemary": "Potted Rosemary",
   "block.hibernalherbs.potted_thyme": "Potted Thyme",
@@ -34,6 +38,8 @@
   "block.hibernalherbs.potted_chervil": "Potted Chervil",
   "block.hibernalherbs.potted_fennsel": "Potted Fennsel",
   "block.hibernalherbs.potted_ceillis": "Potted Ceillis",
+  "block.hibernalherbs.potted_punuel": "Potted Punuel",
+  "block.hibernalherbs.potted_essitte": "Potted Essitte",
 
   "item.hibernalherbs.herb_fertilizer": "Herb Fertilizer",
 

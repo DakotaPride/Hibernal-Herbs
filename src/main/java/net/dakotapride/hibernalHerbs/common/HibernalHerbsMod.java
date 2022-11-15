@@ -48,6 +48,7 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(BlockInit.CHAMOMILE.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.CHERVIL.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.CHIVES.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.ESSITTE.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.FENNSEL.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.MARJORAM.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.PUNUEL.asItem()));
@@ -66,6 +67,7 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHAMOMILE));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHERVIL));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHIVES));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_ESSITTE));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_FENNSEL));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_MARJORAM));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_PUNUEL));
