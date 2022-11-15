@@ -39,7 +39,6 @@ public class ItemInit {
 
     public static Item HERB_FERTILIZER = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-
     public static void init () {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_thyme"), POUNDED_THYME);
