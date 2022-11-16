@@ -40,6 +40,6 @@
     "nbtcrafting": "*"
   },
   "suggests": {
-    "another-mod": "*"
+    "lambdabettergrass": "*"
   }
 }
