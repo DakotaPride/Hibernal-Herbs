@@ -5,9 +5,13 @@ import net.dakotapride.hibernalHerbs.common.init.FeaturesInit;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.NotNull;
 
 public class HibernalHerbsMod implements ModInitializer {
 	public static final String HIBERNAL_HERBS_ID = "hibernalherbs";
@@ -87,5 +91,19 @@ public class HibernalHerbsMod implements ModInitializer {
 		util.utilsInit();
 
 		FeaturesInit.init();
+
+
+		if (FabricLoader.getInstance().isModLoaded("lambdabettergrass")) {
+			// Thanks to @Xanthian#3020 on Modding By KaupenJoe's Discord Server For Built-In Resource Pack Help!
+			FabricLoader.getInstance().getModContainer(HIBERNAL_HERBS_ID).ifPresent(modContainer -> {
+				ResourceManagerHelper.registerBuiltinResourcePack(mc("bettergrass"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
+			});
+		}
 	}
+
+	// Credit For method/The LambdaBetterGrass Mod goes to LambdAurora
+	public static Identifier mc(@NotNull String path) {
+		return new Identifier(HIBERNAL_HERBS_ID, path);
+	}
+
 }
