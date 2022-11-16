@@ -2,7 +2,7 @@
   "type": "layer",
   "variants": {
     "waterlogged=false": {
-      "data": "minecraft:bettergrass/data/spruce_fence"
+      "data": "hibernalherbs:bettergrass/data/myqueste_fence"
     }
   }
 }

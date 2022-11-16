@@ -1,0 +1,7 @@
+{
+  "parent": "lambdabettergrass:block/template/sculk_fence_post",
+  "textures": {
+    "texture": "hibernalherbs:block/fence/sculk_myqueste_fence_post",
+    "planks": "hibernalherbs:block/myqueste_planks"
+  }
+}

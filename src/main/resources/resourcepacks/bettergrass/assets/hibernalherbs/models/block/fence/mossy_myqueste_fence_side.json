@@ -1,0 +1,6 @@
+{
+  "parent": "lambdabettergrass:block/template/mossy_fence_side",
+  "textures": {
+    "texture": "hibernalherbs:block/fence/mossy_myqueste_fence_side"
+  }
+}

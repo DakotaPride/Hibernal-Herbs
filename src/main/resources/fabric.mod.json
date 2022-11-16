@@ -39,7 +39,11 @@
     "java": ">=17",
     "nbtcrafting": "*"
   },
-  "suggests": {
-    "lambdabettergrass": "*"
+  "recommends": {
+    "lambdabettergrass": "*",
+    "modmenu": "*"
+  },
+  "breaks": {
+    "optifabric": "*"
   }
 }

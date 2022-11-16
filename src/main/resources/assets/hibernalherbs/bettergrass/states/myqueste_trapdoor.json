@@ -2,7 +2,7 @@
   "type": "layer",
   "variants": {
     "waterlogged=false": {
-      "data": "minecraft:bettergrass/data/spruce_trapdoor"
+      "data": "hibernalherbs:bettergrass/data/myqueste_trapdoor"
     }
   }
 }
