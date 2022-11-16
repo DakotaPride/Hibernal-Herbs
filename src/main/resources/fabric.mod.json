@@ -41,7 +41,8 @@
   },
   "recommends": {
     "lambdabettergrass": "*",
-    "modmenu": "*"
+    "modmenu": "*",
+    "roughlyenoughitems": "*"
   },
   "breaks": {
     "optifabric": "*"
