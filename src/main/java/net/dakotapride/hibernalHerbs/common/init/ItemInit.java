@@ -38,21 +38,21 @@ public class ItemInit {
     public static Item POUNDED_ESSITTE = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
-    public static HerbBlendItem REGENERATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+    public static HerbBlendItem REGENERATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.REGENERATIVE_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
-    public static HerbBlendItem VIRULENT_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+    public static HerbBlendItem VIRULENT_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.VIRULENT_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
-    public static HerbBlendItem SEDATING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+    public static HerbBlendItem SEDATING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SEDATING_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
-    public static HerbBlendItem HINDERING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+    public static HerbBlendItem HINDERING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.HINDERING_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
-    public static HerbBlendItem DASHING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+    public static HerbBlendItem DASHING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DASHING_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
-    public static HerbBlendItem ACCELERATION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+    public static HerbBlendItem ACCELERATION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ACCELERATION_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static HerbBlendItem INCINERATING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
-    public static HerbBlendItem DECAYING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+    public static HerbBlendItem DECAYING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DECAYING_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static Item HERB_FERTILIZER = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
@@ -72,14 +72,14 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_punuel"), POUNDED_PUNUEL);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_essitte"), POUNDED_ESSITTE);
 
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regeneration"), INCINERATING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_poison"), INCINERATING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_slowness"), INCINERATING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_mining_fatigue"), INCINERATING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_haste"), INCINERATING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_speed"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regeneration"), REGENERATIVE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_poison"), VIRULENT_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_slowness"), SEDATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_mining_fatigue"), HINDERING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_haste"), DASHING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_speed"), ACCELERATION_BLEND);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_fire"), INCINERATING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_wither"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_wither"), DECAYING_BLEND);
 
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "herb_fertilizer"), HERB_FERTILIZER);
     }

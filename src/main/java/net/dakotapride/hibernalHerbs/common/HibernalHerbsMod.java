@@ -23,25 +23,34 @@ public class HibernalHerbsMod implements ModInitializer {
 				.appendItems(itemStacks -> {
 					itemStacks.add(new ItemStack(ItemInit.HERB_FERTILIZER));
 
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SAPLING));
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LEAVES));
+					itemStacks.add(new ItemStack(ItemInit.REGENERATIVE_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.VIRULENT_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SEDATING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.HINDERING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.DASHING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.ACCELERATION_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.INCINERATING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.DECAYING_BLEND));
 
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_PLANKS));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SAPLING.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LEAVES.asItem()));
 
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LOG));
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_WOOD));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_PLANKS.asItem()));
 
-					itemStacks.add(new ItemStack(BlockInit.STRIPPED_MYQUESTE_LOG));
-					itemStacks.add(new ItemStack(BlockInit.STRIPPED_MYQUESTE_WOOD));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LOG.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_WOOD.asItem()));
 
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_DOOR));
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_TRAPDOOR));
+					itemStacks.add(new ItemStack(BlockInit.STRIPPED_MYQUESTE_LOG.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.STRIPPED_MYQUESTE_WOOD.asItem()));
 
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_FENCE));
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_FENCE_GATE));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_DOOR.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_TRAPDOOR.asItem()));
 
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SLAB));
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_STAIRS));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_FENCE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_FENCE_GATE.asItem()));
+
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SLAB.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_STAIRS.asItem()));
 				}).build();
 
 		public static ItemGroup HERBS = FabricItemGroupBuilder.create(

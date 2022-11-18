@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "herb_blend",
+  "pattern": [
+    "#AB",
+    "GXG"
+  ],
+  "key": {
+    "G": {
+      "tag": "hibernalherbs:herbs/ceillis"
+    },
+    "X": {
+      "item": "minecraft:bowl"
+    },
+    "#": {
+      "item": "hibernalherbs:pounded_ceillis"
+    },
+    "A": {
+      "item": "hibernalherbs:pounded_rosemary"
+    },
+    "B": {
+      "item": "hibernalherbs:pounded_chamomile"
+    }
+  },
+  "result": {
+    "item": "hibernalherbs:blend_wither",
+    "count": 1
+  }
+}
