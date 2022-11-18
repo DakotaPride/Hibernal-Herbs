@@ -41,6 +41,15 @@
   "block.hibernalherbs.potted_punuel": "Potted Punuel",
   "block.hibernalherbs.potted_essitte": "Potted Essitte",
 
+  "item.hibernalherbs.blend_regeneration": "Regenerative Blend",
+  "item.hibernalherbs.blend_poison": "Virulent Blend",
+  "item.hibernalherbs.blend_slowness": "Sedating Blend",
+  "item.hibernalherbs.blend_mining_fatigue": "Hindering Blend",
+  "item.hibernalherbs.blend_haste": "Dashing Blend",
+  "item.hibernalherbs.blend_speed": "Acceleration Blend",
+  "item.hibernalherbs.blend_fire": "Incinerating Blend",
+  "item.hibernalherbs.blend_wither": "Decaying Blend",
+
   "item.hibernalherbs.herb_fertilizer": "Herb Fertilizer",
 
   "block.hibernalherbs.potted_myqueste_sapling": "Potted Myqueste Sapling",
@@ -60,5 +69,14 @@
 
   "itemGroup.hibernalherbs.hibernal_herbs": "Hibernal Herbs - Misc",
   "itemGroup.hibernalherbs.herbs": "Hibernal Herbs - Herbs",
-  "itemGroup.hibernalherbs.pounded_herbs": "Hibernal Herbs - Pounded Herbs"
+  "itemGroup.hibernalherbs.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
+
+  "text.hibernalherbs.blend_regeneration": "Huh, Tastes Better Than Actual Medicine...",
+  "text.hibernalherbs.blend_poison": "Are You a Witch or Something?",
+  "text.hibernalherbs.blend_slowness": "10,000 Years!",
+  "text.hibernalherbs.blend_mining_fatigue": "Just As Slow As The Elders...",
+  "text.hibernalherbs.blend_haste": "Insta-Mineable? Not Quite...",
+  "text.hibernalherbs.blend_speed": "Faster, Faster!",
+  "text.hibernalherbs.blend_fire": "Be Careful! It's Hot!",
+  "text.hibernalherbs.blend_wither": "We're Not Even In The Nether!"
 }

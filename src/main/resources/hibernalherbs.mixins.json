@@ -4,6 +4,7 @@
   "package": "net.dakotapride.hibernalHerbs.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ItemStackMixin"
   ],
   "client": [],
   "injectors": {

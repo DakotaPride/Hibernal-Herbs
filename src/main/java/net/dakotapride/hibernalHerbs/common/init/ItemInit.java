@@ -1,6 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.init;
 
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
+import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -37,6 +38,23 @@ public class ItemInit {
     public static Item POUNDED_ESSITTE = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
+    public static HerbBlendItem REGENERATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem VIRULENT_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem SEDATING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem HINDERING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem DASHING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem ACCELERATION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem INCINERATING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem DECAYING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+
     public static Item HERB_FERTILIZER = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static void init () {
@@ -53,6 +71,15 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_ceillis"), POUNDED_CEILLIS);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_punuel"), POUNDED_PUNUEL);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_essitte"), POUNDED_ESSITTE);
+
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regeneration"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_poison"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_slowness"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_mining_fatigue"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_haste"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_speed"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_fire"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_wither"), INCINERATING_BLEND);
 
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "herb_fertilizer"), HERB_FERTILIZER);
     }
