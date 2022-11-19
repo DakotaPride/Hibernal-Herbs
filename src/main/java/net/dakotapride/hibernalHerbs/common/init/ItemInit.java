@@ -54,6 +54,12 @@ public class ItemInit {
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static HerbBlendItem DECAYING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DECAYING_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem OBSERVING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.OBSERVING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem DIMINISHED_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DIMINISHED_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem SHADED_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SHADED_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static Item HERB_FERTILIZER = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
@@ -80,6 +86,9 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_speed"), ACCELERATION_BLEND);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_fire"), INCINERATING_BLEND);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_wither"), DECAYING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_night_vision"), OBSERVING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_weakness"), DIMINISHED_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_blindness"), SHADED_BLEND);
 
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "herb_fertilizer"), HERB_FERTILIZER);
     }

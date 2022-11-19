@@ -31,6 +31,9 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.ACCELERATION_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.INCINERATING_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.DECAYING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.OBSERVING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.DIMINISHED_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SHADED_BLEND));
 
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SAPLING.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LEAVES.asItem()));

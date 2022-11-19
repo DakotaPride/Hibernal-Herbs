@@ -7,6 +7,9 @@
     "hibernalherbs:blend_haste",
     "hibernalherbs:blend_speed",
     "hibernalherbs:blend_fire",
-    "hibernalherbs:blend_wither"
+    "hibernalherbs:blend_wither",
+    "hibernalherbs:blend_night_vision",
+    "hibernalherbs:blend_weakness",
+    "hibernalherbs:blend_blindness"
   ]
 }

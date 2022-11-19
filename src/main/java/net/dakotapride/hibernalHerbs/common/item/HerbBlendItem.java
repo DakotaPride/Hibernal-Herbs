@@ -2,8 +2,11 @@ package net.dakotapride.hibernalHerbs.common.item;
 
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
@@ -34,6 +37,20 @@ public class HerbBlendItem extends Item {
             tooltip.add(Text.translatable("text.hibernalherbs.blend_fire").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
         } else if (stack.getItem().getDefaultStack().isOf(ItemInit.DECAYING_BLEND)) {
             tooltip.add(Text.translatable("text.hibernalherbs.blend_wither").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
+        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.OBSERVING_BLEND)) {
+            tooltip.add(Text.translatable("text.hibernalherbs.blend_night_vision").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
+        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.DIMINISHED_BLEND)) {
+            tooltip.add(Text.translatable("text.hibernalherbs.blend_weakness").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
+        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SHADED_BLEND)) {
+            tooltip.add(Text.translatable("text.hibernalherbs.blend_blindness").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
         }
+    }
+
+    @Override
+    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
+        ItemStack itemStack = super.finishUsing(stack, world, user);
+
+        return user instanceof PlayerEntity && ((PlayerEntity)user).getAbilities().creativeMode
+                ? itemStack : new ItemStack(Items.BOWL);
     }
 }

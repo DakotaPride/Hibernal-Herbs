@@ -23,5 +23,11 @@ public class FoodComponentInit {
     public static final FoodComponent INCINERATING_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F).build();
     public static final FoodComponent DECAYING_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F)
             .statusEffect(new StatusEffectInstance(StatusEffects.WITHER, 300, 1), 1.0f).build();
+    public static final FoodComponent OBSERVING_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 1), 1.0f).build();
+    public static final FoodComponent DIMINISHED_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 300, 1), 1.0f).build();
+    public static final FoodComponent SHADED_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 300, 1), 1.0f).build();
 
 }

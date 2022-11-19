@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "herb_blend",
+  "pattern": [
+    "#AB",
+    "GXG"
+  ],
+  "key": {
+    "G": {
+      "tag": "hibernalherbs:herbs/chives"
+    },
+    "X": {
+      "item": "minecraft:bowl"
+    },
+    "#": {
+      "item": "hibernalherbs:pounded_chives"
+    },
+    "A": {
+      "item": "hibernalherbs:pounded_tarragon"
+    },
+    "B": {
+      "item": "hibernalherbs:pounded_chervil"
+    }
+  },
+  "result": {
+    "item": "hibernalherbs:blend_blindness",
+    "count": 1
+  }
+}
