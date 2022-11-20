@@ -1,0 +1,78 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bowl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      }
+    },
+    "has_rosemary": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/rosemary"
+          }
+        ]
+      }
+    },
+    "has_thyme": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/thyme"
+          }
+        ]
+      }
+    },
+    "has_verbena": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/verbena"
+          }
+        ]
+      }
+    },
+    "has_blend": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herb_blends"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:blend/regeneration"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blend",
+      "has_bowl",
+      "has_rosemary",
+      "has_thyme",
+      "has_verbena",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:blend/regeneration"
+    ]
+  }
+}

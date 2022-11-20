@@ -1,0 +1,78 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bowl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      }
+    },
+    "has_sorrel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/sorrel"
+          }
+        ]
+      }
+    },
+    "has_ceillis": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/ceillis"
+          }
+        ]
+      }
+    },
+    "has_chives": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/chives"
+          }
+        ]
+      }
+    },
+    "has_blend": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herb_blends"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:blend/night_vision"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blend",
+      "has_bowl",
+      "has_sorrel",
+      "has_ceillis",
+      "has_chives",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:blend/night_vision"
+    ]
+  }
+}

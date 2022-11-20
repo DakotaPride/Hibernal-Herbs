@@ -1,0 +1,78 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bowl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      }
+    },
+    "has_ceillis": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/ceillis"
+          }
+        ]
+      }
+    },
+    "has_rosemary": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/rosemary"
+          }
+        ]
+      }
+    },
+    "has_chamomile": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/chamomile"
+          }
+        ]
+      }
+    },
+    "has_blend": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herb_blends"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:blend/wither"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blend",
+      "has_bowl",
+      "has_ceillis",
+      "has_rosemary",
+      "has_chamomile",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:blend/wither"
+    ]
+  }
+}

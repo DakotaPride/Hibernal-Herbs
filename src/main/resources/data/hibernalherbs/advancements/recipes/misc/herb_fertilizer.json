@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_acceptable_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:recipe/acceptable_herb_fertilizer_recipe_unlock"
+          }
+        ]
+      }
+    },
+    "has_the_recipe1": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:herb_fertilizer"
+      }
+    },
+    "has_the_recipe2": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:herb_fertilizer_from_bone"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_acceptable_item",
+      "has_the_recipe1",
+      "has_the_recipe2"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:herb_fertilizer",
+      "hibernalherbs:herb_fertilizer_from_bone"
+    ]
+  }
+}

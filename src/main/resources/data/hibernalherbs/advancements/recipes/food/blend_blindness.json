@@ -1,0 +1,78 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bowl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      }
+    },
+    "has_chives": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/chives"
+          }
+        ]
+      }
+    },
+    "has_tarragon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/tarragon"
+          }
+        ]
+      }
+    },
+    "has_chervil": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/chervil"
+          }
+        ]
+      }
+    },
+    "has_blend": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herb_blends"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:blend/blindness"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blend",
+      "has_bowl",
+      "has_chives",
+      "has_tarragon",
+      "has_chervil",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:blend/blindness"
+    ]
+  }
+}

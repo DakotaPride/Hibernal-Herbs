@@ -1,0 +1,78 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bowl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      }
+    },
+    "has_chives": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/chives"
+          }
+        ]
+      }
+    },
+    "has_fennsel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/fennsel"
+          }
+        ]
+      }
+    },
+    "has_ceillis": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/ceillis"
+          }
+        ]
+      }
+    },
+    "has_blend": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herb_blends"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:blend/speed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blend",
+      "has_bowl",
+      "has_chives",
+      "has_fennsel",
+      "has_ceillis",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:blend/speed"
+    ]
+  }
+}
