@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class ItemStackMixin {
 
     @Inject(method = "finishUsing", at = @At("HEAD"))
-    private void canHaveStatusEffect(World world, LivingEntity entity, CallbackInfoReturnable<ItemStack> cir) {
+    private void finishUsing(World world, LivingEntity entity, CallbackInfoReturnable<ItemStack> cir) {
         if (entity.getActiveItem().isOf(ItemInit.INCINERATING_BLEND)) {
             entity.setFireTicks(300);
         }

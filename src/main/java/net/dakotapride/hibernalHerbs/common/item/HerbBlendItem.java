@@ -57,6 +57,7 @@ public class HerbBlendItem extends Item {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        PlayerEntity player = (PlayerEntity) target.getAttacker();
         if (attacker instanceof PlayerEntity playerEntity) {
             if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.REGENERATIVE_BLEND)) {
                 target.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 140, 0));
@@ -83,7 +84,7 @@ public class HerbBlendItem extends Item {
             }
 
             stack.decrement(1);
-            playerEntity.giveItemStack(new ItemStack(Items.BOWL, 1));
+            player.giveItemStack(new ItemStack(Items.BOWL, 1));
         }
 
         return super.postHit(stack, target, attacker);
