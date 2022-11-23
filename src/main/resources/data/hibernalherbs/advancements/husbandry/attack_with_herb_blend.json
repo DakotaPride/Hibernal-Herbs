@@ -1,0 +1,42 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:blend_poison"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.attack_blend.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.attack_blend.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:husbandry/pounded_herbs",
+  "criteria": {
+    "attack_entity_with_blend": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {
+          "source_entity": {
+            "equipment": {
+              "mainhand": {
+                "tag": "hibernalherbs:herb_blends"
+              }
+            }
+          }
+        },
+        "entity": {
+          "type": "minecraft:player"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "attack_entity_with_blend"
+    ]
+  ]
+}

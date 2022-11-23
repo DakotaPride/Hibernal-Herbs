@@ -90,10 +90,10 @@
   "advancements.hibernalherbs.root.description": "Root To Your Journey Of Herb Progression",
   "advancements.hibernalherbs.pounded.title": "Pound It Up!",
   "advancements.hibernalherbs.pounded.description": "Obtain Pounded Herbs",
-  "advancements.hibernalherbs.use_blend.title": "I May Or May Not Be Sorry",
-  "advancements.hibernalherbs.use_blend.description": "Use An Herb Blend On Another Player",
-  "advancements.hibernalherbs.blends.title": "Be Careful With Those!",
-  "advancements.hibernalherbs.blends.description": "Obtain All Herb Blend Types",
-  "advancements.hibernalherbs.obtain_all.title": "Business Is BOOMING!",
-  "advancements.hibernalherbs.obtain_all.description": "Obtain All Herb Types And Pounded Herb Types"
+  "advancements.hibernalherbs.attack_blend.title": "I May Or May Not Be Sorry",
+  "advancements.hibernalherbs.attack_blend.description": "Inflict Another Player Using An Herb Blend",
+  "advancements.hibernalherbs.blends.title": "A Not So Balanced Diet",
+  "advancements.hibernalherbs.blends.description": "Consume All Herb Blend Types",
+  "advancements.hibernalherbs.all_pounded.title": "Pound All Of It Up!",
+  "advancements.hibernalherbs.all_pounded.description": "Consume All Pounded Herb Variants"
 }

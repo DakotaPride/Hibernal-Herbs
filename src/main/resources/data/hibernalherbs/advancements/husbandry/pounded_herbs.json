@@ -14,7 +14,7 @@
     "announce_to_chat": false,
     "hidden": false
   },
-  "parent": "hibernalherbs:hibernalherbs/root",
+  "parent": "hibernalherbs:husbandry/herbs",
   "criteria": {
     "obtain_pounded_herb_from_hibernal_herbs": {
       "trigger": "minecraft:inventory_changed",

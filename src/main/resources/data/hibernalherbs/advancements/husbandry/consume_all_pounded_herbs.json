@@ -1,0 +1,165 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:pounded_chamomile"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.all_pounded.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.all_pounded.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:husbandry/pounded_herbs",
+  "criteria": {
+    "rosemary": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_rosemary"
+          ]
+        }
+      }
+    },
+    "thyme": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_thyme"
+          ]
+        }
+      }
+    },
+    "tarragon": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_tarragon"
+          ]
+        }
+      }
+    },
+    "chamomile": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_chamomile"
+          ]
+        }
+      }
+    },
+    "chives": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_chives"
+          ]
+        }
+      }
+    },
+    "verbena": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_verbena"
+          ]
+        }
+      }
+    },
+    "sorrel": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_sorrel"
+          ]
+        }
+      }
+    },
+    "marjoram": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_marjoram"
+          ]
+        }
+      }
+    },
+    "chervil": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_chervil"
+          ]
+        }
+      }
+    },
+    "fennsel": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_fennsel"
+          ]
+        }
+      }
+    },
+    "ceillis": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_ceillis"
+          ]
+        }
+      }
+    },
+    "punuel": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_punuel"
+          ]
+        }
+      }
+    },
+    "essitte": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_essitte"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["rosemary"],
+    ["thyme"],
+    ["tarragon"],
+    ["chamomile"],
+    ["chives"],
+    ["verbena"],
+    ["sorrel"],
+    ["marjoram"],
+    ["chervil"],
+    ["fennsel"],
+    ["ceillis"],
+    ["punuel"],
+    ["essitte"]
+  ]
+}

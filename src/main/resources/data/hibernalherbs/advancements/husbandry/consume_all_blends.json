@@ -1,0 +1,143 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:blend_regeneration"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.blends.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.blends.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:husbandry/balanced_diet",
+  "criteria": {
+    "blindness": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_blindness"
+          ]
+        }
+      }
+    },
+    "fire": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_fire"
+          ]
+        }
+      }
+    },
+    "haste": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_haste"
+          ]
+        }
+      }
+    },
+    "mining_fatigue": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_mining_fatigue"
+          ]
+        }
+      }
+    },
+    "night_vision": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_night_vision"
+          ]
+        }
+      }
+    },
+    "poison": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_poison"
+          ]
+        }
+      }
+    },
+    "regeneration": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_regeneration"
+          ]
+        }
+      }
+    },
+    "slowness": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_slowness"
+          ]
+        }
+      }
+    },
+    "speed": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_speed"
+          ]
+        }
+      }
+    },
+    "weakness": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_weakness"
+          ]
+        }
+      }
+    },
+    "wither": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_wither"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["blindness"],
+    ["fire"],
+    ["haste"],
+    ["mining_fatigue"],
+    ["night_vision"],
+    ["poison"],
+    ["regeneration"],
+    ["slowness"],
+    ["speed"],
+    ["weakness"],
+    ["wither"]
+  ]
+}
