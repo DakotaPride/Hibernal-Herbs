@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:pounded_tarragon"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.pounded.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.pounded.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:hibernalherbs/root",
+  "criteria": {
+    "obtain_pounded_herb_from_hibernal_herbs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:pounded_herbs"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_pounded_herb_from_hibernal_herbs"
+    ]
+  ]
+}

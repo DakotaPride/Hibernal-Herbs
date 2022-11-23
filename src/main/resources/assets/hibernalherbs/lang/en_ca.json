@@ -84,5 +84,16 @@
   "text.hibernalherbs.blend_wither": "We're Not Even In The Nether!",
   "text.hibernalherbs.blend_night_vision": "I Can Show You The World!",
   "text.hibernalherbs.blend_weakness": "I Don't Feel So Good...",
-  "text.hibernalherbs.blend_blindness": "IT'S VERY DARK!!"
+  "text.hibernalherbs.blend_blindness": "IT'S VERY DARK!!",
+
+  "advancements.hibernalherbs.root.title": "The Herbs Have Spoken!",
+  "advancements.hibernalherbs.root.description": "Root To Your Journey Of Herb Progression",
+  "advancements.hibernalherbs.pounded.title": "Pound It Up!",
+  "advancements.hibernalherbs.pounded.description": "Obtain Pounded Herbs",
+  "advancements.hibernalherbs.use_blend.title": "I May Or May Not Be Sorry",
+  "advancements.hibernalherbs.use_blend.description": "Use An Herb Blend On Another Player",
+  "advancements.hibernalherbs.blends.title": "Be Careful With Those!",
+  "advancements.hibernalherbs.blends.description": "Obtain All Herb Blend Types",
+  "advancements.hibernalherbs.obtain_all.title": "Business Is BOOMING!",
+  "advancements.hibernalherbs.obtain_all.description": "Obtain All Herb Types And Pounded Herb Types"
 }

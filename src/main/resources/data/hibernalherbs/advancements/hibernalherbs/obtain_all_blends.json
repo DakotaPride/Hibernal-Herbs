@@ -1,0 +1,87 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:blend_regeneration"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.blends.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.blends.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:hibernalherbs/used_herb_blend",
+  "criteria": {
+    "obtain_blends": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:blend_blindness"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_fire"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_haste"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_mining_fatigue"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_night_vision"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_poison"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_regeneration"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_slowness"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_speed"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_weakness"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:blend_wither"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_blends"
+    ]
+  ]
+}

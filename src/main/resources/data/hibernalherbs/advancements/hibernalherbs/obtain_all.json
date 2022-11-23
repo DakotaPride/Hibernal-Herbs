@@ -1,0 +1,163 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:herb_fertilizer"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.obtain_all.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.obtain_all.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:hibernalherbs/pounded_herbs",
+  "criteria": {
+    "obtain_herbs_and_pounded_herbs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:rosemary"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:thyme"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:tarragon"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:chamomile"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:chives"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:verbena"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:sorrel"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:marjoram"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:chervil"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:fennsel"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:ceillis"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:punuel"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:essitte"
+            ]
+          },
+
+          {
+            "items": [
+              "hibernalherbs:pounded_rosemary"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_thyme"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_tarragon"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_chamomile"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_chives"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_verbena"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_sorrel"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_marjoram"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_chervil"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_fennsel"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_ceillis"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_punuel"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:pounded_essitte"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_herbs_and_pounded_herbs"
+    ]
+  ]
+}
