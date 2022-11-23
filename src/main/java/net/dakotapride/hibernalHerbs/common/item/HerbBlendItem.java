@@ -49,8 +49,10 @@ public class HerbBlendItem extends Item {
             entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 300, 1));
         }
 
-        stack.decrement(1);
-        user.giveItemStack(new ItemStack(Items.BOWL, 1));
+        if (!user.isCreative()) {
+            stack.decrement(1);
+            user.giveItemStack(new ItemStack(Items.BOWL, 1));
+        }
 
         return super.useOnEntity(stack, user, entity, hand);
     }
@@ -83,8 +85,10 @@ public class HerbBlendItem extends Item {
                 target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 140, 0));
             }
 
-            stack.decrement(1);
-            player.giveItemStack(new ItemStack(Items.BOWL, 1));
+            if (!player.isCreative()) {
+                stack.decrement(1);
+                player.giveItemStack(new ItemStack(Items.BOWL, 1));
+            }
         }
 
         return super.postHit(stack, target, attacker);
