@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "hibernalherbs:block/herb/sorrel"
+  },
+  "render_type": "cutout"
+}

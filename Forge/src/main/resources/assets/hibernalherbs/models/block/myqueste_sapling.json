@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "hibernalherbs:block/myqueste_sapling"
+  }
+}

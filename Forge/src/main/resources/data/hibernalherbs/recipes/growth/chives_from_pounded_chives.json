@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "growth_herb",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:herb_fertilizer"
+    },
+    {
+      "item": "hibernalherbs:pounded_chives"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:chives"
+  }
+}

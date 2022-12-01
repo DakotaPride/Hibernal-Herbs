@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/flower_pot_crosscross",
+  "textures": {
+    "plant": "hibernalherbs:block/herb/chamomile"
+  }
+}

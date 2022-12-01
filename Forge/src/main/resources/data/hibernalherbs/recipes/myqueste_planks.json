@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "hibernalherbs:myqueste_logs"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:myqueste_planks",
+    "count": 4
+  }
+}
