@@ -98,5 +98,7 @@
   "advancements.hibernalherbs.all_pounded.description": "Consume All Pounded Herb Variants",
 
   // Forge
-  "itemGroup.hibernal_herbs": "Hibernal Herbs - Misc"
+  "itemGroup.hibernal_herbs": "Hibernal Herbs - Misc",
+  "itemGroup.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
+  "itemGroup.herbs": "Hibernal Herbs - Herbs"
 }

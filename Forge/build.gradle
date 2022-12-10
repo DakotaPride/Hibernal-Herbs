@@ -5,12 +5,16 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+
+        classpath 'org.spongepowered:mixingradle:0.7.+'
     }
 }
 apply plugin: 'java'
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+
+apply plugin: 'org.spongepowered.mixin'
 
 archivesBaseName = "${mod_name}-forge-${minecraft_version}"
 
@@ -75,6 +79,8 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     compileOnly project(":Common")
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 tasks.withType(JavaCompile) {
@@ -102,4 +108,13 @@ publishing {
             url "file://" + System.getenv("local_maven")
         }
     }
+}
+
+mixin {
+    // MixinGradle Settings
+    add sourceSets.main, 'mixins.hibernalherbs.refmap.json'
+    config 'mixins.hibernalherbs.json'
+
+    debug.verbose = true
+    debug.export = true
 }

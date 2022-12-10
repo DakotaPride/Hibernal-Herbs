@@ -25,6 +25,13 @@ public class HerbBlendItem extends Item {
     }
 
     @Override
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity livingEntity) {
+        ItemStack itemstack = super.finishUsingItem(stack, level, livingEntity);
+
+        return livingEntity instanceof Player && ((Player)livingEntity).getAbilities().instabuild ? itemstack : new ItemStack(Items.BOWL);
+    }
+
+    @Override
     public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack stack, Player player, @NotNull LivingEntity livingEntity, @NotNull InteractionHand hand) {
         if (player.getMainHandItem().is(itemRegistry.REGENERATIVE_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1));
@@ -38,8 +45,6 @@ public class HerbBlendItem extends Item {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1));
         } else if (player.getMainHandItem().is(itemRegistry.ACCELERATION_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1));
-        } else if (player.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) {
-            livingEntity.setRemainingFireTicks(300);
         } else if (player.getMainHandItem().is(itemRegistry.DECAYING_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 300, 1));
         } else if (player.getMainHandItem().is(itemRegistry.OBSERVING_BLEND.get())) {
@@ -48,7 +53,7 @@ public class HerbBlendItem extends Item {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 1));
         } else if (player.getMainHandItem().is(itemRegistry.SHADED_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 1));
-        }
+        } else if (player.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) { }
 
         if (!player.isCreative()) {
             stack.shrink(1);
@@ -76,8 +81,6 @@ public class HerbBlendItem extends Item {
                 target.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 140, 0));
             } else if (attacker.getMainHandItem().is(itemRegistry.ACCELERATION_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 140, 0));
-            } else if (attacker.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) {
-                target.setRemainingFireTicks(140);
             } else if (attacker.getMainHandItem().is(itemRegistry.DECAYING_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.WITHER, 140, 0));
             } else if (attacker.getMainHandItem().is(itemRegistry.OBSERVING_BLEND.get())) {
@@ -86,6 +89,8 @@ public class HerbBlendItem extends Item {
                 target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 0));
             } else if (attacker.getMainHandItem().is(itemRegistry.SHADED_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 140, 0));
+            } else if (attacker.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) {
+                target.setSecondsOnFire(7);
             }
 
             assert player != null;
