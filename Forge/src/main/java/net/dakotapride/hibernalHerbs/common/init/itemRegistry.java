@@ -61,36 +61,36 @@ public class itemRegistry {
 
     public static final RegistryObject<Item> REGENERATIVE_BLEND = ITEMS.register("blend_regeneration",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> VIRULENT_BLEND = ITEMS.register("blend_poison",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.POISON, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.POISON, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> SEDATING_BLEND = ITEMS.register("blend_slowness",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HINDERING_BLEND = ITEMS.register("blend_mining_fatigue",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> DASHING_BLEND = ITEMS.register("blend_haste",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> ACCELERATION_BLEND = ITEMS.register("blend_speed",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> INCINERATING_BLEND = ITEMS.register("blend_fire",
-            () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+            () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(7).alwaysEat().saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> DECAYING_BLEND = ITEMS.register("blend_wither",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.WITHER, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.WITHER, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> OBSERVING_BLEND = ITEMS.register("blend_night_vision",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> DIMINISHED_BLEND = ITEMS.register("blend_weakness",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> SHADED_BLEND = ITEMS.register("blend_blindness",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 1), 1.0F).nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+                    .effect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 1), 1.0F).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
 
     public static void register(IEventBus eventBus) {
