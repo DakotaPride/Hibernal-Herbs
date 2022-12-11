@@ -36,8 +36,7 @@
     "fabricloader": "*",
     "fabric": "*",
     "minecraft": "~1.19",
-    "java": ">=17",
-    "nbtcrafting": "*"
+    "java": ">=17"
   },
   "recommends": {
     "lambdabettergrass": "*",
