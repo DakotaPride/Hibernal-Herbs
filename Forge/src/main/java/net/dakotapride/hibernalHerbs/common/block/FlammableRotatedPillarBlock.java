@@ -1,6 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.block;
 
-import net.dakotapride.hibernalHerbs.common.init.blockRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.AxeItem;

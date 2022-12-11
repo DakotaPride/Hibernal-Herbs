@@ -1,6 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
-import net.dakotapride.hibernalHerbs.common.init.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;

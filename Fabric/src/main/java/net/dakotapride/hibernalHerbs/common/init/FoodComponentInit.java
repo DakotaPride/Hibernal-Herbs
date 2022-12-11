@@ -6,7 +6,7 @@ import net.minecraft.item.FoodComponent;
 
 public class FoodComponentInit {
 
-    public static final FoodComponent POUNDED_HERB = (new FoodComponent.Builder()).hunger(4).saturationModifier(0.3F).build();
+    public static final FoodComponent POUNDED_HERB = (new FoodComponent.Builder()).snack().hunger(4).saturationModifier(0.3F).build();
 
     public static final FoodComponent REGENERATIVE_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F)
             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 300, 1), 1.0f).build();

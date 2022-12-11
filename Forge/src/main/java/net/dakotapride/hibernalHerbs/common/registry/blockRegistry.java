@@ -1,4 +1,4 @@
-package net.dakotapride.hibernalHerbs.common.init;
+package net.dakotapride.hibernalHerbs.common.registry;
 
 import net.dakotapride.hibernalHerbs.common.Constants;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;

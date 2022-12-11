@@ -1,7 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.gen;
 
 import net.dakotapride.hibernalHerbs.common.Constants;
-import net.dakotapride.hibernalHerbs.common.init.blockRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
