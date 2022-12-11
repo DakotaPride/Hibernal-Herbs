@@ -38,6 +38,13 @@ public class ItemInit {
     public static Item POUNDED_ESSITTE = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
+    // Resource Dependant (Pounded) Herbs
+
+    public static Item POUNDED_THYOCIELLE = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+            .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item POUNDED_FENNKYSTRAL = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+            .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+
     public static HerbBlendItem REGENERATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.REGENERATIVE_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static HerbBlendItem VIRULENT_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.VIRULENT_BLEND)
@@ -61,6 +68,13 @@ public class ItemInit {
     public static HerbBlendItem SHADED_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SHADED_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
+    // Resource Dependant (Blends) Herbs
+
+    public static HerbBlendItem CONFLICTING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.CONFLICTING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbBlendItem ALTERNATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ALTERNATIVE_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+
     public static Item HERB_FERTILIZER = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static void init () {
@@ -77,6 +91,8 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_ceillis"), POUNDED_CEILLIS);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_punuel"), POUNDED_PUNUEL);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_essitte"), POUNDED_ESSITTE);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_thyocielle"), POUNDED_THYOCIELLE);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_fennkystral"), POUNDED_FENNKYSTRAL);
 
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regeneration"), REGENERATIVE_BLEND);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_poison"), VIRULENT_BLEND);
@@ -89,6 +105,8 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_night_vision"), OBSERVING_BLEND);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_weakness"), DIMINISHED_BLEND);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_blindness"), SHADED_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regen_slow"), CONFLICTING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regen_speed_weak"), ALTERNATIVE_BLEND);
 
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "herb_fertilizer"), HERB_FERTILIZER);
     }

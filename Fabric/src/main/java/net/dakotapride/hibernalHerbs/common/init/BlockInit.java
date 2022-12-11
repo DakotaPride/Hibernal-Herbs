@@ -41,6 +41,13 @@ public class BlockInit {
     public static FlowerBlock ESSITTE =
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
 
+    // Resource Dependant Herbs
+
+    public static FlowerBlock THYOCIELLE =
+            new FlowerBlock(StatusEffects.REGENERATION, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
+    public static FlowerBlock FENNKYSTRAL =
+            new FlowerBlock(StatusEffects.REGENERATION, 240, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
+
     public static FlowerPotBlock POTTED_ROSEMARY =
             new FlowerPotBlock(ROSEMARY, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
     public static FlowerPotBlock POTTED_THYME =
@@ -67,6 +74,13 @@ public class BlockInit {
             new FlowerPotBlock(PUNUEL, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
     public static FlowerPotBlock POTTED_ESSITTE =
             new FlowerPotBlock(ESSITTE, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
+
+    // Resource Dependant (Potted) Herbs
+
+    public static FlowerPotBlock POTTED_THYOCIELLE =
+            new FlowerPotBlock(THYOCIELLE, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
+    public static FlowerPotBlock POTTED_FENNKYSTRAL =
+            new FlowerPotBlock(FENNKYSTRAL, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
 
     public static SaplingBlock MYQUESTE_SAPLING = new SaplingBlock(new MyquesteSaplingGenerator(),
             FabricBlockSettings.copy(Blocks.SPRUCE_SAPLING).ticksRandomly().nonOpaque());
@@ -112,6 +126,10 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "punuel"), new BlockItem(PUNUEL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "essitte"), ESSITTE);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "essitte"), new BlockItem(ESSITTE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "thyocielle"), THYOCIELLE);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "thyocielle"), new BlockItem(THYOCIELLE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "fennkystral"), FENNKYSTRAL);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "fennkystral"), new BlockItem(FENNKYSTRAL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_rosemary"), POTTED_ROSEMARY);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_thyme"), POTTED_THYME);
@@ -126,6 +144,8 @@ public class BlockInit {
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_ceillis"), POTTED_CEILLIS);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_punuel"), POTTED_PUNUEL);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_essitte"), POTTED_ESSITTE);
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_thyocielle"), POTTED_THYOCIELLE);
+        Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_fennkystral"), POTTED_FENNKYSTRAL);
 
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "potted_myqueste_sapling"), POTTED_MYQUESTE_SAPLING);
         Registry.register(Registry.BLOCK, new Identifier(HIBERNAL_HERBS_ID, "myqueste_sapling"), MYQUESTE_SAPLING);

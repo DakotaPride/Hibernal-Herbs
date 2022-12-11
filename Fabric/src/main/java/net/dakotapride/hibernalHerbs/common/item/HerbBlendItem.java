@@ -49,6 +49,15 @@ public class HerbBlendItem extends Item {
             entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 300, 1));
         }
 
+        else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.CONFLICTING_BLEND)) {
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 300, 1));
+        } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.ALTERNATIVE_BLEND)) {
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 420, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 420, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 420, 1));
+        }
+
         if (!user.isCreative()) {
             stack.decrement(1);
             user.giveItemStack(new ItemStack(Items.BOWL, 1));
@@ -85,6 +94,15 @@ public class HerbBlendItem extends Item {
                 target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 140, 0));
             }
 
+            else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.CONFLICTING_BLEND)) {
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 140, 0));
+            } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.ALTERNATIVE_BLEND)) {
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 200, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
+            }
+
             if (!player.isCreative()) {
                 stack.decrement(1);
                 player.giveItemStack(new ItemStack(Items.BOWL, 1));
@@ -118,6 +136,12 @@ public class HerbBlendItem extends Item {
             tooltip.add(Text.translatable("text.hibernalherbs.blend_weakness").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
         } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SHADED_BLEND)) {
             tooltip.add(Text.translatable("text.hibernalherbs.blend_blindness").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
+        }
+
+        else if (stack.getItem().getDefaultStack().isOf(ItemInit.CONFLICTING_BLEND)) {
+            tooltip.add(Text.translatable("text.hibernalherbs.blend_regen_slow").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
+        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.ALTERNATIVE_BLEND)) {
+            tooltip.add(Text.translatable("text.hibernalherbs.blend_regen_speed_weak").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
         }
     }
 

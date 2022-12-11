@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "recipe_dependant_herb",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:fennsel"
+    },
+    {
+      "item": "hibernalherbs:marjoram"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "hibernalherbs:herb_fertilizer"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:fennkystral"
+  }
+}

@@ -30,4 +30,14 @@ public class FoodComponentInit {
     public static final FoodComponent SHADED_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F)
             .statusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 300, 1), 1.0f).build();
 
+    // Resource Depe- Y'know What? This Has Been Typed Too Many Times Already
+
+    public static final FoodComponent CONFLICTING_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 300, 1), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 300, 1), 1.0f).build();
+    public static final FoodComponent ALTERNATIVE_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 420, 1), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 420, 1), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 420, 1), 1.0f).build();
+
 }

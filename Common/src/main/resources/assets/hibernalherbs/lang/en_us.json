@@ -12,6 +12,8 @@
   "block.hibernalherbs.ceillis": "Ceillis",
   "block.hibernalherbs.punuel": "Punuel",
   "block.hibernalherbs.essitte": "Essitte",
+  "block.hibernalherbs.thyocielle": "Thyocielle",
+  "block.hibernalherbs.fennkystral": "Fennkystral",
 
   "item.hibernalherbs.pounded_rosemary": "Pounded Rosemary",
   "item.hibernalherbs.pounded_thyme": "Pounded Thyme",
@@ -26,6 +28,8 @@
   "item.hibernalherbs.pounded_ceillis": "Pounded Ceillis",
   "item.hibernalherbs.pounded_punuel": "Pounded Punuel",
   "item.hibernalherbs.pounded_essitte": "Pounded Essitte",
+  "item.hibernalherbs.pounded_thyocielle": "Pounded Thyocielle",
+  "item.hibernalherbs.pounded_fennkystral": "Pounded Fennkystral",
 
   "block.hibernalherbs.potted_rosemary": "Potted Rosemary",
   "block.hibernalherbs.potted_thyme": "Potted Thyme",
@@ -40,6 +44,8 @@
   "block.hibernalherbs.potted_ceillis": "Potted Ceillis",
   "block.hibernalherbs.potted_punuel": "Potted Punuel",
   "block.hibernalherbs.potted_essitte": "Potted Essitte",
+  "block.hibernalherbs.potted_thyocielle": "Potted Thyocielle",
+  "block.hibernalherbs.potted_fennkystral": "Potted Fennkystral",
 
   "item.hibernalherbs.blend_regeneration": "Regenerative Blend",
   "item.hibernalherbs.blend_poison": "Virulent Blend",
@@ -52,6 +58,8 @@
   "item.hibernalherbs.blend_night_vision": "Observing Blend",
   "item.hibernalherbs.blend_weakness": "Diminished Blend",
   "item.hibernalherbs.blend_blindness": "Shaded Blend",
+  "item.hibernalherbs.blend_regen_slow": "Conflicting Blend",
+  "item.hibernalherbs.blend_regen_speed_weak": "Alternative Blend",
 
   "item.hibernalherbs.herb_fertilizer": "Herb Fertilizer",
 
@@ -85,6 +93,8 @@
   "text.hibernalherbs.blend_night_vision": "I Can Show You The World!",
   "text.hibernalherbs.blend_weakness": "I Don't Feel So Good...",
   "text.hibernalherbs.blend_blindness": "IT'S VERY DARK!!",
+  "text.hibernalherbs.blend_regen_slow": "You sure this isn't just poison?",
+  "text.hibernalherbs.blend_regen_speed_weak": "It's Only Somewhat Effective",
 
   "advancements.hibernalherbs.root.title": "The Herbs Have Spoken!",
   "advancements.hibernalherbs.root.description": "Root To Your Journey Of Herb Progression",
@@ -96,6 +106,10 @@
   "advancements.hibernalherbs.blends.description": "Consume All Herb Blend Types",
   "advancements.hibernalherbs.all_pounded.title": "Pound All Of It Up!",
   "advancements.hibernalherbs.all_pounded.description": "Consume All Pounded Herb Variants",
+  "advancements.hibernalherbs.resource_herb.title": "That Was Somewhat Unnecessary, Don't You Think?",
+  "advancements.hibernalherbs.resource_herb.description": "Obtain An Herb That Probably Shouldn't Exist",
+  "advancements.hibernalherbs.conflicting_blend.title": "Hold On Now, Don't Do That",
+  "advancements.hibernalherbs.conflicting_blend.description": "Obtain An Herb Blend That Probably Shouldn't Exist",
 
   // Forge
   "itemGroup.hibernal_herbs": "Hibernal Herbs - Misc",

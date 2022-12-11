@@ -66,6 +66,15 @@ public class blockRegistry {
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
                     BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
 
+    // Resource Dependant Herbs (Forge)
+
+    public static final RegistryObject<Block> THYOCIELLE = registerBlock("thyocielle",
+            () -> new FlowerBlock(MobEffects.REGENERATION, 180,
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
+    public static final RegistryObject<Block> FENNKYSTRAL = registerBlock("fennkystral",
+            () -> new FlowerBlock(MobEffects.REGENERATION, 240,
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
+
     public static final RegistryObject<Block> POTTED_ROSEMARY = BLOCKS.register("potted_rosemary",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.ROSEMARY,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
@@ -104,6 +113,15 @@ public class blockRegistry {
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_ESSITTE = BLOCKS.register("potted_essitte",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.ESSITTE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
+
+    // Resource Dependant (Potted) Herbs (Forge)
+
+    public static final RegistryObject<Block> POTTED_THYOCIELLE = BLOCKS.register("potted_thyocielle",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.THYOCIELLE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
+    public static final RegistryObject<Block> POTTED_FENNKYSTRAL = BLOCKS.register("potted_fennkystral",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.FENNKYSTRAL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     public static final RegistryObject<Block> MYQUESTE_LOG = registerBlock("myqueste_log",
@@ -167,6 +185,10 @@ public class blockRegistry {
     public static final RegistryObject<Block> MYQUESTE_SAPLING = registerBlock("myqueste_sapling",
             () -> new SaplingBlock(new MyquesteTreeGrower(),
                     BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)), HibernalHerbsForge.HIBERNAL_HERBS);
+
+    public static final RegistryObject<Block> POTTED_MYQUESTE_SAPLING = BLOCKS.register("potted_myqueste_sapling",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.MYQUESTE_SAPLING,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_SPRUCE_SAPLING)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

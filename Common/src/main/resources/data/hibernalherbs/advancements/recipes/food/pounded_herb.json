@@ -1,0 +1,73 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_herb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs"
+          }
+        ]
+      }
+    },
+    "has_pounded_herb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:pounded_herbs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": [
+          "hibernalherbs:pounded/pounded_ceillis",
+          "hibernalherbs:pounded/pounded_chamomile",
+          "hibernalherbs:pounded/pounded_chervil",
+          "hibernalherbs:pounded/pounded_chives",
+          "hibernalherbs:pounded/pounded_essitte",
+          "hibernalherbs:pounded/pounded_fennkystral",
+          "hibernalherbs:pounded/pounded_fennsel",
+          "hibernalherbs:pounded/pounded_marjoram",
+          "hibernalherbs:pounded/pounded_punuel",
+          "hibernalherbs:pounded/pounded_rosemary",
+          "hibernalherbs:pounded/pounded_sorrel",
+          "hibernalherbs:pounded/pounded_tarragon",
+          "hibernalherbs:pounded/pounded_thyme",
+          "hibernalherbs:pounded/pounded_thyocielle",
+          "hibernalherbs:pounded/pounded_verbena"
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_herb",
+      "has_pounded_herb",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:pounded/pounded_ceillis",
+      "hibernalherbs:pounded/pounded_chamomile",
+      "hibernalherbs:pounded/pounded_chervil",
+      "hibernalherbs:pounded/pounded_chives",
+      "hibernalherbs:pounded/pounded_essitte",
+      "hibernalherbs:pounded/pounded_fennkystral",
+      "hibernalherbs:pounded/pounded_fennsel",
+      "hibernalherbs:pounded/pounded_marjoram",
+      "hibernalherbs:pounded/pounded_punuel",
+      "hibernalherbs:pounded/pounded_rosemary",
+      "hibernalherbs:pounded/pounded_sorrel",
+      "hibernalherbs:pounded/pounded_tarragon",
+      "hibernalherbs:pounded/pounded_thyme",
+      "hibernalherbs:pounded/pounded_thyocielle",
+      "hibernalherbs:pounded/pounded_verbena"
+    ]
+  }
+}

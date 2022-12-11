@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "hibernalherbs:block/herb/fennkystral"
+  },
+  "render_type": "cutout"
+}

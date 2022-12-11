@@ -125,6 +125,26 @@
           ]
         }
       }
+    },
+    "regen_slow": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_regen_slow"
+          ]
+        }
+      }
+    },
+    "regen_speed_weak": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:blend_regen_speed_weak"
+          ]
+        }
+      }
     }
   },
   "requirements": [
@@ -138,6 +158,8 @@
     ["slowness"],
     ["speed"],
     ["weakness"],
-    ["wither"]
+    ["wither"],
+    ["regen_slow"],
+    ["regen_speed_weak"]
   ]
 }

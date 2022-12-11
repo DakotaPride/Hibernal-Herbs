@@ -55,6 +55,15 @@ public class HerbBlendItem extends Item {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 1));
         } else if (player.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) { }
 
+        else if (player.getMainHandItem().is(itemRegistry.CONFLICTING_BLEND.get())) {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 1));
+        } else if (player.getMainHandItem().is(itemRegistry.CONFLICTING_BLEND.get())) {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 2));
+        }
+
         if (!player.isCreative()) {
             stack.shrink(1);
             player.addItem(new ItemStack(Items.BOWL, 1));
@@ -93,6 +102,15 @@ public class HerbBlendItem extends Item {
                 target.setSecondsOnFire(7);
             }
 
+            else if (attacker.getMainHandItem().is(itemRegistry.CONFLICTING_BLEND.get())) {
+                target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 140, 0));
+            } else if (attacker.getMainHandItem().is(itemRegistry.CONFLICTING_BLEND.get())) {
+                target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
+                target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 2));
+            }
+
             assert player != null;
             if (!player.isCreative()) {
                 stack.shrink(1);
@@ -127,6 +145,10 @@ public class HerbBlendItem extends Item {
             tooltip.add(Component.translatable("text.hibernalherbs.blend_weakness").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
         } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SHADED_BLEND.get())) {
             tooltip.add(Component.translatable("text.hibernalherbs.blend_blindness").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.CONFLICTING_BLEND.get())) {
+            tooltip.add(Component.translatable("text.hibernalherbs.blend_regen_slow").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.ALTERNATIVE_BLEND.get())) {
+            tooltip.add(Component.translatable("text.hibernalherbs.blend_regen_speed_weak").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
         }
     }
 }

@@ -10,6 +10,8 @@
     "hibernalherbs:blend_wither",
     "hibernalherbs:blend_night_vision",
     "hibernalherbs:blend_weakness",
-    "hibernalherbs:blend_blindness"
+    "hibernalherbs:blend_blindness",
+    "hibernalherbs:blend_regen_slow",
+    "hibernalherbs:blend_regen_speed_weak"
   ]
 }

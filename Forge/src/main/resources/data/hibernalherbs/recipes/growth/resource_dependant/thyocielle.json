@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "recipe_dependant_herb",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:thyme"
+    },
+    {
+      "item": "hibernalherbs:chamomile"
+    },
+    {
+      "item": "hibernalherbs:herb_fertilizer"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:thyocielle"
+  }
+}

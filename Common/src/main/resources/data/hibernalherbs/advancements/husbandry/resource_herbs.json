@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:thyocielle"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.resource_herb.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.resource_herb.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:husbandry/herbs",
+  "criteria": {
+    "obtain_artificial_herb_from_hibernal_herbs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/artificial/herbs"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_artificial_herb_from_hibernal_herbs"
+    ]
+  ]
+}

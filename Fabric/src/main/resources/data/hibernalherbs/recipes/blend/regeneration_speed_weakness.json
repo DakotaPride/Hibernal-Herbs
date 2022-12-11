@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "herb_blend",
+  "pattern": [
+    "#AB",
+    "GXG"
+  ],
+  "key": {
+    "G": {
+      "tag": "hibernalherbs:herbs/fennkystral"
+    },
+    "X": {
+      "item": "minecraft:bowl"
+    },
+    "#": {
+      "item": "hibernalherbs:pounded_rosemary"
+    },
+    "A": {
+      "item": "hibernalherbs:pounded_chives"
+    },
+    "B": {
+      "item": "hibernalherbs:pounded_ceillis"
+    }
+  },
+  "result": {
+    "item": "hibernalherbs:blend_regen_speed_weak",
+    "count": 1
+  }
+}

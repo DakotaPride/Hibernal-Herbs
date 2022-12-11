@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:blend_regen_speed_weak"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.conflicting_blend.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.conflicting_blend.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:husbandry/resource_herbs",
+  "criteria": {
+    "obtain_artificial_blend_from_hibernal_herbs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs/artificial/blends"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_artificial_blend_from_hibernal_herbs"
+    ]
+  ]
+}

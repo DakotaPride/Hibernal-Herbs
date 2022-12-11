@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flower_pot_cross",
+  "textures": {
+    "plant": "hibernalherbs:block/herb/thyocielle"
+  },
+  "render_type": "cutout"
+}

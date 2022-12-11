@@ -25,6 +25,9 @@ public class util {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.POUNDED_THYME, 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.POUNDED_VERBENA, 0.3f);
 
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.POUNDED_THYOCIELLE, 0.3f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.POUNDED_FENNKYSTRAL, 0.3f);
+
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.CEILLIS.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.CHAMOMILE.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.CHERVIL.asItem(), 0.3f);
@@ -38,6 +41,9 @@ public class util {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.TARRAGON.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.THYME.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.VERBENA.asItem(), 0.3f);
+
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.THYOCIELLE.asItem(), 0.3f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.FENNKYSTRAL.asItem(), 0.3f);
 
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.MYQUESTE_SAPLING.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.MYQUESTE_LEAVES.asItem(), 0.3f);

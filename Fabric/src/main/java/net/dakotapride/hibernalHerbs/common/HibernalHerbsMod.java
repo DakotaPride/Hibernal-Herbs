@@ -40,6 +40,9 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.DIMINISHED_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.SHADED_BLEND));
 
+					itemStacks.add(new ItemStack(ItemInit.CONFLICTING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.ALTERNATIVE_BLEND));
+
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SAPLING.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LEAVES.asItem()));
 
@@ -78,6 +81,9 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(BlockInit.TARRAGON.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.THYME.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.VERBENA.asItem()));
+
+					itemStacks.add(new ItemStack(BlockInit.THYOCIELLE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.FENNKYSTRAL.asItem()));
 				}).build();
 
 		public static ItemGroup POUNDED_HERBS = FabricItemGroupBuilder.create(
@@ -97,6 +103,9 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_TARRAGON));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_THYME));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_VERBENA));
+
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_THYOCIELLE));
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_FENNKYSTRAL));
 				}).build();
 	}
 

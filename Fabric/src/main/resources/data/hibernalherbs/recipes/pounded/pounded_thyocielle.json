@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pounded_herbs",
+  "pattern": [
+    "#A",
+    "X "
+  ],
+  "key": {
+    "X": {
+      "tag": "minecraft:coals"
+    },
+    "A": {
+      "item": "minecraft:paper"
+    },
+    "#": {
+      "item": "hibernalherbs:thyocielle"
+    }
+  },
+  "result": {
+    "item": "hibernalherbs:pounded_thyocielle",
+    "count": 2
+  }
+}
