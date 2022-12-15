@@ -57,7 +57,9 @@ public class AbstractPouchItem extends BundleItem {
                     add(stack, slot.safeInsert(p_150740_), size, player);
                 });
 
-                playRemoveOneSound(player);
+                if (stack.hasTag()) {
+                    playRemoveOneSound(player);
+                }
 
             } else if (itemStack.is(HibernalHerbsForge.HERBS_TAG)) {
                 int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
@@ -78,7 +80,9 @@ public class AbstractPouchItem extends BundleItem {
                 Objects.requireNonNull(slotAccess);
                 var10000.ifPresent(slotAccess::set);
 
-                playRemoveOneSound(player);
+                if (this.getDefaultInstance().hasTag()) {
+                    playRemoveOneSound(player);
+                }
             } else {
                 playInsertSound(player);
                 stack2.shrink(add(stack1, stack2, size, player));

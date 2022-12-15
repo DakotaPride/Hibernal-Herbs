@@ -59,7 +59,9 @@ public class AbstractPouchItem extends BundleItem {
                     add(stack, slot.insertStack(stack1), size, player);
                 });
 
-                playRemoveOneSound(player);
+                if (stack.hasNbt()) {
+                    playRemoveOneSound(player);
+                }
 
             } else if (itemStack.isIn(util.HERBS)) {
                 int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
@@ -80,7 +82,9 @@ public class AbstractPouchItem extends BundleItem {
                 Objects.requireNonNull(stackReference);
                 var10000.ifPresent(stackReference::set);
 
-                playRemoveOneSound(player);
+                if (this.getDefaultStack().hasNbt()) {
+                    playRemoveOneSound(player);
+                }
             } else {
                 playInsertSound(player);
                 stack2.decrement(add(stack1, stack2, size, player));
