@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/flower_pot_crosscross",
+  "parent": "minecraft:block/flower_pot_cross",
   "textures": {
     "plant": "hibernalherbs:block/herb/chamomile"
   },
