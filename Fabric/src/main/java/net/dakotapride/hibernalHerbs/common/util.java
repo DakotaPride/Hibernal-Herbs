@@ -4,8 +4,15 @@ import net.dakotapride.hibernalHerbs.common.init.BlockInit;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.item.Item;
+import net.minecraft.tag.TagKey;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+
+import static net.dakotapride.hibernalHerbs.common.HibernalHerbsMod.HIBERNAL_HERBS_ID;
 
 public class util {
+    public static final TagKey<Item> HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(HIBERNAL_HERBS_ID, "herbs"));
 
     public static void utilsInit() {
         StrippableBlockRegistry.register(BlockInit.MYQUESTE_LOG, BlockInit.STRIPPED_MYQUESTE_LOG);

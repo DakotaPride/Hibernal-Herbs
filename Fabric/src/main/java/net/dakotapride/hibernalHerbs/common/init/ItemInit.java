@@ -2,6 +2,7 @@ package net.dakotapride.hibernalHerbs.common.init;
 
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
+import net.dakotapride.hibernalHerbs.common.item.HerbPouchItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -77,6 +78,8 @@ public class ItemInit {
 
     public static Item HERB_FERTILIZER = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
+    public static HerbPouchItem POUCH = new HerbPouchItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+
     public static void init () {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_thyme"), POUNDED_THYME);
@@ -109,6 +112,7 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regen_speed_weak"), ALTERNATIVE_BLEND);
 
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "herb_fertilizer"), HERB_FERTILIZER);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pouch"), POUCH);
     }
 
 }
