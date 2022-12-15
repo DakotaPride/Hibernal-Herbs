@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "A A",
+    "###"
+  ],
+  "key": {
+    "X": [
+      {
+        "tag": "hibernalherbs:herbs"
+      },
+      {
+        "tag": "hibernalherbs:pounded_herbs"
+      }
+    ],
+    "A": {
+      "item": "minecraft:string"
+    },
+    "#": {
+      "item": "minecraft:cyan_wool"
+    }
+  },
+  "result": {
+    "item": "hibernalherbs:pouch",
+    "count": 1
+  }
+}

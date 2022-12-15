@@ -20,7 +20,7 @@ public class itemRegistry {
     public static final RegistryObject<Item> HERB_FERTILIZER = ITEMS.register("herb_fertilizer",
             () -> new Item(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> POUCH = ITEMS.register("pouch",
-            () -> new HerbPouchItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+            () -> new HerbPouchItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 256));
 
     public static final RegistryObject<Item> POUNDED_ROSEMARY = ITEMS.register("pounded_rosemary",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
