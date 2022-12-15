@@ -2,9 +2,11 @@ package net.dakotapride.hibernalHerbs.common.item;
 
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.util;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.BundleTooltipData;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.item.TooltipData;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.StackReference;
@@ -15,6 +17,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.util.ClickType;
@@ -53,11 +56,16 @@ public class AbstractPouchItem extends BundleItem {
             ItemStack itemStack = slot.getStack();
             if (itemStack.isEmpty()) {
                 removeOne(stack).ifPresent((stack1) -> {
-                    AbstractPouchItem.add(stack, slot.insertStack(stack1), size, player);
+                    add(stack, slot.insertStack(stack1), size, player);
                 });
+
+                playRemoveOneSound(player);
+
             } else if (itemStack.isIn(util.HERBS)) {
-                int var6 = (size - AbstractPouchItem.getContentWeight(stack, 64)) / AbstractPouchItem.getWeight(itemStack, 64);
-                AbstractPouchItem.add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
+                int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
+
+                playInsertSound(player);
+                add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
             }
 
             return true;
@@ -71,7 +79,10 @@ public class AbstractPouchItem extends BundleItem {
                 Optional<ItemStack> var10000 = removeOne(stack1);
                 Objects.requireNonNull(stackReference);
                 var10000.ifPresent(stackReference::set);
+
+                playRemoveOneSound(player);
             } else {
+                playInsertSound(player);
                 stack2.decrement(add(stack1, stack2, size, player));
             }
 
@@ -85,7 +96,8 @@ public class AbstractPouchItem extends BundleItem {
     @Override
     public TypedActionResult<ItemStack> use(@Nonnull World world, PlayerEntity player, @Nonnull Hand hand) {
         ItemStack var4 = player.getStackInHand(hand);
-        if (dropContents(var4, player)) {
+        if (dropContents(var4, player) && Screen.hasShiftDown()) {
+            playDropContentsSound(player);
             player.incrementStat(Stats.USED.getOrCreateStat(ItemInit.POUCH));
             return TypedActionResult.success(var4, world.isClient);
         } else {
@@ -225,7 +237,7 @@ public class AbstractPouchItem extends BundleItem {
         NbtCompound tag = stack.getOrCreateNbt();
         if (!tag.contains("Items")) {
             return false;
-        } else {
+        } else if (Screen.hasShiftDown()) {
             if (player instanceof ServerPlayerEntity) {
                 NbtList tagList = tag.getList("Items", 10);
 
@@ -239,6 +251,8 @@ public class AbstractPouchItem extends BundleItem {
             stack.removeSubNbt("Items");
             return true;
         }
+
+        return true;
     }
 
     public static Stream<ItemStack> getContents(ItemStack stack) {
@@ -250,5 +264,17 @@ public class AbstractPouchItem extends BundleItem {
             Stream<?> items = itemList.stream();
             return items.map(NbtCompound.class::cast).map(ItemStack::fromNbt);
         }
+    }
+
+    private void playRemoveOneSound(Entity entity) {
+        entity.playSound(SoundEvents.ITEM_BUNDLE_REMOVE_ONE, 0.8F, 0.8F + entity.getWorld().getRandom().nextFloat() * 0.4F);
+    }
+
+    private void playInsertSound(Entity entity) {
+        entity.playSound(SoundEvents.ITEM_BUNDLE_INSERT, 0.8F, 0.8F + entity.getWorld().getRandom().nextFloat() * 0.4F);
+    }
+
+    private void playDropContentsSound(Entity entity) {
+        entity.playSound(SoundEvents.ITEM_BUNDLE_DROP_CONTENTS, 0.8F, 0.8F + entity.getWorld().getRandom().nextFloat() * 0.4F);
     }
 }
