@@ -1,9 +1,9 @@
 package net.dakotapride.hibernalHerbs.common.init;
 
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
+import net.dakotapride.hibernalHerbs.common.item.AbstractCanisterItem;
 import net.dakotapride.hibernalHerbs.common.item.AbstractPouchItem;
 import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
-import net.dakotapride.hibernalHerbs.common.item.HerbPouchItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -81,6 +81,8 @@ public class ItemInit {
 
     public static AbstractPouchItem POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1)
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 256);
+    public static AbstractCanisterItem CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 384);
 
     public static void init () {
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
@@ -115,6 +117,7 @@ public class ItemInit {
 
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "herb_fertilizer"), HERB_FERTILIZER);
         Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pouch"), POUCH);
+        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "canister"), CANISTER);
     }
 
 }

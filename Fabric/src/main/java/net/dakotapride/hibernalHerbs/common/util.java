@@ -2,6 +2,7 @@ package net.dakotapride.hibernalHerbs.common;
 
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
+import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.item.Item;
@@ -13,6 +14,7 @@ import static net.dakotapride.hibernalHerbs.common.HibernalHerbsMod.HIBERNAL_HER
 
 public class util {
     public static final TagKey<Item> HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(HIBERNAL_HERBS_ID, "herbs"));
+    public static final TagKey<Item> BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(HIBERNAL_HERBS_ID, "herb_blends"));
 
     public static void utilsInit() {
         StrippableBlockRegistry.register(BlockInit.MYQUESTE_LOG, BlockInit.STRIPPED_MYQUESTE_LOG);
@@ -54,6 +56,10 @@ public class util {
 
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.MYQUESTE_SAPLING.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.MYQUESTE_LEAVES.asItem(), 0.3f);
+
+
+        FabricModelPredicateProviderRegistry.register(ItemInit.CANISTER, new Identifier(HIBERNAL_HERBS_ID, "filled"),
+                ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
     }
 
 }
