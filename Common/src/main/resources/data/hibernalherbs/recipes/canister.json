@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "X": [
+      {
+        "tag": "hibernalherbs:herbs"
+      },
+      {
+        "tag": "hibernalherbs:pounded_herbs"
+      }
+    ],
+    "#": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "hibernalherbs:canister",
+    "count": 1
+  }
+}
