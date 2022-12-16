@@ -63,7 +63,7 @@ public class AbstractPouchItem extends BundleItem {
                     playRemoveOneSound(player);
                 }
 
-            } else if (itemStack.isIn(util.HERBS)) {
+            } else if (itemStack.isIn(util.HERBS) || itemStack.isIn(util.POUNDED_HERBS)) {
                 int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
 
                 playInsertSound(player);
@@ -147,7 +147,7 @@ public class AbstractPouchItem extends BundleItem {
 
 
     public static int add(ItemStack bundleStack, ItemStack addStack, int size, PlayerEntity player) {
-        if (!addStack.isEmpty() && addStack.isIn(util.HERBS)) {
+        if (!addStack.isEmpty() && addStack.isIn(util.HERBS) || !addStack.isEmpty() && addStack.isIn(util.POUNDED_HERBS)) {
             NbtCompound tag = bundleStack.getOrCreateNbt();
             if (!tag.contains("Items")) {
                 tag.put("Items", new NbtList());

@@ -3,7 +3,6 @@ package net.dakotapride.hibernalHerbs.common.item.abstractItem;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -21,7 +20,10 @@ import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.tooltip.BundleTooltip;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BundleItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,7 +34,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class AbstractPouchItem extends BundleItem {
+public class AbstractCanisterItem extends BundleItem {
 
     //
     // Credit Goes To Cheaterpaul (Owner Of Better Bundles Mod For Forge) For BundleItem Code Used Below (slightly modified)
@@ -41,7 +43,7 @@ public class AbstractPouchItem extends BundleItem {
 
     public final int size;
 
-    public AbstractPouchItem(Properties properties, int size) {
+    public AbstractCanisterItem(Properties properties, int size) {
         super(properties);
         this.size = size;
     }
@@ -61,7 +63,7 @@ public class AbstractPouchItem extends BundleItem {
                     playRemoveOneSound(player);
                 }
 
-            } else if (itemStack.is(HibernalHerbsForge.HERBS_TAG) || itemStack.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+            } else if (itemStack.is(HibernalHerbsForge.BLENDS_TAG)) {
                 int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
 
                 playInsertSound(player);
@@ -145,7 +147,7 @@ public class AbstractPouchItem extends BundleItem {
 
 
     public static int add(ItemStack bundleStack, ItemStack addStack, int size, @Nullable Player player) {
-        if (!addStack.isEmpty() && addStack.is(HibernalHerbsForge.HERBS_TAG) || !addStack.isEmpty() && addStack.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+        if (!addStack.isEmpty() && addStack.is(HibernalHerbsForge.BLENDS_TAG)) {
             CompoundTag tag = bundleStack.getOrCreateTag();
             if (!tag.contains("Items")) {
                 tag.put("Items", new ListTag());

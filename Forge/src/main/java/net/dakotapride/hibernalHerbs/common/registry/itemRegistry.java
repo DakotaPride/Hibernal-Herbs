@@ -4,6 +4,7 @@ import net.dakotapride.hibernalHerbs.common.Constants;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
 import net.dakotapride.hibernalHerbs.common.item.HerbPouchItem;
+import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -21,6 +22,8 @@ public class itemRegistry {
             () -> new Item(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> POUCH = ITEMS.register("pouch",
             () -> new HerbPouchItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 256));
+    public static final RegistryObject<Item> CANISTER = ITEMS.register("canister",
+            () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 384));
 
     public static final RegistryObject<Item> POUNDED_ROSEMARY = ITEMS.register("pounded_rosemary",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()

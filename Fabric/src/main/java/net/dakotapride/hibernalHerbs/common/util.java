@@ -14,6 +14,7 @@ import static net.dakotapride.hibernalHerbs.common.HibernalHerbsMod.HIBERNAL_HER
 
 public class util {
     public static final TagKey<Item> HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(HIBERNAL_HERBS_ID, "herbs"));
+    public static final TagKey<Item> POUNDED_HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(HIBERNAL_HERBS_ID, "pounded_herbs"));
     public static final TagKey<Item> BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(HIBERNAL_HERBS_ID, "herb_blends"));
 
     public static void utilsInit() {

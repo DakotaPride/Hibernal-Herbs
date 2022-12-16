@@ -29,6 +29,7 @@ public class HibernalHerbsMod implements ModInitializer {
 				.appendItems(itemStacks -> {
 					itemStacks.add(new ItemStack(ItemInit.HERB_FERTILIZER));
 					itemStacks.add(new ItemStack(ItemInit.POUCH));
+					itemStacks.add(new ItemStack(ItemInit.CANISTER));
 
 					itemStacks.add(new ItemStack(ItemInit.REGENERATIVE_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.VIRULENT_BLEND));
