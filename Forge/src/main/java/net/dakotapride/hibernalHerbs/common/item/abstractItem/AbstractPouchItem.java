@@ -98,7 +98,7 @@ public class AbstractPouchItem extends BundleItem {
     @Override
     public InteractionResultHolder<ItemStack> use(@Nonnull Level level, Player player, @Nonnull InteractionHand hand) {
         ItemStack var4 = player.getItemInHand(hand);
-        if (dropContents(var4, player) && Screen.hasShiftDown()) {
+        if (dropContents(var4, player)) {
             playDropContentsSound(player);
             player.awardStat(Stats.ITEM_USED.get(this));
             return InteractionResultHolder.sidedSuccess(var4, level.isClientSide());
@@ -239,7 +239,7 @@ public class AbstractPouchItem extends BundleItem {
         CompoundTag tag = stack.getOrCreateTag();
         if (!tag.contains("Items")) {
             return false;
-        } else if (Screen.hasShiftDown()) {
+        } else {
             if (player instanceof ServerPlayer) {
                 ListTag tagList = tag.getList("Items", 10);
 
@@ -253,8 +253,6 @@ public class AbstractPouchItem extends BundleItem {
             stack.removeTagKey("Items");
             return true;
         }
-
-        return true;
     }
 
     public static Stream<ItemStack> getContents(ItemStack stack) {

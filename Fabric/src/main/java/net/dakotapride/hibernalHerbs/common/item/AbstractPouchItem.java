@@ -100,7 +100,7 @@ public class AbstractPouchItem extends BundleItem {
     @Override
     public TypedActionResult<ItemStack> use(@Nonnull World world, PlayerEntity player, @Nonnull Hand hand) {
         ItemStack var4 = player.getStackInHand(hand);
-        if (dropContents(var4, player) && Screen.hasShiftDown()) {
+        if (dropAllBundledItems(var4, player)) {
             playDropContentsSound(player);
             player.incrementStat(Stats.USED.getOrCreateStat(ItemInit.POUCH));
             return TypedActionResult.success(var4, world.isClient);
@@ -237,11 +237,11 @@ public class AbstractPouchItem extends BundleItem {
         }
     }
 
-    public static boolean dropContents(ItemStack stack, PlayerEntity player) {
+    private static boolean dropAllBundledItems(ItemStack stack, PlayerEntity player) {
         NbtCompound tag = stack.getOrCreateNbt();
         if (!tag.contains("Items")) {
             return false;
-        } else if (Screen.hasShiftDown()) {
+        } else {
             if (player instanceof ServerPlayerEntity) {
                 NbtList tagList = tag.getList("Items", 10);
 
@@ -255,8 +255,6 @@ public class AbstractPouchItem extends BundleItem {
             stack.removeSubNbt("Items");
             return true;
         }
-
-        return true;
     }
 
     public static Stream<ItemStack> getContents(ItemStack stack) {
