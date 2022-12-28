@@ -9,13 +9,16 @@ import net.minecraft.item.Item;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 
-import static net.dakotapride.hibernalHerbs.common.HibernalHerbsMod.HIBERNAL_HERBS_ID;
+import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class util {
-    public static final TagKey<Item> HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(HIBERNAL_HERBS_ID, "herbs"));
-    public static final TagKey<Item> POUNDED_HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(HIBERNAL_HERBS_ID, "pounded_herbs"));
-    public static final TagKey<Item> BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(HIBERNAL_HERBS_ID, "herb_blends"));
+    public static final TagKey<Item> HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "herbs"));
+    public static final TagKey<Item> POUNDED_HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "pounded_herbs"));
+    public static final TagKey<Item> BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "herb_blends"));
+
+    public static final TagKey<Biome> HAS_HERBS = TagKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "has_herbs"));
 
     public static void utilsInit() {
         StrippableBlockRegistry.register(BlockInit.MYQUESTE_LOG, BlockInit.STRIPPED_MYQUESTE_LOG);
@@ -59,7 +62,7 @@ public class util {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.MYQUESTE_LEAVES.asItem(), 0.3f);
 
 
-        FabricModelPredicateProviderRegistry.register(ItemInit.CANISTER, new Identifier(HIBERNAL_HERBS_ID, "filled"),
+        FabricModelPredicateProviderRegistry.register(ItemInit.CANISTER, new Identifier(MOD_ID, "filled"),
                 ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
     }
 

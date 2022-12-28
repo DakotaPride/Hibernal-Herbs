@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:has_structure/village_snowy",
+  "biomes": "#hibernalherbs:has_herbs",
   "features": "hibernalherbs:rosemary_placed",
   "step": "vegetal_decoration"
 }

@@ -1,0 +1,10 @@
+{
+
+  "_comment_": "In Order To Configure What Biomes Herbs Spawn In, Just Add And/Or Remove Biomes/Biome Tags From This JSON File.",
+
+
+  "replace": false,
+  "values": [
+    "#minecraft:has_structure/village_snowy"
+  ]
+}

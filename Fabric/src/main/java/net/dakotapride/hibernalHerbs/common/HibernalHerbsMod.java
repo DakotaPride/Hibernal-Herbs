@@ -13,18 +13,23 @@ import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
+
 public class HibernalHerbsMod implements ModInitializer {
-	public static final String HIBERNAL_HERBS_ID = "hibernalherbs";
 
 	public static class groupManager {
 		public static ItemGroup HIBERNAL_HERBS = FabricItemGroupBuilder.create(
-						new Identifier(HIBERNAL_HERBS_ID, "hibernal_herbs"))
+						new Identifier(MOD_ID, "hibernal_herbs"))
 				.icon(() -> new ItemStack(BlockInit.MYQUESTE_LOG.asItem()))
 				.appendItems(itemStacks -> {
 					itemStacks.add(new ItemStack(ItemInit.HERB_FERTILIZER));
@@ -68,7 +73,7 @@ public class HibernalHerbsMod implements ModInitializer {
 				}).build();
 
 		public static ItemGroup HERBS = FabricItemGroupBuilder.create(
-						new Identifier(HIBERNAL_HERBS_ID, "herbs"))
+						new Identifier(MOD_ID, "herbs"))
 				.icon(() -> new ItemStack(BlockInit.TARRAGON.asItem()))
 				.appendItems(itemStacks -> {
 					itemStacks.add(new ItemStack(BlockInit.CEILLIS.asItem()));
@@ -90,7 +95,7 @@ public class HibernalHerbsMod implements ModInitializer {
 				}).build();
 
 		public static ItemGroup POUNDED_HERBS = FabricItemGroupBuilder.create(
-						new Identifier(HIBERNAL_HERBS_ID, "pounded_herbs"))
+						new Identifier(MOD_ID, "pounded_herbs"))
 				.icon(() -> new ItemStack(ItemInit.POUNDED_TARRAGON.asItem()))
 				.appendItems(itemStacks -> {
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CEILLIS));
@@ -124,7 +129,7 @@ public class HibernalHerbsMod implements ModInitializer {
 
 		if (FabricLoader.getInstance().isModLoaded("lambdabettergrass")) {
 			// Thanks to @Xanthian#3020 on Modding By KaupenJoe's Discord Server For Built-In Resource Pack Help!
-			FabricLoader.getInstance().getModContainer(HIBERNAL_HERBS_ID).ifPresent(modContainer -> {
+			FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> {
 				ResourceManagerHelper.registerBuiltinResourcePack(mc("bettergrass"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
 			});
 		}
@@ -132,7 +137,7 @@ public class HibernalHerbsMod implements ModInitializer {
 
 	// Credit For method/The LambdaBetterGrass Mod goes to LambdAurora
 	public static Identifier mc(@NotNull String path) {
-		return new Identifier(HIBERNAL_HERBS_ID, path);
+		return new Identifier(MOD_ID, path);
 	}
 
 	// This method serves as a hook to modify item tooltips. The vanilla game

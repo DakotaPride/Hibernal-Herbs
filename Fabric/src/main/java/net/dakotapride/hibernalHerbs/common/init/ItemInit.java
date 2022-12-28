@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static net.dakotapride.hibernalHerbs.common.HibernalHerbsMod.HIBERNAL_HERBS_ID;
+import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
 
@@ -85,39 +85,39 @@ public class ItemInit {
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 384);
 
     public static void init () {
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_thyme"), POUNDED_THYME);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_tarragon"), POUNDED_TARRAGON);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_chamomile"), POUNDED_CHAMOMILE);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_chives"), POUNDED_CHIVES);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_verbena"), POUNDED_VERBENA);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_sorrel"), POUNDED_SORREL);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_marjoram"), POUNDED_MARJORAM);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_chervil"), POUNDED_CHERVIL);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_fennsel"), POUNDED_FENNSEL);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_ceillis"), POUNDED_CEILLIS);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_punuel"), POUNDED_PUNUEL);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_essitte"), POUNDED_ESSITTE);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_thyocielle"), POUNDED_THYOCIELLE);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pounded_fennkystral"), POUNDED_FENNKYSTRAL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyme"), POUNDED_THYME);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_tarragon"), POUNDED_TARRAGON);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_chamomile"), POUNDED_CHAMOMILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_chives"), POUNDED_CHIVES);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_verbena"), POUNDED_VERBENA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_sorrel"), POUNDED_SORREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_marjoram"), POUNDED_MARJORAM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_chervil"), POUNDED_CHERVIL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_fennsel"), POUNDED_FENNSEL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_ceillis"), POUNDED_CEILLIS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_punuel"), POUNDED_PUNUEL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_essitte"), POUNDED_ESSITTE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyocielle"), POUNDED_THYOCIELLE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_fennkystral"), POUNDED_FENNKYSTRAL);
 
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regeneration"), REGENERATIVE_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_poison"), VIRULENT_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_slowness"), SEDATING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_mining_fatigue"), HINDERING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_haste"), DASHING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_speed"), ACCELERATION_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_fire"), INCINERATING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_wither"), DECAYING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_night_vision"), OBSERVING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_weakness"), DIMINISHED_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_blindness"), SHADED_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regen_slow"), CONFLICTING_BLEND);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "blend_regen_speed_weak"), ALTERNATIVE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regeneration"), REGENERATIVE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_poison"), VIRULENT_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_slowness"), SEDATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue"), HINDERING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_haste"), DASHING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_speed"), ACCELERATION_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_fire"), INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_wither"), DECAYING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_night_vision"), OBSERVING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_weakness"), DIMINISHED_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_blindness"), SHADED_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_slow"), CONFLICTING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak"), ALTERNATIVE_BLEND);
 
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "herb_fertilizer"), HERB_FERTILIZER);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "pouch"), POUCH);
-        Registry.register(Registry.ITEM, new Identifier(HIBERNAL_HERBS_ID, "canister"), CANISTER);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer"), HERB_FERTILIZER);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "canister"), CANISTER);
     }
 
 }
