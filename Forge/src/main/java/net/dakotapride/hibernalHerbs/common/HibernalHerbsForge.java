@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.common;
 
+import net.dakotapride.hibernalHerbs.client.PackLoader;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsConfigured;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsPlaced;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
@@ -7,14 +8,15 @@ import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.dakotapride.hibernalHerbs.platform.Services;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
@@ -148,6 +150,8 @@ public class HibernalHerbsForge {
         HibernalHerbsConfigured.register(eventBus);
         HibernalHerbsPlaced.register(eventBus);
 
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(PackLoader::onAddPackFinders);
+
         eventBus.addListener(this::commonSetup);
         eventBus.addListener(this::clientSetup);
 
@@ -166,7 +170,6 @@ public class HibernalHerbsForge {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.ROSEMARY.getId(), blockRegistry.POTTED_ROSEMARY);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.THYME.getId(), blockRegistry.POTTED_THYME);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.TARRAGON.getId(), blockRegistry.POTTED_TARRAGON);

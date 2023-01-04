@@ -127,12 +127,18 @@ public class HibernalHerbsMod implements ModInitializer {
 		FeaturesInit.init();
 
 
+		// Thanks to @Xanthian#3020 on Modding By KaupenJoe's Discord Server For Built-In Resource Pack Help!
 		if (FabricLoader.getInstance().isModLoaded("lambdabettergrass")) {
-			// Thanks to @Xanthian#3020 on Modding By KaupenJoe's Discord Server For Built-In Resource Pack Help!
 			FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> {
 				ResourceManagerHelper.registerBuiltinResourcePack(mc("bettergrass"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
 			});
 		}
+		if (FabricLoader.getInstance().isModLoaded("eatinganimationid")) {
+			FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> {
+				ResourceManagerHelper.registerBuiltinResourcePack(mc("eatinganimations"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
+			});
+		}
+
 	}
 
 	// Credit For method/The LambdaBetterGrass Mod goes to LambdAurora

@@ -1,0 +1,1 @@
+{ "parent": "minecraft:item/generated", "textures": { "layer0": "hibernalherbs:item/pounded_fennkystral_eating_2" } }
