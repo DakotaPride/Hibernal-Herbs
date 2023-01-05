@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
+import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -19,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class HerbBlendItem extends Item {
+public class HerbBlendItem extends Item implements FoodComponentList {
     public HerbBlendItem(Properties properties) {
         super(properties);
     }
@@ -34,34 +35,34 @@ public class HerbBlendItem extends Item {
     @Override
     public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack stack, Player player, @NotNull LivingEntity livingEntity, @NotNull InteractionHand hand) {
         if (player.getMainHandItem().is(itemRegistry.REGENERATIVE_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.VIRULENT_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, healthDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.SEDATING_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, speedDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.HINDERING_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, miningSpeedDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.DASHING_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, miningSpeedDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.ACCELERATION_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, speedDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.DECAYING_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, healthDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.OBSERVING_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, visionDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.DIMINISHED_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, damageDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.SHADED_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, visionDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) { }
 
         else if (player.getMainHandItem().is(itemRegistry.CONFLICTING_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1));
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration, baseMultiplier));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, healthDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.CONFLICTING_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1));
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 2));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration + 120, baseMultiplier));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, speedDuration + 100, baseMultiplier));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, damageDuration + 80, baseMultiplier));
         }
 
         if (!player.isCreative()) {
@@ -79,36 +80,36 @@ public class HerbBlendItem extends Item {
         Player player = (Player) target.getLastHurtByMob();
         if (attacker instanceof Player) {
             if (attacker.getMainHandItem().is(itemRegistry.REGENERATIVE_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration - 80, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.VIRULENT_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.POISON, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.POISON, healthDuration - 80, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.SEDATING_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, speedDuration - 60, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.HINDERING_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, miningSpeedDuration - 600, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.DASHING_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, miningSpeedDuration - 600, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.ACCELERATION_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, speedDuration - 60, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.DECAYING_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.WITHER, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.WITHER, healthDuration - 80, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.OBSERVING_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, visionDuration - 100, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.DIMINISHED_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, damageDuration - 40, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.SHADED_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, visionDuration - 100, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) {
-                target.setSecondsOnFire(7);
+                target.setSecondsOnFire(secondsOnFire - 2);
             }
 
             else if (attacker.getMainHandItem().is(itemRegistry.CONFLICTING_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 140, 0));
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 140, 0));
+                target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration - 80, baseMultiplier - 1));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, speedDuration - 60, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(itemRegistry.CONFLICTING_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1));
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
-                target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 2));
+                target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (healthDuration + 120) - 40, baseMultiplier - 1));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (speedDuration + 100) - 40, baseMultiplier - 1));
+                target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, (damageDuration + 80) - 60, baseMultiplier));
             }
 
             assert player != null;

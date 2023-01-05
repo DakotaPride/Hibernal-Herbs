@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
+import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
@@ -18,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class HerbBlendItem extends Item {
+public class HerbBlendItem extends Item implements FoodComponentList {
     public HerbBlendItem(Settings settings) {
         super(settings);
     }
@@ -26,36 +27,36 @@ public class HerbBlendItem extends Item {
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
         if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.REGENERATIVE_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, healthDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.VIRULENT_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, healthDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.SEDATING_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, speedDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.HINDERING_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, miningSpeedDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.DASHING_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, miningSpeedDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.ACCELERATION_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, speedDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.INCINERATING_BLEND)) {
-            entity.setFireTicks(300);
+            entity.setFireTicks(fireDuration);
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.DECAYING_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, healthDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.OBSERVING_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, visionDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.DIMINISHED_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, damageDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.SHADED_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, visionDuration, baseMultiplier));
         }
 
         else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.CONFLICTING_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 300, 1));
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 300, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, visionDuration, baseMultiplier));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, healthDuration, baseMultiplier));
         } else if (user.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.ALTERNATIVE_BLEND)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 420, 1));
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 420, 1));
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 420, 1));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, healthDuration + 120, baseMultiplier));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, speedDuration + 100, baseMultiplier));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, damageDuration + 80, baseMultiplier));
         }
 
         if (!user.isCreative()) {
@@ -71,36 +72,36 @@ public class HerbBlendItem extends Item {
         PlayerEntity player = (PlayerEntity) target.getAttacker();
         if (attacker instanceof PlayerEntity playerEntity) {
             if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.REGENERATIVE_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, healthDuration - 80, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.VIRULENT_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, healthDuration - 80, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.SEDATING_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, speedDuration - 60, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.HINDERING_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, miningSpeedDuration - 600, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.DASHING_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, miningSpeedDuration - 600, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.ACCELERATION_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, speedDuration - 60, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.INCINERATING_BLEND)) {
-                target.setFireTicks(140);
+                target.setFireTicks(fireDuration - 40);
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.DECAYING_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, healthDuration - 80, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.OBSERVING_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, visionDuration - 100, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.DIMINISHED_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, damageDuration - 40, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.SHADED_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, visionDuration - 100, baseMultiplier - 1));
             }
 
             else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.CONFLICTING_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 140, 0));
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 140, 0));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, visionDuration - 100, baseMultiplier - 1));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, healthDuration - 80, baseMultiplier - 1));
             } else if (attacker.getStackInHand(Hand.MAIN_HAND).isOf(ItemInit.ALTERNATIVE_BLEND)) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 200, 0));
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0));
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 1));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, (healthDuration + 120) - 40, baseMultiplier - 1));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, (speedDuration + 100) - 40, baseMultiplier - 1));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, (damageDuration + 80) - 60, baseMultiplier));
             }
 
             if (!player.isCreative()) {
