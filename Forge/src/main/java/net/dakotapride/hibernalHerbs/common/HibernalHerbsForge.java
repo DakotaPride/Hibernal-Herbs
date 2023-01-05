@@ -67,6 +67,23 @@ public class HibernalHerbsForge {
 
             nonNullList.add(0, blockRegistry.MYQUESTE_PLANKS.get().asItem().getDefaultInstance());
 
+            // Smoked
+            nonNullList.add(0, itemRegistry.SMOKED_ALTERNATIVE_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_CONFLICTING_BLEND.get().getDefaultInstance());
+
+            nonNullList.add(0, itemRegistry.SMOKED_SHADED_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_DIMINISHED_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_OBSERVING_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_DECAYING_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_INCINERATING_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_ACCELERATION_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_DASHING_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_HINDERING_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_SEDATING_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_VIRULENT_BLEND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SMOKED_REGENERATIVE_BLEND.get().getDefaultInstance());
+
+            // Non-Smoked
             nonNullList.add(0, itemRegistry.ALTERNATIVE_BLEND.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.CONFLICTING_BLEND.get().getDefaultInstance());
 

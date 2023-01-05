@@ -51,6 +51,21 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.CONFLICTING_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.ALTERNATIVE_BLEND));
 
+					// Smoked
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_REGENERATIVE_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_VIRULENT_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_SEDATING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_HINDERING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_DASHING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_ACCELERATION_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_INCINERATING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_DECAYING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_OBSERVING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_DIMINISHED_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_SHADED_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_CONFLICTING_BLEND));
+					itemStacks.add(new ItemStack(ItemInit.SMOKED_ALTERNATIVE_BLEND));
+
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SAPLING.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LEAVES.asItem()));
 

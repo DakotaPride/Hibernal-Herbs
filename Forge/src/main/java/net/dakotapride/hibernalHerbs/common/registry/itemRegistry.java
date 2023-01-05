@@ -5,6 +5,7 @@ import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
 import net.dakotapride.hibernalHerbs.common.item.HerbPouchItem;
+import net.dakotapride.hibernalHerbs.common.item.SmokedHerbBlendItem;
 import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -118,6 +119,49 @@ public class itemRegistry implements FoodComponentList {
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, speedDuration + 100, baseMultiplier), baseChance)
                     .effect(new MobEffectInstance(MobEffects.WEAKNESS, damageDuration + 80, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
+    // Smoked
+    public static final RegistryObject<Item> SMOKED_REGENERATIVE_BLEND = ITEMS.register("blend_regeneration_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_VIRULENT_BLEND = ITEMS.register("blend_poison_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.POISON, smokedHealthDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_SEDATING_BLEND = ITEMS.register("blend_slowness_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_HINDERING_BLEND = ITEMS.register("blend_mining_fatigue_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, smokedMiningSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_DASHING_BLEND = ITEMS.register("blend_haste_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.DIG_SPEED, smokedMiningSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_ACCELERATION_BLEND = ITEMS.register("blend_speed_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_INCINERATING_BLEND = ITEMS.register("blend_fire_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(7).alwaysEat().saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_DECAYING_BLEND = ITEMS.register("blend_wither_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.WITHER, smokedHealthDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_OBSERVING_BLEND = ITEMS.register("blend_night_vision_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_DIMINISHED_BLEND = ITEMS.register("blend_weakness_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_SHADED_BLEND = ITEMS.register("blend_blindness_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    // Resource Dependant (Smoked Blends) Herbs (Forge)
+    public static final RegistryObject<Item> SMOKED_CONFLICTING_BLEND = ITEMS.register("blend_regen_slow_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier), baseChance)
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> SMOKED_ALTERNATIVE_BLEND = ITEMS.register("blend_regen_speed_weak_smoked",
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                    .effect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration + 120, smokedMultiplier), baseChance)
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration + 100, smokedMultiplier), baseChance)
+                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration + 80, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -1,0 +1,29 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "hibernalherbs:item/smoked/conflicting_blend"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "eatinganimation:eating": 1,
+                "eatinganimation:eat": 0.35
+            },
+            "model": "eatinganimation:item/smoked_blend_regen_slow_eating_0"
+        },
+        {
+            "predicate": {
+                "eatinganimation:eating": 1,
+                "eatinganimation:eat": 0.70
+            },
+            "model": "eatinganimation:item/smoked_blend_regen_slow_eating_1"
+        },
+        {
+            "predicate": {
+                "eatinganimation:eating": 1,
+                "eatinganimation:eat": 0.90
+            },
+            "model": "eatinganimation:item/smoked_blend_regen_slow_eating_2"
+        }
+    ]
+}

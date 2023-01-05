@@ -4,6 +4,7 @@ import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.item.AbstractCanisterItem;
 import net.dakotapride.hibernalHerbs.common.item.AbstractPouchItem;
 import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
+import net.dakotapride.hibernalHerbs.common.item.SmokedHerbBlendItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -84,6 +85,37 @@ public class ItemInit {
     public static AbstractCanisterItem CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 384);
 
+    // Smoked Herb Blends (Fabric)
+    public static SmokedHerbBlendItem SMOKED_REGENERATIVE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_REGENERATIVE_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_VIRULENT_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_VIRULENT_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_SEDATING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SEDATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_HINDERING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_HINDERING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_DASHING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DASHING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_ACCELERATION_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ACCELERATION_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_INCINERATING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_INCINERATING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_DECAYING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DECAYING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_OBSERVING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_OBSERVING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_DIMINISHED_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DIMINISHED_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_SHADED_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SHADED_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+
+    // Resource Dependant (Smoked Blends) Herbs
+
+    public static SmokedHerbBlendItem SMOKED_CONFLICTING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_CONFLICTING_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static SmokedHerbBlendItem SMOKED_ALTERNATIVE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ALTERNATIVE_BLEND)
+            .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+
     public static void init () {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyme"), POUNDED_THYME);
@@ -114,6 +146,21 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_blindness"), SHADED_BLEND);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_slow"), CONFLICTING_BLEND);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak"), ALTERNATIVE_BLEND);
+
+        // Smoked
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regeneration_smoked"), SMOKED_REGENERATIVE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_poison_smoked"), SMOKED_VIRULENT_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_slowness_smoked"), SMOKED_SEDATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue_smoked"), SMOKED_HINDERING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_haste_smoked"), SMOKED_DASHING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_speed_smoked"), SMOKED_ACCELERATION_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_fire_smoked"), SMOKED_INCINERATING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_wither_smoked"), SMOKED_DECAYING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_night_vision_smoked"), SMOKED_OBSERVING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_weakness_smoked"), SMOKED_DIMINISHED_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_blindness_smoked"), SMOKED_SHADED_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_slow_smoked"), SMOKED_CONFLICTING_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak_smoked"), SMOKED_ALTERNATIVE_BLEND);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer"), HERB_FERTILIZER);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);

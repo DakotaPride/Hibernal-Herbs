@@ -61,6 +61,20 @@
   "item.hibernalherbs.blend_regen_slow": "Conflicting Blend",
   "item.hibernalherbs.blend_regen_speed_weak": "Alternative Blend",
 
+  "item.hibernalherbs.blend_regeneration_smoked": "Regenerative Blend",
+  "item.hibernalherbs.blend_poison_smoked": "Virulent Blend",
+  "item.hibernalherbs.blend_slowness_smoked": "Sedating Blend",
+  "item.hibernalherbs.blend_mining_fatigue_smoked": "Hindering Blend",
+  "item.hibernalherbs.blend_haste_smoked": "Dashing Blend",
+  "item.hibernalherbs.blend_speed_smoked": "Acceleration Blend",
+  "item.hibernalherbs.blend_fire_smoked": "Incinerating Blend",
+  "item.hibernalherbs.blend_wither_smoked": "Decaying Blend",
+  "item.hibernalherbs.blend_night_vision_smoked": "Observing Blend",
+  "item.hibernalherbs.blend_weakness_smoked": "Diminished Blend",
+  "item.hibernalherbs.blend_blindness_smoked": "Shaded Blend",
+  "item.hibernalherbs.blend_regen_slow_smoked": "Conflicting Blend",
+  "item.hibernalherbs.blend_regen_speed_weak_smoked": "Alternative Blend",
+
   "item.hibernalherbs.herb_fertilizer": "Herb Fertilizer",
   "item.hibernalherbs.pouch": "Herb Pouch",
   "item.hibernalherbs.canister": "Blend Canister",
@@ -97,6 +111,8 @@
   "text.hibernalherbs.blend_blindness": "IT'S VERY DARK!!",
   "text.hibernalherbs.blend_regen_slow": "You sure this isn't just poison?",
   "text.hibernalherbs.blend_regen_speed_weak": "It's Only Somewhat Effective",
+
+  "text.hibernalherbs.smoked_blend": "Smoked",
 
   "advancements.hibernalherbs.root.title": "The Herbs Have Spoken!",
   "advancements.hibernalherbs.root.description": "Root To Your Journey Of Herb Progression",

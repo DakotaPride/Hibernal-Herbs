@@ -1,0 +1,17 @@
+{
+  "values": [
+    "hibernalherbs:blend_regeneration_smoked",
+    "hibernalherbs:blend_poison_smoked",
+    "hibernalherbs:blend_slowness_smoked",
+    "hibernalherbs:blend_mining_fatigue_smoked",
+    "hibernalherbs:blend_haste_smoked",
+    "hibernalherbs:blend_speed_smoked",
+    "hibernalherbs:blend_fire_smoked",
+    "hibernalherbs:blend_wither_smoked",
+    "hibernalherbs:blend_night_vision_smoked",
+    "hibernalherbs:blend_weakness_smoked",
+    "hibernalherbs:blend_blindness_smoked",
+    "hibernalherbs:blend_regen_slow_smoked",
+    "hibernalherbs:blend_regen_speed_weak_smoked"
+  ]
+}

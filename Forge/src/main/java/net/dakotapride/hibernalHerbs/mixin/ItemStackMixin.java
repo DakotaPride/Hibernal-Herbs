@@ -21,12 +21,20 @@ public abstract class ItemStackMixin implements FoodComponentList {
         if (livingEntity.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) {
             livingEntity.setSecondsOnFire(secondsOnFire);
         }
+
+        if (livingEntity.getMainHandItem().is(itemRegistry.SMOKED_INCINERATING_BLEND.get())) {
+            livingEntity.setSecondsOnFire(smokedSecondsOnFire);
+        }
     }
 
     @Inject(method = "interactLivingEntity", at = @At("HEAD"))
     private void interactLivingEntity(Player player, LivingEntity livingEntity, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
         if (player.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) {
             livingEntity.setSecondsOnFire(secondsOnFire);
+        }
+
+        if (player.getMainHandItem().is(itemRegistry.SMOKED_INCINERATING_BLEND.get())) {
+            livingEntity.setSecondsOnFire(smokedSecondsOnFire);
         }
     }
 

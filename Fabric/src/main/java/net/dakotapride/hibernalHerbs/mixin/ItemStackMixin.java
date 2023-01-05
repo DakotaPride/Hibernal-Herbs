@@ -18,6 +18,10 @@ public abstract class ItemStackMixin implements FoodComponentList {
         if (entity.getActiveItem().isOf(ItemInit.INCINERATING_BLEND)) {
             entity.setFireTicks(fireDuration);
         }
+
+        if (entity.getActiveItem().isOf(ItemInit.SMOKED_INCINERATING_BLEND)) {
+            entity.setFireTicks(smokedFireDuration);
+        }
     }
 
 }

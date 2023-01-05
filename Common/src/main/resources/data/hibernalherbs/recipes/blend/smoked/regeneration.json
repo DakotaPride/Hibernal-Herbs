@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "group": "smoked_blends",
+  "ingredient": {
+    "item": "hibernalherbs:blend_regeneration"
+  },
+  "result": "hibernalherbs:blend_regeneration_smoked",
+  "experience": 0.35,
+  "cookingtime": 100
+}
