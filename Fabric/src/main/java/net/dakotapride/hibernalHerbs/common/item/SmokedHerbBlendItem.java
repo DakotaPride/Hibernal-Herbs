@@ -145,6 +145,8 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
             tooltip.add(Text.translatable("text.hibernalherbs.blend_regen_speed_weak").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
         }
 
+        tooltip.add(Text.literal(""));
+
         tooltip.add(Text.translatable("text.hibernalherbs.smoked_blend").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
     }
 
