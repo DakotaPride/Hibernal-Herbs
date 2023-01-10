@@ -19,6 +19,7 @@ public interface FoodComponentList {
     int miningSpeedDuration = baseDuration * 80;
     int visionDuration = baseDuration * 38;
     int damageDuration = baseDuration * 34;
+    int glowingDuration = baseDuration * 42;
 
     // Smoked Effect Durations
     int smokedHealthDuration = healthDuration * smokedDurationModifier;
@@ -26,6 +27,7 @@ public interface FoodComponentList {
     int smokedMiningSpeedDuration = miningSpeedDuration * smokedDurationModifier;
     int smokedVisionDuration = visionDuration * smokedDurationModifier;
     int smokedDamageDuration = damageDuration * smokedDurationModifier;
+    int smokedGlowingDuration = glowingDuration * smokedDurationModifier;
 
     // Fire Duration(s)
     // Fabric

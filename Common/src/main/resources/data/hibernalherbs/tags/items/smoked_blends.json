@@ -12,6 +12,11 @@
     "hibernalherbs:blend_weakness_smoked",
     "hibernalherbs:blend_blindness_smoked",
     "hibernalherbs:blend_regen_slow_smoked",
-    "hibernalherbs:blend_regen_speed_weak_smoked"
+    "hibernalherbs:blend_regen_speed_weak_smoked",
+
+    {
+      "required": false,
+      "id": "hibernalherbs:blend_glowing_smoked"
+    }
   ]
 }

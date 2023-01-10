@@ -56,6 +56,10 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration, smokedMultiplier));
         } else if (player.getMainHandItem().is(itemRegistry.SMOKED_INCINERATING_BLEND.get())) { }
 
+        else if (player.getMainHandItem().is(itemRegistry.SMOKED_BLOOMING_BLEND.get())) {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedGlowingDuration, smokedMultiplier));
+        }
+
         else if (player.getMainHandItem().is(itemRegistry.SMOKED_CONFLICTING_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedHealthDuration, smokedMultiplier));
@@ -103,6 +107,10 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
                 target.setSecondsOnFire(smokedSecondsOnFire - 2);
             }
 
+            else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_BLOOMING_BLEND.get())) {
+                target.addEffect(new MobEffectInstance(MobEffects.GLOWING, smokedGlowingDuration - 60, smokedMultiplier - 1));
+            }
+
             else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_CONFLICTING_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration - 80, smokedMultiplier - 1));
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration - 60, smokedMultiplier - 1));
@@ -146,6 +154,8 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
             tooltip.add(Component.translatable("text.hibernalherbs.blend_weakness").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
         } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_SHADED_BLEND.get())) {
             tooltip.add(Component.translatable("text.hibernalherbs.blend_blindness").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_BLOOMING_BLEND.get())) {
+            tooltip.add(Component.translatable("text.hibernalherbs.blend_glowing").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
         } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_CONFLICTING_BLEND.get())) {
             tooltip.add(Component.translatable("text.hibernalherbs.blend_regen_slow").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
         } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_ALTERNATIVE_BLEND.get())) {

@@ -68,6 +68,8 @@ public class HibernalHerbsForge {
             nonNullList.add(0, blockRegistry.MYQUESTE_PLANKS.get().asItem().getDefaultInstance());
 
             // Smoked
+            nonNullList.add(0, itemRegistry.SMOKED_BLOOMING_BLEND.get().getDefaultInstance());
+
             nonNullList.add(0, itemRegistry.SMOKED_ALTERNATIVE_BLEND.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.SMOKED_CONFLICTING_BLEND.get().getDefaultInstance());
 
@@ -84,6 +86,8 @@ public class HibernalHerbsForge {
             nonNullList.add(0, itemRegistry.SMOKED_REGENERATIVE_BLEND.get().getDefaultInstance());
 
             // Non-Smoked
+            nonNullList.add(0, itemRegistry.BLOOMING_BLEND.get().getDefaultInstance());
+
             nonNullList.add(0, itemRegistry.ALTERNATIVE_BLEND.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.CONFLICTING_BLEND.get().getDefaultInstance());
 

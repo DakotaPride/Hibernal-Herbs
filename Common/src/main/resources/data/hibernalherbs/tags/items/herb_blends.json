@@ -14,6 +14,11 @@
     "hibernalherbs:blend_regen_slow",
     "hibernalherbs:blend_regen_speed_weak",
 
-    "#hibernalherbs:smoked_blends"
+    "#hibernalherbs:smoked_blends",
+
+    {
+      "required": false,
+      "id": "hibernalherbs:blend_glowing"
+    }
   ]
 }

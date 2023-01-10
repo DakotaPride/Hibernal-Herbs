@@ -133,6 +133,10 @@
   "block.hibernalherbs.bloforia": "Bloforia",
   "item.hibernalherbs.pounded_bloforia": "Pounded Bloforia",
   "block.hibernalherbs.potted_bloforia": "Potted Bloforia",
+  "item.hibernalherbs.blend_glowing": "Blooming Blend",
+  "item.hibernalherbs.blend_glowing_smoked": "Blooming Blend",
+
+  "text.hibernalherbs.blend_glowing": "There Shall Be Light!",
 
   "itemGroup.hibernal_herbs": "Hibernal Herbs - Misc",
   "itemGroup.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
