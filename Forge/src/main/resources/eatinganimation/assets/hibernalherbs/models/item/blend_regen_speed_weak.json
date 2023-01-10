@@ -9,21 +9,21 @@
                 "eatinganimation:eating": 1,
                 "eatinganimation:eat": 0.35
             },
-            "model": "eatinganimation:item/blend_regen_slow_weak_eating_0"
+            "model": "eatinganimation:item/blend_regen_speed_weak_eating_0"
         },
         {
             "predicate": {
                 "eatinganimation:eating": 1,
                 "eatinganimation:eat": 0.70
             },
-            "model": "eatinganimation:item/blend_regen_slow_weak_eating_1"
+            "model": "eatinganimation:item/blend_regen_speed_weak_eating_1"
         },
         {
             "predicate": {
                 "eatinganimation:eating": 1,
                 "eatinganimation:eat": 0.90
             },
-            "model": "eatinganimation:item/blend_regen_slow_weak_eating_2"
+            "model": "eatinganimation:item/blend_regen_speed_weak_eating_2"
         }
     ]
 }

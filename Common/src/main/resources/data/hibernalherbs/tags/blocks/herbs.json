@@ -14,6 +14,11 @@
     "hibernalherbs:punuel",
     "hibernalherbs:essitte",
     "hibernalherbs:thyocielle",
-    "hibernalherbs:fennkystral"
+    "hibernalherbs:fennkystral",
+
+    {
+      "required": false,
+      "id": "hibernalherbs:bloforia"
+    }
   ]
 }

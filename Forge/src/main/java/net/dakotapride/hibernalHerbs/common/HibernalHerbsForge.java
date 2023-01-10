@@ -113,6 +113,8 @@ public class HibernalHerbsForge {
 
         @Override
         public void fillItemList(NonNullList<ItemStack> nonNullList) {
+            nonNullList.add(0, itemRegistry.POUNDED_BLOFORIA.get().getDefaultInstance());
+
             nonNullList.add(0, itemRegistry.POUNDED_FENNKYSTRAL.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_THYOCIELLE.get().getDefaultInstance());
 
@@ -140,6 +142,8 @@ public class HibernalHerbsForge {
 
         @Override
         public void fillItemList(NonNullList<ItemStack> nonNullList) {
+            nonNullList.add(0, blockRegistry.BLOFORIA.get().asItem().getDefaultInstance());
+
             nonNullList.add(0, blockRegistry.FENNKYSTRAL.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.THYOCIELLE.get().asItem().getDefaultInstance());
 
@@ -203,6 +207,8 @@ public class HibernalHerbsForge {
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.THYOCIELLE.getId(), blockRegistry.POTTED_THYOCIELLE);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.FENNKYSTRAL.getId(), blockRegistry.POTTED_FENNKYSTRAL);
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.BLOFORIA.getId(), blockRegistry.POTTED_BLOFORIA);
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.MYQUESTE_SAPLING.getId(), blockRegistry.POTTED_MYQUESTE_SAPLING);
 

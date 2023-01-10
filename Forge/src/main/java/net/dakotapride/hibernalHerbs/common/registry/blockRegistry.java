@@ -75,6 +75,11 @@ public class blockRegistry {
             () -> new FlowerBlock(MobEffects.REGENERATION, 240,
                     BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
 
+    // Compat Herbs (Forge)
+    public static final RegistryObject<Block> BLOFORIA = registerBlock("bloforia",
+            () -> new FlowerBlock(MobEffects.NIGHT_VISION, 180,
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
+
     public static final RegistryObject<Block> POTTED_ROSEMARY = BLOCKS.register("potted_rosemary",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.ROSEMARY,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
@@ -122,6 +127,11 @@ public class blockRegistry {
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_FENNKYSTRAL = BLOCKS.register("potted_fennkystral",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.FENNKYSTRAL,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
+
+    // Compat (Potted) Herbs (Forge)
+    public static final RegistryObject<Block> POTTED_BLOFORIA = BLOCKS.register("potted_bloforia",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.BLOFORIA,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     public static final RegistryObject<Block> MYQUESTE_LOG = registerBlock("myqueste_log",

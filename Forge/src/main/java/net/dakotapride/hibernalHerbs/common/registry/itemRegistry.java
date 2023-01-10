@@ -76,6 +76,11 @@ public class itemRegistry implements FoodComponentList {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .fast().nutrition(8).saturationMod(6f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
 
+    // Compat (Pounded) Herbs (Forge)
+    public static final RegistryObject<Item> POUNDED_BLOFORIA = ITEMS.register("pounded_bloforia",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+
     public static final RegistryObject<Item> REGENERATIVE_BLEND = ITEMS.register("blend_regeneration",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                     .effect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build()).tab(HibernalHerbsForge.HIBERNAL_HERBS)));

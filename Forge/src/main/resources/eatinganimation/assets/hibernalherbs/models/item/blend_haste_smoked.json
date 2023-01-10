@@ -1,7 +1,7 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "eatinganimation:item/smoked/dashing_blend"
+        "layer0": "hibernalherbs:item/smoked/dashing_blend"
     },
     "overrides": [
         {
@@ -23,7 +23,7 @@
                 "eatinganimation:eating": 1,
                 "eatinganimation:eat": 0.90
             },
-            "model": "hibernalherbs:item/smoked_blend_haste_eating_2"
+            "model": "eatinganimation:item/smoked_blend_haste_eating_2"
         }
     ]
 }

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "required": false,
+      "id": "hibernalherbs:bloforia"
+    },
+    {
+      "required": false,
+      "id": "hibernalherbs:pounded_bloforia"
+    }
+  ]
+}

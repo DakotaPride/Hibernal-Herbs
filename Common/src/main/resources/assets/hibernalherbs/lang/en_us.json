@@ -130,6 +130,10 @@
   "advancements.hibernalherbs.conflicting_blend.description": "Obtain An Herb Blend That Probably Shouldn't Exist",
 
   // Forge
+  "block.hibernalherbs.bloforia": "Bloforia",
+  "item.hibernalherbs.pounded_bloforia": "Pounded Bloforia",
+  "block.hibernalherbs.potted_bloforia": "Potted Bloforia",
+
   "itemGroup.hibernal_herbs": "Hibernal Herbs - Misc",
   "itemGroup.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
   "itemGroup.herbs": "Hibernal Herbs - Herbs"

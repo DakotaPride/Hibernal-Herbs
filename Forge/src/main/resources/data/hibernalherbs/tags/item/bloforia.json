@@ -1,14 +1,10 @@
 {
+  "replace": false,
   "values": [
     "hibernalherbs:tarragon",
     "hibernalherbs:rosemary",
     "hibernalherbs:chervil",
     "hibernalherbs:thyocielle",
-    "hibernalherbs:fennkystral",
-
-    {
-      "required": false,
-      "id": "hibernalherbs:bloforia"
-    }
+    "hibernalherbs:fennkystral"
   ]
 }

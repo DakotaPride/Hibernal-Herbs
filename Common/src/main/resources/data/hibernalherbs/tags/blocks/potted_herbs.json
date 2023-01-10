@@ -14,6 +14,11 @@
     "hibernalherbs:potted_punuel",
     "hibernalherbs:potted_essitte",
     "hibernalherbs:potted_thyocielle",
-    "hibernalherbs:potted_fennkystral"
+    "hibernalherbs:potted_fennkystral",
+
+    {
+      "required": false,
+      "id": "hibernalherbs:potted_bloforia"
+    }
   ]
 }
