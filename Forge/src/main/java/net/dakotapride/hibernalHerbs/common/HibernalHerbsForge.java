@@ -3,7 +3,6 @@ package net.dakotapride.hibernalHerbs.common;
 import net.dakotapride.hibernalHerbs.client.PackLoader;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsConfigured;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsPlaced;
-import net.dakotapride.hibernalHerbs.common.lootModifiers.AddLootModifiers;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.dakotapride.hibernalHerbs.platform.Services;
@@ -175,7 +174,6 @@ public class HibernalHerbsForge {
         blockRegistry.register(eventBus);
         HibernalHerbsConfigured.register(eventBus);
         HibernalHerbsPlaced.register(eventBus);
-        AddLootModifiers.register(eventBus);
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PackLoader::onAddPackFinders);
 
