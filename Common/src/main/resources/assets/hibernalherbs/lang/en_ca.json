@@ -128,6 +128,8 @@
   "advancements.hibernalherbs.resource_herb.description": "Obtain An Herb That Probably Shouldn't Exist",
   "advancements.hibernalherbs.conflicting_blend.title": "Hold On Now, Don't Do That",
   "advancements.hibernalherbs.conflicting_blend.description": "Obtain An Herb Blend That Probably Shouldn't Exist",
+  "advancements.hibernalherbs.consume_fire_blend_at_world_height.title": "Have You Got Wax Wings?",
+  "advancements.hibernalherbs.consume_fire_blend_at_world_height.description": "Consume An Incinerating Blend While At World Height",
 
   // Forge
   "block.hibernalherbs.bloforia": "Bloforia",

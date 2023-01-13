@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_herb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:bloforia"
+            ]
+          }
+        ]
+      }
+    },
+    "has_pounded_herb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:pounded_bloforia"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": [
+          "hibernalherbs:growth/bloforia_from_pounded_bloforia"
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_herb",
+      "has_pounded_herb",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:pounded/pounded_bloforia"
+    ]
+  }
+}

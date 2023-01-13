@@ -1,0 +1,54 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:blend_fire"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.consume_fire_blend_at_world_height.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.consume_fire_blend_at_world_height.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:husbandry/attack_with_herb_blend",
+  "criteria": {
+    "blendFireOfAnyKind": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "position": {
+                  "y": {
+                    "min": 319
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "item": {
+          "items": [
+            "hibernalherbs:blend_fire",
+            "hibernalherbs:blend_fire_smoked"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "blendFireOfAnyKind"
+    ]
+  ],
+  "rewards": {
+    "experience": 30
+  }
+}
