@@ -28,9 +28,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": [
-          "hibernalherbs:growth/bloforia_from_pounded_bloforia"
-        ]
+        "recipe": "hibernalherbs:growth/bloforia_from_pounded_bloforia"
       }
     }
   },

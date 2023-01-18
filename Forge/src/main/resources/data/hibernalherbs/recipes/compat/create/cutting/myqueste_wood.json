@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "create"
+              }
+            },
+            {
+              "type": "forge:false"
+            }
+          ]
+        }
+      ],
+      "recipes": {
+        "type": "create:cutting",
+        "ingredients": [
+          {
+            "item": "hibernalherbs:myqueste_wood"
+          }
+        ],
+        "processingTime": 50,
+        "results": [
+          {
+            "item": "hibernalherbs:stripped_myqueste_wood"
+          }
+        ]
+      }
+    }
+  ]
+}

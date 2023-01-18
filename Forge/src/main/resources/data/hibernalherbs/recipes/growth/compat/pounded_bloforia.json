@@ -1,36 +1,64 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#A",
-    "XX"
-  ],
-  "key": {
-    "#": {
-      "item": "staywarmtogether:bloomlight"
-    },
-    "A": {
-      "item": "hibernalherbs:herb_fertilizer"
-    },
-    "X": [
-      {
-        "item": "hibernalherbs:pounded_tarragon"
-      },
-      {
-        "item": "hibernalherbs:pounded_rosemary"
-      },
-      {
-        "item": "hibernalherbs:pounded_chervil"
-      },
-      {
-        "item": "hibernalherbs:pounded_thyocielle"
-      },
-      {
-        "item": "hibernalherbs:pounded_fennkystral"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "staywarmtogether"
+              }
+            },
+            {
+              "type": "forge:item_exists",
+              "item": "staywarmtogether:bloomlight"
+            },
+            {
+              "type": "forge:false"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "#A",
+          "XX"
+        ],
+        "key": {
+          "#": {
+            "item": "staywarmtogether:bloomlight"
+          },
+          "A": {
+            "item": "hibernalherbs:herb_fertilizer"
+          },
+          "X": [
+            {
+              "item": "hibernalherbs:pounded_tarragon"
+            },
+            {
+              "item": "hibernalherbs:pounded_rosemary"
+            },
+            {
+              "item": "hibernalherbs:pounded_chervil"
+            },
+            {
+              "item": "hibernalherbs:pounded_thyocielle"
+            },
+            {
+              "item": "hibernalherbs:pounded_fennkystral"
+            }
+          ]
+        },
+        "result": {
+          "item": "hibernalherbs:pounded_bloforia",
+          "count": 2
+        }
       }
-    ]
-  },
-  "result": {
-    "item": "hibernalherbs:pounded_bloforia",
-    "count": 2
-  }
+    }
+  ]
 }
