@@ -26,6 +26,8 @@ import java.util.List;
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class HibernalHerbsMod implements ModInitializer {
+	// v0.5.2
+
 
 	public static class groupManager {
 		public static ItemGroup HIBERNAL_HERBS = FabricItemGroupBuilder.create(
