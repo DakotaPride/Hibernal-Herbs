@@ -21,26 +21,94 @@
         ]
       }
     },
-    "has_the_recipe": {
+    "ceillis": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": [
-          "hibernalherbs:growth/ceillis_from_pounded_ceillis",
-          "hibernalherbs:growth/chamomile_from_pounded_chamomile",
-          "hibernalherbs:growth/chervil_from_pounded_chervil",
-          "hibernalherbs:growth/chives_from_pounded_chives",
-          "hibernalherbs:growth/essitte_from_pounded_essitte",
-          "hibernalherbs:growth/resource_dependant/fennkystral_from_pounded_fennkystral",
-          "hibernalherbs:growth/fennsel_from_pounded_fennsel",
-          "hibernalherbs:growth/marjoram_from_pounded_marjoram",
-          "hibernalherbs:growth/punuel_from_pounded_punuel",
-          "hibernalherbs:growth/rosemary_from_pounded_rosemary",
-          "hibernalherbs:growth/sorrel_from_pounded_sorrel",
-          "hibernalherbs:growth/tarragon_from_pounded_tarragon",
-          "hibernalherbs:growth/thyme_from_pounded_thyme",
-          "hibernalherbs:growth/resource_dependant/thyocielle_from_pounded_thyocielle",
-          "hibernalherbs:growth/verbena_from_pounded_verbena"
-        ]
+        "recipe": "hibernalherbs:growth/ceillis_from_pounded_ceillis"
+      }
+    },
+    "chamomile": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/chamomile_from_pounded_chamomile"
+      }
+    },
+    "chervil": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/chervil_from_pounded_chervil"
+      }
+    },
+    "chives": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/chives_from_pounded_chives"
+      }
+    },
+    "essitte": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/essitte_from_pounded_essitte"
+      }
+    },
+    "fennkystral": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/fennkystral_from_pounded_fennkystral"
+      }
+    },
+    "fennsel": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/fennsel_from_pounded_fennsel"
+      }
+    },
+    "marjoram": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/marjoram_from_pounded_marjoram"
+      }
+    },
+    "punuel": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/punuel_from_pounded_punuel"
+      }
+    },
+    "rosemary": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/rosemary_from_pounded_rosemary"
+      }
+    },
+    "sorrel": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/sorrel_from_pounded_sorrel"
+      }
+    },
+    "tarragon": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/tarragon_from_pounded_tarragon"
+      }
+    },
+    "thyme": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/thyme_from_pounded_thyme"
+      }
+    },
+    "thyocielle": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/thyocielle_from_pounded_thyocielle"
+      }
+    },
+    "verbena": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:growth/verbena_from_pounded_verbena"
       }
     }
   },
@@ -48,9 +116,25 @@
     [
       "has_herb",
       "has_pounded_herb",
-      "has_the_recipe"
+
+      "ceillis",
+      "chamomile",
+      "chervil",
+      "chives",
+      "essitte",
+      "fennkystral",
+      "fennsel",
+      "marjoram",
+      "punuel",
+      "rosemary",
+      "sorrel",
+      "tarragon",
+      "thyme",
+      "thyocielle",
+      "verbena"
     ]
   ],
+
   "rewards": {
     "recipes": [
       "hibernalherbs:pounded/pounded_ceillis",
