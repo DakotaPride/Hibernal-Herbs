@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": ["farmersdelight"]
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "hibernalherbs:dye/purple"
+    }
+  ],
+  "result": [
+    {
+      "item": "purple_dye",
+      "count": 2
+    },
+    {
+      "item": "purple_dye",
+	  "chance": 0.25,
+      "count": 1
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

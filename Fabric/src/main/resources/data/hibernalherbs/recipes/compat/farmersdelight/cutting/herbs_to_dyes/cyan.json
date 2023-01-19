@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": ["farmersdelight"]
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "hibernalherbs:dye/cyan"
+    }
+  ],
+  "result": [
+    {
+      "item": "cyan_dye",
+      "count": 2
+    },
+    {
+      "item": "cyan_dye",
+	  "chance": 0.25,
+      "count": 1
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

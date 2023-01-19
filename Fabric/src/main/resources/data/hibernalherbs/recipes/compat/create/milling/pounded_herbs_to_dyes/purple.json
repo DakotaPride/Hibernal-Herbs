@@ -1,0 +1,26 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": ["create"]
+    }
+  ],
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "tag": "hibernalherbs:dye/pounded/purple"
+    }
+  ],
+  "results": [
+    {
+      "item": "purple_dye",
+      "count": 1
+    },
+    {
+      "item": "purple_dye",
+	  "chance": 0.10,
+      "count": 1
+    }
+  ],
+  "processingTime": 50
+}
