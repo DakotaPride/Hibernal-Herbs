@@ -1,0 +1,46 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "farmersdelight"
+              }
+            },
+            {
+              "type": "forge:false"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "tag": "hibernalherbs:dye/green"
+          }
+        ],
+        "result": [
+          {
+            "item": "green_dye",
+            "count": 2
+          },
+          {
+            "item": "green_dye",
+            "chance": 0.25,
+            "count": 1
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}
