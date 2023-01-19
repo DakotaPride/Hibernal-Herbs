@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "create"
+              }
+            },
+            {
+              "type": "forge:false"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "create:milling",
+        "ingredients": [
+          {
+            "tag": "hibernalherbs:dye/pounded/green"
+          }
+        ],
+        "results": [
+          {
+            "item": "green_dye",
+            "count": 1
+          },
+          {
+            "item": "green_dye",
+            "chance": 0.10,
+            "count": 1
+          }
+        ],
+        "processingTime": 50
+      }
+    }
+  ]
+}
