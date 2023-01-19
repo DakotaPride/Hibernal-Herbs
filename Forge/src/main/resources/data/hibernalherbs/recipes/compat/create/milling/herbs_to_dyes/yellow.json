@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "create"
+              }
+            },
+            {
+              "type": "forge:false"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "create:milling",
+        "ingredients": [
+          {
+            "tag": "hibernalherbs:dye/yellow"
+          }
+        ],
+        "results": [
+          {
+            "item": "yellow_dye",
+            "count": 2
+          },
+          {
+            "item": "yellow_dye",
+            "chance": 0.25,
+            "count": 1
+          }
+        ],
+        "processingTime": 50
+      }
+    }
+  ]
+}
