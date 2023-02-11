@@ -22,10 +22,28 @@ public class itemRegistry implements FoodComponentList {
 
     public static final RegistryObject<Item> HERB_FERTILIZER = ITEMS.register("herb_fertilizer",
             () -> new Item(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
-    public static final RegistryObject<Item> POUCH = ITEMS.register("pouch",
+
+
+    // Refined Pouches/Canisters
+    public static final RegistryObject<Item> POUCH_SCRATCHED = ITEMS.register("pouch_scratched",
+            () -> new HerbPouchItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 64));
+    public static final RegistryObject<Item> CANISTER_IRON = ITEMS.register("canister_iron",
+            () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 128));
+    public static final RegistryObject<Item> POUCH_STITCHED = ITEMS.register("pouch_stitched",
+            () -> new HerbPouchItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 192));
+    public static final RegistryObject<Item> CANISTER_AMETHYST = ITEMS.register("canister_amethyst",
+            () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 256));
+    public static final RegistryObject<Item> POUCH_PROPER = ITEMS.register("pouch_proper",
             () -> new HerbPouchItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 256));
-    public static final RegistryObject<Item> CANISTER = ITEMS.register("canister",
+    public static final RegistryObject<Item> CANISTER_DIAMOND = ITEMS.register("canister_diamond",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 384));
+
+
+    // Legacy
+    public static final RegistryObject<Item> POUCH = ITEMS.register("pouch",
+            () -> new HerbPouchItem(new Item.Properties().stacksTo(1), 256));
+    public static final RegistryObject<Item> CANISTER = ITEMS.register("canister",
+            () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1), 384));
 
     public static final RegistryObject<Item> POUNDED_ROSEMARY = ITEMS.register("pounded_rosemary",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()

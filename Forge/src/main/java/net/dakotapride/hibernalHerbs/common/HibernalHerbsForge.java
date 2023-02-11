@@ -38,6 +38,17 @@ public class HibernalHerbsForge {
     public static final TagKey<Item> POUNDED_HERBS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "pounded_herbs"));
     public static final TagKey<Item> BLENDS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "herb_blends"));
 
+    public static final TagKey<Item> POUCHES_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "pouches"));
+    public static final TagKey<Item> CANISTERS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "canisters"));
+
+    public static final TagKey<Item> SCRATCHED_HERBS = ItemTags.create(new ResourceLocation(MOD_ID, "pouches/scratched"));
+    public static final TagKey<Item> STITCHED_HERBS = ItemTags.create(new ResourceLocation(MOD_ID, "pouches/stitched"));
+    public static final TagKey<Item> PROPER_HERBS = ItemTags.create(new ResourceLocation(MOD_ID, "pouches/proper"));
+
+    public static final TagKey<Item> IRON_BLENDS = ItemTags.create(new ResourceLocation(MOD_ID, "blends/iron"));
+    public static final TagKey<Item> AMETHYST_BLENDS = ItemTags.create(new ResourceLocation(MOD_ID, "blends/amethyst"));
+    public static final TagKey<Item> DIAMOND_BLENDS = ItemTags.create(new ResourceLocation(MOD_ID, "blends/diamond"));
+
 
     public static final CreativeModeTab HIBERNAL_HERBS = new CreativeModeTab("hibernal_herbs") {
         @Override
@@ -103,8 +114,13 @@ public class HibernalHerbsForge {
             nonNullList.add(0, itemRegistry.VIRULENT_BLEND.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.REGENERATIVE_BLEND.get().getDefaultInstance());
 
-            nonNullList.add(0, itemRegistry.CANISTER.get().getDefaultInstance());
-            nonNullList.add(0, itemRegistry.POUCH.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.CANISTER_IRON.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.CANISTER_AMETHYST.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.CANISTER_DIAMOND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.POUCH_SCRATCHED.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.POUCH_STITCHED.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.POUCH_PROPER.get().getDefaultInstance());
+
             nonNullList.add(0, itemRegistry.HERB_FERTILIZER.get().getDefaultInstance());
         }
     };
