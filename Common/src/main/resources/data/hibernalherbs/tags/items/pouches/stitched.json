@@ -9,6 +9,16 @@
     "hibernalherbs:chervil",
     "hibernalherbs:chives",
     "hibernalherbs:sorrel",
-    "hibernalherbs:verbena"
+    "hibernalherbs:verbena",
+
+    "hibernalherbs:pounded_chamomile",
+    "hibernalherbs:pounded_marjoram",
+    "hibernalherbs:pounded_rosemary",
+    "hibernalherbs:pounded_thyme",
+    "hibernalherbs:pounded_tarragon",
+    "hibernalherbs:pounded_chervil",
+    "hibernalherbs:pounded_chives",
+    "hibernalherbs:pounded_sorrel",
+    "hibernalherbs:pounded_verbena"
   ]
 }

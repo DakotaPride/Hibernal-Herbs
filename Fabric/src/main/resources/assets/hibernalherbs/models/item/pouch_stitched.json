@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "hibernalherbs:item/pouch/stitched"
+    "layer0": "hibernalherbs:item/pouch"
   }
 }

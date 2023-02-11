@@ -77,9 +77,14 @@
 
   "item.hibernalherbs.herb_fertilizer": "Herb Fertilizer",
 
-  "item.hibernalherbs.pouch_scratched": "Scratched Pouch",
-  "item.hibernalherbs.pouch_stitched": "Stitched Pouch",
-  "item.hibernalherbs.pouch_proper": "Proper Pouch",
+  "item.hibernalherbs.pouch_scratched": "Pouch",
+  "item.hibernalherbs.pouch_stitched": "Pouch",
+  "item.hibernalherbs.pouch_proper": "Pouch",
+  "item.hibernalherbs.pouch_condition": "Condition [Hold Shift]",
+
+  "item.hibernalherbs.scratched": "  - Scratched",
+  "item.hibernalherbs.stitched": "  - Stitched",
+  "item.hibernalherbs.proper": "  - Proper",
 
   "item.hibernalherbs.canister_iron": "Iron Canister",
   "item.hibernalherbs.canister_amethyst": "Amethyst Canister",

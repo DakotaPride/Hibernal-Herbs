@@ -5,6 +5,12 @@
     "hibernalherbs:marjoram",
     "hibernalherbs:rosemary",
     "hibernalherbs:thyme",
-    "hibernalherbs:tarragon"
+    "hibernalherbs:tarragon",
+
+    "hibernalherbs:pounded_chamomile",
+    "hibernalherbs:pounded_marjoram",
+    "hibernalherbs:pounded_rosemary",
+    "hibernalherbs:pounded_thyme",
+    "hibernalherbs:pounded_tarragon"
   ]
 }

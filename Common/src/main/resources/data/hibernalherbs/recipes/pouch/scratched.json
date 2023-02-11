@@ -1,16 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "XA",
-    "##"
+    "X#X",
+    "ATA",
+    "###"
   ],
   "key": {
     "X": [
       {
-        "tag": "hibernalherbs:herbs"
-      },
-      {
-        "tag": "hibernalherbs:pounded_herbs"
+        "tag": "hibernalherbs:pouches/scratched"
       }
     ],
     "A": {
@@ -18,6 +16,9 @@
     },
     "#": {
       "item": "minecraft:cyan_wool"
+    },
+    "T": {
+      "item": "minecraft:iron_ingot"
     }
   },
   "result": {

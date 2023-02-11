@@ -167,6 +167,16 @@ public class AbstractPouchItem extends BundleItem {
 
     @Override
     public void appendTooltip(@Nonnull ItemStack stack, @Nonnull World level, List<Text> components, @Nonnull TooltipContext flag) {
+        components.add(Text.translatable("item.hibernalherbs.pouch_condition").formatted(Formatting.GRAY));
+
+        if (stack.isOf(ItemInit.SCRATCHED_POUCH) && Screen.hasShiftDown()) {
+            components.add(Text.translatable("item.hibernalherbs.scratched").formatted(Formatting.GRAY));
+        } else if (stack.isOf(ItemInit.STITCHED_POUCH) && Screen.hasShiftDown()) {
+            components.add(Text.translatable("item.hibernalherbs.stitched").formatted(Formatting.GRAY));
+        } else if (stack.isOf(ItemInit.PROPER_POUCH) && Screen.hasShiftDown()) {
+            components.add(Text.translatable("item.hibernalherbs.proper").formatted(Formatting.GRAY));
+        }
+
         components.add((Text.translatable("item.minecraft.bundle.fullness", getContentWeight(stack, 64), size)).formatted(Formatting.GRAY));
     }
 
