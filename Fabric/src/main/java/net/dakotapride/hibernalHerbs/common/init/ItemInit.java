@@ -1,8 +1,8 @@
 package net.dakotapride.hibernalHerbs.common.init;
 
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
-import net.dakotapride.hibernalHerbs.common.item.AbstractCanisterItem;
-import net.dakotapride.hibernalHerbs.common.item.AbstractPouchItem;
+import net.dakotapride.hibernalHerbs.common.item.canister.AbstractCanisterItem;
+import net.dakotapride.hibernalHerbs.common.item.pouch.AbstractPouchItem;
 import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
 import net.dakotapride.hibernalHerbs.common.item.SmokedHerbBlendItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -80,11 +80,6 @@ public class ItemInit {
 
     public static Item HERB_FERTILIZER = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static AbstractPouchItem POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1)
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 256);
-    public static AbstractCanisterItem CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 384);
-
     // Smoked Herb Blends (Fabric)
     public static SmokedHerbBlendItem SMOKED_REGENERATIVE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_REGENERATIVE_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
@@ -115,6 +110,28 @@ public class ItemInit {
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static SmokedHerbBlendItem SMOKED_ALTERNATIVE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ALTERNATIVE_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+
+    // Refined Pouches/Canisters
+
+    public static AbstractPouchItem SCRATCHED_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1)
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 64);
+    public static AbstractCanisterItem IRON_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 128);
+
+    public static AbstractPouchItem STITCHED_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1)
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 192);
+    public static AbstractCanisterItem AMETHYST_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 256);
+
+    public static AbstractPouchItem PROPER_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1)
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 256);
+    public static AbstractCanisterItem DIAMOND_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 384);
+
+    // Legacy
+
+    public static AbstractPouchItem POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 256);
+    public static AbstractCanisterItem CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1), 384);
 
     public static void init () {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
@@ -162,7 +179,19 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_slow_smoked"), SMOKED_CONFLICTING_BLEND);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak_smoked"), SMOKED_ALTERNATIVE_BLEND);
 
+        // Refined Pouches/Canisters
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch_scratched"), SCRATCHED_POUCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch_stitched"), STITCHED_POUCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch_proper"), PROPER_POUCH);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "canister_iron"), IRON_CANISTER);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "canister_amethyst"), AMETHYST_CANISTER);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "canister_diamond"), DIAMOND_CANISTER);
+
+
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer"), HERB_FERTILIZER);
+
+        // Legacy
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "canister"), CANISTER);
     }

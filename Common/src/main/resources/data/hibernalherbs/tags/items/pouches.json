@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "hibernalherbs:pouch"
+    "hibernalherbs:pouch_scratched",
+    "hibernalherbs:pouch_stitched",
+    "hibernalherbs:pouch_proper"
   ]
 }

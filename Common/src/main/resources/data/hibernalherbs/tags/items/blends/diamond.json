@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:blend_regeneration",
+    "hibernalherbs:blend_poison",
+    "hibernalherbs:blend_slowness",
+    "hibernalherbs:blend_mining_fatigue",
+    "hibernalherbs:blend_haste",
+    "hibernalherbs:blend_speed",
+    "hibernalherbs:blend_fire",
+    "hibernalherbs:blend_wither",
+    "hibernalherbs:blend_night_vision"
+  ]
+}

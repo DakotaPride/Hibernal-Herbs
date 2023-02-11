@@ -10,15 +10,10 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -35,8 +30,13 @@ public class HibernalHerbsMod implements ModInitializer {
 				.icon(() -> new ItemStack(BlockInit.MYQUESTE_LOG.asItem()))
 				.appendItems(itemStacks -> {
 					itemStacks.add(new ItemStack(ItemInit.HERB_FERTILIZER));
-					itemStacks.add(new ItemStack(ItemInit.POUCH));
-					itemStacks.add(new ItemStack(ItemInit.CANISTER));
+
+					itemStacks.add(new ItemStack(ItemInit.SCRATCHED_POUCH));
+					itemStacks.add(new ItemStack(ItemInit.STITCHED_POUCH));
+					itemStacks.add(new ItemStack(ItemInit.PROPER_POUCH));
+					itemStacks.add(new ItemStack(ItemInit.IRON_CANISTER));
+					itemStacks.add(new ItemStack(ItemInit.AMETHYST_CANISTER));
+					itemStacks.add(new ItemStack(ItemInit.DIAMOND_CANISTER));
 
 					itemStacks.add(new ItemStack(ItemInit.REGENERATIVE_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.VIRULENT_BLEND));

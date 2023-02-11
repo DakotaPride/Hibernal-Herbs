@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:chamomile",
+    "hibernalherbs:marjoram",
+    "hibernalherbs:rosemary",
+    "hibernalherbs:thyme",
+    "hibernalherbs:tarragon",
+    "hibernalherbs:chervil",
+    "hibernalherbs:chives",
+    "hibernalherbs:sorrel",
+    "hibernalherbs:verbena"
+  ]
+}

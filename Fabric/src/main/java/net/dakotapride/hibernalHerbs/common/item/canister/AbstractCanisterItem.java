@@ -1,4 +1,4 @@
-package net.dakotapride.hibernalHerbs.common.item;
+package net.dakotapride.hibernalHerbs.common.item.canister;
 
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.util;

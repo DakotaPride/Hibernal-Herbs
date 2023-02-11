@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:blend_regeneration",
+    "hibernalherbs:blend_poison",
+    "hibernalherbs:blend_slowness"
+  ]
+}

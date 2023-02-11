@@ -1,9 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "X#X",
-    "# #",
-    "###"
+    "XA",
+    "##"
   ],
   "key": {
     "X": [
@@ -14,12 +13,15 @@
         "tag": "hibernalherbs:pounded_herbs"
       }
     ],
+    "A": {
+      "item": "minecraft:string"
+    },
     "#": {
-      "item": "minecraft:glass"
+      "item": "minecraft:cyan_wool"
     }
   },
   "result": {
-    "item": "hibernalherbs:canister",
+    "item": "hibernalherbs:pouch_scratched",
     "count": 1
   }
 }

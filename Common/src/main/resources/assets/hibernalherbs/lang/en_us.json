@@ -76,8 +76,17 @@
   "item.hibernalherbs.blend_regen_speed_weak_smoked": "Alternative Blend",
 
   "item.hibernalherbs.herb_fertilizer": "Herb Fertilizer",
-  "item.hibernalherbs.pouch": "Herb Pouch",
-  "item.hibernalherbs.canister": "Blend Canister",
+
+  "item.hibernalherbs.pouch_scratched": "Scratched Pouch",
+  "item.hibernalherbs.pouch_stitched": "Stitched Pouch",
+  "item.hibernalherbs.pouch_proper": "Proper Pouch",
+
+  "item.hibernalherbs.canister_iron": "Iron Canister",
+  "item.hibernalherbs.canister_amethyst": "Amethyst Canister",
+  "item.hibernalherbs.canister_diamond": "Diamond Canister",
+
+  "item.hibernalherbs.pouch": "Herb Pouch (Legacy)",
+  "item.hibernalherbs.canister": "Blend Canister (Legacy)",
 
   "block.hibernalherbs.potted_myqueste_sapling": "Potted Myqueste Sapling",
   "block.hibernalherbs.myqueste_log": "Myqueste Log",
