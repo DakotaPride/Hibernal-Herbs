@@ -1,6 +1,8 @@
 package net.dakotapride.hibernalHerbs.common.init;
 
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
+import net.dakotapride.hibernalHerbs.common.item.HerbFertilizerItem;
+import net.dakotapride.hibernalHerbs.common.item.HerbHumusItem;
 import net.dakotapride.hibernalHerbs.common.item.canister.AbstractCanisterItem;
 import net.dakotapride.hibernalHerbs.common.item.pouch.AbstractPouchItem;
 import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
@@ -78,7 +80,9 @@ public class ItemInit {
     public static HerbBlendItem ALTERNATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ALTERNATIVE_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static Item HERB_FERTILIZER = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static HerbFertilizerItem HERB_FERTILIZER = new HerbFertilizerItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+
+    public static HerbHumusItem HERB_HUMUS = new HerbHumusItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     // Smoked Herb Blends (Fabric)
     public static SmokedHerbBlendItem SMOKED_REGENERATIVE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_REGENERATIVE_BLEND)
@@ -190,6 +194,8 @@ public class ItemInit {
 
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer"), HERB_FERTILIZER);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus"), HERB_HUMUS);
 
         // Legacy
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);

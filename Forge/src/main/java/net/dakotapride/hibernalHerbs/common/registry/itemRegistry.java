@@ -3,9 +3,7 @@ package net.dakotapride.hibernalHerbs.common.registry;
 import net.dakotapride.hibernalHerbs.common.Constants;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
-import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
-import net.dakotapride.hibernalHerbs.common.item.HerbPouchItem;
-import net.dakotapride.hibernalHerbs.common.item.SmokedHerbBlendItem;
+import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -21,7 +19,9 @@ public class itemRegistry implements FoodComponentList {
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
 
     public static final RegistryObject<Item> HERB_FERTILIZER = ITEMS.register("herb_fertilizer",
-            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+    public static final RegistryObject<Item> HERB_HUMUS = ITEMS.register("herb_humus",
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
 
     // Refined Pouches/Canisters
