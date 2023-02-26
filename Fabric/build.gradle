@@ -13,6 +13,8 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":Common")
+
+    modImplementation "de.siphalor:nbtcrafting-1.19:2.2.3+mc1.19"
 }
 
 loom {
@@ -57,6 +59,14 @@ publishing {
     }
 
     repositories {
+
+        maven {
+            url "https://maven.siphalor.de/"
+        }
+        maven {
+            url "https://jitpack.io"
+        }
+
         maven {
             url "file://" + System.getenv("local_maven")
         }
