@@ -20,8 +20,53 @@ public class itemRegistry implements FoodComponentList {
 
     public static final RegistryObject<Item> HERB_FERTILIZER = ITEMS.register("herb_fertilizer",
             () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+
+    public static final RegistryObject<Item> HERB_FERTILIZER_OAK = ITEMS.register("herb_fertilizer_oak",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_FERTILIZER_BIRCH = ITEMS.register("herb_fertilizer_birch",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_FERTILIZER_DARK_OAK = ITEMS.register("herb_fertilizer_dark_oak",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_FERTILIZER_ACACIA = ITEMS.register("herb_fertilizer_acacia",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_FERTILIZER_JUNGLE = ITEMS.register("herb_fertilizer_jungle",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_FERTILIZER_SPRUCE = ITEMS.register("herb_fertilizer_spruce",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_FERTILIZER_MANGROVE = ITEMS.register("herb_fertilizer_mangrove",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_FERTILIZER_CRIMSON = ITEMS.register("herb_fertilizer_crimson",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_FERTILIZER_WARPED = ITEMS.register("herb_fertilizer_warped",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> HERB_FERTILIZER_MYQUESTE = ITEMS.register("herb_fertilizer_myqueste",
+            () -> new HerbFertilizerItem(new Item.Properties()));
+
     public static final RegistryObject<Item> HERB_HUMUS = ITEMS.register("herb_humus",
             () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+
+    public static final RegistryObject<Item> HERB_HUMUS_OAK = ITEMS.register("herb_humus_oak",
+            () -> new HerbHumusItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_HUMUS_BIRCH = ITEMS.register("herb_humus_birch",
+            () -> new HerbHumusItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_HUMUS_DARK_OAK = ITEMS.register("herb_humus_dark_oak",
+            () -> new HerbHumusItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_HUMUS_ACACIA = ITEMS.register("herb_humus_acacia",
+            () -> new HerbHumusItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_HUMUS_JUNGLE = ITEMS.register("herb_humus_jungle",
+            () -> new HerbHumusItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_HUMUS_SPRUCE = ITEMS.register("herb_humus_spruce",
+            () -> new HerbHumusItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_HUMUS_MANGROVE = ITEMS.register("herb_humus_mangrove",
+            () -> new HerbHumusItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_HUMUS_CRIMSON = ITEMS.register("herb_humus_crimson",
+            () -> new HerbHumusItem(new Item.Properties()));
+    public static final RegistryObject<Item> HERB_HUMUS_WARPED = ITEMS.register("herb_humus_warped",
+            () -> new HerbHumusItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> HERB_HUMUS_MYQUESTE = ITEMS.register("herb_humus_myqueste",
+            () -> new HerbHumusItem(new Item.Properties()));
 
 
     // Refined Pouches/Canisters
@@ -30,11 +75,11 @@ public class itemRegistry implements FoodComponentList {
     public static final RegistryObject<Item> CANISTER_IRON = ITEMS.register("canister_iron",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 128));
     public static final RegistryObject<Item> POUCH_STITCHED = ITEMS.register("pouch_stitched",
-            () -> new HerbPouchItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 192));
+            () -> new HerbPouchItem(new Item.Properties().stacksTo(1), 192));
     public static final RegistryObject<Item> CANISTER_AMETHYST = ITEMS.register("canister_amethyst",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 256));
     public static final RegistryObject<Item> POUCH_PROPER = ITEMS.register("pouch_proper",
-            () -> new HerbPouchItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 256));
+            () -> new HerbPouchItem(new Item.Properties().stacksTo(1), 256));
     public static final RegistryObject<Item> CANISTER_DIAMOND = ITEMS.register("canister_diamond",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 384));
 

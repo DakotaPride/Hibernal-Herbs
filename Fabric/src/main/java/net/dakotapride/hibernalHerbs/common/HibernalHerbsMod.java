@@ -30,10 +30,10 @@ public class HibernalHerbsMod implements ModInitializer {
 				.icon(() -> new ItemStack(BlockInit.MYQUESTE_LOG.asItem()))
 				.appendItems(itemStacks -> {
 					itemStacks.add(new ItemStack(ItemInit.HERB_FERTILIZER));
+					itemStacks.add(new ItemStack(ItemInit.HERB_HUMUS));
 
 					itemStacks.add(new ItemStack(ItemInit.SCRATCHED_POUCH));
-					itemStacks.add(new ItemStack(ItemInit.STITCHED_POUCH));
-					itemStacks.add(new ItemStack(ItemInit.PROPER_POUCH));
+
 					itemStacks.add(new ItemStack(ItemInit.IRON_CANISTER));
 					itemStacks.add(new ItemStack(ItemInit.AMETHYST_CANISTER));
 					itemStacks.add(new ItemStack(ItemInit.DIAMOND_CANISTER));
@@ -65,6 +65,7 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.SMOKED_OBSERVING_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.SMOKED_DIMINISHED_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.SMOKED_SHADED_BLEND));
+
 					itemStacks.add(new ItemStack(ItemInit.SMOKED_CONFLICTING_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.SMOKED_ALTERNATIVE_BLEND));
 

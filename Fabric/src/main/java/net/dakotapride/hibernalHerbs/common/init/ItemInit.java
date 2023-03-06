@@ -82,7 +82,31 @@ public class ItemInit {
 
     public static HerbFertilizerItem HERB_FERTILIZER = new HerbFertilizerItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
+    public static HerbFertilizerItem HERB_FERTILIZER_OAK = new HerbFertilizerItem(new FabricItemSettings());
+    public static HerbFertilizerItem HERB_FERTILIZER_DARK_OAK = new HerbFertilizerItem(new FabricItemSettings());
+    public static HerbFertilizerItem HERB_FERTILIZER_BIRCH = new HerbFertilizerItem(new FabricItemSettings());
+    public static HerbFertilizerItem HERB_FERTILIZER_JUNGLE = new HerbFertilizerItem(new FabricItemSettings());
+    public static HerbFertilizerItem HERB_FERTILIZER_ACACIA = new HerbFertilizerItem(new FabricItemSettings());
+    public static HerbFertilizerItem HERB_FERTILIZER_SPRUCE = new HerbFertilizerItem(new FabricItemSettings());
+    public static HerbFertilizerItem HERB_FERTILIZER_MANGROVE = new HerbFertilizerItem(new FabricItemSettings());
+    public static HerbFertilizerItem HERB_FERTILIZER_CRIMSON = new HerbFertilizerItem(new FabricItemSettings());
+    public static HerbFertilizerItem HERB_FERTILIZER_WARPED = new HerbFertilizerItem(new FabricItemSettings());
+
+    public static HerbFertilizerItem HERB_FERTILIZER_MYQUESTE = new HerbFertilizerItem(new FabricItemSettings());
+
     public static HerbHumusItem HERB_HUMUS = new HerbHumusItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+
+    public static HerbHumusItem HERB_HUMUS_OAK = new HerbHumusItem(new FabricItemSettings());
+    public static HerbHumusItem HERB_HUMUS_DARK_OAK = new HerbHumusItem(new FabricItemSettings());
+    public static HerbHumusItem HERB_HUMUS_BIRCH = new HerbHumusItem(new FabricItemSettings());
+    public static HerbHumusItem HERB_HUMUS_JUNGLE = new HerbHumusItem(new FabricItemSettings());
+    public static HerbHumusItem HERB_HUMUS_ACACIA = new HerbHumusItem(new FabricItemSettings());
+    public static HerbHumusItem HERB_HUMUS_SPRUCE = new HerbHumusItem(new FabricItemSettings());
+    public static HerbHumusItem HERB_HUMUS_MANGROVE = new HerbHumusItem(new FabricItemSettings());
+    public static HerbHumusItem HERB_HUMUS_CRIMSON = new HerbHumusItem(new FabricItemSettings());
+    public static HerbHumusItem HERB_HUMUS_WARPED = new HerbHumusItem(new FabricItemSettings());
+
+    public static HerbHumusItem HERB_HUMUS_MYQUESTE = new HerbHumusItem(new FabricItemSettings());
 
     // Smoked Herb Blends (Fabric)
     public static SmokedHerbBlendItem SMOKED_REGENERATIVE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_REGENERATIVE_BLEND)
@@ -122,13 +146,11 @@ public class ItemInit {
     public static AbstractCanisterItem IRON_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 128);
 
-    public static AbstractPouchItem STITCHED_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1)
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 192);
+    public static AbstractPouchItem STITCHED_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 192);
     public static AbstractCanisterItem AMETHYST_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 256);
 
-    public static AbstractPouchItem PROPER_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1)
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 256);
+    public static AbstractPouchItem PROPER_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 256);
     public static AbstractCanisterItem DIAMOND_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 384);
 
@@ -195,7 +217,31 @@ public class ItemInit {
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer"), HERB_FERTILIZER);
 
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_oak"), HERB_FERTILIZER_OAK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_dark_oak"), HERB_FERTILIZER_DARK_OAK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_jungle"), HERB_FERTILIZER_JUNGLE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_acacia"), HERB_FERTILIZER_ACACIA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_birch"), HERB_FERTILIZER_BIRCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_spruce"), HERB_FERTILIZER_SPRUCE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_mangrove"), HERB_FERTILIZER_MANGROVE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_crimson"), HERB_FERTILIZER_CRIMSON);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_warped"), HERB_FERTILIZER_WARPED);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_myqueste"), HERB_FERTILIZER_MYQUESTE);
+
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus"), HERB_HUMUS);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_oak"), HERB_HUMUS_OAK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_dark_oak"), HERB_HUMUS_DARK_OAK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_jungle"), HERB_HUMUS_JUNGLE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_acacia"), HERB_HUMUS_ACACIA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_birch"), HERB_HUMUS_BIRCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_spruce"), HERB_HUMUS_SPRUCE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_mangrove"), HERB_HUMUS_MANGROVE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_crimson"), HERB_HUMUS_CRIMSON);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_warped"), HERB_HUMUS_WARPED);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_myqueste"), HERB_HUMUS_MYQUESTE);
 
         // Legacy
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);

@@ -117,10 +117,10 @@ public class HibernalHerbsForge {
             nonNullList.add(0, itemRegistry.CANISTER_IRON.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.CANISTER_AMETHYST.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.CANISTER_DIAMOND.get().getDefaultInstance());
-            nonNullList.add(0, itemRegistry.POUCH_SCRATCHED.get().getDefaultInstance());
-            nonNullList.add(0, itemRegistry.POUCH_STITCHED.get().getDefaultInstance());
-            nonNullList.add(0, itemRegistry.POUCH_PROPER.get().getDefaultInstance());
 
+            nonNullList.add(0, itemRegistry.POUCH_SCRATCHED.get().getDefaultInstance());
+
+            nonNullList.add(0, itemRegistry.HERB_HUMUS.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.HERB_FERTILIZER.get().getDefaultInstance());
         }
     };

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "growth_herb",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:herb_fertilizer_mangrove"
+    },
+    {
+      "item": "hibernalherbs:pounded_thyme"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:thyme",
+    "count": 3
+  }
+}
