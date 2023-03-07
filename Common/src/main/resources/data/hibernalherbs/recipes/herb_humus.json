@@ -11,5 +11,8 @@
     "X": {
       "tag": "hibernalherbs:herbs"
     }
+  },
+  "result": {
+    "item": "hibernalherbs:herb_humus"
   }
 }
