@@ -1,0 +1,6 @@
+{
+  "parent": "hibernalherbs:item/canister",
+  "textures": {
+    "layer0": "hibernalherbs:item/canister/filled_canister"
+  }
+}

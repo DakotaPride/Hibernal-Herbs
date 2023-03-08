@@ -151,11 +151,16 @@ public class HibernalHerbsMod implements ModInitializer {
 				ResourceManagerHelper.registerBuiltinResourcePack(mc("bettergrass"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
 			});
 		}
+
 		if (FabricLoader.getInstance().isModLoaded("eatinganimationid")) {
 			FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> {
 				ResourceManagerHelper.registerBuiltinResourcePack(mc("eatinganimations"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
 			});
 		}
+
+		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> {
+			ResourceManagerHelper.registerBuiltinResourcePack(mc("barebones"), modContainer, ResourcePackActivationType.NORMAL);
+		});
 
 	}
 

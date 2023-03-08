@@ -22,6 +22,10 @@ public class PackLoader {
                 registerAddon(event, "eatinganimation");
             }
         }
+
+        if(event.getPackType() == PackType.CLIENT_RESOURCES) {
+            registerAddon(event, "barebones");
+        }
     }
 
     private static void registerAddon(final AddPackFindersEvent event, final String packName) {
@@ -33,7 +37,7 @@ public class PackLoader {
 
             if (pack != null) {
                 packConsumer.accept(pack);
-            } else {
+            } else if (!ModList.get().isLoaded("eatinganimation")){
                 Constants.LOG.error(MOD_ID + ": Failed to register resource pack \"" + packName + "\", please install Eating Animations [Forge] to provide built-in Compatibility");
             }
         });
