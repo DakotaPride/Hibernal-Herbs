@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "hibernalherbs:block/myqueste_planks",
-    "side": "hibernalherbs:block/myqueste_planks",
-    "top": "hibernalherbs:block/myqueste_planks"
-  }
-}

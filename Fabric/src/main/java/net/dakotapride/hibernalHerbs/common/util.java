@@ -33,8 +33,12 @@ public class util {
     public static final TagKey<Item> NETHERITE_BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "blends/netherite"));
 
     public static void utilsInit() {
+        // Strippable Blocks
+
         StrippableBlockRegistry.register(BlockInit.MYQUESTE_LOG, BlockInit.STRIPPED_MYQUESTE_LOG);
         StrippableBlockRegistry.register(BlockInit.MYQUESTE_WOOD, BlockInit.STRIPPED_MYQUESTE_WOOD);
+
+        // Compostable Chance
 
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.POUNDED_CEILLIS, 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.POUNDED_CHAMOMILE, 0.3f);
@@ -53,6 +57,9 @@ public class util {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.POUNDED_THYOCIELLE, 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.POUNDED_FENNKYSTRAL, 0.3f);
 
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.POUNDED_CALENDULA, 0.3f);
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ItemInit.DRIED_CALENDULA, 0.15f);
+
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.CEILLIS.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.CHAMOMILE.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.CHERVIL.asItem(), 0.3f);
@@ -70,9 +77,13 @@ public class util {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.THYOCIELLE.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.FENNKYSTRAL.asItem(), 0.3f);
 
+        ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.CALENDULA.asItem(), 0.3f);
+
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.MYQUESTE_SAPLING.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.MYQUESTE_LEAVES.asItem(), 0.3f);
 
+
+        // Model Predicate Providers
 
         FabricModelPredicateProviderRegistry.register(ItemInit.CANISTER, new Identifier(MOD_ID, "filled"),
                 ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));

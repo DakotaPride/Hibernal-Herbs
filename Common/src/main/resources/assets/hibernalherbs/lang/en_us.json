@@ -15,6 +15,8 @@
   "block.hibernalherbs.thyocielle": "Thyocielle",
   "block.hibernalherbs.fennkystral": "Fennkystral",
 
+  "block.hibernalherbs.calendula": "Calendula",
+
   "item.hibernalherbs.pounded_rosemary": "Pounded Rosemary",
   "item.hibernalherbs.pounded_thyme": "Pounded Thyme",
   "item.hibernalherbs.pounded_tarragon": "Pounded Tarragon",
@@ -31,6 +33,8 @@
   "item.hibernalherbs.pounded_thyocielle": "Pounded Thyocielle",
   "item.hibernalherbs.pounded_fennkystral": "Pounded Fennkystral",
 
+  "item.hibernalherbs.pounded_calendula": "Pounded Calendula",
+
   "block.hibernalherbs.potted_rosemary": "Potted Rosemary",
   "block.hibernalherbs.potted_thyme": "Potted Thyme",
   "block.hibernalherbs.potted_tarragon": "Potted Tarragon",
@@ -46,6 +50,8 @@
   "block.hibernalherbs.potted_essitte": "Potted Essitte",
   "block.hibernalherbs.potted_thyocielle": "Potted Thyocielle",
   "block.hibernalherbs.potted_fennkystral": "Potted Fennkystral",
+
+  "block.hibernalherbs.potted_calendula": "Potted Calendula",
 
   "item.hibernalherbs.blend_regeneration": "Regenerative Blend",
   "item.hibernalherbs.blend_poison": "Virulent Blend",
@@ -131,6 +137,8 @@
   "block.hibernalherbs.myqueste_sapling": "Myqueste Sapling",
   "block.hibernalherbs.myqueste_planks": "Myqueste Planks",
   "block.hibernalherbs.myqueste_leaves": "Myqueste Leaves",
+
+  "block.hibernalherbs.calendula_lantern": "Calendula Lantern",
 
   "itemGroup.hibernalherbs.hibernal_herbs": "Hibernal Herbs - Misc",
   "itemGroup.hibernalherbs.herbs": "Hibernal Herbs - Herbs",

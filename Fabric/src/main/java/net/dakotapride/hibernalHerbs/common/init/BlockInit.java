@@ -48,6 +48,13 @@ public class BlockInit {
     public static FlowerBlock FENNKYSTRAL =
             new FlowerBlock(StatusEffects.REGENERATION, 240, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
 
+    // Spring Herb(s)
+
+    public static FlowerBlock CALENDULA =
+            new FlowerBlock(StatusEffects.GLOWING, 200, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY).luminance((state) -> {
+                return 6;
+            }));
+
     public static FlowerPotBlock POTTED_ROSEMARY =
             new FlowerPotBlock(ROSEMARY, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
     public static FlowerPotBlock POTTED_THYME =
@@ -81,6 +88,16 @@ public class BlockInit {
             new FlowerPotBlock(THYOCIELLE, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
     public static FlowerPotBlock POTTED_FENNKYSTRAL =
             new FlowerPotBlock(FENNKYSTRAL, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
+
+    // Spring (Potted) Herb(s)
+
+    public static FlowerPotBlock POTTED_CALENDULA =
+            new FlowerPotBlock(CALENDULA, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY).luminance((state) -> {
+                return 4;
+            }));
+
+    public static LanternBlock CALENDULA_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
 
     public static SaplingBlock MYQUESTE_SAPLING = new SaplingBlock(new MyquesteSaplingGenerator(),
             FabricBlockSettings.copy(Blocks.SPRUCE_SAPLING).ticksRandomly().nonOpaque());
@@ -130,6 +147,8 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "thyocielle"), new BlockItem(THYOCIELLE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "fennkystral"), FENNKYSTRAL);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennkystral"), new BlockItem(FENNKYSTRAL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula"), CALENDULA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula"), new BlockItem(CALENDULA, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_rosemary"), POTTED_ROSEMARY);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_thyme"), POTTED_THYME);
@@ -146,6 +165,7 @@ public class BlockInit {
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_essitte"), POTTED_ESSITTE);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_thyocielle"), POTTED_THYOCIELLE);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_fennkystral"), POTTED_FENNKYSTRAL);
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_calendula"), POTTED_CALENDULA);
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_myqueste_sapling"), POTTED_MYQUESTE_SAPLING);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_sapling"), MYQUESTE_SAPLING);
@@ -175,6 +195,9 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_fence"), new BlockItem(MYQUESTE_FENCE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_fence_gate"), MYQUESTE_FENCE_GATE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_fence_gate"), new BlockItem(MYQUESTE_FENCE_GATE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_lantern"), CALENDULA_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_lantern"), new BlockItem(CALENDULA_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
     }
 
 }

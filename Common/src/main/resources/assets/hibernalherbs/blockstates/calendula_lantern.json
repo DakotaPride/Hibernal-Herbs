@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "hibernalherbs:block/calendula_lantern"
+    },
+    "hanging=true": {
+      "model": "hibernalherbs:block/calendula_lantern_hanging"
+    }
+  }
+}

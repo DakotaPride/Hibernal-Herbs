@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "hibernalherbs:block/stripped_myqueste_log_top",
-    "side": "hibernalherbs:block/stripped_myqueste_log"
-  }
-}

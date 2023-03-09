@@ -50,6 +50,13 @@ public class ItemInit {
     public static Item POUNDED_FENNKYSTRAL = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
+    // Spring (Pounded) Herb(s)
+
+    public static Item POUNDED_CALENDULA = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+            .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+
+    public static Item DRIED_CALENDULA = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+
     public static HerbBlendItem REGENERATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.REGENERATIVE_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static HerbBlendItem VIRULENT_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.VIRULENT_BLEND)
@@ -175,6 +182,9 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_essitte"), POUNDED_ESSITTE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyocielle"), POUNDED_THYOCIELLE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_fennkystral"), POUNDED_FENNKYSTRAL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_calendula"), POUNDED_CALENDULA);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_calendula"), DRIED_CALENDULA);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regeneration"), REGENERATIVE_BLEND);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_poison"), VIRULENT_BLEND);
