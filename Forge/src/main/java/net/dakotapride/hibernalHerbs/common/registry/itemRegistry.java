@@ -139,6 +139,15 @@ public class itemRegistry implements FoodComponentList {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .fast().nutrition(8).saturationMod(6f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
 
+    // Spring (Pounded) Herbs (Forge)
+
+    public static final RegistryObject<Item> POUNDED_CALENDULA = ITEMS.register("pounded_calendula",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .fast().nutrition(8).saturationMod(6f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+
+    public static final RegistryObject<Item> DRIED_CALENDULA = ITEMS.register("dried_calendula",
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
+
     // Compat (Pounded) Herbs (Forge)
     public static final RegistryObject<Item> POUNDED_BLOFORIA = ITEMS.register("pounded_bloforia",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()

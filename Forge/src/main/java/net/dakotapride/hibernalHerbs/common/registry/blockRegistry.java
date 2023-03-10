@@ -75,6 +75,15 @@ public class blockRegistry {
             () -> new FlowerBlock(MobEffects.REGENERATION, 240,
                     BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
 
+    // Spring Herbs (Forge)
+
+    public static final RegistryObject<Block> CALENDULA = registerBlock("calendula",
+            () -> new FlowerBlock(MobEffects.GLOWING, 240,
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
+
+    public static final RegistryObject<Block> CALENDULA_LANTERN = registerBlock("calendula_lantern",
+        () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+
     // Compat Herbs (Forge)
     public static final RegistryObject<Block> BLOFORIA = registerBlock("bloforia",
             () -> new FlowerBlock(MobEffects.NIGHT_VISION, 180,

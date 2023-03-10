@@ -21,9 +21,7 @@ public class PackLoader {
                 Constants.LOG.info("Eating Animations [Forge] Present, Now Compatible As Of v0.4.3!");
                 registerAddon(event, "eatinganimation");
             }
-        }
 
-        if(event.getPackType() == PackType.CLIENT_RESOURCES) {
             registerAddon(event, "barebones");
         }
     }
@@ -37,8 +35,6 @@ public class PackLoader {
 
             if (pack != null) {
                 packConsumer.accept(pack);
-            } else if (!ModList.get().isLoaded("eatinganimation")){
-                Constants.LOG.error(MOD_ID + ": Failed to register resource pack \"" + packName + "\", please install Eating Animations [Forge] to provide built-in Compatibility");
             }
         });
     }
