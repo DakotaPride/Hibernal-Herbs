@@ -143,6 +143,12 @@ public class blockRegistry {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.BLOFORIA,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
+    // Spring (Potted) Herbs (Forge)
+
+    public static final RegistryObject<Block> POTTED_CALENDULA = BLOCKS.register("potted_calendula",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.CALENDULA,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
+
     public static final RegistryObject<Block> MYQUESTE_LOG = registerBlock("myqueste_log",
             () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG)), HibernalHerbsForge.HIBERNAL_HERBS);
     public static final RegistryObject<Block> MYQUESTE_WOOD = registerBlock("myqueste_wood",

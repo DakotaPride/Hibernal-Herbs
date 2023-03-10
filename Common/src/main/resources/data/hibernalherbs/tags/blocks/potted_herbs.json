@@ -16,6 +16,8 @@
     "hibernalherbs:potted_thyocielle",
     "hibernalherbs:potted_fennkystral",
 
+    "hibernalherbs:potted_calendula",
+
     {
       "required": false,
       "id": "hibernalherbs:potted_bloforia"

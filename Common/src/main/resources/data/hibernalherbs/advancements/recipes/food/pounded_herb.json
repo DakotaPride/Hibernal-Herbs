@@ -110,6 +110,12 @@
       "conditions": {
         "recipe": "hibernalherbs:pounded/pounded_verbena"
       }
+    },
+    "calendula": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:pounded/pounded_calendula"
+      }
     }
   },
   "requirements": [
@@ -131,7 +137,9 @@
       "tarragon",
       "thyme",
       "thyocielle",
-      "verbena"
+      "verbena",
+
+      "calendula"
     ]
   ],
 
@@ -151,7 +159,9 @@
       "hibernalherbs:pounded/pounded_tarragon",
       "hibernalherbs:pounded/pounded_thyme",
       "hibernalherbs:pounded/pounded_thyocielle",
-      "hibernalherbs:pounded/pounded_verbena"
+      "hibernalherbs:pounded/pounded_verbena",
+
+      "hibernalherbs:pounded/pounded_calendula"
     ]
   }
 }

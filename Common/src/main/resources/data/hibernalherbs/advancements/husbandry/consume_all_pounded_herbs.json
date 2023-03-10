@@ -145,6 +145,36 @@
           ]
         }
       }
+    },
+    "fennkystral": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_fennkystral"
+          ]
+        }
+      }
+    },
+    "thyocielle": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_thyocielle"
+          ]
+        }
+      }
+    },
+    "calendula": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:pounded_calendula"
+          ]
+        }
+      }
     }
   },
   "requirements": [
@@ -160,6 +190,11 @@
     ["fennsel"],
     ["ceillis"],
     ["punuel"],
-    ["essitte"]
+    ["essitte"],
+
+    ["fennkystral"],
+    ["thyocielle"],
+
+    ["calendula"]
   ]
 }

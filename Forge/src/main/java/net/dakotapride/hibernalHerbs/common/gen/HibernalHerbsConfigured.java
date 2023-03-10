@@ -79,6 +79,11 @@ public class HibernalHerbsConfigured {
                     new RandomPatchConfiguration(16, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                             new SimpleBlockConfiguration(BlockStateProvider.simple(blockRegistry.ESSITTE.get()))))));
 
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CALENDULA = CONFIGURED_FEATURES.register("flower_calendula_configured",
+            () -> new ConfiguredFeature<>(Feature.FLOWER,
+                    new RandomPatchConfiguration(16, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(blockRegistry.CALENDULA.get()))))));
+
     public static final RegistryObject<ConfiguredFeature<?, ?>> MYQUESTE =
             CONFIGURED_FEATURES.register("tree_myqueste_configured", () ->
                     new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(

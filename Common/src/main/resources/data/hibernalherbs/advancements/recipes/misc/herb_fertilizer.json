@@ -10,31 +10,25 @@
           }
         ]
       }
-    },
-    "has_the_recipe1": {
-      "trigger": "minecraft:recipe_unlocked",
-      "conditions": {
-        "recipe": "hibernalherbs:herb_fertilizer"
-      }
-    },
-    "has_the_recipe2": {
-      "trigger": "minecraft:recipe_unlocked",
-      "conditions": {
-        "recipe": "hibernalherbs:herb_fertilizer_from_bone"
-      }
     }
   },
   "requirements": [
     [
-      "has_acceptable_item",
-      "has_the_recipe1",
-      "has_the_recipe2"
+      "has_acceptable_item"
     ]
   ],
   "rewards": {
     "recipes": [
-      "hibernalherbs:herb_fertilizer",
-      "hibernalherbs:herb_fertilizer_from_bone"
+      "hibernalherbs:herb_fertilizer_acacia",
+      "hibernalherbs:herb_fertilizer_birch",
+      "hibernalherbs:herb_fertilizer_crimson",
+      "hibernalherbs:herb_fertilizer_dark_oak",
+      "hibernalherbs:herb_fertilizer_jungle",
+      "hibernalherbs:herb_fertilizer_mangrove",
+      "hibernalherbs:herb_fertilizer_myqueste",
+      "hibernalherbs:herb_fertilizer_oak",
+      "hibernalherbs:herb_fertilizer_spruce",
+      "hibernalherbs:herb_fertilizer_warped"
     ]
   }
 }

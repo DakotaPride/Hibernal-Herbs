@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:herb_fertilizer_acacia",
+    "hibernalherbs:herb_fertilizer_birch",
+    "hibernalherbs:herb_fertilizer_crimson",
+    "hibernalherbs:herb_fertilizer_dark_oak",
+    "hibernalherbs:herb_fertilizer_jungle",
+    "hibernalherbs:herb_fertilizer_mangrove",
+    "hibernalherbs:herb_fertilizer_myqueste",
+    "hibernalherbs:herb_fertilizer_oak",
+    "hibernalherbs:herb_fertilizer_spruce",
+    "hibernalherbs:herb_fertilizer_warped"
+  ]
+}

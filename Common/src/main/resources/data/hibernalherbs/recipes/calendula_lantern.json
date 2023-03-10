@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "A#A",
+    "XXX"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:torch"
+    },
+    "X": {
+      "item": "minecraft:iron_nugget"
+    },
+    "A": {
+      "item": "hibernalherbs:dried_calendula"
+    }
+  },
+  "result": {
+    "item": "hibernalherbs:calendula_lantern",
+    "count": 2
+  }
+}

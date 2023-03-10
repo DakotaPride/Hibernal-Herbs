@@ -59,6 +59,10 @@ public class HibernalHerbsPlaced {
             () -> new PlacedFeature(HibernalHerbsConfigured.ESSITTE.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(12),
                     InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
+    public static final RegistryObject<PlacedFeature> CALENDULA_PLACED = PLACED_FEATURES.register("calendula_placed",
+            () -> new PlacedFeature(HibernalHerbsConfigured.CALENDULA.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(12),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
     public static final RegistryObject<PlacedFeature> MYQUESTE_CHECKED = PLACED_FEATURES.register("myqueste_checked",
             () -> new PlacedFeature(HibernalHerbsConfigured.MYQUESTE.getHolder().get(),
                     List.of(PlacementUtils.filteredByBlockSurvival(blockRegistry.MYQUESTE_SAPLING.get()))));

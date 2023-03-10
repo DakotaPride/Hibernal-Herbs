@@ -16,6 +16,9 @@
     "hibernalherbs:pounded_thyocielle",
     "hibernalherbs:pounded_fennkystral",
 
+    "hibernalherbs:pounded_calendula",
+    "hibernalherbs:dried_calendula",
+
     {
       "required": false,
       "id": "hibernalherbs:pounded_bloforia"

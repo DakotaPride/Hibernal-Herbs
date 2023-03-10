@@ -1,41 +1,61 @@
 package net.dakotapride.hibernalHerbs.client;
 
-import net.dakotapride.hibernalHerbs.common.Constants;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
 import net.minecraftforge.event.AddPackFindersEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.resource.PathPackResources;
 
-import java.nio.file.Path;
+import java.io.IOException;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 
-// Code Belongs To SkyJay1 (From MMD Discord/Community) - Thank You For Providing This!
+@Mod(MOD_ID)
+@Mod.EventBusSubscriber(modid=MOD_ID, bus= Mod.EventBusSubscriber.Bus.MOD)
 public class PackLoader {
-    public static void onAddPackFinders(final AddPackFindersEvent event) {
-        if(event.getPackType() == PackType.CLIENT_RESOURCES) {
-            if(ModList.get().isLoaded("eatinganimation")) {
-                Constants.LOG.info("Eating Animations [Forge] Present, Now Compatible As Of v0.4.3!");
-                registerResources(event, "eatinganimation");
-            }
 
-            registerResources(event, "barebones");
+    @SubscribeEvent
+    public static void addPackFinders(AddPackFindersEvent event)
+    {
+        try
+        {
+            if (event.getPackType() == PackType.CLIENT_RESOURCES)
+            {
+                if (ModList.get().isLoaded("eatinganimation")) {
+                    var eatingAnimationResourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("eatinganimation");
+                    var eatingAnimationPackResources = new PathPackResources(ModList.get().getModFileById(MOD_ID).getFile().getFileName() + ":" + eatingAnimationResourcePath, eatingAnimationResourcePath);
+                    var eatingAnimationMetaDataSelection = eatingAnimationPackResources.getMetadataSection(PackMetadataSection.SERIALIZER);
+                    if (eatingAnimationMetaDataSelection != null)
+                    {
+                        event.addRepositorySource((packConsumer, packConstructor) ->
+                                packConsumer.accept(packConstructor.create(
+                                        "eatinganimation", Component.literal("hibernalherbs/eatinganimation"), false,
+                                        () -> eatingAnimationPackResources, eatingAnimationMetaDataSelection, Pack.Position.BOTTOM, PackSource.BUILT_IN, false)));
+                    }
+                }
+
+                var bareBonesResourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("barebones");
+                var bareBonesPackResources = new PathPackResources(ModList.get().getModFileById(MOD_ID).getFile().getFileName() + ":" + bareBonesResourcePath, bareBonesResourcePath);
+                var bareBonesMetaDataSelection = bareBonesPackResources.getMetadataSection(PackMetadataSection.SERIALIZER);
+                if (bareBonesMetaDataSelection != null)
+                {
+                    event.addRepositorySource((packConsumer, packConstructor) ->
+                            packConsumer.accept(packConstructor.create(
+                                    "barebones", Component.literal("hibernalherbs/barebones"), false,
+                                    () -> bareBonesPackResources, bareBonesMetaDataSelection, Pack.Position.BOTTOM, PackSource.BUILT_IN, false)));
+                }
+
+            }
         }
-    }
-
-    private static void registerResources(final AddPackFindersEvent event, final String packName) {
-        event.addRepositorySource((packConsumer, constructor) -> {
-            Pack pack = Pack.create(MOD_ID + ":" + packName, true, () -> {
-                Path path = ModList.get().getModFileById(MOD_ID).getFile().findResource("/" + packName);
-                return new PathPackResources(packName, path);
-            }, constructor, Pack.Position.TOP, PackSource.DEFAULT);
-
-            if (pack != null) {
-                packConsumer.accept(pack);
-            }
-        });
+        catch(IOException ex)
+        {
+            throw new RuntimeException(ex);
+        }
     }
 }

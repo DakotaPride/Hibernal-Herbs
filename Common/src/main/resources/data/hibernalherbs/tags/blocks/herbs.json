@@ -16,6 +16,8 @@
     "hibernalherbs:thyocielle",
     "hibernalherbs:fennkystral",
 
+    "hibernalherbs:calendula",
+
     {
       "required": false,
       "id": "hibernalherbs:bloforia"

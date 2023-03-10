@@ -194,7 +194,7 @@ public class HibernalHerbsForge {
         HibernalHerbsPlaced.register(eventBus);
 
         // Resource Pack Registration
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(PackLoader::onAddPackFinders);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(PackLoader::addPackFinders);
 
         eventBus.addListener(this::commonSetup);
         eventBus.addListener(this::clientSetup);
@@ -232,6 +232,8 @@ public class HibernalHerbsForge {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.FENNKYSTRAL.getId(), blockRegistry.POTTED_FENNKYSTRAL);
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.BLOFORIA.getId(), blockRegistry.POTTED_BLOFORIA);
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.CALENDULA.getId(), blockRegistry.POTTED_CALENDULA);
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.MYQUESTE_SAPLING.getId(), blockRegistry.POTTED_MYQUESTE_SAPLING);
 
