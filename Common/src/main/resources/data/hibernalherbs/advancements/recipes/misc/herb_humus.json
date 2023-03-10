@@ -19,16 +19,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hibernalherbs:herb_humus_acacia",
-      "hibernalherbs:herb_humus_birch",
-      "hibernalherbs:herb_humus_crimson",
-      "hibernalherbs:herb_humus_dark_oak",
-      "hibernalherbs:herb_humus_jungle",
-      "hibernalherbs:herb_humus_mangrove",
-      "hibernalherbs:herb_humus_myqueste",
-      "hibernalherbs:herb_humus_oak",
-      "hibernalherbs:herb_humus_spruce",
-      "hibernalherbs:herb_humus_warped"
+      "hibernalherbs:herb_humus"
     ]
   }
 }
