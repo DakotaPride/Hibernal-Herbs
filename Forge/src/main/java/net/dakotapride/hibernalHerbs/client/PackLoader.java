@@ -19,14 +19,14 @@ public class PackLoader {
         if(event.getPackType() == PackType.CLIENT_RESOURCES) {
             if(ModList.get().isLoaded("eatinganimation")) {
                 Constants.LOG.info("Eating Animations [Forge] Present, Now Compatible As Of v0.4.3!");
-                registerAddon(event, "eatinganimation");
+                registerResources(event, "eatinganimation");
             }
 
-            registerAddon(event, "barebones");
+            registerResources(event, "barebones");
         }
     }
 
-    private static void registerAddon(final AddPackFindersEvent event, final String packName) {
+    private static void registerResources(final AddPackFindersEvent event, final String packName) {
         event.addRepositorySource((packConsumer, constructor) -> {
             Pack pack = Pack.create(MOD_ID + ":" + packName, true, () -> {
                 Path path = ModList.get().getModFileById(MOD_ID).getFile().findResource("/" + packName);
