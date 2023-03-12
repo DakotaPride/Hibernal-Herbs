@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -16,6 +17,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
@@ -144,6 +146,7 @@ public class HibernalHerbsMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
 		BlockInit.init();
 		ItemInit.init();
 
