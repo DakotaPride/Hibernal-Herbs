@@ -139,6 +139,12 @@
   "block.hibernalherbs.myqueste_planks": "Myqueste Planks",
   "block.hibernalherbs.myqueste_leaves": "Myqueste Leaves",
 
+  "item.hibernalherbs.myqueste_boat": "Myqueste Boat",
+  "item.hibernalherbs.myqueste_chest_boat": "Myqueste Chest Boat",
+  "block.hibernalherbs.myqueste_pressure_plate": "Myqueste Pressure Plate",
+  "block.hibernalherbs.myqueste_button": "Myqueste Button",
+  "block.hibernalherbs.myqueste_sign": "Myqueste Sign",
+
   "block.hibernalherbs.calendula_lantern": "Calendula Lantern",
 
   "itemGroup.hibernalherbs.hibernal_herbs": "Hibernal Herbs - Misc",

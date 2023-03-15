@@ -1,31 +1,23 @@
 package net.dakotapride.hibernalHerbs.common;
 
-import com.terraformersmc.terraform.boat.api.TerraformBoatType;
-import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
-import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
-import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
 import net.dakotapride.hibernalHerbs.common.init.FeaturesInit;
+import net.dakotapride.hibernalHerbs.common.init.HibernalHerbsBoatTypes;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.*;
+import net.minecraft.item.FoodComponent;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-
-import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
@@ -86,13 +78,12 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SAPLING.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LEAVES.asItem()));
 
-					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_PLANKS.asItem()));
-
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LOG.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_WOOD.asItem()));
 
 					itemStacks.add(new ItemStack(BlockInit.STRIPPED_MYQUESTE_LOG.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.STRIPPED_MYQUESTE_WOOD.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_PLANKS.asItem()));
 
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_DOOR.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_TRAPDOOR.asItem()));
@@ -102,6 +93,14 @@ public class HibernalHerbsMod implements ModInitializer {
 
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SLAB.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_STAIRS.asItem()));
+
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_BUTTON.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_PRESSURE_PLATE.asItem()));
+
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_SIGN.asItem()));
+
+					itemStacks.add(new ItemStack(HibernalHerbsBoatTypes.myqueste.getItem()));
+					itemStacks.add(new ItemStack(HibernalHerbsBoatTypes.myqueste.getChestItem()));
 				}).build();
 
 		public static ItemGroup HERBS = FabricItemGroupBuilder.create(
@@ -154,49 +153,13 @@ public class HibernalHerbsMod implements ModInitializer {
 				}).build();
 	}
 
-	protected static final Identifier MYQUESTE_BOAT_ID = new Identifier(MOD_ID, "myqueste_boat");
-	private static final Identifier MYQUESTE_CHEST_BOAT_ID = new Identifier(MOD_ID, "myqueste_chest_boat");
-
-	public static final Identifier MYQUESTE_SIGN_TEXTURE_ID = new Identifier(MOD_ID, "entity/sign/myqueste");
-	private static final Identifier MYQUESTE_SIGN_ID = new Identifier(MOD_ID, "myqueste_sign");
-	private static final Identifier MYQUESTE_WALL_SIGN_ID = new Identifier(MOD_ID, "myqueste_wall_sign");
-
-	private static TerraformBoatType boat;
-
 	@Override
 	public void onInitialize() {
 
-		Item planks = BlockInit.MYQUESTE_PLANKS.asItem();
-
-		// Boats
-		Item boatItem = TerraformBoatItemHelper.registerBoatItem(MYQUESTE_BOAT_ID, () -> boat, false,
-				new FabricItemSettings().group(groupManager.HIBERNAL_HERBS));
-		Item chestBoatItem = TerraformBoatItemHelper.registerBoatItem(MYQUESTE_CHEST_BOAT_ID, () -> boat, true,
-				new FabricItemSettings().group(groupManager.HIBERNAL_HERBS));
-
-		boat = new TerraformBoatType.Builder()
-				.item(boatItem)
-				.chestItem(chestBoatItem)
-				.planks(planks)
-				.build();
-
-		// Signs
-		Block sign = new TerraformSignBlock(MYQUESTE_SIGN_TEXTURE_ID, FabricBlockSettings.copyOf(Blocks.OAK_SIGN));
-		Block wallSign = new TerraformWallSignBlock(MYQUESTE_SIGN_TEXTURE_ID, FabricBlockSettings.copyOf(Blocks.OAK_SIGN));
-
-		Item signItem = new SignItem(new Item.Settings().maxCount(16).group(groupManager.HIBERNAL_HERBS), sign, wallSign);
-
-		// Terraform Registry
-		Registry.register(TerraformBoatTypeRegistry.INSTANCE, MYQUESTE_ID, boat);
-
-		Registry.register(Registry.BLOCK, MYQUESTE_SIGN_ID, sign);
-		Registry.register(Registry.BLOCK, MYQUESTE_WALL_SIGN_ID, wallSign);
-
-		Registry.register(Registry.ITEM, MYQUESTE_SIGN_ID, signItem);
-
-		// Normal Registry
 		BlockInit.init();
 		ItemInit.init();
+
+		HibernalHerbsBoatTypes.register();
 
 		util.utilsInit();
 

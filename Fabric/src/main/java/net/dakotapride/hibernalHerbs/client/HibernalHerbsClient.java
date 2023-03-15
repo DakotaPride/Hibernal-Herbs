@@ -61,6 +61,6 @@ public class HibernalHerbsClient implements ClientModInitializer {
 
         // Render Layers (Terraform)
         TerraformBoatClientHelper.registerModelLayers(HibernalHerbsMod.MYQUESTE_ID);
-        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, HibernalHerbsMod.MYQUESTE_SIGN_TEXTURE_ID));
+        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, BlockInit.MYQUESTE_SIGN_TEXTURE));
     }
 }

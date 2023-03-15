@@ -22,9 +22,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -194,7 +192,7 @@ public class HibernalHerbsForge {
         HibernalHerbsPlaced.register(eventBus);
 
         // Resource Pack Registration
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(PackLoader::addPackFinders);
+        eventBus.addListener(PackLoader::addPackFinders);
 
         eventBus.addListener(this::commonSetup);
         eventBus.addListener(this::clientSetup);

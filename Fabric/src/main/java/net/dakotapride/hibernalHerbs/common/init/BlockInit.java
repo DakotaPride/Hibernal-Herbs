@@ -1,5 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.init;
 
+import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.gen.saplingGenerator.MyquesteSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -7,6 +9,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.SignItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -115,6 +119,14 @@ public class BlockInit {
     public static FenceGateBlock MYQUESTE_FENCE_GATE = new FenceGateBlock(FabricBlockSettings.copy(Blocks.SPRUCE_FENCE_GATE));
     public static FlowerPotBlock POTTED_MYQUESTE_SAPLING =
             new FlowerPotBlock(MYQUESTE_SAPLING, FabricBlockSettings.copy(Blocks.POTTED_SPRUCE_SAPLING));
+    public static WoodenButtonBlock MYQUESTE_BUTTON = new WoodenButtonBlock(FabricBlockSettings.copy(Blocks.SPRUCE_BUTTON));
+    public static PressurePlateBlock MYQUESTE_PRESSURE_PLATE = new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+            FabricBlockSettings.copy(Blocks.SPRUCE_PRESSURE_PLATE));
+
+    public static final Identifier MYQUESTE_SIGN_TEXTURE = new Identifier(MOD_ID, "entity/sign/myqueste");
+    public static final TerraformSignBlock MYQUESTE_SIGN = new TerraformSignBlock(MYQUESTE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN));
+    public static final Block MYQUESTE_WALL_SIGN = new TerraformWallSignBlock(MYQUESTE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN));
+    public static final Item MYQUESTE_SIGN_ITEM = new SignItem(new Item.Settings().maxCount(16).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), MYQUESTE_SIGN, MYQUESTE_WALL_SIGN);
 
     public static void init() {
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "rosemary"), ROSEMARY);
@@ -195,6 +207,14 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_fence"), new BlockItem(MYQUESTE_FENCE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_fence_gate"), MYQUESTE_FENCE_GATE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_fence_gate"), new BlockItem(MYQUESTE_FENCE_GATE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_button"), MYQUESTE_BUTTON);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_button"), new BlockItem(MYQUESTE_BUTTON, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_pressure_plate"), MYQUESTE_PRESSURE_PLATE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_pressure_plate"), new BlockItem(MYQUESTE_PRESSURE_PLATE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_sign"), MYQUESTE_SIGN);
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_wall_sign"), MYQUESTE_WALL_SIGN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_sign"), MYQUESTE_SIGN_ITEM);
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_lantern"), CALENDULA_LANTERN);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_lantern"), new BlockItem(CALENDULA_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
