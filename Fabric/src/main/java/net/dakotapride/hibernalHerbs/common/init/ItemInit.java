@@ -1,13 +1,13 @@
 package net.dakotapride.hibernalHerbs.common.init;
 
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
-import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoatEntity;
-import net.dakotapride.hibernalHerbs.common.item.*;
+import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
+import net.dakotapride.hibernalHerbs.common.item.HerbFertilizerItem;
+import net.dakotapride.hibernalHerbs.common.item.HerbHumusItem;
+import net.dakotapride.hibernalHerbs.common.item.SmokedHerbBlendItem;
 import net.dakotapride.hibernalHerbs.common.item.canister.AbstractCanisterItem;
 import net.dakotapride.hibernalHerbs.common.item.pouch.AbstractPouchItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.entity.vehicle.BoatEntity;
-import net.minecraft.item.BoatItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -161,8 +161,6 @@ public class ItemInit {
     public static AbstractCanisterItem DIAMOND_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1)
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS), 384);
 
-    public static MyquesteBoatItem MYQUESTE_BOAT = new MyquesteBoatItem(false, MyquesteBoatEntity.Type.MYQUESTE, new FabricItemSettings());
-
     // Legacy
 
     public static AbstractPouchItem POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 256);
@@ -254,8 +252,6 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_warped"), HERB_HUMUS_WARPED);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_myqueste"), HERB_HUMUS_MYQUESTE);
-
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_boat"), MYQUESTE_BOAT);
 
         // Legacy
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);

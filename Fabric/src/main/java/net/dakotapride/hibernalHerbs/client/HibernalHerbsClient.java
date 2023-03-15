@@ -1,9 +1,14 @@
 package net.dakotapride.hibernalHerbs.client;
 
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
+import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
+import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.TexturedRenderLayers;
+import net.minecraft.client.util.SpriteIdentifier;
 
 public class HibernalHerbsClient implements ClientModInitializer {
 
@@ -53,5 +58,9 @@ public class HibernalHerbsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.POTTED_MYQUESTE_SAPLING, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CALENDULA_LANTERN, RenderLayer.getCutout());
+
+        // Render Layers (Terraform)
+        TerraformBoatClientHelper.registerModelLayers(HibernalHerbsMod.MYQUESTE_ID);
+        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, HibernalHerbsMod.MYQUESTE_SIGN_TEXTURE_ID));
     }
 }
