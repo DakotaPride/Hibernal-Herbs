@@ -17,13 +17,5 @@ public class HibernalHerbsForgeClient {
 
         HibernalEntityRenderers.load();
 
-        registerLayerDefinitions(ForgeHooksClient::registerLayerDefinition);
-    }
-
-    public static void registerLayerDefinitions(final BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {
-        for (MyquesteBoat.MyquesteType value : MyquesteBoat.MyquesteType.values()) {
-            consumer.accept(MyquesteBoatRenderer.createBoatModelName(value), () -> BoatModel.createBodyModel(false));
-            consumer.accept(MyquesteBoatRenderer.createChestBoatModelName(value), () -> BoatModel.createBodyModel(true));
-        }
     }
 }
