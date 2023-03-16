@@ -5,6 +5,7 @@
   "refmap": "hibernalherbs.refmap.json",
   "minVersion": "0.8.5",
   "mixins": [
-    "ItemStackMixin"
+    "ItemStackMixin",
+    "access.BoatEntityAccess"
   ]
 }

@@ -2,6 +2,7 @@ package net.dakotapride.hibernalHerbs.common;
 
 import net.dakotapride.hibernalHerbs.client.HibernalHerbsForgeClient;
 import net.dakotapride.hibernalHerbs.client.PackLoader;
+import net.dakotapride.hibernalHerbs.common.entity.HibernalEntities;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsConfigured;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsPlaced;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
@@ -194,6 +195,8 @@ public class HibernalHerbsForge {
         blockRegistry.register(eventBus);
         HibernalHerbsConfigured.register(eventBus);
         HibernalHerbsPlaced.register(eventBus);
+
+        HibernalEntities.register(eventBus);
 
         // Resource Pack Registration
         eventBus.addListener(PackLoader::addPackFinders);
