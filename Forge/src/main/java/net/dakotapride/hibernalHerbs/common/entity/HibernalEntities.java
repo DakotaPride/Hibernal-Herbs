@@ -1,5 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.entity;
 
+import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoat;
+import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteChestBoat;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

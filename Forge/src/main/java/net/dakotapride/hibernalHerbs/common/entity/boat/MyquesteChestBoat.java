@@ -1,5 +1,6 @@
-package net.dakotapride.hibernalHerbs.common.entity;
+package net.dakotapride.hibernalHerbs.common.entity.boat;
 
+import net.dakotapride.hibernalHerbs.common.entity.HibernalEntities;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;

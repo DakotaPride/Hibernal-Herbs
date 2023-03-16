@@ -1,5 +1,6 @@
-package net.dakotapride.hibernalHerbs.common.entity;
+package net.dakotapride.hibernalHerbs.common.entity.boat;
 
+import net.dakotapride.hibernalHerbs.common.entity.HibernalEntities;
 import net.dakotapride.hibernalHerbs.common.entity.lootCtx.HibernalLootContextParams;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;

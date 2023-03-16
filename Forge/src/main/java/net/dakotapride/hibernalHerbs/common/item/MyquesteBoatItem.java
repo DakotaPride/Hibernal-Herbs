@@ -1,7 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
-import net.dakotapride.hibernalHerbs.common.entity.MyquesteBoat;
-import net.dakotapride.hibernalHerbs.common.entity.MyquesteChestBoat;
+import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoat;
+import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteChestBoat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
