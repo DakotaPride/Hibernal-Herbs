@@ -24,6 +24,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -245,6 +246,50 @@ public class HibernalHerbsForge {
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.MYQUESTE_SAPLING.getId(), blockRegistry.POTTED_MYQUESTE_SAPLING);
 
+        });
+
+        event.enqueueWork(() -> {
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_CEILLIS.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_CHAMOMILE.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_CHERVIL.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_CHIVES.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_ESSITTE.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_FENNSEL.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_MARJORAM.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_PUNUEL.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_ROSEMARY.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_SORREL.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_TARRAGON.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_THYME.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_VERBENA.get(), 0.3f);
+
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_THYOCIELLE.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_FENNKYSTRAL.get(), 0.3f);
+
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_CALENDULA.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_CALENDULA.get(), 0.15f);
+
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.CEILLIS.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.CHAMOMILE.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.CHERVIL.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.CHIVES.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.ESSITTE.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.FENNSEL.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.MARJORAM.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.PUNUEL.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.ROSEMARY.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.SORREL.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.TARRAGON.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.THYME.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.VERBENA.get().asItem(), 0.3f);
+
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.THYOCIELLE.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.FENNKYSTRAL.get().asItem(), 0.3f);
+
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.CALENDULA.get().asItem(), 0.3f);
+
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.MYQUESTE_SAPLING.get().asItem(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.MYQUESTE_LEAVES.get().asItem(), 0.3f);
         });
     }
 
