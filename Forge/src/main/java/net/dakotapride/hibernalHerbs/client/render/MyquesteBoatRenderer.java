@@ -13,17 +13,22 @@ import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.phys.AABB;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
+@OnlyIn(Dist.CLIENT)
 public class MyquesteBoatRenderer extends EntityRenderer<MyquesteBoat> {
 
     private final Map<MyquesteBoat.MyquesteType, Pair<ResourceLocation, BoatModel>> boatResources;
@@ -32,11 +37,7 @@ public class MyquesteBoatRenderer extends EntityRenderer<MyquesteBoat> {
         super(context);
         this.shadowRadius = 0.8F;
         this.boatResources = ModPlatform.INSTANCE.hasLoadErrors() ? new HashMap<>() :
-                Stream.of(MyquesteBoat.MyquesteType.values()).collect(ImmutableMap.toImmutableMap((myquesteType) -> {
-                    return myquesteType;
-                }, (myquesteType) -> {
-                    return Pair.of(HibernalHerbsForge.createLocation(getTextureLocation(myquesteType, hasChest)), this.createBoatModel(context, myquesteType, hasChest));
-                }));
+                Stream.of(MyquesteBoat.MyquesteType.values()).collect(ImmutableMap.toImmutableMap((myquesteType) -> myquesteType, (myquesteType) -> Pair.of(HibernalHerbsForge.createLocation(getTextureLocation(myquesteType, hasChest)), this.createBoatModel(context, myquesteType, hasChest))));
     }
 
     private BoatModel createBoatModel(EntityRendererProvider.Context context, MyquesteBoat.MyquesteType myquesteType, boolean hasChest) {
@@ -57,7 +58,7 @@ public class MyquesteBoatRenderer extends EntityRenderer<MyquesteBoat> {
     }
 
     @Override
-    public void render(MyquesteBoat boat, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource multiBufferSource, int packedLightIn) {
+    public void render(MyquesteBoat boat, float entityYaw, float partialTicks, PoseStack matrixStackIn, @NotNull MultiBufferSource multiBufferSource, int packedLightIn) {
         matrixStackIn.pushPose();
         matrixStackIn.translate(0.0D, 0.375D, 0.0D);
         matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F - entityYaw));

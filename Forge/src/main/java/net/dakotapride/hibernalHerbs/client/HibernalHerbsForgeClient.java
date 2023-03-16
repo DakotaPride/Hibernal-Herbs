@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.client;
 
+import net.dakotapride.hibernalHerbs.client.render.HibernalEntityRenderers;
 import net.dakotapride.hibernalHerbs.client.render.MyquesteBoatRenderer;
 import net.dakotapride.hibernalHerbs.common.entity.MyquesteBoat;
 import net.minecraft.client.model.BoatModel;
@@ -13,6 +14,8 @@ import java.util.function.Supplier;
 public class HibernalHerbsForgeClient {
 
     public static void client() {
+
+        HibernalEntityRenderers.load();
 
         registerLayerDefinitions(ForgeHooksClient::registerLayerDefinition);
     }
