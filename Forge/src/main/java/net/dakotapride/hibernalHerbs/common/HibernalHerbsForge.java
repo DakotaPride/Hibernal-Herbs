@@ -1,11 +1,13 @@
 package net.dakotapride.hibernalHerbs.common;
 
+import net.dakotapride.hibernalHerbs.client.HibernalHerbsForgeClient;
 import net.dakotapride.hibernalHerbs.client.PackLoader;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsConfigured;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsPlaced;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.dakotapride.hibernalHerbs.platform.Services;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
@@ -19,9 +21,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -241,6 +245,8 @@ public class HibernalHerbsForge {
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemProperties.register(itemRegistry.CANISTER.get(), new ResourceLocation(MOD_ID, "filled"),
                 ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
+
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> HibernalHerbsForgeClient::client);
     }
 
     public static void init() {
@@ -268,5 +274,9 @@ public class HibernalHerbsForge {
                 tooltip.add(Component.literal("Saturation: " + food.getSaturationModifier()));
             }
         }
+    }
+
+    public static ResourceLocation createLocation(String path) {
+        return new ResourceLocation(MOD_ID, path);
     }
 }

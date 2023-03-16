@@ -2,12 +2,15 @@ package net.dakotapride.hibernalHerbs.common.registry;
 
 import net.dakotapride.hibernalHerbs.common.Constants;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
+import net.dakotapride.hibernalHerbs.common.entity.MyquesteBoat;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BoatItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,6 +20,11 @@ import net.minecraftforge.registries.RegistryObject;
 public class itemRegistry implements FoodComponentList {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
+
+    public static final RegistryObject<Item> MYQUESTE_BOAT = ITEMS.register("myqueste_boat",
+            () -> new MyquesteBoatItem(false, MyquesteBoat.MyquesteType.MYQUESTE, new Item.Properties()));
+    public static final RegistryObject<Item> MYQUESTE_CHEST_BOAT = ITEMS.register("myqueste_chest_boat",
+            () -> new MyquesteBoatItem(true, MyquesteBoat.MyquesteType.MYQUESTE, new Item.Properties()));
 
     public static final RegistryObject<Item> HERB_FERTILIZER = ITEMS.register("herb_fertilizer",
             () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
