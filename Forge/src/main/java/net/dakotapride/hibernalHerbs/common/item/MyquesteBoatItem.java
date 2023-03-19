@@ -1,8 +1,5 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
-import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoat;
-import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteChestBoat;
-import net.minecraft.client.gui.components.ChatComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -10,6 +7,8 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -28,13 +27,18 @@ public class MyquesteBoatItem extends Item {
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
 
     private final boolean hasChest;
-    private final MyquesteBoat.MyquesteType type;
+    private Boat.Type type;
     boolean isSafe = false;
 
-    public MyquesteBoatItem(boolean hasChest, MyquesteBoat.MyquesteType typeIn, Properties properties) {
+    public MyquesteBoatItem(boolean hasChest, Properties properties) {
         super(properties);
         this.hasChest = hasChest;
-        this.type = typeIn;
+    }
+
+    public MyquesteBoatItem(boolean hasChest, Properties properties, Boat.Type type) {
+        super(properties);
+        this.hasChest = hasChest;
+        this.type = type;
     }
 
     @Override
@@ -68,8 +72,8 @@ public class MyquesteBoatItem extends Item {
                 }
 
                 if (hitresult.getType() == HitResult.Type.BLOCK) {
-                    MyquesteBoat boat = this.getBoat(pLevel, hitresult);
-                    boat.setMyquesteBoatType(this.type);
+                    Boat boat = this.getBoat(pLevel, hitresult);
+                    boat.setType(this.type);
                     boat.setYRot(pPlayer.getYRot());
                     if (!pLevel.noCollision(boat, boat.getBoundingBox())) {
                         return InteractionResultHolder.fail(itemstack);
@@ -94,7 +98,7 @@ public class MyquesteBoatItem extends Item {
         }
     }
 
-    private MyquesteBoat getBoat(Level level, HitResult hitResult) {
-        return this.hasChest ? new MyquesteChestBoat(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z) : new MyquesteBoat(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z);
+    private Boat getBoat(Level level, HitResult hitResult) {
+        return this.hasChest ? new ChestBoat(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z) : new Boat(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z);
     }
 }
