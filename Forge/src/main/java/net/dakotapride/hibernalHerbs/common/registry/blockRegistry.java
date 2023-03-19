@@ -189,6 +189,11 @@ public class blockRegistry {
     public static final RegistryObject<Block> MYQUESTE_FENCE_GATE = registerBlock("myqueste_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE_GATE)), HibernalHerbsForge.HIBERNAL_HERBS);
 
+    public static final RegistryObject<Block> MYQUESTE_PRESSURE_PLATE = registerBlock("myqueste_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.SPRUCE_PRESSURE_PLATE)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> MYQUESTE_BUTTON = registerBlock("myqueste_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON)), HibernalHerbsForge.HIBERNAL_HERBS);
+
     public static final RegistryObject<Block> MYQUESTE_LEAVES = registerBlock("myqueste_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES)){
                 @Override

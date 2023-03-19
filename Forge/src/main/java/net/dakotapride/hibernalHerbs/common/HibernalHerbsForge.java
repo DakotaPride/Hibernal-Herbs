@@ -62,6 +62,12 @@ public class HibernalHerbsForge {
             nonNullList.add(0, blockRegistry.MYQUESTE_SAPLING.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.MYQUESTE_LEAVES.get().asItem().getDefaultInstance());
 
+            nonNullList.add(0, itemRegistry.MYQUESTE_BOAT.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.MYQUESTE_CHEST_BOAT.get().getDefaultInstance());
+
+            nonNullList.add(0, blockRegistry.MYQUESTE_PRESSURE_PLATE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.MYQUESTE_BUTTON.get().asItem().getDefaultInstance());
+
             nonNullList.add(0, blockRegistry.MYQUESTE_STAIRS.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.MYQUESTE_SLAB.get().asItem().getDefaultInstance());
 
@@ -115,6 +121,8 @@ public class HibernalHerbsForge {
             nonNullList.add(0, itemRegistry.VIRULENT_BLEND.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.REGENERATIVE_BLEND.get().getDefaultInstance());
 
+            nonNullList.add(0, blockRegistry.CALENDULA_LANTERN.get().asItem().getDefaultInstance());
+
             nonNullList.add(0, itemRegistry.CANISTER_IRON.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.CANISTER_AMETHYST.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.CANISTER_DIAMOND.get().getDefaultInstance());
@@ -135,6 +143,10 @@ public class HibernalHerbsForge {
         @Override
         public void fillItemList(NonNullList<ItemStack> nonNullList) {
             nonNullList.add(0, itemRegistry.POUNDED_BLOFORIA.get().getDefaultInstance());
+
+
+            nonNullList.add(0, itemRegistry.DRIED_CALENDULA.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.POUNDED_CALENDULA.get().getDefaultInstance());
 
             nonNullList.add(0, itemRegistry.POUNDED_FENNKYSTRAL.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_THYOCIELLE.get().getDefaultInstance());
@@ -164,6 +176,8 @@ public class HibernalHerbsForge {
         @Override
         public void fillItemList(NonNullList<ItemStack> nonNullList) {
             nonNullList.add(0, blockRegistry.BLOFORIA.get().asItem().getDefaultInstance());
+
+            nonNullList.add(0, blockRegistry.CALENDULA.get().asItem().getDefaultInstance());
 
             nonNullList.add(0, blockRegistry.FENNKYSTRAL.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.THYOCIELLE.get().asItem().getDefaultInstance());
