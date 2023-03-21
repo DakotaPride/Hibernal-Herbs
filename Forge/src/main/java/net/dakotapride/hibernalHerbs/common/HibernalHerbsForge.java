@@ -1,6 +1,8 @@
 package net.dakotapride.hibernalHerbs.common;
 
 import net.dakotapride.hibernalHerbs.client.PackLoader;
+import net.dakotapride.hibernalHerbs.common.entity.HibernalBlockEntities;
+import net.dakotapride.hibernalHerbs.common.entity.HibernalEntityTypes;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsConfigured;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsPlaced;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
@@ -64,6 +66,8 @@ public class HibernalHerbsForge {
 
             nonNullList.add(0, itemRegistry.MYQUESTE_BOAT.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.MYQUESTE_CHEST_BOAT.get().getDefaultInstance());
+
+            nonNullList.add(0, itemRegistry.MYQUESTE_SIGN.get().getDefaultInstance());
 
             nonNullList.add(0, blockRegistry.MYQUESTE_PRESSURE_PLATE.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.MYQUESTE_BUTTON.get().asItem().getDefaultInstance());
@@ -205,6 +209,11 @@ public class HibernalHerbsForge {
         blockRegistry.register(eventBus);
         HibernalHerbsConfigured.register(eventBus);
         HibernalHerbsPlaced.register(eventBus);
+
+        // Entities
+        HibernalEntityTypes.ENTITY_TYPES.register(eventBus);
+
+        HibernalBlockEntities.BLOCK_ENTITIES.register(eventBus);
 
         // Resource Pack Registration
         eventBus.addListener(PackLoader::addPackFinders);

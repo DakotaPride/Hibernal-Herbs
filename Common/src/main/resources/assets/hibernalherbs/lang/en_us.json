@@ -222,5 +222,7 @@
 
   "itemGroup.hibernal_herbs": "Hibernal Herbs - Misc",
   "itemGroup.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
-  "itemGroup.herbs": "Hibernal Herbs - Herbs"
+  "itemGroup.herbs": "Hibernal Herbs - Herbs",
+
+  "entity.hibernalherbs.myqueste_chest_boat": "Myqueste Chest Boat"
 }

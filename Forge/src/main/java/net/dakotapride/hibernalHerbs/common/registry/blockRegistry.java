@@ -3,7 +3,10 @@ package net.dakotapride.hibernalHerbs.common.registry;
 import net.dakotapride.hibernalHerbs.common.Constants;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.block.FlammableRotatedPillarBlock;
+import net.dakotapride.hibernalHerbs.common.block.MyquesteSignBlock;
+import net.dakotapride.hibernalHerbs.common.block.MyquesteWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.gen.grower.MyquesteTreeGrower;
+import net.dakotapride.hibernalHerbs.common.registry.wood.MyquesteType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffects;
@@ -194,6 +197,12 @@ public class blockRegistry {
     public static final RegistryObject<Block> MYQUESTE_BUTTON = registerBlock("myqueste_button",
             () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON)), HibernalHerbsForge.HIBERNAL_HERBS);
 
+    public static final RegistryObject<Block> MYQUESTE_SIGN = registerBlockWithoutTab("myqueste_sign", () ->
+            new MyquesteSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SIGN), MyquesteType.MYQUESTE));
+    public static final RegistryObject<Block> MYQUESTE_WALL_SIGN = registerBlockWithoutTab("myqueste_wall_sign", () ->
+            new MyquesteWallSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WALL_SIGN).lootFrom(MYQUESTE_SIGN),
+                    MyquesteType.MYQUESTE));
+
     public static final RegistryObject<Block> MYQUESTE_LEAVES = registerBlock("myqueste_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES)){
                 @Override
@@ -220,6 +229,10 @@ public class blockRegistry {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.MYQUESTE_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_SPRUCE_SAPLING)));
 
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutTab(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
+    }
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

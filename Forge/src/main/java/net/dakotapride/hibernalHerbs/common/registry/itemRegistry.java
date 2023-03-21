@@ -2,6 +2,7 @@ package net.dakotapride.hibernalHerbs.common.registry;
 
 import net.dakotapride.hibernalHerbs.common.Constants;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
+import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoatEntity;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
@@ -9,6 +10,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SignItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,9 +21,13 @@ public class itemRegistry implements FoodComponentList {
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
 
     public static final RegistryObject<Item> MYQUESTE_BOAT = ITEMS.register("myqueste_boat",
-            () -> new MyquesteBoatItem(false, new Item.Properties()));
+            () -> new MyquesteBoatItem(false, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties()));
     public static final RegistryObject<Item> MYQUESTE_CHEST_BOAT = ITEMS.register("myqueste_chest_boat",
-            () -> new MyquesteBoatItem(true, new Item.Properties()));
+            () -> new MyquesteBoatItem(true, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties()));
+
+    public static final RegistryObject<Item> MYQUESTE_SIGN = ITEMS.register("myqueste_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16).tab(HibernalHerbsForge.HIBERNAL_HERBS),
+                    blockRegistry.MYQUESTE_SIGN.get(), blockRegistry.MYQUESTE_WALL_SIGN.get()));
 
     public static final RegistryObject<Item> HERB_FERTILIZER = ITEMS.register("herb_fertilizer",
             () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
