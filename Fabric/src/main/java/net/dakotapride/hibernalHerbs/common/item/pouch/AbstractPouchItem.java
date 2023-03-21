@@ -64,21 +64,27 @@ public class AbstractPouchItem extends BundleItem {
                     playRemoveOneSound(player);
                 }
 
-            } else if (pouchStack.isOf(ItemInit.SCRATCHED_POUCH) && itemStack.isIn(util.SCRATCHED_HERBS)) {
-                int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
+            } else if (pouchStack.isOf(ItemInit.SCRATCHED_POUCH)) {
+                if (itemStack.isIn(util.HERBS) || itemStack.isIn(util.POUNDED_HERBS)) {
+                    int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
 
-                playInsertSound(player);
-                add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
-            } else if (pouchStack.isOf(ItemInit.STITCHED_POUCH) && itemStack.isIn(util.STITCHED_HERBS)) {
-                int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
+                    playInsertSound(player);
+                    add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
+                }
+            } else if (pouchStack.isOf(ItemInit.STITCHED_POUCH)) {
+                if (itemStack.isIn(util.HERBS) || itemStack.isIn(util.POUNDED_HERBS)) {
+                    int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
 
-                playInsertSound(player);
-                add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
-            } else if (pouchStack.isOf(ItemInit.SCRATCHED_POUCH) && itemStack.isIn(util.SCRATCHED_HERBS)) {
-                int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
+                    playInsertSound(player);
+                    add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
+                }
+            } else if (pouchStack.isOf(ItemInit.PROPER_POUCH)) {
+                if (itemStack.isIn(util.HERBS) || itemStack.isIn(util.POUNDED_HERBS)) {
+                    int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
 
-                playInsertSound(player);
-                add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
+                    playInsertSound(player);
+                    add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
+                }
             }
 
             return true;
@@ -94,30 +100,42 @@ public class AbstractPouchItem extends BundleItem {
                 var10000.ifPresent(stackReference::set);
 
                 if (this.getDefaultStack().isIn(util.POUCHES)) {
-                    if (this.getDefaultStack().isOf(ItemInit.SCRATCHED_POUCH) && stack2.isIn(util.SCRATCHED_HERBS)) {
-                        if (this.getDefaultStack().hasNbt()) {
-                            playRemoveOneSound(player);
+                    if (this.getDefaultStack().isOf(ItemInit.SCRATCHED_POUCH)) {
+                        if (stack2.isIn(util.HERBS) || stack2.isIn(util.POUNDED_HERBS)) {
+                            if (this.getDefaultStack().hasNbt()) {
+                                playRemoveOneSound(player);
+                            }
                         }
-                    } else if (this.getDefaultStack().isOf(ItemInit.STITCHED_POUCH) && stack2.isIn(util.STITCHED_HERBS)) {
-                        if (this.getDefaultStack().hasNbt()) {
-                            playRemoveOneSound(player);
+                    } else if (this.getDefaultStack().isOf(ItemInit.STITCHED_POUCH)) {
+                        if (stack2.isIn(util.HERBS) || stack2.isIn(util.POUNDED_HERBS)) {
+                            if (this.getDefaultStack().hasNbt()) {
+                                playRemoveOneSound(player);
+                            }
                         }
-                    } else if (this.getDefaultStack().isOf(ItemInit.PROPER_POUCH) && stack2.isIn(util.PROPER_HERBS)) {
-                        if (this.getDefaultStack().hasNbt()) {
-                            playRemoveOneSound(player);
+                    } else if (this.getDefaultStack().isOf(ItemInit.PROPER_POUCH)) {
+                        if (stack2.isIn(util.HERBS) || stack2.isIn(util.POUNDED_HERBS)) {
+                            if (this.getDefaultStack().hasNbt()) {
+                                playRemoveOneSound(player);
+                            }
                         }
                     }
                 }
             } else if (this.getDefaultStack().isIn(util.POUCHES)) {
-                if (this.getDefaultStack().isOf(ItemInit.SCRATCHED_POUCH) && stack2.isIn(util.SCRATCHED_HERBS)) {
-                    playInsertSound(player);
-                    stack2.decrement(add(stack1, stack2, size, player));
-                } else if (this.getDefaultStack().isOf(ItemInit.STITCHED_POUCH) && stack2.isIn(util.STITCHED_HERBS)) {
-                    playInsertSound(player);
-                    stack2.decrement(add(stack1, stack2, size, player));
-                } else if (this.getDefaultStack().isOf(ItemInit.PROPER_POUCH) && stack2.isIn(util.PROPER_HERBS)) {
-                    playInsertSound(player);
-                    stack2.decrement(add(stack1, stack2, size, player));
+                if (this.getDefaultStack().isOf(ItemInit.SCRATCHED_POUCH)) {
+                    if (stack2.isIn(util.HERBS) || stack2.isIn(util.POUNDED_HERBS)) {
+                        playInsertSound(player);
+                        stack2.decrement(add(stack1, stack2, size, player));
+                    }
+                } else if (this.getDefaultStack().isOf(ItemInit.STITCHED_POUCH)) {
+                    if (stack2.isIn(util.HERBS) || stack2.isIn(util.POUNDED_HERBS)) {
+                        playInsertSound(player);
+                        stack2.decrement(add(stack1, stack2, size, player));
+                    }
+                } else if (this.getDefaultStack().isOf(ItemInit.PROPER_POUCH)) {
+                    if (stack2.isIn(util.HERBS) || stack2.isIn(util.POUNDED_HERBS)) {
+                        playInsertSound(player);
+                        stack2.decrement(add(stack1, stack2, size, player));
+                    }
                 }
             }
 
@@ -191,7 +209,8 @@ public class AbstractPouchItem extends BundleItem {
         ItemStack pouchStack = this.asItem().getDefaultStack();
 
         if (pouchStack.isOf(ItemInit.SCRATCHED_POUCH)) {
-            if (!addStack.isEmpty() && addStack.isIn(util.SCRATCHED_HERBS)) {
+            if (!addStack.isEmpty() && addStack.isIn(util.HERBS)
+                    || !addStack.isEmpty() && addStack.isIn(util.POUNDED_HERBS)) {
                 NbtCompound tag = bundleStack.getOrCreateNbt();
                 if (!tag.contains("Items")) {
                     tag.put("Items", new NbtList());
@@ -230,7 +249,8 @@ public class AbstractPouchItem extends BundleItem {
                 return 0;
             }
         } else if (pouchStack.isOf(ItemInit.STITCHED_POUCH)) {
-            if (!addStack.isEmpty() && addStack.isIn(util.STITCHED_HERBS)) {
+            if (!addStack.isEmpty() && addStack.isIn(util.HERBS)
+                    || !addStack.isEmpty() && addStack.isIn(util.POUNDED_HERBS)) {
                 NbtCompound tag = bundleStack.getOrCreateNbt();
                 if (!tag.contains("Items")) {
                     tag.put("Items", new NbtList());
@@ -269,7 +289,8 @@ public class AbstractPouchItem extends BundleItem {
                 return 0;
             }
         } else if (pouchStack.isOf(ItemInit.PROPER_POUCH)) {
-            if (!addStack.isEmpty() && addStack.isIn(util.PROPER_HERBS)) {
+            if (!addStack.isEmpty() && addStack.isIn(util.HERBS)
+                    || !addStack.isEmpty() && addStack.isIn(util.POUNDED_HERBS)) {
                 NbtCompound tag = bundleStack.getOrCreateNbt();
                 if (!tag.contains("Items")) {
                     tag.put("Items", new NbtList());

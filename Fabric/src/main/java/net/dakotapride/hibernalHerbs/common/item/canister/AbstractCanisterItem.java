@@ -188,7 +188,7 @@ public class AbstractCanisterItem extends BundleItem {
     }
 
     public static List<NbtCompound> getMatchingItem(ItemStack itemStack, NbtList listTag) {
-        if (itemStack.isOf(ItemInit.CANISTER)) {
+        if (itemStack.isIn(util.CANISTERS)) {
             return Collections.emptyList();
         } else {
             Stream<?> var10000 = listTag.stream();
@@ -203,7 +203,7 @@ public class AbstractCanisterItem extends BundleItem {
     }
 
     public static int getWeight(ItemStack stack, int size) {
-        if (stack.isOf(ItemInit.CANISTER)) {
+        if (stack.isIn(util.CANISTERS)) {
             return 4 + getContentWeight(stack, size);
         } else {
             return size / stack.getMaxCount();

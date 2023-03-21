@@ -20,18 +20,9 @@ public class util {
     public static final TagKey<Item> BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "herb_blends"));
 
     public static final TagKey<Item> POUCHES = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "pouches"));
+    public static final TagKey<Item> CANISTERS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "canisters"));
 
     public static final TagKey<Biome> HAS_HERBS = TagKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "has_herbs"));
-
-    // Refined Pouches/Canisters Tags
-    public static final TagKey<Item> SCRATCHED_HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "pouches/scratched"));
-    public static final TagKey<Item> IRON_BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "blends/iron"));
-
-    public static final TagKey<Item> STITCHED_HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "pouches/stitched"));
-    public static final TagKey<Item> DIAMOND_BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "blends/diamond"));
-
-    public static final TagKey<Item> PROPER_HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "pouches/proper"));
-    public static final TagKey<Item> NETHERITE_BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "blends/netherite"));
 
     public static void utilsInit() {
         // Strippable Blocks

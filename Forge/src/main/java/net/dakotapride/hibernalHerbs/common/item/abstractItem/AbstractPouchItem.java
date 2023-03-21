@@ -82,31 +82,43 @@ public class AbstractPouchItem extends BundleItem {
                 var10000.ifPresent(slotAccess::set);
 
                 if (this.getDefaultInstance().is(HibernalHerbsForge.POUCHES_TAG)) {
-                    if (this.getDefaultInstance().is(itemRegistry.POUCH_SCRATCHED.get()) && stack2.is(HibernalHerbsForge.SCRATCHED_HERBS)) {
-                        if (this.getDefaultInstance().hasTag()) {
-                            playRemoveOneSound(player);
+                    if (this.getDefaultInstance().is(itemRegistry.POUCH_SCRATCHED.get())) {
+                        if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+                            if (this.getDefaultInstance().hasTag()) {
+                                playRemoveOneSound(player);
+                            }
                         }
-                    } else if (this.getDefaultInstance().is(itemRegistry.POUCH_STITCHED.get()) && stack2.is(HibernalHerbsForge.STITCHED_HERBS)) {
-                        if (this.getDefaultInstance().hasTag()) {
-                            playRemoveOneSound(player);
+                    } else if (this.getDefaultInstance().is(itemRegistry.POUCH_STITCHED.get())) {
+                        if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+                            if (this.getDefaultInstance().hasTag()) {
+                                playRemoveOneSound(player);
+                            }
                         }
-                    } else if (this.getDefaultInstance().is(itemRegistry.POUCH_PROPER.get()) && stack2.is(HibernalHerbsForge.PROPER_HERBS)) {
-                        if (this.getDefaultInstance().hasTag()) {
-                            playRemoveOneSound(player);
+                    } else if (this.getDefaultInstance().is(itemRegistry.POUCH_PROPER.get())) {
+                        if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+                            if (this.getDefaultInstance().hasTag()) {
+                                playRemoveOneSound(player);
+                            }
                         }
                     }
                 }
 
             } else if (this.getDefaultInstance().is(HibernalHerbsForge.POUCHES_TAG)) {
-                if (this.getDefaultInstance().is(itemRegistry.POUCH_SCRATCHED.get()) && stack2.is(HibernalHerbsForge.SCRATCHED_HERBS)) {
-                    playInsertSound(player);
-                    stack2.shrink(add(stack1, stack2, size, player));
-                } else if (this.getDefaultInstance().is(itemRegistry.POUCH_STITCHED.get()) && stack2.is(HibernalHerbsForge.STITCHED_HERBS)) {
-                    playInsertSound(player);
-                    stack2.shrink(add(stack1, stack2, size, player));
-                } else if (this.getDefaultInstance().is(itemRegistry.POUCH_PROPER.get()) && stack2.is(HibernalHerbsForge.PROPER_HERBS)) {
-                    playInsertSound(player);
-                    stack2.shrink(add(stack1, stack2, size, player));
+                if (this.getDefaultInstance().is(itemRegistry.POUCH_SCRATCHED.get())) {
+                    if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+                        playInsertSound(player);
+                        stack2.shrink(add(stack1, stack2, size, player));
+                    }
+                } else if (this.getDefaultInstance().is(itemRegistry.POUCH_STITCHED.get())) {
+                    if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+                        playInsertSound(player);
+                        stack2.shrink(add(stack1, stack2, size, player));
+                    }
+                } else if (this.getDefaultInstance().is(itemRegistry.POUCH_PROPER.get())) {
+                    if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+                        playInsertSound(player);
+                        stack2.shrink(add(stack1, stack2, size, player));
+                    }
                 }
             }
 
@@ -178,7 +190,88 @@ public class AbstractPouchItem extends BundleItem {
 
     public int add(ItemStack bundleStack, ItemStack addStack, int size, @Nullable Player player) {
         if (this.getDefaultInstance().is(itemRegistry.POUCH_SCRATCHED.get())) {
-            if (!addStack.isEmpty() && addStack.is(HibernalHerbsForge.SCRATCHED_HERBS)) {
+            if (!addStack.isEmpty() && addStack.is(HibernalHerbsForge.HERBS_TAG)
+                    || !addStack.isEmpty() && addStack.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+                CompoundTag tag = bundleStack.getOrCreateTag();
+                if (!tag.contains("Items")) {
+                    tag.put("Items", new ListTag());
+                }
+
+                int contentWeight = getContentWeight(bundleStack, 64);
+                int addStackWeight = getWeight(addStack, 64);
+                int remainingSlots = Math.min(addStack.getCount(), (size - contentWeight) / addStackWeight);
+                if (remainingSlots == 0) {
+                    return 0;
+                } else {
+                    int putSize = remainingSlots;
+                    ListTag list = tag.getList("Items", 10);
+                    List<CompoundTag> var7 = getMatchingItem(addStack, list);
+                    for (CompoundTag itemTag : var7) {
+                        if (remainingSlots <= 0) break;
+                        ItemStack var9 = ItemStack.of(itemTag);
+                        int freeSlots = Math.min(var9.getMaxStackSize() - var9.getCount(), remainingSlots);
+                        var9.grow(freeSlots);
+                        var9.save(itemTag);
+                        list.remove(itemTag);
+                        list.add(0, itemTag);
+                        remainingSlots -= freeSlots;
+                    }
+                    if (remainingSlots > 0) {
+                        ItemStack var10 = addStack.copy();
+                        var10.setCount(remainingSlots);
+                        CompoundTag var11 = new CompoundTag();
+                        var10.save(var11);
+                        list.add(0, var11);
+                    }
+
+                    return putSize;
+                }
+            } else {
+                return 0;
+            }
+        } else if (this.getDefaultInstance().is(itemRegistry.POUCH_STITCHED.get())) {
+            if (!addStack.isEmpty() && addStack.is(HibernalHerbsForge.HERBS_TAG)
+                    || !addStack.isEmpty() && addStack.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
+                CompoundTag tag = bundleStack.getOrCreateTag();
+                if (!tag.contains("Items")) {
+                    tag.put("Items", new ListTag());
+                }
+
+                int contentWeight = getContentWeight(bundleStack, 64);
+                int addStackWeight = getWeight(addStack, 64);
+                int remainingSlots = Math.min(addStack.getCount(), (size - contentWeight) / addStackWeight);
+                if (remainingSlots == 0) {
+                    return 0;
+                } else {
+                    int putSize = remainingSlots;
+                    ListTag list = tag.getList("Items", 10);
+                    List<CompoundTag> var7 = getMatchingItem(addStack, list);
+                    for (CompoundTag itemTag : var7) {
+                        if (remainingSlots <= 0) break;
+                        ItemStack var9 = ItemStack.of(itemTag);
+                        int freeSlots = Math.min(var9.getMaxStackSize() - var9.getCount(), remainingSlots);
+                        var9.grow(freeSlots);
+                        var9.save(itemTag);
+                        list.remove(itemTag);
+                        list.add(0, itemTag);
+                        remainingSlots -= freeSlots;
+                    }
+                    if (remainingSlots > 0) {
+                        ItemStack var10 = addStack.copy();
+                        var10.setCount(remainingSlots);
+                        CompoundTag var11 = new CompoundTag();
+                        var10.save(var11);
+                        list.add(0, var11);
+                    }
+
+                    return putSize;
+                }
+            } else {
+                return 0;
+            }
+        } else if (this.getDefaultInstance().is(itemRegistry.POUCH_PROPER.get())) {
+            if (!addStack.isEmpty() && addStack.is(HibernalHerbsForge.HERBS_TAG)
+                    || !addStack.isEmpty() && addStack.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                 CompoundTag tag = bundleStack.getOrCreateTag();
                 if (!tag.contains("Items")) {
                     tag.put("Items", new ListTag());

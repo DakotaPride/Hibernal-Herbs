@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "hibernalherbs:canister"
+    "hibernalherbs:canister_iron",
+    "hibernalherbs:canister_amethyst",
+    "hibernalherbs:canister_diamond"
   ]
 }
