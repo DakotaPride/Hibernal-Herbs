@@ -43,10 +43,6 @@ public class HibernalHerbsForge {
 
     public static final TagKey<Item> POUCHES_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "pouches"));
 
-    public static final TagKey<Item> SCRATCHED_HERBS = ItemTags.create(new ResourceLocation(MOD_ID, "pouches/scratched"));
-    public static final TagKey<Item> STITCHED_HERBS = ItemTags.create(new ResourceLocation(MOD_ID, "pouches/stitched"));
-    public static final TagKey<Item> PROPER_HERBS = ItemTags.create(new ResourceLocation(MOD_ID, "pouches/proper"));
-
 
     public static final CreativeModeTab HIBERNAL_HERBS = new CreativeModeTab("hibernal_herbs") {
         @Override

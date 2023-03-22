@@ -1,0 +1,8 @@
+{
+  "parent": "hibernalherbs:block/pile/leaf_pile",
+  "textures": {
+    "all": "hibernalherbs:block/herb/pile/bloforia",
+    "particle": "hibernalherbs:block/herb/pile/bloforia"
+  },
+  "render_type": "cutout_mipped"
+}

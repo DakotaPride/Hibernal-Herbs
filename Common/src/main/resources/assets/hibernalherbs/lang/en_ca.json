@@ -181,6 +181,8 @@
   "block.hibernalherbs.myqueste_button": "Myqueste Button",
   "block.hibernalherbs.myqueste_sign": "Myqueste Sign",
 
+  "block.hibernalherbs.myqueste_leaf_pile": "Myqueste Leaf Pile",
+
   "block.hibernalherbs.calendula_lantern": "Calendula Lantern",
 
   "itemGroup.hibernalherbs.hibernal_herbs": "Hibernal Herbs - Misc",
@@ -260,5 +262,9 @@
   "itemGroup.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
   "itemGroup.herbs": "Hibernal Herbs - Herbs",
 
-  "entity.hibernalherbs.myqueste_chest_boat": "Boat with Chest"
+  "entity.hibernalherbs.myqueste_chest_boat": "Boat with Chest",
+
+  "block.hibernalherbs.bloforia_herb_pile": "Herb Pile",
+
+  "text.hibernalherbs.pile.bloforia": "  - Bloforia"
 }
