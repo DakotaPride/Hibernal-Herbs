@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.init;
 
+import com.terraformersmc.terraform.leaves.block.LeafPileBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
@@ -11,12 +12,35 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SignItem;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class BlockInit {
+
+    // "Leaf" (Herb) Piles
+    public static LeafPileBlock MYQUESTE_LEAF_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+
+    public static LeafPileBlock ROSEMARY_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock THYME_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock TARRAGON_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock CHAMOMILE_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock CHIVES_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock VERBENA_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock SORREL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock MARJORAM_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock CHERVIL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock FENNSEL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock CEILLIS_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock PUNUEL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock ESSITTE_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+
+    public static LeafPileBlock THYOCIELLE_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock FENNKYSTRAL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+
+    public static LeafPileBlock CALENDULA_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
 
     public static FlowerBlock ROSEMARY =
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
@@ -215,6 +239,41 @@ public class BlockInit {
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_sign"), MYQUESTE_SIGN);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_wall_sign"), MYQUESTE_WALL_SIGN);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_sign"), MYQUESTE_SIGN_ITEM);
+
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_leaf_pile"), MYQUESTE_LEAF_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "myqueste_leaf_pile"), new BlockItem(MYQUESTE_LEAF_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "rosemary_herb_pile"), ROSEMARY_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "rosemary_herb_pile"), new BlockItem(ROSEMARY_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "thyme_herb_pile"), THYME_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "thyme_herb_pile"), new BlockItem(THYME_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "tarragon_herb_pile"), TARRAGON_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "tarragon_herb_pile"), new BlockItem(TARRAGON_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "chamomile_herb_pile"), CHAMOMILE_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "chamomile_herb_pile"), new BlockItem(CHAMOMILE_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "chives_herb_pile"), CHIVES_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "chives_herb_pile"), new BlockItem(CHIVES_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "verbena_herb_pile"), VERBENA_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "verbena_herb_pile"), new BlockItem(VERBENA_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sorrel_herb_pile"), SORREL_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sorrel_herb_pile"), new BlockItem(SORREL_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "marjoram_herb_pile"), MARJORAM_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "marjoram_herb_pile"), new BlockItem(MARJORAM_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "chervil_herb_pile"), CHERVIL_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "chervil_herb_pile"), new BlockItem(CHERVIL_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "fennsel_herb_pile"), FENNSEL_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennsel_herb_pile"), new BlockItem(FENNSEL_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ceillis_herb_pile"), CEILLIS_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ceillis_herb_pile"), new BlockItem(CEILLIS_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "punuel_herb_pile"), PUNUEL_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "punuel_herb_pile"), new BlockItem(PUNUEL_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "essitte_herb_pile"), ESSITTE_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "essitte_herb_pile"), new BlockItem(ESSITTE_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "thyocielle_herb_pile"), THYOCIELLE_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "thyocielle_herb_pile"), new BlockItem(THYOCIELLE_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "fennkystral_herb_pile"), FENNKYSTRAL_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennkystral_herb_pile"), new BlockItem(FENNKYSTRAL_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_herb_pile"), CALENDULA_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_herb_pile"), new BlockItem(CALENDULA_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_lantern"), CALENDULA_LANTERN);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_lantern"), new BlockItem(CALENDULA_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));

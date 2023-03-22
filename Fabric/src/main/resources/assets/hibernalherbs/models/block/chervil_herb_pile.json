@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "hibernalherbs:block/herb/pile/chervil",
+    "particle": "hibernalherbs:block/herb/pile/chervil"
+  }
+}

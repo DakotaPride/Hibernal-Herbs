@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "chest_boat",
+  "ingredients": [
+    {
+      "item": "minecraft:chest"
+    },
+    {
+      "item": "hibernalherbs:myqueste_boat"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:myqueste_chest_boat"
+  }
+}

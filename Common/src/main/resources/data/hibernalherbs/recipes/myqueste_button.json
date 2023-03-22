@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:myqueste_planks"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:myqueste_button"
+  }
+}

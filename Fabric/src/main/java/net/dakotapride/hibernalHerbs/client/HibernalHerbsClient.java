@@ -59,6 +59,24 @@ public class HibernalHerbsClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CALENDULA_LANTERN, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.MYQUESTE_LEAF_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.ROSEMARY_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.THYME_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.TARRAGON_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CHAMOMILE_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CHIVES_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.VERBENA_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SORREL_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.MARJORAM_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CHERVIL_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.FENNSEL_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CEILLIS_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.PUNUEL_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.ESSITTE_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.FENNKYSTRAL_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.THYOCIELLE_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CALENDULA_HERB_PILE, RenderLayer.getCutoutMipped());
+
         // Render Layers (Terraform)
         TerraformBoatClientHelper.registerModelLayers(HibernalHerbsMod.MYQUESTE_ID);
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, BlockInit.MYQUESTE_SIGN_TEXTURE));
