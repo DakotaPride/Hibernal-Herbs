@@ -4,5 +4,5 @@
     "all": "hibernalherbs:block/herb/pile/bloforia",
     "particle": "hibernalherbs:block/herb/pile/bloforia"
   },
-  "render_type": "cutout_mipped"
+  "render_type": "cutout"
 }

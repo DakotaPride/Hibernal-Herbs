@@ -4,5 +4,5 @@
     "all": "hibernalherbs:block/herb/pile/sorrel",
     "particle": "hibernalherbs:block/herb/pile/sorrel"
   },
-  "render_type": "cutout_mipped"
+  "render_type": "cutout"
 }

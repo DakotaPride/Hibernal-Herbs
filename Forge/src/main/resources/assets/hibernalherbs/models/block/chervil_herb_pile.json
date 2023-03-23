@@ -4,5 +4,5 @@
     "all": "hibernalherbs:block/herb/pile/chervil",
     "particle": "hibernalherbs:block/herb/pile/chervil"
   },
-  "render_type": "cutout_mipped"
+  "render_type": "cutout"
 }

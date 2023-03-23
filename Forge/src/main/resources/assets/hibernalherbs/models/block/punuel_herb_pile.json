@@ -4,5 +4,5 @@
     "all": "hibernalherbs:block/herb/pile/punuel",
     "particle": "hibernalherbs:block/herb/pile/punuel"
   },
-  "render_type": "cutout_mipped"
+  "render_type": "cutout"
 }

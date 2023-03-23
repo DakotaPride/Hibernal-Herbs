@@ -34,5 +34,6 @@
       "translation": [ 0, 4.2, 0 ],
       "scale": [ 0.40, 0.40, 0.40 ]
     }
-  }
+  },
+  "render_type": "cutout"
 }
