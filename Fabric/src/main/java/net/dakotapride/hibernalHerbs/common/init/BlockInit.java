@@ -24,24 +24,24 @@ public class BlockInit {
     // "Leaf" (Herb) Piles
     public static LeafPileBlock MYQUESTE_LEAF_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
 
-    public static LeafPileBlock ROSEMARY_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock THYME_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock TARRAGON_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock CHAMOMILE_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock CHIVES_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock VERBENA_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock SORREL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock MARJORAM_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock CHERVIL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock FENNSEL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock CEILLIS_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock PUNUEL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock ESSITTE_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock ROSEMARY_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock THYME_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock TARRAGON_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock CHAMOMILE_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock CHIVES_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock VERBENA_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock SORREL_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock MARJORAM_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock CHERVIL_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock FENNSEL_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock CEILLIS_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock PUNUEL_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock ESSITTE_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
 
-    public static LeafPileBlock THYOCIELLE_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
-    public static LeafPileBlock FENNKYSTRAL_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock THYOCIELLE_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock FENNKYSTRAL_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
 
-    public static LeafPileBlock CALENDULA_HERB_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+    public static LeafPileBlock CALENDULA_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
 
     public static FlowerBlock ROSEMARY =
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
