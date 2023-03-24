@@ -4,6 +4,7 @@ import com.terraformersmc.terraform.leaves.block.LeafPileBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
+import net.dakotapride.hibernalHerbs.common.block.HerbBarrelBlock;
 import net.dakotapride.hibernalHerbs.common.block.HibernalLeafPileBlock;
 import net.dakotapride.hibernalHerbs.common.gen.saplingGenerator.MyquesteSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -42,6 +43,25 @@ public class BlockInit {
     public static LeafPileBlock FENNKYSTRAL_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
 
     public static LeafPileBlock CALENDULA_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+
+    public static HerbBarrelBlock ROSEMARY_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock THYME_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock TARRAGON_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock CHAMOMILE_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock CHIVES_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock VERBENA_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock SORREL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock MARJORAM_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock CHERVIL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock FENNSEL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock CEILLIS_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock PUNUEL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock ESSITTE_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+
+    public static HerbBarrelBlock THYOCIELLE_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static HerbBarrelBlock FENNKYSTRAL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+
+    public static HerbBarrelBlock CALENDULA_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
 
     public static FlowerBlock ROSEMARY =
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
@@ -275,6 +295,39 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennkystral_herb_pile"), new BlockItem(FENNKYSTRAL_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_herb_pile"), CALENDULA_HERB_PILE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_herb_pile"), new BlockItem(CALENDULA_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "rosemary_herb_barrel"), ROSEMARY_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "rosemary_herb_barrel"), new BlockItem(ROSEMARY_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "thyme_herb_barrel"), THYME_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "thyme_herb_barrel"), new BlockItem(THYME_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "tarragon_herb_barrel"), TARRAGON_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "tarragon_herb_barrel"), new BlockItem(TARRAGON_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "chamomile_herb_barrel"), CHAMOMILE_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "chamomile_herb_barrel"), new BlockItem(CHAMOMILE_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "chives_herb_barrel"), CHIVES_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "chives_herb_barrel"), new BlockItem(CHIVES_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "verbena_herb_barrel"), VERBENA_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "verbena_herb_barrel"), new BlockItem(VERBENA_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sorrel_herb_barrel"), SORREL_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sorrel_herb_barrel"), new BlockItem(SORREL_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "marjoram_herb_barrel"), MARJORAM_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "marjoram_herb_barrel"), new BlockItem(MARJORAM_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "chervil_herb_barrel"), CHERVIL_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "chervil_herb_barrel"), new BlockItem(CHERVIL_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "fennsel_herb_barrel"), FENNSEL_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennsel_herb_barrel"), new BlockItem(FENNSEL_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ceillis_herb_barrel"), CEILLIS_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ceillis_herb_barrel"), new BlockItem(CEILLIS_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "punuel_herb_barrel"), PUNUEL_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "punuel_herb_barrel"), new BlockItem(PUNUEL_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "essitte_herb_barrel"), ESSITTE_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "essitte_herb_barrel"), new BlockItem(ESSITTE_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "thyocielle_herb_barrel"), THYOCIELLE_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "thyocielle_herb_barrel"), new BlockItem(THYOCIELLE_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "fennkystral_herb_barrel"), FENNKYSTRAL_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennkystral_herb_barrel"), new BlockItem(FENNKYSTRAL_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_herb_barrel"), CALENDULA_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_herb_barrel"), new BlockItem(CALENDULA_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_lantern"), CALENDULA_LANTERN);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_lantern"), new BlockItem(CALENDULA_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));

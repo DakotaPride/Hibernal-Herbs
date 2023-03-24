@@ -6,6 +6,7 @@ import net.dakotapride.hibernalHerbs.common.block.FlammableRotatedPillarBlock;
 import net.dakotapride.hibernalHerbs.common.block.MyquesteSignBlock;
 import net.dakotapride.hibernalHerbs.common.block.MyquesteWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.block.leaf.LeafPileBlock;
+import net.dakotapride.hibernalHerbs.common.block.leaf.hibernal.HibernalLeafPileBlock;
 import net.dakotapride.hibernalHerbs.common.gen.grower.MyquesteTreeGrower;
 import net.dakotapride.hibernalHerbs.common.registry.wood.MyquesteType;
 import net.minecraft.core.BlockPos;
@@ -36,42 +37,42 @@ public class blockRegistry {
             () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
 
     public static final RegistryObject<Block> ROSEMARY_HERB_PILE = registerBlock("rosemary_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> THYME_HERB_PILE = registerBlock("thyme_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> TARRAGON_HERB_PILE = registerBlock("tarragon_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> CHAMOMILE_HERB_PILE = registerBlock("chamomile_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> CHIVES_HERB_PILE = registerBlock("chives_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> VERBENA_HERB_PILE = registerBlock("verbena_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> SORREL_HERB_PILE = registerBlock("sorrel_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> MARJORAM_HERB_PILE = registerBlock("marjoram_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> CHERVIL_HERB_PILE = registerBlock("chervil_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> FENNSEL_HERB_PILE = registerBlock("fennsel_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> CEILLIS_HERB_PILE = registerBlock("ceillis_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> PUNUEL_HERB_PILE = registerBlock("punuel_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> ESSITTE_HERB_PILE = registerBlock("essitte_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
 
     public static RegistryObject<Block> THYOCIELLE_HERB_PILE = registerBlock("thyocielle_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
     public static RegistryObject<Block> FENNKYSTRAL_HERB_PILE = registerBlock("fennkystral_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
 
     public static RegistryObject<Block> CALENDULA_HERB_PILE = registerBlock("calendula_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
 
     public static RegistryObject<Block> BLOFORIA_HERB_PILE = registerBlock("bloforia_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
 
 
     public static final RegistryObject<Block> ROSEMARY = registerBlock("rosemary",

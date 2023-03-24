@@ -54,6 +54,24 @@
 
   "block.hibernalherbs.potted_calendula": "Potted Calendula",
 
+  "block.hibernalherbs.rosemary_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.thyme_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.tarragon_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.chamomile_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.chives_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.verbena_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.sorrel_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.marjoram_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.chervil_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.fennsel_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.ceillis_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.punuel_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.essitte_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.thyocielle_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.fennkystral_herb_barrel": "Herb Barrel",
+
+  "block.hibernalherbs.calendula_herb_barrel": "Herb Barrel",
+
   "block.hibernalherbs.rosemary_herb_pile": "Herb Pile",
   "block.hibernalherbs.thyme_herb_pile": "Herb Pile",
   "block.hibernalherbs.tarragon_herb_pile": "Herb Pile",
@@ -265,6 +283,7 @@
   "entity.hibernalherbs.myqueste_chest_boat": "Boat with Chest",
 
   "block.hibernalherbs.bloforia_herb_pile": "Herb Pile",
+  "block.hibernalherbs.bloforia_herb_barrel": "Herb Barrel",
 
   "text.hibernalherbs.pile.bloforia": "  - Bloforia"
 }
