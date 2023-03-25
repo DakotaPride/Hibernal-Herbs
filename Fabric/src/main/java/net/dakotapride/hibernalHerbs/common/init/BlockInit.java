@@ -5,6 +5,7 @@ import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.block.HerbBarrelBlock;
+import net.dakotapride.hibernalHerbs.common.block.HerbConjurationAltarBlock;
 import net.dakotapride.hibernalHerbs.common.block.HibernalLeafPileBlock;
 import net.dakotapride.hibernalHerbs.common.gen.saplingGenerator.MyquesteSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -21,6 +22,8 @@ import net.minecraft.util.registry.Registry;
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class BlockInit {
+
+    public static Block CONJURATION_ALTAR = new HerbConjurationAltarBlock(FabricBlockSettings.copy(Blocks.LECTERN).nonOpaque());
 
     // "Leaf" (Herb) Piles
     public static LeafPileBlock MYQUESTE_LEAF_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
@@ -146,6 +149,36 @@ public class BlockInit {
             }));
 
     public static LanternBlock CALENDULA_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock ROSEMARY_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock THYME_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock TARRAGON_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock CHAMOMILE_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock CHIVES_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock VERBENA_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock SORREL_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock MARJORAM_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock CHERVIL_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock FENNSEL_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock CEILLIS_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock PUNUEL_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock ESSITTE_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock FENNKYSTRAL_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock THYOCIELLE_LANTERN =
             new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
 
     public static SaplingBlock MYQUESTE_SAPLING = new SaplingBlock(new MyquesteSaplingGenerator(),
@@ -331,6 +364,39 @@ public class BlockInit {
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_lantern"), CALENDULA_LANTERN);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_lantern"), new BlockItem(CALENDULA_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "rosemary_lantern"), ROSEMARY_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "rosemary_lantern"), new BlockItem(ROSEMARY_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "thyme_lantern"), THYME_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "thyme_lantern"), new BlockItem(THYME_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "tarragon_lantern"), TARRAGON_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "tarragon_lantern"), new BlockItem(TARRAGON_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "chamomile_lantern"), CHAMOMILE_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "chamomile_lantern"), new BlockItem(CHAMOMILE_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "chives_lantern"), CHIVES_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "chives_lantern"), new BlockItem(CHIVES_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "verbena_lantern"), VERBENA_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "verbena_lantern"), new BlockItem(VERBENA_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sorrel_lantern"), SORREL_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sorrel_lantern"), new BlockItem(SORREL_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "marjoram_lantern"), MARJORAM_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "marjoram_lantern"), new BlockItem(MARJORAM_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "chervil_lantern"), CHERVIL_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "chervil_lantern"), new BlockItem(CHERVIL_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "fennsel_lantern"), FENNSEL_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennsel_lantern"), new BlockItem(FENNSEL_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ceillis_lantern"), CEILLIS_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ceillis_lantern"), new BlockItem(CEILLIS_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "punuel_lantern"), PUNUEL_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "punuel_lantern"), new BlockItem(PUNUEL_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "essitte_lantern"), ESSITTE_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "essitte_lantern"), new BlockItem(ESSITTE_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "thyocielle_lantern"), THYOCIELLE_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "thyocielle_lantern"), new BlockItem(THYOCIELLE_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "fennkystral_lantern"), FENNKYSTRAL_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennkystral_lantern"), new BlockItem(FENNKYSTRAL_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "conjuration_altar"), CONJURATION_ALTAR);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "conjuration_altar"), new BlockItem(CONJURATION_ALTAR, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
     }
 
 }

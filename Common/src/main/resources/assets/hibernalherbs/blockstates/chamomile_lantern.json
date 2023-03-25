@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "hibernalherbs:block/chamomile_lantern"
+    },
+    "hanging=true": {
+      "model": "hibernalherbs:block/chamomile_lantern_hanging"
+    }
+  }
+}

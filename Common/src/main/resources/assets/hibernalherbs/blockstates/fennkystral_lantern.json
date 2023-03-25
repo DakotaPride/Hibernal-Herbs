@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "hibernalherbs:block/fennkystral_lantern"
+    },
+    "hanging=true": {
+      "model": "hibernalherbs:block/fennkystral_lantern_hanging"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "hibernalherbs:block/marjoram_lantern"
+    },
+    "hanging=true": {
+      "model": "hibernalherbs:block/marjoram_lantern_hanging"
+    }
+  }
+}

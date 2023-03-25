@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "hibernalherbs:block/chives_lantern"
+    },
+    "hanging=true": {
+      "model": "hibernalherbs:block/chives_lantern_hanging"
+    }
+  }
+}

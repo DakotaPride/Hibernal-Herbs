@@ -1,9 +1,6 @@
 package net.dakotapride.hibernalHerbs.common;
 
-import net.dakotapride.hibernalHerbs.common.init.BlockInit;
-import net.dakotapride.hibernalHerbs.common.init.FeaturesInit;
-import net.dakotapride.hibernalHerbs.common.init.HibernalHerbsBoatTypes;
-import net.dakotapride.hibernalHerbs.common.init.ItemInit;
+import net.dakotapride.hibernalHerbs.common.init.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;

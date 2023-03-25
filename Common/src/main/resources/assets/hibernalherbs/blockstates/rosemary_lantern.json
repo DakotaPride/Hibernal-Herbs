@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "hibernalherbs:block/rosemary_lantern"
+    },
+    "hanging=true": {
+      "model": "hibernalherbs:block/rosemary_lantern_hanging"
+    }
+  }
+}

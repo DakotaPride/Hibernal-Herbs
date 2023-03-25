@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "hibernalherbs:block/thyocielle_lantern"
+    },
+    "hanging=true": {
+      "model": "hibernalherbs:block/thyocielle_lantern_hanging"
+    }
+  }
+}

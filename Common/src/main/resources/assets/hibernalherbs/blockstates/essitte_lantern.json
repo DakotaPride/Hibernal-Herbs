@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "hibernalherbs:block/essitte_lantern"
+    },
+    "hanging=true": {
+      "model": "hibernalherbs:block/essitte_lantern_hanging"
+    }
+  }
+}
