@@ -26,11 +26,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class HerbConjurationAltarEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(7, ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 10;
+    private int maxProgress = 36;
 
     @Override
     public boolean canPlayerUse(PlayerEntity player) {
@@ -56,7 +56,7 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
             }
 
             public int size() {
-                return 6;
+                return 7;
             }
         };
     }
@@ -114,6 +114,7 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
 
     private static void craftItem(HerbConjurationAltarEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
+        int itemStackCount = 4;
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
@@ -127,9 +128,10 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
             entity.removeStack(2, 1);
             entity.removeStack(3, 1);
             entity.removeStack(4, 1);
+            entity.removeStack(5, 1);
 
-            entity.setStack(5, new ItemStack(recipe.get().getOutput().getItem(),
-                    entity.getStack(5).getCount() + 1));
+            entity.setStack(6, new ItemStack(recipe.get().getOutput().getItem(),
+                    entity.getStack(6).getCount() + itemStackCount));
 
             entity.resetProgress();
         }

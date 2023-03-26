@@ -56,6 +56,21 @@ public class ItemInit {
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
     public static Item DRIED_CALENDULA = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_ROSEMARY = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_THYME = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_TARRAGON = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_CHAMOMILE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_CHIVES = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_VERBENA = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_SORREL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_MARJORAM = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_CHERVIL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_FENNSEL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_CEILLIS = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_PUNUEL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_ESSITTE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_THYOCIELLE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item DRIED_FENNKYSTRAL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
     public static HerbBlendItem REGENERATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.REGENERATIVE_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
@@ -185,6 +200,21 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_calendula"), POUNDED_CALENDULA);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_calendula"), DRIED_CALENDULA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_rosemary"), DRIED_ROSEMARY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_thyme"), DRIED_THYME);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_tarragon"), DRIED_TARRAGON);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_chamomile"), DRIED_CHAMOMILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_chives"), DRIED_CHIVES);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_verbena"), DRIED_VERBENA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_sorrel"), DRIED_SORREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_marjoram"), DRIED_MARJORAM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_chervil"), DRIED_CHERVIL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_fennsel"), DRIED_FENNSEL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_ceillis"), DRIED_CEILLIS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_punuel"), DRIED_PUNUEL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_essitte"), DRIED_ESSITTE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_thyocielle"), DRIED_THYOCIELLE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_fennkystral"), DRIED_FENNKYSTRAL);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regeneration"), REGENERATIVE_BLEND);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_poison"), VIRULENT_BLEND);

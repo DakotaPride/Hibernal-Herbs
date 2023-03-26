@@ -38,7 +38,7 @@ public class HerbConjurationAltarScreen extends HandledScreen<HerbConjurationAlt
 
     private void renderProgressArrow(MatrixStack matrices, int x, int y) {
         if(handler.isCrafting()) {
-            drawTexture(matrices, x + 90, y + 41, 176, 0, 8, handler.getScaledProgress());
+            drawTexture(matrices, x + 119, y + 31, 176, 0, 8, handler.getScaledProgress());
         }
     }
 

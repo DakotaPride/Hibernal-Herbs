@@ -16,22 +16,23 @@ public class HerbConjurationAltarScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public HerbConjurationAltarScreenHandler(int syncId, PlayerInventory inventory) {
-        this(syncId, inventory, new SimpleInventory(6), new ArrayPropertyDelegate(6));
+        this(syncId, inventory, new SimpleInventory(7), new ArrayPropertyDelegate(7));
     }
 
     public HerbConjurationAltarScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ScreenHandlersInit.CONJURATION_ALTAR_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 3);
+        checkSize(inventory, 7);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
-        this.addSlot(new Slot(inventory, 0, 16, 15));
-        this.addSlot(new Slot(inventory, 1, 56, 15));
-        this.addSlot(new Slot(inventory, 2, 36, 34));
-        this.addSlot(new Slot(inventory, 3, 16, 53));
-        this.addSlot(new Slot(inventory, 4, 56, 53));
-        this.addSlot(new Slot(inventory, 5, 124, 34));
+        this.addSlot(new Slot(inventory, 0, 46, 23));
+        this.addSlot(new Slot(inventory, 1, 68, 19));
+        this.addSlot(new Slot(inventory, 2, 90, 23));
+        this.addSlot(new Slot(inventory, 3, 46, 45));
+        this.addSlot(new Slot(inventory, 4, 68, 49));
+        this.addSlot(new Slot(inventory, 5, 90, 45));
+        this.addSlot(new Slot(inventory, 6, 116, 63));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -47,7 +48,7 @@ public class HerbConjurationAltarScreenHandler extends ScreenHandler {
 
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 115; // This is the width in pixels of your arrow
+        int progressArrowSize = 36; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }

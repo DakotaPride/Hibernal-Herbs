@@ -13,8 +13,11 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class HibernalBlockEntities {
 
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
 
-    public static final RegistryObject<BlockEntityType<MyquesteSignBlockEntity>> MYQUESTE_SIGN = BLOCK_ENTITIES.register("myqueste_sign", () -> BlockEntityType.Builder.of(MyquesteSignBlockEntity::new, blockRegistry.MYQUESTE_SIGN.get(), blockRegistry.MYQUESTE_WALL_SIGN.get()).build(null));
+    public static final RegistryObject<BlockEntityType<MyquesteSignBlockEntity>> MYQUESTE_SIGN =
+            BLOCK_ENTITIES.register("myqueste_sign", () -> BlockEntityType.Builder.of(MyquesteSignBlockEntity::new,
+                    blockRegistry.MYQUESTE_SIGN.get(), blockRegistry.MYQUESTE_WALL_SIGN.get()).build(null));
 
 }

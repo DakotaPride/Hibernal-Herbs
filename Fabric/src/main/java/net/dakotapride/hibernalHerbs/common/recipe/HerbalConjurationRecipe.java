@@ -11,32 +11,46 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HerbalConjurationRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
     private final ItemStack output;
-    private final DefaultedList<Ingredient> recipeItems;
+    private final DefaultedList<Ingredient> input;
 
     public HerbalConjurationRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
         this.id = id;
         this.output = output;
-        this.recipeItems = recipeItems;
+        this.input = recipeItems;
     }
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-        if(world.isClient()) {
-            return false;
-        }
-
-        if(recipeItems.get(0).test(inventory.getStack(1))) {
-            if (recipeItems.get(1).test(inventory.getStack(2))) {
-                if (recipeItems.get(2).test(inventory.getStack(3))) {
-                    return recipeItems.get(3).test(inventory.getStack(4));
-                }
+        List<ItemStack> checklist = new ArrayList<>();
+        for (int i = 0; i < inventory.size(); i++) {
+            ItemStack stack = inventory.getStack(i);
+            if (!stack.isEmpty()) {
+                checklist.add(stack);
             }
         }
-
-        return false;
+        if (input.size() != checklist.size()) {
+            return false;
+        }
+        for (Ingredient ingredient : input) {
+            boolean found = false;
+            for (ItemStack stack : checklist) {
+                if (ingredient.test(stack)) {
+                    found = true;
+                    checklist.remove(stack);
+                    break;
+                }
+            }
+            if (!found) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
@@ -94,11 +108,11 @@ public class HerbalConjurationRecipe implements Recipe<SimpleInventory> {
             *
             * Bottom-Right Slot; 4th Input
             *
-            *  */
+            */
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(5, Ingredient.EMPTY);
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(6, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));

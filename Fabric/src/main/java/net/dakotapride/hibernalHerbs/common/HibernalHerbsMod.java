@@ -129,21 +129,36 @@ public class HibernalHerbsMod implements ModInitializer {
 				.icon(() -> new ItemStack(ItemInit.POUNDED_TARRAGON.asItem()))
 				.appendItems(itemStacks -> {
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CEILLIS));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_CEILLIS));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHAMOMILE));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_CHAMOMILE));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHERVIL));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_CHERVIL));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CHIVES));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_CHIVES));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_ESSITTE));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_ESSITTE));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_FENNSEL));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_FENNSEL));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_MARJORAM));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_MARJORAM));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_PUNUEL));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_PUNUEL));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_ROSEMARY));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_ROSEMARY));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_SORREL));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_SORREL));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_TARRAGON));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_TARRAGON));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_THYME));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_THYME));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_VERBENA));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_VERBENA));
 
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_THYOCIELLE));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_THYOCIELLE));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_FENNKYSTRAL));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_FENNKYSTRAL));
 
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CALENDULA));
 					itemStacks.add(new ItemStack(ItemInit.DRIED_CALENDULA));

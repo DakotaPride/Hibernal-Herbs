@@ -2,6 +2,7 @@ package net.dakotapride.hibernalHerbs.common.registry;
 
 import net.dakotapride.hibernalHerbs.common.Constants;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
+import net.dakotapride.hibernalHerbs.common.block.ConjurationAltarBlock;
 import net.dakotapride.hibernalHerbs.common.block.FlammableRotatedPillarBlock;
 import net.dakotapride.hibernalHerbs.common.block.MyquesteSignBlock;
 import net.dakotapride.hibernalHerbs.common.block.MyquesteWallSignBlock;
@@ -31,6 +32,9 @@ public class blockRegistry {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Constants.MOD_ID);
+
+    public static RegistryObject<Block> CONJURATION_ALTAR = registerBlock("conjuration_altar",
+            () -> new ConjurationAltarBlock(BlockBehaviour.Properties.copy(Blocks.LECTERN).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
 
     // "Leaf" (Herb) Piles
     public static RegistryObject<Block> MYQUESTE_LEAF_PILE = registerBlock("myqueste_leaf_pile",
@@ -132,6 +136,37 @@ public class blockRegistry {
 
     public static final RegistryObject<Block> CALENDULA_LANTERN = registerBlock("calendula_lantern",
         () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> ROSEMARY_LANTERN = registerBlock("rosemary_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> THYME_LANTERN = registerBlock("thyme_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> TARRAGON_LANTERN = registerBlock("tarragon_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> CHAMOMILE_LANTERN = registerBlock("chamomile_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> CHIVES_LANTERN = registerBlock("chives_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> VERBENA_LANTERN = registerBlock("verbena_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> SORREL_LANTERN = registerBlock("sorrel_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> MARJORAM_LANTERN = registerBlock("marjoram_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> CHERVIL_LANTERN = registerBlock("chervil_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> FENNSEL_LANTERN = registerBlock("fennsel_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> CEILLIS_LANTERN = registerBlock("ceillis_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> PUNUEL_LANTERN = registerBlock("punuel_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> ESSITTE_LANTERN = registerBlock("essitte_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> THYOCIELLE_LANTERN = registerBlock("thyocielle_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> FENNKYSTRAL_LANTERN = registerBlock("fennkystral_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+
 
     // Compat Herbs (Forge)
     public static final RegistryObject<Block> BLOFORIA = registerBlock("bloforia",
