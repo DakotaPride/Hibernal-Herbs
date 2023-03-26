@@ -5,9 +5,13 @@ import net.dakotapride.hibernalHerbs.common.entity.HibernalBlockEntities;
 import net.dakotapride.hibernalHerbs.common.entity.HibernalEntityTypes;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsConfigured;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsPlaced;
+import net.dakotapride.hibernalHerbs.common.recipe.HibernalRecipes;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.screen.HerbalConjurationScreen;
+import net.dakotapride.hibernalHerbs.common.screen.menu.HibernalHerbsMenues;
 import net.dakotapride.hibernalHerbs.platform.Services;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
@@ -205,6 +209,9 @@ public class HibernalHerbsForge {
         HibernalEntityTypes.ENTITY_TYPES.register(eventBus);
 
         HibernalBlockEntities.BLOCK_ENTITIES.register(eventBus);
+        HibernalHerbsMenues.register(eventBus);
+
+        HibernalRecipes.register(eventBus);
 
         // Resource Pack Registration
         eventBus.addListener(PackLoader::addPackFinders);
@@ -300,6 +307,8 @@ public class HibernalHerbsForge {
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemProperties.register(itemRegistry.CANISTER.get(), new ResourceLocation(MOD_ID, "filled"),
                 ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
+
+        MenuScreens.register(HibernalHerbsMenues.CONJURATION_ALTAR_MENU.get(), HerbalConjurationScreen::new);
     }
 
     public static void init() {

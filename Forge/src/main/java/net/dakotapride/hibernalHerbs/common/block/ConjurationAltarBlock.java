@@ -1,17 +1,32 @@
 package net.dakotapride.hibernalHerbs.common.block;
 
+import net.dakotapride.hibernalHerbs.common.entity.HibernalBlockEntities;
+import net.dakotapride.hibernalHerbs.common.entity.block.ConjurationAltarBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.network.NetworkHooks;
 
+import javax.annotation.Nullable;
 import java.util.stream.Stream;
 
-public class ConjurationAltarBlock extends Block {
+public class ConjurationAltarBlock extends BaseEntityBlock {
     VoxelShape shape = Stream.of(
             Block.box(1, 0, 1, 15, 2, 15),
             Block.box(1, 12, 1, 15, 14, 15),
@@ -26,5 +41,50 @@ public class ConjurationAltarBlock extends Block {
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext ctx) {
         return shape;
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState p_49232_) {
+        return RenderShape.MODEL;
+    }
+
+    @Override
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        if (pState.getBlock() != pNewState.getBlock()) {
+            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+            if (blockEntity instanceof ConjurationAltarBlockEntity) {
+                ((ConjurationAltarBlockEntity) blockEntity).drops();
+            }
+        }
+        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+    }
+
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos,
+                                 Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (!pLevel.isClientSide()) {
+            BlockEntity entity = pLevel.getBlockEntity(pPos);
+            if(entity instanceof ConjurationAltarBlockEntity) {
+                NetworkHooks.openScreen(((ServerPlayer)pPlayer), (ConjurationAltarBlockEntity)entity, pPos);
+            } else {
+                throw new IllegalStateException("Our Container provider is missing!");
+            }
+        }
+
+        return InteractionResult.sidedSuccess(pLevel.isClientSide());
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new ConjurationAltarBlockEntity(pos, state);
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
+                                                                  BlockEntityType<T> type) {
+        return createTickerHelper(type, HibernalBlockEntities.CONJURATION_ALTAR.get(),
+                ConjurationAltarBlockEntity::tick);
     }
 }

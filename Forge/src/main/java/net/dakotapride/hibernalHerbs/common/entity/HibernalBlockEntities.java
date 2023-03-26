@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.entity;
 
+import net.dakotapride.hibernalHerbs.common.entity.block.ConjurationAltarBlockEntity;
 import net.dakotapride.hibernalHerbs.common.entity.block.MyquesteSignBlockEntity;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -15,6 +16,11 @@ public class HibernalBlockEntities {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
+
+    public static final RegistryObject<BlockEntityType<ConjurationAltarBlockEntity>> CONJURATION_ALTAR =
+            BLOCK_ENTITIES.register("conjuration_altar", () ->
+                    BlockEntityType.Builder.of(ConjurationAltarBlockEntity::new,
+                            blockRegistry.CONJURATION_ALTAR.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<MyquesteSignBlockEntity>> MYQUESTE_SIGN =
             BLOCK_ENTITIES.register("myqueste_sign", () -> BlockEntityType.Builder.of(MyquesteSignBlockEntity::new,
