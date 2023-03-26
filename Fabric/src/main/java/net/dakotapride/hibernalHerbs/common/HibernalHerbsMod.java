@@ -162,6 +162,10 @@ public class HibernalHerbsMod implements ModInitializer {
 
 		FeaturesInit.init();
 
+		BlockEntityInit.init();
+		ScreenHandlersInit.init();
+		RecipeInit.init();
+
 
 		// Thanks to @Xanthian#3020 on Modding By KaupenJoe's Discord Server For Built-In Resource Pack Help!
 		if (FabricLoader.getInstance().isModLoaded("lambdabettergrass")) {

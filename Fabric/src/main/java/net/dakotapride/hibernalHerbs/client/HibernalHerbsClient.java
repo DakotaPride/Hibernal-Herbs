@@ -4,8 +4,11 @@ import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
+import net.dakotapride.hibernalHerbs.common.init.ScreenHandlersInit;
+import net.dakotapride.hibernalHerbs.common.screen.HerbConjurationAltarScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.util.SpriteIdentifier;
@@ -93,6 +96,8 @@ public class HibernalHerbsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CALENDULA_HERB_PILE, RenderLayer.getCutoutMipped());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CONJURATION_ALTAR, RenderLayer.getCutout());
+
+        HandledScreens.register(ScreenHandlersInit.CONJURATION_ALTAR_SCREEN_HANDLER, HerbConjurationAltarScreen::new);
 
         // Render Layers (Terraform)
         TerraformBoatClientHelper.registerModelLayers(HibernalHerbsMod.MYQUESTE_ID);
