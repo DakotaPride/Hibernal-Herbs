@@ -28,7 +28,15 @@ public class HerbalConjurationRecipe implements Recipe<SimpleInventory> {
             return false;
         }
 
-        return recipeItems.get(0).test(inventory.getStack(1));
+        if(recipeItems.get(0).test(inventory.getStack(1))) {
+            if (recipeItems.get(1).test(inventory.getStack(2))) {
+                if (recipeItems.get(2).test(inventory.getStack(3))) {
+                    return recipeItems.get(3).test(inventory.getStack(4));
+                }
+            }
+        }
+
+        return false;
     }
 
     @Override
@@ -74,6 +82,19 @@ public class HerbalConjurationRecipe implements Recipe<SimpleInventory> {
 
         @Override
         public HerbalConjurationRecipe read(Identifier id, JsonObject json) {
+            /* JSON Input Order
+            *
+            * Top-Left Slot; 5th Input
+            *
+            * Top-Right Slot; 1st Input
+            *
+            * Middle Slot; 2nd Input
+            *
+            * Bottom-Left Slot; 3rd Input
+            *
+            * Bottom-Right Slot; 4th Input
+            *
+            *  */
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");

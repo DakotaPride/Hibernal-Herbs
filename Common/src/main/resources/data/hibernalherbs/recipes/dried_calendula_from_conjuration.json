@@ -5,16 +5,16 @@
       "item": "minecraft:snowball"
     },
     {
-      "item": "hibernalherbs:pounded_calendula"
-    },
-    {
       "item": "minecraft:coal"
     },
     {
+      "item": "minecraft:snowball"
+    },
+    {
       "item": "hibernalherbs:pounded_calendula"
     },
     {
-      "item": "minecraft:snowball"
+      "item": "hibernalherbs:pounded_calendula"
     }
   ],
   "output": {
