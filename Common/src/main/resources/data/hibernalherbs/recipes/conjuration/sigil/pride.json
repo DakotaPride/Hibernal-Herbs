@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:rosemary"
+    },
+    {
+      "item": "hibernalherbs:dried_punuel"
+    },
+    {
+      "item": "hibernalherbs:dried_essitte"
+    },
+    {
+      "item": "minecraft:smooth_stone"
+    },
+    {
+      "item": "hibernalherbs:dried_essitte"
+    },
+    {
+      "item": "hibernalherbs:dried_punuel"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil_pride"
+  }
+}

@@ -1,13 +1,11 @@
 package net.dakotapride.hibernalHerbs.common.init;
 
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
-import net.dakotapride.hibernalHerbs.common.item.HerbBlendItem;
-import net.dakotapride.hibernalHerbs.common.item.HerbFertilizerItem;
-import net.dakotapride.hibernalHerbs.common.item.HerbHumusItem;
-import net.dakotapride.hibernalHerbs.common.item.SmokedHerbBlendItem;
+import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.canister.AbstractCanisterItem;
 import net.dakotapride.hibernalHerbs.common.item.pouch.AbstractPouchItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.datafixer.fix.WriteAndReadFix;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -15,6 +13,19 @@ import net.minecraft.util.registry.Registry;
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
+
+    public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_LUST = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_GLUTTONY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_WRATH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_GREED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_ENVY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+
+    public static Item SIGIL_CONFIGURATION = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_CONFIGURATION_ADVANCED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_MASTERY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_MASTERY_ADVANCED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
 
     public static Item POUNDED_ROSEMARY = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
@@ -282,6 +293,18 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_warped"), HERB_HUMUS_WARPED);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_myqueste"), HERB_HUMUS_MYQUESTE);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_pride"), SIGIL_PRIDE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_sloth"), SIGIL_SLOTH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_lust"), SIGIL_LUST);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_gluttony"), SIGIL_GLUTTONY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_wrath"), SIGIL_WRATH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_greed"), SIGIL_GREED);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_envy"), SIGIL_ENVY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_configuration"), SIGIL_CONFIGURATION);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_mastery"), SIGIL_MASTERY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_configuration_adv"), SIGIL_CONFIGURATION_ADVANCED);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_mastery_adv"), SIGIL_MASTERY_ADVANCED);
 
         // Legacy
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);

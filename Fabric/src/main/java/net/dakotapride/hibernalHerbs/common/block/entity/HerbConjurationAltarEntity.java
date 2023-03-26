@@ -114,7 +114,7 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
 
     private static void craftItem(HerbConjurationAltarEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
-        int itemStackCount = 4;
+        int itemStackCount = 1;
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }

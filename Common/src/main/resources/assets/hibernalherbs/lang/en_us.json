@@ -205,6 +205,32 @@
 
   "block.hibernalherbs.conjuration_altar": "Conjuration Altar",
 
+  "item.hibernalherbs.sigil_pride": "Herbal Sigil",
+  "item.hibernalherbs.sigil_sloth": "Herbal Sigil",
+  "item.hibernalherbs.sigil_lust": "Herbal Sigil",
+  "item.hibernalherbs.sigil_gluttony": "Herbal Sigil",
+  "item.hibernalherbs.sigil_wrath": "Herbal Sigil",
+  "item.hibernalherbs.sigil_greed": "Herbal Sigil",
+  "item.hibernalherbs.sigil_envy": "Herbal Sigil",
+  "item.hibernalherbs.sigil_configuration": "Herbal Sigil",
+  "item.hibernalherbs.sigil_configuration_adv": "Herbal Sigil",
+  "item.hibernalherbs.sigil_mastery": "Herbal Sigil",
+  "item.hibernalherbs.sigil_mastery_adv": "Herbal Sigil",
+
+  "text.hibernalherbs.sigil.type": "Sigil Alignment [SHIFT]",
+
+  "text.hibernalherbs.sigil.pride": "  - Pride",
+  "text.hibernalherbs.sigil.sloth": "  - Sloth",
+  "text.hibernalherbs.sigil.lust": "  - Lust",
+  "text.hibernalherbs.sigil.gluttony": "  - Gluttony",
+  "text.hibernalherbs.sigil.wrath": "  - Wrath",
+  "text.hibernalherbs.sigil.greed": "  - Greed",
+  "text.hibernalherbs.sigil.envy": "  - Envy",
+  "text.hibernalherbs.sigil.configuration": "  - Configuration",
+  "text.hibernalherbs.sigil.configuration.adv": "  - Configuration [Advanced]",
+  "text.hibernalherbs.sigil.mastery": "  - Mastery",
+  "text.hibernalherbs.sigil.mastery.adv": "  - Mastery [Advanced]",
+
   "itemGroup.hibernalherbs.hibernal_herbs": "Hibernal Herbs - Misc",
   "itemGroup.hibernalherbs.herbs": "Hibernal Herbs - Herbs",
   "itemGroup.hibernalherbs.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
