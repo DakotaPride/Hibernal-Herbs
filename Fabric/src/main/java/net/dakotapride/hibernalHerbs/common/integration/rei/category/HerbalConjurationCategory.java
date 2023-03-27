@@ -35,7 +35,7 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
 
     @Override
     public int getDisplayHeight() {
-        return 36;
+        return 84;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
 
         widgets.add(Widgets.createRecipeBase(bounds));
 
-        widgets.add(Widgets.createArrow(new Point(startPoint.x + 50, startPoint.y + 7)));
+        /*
 
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 46, startPoint.y + 23))
                 .entry(display.getInputEntries().get(0).get(0)).markInput());
@@ -66,6 +66,8 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
                 .entry(display.getInputEntries().get(4).get(4)).markInput());
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 90, startPoint.y + 45))
                 .entry(display.getInputEntries().get(5).get(5)).markInput());
+
+         */
 
         widgets.add(Widgets.createResultSlotBackground(outputPoint));
         widgets.add(Widgets.createSlot(outputPoint).entries(display.getOutputEntries().get(0)).disableBackground().markOutput());
