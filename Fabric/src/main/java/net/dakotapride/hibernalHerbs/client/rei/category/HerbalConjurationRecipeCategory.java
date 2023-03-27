@@ -61,7 +61,7 @@ public class HerbalConjurationRecipeCategory implements DisplayCategory<HerbalCo
         // disable the actual background of the slots, so the result slot can look bigger
         widgets.add(Widgets.createResultSlotBackground(new Point(startPoint.x + 61, startPoint.y + 35)));
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 61, startPoint.y + 5))
-                .entries(display.getOutputEntries().get(6)) // Get the first output ingredient
+                .entries(display.getOutputEntries().get(0)) // Get the first output ingredient
                 .disableBackground() // Disable the background because we have our bigger background
                 .markOutput()); // Mark this as the output for REI to identify
 
