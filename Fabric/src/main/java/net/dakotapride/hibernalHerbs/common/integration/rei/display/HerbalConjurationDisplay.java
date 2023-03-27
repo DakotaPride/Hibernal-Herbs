@@ -1,23 +1,22 @@
-package net.dakotapride.hibernalHerbs.client.rei.display;
+package net.dakotapride.hibernalHerbs.common.integration.rei.display;
 
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.Display;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
-import net.dakotapride.hibernalHerbs.client.rei.plugin.HibernalHerbsREIPlugin;
+import net.dakotapride.hibernalHerbs.common.integration.rei.ReiHibernalHerbsPlugin;
 import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionUtil;
+import net.minecraft.item.Items;
 
 import java.util.Collections;
 import java.util.List;
 
-public class HerbalConjurationRecipeDisplay implements Display {
+public class HerbalConjurationDisplay implements Display {
     private final List<EntryIngredient> input;
     private final List<EntryIngredient> output;
 
-    public HerbalConjurationRecipeDisplay(HerbalConjurationRecipe recipe) {
+    public HerbalConjurationDisplay(HerbalConjurationRecipe recipe) {
         input = EntryIngredients.ofIngredients(recipe.getIngredients());
         output = Collections.singletonList(EntryIngredients.of(recipe.getOutput()));
     }
@@ -34,6 +33,6 @@ public class HerbalConjurationRecipeDisplay implements Display {
 
     @Override
     public CategoryIdentifier<?> getCategoryIdentifier() {
-        return HibernalHerbsREIPlugin.HERBAL_CONJURATION;
+        return ReiHibernalHerbsPlugin.HERBAL_CONJURATION;
     }
 }

@@ -28,7 +28,7 @@
       "net.dakotapride.hibernalHerbs.client.HibernalHerbsClient"
     ],
     "rei_client": [
-      "net.dakotapride.hibernalHerbs.client.rei.plugin.HibernalHerbsREIPlugin"
+      "net.dakotapride.hibernalHerbs.common.integration.rei.ReiHibernalHerbsPlugin"
     ]
   },
   "mixins": [
