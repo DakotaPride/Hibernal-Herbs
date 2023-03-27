@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurationDisplay> {
-    public static final Text TITLE = Text.translatable("block.hibernalherbs.conjuration_altar");
+    public static final Text TITLE = Text.translatable("text.hibernalherbs.herbal_conjuration");
     public static final EntryStack<ItemStack> ICON = EntryStacks.of(BlockInit.CONJURATION_ALTAR.asItem());
 
     @Override
@@ -35,7 +35,7 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
 
     @Override
     public int getDisplayHeight() {
-        return 84;
+        return 64;
     }
 
     @Override
@@ -46,31 +46,33 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
     @Override
     public List<Widget> setupDisplay(HerbalConjurationDisplay display, Rectangle bounds) {
         Point startPoint = new Point(bounds.getCenterX() - 64, bounds.getCenterY() - 16);
-        Point outputPoint = new Point(startPoint.x + 116, startPoint.y + 63);
+        Point outputPoint = new Point(startPoint.x + 108, startPoint.y + 8);
 
         List<Widget> widgets = new ArrayList<>();
 
         widgets.add(Widgets.createRecipeBase(bounds));
 
-        /*
+        widgets.add(Widgets.createArrow(new Point(startPoint.x + 78, startPoint.y + 8)));
 
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 46, startPoint.y + 23))
-                .entry(display.getInputEntries().get(0).get(0)).markInput());
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 68, startPoint.y + 19))
-                .entry(display.getInputEntries().get(1).get(1)).markInput());
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 90, startPoint.y + 23))
-                .entry(display.getInputEntries().get(2).get(2)).markInput());
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 46, startPoint.y + 45))
-                .entry(display.getInputEntries().get(3).get(3)).markInput());
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 68, startPoint.y + 49))
-                .entry(display.getInputEntries().get(4).get(4)).markInput());
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 90, startPoint.y + 45))
-                .entry(display.getInputEntries().get(5).get(5)).markInput());
 
-         */
 
-        widgets.add(Widgets.createResultSlotBackground(outputPoint));
-        widgets.add(Widgets.createSlot(outputPoint).entries(display.getOutputEntries().get(0)).disableBackground().markOutput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 12, startPoint.y - 4))
+                .entries(display.getInputEntries().get(0)).markInput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 34, startPoint.y - 8))
+                .entries(display.getInputEntries().get(1)).markInput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 56, startPoint.y - 4))
+                .entries(display.getInputEntries().get(2)).markInput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 13, startPoint.y + 18))
+                .entries(display.getInputEntries().get(3)).markInput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 34, startPoint.y + 22))
+                .entries(display.getInputEntries().get(4)).markInput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 56, startPoint.y + 18))
+                .entries(display.getInputEntries().get(5)).markInput());
+
+
+
+        // widgets.add(Widgets.createResultSlotBackground(outputPoint));
+        widgets.add(Widgets.createSlot(outputPoint).entries(display.getOutputEntries().get(0)).markOutput());
 
         return widgets;
     }

@@ -329,5 +329,8 @@
   "block.hibernalherbs.bloforia_herb_pile": "Herb Pile",
   "block.hibernalherbs.bloforia_herb_barrel": "Herb Barrel",
 
-  "text.hibernalherbs.pile.bloforia": "  - Bloforia"
+  "text.hibernalherbs.pile.bloforia": "  - Bloforia",
+
+  // REI & JEI Integration
+  "text.hibernalherbs.herbal_conjuration": "Herbal Conjuration"
 }

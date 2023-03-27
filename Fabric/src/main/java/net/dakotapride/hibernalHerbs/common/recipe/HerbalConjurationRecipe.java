@@ -26,6 +26,11 @@ public class HerbalConjurationRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        return input;
+    }
+
+    @Override
     public boolean matches(SimpleInventory inventory, World world) {
         List<ItemStack> checklist = new ArrayList<>();
         for (int i = 0; i < inventory.size(); i++) {

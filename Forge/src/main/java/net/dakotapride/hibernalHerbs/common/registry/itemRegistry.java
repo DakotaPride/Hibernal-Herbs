@@ -20,6 +20,9 @@ public class itemRegistry implements FoodComponentList {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
 
+    public static final RegistryObject<Item> SIGIL = ITEMS.register("sigil",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> MYQUESTE_BOAT = ITEMS.register("myqueste_boat",
             () -> new MyquesteBoatItem(false, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties()));
     public static final RegistryObject<Item> MYQUESTE_CHEST_BOAT = ITEMS.register("myqueste_chest_boat",

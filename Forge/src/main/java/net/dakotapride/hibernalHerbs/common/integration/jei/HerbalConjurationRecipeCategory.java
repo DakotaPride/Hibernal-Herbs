@@ -36,7 +36,7 @@ public class HerbalConjurationRecipeCategory implements IRecipeCategory<HerbalCo
 
     @Override
     public Component getTitle() {
-        return Component.translatable("block.hibernalherbs.conjuration_altar");
+        return Component.translatable("text.hibernalherbs.herbal_conjuration");
     }
 
     @Override
