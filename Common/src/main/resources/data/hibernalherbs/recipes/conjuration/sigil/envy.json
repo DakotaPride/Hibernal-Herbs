@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:calendula"
+    },
+    {
+      "item": "hibernalherbs:dried_chives"
+    },
+    {
+      "item": "hibernalherbs:dried_thyme"
+    },
+    {
+      "item": "hibernalherbs:sigil"
+    },
+    {
+      "item": "hibernalherbs:dried_marjoram"
+    },
+    {
+      "item": "hibernalherbs:dried_chives"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil_envy"
+  }
+}

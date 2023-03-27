@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:ceillis"
+    },
+    {
+      "item": "hibernalherbs:dried_sorrel"
+    },
+    {
+      "item": "hibernalherbs:dried_marjoram"
+    },
+    {
+      "item": "hibernalherbs:sigil"
+    },
+    {
+      "item": "hibernalherbs:dried_marjoram"
+    },
+    {
+      "item": "hibernalherbs:dried_fennsel"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil_lust"
+  }
+}

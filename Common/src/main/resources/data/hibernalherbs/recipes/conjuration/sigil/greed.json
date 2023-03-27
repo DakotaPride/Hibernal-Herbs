@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:marjoram"
+    },
+    {
+      "item": "hibernalherbs:dried_fennkystral"
+    },
+    {
+      "item": "hibernalherbs:dried_chervil"
+    },
+    {
+      "item": "hibernalherbs:sigil"
+    },
+    {
+      "item": "hibernalherbs:dried_marjoram"
+    },
+    {
+      "item": "hibernalherbs:dried_fennkystral"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil_greed"
+  }
+}

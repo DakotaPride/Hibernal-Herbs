@@ -14,10 +14,19 @@ dependencies {
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":Common")
 
+    // Wood API
     modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:4.2.0"
+
+    // REI
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
 }
 
 repositories {
+    maven {
+        name = "REI"
+        url = "https://maven.shedaniel.me"
+    }
+
     maven {
         name = 'TerraformersMC'
         url = 'https://maven.terraformersmc.com/'

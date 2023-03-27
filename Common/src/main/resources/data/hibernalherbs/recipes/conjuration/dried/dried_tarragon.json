@@ -21,6 +21,7 @@
     }
   ],
   "output": {
-    "item": "hibernalherbs:dried_tarragon"
+    "item": "hibernalherbs:dried_tarragon",
+    "count": 2
   }
 }

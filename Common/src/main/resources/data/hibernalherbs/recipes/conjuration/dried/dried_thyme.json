@@ -21,6 +21,7 @@
     }
   ],
   "output": {
-    "item": "hibernalherbs:dried_thyme"
+    "item": "hibernalherbs:dried_thyme",
+    "count": 2
   }
 }

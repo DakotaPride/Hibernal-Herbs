@@ -21,6 +21,7 @@
     }
   ],
   "output": {
-    "item": "hibernalherbs:dried_chamomile"
+    "item": "hibernalherbs:dried_chamomile",
+    "count": 2
   }
 }

@@ -131,7 +131,7 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
             entity.removeStack(5, 1);
 
             entity.setStack(6, new ItemStack(recipe.get().getOutput().getItem(),
-                    entity.getStack(6).getCount() + itemStackCount));
+                    entity.getStack(6).getCount() + recipe.get().getOutput().getCount()));
 
             entity.resetProgress();
         }

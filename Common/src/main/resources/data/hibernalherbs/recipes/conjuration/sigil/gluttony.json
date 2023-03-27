@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:thyocielle"
+    },
+    {
+      "item": "hibernalherbs:dried_thyocielle"
+    },
+    {
+      "item": "hibernalherbs:dried_rosemary"
+    },
+    {
+      "item": "hibernalherbs:sigil"
+    },
+    {
+      "item": "hibernalherbs:dried_verbena"
+    },
+    {
+      "item": "hibernalherbs:dried_thyocielle"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil_gluttony"
+  }
+}

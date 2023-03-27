@@ -21,6 +21,7 @@
     }
   ],
   "output": {
-    "item": "hibernalherbs:dried_essitte"
+    "item": "hibernalherbs:dried_essitte",
+    "count": 2
   }
 }

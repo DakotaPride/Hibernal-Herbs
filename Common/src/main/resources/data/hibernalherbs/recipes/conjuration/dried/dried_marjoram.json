@@ -21,6 +21,7 @@
     }
   ],
   "output": {
-    "item": "hibernalherbs:dried_marjoram"
+    "item": "hibernalherbs:dried_marjoram",
+    "count": 2
   }
 }

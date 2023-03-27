@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:verbena"
+    },
+    {
+      "item": "hibernalherbs:dried_punuel"
+    },
+    {
+      "item": "hibernalherbs:dried_essitte"
+    },
+    {
+      "item": "hibernalherbs:sigil"
+    },
+    {
+      "item": "hibernalherbs:dried_essitte"
+    },
+    {
+      "item": "hibernalherbs:dried_punuel"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil_wrath"
+  }
+}

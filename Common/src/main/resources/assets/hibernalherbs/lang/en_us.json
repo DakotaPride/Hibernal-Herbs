@@ -203,6 +203,22 @@
 
   "block.hibernalherbs.calendula_lantern": "Calendula Lantern",
 
+  "block.hibernalherbs.rosemary_lantern": "Rosemary Lantern",
+  "block.hibernalherbs.thyme_lantern": "Thyme Lantern",
+  "block.hibernalherbs.tarragon_lantern": "Tarragon Lantern",
+  "block.hibernalherbs.chamomile_lantern": "Chamomile Lantern",
+  "block.hibernalherbs.chives_lantern": "Chives Lantern",
+  "block.hibernalherbs.verbena_lantern": "Verbena Lantern",
+  "block.hibernalherbs.sorrel_lantern": "Sorrel Lantern",
+  "block.hibernalherbs.marjoram_lantern": "Marjoram Lantern",
+  "block.hibernalherbs.chervil_lantern": "Chervil Lantern",
+  "block.hibernalherbs.fennsel_lantern": "Fennsel Lantern",
+  "block.hibernalherbs.ceillis_lantern": "Ceillis Lantern",
+  "block.hibernalherbs.punuel_lantern": "Punuel Lantern",
+  "block.hibernalherbs.essitte_lantern": "Essitte Lantern",
+  "block.hibernalherbs.thyocielle_lantern": "Thyocielle Lantern",
+  "block.hibernalherbs.fennkystral_lantern": "Fennkystral Lantern",
+
   "block.hibernalherbs.conjuration_altar": "Conjuration Altar",
 
   "item.hibernalherbs.sigil_pride": "Herbal Sigil",

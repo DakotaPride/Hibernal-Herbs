@@ -21,6 +21,7 @@
     }
   ],
   "output": {
-    "item": "hibernalherbs:dried_fennkystral"
+    "item": "hibernalherbs:dried_fennkystral",
+    "count": 2
   }
 }

@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:thyme"
+    },
+    {
+      "item": "hibernalherbs:dried_tarragon"
+    },
+    {
+      "item": "hibernalherbs:dried_calendula"
+    },
+    {
+      "item": "minecraft:smooth_stone"
+    },
+    {
+      "item": "hibernalherbs:dried_calendula"
+    },
+    {
+      "item": "hibernalherbs:dried_chamomile"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil"
+  }
+}

@@ -21,6 +21,7 @@
     }
   ],
   "output": {
-    "item": "hibernalherbs:dried_chives"
+    "item": "hibernalherbs:dried_chives",
+    "count": 2
   }
 }

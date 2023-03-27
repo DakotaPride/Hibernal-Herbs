@@ -14,6 +14,8 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
 
+    public static Item SIGIL_TEMPLATE = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+
     public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
     public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
     public static Item SIGIL_LUST = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
@@ -294,6 +296,7 @@ public class ItemInit {
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_myqueste"), HERB_HUMUS_MYQUESTE);
 
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil"), SIGIL_TEMPLATE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_pride"), SIGIL_PRIDE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_sloth"), SIGIL_SLOTH);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_lust"), SIGIL_LUST);
