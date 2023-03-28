@@ -24,11 +24,12 @@ public class HerbalConjurationRecipe implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> input;
 
     public HerbalConjurationRecipe(ResourceLocation id, ItemStack output,
-                                    NonNullList<Ingredient> recipeItems) {
+                                   NonNullList<Ingredient> recipeItems) {
         this.id = id;
         this.output = output;
         this.input = recipeItems;
     }
+
 
     @Override
     public boolean matches(SimpleContainer container, Level level) {
@@ -106,17 +107,19 @@ public class HerbalConjurationRecipe implements Recipe<SimpleContainer> {
                 new ResourceLocation(MOD_ID, "herbal_conjuration");
 
         @Override
-        public HerbalConjurationRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
-            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
+        public HerbalConjurationRecipe fromJson(ResourceLocation recipeId, JsonObject serializedRecipe) {
+            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(serializedRecipe, "output"));
 
-            JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
+            JsonArray pattern = GsonHelper.getAsJsonArray(serializedRecipe, "pattern");
+
+            JsonArray ingredients = GsonHelper.getAsJsonArray(serializedRecipe, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(6, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new HerbalConjurationRecipe(pRecipeId, output, inputs);
+            return new HerbalConjurationRecipe(recipeId, output, inputs);
         }
 
         @Override
