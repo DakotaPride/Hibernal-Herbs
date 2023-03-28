@@ -1,23 +1,25 @@
 {
   "type": "hibernalherbs:herbal_conjuration",
-  "pattern": [
-    "#X#",
-    "ZBZ"
-  ],
-  "ingredients": {
-    "#": {
-      "item": "minecraft:coal"
-    },
-    "X": {
+  "ingredients": [
+    {
       "item": "hibernalherbs:pounded_calendula"
     },
-    "Z": {
+    {
+      "item": "minecraft:coal"
+    },
+    {
       "item": "minecraft:snowball"
     },
-    "B": {
+    {
       "item": "minecraft:basalt"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:coal"
     }
-  },
+  ],
   "output": {
     "item": "hibernalherbs:dried_calendula",
     "count": 2
