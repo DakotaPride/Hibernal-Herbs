@@ -10,10 +10,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -153,13 +155,10 @@ public class HerbBlendItem extends Item implements FoodComponentList {
         ItemStack gluttonousRingStack = ItemInit.GLUTTONOUS_RING.getDefaultStack();
         ItemStack advancedGluttonousRingStack = ItemInit.ADV_GLUTTONOUS_RING.getDefaultStack();
 
-        if (user instanceof PlayerEntity playerEntity) {
-            if (playerEntity.getInventory().contains(gluttonousRingStack)
-                    && !(playerEntity.getInventory().contains(advancedGluttonousRingStack))) {
+        if (user instanceof PlayerEntity player) {
+            if (player.getInventory().contains(gluttonousRingStack)
+                    && !(player.getInventory().contains(advancedGluttonousRingStack))) {
                 ((PlayerEntity) user).getItemCooldownManager().set(this, 40);
-
-                gluttonousRingStack.damage(1, playerEntity, (player) ->
-                        player.sendToolBreakStatus(player.getActiveHand()));
 
                 return ((PlayerEntity)user).getAbilities().creativeMode
                         ? itemStack : new ItemStack(this.asItem());

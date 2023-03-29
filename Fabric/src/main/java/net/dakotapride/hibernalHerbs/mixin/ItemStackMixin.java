@@ -54,9 +54,6 @@ public abstract class ItemStackMixin implements FoodComponentList {
                             this.getItem().getFoodComponent().getSaturationModifier());
                 }
 
-                advGluttonousRingStack.damage(1, playerEntity, (player) ->
-                        player.sendToolBreakStatus(player.getActiveHand()));
-
                 cir.setReturnValue(((PlayerEntity)user).getAbilities().creativeMode
                         ? this.getItem().getDefaultStack() : new ItemStack(this.getItem().asItem(), this.getCount()));
             }

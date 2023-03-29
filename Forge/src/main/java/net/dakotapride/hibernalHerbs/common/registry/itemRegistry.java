@@ -6,6 +6,8 @@ import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoatEntity;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
+import net.dakotapride.hibernalHerbs.common.item.ring.GluttonousRingItem;
+import net.dakotapride.hibernalHerbs.common.item.ring.adv.AdvancedGluttonousRingItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -20,33 +22,42 @@ public class itemRegistry implements FoodComponentList {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
 
-    public static final RegistryObject<Item> SIGIL_TEMPLATE = ITEMS.register("sigil",
-            () -> new HerbalSigilItem(new Item.Properties()));
+    public static final RegistryObject<Item> RING = ITEMS.register("ring",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> GLUTTONOUS_RING = ITEMS.register("gluttonous_ring",
+            () -> new GluttonousRingItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> ADV_GLUTTONOUS_RING = ITEMS.register("gluttonous_ring_adv",
+            () -> new AdvancedGluttonousRingItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> CRACKED_SIGIL = ITEMS.register("cracked_sigil",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SIGIL = ITEMS.register("sigil",
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(8)));
 
     public static final RegistryObject<Item> SIGIL_WRATH = ITEMS.register("sigil_wrath",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_GREED = ITEMS.register("sigil_greed",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_LUST = ITEMS.register("sigil_lust",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_GLUTTONY = ITEMS.register("sigil_gluttony",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_ENVY = ITEMS.register("sigil_envy",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_PRIDE = ITEMS.register("sigil_pride",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_SLOTH = ITEMS.register("sigil_sloth",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> SIGIL_CONFIGURATION = ITEMS.register("sigil_configuration",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_MASTERY = ITEMS.register("sigil_mastery",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> SIGIL_CONFIGURATION_ADV = ITEMS.register("sigil_configuration_adv",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_MASTERY_ADV = ITEMS.register("sigil_mastery_adv",
-            () -> new HerbalSigilItem(new Item.Properties()));
+            () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> MYQUESTE_BOAT = ITEMS.register("myqueste_boat",
             () -> new MyquesteBoatItem(false, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties().stacksTo(1)));

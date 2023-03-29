@@ -3,8 +3,8 @@ package net.dakotapride.hibernalHerbs.common.init;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.canister.AbstractCanisterItem;
-import net.dakotapride.hibernalHerbs.common.item.pendant.GluttonousRingItem;
-import net.dakotapride.hibernalHerbs.common.item.pendant.adv.AdvancedGluttonousRingItem;
+import net.dakotapride.hibernalHerbs.common.item.ring.GluttonousRingItem;
+import net.dakotapride.hibernalHerbs.common.item.ring.adv.AdvancedGluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.pouch.AbstractPouchItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -16,25 +16,25 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 public class ItemInit {
 
     public static Item RING = new Item(new FabricItemSettings().maxCount(1));
-    public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings().maxDamageIfAbsent(95));
-    public static Item ADV_GLUTTONOUS_RING = new AdvancedGluttonousRingItem(new FabricItemSettings().maxDamageIfAbsent(190));
+    public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings().maxCount(1));
+    public static Item ADV_GLUTTONOUS_RING = new AdvancedGluttonousRingItem(new FabricItemSettings().maxCount(1));
 
 
     public static Item CRACKED_SIGIL = new Item(new FabricItemSettings());
     public static Item SIGIL = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
 
-    public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
-    public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
-    public static Item SIGIL_LUST = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
-    public static Item SIGIL_GLUTTONY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
-    public static Item SIGIL_WRATH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
-    public static Item SIGIL_GREED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
-    public static Item SIGIL_ENVY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_LUST = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_GLUTTONY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_WRATH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_GREED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_ENVY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
 
-    public static Item SIGIL_CONFIGURATION = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
-    public static Item SIGIL_CONFIGURATION_ADVANCED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
-    public static Item SIGIL_MASTERY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
-    public static Item SIGIL_MASTERY_ADVANCED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item SIGIL_CONFIGURATION = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_CONFIGURATION_ADVANCED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_MASTERY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_MASTERY_ADVANCED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
 
     public static Item POUNDED_ROSEMARY = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));

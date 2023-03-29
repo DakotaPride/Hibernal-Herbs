@@ -19,7 +19,7 @@ public class HerbalSigilItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag tooltipFlag) {
-        if (!stack.is(itemRegistry.SIGIL_TEMPLATE.get())) {
+        if (!stack.is(itemRegistry.SIGIL.get())) {
             tooltip.add(Component.translatable("text.hibernalherbs.sigil.type").withStyle(ChatFormatting.GRAY));
             if (Screen.hasShiftDown()) {
                 if (stack.is(itemRegistry.SIGIL_PRIDE.get())) {

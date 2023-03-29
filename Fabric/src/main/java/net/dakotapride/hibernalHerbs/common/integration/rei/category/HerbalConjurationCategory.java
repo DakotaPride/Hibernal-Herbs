@@ -10,6 +10,7 @@ import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryStack;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
+import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.integration.rei.ReiHibernalHerbsPlugin;
 import net.dakotapride.hibernalHerbs.common.integration.rei.display.HerbalConjurationDisplay;
 import net.minecraft.item.ItemStack;
@@ -48,6 +49,8 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
         Point startPoint = new Point(bounds.getCenterX() - 64, bounds.getCenterY() - 16);
         Point outputPoint = new Point(startPoint.x + 108, startPoint.y + 8);
 
+        Point crackedSigilPoint = new Point(outputPoint.x, outputPoint.y + 20);
+
         List<Widget> widgets = new ArrayList<>();
 
         widgets.add(Widgets.createRecipeBase(bounds));
@@ -68,6 +71,8 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
                 .entries(display.getInputEntries().get(4)).markInput());
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 12, startPoint.y - 4))
                 .entries(display.getInputEntries().get(5)).markInput());
+
+        widgets.add(Widgets.createSlot(crackedSigilPoint).entries(display.getCrackedSigil().get(0)));
 
 
 
