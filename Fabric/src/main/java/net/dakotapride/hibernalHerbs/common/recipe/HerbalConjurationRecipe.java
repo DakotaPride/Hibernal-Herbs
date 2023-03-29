@@ -48,7 +48,6 @@ public class HerbalConjurationRecipe implements Recipe<SimpleInventory> {
         if (!(input.get(2).test(inventory.getStack(3)))) { return false; }
         if (!(input.get(3).test(inventory.getStack(4)))) { return false; }
         if (!(input.get(4).test(inventory.getStack(5)))) { return false; }
-        if (!(input.get(5).test(inventory.getStack(6)))) { return false; }
 
         for (Ingredient ingredient : input) {
             boolean found = false;

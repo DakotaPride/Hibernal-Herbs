@@ -16,23 +16,23 @@ public class HerbConjurationAltarScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public HerbConjurationAltarScreenHandler(int syncId, PlayerInventory inventory) {
-        this(syncId, inventory, new SimpleInventory(8), new ArrayPropertyDelegate(8));
+        this(syncId, inventory, new SimpleInventory(7), new ArrayPropertyDelegate(7));
     }
 
     public HerbConjurationAltarScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ScreenHandlersInit.CONJURATION_ALTAR_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 8);
+        checkSize(inventory, 7);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
-        this.addSlot(new Slot(inventory, 1, 46, 23));
-        this.addSlot(new Slot(inventory, 2, 68, 19));
-        this.addSlot(new Slot(inventory, 3, 90, 23));
-        this.addSlot(new Slot(inventory, 4, 46, 45));
-        this.addSlot(new Slot(inventory, 5, 68, 49));
-        this.addSlot(new Slot(inventory, 6, 90, 45));
-        this.addSlot(new Slot(inventory, 7, 116, 63));
+        this.addSlot(new Slot(inventory, 0, 46, 23));
+        this.addSlot(new Slot(inventory, 1, 68, 19));
+        this.addSlot(new Slot(inventory, 2, 90, 23));
+        this.addSlot(new Slot(inventory, 3, 46, 45));
+        this.addSlot(new Slot(inventory, 4, 68, 49));
+        this.addSlot(new Slot(inventory, 5, 90, 45));
+        this.addSlot(new Slot(inventory, 6, 116, 63));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

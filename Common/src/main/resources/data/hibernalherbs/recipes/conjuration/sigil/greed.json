@@ -2,9 +2,6 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
-      "item": "hibernalherbs:dried_fennkystral"
-    },
-    {
       "item": "hibernalherbs:marjoram"
     },
     {
@@ -18,6 +15,9 @@
     },
     {
       "item": "hibernalherbs:dried_marjoram"
+    },
+    {
+      "item": "hibernalherbs:dried_fennkystral"
     }
   ],
   "output": {

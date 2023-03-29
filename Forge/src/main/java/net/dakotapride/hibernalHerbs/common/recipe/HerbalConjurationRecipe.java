@@ -104,49 +104,6 @@ public class HerbalConjurationRecipe implements Recipe<SimpleContainer> {
         public static final String ID = "herbal_conjuration";
     }
 
-    static String[] patternFromJson(JsonArray p_44197_) {
-        String[] astring = new String[p_44197_.size()];
-        if (astring.length > 2) {
-            throw new JsonSyntaxException("Invalid pattern: too many rows, " + 2 + " is maximum");
-        } else if (astring.length == 0) {
-            throw new JsonSyntaxException("Invalid pattern: empty pattern not allowed");
-        } else {
-            for(int i = 0; i < astring.length; ++i) {
-                String s = GsonHelper.convertToString(p_44197_.get(i), "pattern[" + i + "]");
-                if (s.length() > 3) {
-                    throw new JsonSyntaxException("Invalid pattern: too many columns, " + 3 + " is maximum");
-                }
-
-                if (i > 0 && astring[0].length() != s.length()) {
-                    throw new JsonSyntaxException("Invalid pattern: each row must be the same width");
-                }
-
-                astring[i] = s;
-            }
-
-            return astring;
-        }
-    }
-
-    static Map<String, Ingredient> keyFromJson(JsonObject p_44211_) {
-        Map<String, Ingredient> map = Maps.newHashMap();
-
-        for(Map.Entry<String, JsonElement> entry : p_44211_.entrySet()) {
-            if (entry.getKey().length() != 1) {
-                throw new JsonSyntaxException("Invalid key entry: '" + (String)entry.getKey() + "' is an invalid symbol (must be 1 character only).");
-            }
-
-            if (" ".equals(entry.getKey())) {
-                throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
-            }
-
-            map.put(entry.getKey(), Ingredient.fromJson(entry.getValue()));
-        }
-
-        map.put(" ", Ingredient.EMPTY);
-        return map;
-    }
-
     public static class Serializer implements RecipeSerializer<HerbalConjurationRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =

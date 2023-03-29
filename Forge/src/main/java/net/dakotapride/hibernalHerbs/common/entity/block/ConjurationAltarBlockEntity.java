@@ -149,7 +149,6 @@ public class ConjurationAltarBlockEntity extends BlockEntity implements MenuProv
     }
 
     private static void craftItem(ConjurationAltarBlockEntity entity) {
-        int itemStackCount = 1;
 
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
@@ -168,7 +167,7 @@ public class ConjurationAltarBlockEntity extends BlockEntity implements MenuProv
             entity.itemHandler.extractItem(4, 1, false);
             entity.itemHandler.extractItem(5, 1, false);
             entity.itemHandler.setStackInSlot(6, new ItemStack(recipe.get().getResultItem().getItem(),
-                    entity.itemHandler.getStackInSlot(6).getCount() + itemStackCount));
+                    entity.itemHandler.getStackInSlot(6).getCount() + recipe.get().getResultItem().getCount()));
 
             entity.resetProgress();
         }

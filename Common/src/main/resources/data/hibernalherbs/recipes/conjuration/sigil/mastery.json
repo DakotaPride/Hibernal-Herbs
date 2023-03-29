@@ -2,9 +2,6 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
-      "item": "hibernalherbs:dried_rosemary"
-    },
-    {
       "item": "hibernalherbs:dried_tarragon"
     },
     {
@@ -18,6 +15,9 @@
     },
     {
       "tag": "hibernalherbs:sigil/greed"
+    },
+    {
+      "item": "hibernalherbs:dried_rosemary"
     }
   ],
   "output": {

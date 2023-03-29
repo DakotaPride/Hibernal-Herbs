@@ -13,7 +13,7 @@ public class HibernalRecipes {
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, MOD_ID);
 
     public static final RegistryObject<RecipeSerializer<HerbalConjurationRecipe>> HERBAL_CONJURATION =
-            SERIALIZERS.register("herbal_conjuration", () -> HerbalConjurationRecipe.Serializer.INSTANCE);
+            SERIALIZERS.register(HerbalConjurationRecipe.Type.ID, () -> HerbalConjurationRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

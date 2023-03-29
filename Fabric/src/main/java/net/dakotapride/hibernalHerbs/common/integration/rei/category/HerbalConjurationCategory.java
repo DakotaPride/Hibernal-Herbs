@@ -56,17 +56,17 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
 
 
 
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 12, startPoint.y - 4))
-                .entries(display.getInputEntries().get(0)).markInput());
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 34, startPoint.y - 8))
-                .entries(display.getInputEntries().get(1)).markInput());
+                .entries(display.getInputEntries().get(0)).markInput());
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 56, startPoint.y - 4))
+                .entries(display.getInputEntries().get(1)).markInput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 12, startPoint.y + 18))
                 .entries(display.getInputEntries().get(2)).markInput());
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 13, startPoint.y + 18))
-                .entries(display.getInputEntries().get(3)).markInput());
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 34, startPoint.y + 22))
-                .entries(display.getInputEntries().get(4)).markInput());
+                .entries(display.getInputEntries().get(3)).markInput());
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 56, startPoint.y + 18))
+                .entries(display.getInputEntries().get(4)).markInput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 12, startPoint.y - 4))
                 .entries(display.getInputEntries().get(5)).markInput());
 
 
