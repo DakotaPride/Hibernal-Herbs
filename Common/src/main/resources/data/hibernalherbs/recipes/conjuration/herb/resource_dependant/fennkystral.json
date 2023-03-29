@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:fennsel"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:andesite"
+    },
+    {
+      "item": "hibernalherbs:marjoram"
+    },
+    {
+      "item": "minecraft:andesite"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:fennkystral"
+  }
+}

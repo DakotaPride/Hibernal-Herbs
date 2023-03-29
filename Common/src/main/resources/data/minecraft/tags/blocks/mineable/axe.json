@@ -7,6 +7,14 @@
     "hibernalherbs:myqueste_door",
     "hibernalherbs:myqueste_trapdoor",
     "hibernalherbs:myqueste_slab",
-    "hibernalherbs:myqueste_stairs"
+    "hibernalherbs:myqueste_stairs",
+    "hibernalherbs:myqueste_pressure_plate",
+    "hibernalherbs:myqueste_button",
+    "hibernalherbs:myqueste_sign",
+
+    {
+      "required": false,
+      "id": "hibernalherbs:myqueste_wall_sign"
+    }
   ]
 }

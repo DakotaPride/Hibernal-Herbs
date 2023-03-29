@@ -1,18 +1,23 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "recipe_dependant_herb_pounded",
+  "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
       "item": "hibernalherbs:pounded_fennsel"
     },
     {
-      "item": "hibernalherbs:pounded_marjoram"
-    },
-    {
       "item": "minecraft:amethyst_shard"
     },
     {
-      "item": "hibernalherbs:herb_fertilizer"
+      "item": "minecraft:andesite"
+    },
+    {
+      "item": "hibernalherbs:pounded_marjoram"
+    },
+    {
+      "item": "minecraft:andesite"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
     }
   ],
   "result": {

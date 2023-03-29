@@ -24,6 +24,8 @@ public class util {
 
     public static final TagKey<Biome> HAS_HERBS = TagKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "has_herbs"));
 
+    public static final TagKey<Item> SIGILS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "sigil/sigils"));
+
     public static void utilsInit() {
         // Strippable Blocks
 

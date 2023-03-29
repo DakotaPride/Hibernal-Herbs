@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:sigil_mastery_adv"
+    },
+    {
+      "tag": "hibernalherbs:herbs/marjoram"
+    },
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    {
+      "item": "hibernalherbs:gluttonous_ring"
+    },
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    {
+      "tag": "hibernalherbs:herbs/marjoram"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:gluttonous_ring_adv"
+  }
+}

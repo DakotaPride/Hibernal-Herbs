@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:fennkystral"
+    },
+    {
+      "item": "hibernalherbs:sigil_mastery"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "hibernalherbs:dried_fennkystral"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "hibernalherbs:sigil_pride"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:ring"
+  }
+}

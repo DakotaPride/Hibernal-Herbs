@@ -19,7 +19,7 @@ public class HerbalSigilItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (!stack.isOf(ItemInit.SIGIL_TEMPLATE)) {
+        if (!stack.isOf(ItemInit.SIGIL)) {
             tooltip.add(Text.translatable("text.hibernalherbs.sigil.type").formatted(Formatting.GRAY));
             if (Screen.hasShiftDown()) {
                 if (stack.isOf(ItemInit.SIGIL_PRIDE)) {

@@ -49,9 +49,9 @@ public class itemRegistry implements FoodComponentList {
             () -> new HerbalSigilItem(new Item.Properties()));
 
     public static final RegistryObject<Item> MYQUESTE_BOAT = ITEMS.register("myqueste_boat",
-            () -> new MyquesteBoatItem(false, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties()));
+            () -> new MyquesteBoatItem(false, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> MYQUESTE_CHEST_BOAT = ITEMS.register("myqueste_chest_boat",
-            () -> new MyquesteBoatItem(true, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties()));
+            () -> new MyquesteBoatItem(true, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> MYQUESTE_SIGN = ITEMS.register("myqueste_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16).tab(HibernalHerbsForge.HIBERNAL_HERBS),

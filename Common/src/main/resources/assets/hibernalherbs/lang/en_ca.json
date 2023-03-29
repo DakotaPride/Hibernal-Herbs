@@ -311,6 +311,18 @@
   "advancements.hibernalherbs.consume_fire_blend_at_world_height.title": "Have You Got Wax Wings?",
   "advancements.hibernalherbs.consume_fire_blend_at_world_height.description": "Consume An Incinerating Blend While At World Height",
 
+  "item.hibernalherbs.ring": "Golden Ring",
+  "item.hibernalherbs.gluttonous_ring": "Gluttonous Ring",
+  "item.hibernalherbs.gluttonous_ring_adv": "Advanced Gluttonous Ring",
+
+  "text.hibernalherbs.inventory": "While In Inventory:",
+
+  "text.hibernalherbs.ring.gluttonous.1": "Herb Blends Regenerate Forever, As Long As",
+  "text.hibernalherbs.ring.gluttonous.2": "This Item Is In Your Inventory",
+
+  "text.hibernalherbs.ring.gluttonous.1.adv": "All Foods Regenerate Forever, As Long As",
+  "text.hibernalherbs.ring.gluttonous.2.adv": "This Item Is In Your Inventory",
+
   // Forge
   "block.hibernalherbs.bloforia": "Bloforia",
   "item.hibernalherbs.pounded_bloforia": "Pounded Bloforia",

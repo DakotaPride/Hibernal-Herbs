@@ -3,9 +3,10 @@ package net.dakotapride.hibernalHerbs.common.init;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.canister.AbstractCanisterItem;
+import net.dakotapride.hibernalHerbs.common.item.pendant.GluttonousRingItem;
+import net.dakotapride.hibernalHerbs.common.item.pendant.adv.AdvancedGluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.pouch.AbstractPouchItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.datafixer.fix.WriteAndReadFix;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -14,7 +15,13 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
 
-    public static Item SIGIL_TEMPLATE = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item RING = new Item(new FabricItemSettings().maxCount(1));
+    public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings().maxDamageIfAbsent(95));
+    public static Item ADV_GLUTTONOUS_RING = new AdvancedGluttonousRingItem(new FabricItemSettings().maxDamageIfAbsent(190));
+
+
+    public static Item CRACKED_SIGIL = new Item(new FabricItemSettings());
+    public static Item SIGIL = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
 
     public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
     public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
@@ -195,6 +202,10 @@ public class ItemInit {
     public static AbstractCanisterItem CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1), 384);
 
     public static void init () {
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ring"), RING);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gluttonous_ring"), GLUTTONOUS_RING);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gluttonous_ring_adv"), ADV_GLUTTONOUS_RING);
+
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyme"), POUNDED_THYME);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_tarragon"), POUNDED_TARRAGON);
@@ -296,7 +307,7 @@ public class ItemInit {
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_myqueste"), HERB_HUMUS_MYQUESTE);
 
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil"), SIGIL_TEMPLATE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil"), SIGIL);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_pride"), SIGIL_PRIDE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_sloth"), SIGIL_SLOTH);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_lust"), SIGIL_LUST);
@@ -308,6 +319,7 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_mastery"), SIGIL_MASTERY);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_configuration_adv"), SIGIL_CONFIGURATION_ADVANCED);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_mastery_adv"), SIGIL_MASTERY_ADVANCED);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "cracked_sigil"), CRACKED_SIGIL);
 
         // Legacy
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);

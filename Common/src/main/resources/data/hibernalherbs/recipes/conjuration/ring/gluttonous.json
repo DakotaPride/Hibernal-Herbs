@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:sigil_gluttony"
+    },
+    {
+      "item": "hibernalherbs:fennkystral"
+    },
+    {
+      "item": "hibernalherbs:dried_fennsel"
+    },
+    {
+      "item": "hibernalherbs:ring"
+    },
+    {
+      "item": "hibernalherbs:dried_fennsel"
+    },
+    {
+      "item": "hibernalherbs:fennkystral"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:gluttonous_ring"
+  }
+}

@@ -6,7 +6,6 @@ import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
 import net.dakotapride.hibernalHerbs.common.screen.HerbConjurationAltarScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -127,7 +126,11 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
             entity.removeStack(1, 1);
             entity.removeStack(2, 1);
             entity.removeStack(3, 1);
-            entity.removeStack(4, 1);
+            if (!(entity.getStack(4).isOf(ItemInit.SIGIL))) {
+                entity.removeStack(4);
+            } else {
+                entity.setStack(4, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
+            }
             entity.removeStack(5, 1);
 
             entity.setStack(6, new ItemStack(recipe.get().getOutput().getItem(),
@@ -151,6 +154,7 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
+
         return inventory.getStack(6).getItem() == output || inventory.getStack(6).isEmpty();
     }
 
