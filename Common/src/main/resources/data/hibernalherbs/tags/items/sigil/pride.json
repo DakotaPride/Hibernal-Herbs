@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:sigil_pride",
+
+    {
+      "required": false,
+      "id": "botania:rune_pride"
+    }
+  ]
+}

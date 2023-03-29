@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:sigil_sloth",
+
+    {
+      "required": false,
+      "id": "botania:rune_sloth"
+    }
+  ]
+}

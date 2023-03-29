@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class HerbConjurationAltarEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(7, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(8, ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
@@ -56,7 +56,7 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
             }
 
             public int size() {
-                return 7;
+                return 8;
             }
         };
     }
@@ -123,15 +123,15 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
                 .getFirstMatch(HerbalConjurationRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            entity.removeStack(0, 1);
             entity.removeStack(1, 1);
             entity.removeStack(2, 1);
             entity.removeStack(3, 1);
             entity.removeStack(4, 1);
             entity.removeStack(5, 1);
+            entity.removeStack(6, 1);
 
-            entity.setStack(6, new ItemStack(recipe.get().getOutput().getItem(),
-                    entity.getStack(6).getCount() + recipe.get().getOutput().getCount()));
+            entity.setStack(7, new ItemStack(recipe.get().getOutput().getItem(),
+                    entity.getStack(7).getCount() + recipe.get().getOutput().getCount()));
 
             entity.resetProgress();
         }
@@ -151,10 +151,10 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        return inventory.getStack(6).getItem() == output || inventory.getStack(6).isEmpty();
+        return inventory.getStack(7).getItem() == output || inventory.getStack(7).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(6).getMaxCount() > inventory.getStack(6).getCount();
+        return inventory.getStack(7).getMaxCount() > inventory.getStack(7).getCount();
     }
 }

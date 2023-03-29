@@ -42,6 +42,14 @@ public class HerbalConjurationRecipe implements Recipe<SimpleInventory> {
         if (input.size() != checklist.size()) {
             return false;
         }
+
+        if (!(input.get(0).test(inventory.getStack(1)))) { return false; }
+        if (!(input.get(1).test(inventory.getStack(2)))) { return false; }
+        if (!(input.get(2).test(inventory.getStack(3)))) { return false; }
+        if (!(input.get(3).test(inventory.getStack(4)))) { return false; }
+        if (!(input.get(4).test(inventory.getStack(5)))) { return false; }
+        if (!(input.get(5).test(inventory.getStack(6)))) { return false; }
+
         for (Ingredient ingredient : input) {
             boolean found = false;
             for (ItemStack stack : checklist) {

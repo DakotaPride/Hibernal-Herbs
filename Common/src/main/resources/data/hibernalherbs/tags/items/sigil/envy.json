@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:sigil_envy",
+
+    {
+      "required": false,
+      "id": "botania:rune_envy"
+    }
+  ]
+}

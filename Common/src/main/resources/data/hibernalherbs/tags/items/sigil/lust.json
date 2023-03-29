@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:sigil_lust",
+
+    {
+      "required": false,
+      "id": "botania:rune_lust"
+    }
+  ]
+}

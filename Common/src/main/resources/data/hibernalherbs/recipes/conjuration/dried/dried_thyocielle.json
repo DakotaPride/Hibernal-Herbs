@@ -2,6 +2,9 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
+      "item": "hibernalherbs:myqueste_planks"
+    },
+    {
       "item": "hibernalherbs:dried_calendula"
     },
     {
@@ -15,9 +18,6 @@
     },
     {
       "item": "minecraft:snowball"
-    },
-    {
-      "item": "hibernalherbs:myqueste_planks"
     }
   ],
   "output": {

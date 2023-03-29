@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:sigil_gluttony",
+
+    {
+      "required": false,
+      "id": "botania:rune_gluttony"
+    }
+  ]
+}

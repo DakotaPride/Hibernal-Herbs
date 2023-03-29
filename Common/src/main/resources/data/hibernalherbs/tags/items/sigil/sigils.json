@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "#hibernalherbs:sigil/wrath",
+    "#hibernalherbs:sigil/greed",
+    "#hibernalherbs:sigil/sloth",
+    "#hibernalherbs:sigil/lust",
+    "#hibernalherbs:sigil/gluttony",
+    "#hibernalherbs:sigil/envy",
+    "#hibernalherbs:sigil/pride",
+
+    "hibernalherbs:sigil_configuration",
+    "hibernalherbs:sigil_mastery",
+    "hibernalherbs:sigil_configuration_adv",
+    "hibernalherbs:sigil_mastery_adv"
+  ]
+}

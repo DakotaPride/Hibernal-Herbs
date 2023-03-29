@@ -2,6 +2,9 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
+      "item": "hibernalherbs:dried_thyocielle"
+    },
+    {
       "item": "hibernalherbs:thyocielle"
     },
     {
@@ -15,9 +18,6 @@
     },
     {
       "item": "hibernalherbs:dried_verbena"
-    },
-    {
-      "item": "hibernalherbs:dried_thyocielle"
     }
   ],
   "output": {
