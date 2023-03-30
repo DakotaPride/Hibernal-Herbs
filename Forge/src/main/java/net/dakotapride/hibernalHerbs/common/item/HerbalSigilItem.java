@@ -47,5 +47,11 @@ public class HerbalSigilItem extends Item {
                 }
             }
         }
+
+        if (stack.is(itemRegistry.CRACKED_SIGIL.get())) {
+            tooltip.add(Component.translatable("text.hibernalherbs.cracked_sigil.assist.1").withStyle(ChatFormatting.WHITE));
+            tooltip.add(Component.translatable("text.hibernalherbs.cracked_sigil.assist.2").withStyle(ChatFormatting.WHITE));
+            tooltip.add(Component.translatable("text.hibernalherbs.cracked_sigil.assist.3").withStyle(ChatFormatting.WHITE));
+        }
     }
 }

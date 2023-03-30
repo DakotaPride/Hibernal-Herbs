@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_essitte"
+    },
+    {
+      "item": "hibernalherbs:pounded_verbena"
+    },
+    {
+      "tag": "hibernalherbs:herbs/punuel"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "hibernalherbs:herbs/punuel"
+    },
+    {
+      "item": "hibernalherbs:pounded_punuel"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_fire",
+    "count": 1
+  }
+}

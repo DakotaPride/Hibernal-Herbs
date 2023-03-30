@@ -3,16 +3,19 @@ package net.dakotapride.hibernalHerbs.common.integration.rei.category;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.Renderer;
+import me.shedaniel.rei.api.client.gui.widgets.TooltipContext;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
 import me.shedaniel.rei.api.client.gui.widgets.Widgets;
 import me.shedaniel.rei.api.client.registry.display.DisplayCategory;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryStack;
+import me.shedaniel.rei.api.common.entry.type.VanillaEntryTypes;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.integration.rei.ReiHibernalHerbsPlugin;
 import net.dakotapride.hibernalHerbs.common.integration.rei.display.HerbalConjurationDisplay;
+import net.dakotapride.hibernalHerbs.common.util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
@@ -36,7 +39,7 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
 
     @Override
     public int getDisplayHeight() {
-        return 64;
+        return 70;
     }
 
     @Override
@@ -48,8 +51,6 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
     public List<Widget> setupDisplay(HerbalConjurationDisplay display, Rectangle bounds) {
         Point startPoint = new Point(bounds.getCenterX() - 64, bounds.getCenterY() - 16);
         Point outputPoint = new Point(startPoint.x + 108, startPoint.y + 8);
-
-        Point crackedSigilPoint = new Point(outputPoint.x, outputPoint.y + 20);
 
         List<Widget> widgets = new ArrayList<>();
 
@@ -71,9 +72,6 @@ public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurat
                 .entries(display.getInputEntries().get(4)).markInput());
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 12, startPoint.y - 4))
                 .entries(display.getInputEntries().get(5)).markInput());
-
-        widgets.add(Widgets.createSlot(crackedSigilPoint).entries(display.getCrackedSigil().get(0)));
-
 
 
         // widgets.add(Widgets.createResultSlotBackground(outputPoint));

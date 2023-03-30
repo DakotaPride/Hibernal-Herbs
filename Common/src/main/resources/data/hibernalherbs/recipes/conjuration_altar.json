@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#X#",
+    "XAX",
+    "#X#"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:anvil"
+    },
+    "#": {
+      "item": "hibernalherbs:myqueste_planks"
+    },
+    "X": {
+      "tag": "hibernalherbs:herbs"
+    }
+  },
+  "result": {
+    "item": "hibernalherbs:conjuration_altar",
+    "count": 1
+  }
+}

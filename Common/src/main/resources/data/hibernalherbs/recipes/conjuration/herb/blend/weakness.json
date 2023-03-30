@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_sorrel"
+    },
+    {
+      "item": "hibernalherbs:pounded_verbena"
+    },
+    {
+      "tag": "hibernalherbs:herbs/chamomile"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "hibernalherbs:herbs/chamomile"
+    },
+    {
+      "item": "hibernalherbs:pounded_chamomile"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_weakness",
+    "count": 1
+  }
+}

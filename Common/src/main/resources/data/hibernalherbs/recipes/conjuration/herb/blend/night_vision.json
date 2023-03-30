@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_ceillis"
+    },
+    {
+      "item": "hibernalherbs:pounded_chives"
+    },
+    {
+      "tag": "hibernalherbs:herbs/sorrel"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "hibernalherbs:herbs/sorrel"
+    },
+    {
+      "item": "hibernalherbs:pounded_sorrel"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_night_vision",
+    "count": 1
+  }
+}

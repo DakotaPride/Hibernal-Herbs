@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_sorrel"
+    },
+    {
+      "item": "hibernalherbs:pounded_chamomile"
+    },
+    {
+      "tag": "hibernalherbs:herbs/marjoram"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "hibernalherbs:herbs/marjoram"
+    },
+    {
+      "item": "hibernalherbs:pounded_marjoram"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_haste",
+    "count": 1
+  }
+}

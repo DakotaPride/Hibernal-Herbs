@@ -2,10 +2,7 @@ package net.dakotapride.hibernalHerbs.common.registry;
 
 import net.dakotapride.hibernalHerbs.common.Constants;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
-import net.dakotapride.hibernalHerbs.common.block.ConjurationAltarBlock;
-import net.dakotapride.hibernalHerbs.common.block.FlammableRotatedPillarBlock;
-import net.dakotapride.hibernalHerbs.common.block.MyquesteSignBlock;
-import net.dakotapride.hibernalHerbs.common.block.MyquesteWallSignBlock;
+import net.dakotapride.hibernalHerbs.common.block.*;
 import net.dakotapride.hibernalHerbs.common.block.leaf.LeafPileBlock;
 import net.dakotapride.hibernalHerbs.common.block.leaf.hibernal.HibernalLeafPileBlock;
 import net.dakotapride.hibernalHerbs.common.gen.grower.MyquesteTreeGrower;
@@ -166,6 +163,45 @@ public class blockRegistry {
             () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
     public static final RegistryObject<Block> FENNKYSTRAL_LANTERN = registerBlock("fennkystral_lantern",
             () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+
+    public static final RegistryObject<Block> BLOFORIA_LANTERN = registerBlock("bloforia_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+
+
+    public static final RegistryObject<Block> CALENDULA_BARREL = registerBlock("calendula_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> ROSEMARY_BARREL = registerBlock("rosemary_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> THYME_BARREL = registerBlock("thyme_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> TARRAGON_BARREL = registerBlock("tarragon_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> CHAMOMILE_BARREL = registerBlock("chamomile_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> CHIVES_BARREL = registerBlock("chives_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> VERBENA_BARREL = registerBlock("verbena_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> SORREL_BARREL = registerBlock("sorrel_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> MARJORAM_BARREL = registerBlock("marjoram_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> CHERVIL_BARREL = registerBlock("chervil_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> FENNSEL_BARREL = registerBlock("fennsel_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> CEILLIS_BARREL = registerBlock("ceillis_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> PUNUEL_BARREL = registerBlock("punuel_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> ESSITTE_BARREL = registerBlock("essitte_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> THYOCIELLE_BARREL = registerBlock("thyocielle_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> FENNKYSTRAL_BARREL = registerBlock("fennkystral_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> BLOFORIA_BARREL = registerBlock("bloforia_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
 
 
     // Compat Herbs (Forge)

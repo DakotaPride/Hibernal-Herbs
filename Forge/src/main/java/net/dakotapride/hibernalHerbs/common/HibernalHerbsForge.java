@@ -120,7 +120,62 @@ public class HibernalHerbsForge {
             nonNullList.add(0, itemRegistry.VIRULENT_BLEND.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.REGENERATIVE_BLEND.get().getDefaultInstance());
 
+            nonNullList.add(0, blockRegistry.BLOFORIA_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.FENNKYSTRAL_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.THYOCIELLE_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.VERBENA_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.THYME_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.TARRAGON_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.SORREL_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.ROSEMARY_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.PUNUEL_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.MARJORAM_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.FENNSEL_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.ESSITTE_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CHIVES_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CHERVIL_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CHAMOMILE_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CEILLIS_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CALENDULA_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.MYQUESTE_LEAF_PILE.get().asItem().getDefaultInstance());
+
+            nonNullList.add(0, blockRegistry.BLOFORIA_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.FENNKYSTRAL_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.THYOCIELLE_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.VERBENA_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.THYME_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.TARRAGON_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.SORREL_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.ROSEMARY_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.PUNUEL_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.MARJORAM_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.FENNSEL_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.ESSITTE_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CHIVES_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CHERVIL_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CHAMOMILE_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CEILLIS_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CALENDULA_BARREL.get().asItem().getDefaultInstance());
+
+            nonNullList.add(0, blockRegistry.BLOFORIA_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.FENNKYSTRAL_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.THYOCIELLE_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.VERBENA_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.THYME_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.TARRAGON_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.SORREL_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.ROSEMARY_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.PUNUEL_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.MARJORAM_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.FENNSEL_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.ESSITTE_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CHIVES_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CHERVIL_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CHAMOMILE_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.CEILLIS_LANTERN.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.CALENDULA_LANTERN.get().asItem().getDefaultInstance());
+
+            nonNullList.add(0, blockRegistry.CONJURATION_ALTAR.get().asItem().getDefaultInstance());
 
             nonNullList.add(0, itemRegistry.CANISTER_IRON.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.CANISTER_AMETHYST.get().getDefaultInstance());

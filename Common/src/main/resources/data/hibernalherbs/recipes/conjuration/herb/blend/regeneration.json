@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_thyme"
+    },
+    {
+      "item": "hibernalherbs:pounded_verbena"
+    },
+    {
+      "tag": "hibernalherbs:herbs/rosemary"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "hibernalherbs:herbs/rosemary"
+    },
+    {
+      "item": "hibernalherbs:pounded_rosemary"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_regeneration",
+    "count": 1
+  }
+}

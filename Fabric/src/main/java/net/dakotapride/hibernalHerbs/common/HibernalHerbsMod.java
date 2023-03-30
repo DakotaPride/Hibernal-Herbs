@@ -39,7 +39,73 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.AMETHYST_CANISTER));
 					itemStacks.add(new ItemStack(ItemInit.DIAMOND_CANISTER));
 
+					itemStacks.add(new ItemStack(BlockInit.CONJURATION_ALTAR.asItem()));
+
 					itemStacks.add(new ItemStack(BlockInit.CALENDULA_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CEILLIS_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHAMOMILE_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHERVIL_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHIVES_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.ESSITTE_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.FENNSEL_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MARJORAM_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.PUNUEL_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.ROSEMARY_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.SORREL_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.TARRAGON_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.THYME_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.VERBENA_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.THYOCIELLE_LANTERN.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.FENNKYSTRAL_LANTERN.asItem()));
+
+					itemStacks.add(new ItemStack(BlockInit.CALENDULA_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CEILLIS_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHAMOMILE_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHERVIL_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHIVES_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.ESSITTE_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.FENNSEL_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MARJORAM_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.PUNUEL_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.ROSEMARY_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.SORREL_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.TARRAGON_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.THYME_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.VERBENA_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.THYOCIELLE_HERB_BARREL.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.FENNKYSTRAL_HERB_BARREL.asItem()));
+
+					itemStacks.add(new ItemStack(BlockInit.MYQUESTE_LEAF_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CALENDULA_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CEILLIS_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHAMOMILE_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHERVIL_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.CHIVES_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.ESSITTE_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.FENNSEL_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.MARJORAM_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.PUNUEL_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.ROSEMARY_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.SORREL_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.TARRAGON_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.THYME_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.VERBENA_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.THYOCIELLE_HERB_PILE.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.FENNKYSTRAL_HERB_PILE.asItem()));
+
+					itemStacks.add(new ItemStack(ItemInit.RING));
+					itemStacks.add(new ItemStack(ItemInit.GLUTTONOUS_RING));
+					itemStacks.add(new ItemStack(ItemInit.ADV_GLUTTONOUS_RING));
+
+					itemStacks.add(new ItemStack(ItemInit.SIGIL));
+					itemStacks.add(new ItemStack(ItemInit.CRACKED_SIGIL));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_PRIDE));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_SLOTH));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_LUST));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_GLUTTONY));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_WRATH));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_GREED));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_ENVY));
 
 					itemStacks.add(new ItemStack(ItemInit.REGENERATIVE_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.VIRULENT_BLEND));
@@ -170,6 +236,8 @@ public class HibernalHerbsMod implements ModInitializer {
 
 		BlockInit.init();
 		ItemInit.init();
+
+		EffectInit.init();
 
 		HibernalHerbsBoatTypes.register();
 

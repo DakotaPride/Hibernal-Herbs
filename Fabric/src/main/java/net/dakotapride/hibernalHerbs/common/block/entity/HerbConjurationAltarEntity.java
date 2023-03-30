@@ -4,6 +4,7 @@ import net.dakotapride.hibernalHerbs.common.init.BlockEntityInit;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
 import net.dakotapride.hibernalHerbs.common.screen.HerbConjurationAltarScreenHandler;
+import net.dakotapride.hibernalHerbs.common.util;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -122,16 +123,36 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
                 .getFirstMatch(HerbalConjurationRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            entity.removeStack(0, 1);
-            entity.removeStack(1, 1);
-            entity.removeStack(2, 1);
-            entity.removeStack(3, 1);
-            if (!(entity.getStack(4).isOf(ItemInit.SIGIL))) {
-                entity.removeStack(4);
+            if (!(entity.getStack(0).isIn(util.SIGILS))) {
+                entity.removeStack(0, 1);
+            } else {
+                entity.setStack(0, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
+            }
+            if (!(entity.getStack(1).isIn(util.SIGILS))) {
+                entity.removeStack(1, 1);
+            } else {
+                entity.setStack(1, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
+            }
+            if (!(entity.getStack(2).isIn(util.SIGILS))) {
+                entity.removeStack(2, 1);
+            } else {
+                entity.setStack(2, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
+            }
+            if (!(entity.getStack(3).isIn(util.SIGILS))) {
+                entity.removeStack(3, 1);
+            } else {
+                entity.setStack(3, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
+            }
+            if (!(entity.getStack(4).isIn(util.SIGILS))) {
+                entity.removeStack(4, 1);
             } else {
                 entity.setStack(4, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
             }
-            entity.removeStack(5, 1);
+            if (!(entity.getStack(5).isIn(util.SIGILS))) {
+                entity.removeStack(5, 1);
+            } else {
+                entity.setStack(5, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
+            }
 
             entity.setStack(6, new ItemStack(recipe.get().getOutput().getItem(),
                     entity.getStack(6).getCount() + recipe.get().getOutput().getCount()));

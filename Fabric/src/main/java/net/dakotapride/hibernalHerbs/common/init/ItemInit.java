@@ -15,26 +15,47 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
 
-    public static Item RING = new Item(new FabricItemSettings().maxCount(1));
-    public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings().maxCount(1));
-    public static Item ADV_GLUTTONOUS_RING = new AdvancedGluttonousRingItem(new FabricItemSettings().maxCount(1));
+    public static Item RING = new Item(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item ADV_GLUTTONOUS_RING = new AdvancedGluttonousRingItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+
+    public static Item CURSED_CONFIGURATION_RING = new CursedConfigurationRingItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item BOUND_CURSE_SIGIL = new BoundCurseSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
 
 
-    public static Item CRACKED_SIGIL = new Item(new FabricItemSettings());
-    public static Item SIGIL = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+    public static Item CRACKED_SIGIL = new Item(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item SIGIL = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
 
-    public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item SIGIL_LUST = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item SIGIL_GLUTTONY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item SIGIL_WRATH = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item SIGIL_GREED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item SIGIL_ENVY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_LUST = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_GLUTTONY = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_WRATH = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_GREED = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_ENVY = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
 
-    public static Item SIGIL_CONFIGURATION = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item SIGIL_CONFIGURATION_ADVANCED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item SIGIL_MASTERY = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item SIGIL_MASTERY_ADVANCED = new HerbalSigilItem(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_CONFIGURATION = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_CONFIGURATION_ADVANCED = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_MASTERY = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+    public static Item SIGIL_MASTERY_ADVANCED = new HerbalSigilItem(new FabricItemSettings()
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
 
     public static Item POUNDED_ROSEMARY = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
@@ -205,6 +226,10 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ring"), RING);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gluttonous_ring"), GLUTTONOUS_RING);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gluttonous_ring_adv"), ADV_GLUTTONOUS_RING);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "configuration_ring"), CURSED_CONFIGURATION_RING);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_bound_curse"), BOUND_CURSE_SIGIL);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyme"), POUNDED_THYME);

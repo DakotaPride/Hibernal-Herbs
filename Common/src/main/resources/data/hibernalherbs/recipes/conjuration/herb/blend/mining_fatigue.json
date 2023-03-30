@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_sorrel"
+    },
+    {
+      "item": "hibernalherbs:pounded_ceillis"
+    },
+    {
+      "tag": "hibernalherbs:herbs/chervil"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "hibernalherbs:herbs/chervil"
+    },
+    {
+      "item": "hibernalherbs:pounded_chervil"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_mining_fatigue",
+    "count": 1
+  }
+}

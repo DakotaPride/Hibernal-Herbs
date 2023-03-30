@@ -27,9 +27,24 @@ public class HerbBlendItem extends Item implements FoodComponentList {
 
     @Override
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity livingEntity) {
-        ItemStack itemstack = super.finishUsingItem(stack, level, livingEntity);
+        ItemStack itemStack = super.finishUsingItem(stack, level, livingEntity);
 
-        return livingEntity instanceof Player && ((Player)livingEntity).getAbilities().instabuild ? itemstack : new ItemStack(Items.BOWL);
+        ItemStack gluttonousRingStack = itemRegistry.GLUTTONOUS_RING.get().getDefaultInstance();
+        ItemStack advancedGluttonousRingStack = itemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance();
+
+        if (livingEntity instanceof Player player) {
+            if (player.getInventory().contains(gluttonousRingStack)
+                    && !(player.getInventory().contains(advancedGluttonousRingStack))) {
+                ((Player) livingEntity).getCooldowns().addCooldown(this, 40);
+
+                return ((Player)livingEntity).getAbilities().instabuild
+                        ? itemStack : new ItemStack(this.asItem());
+            } else {
+                return ((Player)livingEntity).getAbilities().instabuild
+                        ? itemStack : new ItemStack(Items.BOWL);
+            }
+        }
+        return stack;
     }
 
     @Override

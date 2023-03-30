@@ -14,6 +14,10 @@ import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+
+import java.util.Collections;
+import java.util.List;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
@@ -29,6 +33,7 @@ public class HerbalConjurationRecipeCategory implements IRecipeCategory<HerbalCo
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(blockRegistry.CONJURATION_ALTAR.get()));
     }
+
 
     @Override
     public RecipeType<HerbalConjurationRecipe> getRecipeType() {
@@ -58,8 +63,6 @@ public class HerbalConjurationRecipeCategory implements IRecipeCategory<HerbalCo
         builder.addSlot(RecipeIngredientRole.INPUT, 46, 45).addIngredients(recipe.getIngredients().get(2));
         builder.addSlot(RecipeIngredientRole.INPUT, 68, 49).addIngredients(recipe.getIngredients().get(3));
         builder.addSlot(RecipeIngredientRole.INPUT, 90, 45).addIngredients(recipe.getIngredients().get(4));
-
-        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 1, 1).addIngredients(itemRegistry.CRACKED_SIGIL.get());
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 63).addItemStack(recipe.getResultItem());
     }

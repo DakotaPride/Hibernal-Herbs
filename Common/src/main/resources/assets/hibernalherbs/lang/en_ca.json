@@ -247,6 +247,12 @@
   "text.hibernalherbs.sigil.mastery": "  - Mastery",
   "text.hibernalherbs.sigil.mastery.adv": "  - Mastery [Advanced]",
 
+  "item.hibernalherbs.cracked_sigil": "Cracked Sigil",
+
+  "text.hibernalherbs.cracked_sigil.assist.1": "Looks Like You've Used Up This",
+  "text.hibernalherbs.cracked_sigil.assist.2": "Sigil's Energy, Reconstruct It",
+  "text.hibernalherbs.cracked_sigil.assist.3": "In Order To Reuse It",
+
   "itemGroup.hibernalherbs.hibernal_herbs": "Hibernal Herbs - Misc",
   "itemGroup.hibernalherbs.herbs": "Hibernal Herbs - Herbs",
   "itemGroup.hibernalherbs.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
@@ -322,6 +328,16 @@
 
   "text.hibernalherbs.ring.gluttonous.1.adv": "All Foods Regenerate Forever, As Long As",
   "text.hibernalherbs.ring.gluttonous.2.adv": "This Item Is In Your Inventory",
+
+  "effect.hibernalherbs.scented_curse": "Herbal Curse",
+  "effect.hibernalherbs.bitter_curse": "Herbal Curse",
+  "effect.hibernalherbs.sour_curse": "Herbal Curse",
+  "effect.hibernalherbs.warded_curse": "Herbal Curse",
+  "item.hibernalherbs.configuration_ring": "Configuration Ring",
+  "text.hibernalherbs.herbal_curse.scented.warning": "You have a Scented Herbal Curse...",
+  "text.hibernalherbs.herbal_curse.bitter.warning": "You have a Bitter Herbal Curse...",
+  "text.hibernalherbs.herbal_curse.sour.warning": "You have a Sour Herbal Curse...",
+  "text.hibernalherbs.herbal_curse.warded.warning": "You have a Warded Herbal Curse...",
 
   // Forge
   "block.hibernalherbs.bloforia": "Bloforia",

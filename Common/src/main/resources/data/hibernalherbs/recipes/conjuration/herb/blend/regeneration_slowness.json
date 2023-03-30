@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_chives"
+    },
+    {
+      "item": "hibernalherbs:pounded_verbena"
+    },
+    {
+      "tag": "hibernalherbs:herbs/thyocielle"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "hibernalherbs:herbs/thyocielle"
+    },
+    {
+      "item": "hibernalherbs:pounded_rosemary"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_regen_slow",
+    "count": 1
+  }
+}

@@ -10,9 +10,14 @@
     {
       "item": "hibernalherbs:dried_calendula"
     },
-    {
-      "item": "minecraft:smooth_stone"
-    },
+    [
+      {
+        "item": "minecraft:smooth_stone"
+      },
+      {
+        "item": "hibernalherbs:cracked_sigil"
+      }
+    ],
     {
       "item": "hibernalherbs:dried_calendula"
     },

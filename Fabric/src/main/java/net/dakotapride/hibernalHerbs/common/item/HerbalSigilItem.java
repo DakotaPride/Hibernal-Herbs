@@ -19,7 +19,7 @@ public class HerbalSigilItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (!stack.isOf(ItemInit.SIGIL)) {
+        if (!stack.isOf(ItemInit.SIGIL) && !stack.isOf(ItemInit.CRACKED_SIGIL)) {
             tooltip.add(Text.translatable("text.hibernalherbs.sigil.type").formatted(Formatting.GRAY));
             if (Screen.hasShiftDown()) {
                 if (stack.isOf(ItemInit.SIGIL_PRIDE)) {
@@ -46,6 +46,12 @@ public class HerbalSigilItem extends Item {
                     tooltip.add(Text.translatable("text.hibernalherbs.sigil.mastery.adv").formatted(Formatting.GRAY));
                 }
             }
+        }
+
+        if (stack.isOf(ItemInit.CRACKED_SIGIL)) {
+            tooltip.add(Text.translatable("text.hibernalherbs.cracked_sigil.assist.1").formatted(Formatting.WHITE));
+            tooltip.add(Text.translatable("text.hibernalherbs.cracked_sigil.assist.2").formatted(Formatting.WHITE));
+            tooltip.add(Text.translatable("text.hibernalherbs.cracked_sigil.assist.3").formatted(Formatting.WHITE));
         }
     }
 }

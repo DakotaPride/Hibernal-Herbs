@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_marjoram"
+    },
+    {
+      "item": "hibernalherbs:pounded_chamomile"
+    },
+    {
+      "tag": "hibernalherbs:herbs/punuel"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "hibernalherbs:herbs/punuel"
+    },
+    {
+      "item": "hibernalherbs:pounded_punuel"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_poison",
+    "count": 1
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_sorrel"
+    },
+    {
+      "item": "hibernalherbs:pounded_ceillis"
+    },
+    {
+      "tag": "hibernalherbs:herbs/chives"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "hibernalherbs:herbs/chives"
+    },
+    {
+      "item": "hibernalherbs:pounded_chives"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_slowness",
+    "count": 1
+  }
+}
