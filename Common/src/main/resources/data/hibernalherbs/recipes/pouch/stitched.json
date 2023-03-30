@@ -6,11 +6,9 @@
     "###"
   ],
   "key": {
-    "X": [
-      {
-        "tag": "hibernalherbs:pouches/stitched"
-      }
-    ],
+    "X": {
+      "tag": "hibernalherbs:herbs"
+    },
     "A": {
       "item": "minecraft:string"
     },
