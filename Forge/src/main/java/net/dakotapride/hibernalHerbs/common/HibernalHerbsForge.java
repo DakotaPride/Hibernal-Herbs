@@ -7,6 +7,7 @@ import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsConfigured;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsPlaced;
 import net.dakotapride.hibernalHerbs.common.recipe.HibernalRecipes;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.effectRegistry;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.dakotapride.hibernalHerbs.common.screen.HerbalConjurationScreen;
 import net.dakotapride.hibernalHerbs.common.screen.menu.HibernalHerbsMenues;
@@ -46,6 +47,11 @@ public class HibernalHerbsForge {
     public static final TagKey<Item> BLENDS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "herb_blends"));
 
     public static final TagKey<Item> POUCHES_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "pouches"));
+
+    public static final TagKey<Item> SIGILS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "sigil/sigils"));
+
+    public static final TagKey<Item> BOUND_PADLOCKS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "padlocks/bound"));
+    public static final TagKey<Item> PADLOCKS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "padlocks/unbound"));
 
 
     public static final CreativeModeTab HIBERNAL_HERBS = new CreativeModeTab("hibernal_herbs") {
@@ -259,6 +265,9 @@ public class HibernalHerbsForge {
         blockRegistry.register(eventBus);
         HibernalHerbsConfigured.register(eventBus);
         HibernalHerbsPlaced.register(eventBus);
+
+        // Effects & Potions
+        effectRegistry.register(eventBus);
 
         // Entities
         HibernalEntityTypes.ENTITY_TYPES.register(eventBus);

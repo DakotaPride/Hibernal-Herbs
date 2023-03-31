@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:bound_padlock_wrath",
+    "hibernalherbs:bound_padlock_gluttony",
+    "hibernalherbs:bound_padlock_pride",
+    "hibernalherbs:bound_padlock_greed"
+  ]
+}

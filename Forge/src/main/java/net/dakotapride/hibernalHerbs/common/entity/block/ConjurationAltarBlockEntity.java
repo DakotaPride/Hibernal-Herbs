@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.entity.block;
 
+import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.entity.HibernalBlockEntities;
 import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
@@ -160,12 +161,36 @@ public class ConjurationAltarBlockEntity extends BlockEntity implements MenuProv
                 .getRecipeFor(HerbalConjurationRecipe.Type.INSTANCE, inventory, level);
 
         if(hasRecipe(entity)) {
-            entity.itemHandler.extractItem(0, 1, false);
-            entity.itemHandler.extractItem(1, 1, false);
-            entity.itemHandler.extractItem(2, 1, false);
-            entity.itemHandler.extractItem(3, 1, false);
-            entity.itemHandler.extractItem(4, 1, false);
-            entity.itemHandler.extractItem(5, 1, false);
+            if (!(entity.itemHandler.getStackInSlot(0).is(HibernalHerbsForge.SIGILS_TAG))) {
+                entity.itemHandler.extractItem(0, 1, false);
+            } else {
+                entity.itemHandler.setStackInSlot(0, new ItemStack(itemRegistry.CRACKED_SIGIL.get(), 1));
+            }
+            if (!(entity.itemHandler.getStackInSlot(1).is(HibernalHerbsForge.SIGILS_TAG))) {
+                entity.itemHandler.extractItem(1, 1, false);
+            } else {
+                entity.itemHandler.setStackInSlot(1, new ItemStack(itemRegistry.CRACKED_SIGIL.get(), 1));
+            }
+            if (!(entity.itemHandler.getStackInSlot(2).is(HibernalHerbsForge.SIGILS_TAG))) {
+                entity.itemHandler.extractItem(2, 1, false);
+            } else {
+                entity.itemHandler.setStackInSlot(2, new ItemStack(itemRegistry.CRACKED_SIGIL.get(), 1));
+            }
+            if (!(entity.itemHandler.getStackInSlot(3).is(HibernalHerbsForge.SIGILS_TAG))) {
+                entity.itemHandler.extractItem(3, 1, false);
+            } else {
+                entity.itemHandler.setStackInSlot(3, new ItemStack(itemRegistry.CRACKED_SIGIL.get(), 1));
+            }
+            if (!(entity.itemHandler.getStackInSlot(4).is(HibernalHerbsForge.SIGILS_TAG))) {
+                entity.itemHandler.extractItem(4, 1, false);
+            } else {
+                entity.itemHandler.setStackInSlot(4, new ItemStack(itemRegistry.CRACKED_SIGIL.get(), 1));
+            }
+            if (!(entity.itemHandler.getStackInSlot(5).is(HibernalHerbsForge.SIGILS_TAG))) {
+                entity.itemHandler.extractItem(5, 1, false);
+            } else {
+                entity.itemHandler.setStackInSlot(5, new ItemStack(itemRegistry.CRACKED_SIGIL.get(), 1));
+            }
             entity.itemHandler.setStackInSlot(6, new ItemStack(recipe.get().getResultItem().getItem(),
                     entity.itemHandler.getStackInSlot(6).getCount() + recipe.get().getResultItem().getCount()));
 

@@ -3,6 +3,8 @@ package net.dakotapride.hibernalHerbs.common.init;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.canister.AbstractCanisterItem;
+import net.dakotapride.hibernalHerbs.common.item.curse.CursedPadlockItem;
+import net.dakotapride.hibernalHerbs.common.item.curse.CursedConfigurationRingItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.GluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.adv.AdvancedGluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.pouch.AbstractPouchItem;
@@ -15,6 +17,18 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
 
+    public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item VEXATION_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(190));
+
+    public static Item PIQUE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item PIQUE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(190));
+
+    public static Item GOURMANDIZING_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item GOURMANDIZING_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(190));
+
+    public static Item AVARICE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item AVARICE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(190));
+
     public static Item RING = new Item(new FabricItemSettings()
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
     public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings()
@@ -24,14 +38,11 @@ public class ItemInit {
 
     public static Item CURSED_CONFIGURATION_RING = new CursedConfigurationRingItem(new FabricItemSettings()
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-    public static Item BOUND_CURSE_SIGIL = new BoundCurseSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
-
 
     public static Item CRACKED_SIGIL = new Item(new FabricItemSettings()
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(8));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings()
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
@@ -229,7 +240,17 @@ public class ItemInit {
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "configuration_ring"), CURSED_CONFIGURATION_RING);
 
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_bound_curse"), BOUND_CURSE_SIGIL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_wrath"), VEXATION_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_wrath"), VEXATION_PADLOCK);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_pride"), PIQUE_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_pride"), PIQUE_PADLOCK);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_gluttony"), GOURMANDIZING_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_gluttony"), GOURMANDIZING_PADLOCK);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_greed"), AVARICE_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_greed"), AVARICE_PADLOCK);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyme"), POUNDED_THYME);

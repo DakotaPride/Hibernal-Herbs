@@ -1,4 +1,4 @@
-package net.dakotapride.hibernalHerbs.common.item;
+package net.dakotapride.hibernalHerbs.common.item.curse;
 
 import net.dakotapride.hibernalHerbs.common.init.EffectInit;
 import net.minecraft.entity.player.PlayerEntity;

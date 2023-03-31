@@ -26,6 +26,9 @@ public class util {
 
     public static final TagKey<Item> SIGILS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "sigil/sigils"));
 
+    public static final TagKey<Item> BOUND_PADLOCKS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "padlocks/bound"));
+    public static final TagKey<Item> PADLOCKS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "padlocks/unbound"));
+
     public static void utilsInit() {
         // Strippable Blocks
 

@@ -6,6 +6,8 @@ import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoatEntity;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
+import net.dakotapride.hibernalHerbs.common.item.curse.CursedConfigurationRingItem;
+import net.dakotapride.hibernalHerbs.common.item.curse.CursedPadlockItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.GluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.adv.AdvancedGluttonousRingItem;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -22,12 +24,35 @@ public class itemRegistry implements FoodComponentList {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
 
+    public static final RegistryObject<Item> VEXATION_PADLOCK_BOUND = ITEMS.register("bound_padlock_wrath",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> VEXATION_PADLOCK = ITEMS.register("padlock_wrath",
+            () -> new Item(new Item.Properties().stacksTo(1).defaultDurability(190)));
+
+    public static final RegistryObject<Item> PIQUE_PADLOCK_BOUND = ITEMS.register("bound_padlock_pride",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> PIQUE_PADLOCK = ITEMS.register("padlock_pride",
+            () -> new Item(new Item.Properties().stacksTo(1).defaultDurability(190)));
+
+    public static final RegistryObject<Item> GOURMANDIZING_PADLOCK_BOUND = ITEMS.register("bound_padlock_gluttony",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> GOURMANDIZING_PADLOCK = ITEMS.register("padlock_gluttony",
+            () -> new Item(new Item.Properties().stacksTo(1).defaultDurability(190)));
+
+    public static final RegistryObject<Item> AVARICE_PADLOCK_BOUND = ITEMS.register("bound_padlock_greed",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> AVARICE_PADLOCK = ITEMS.register("padlock_greed",
+            () -> new Item(new Item.Properties().stacksTo(1).defaultDurability(190)));
+
     public static final RegistryObject<Item> RING = ITEMS.register("ring",
             () -> new Item(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> GLUTTONOUS_RING = ITEMS.register("gluttonous_ring",
             () -> new GluttonousRingItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> ADV_GLUTTONOUS_RING = ITEMS.register("gluttonous_ring_adv",
             () -> new AdvancedGluttonousRingItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+
+    public static final RegistryObject<Item> CURSED_CONFIGURATION_RING = ITEMS.register("configuration_ring",
+            () -> new CursedConfigurationRingItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> CRACKED_SIGIL = ITEMS.register("cracked_sigil",
             () -> new Item(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
