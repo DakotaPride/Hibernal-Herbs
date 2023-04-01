@@ -12,9 +12,11 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.function.BiConsumer;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
@@ -231,13 +233,17 @@ public class HibernalHerbsMod implements ModInitializer {
 				}).build();
 	}
 
+	private static <T> BiConsumer<T, Identifier> bind(Registry<? super T> registry) {
+		return (t, id) -> Registry.register(registry, id, t);
+	}
+
 	@Override
 	public void onInitialize() {
 
 		BlockInit.init();
 		ItemInit.init();
 
-		EffectInit.init();
+		EffectInit.init(bind(Registry.STATUS_EFFECT));
 
 		HibernalHerbsBoatTypes.register();
 

@@ -8,6 +8,8 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.function.BiConsumer;
+
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class EffectInit {
@@ -22,11 +24,11 @@ public class EffectInit {
                     -2, EntityAttributeModifier.Operation.ADDITION);
 
 
-    public static void init() {
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "scented_curse"), SCENTED_HERBAL_CURSE);
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "bitter_curse"), BITTER_HERBAL_CURSE);
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "sour_curse"), SOUR_HERBAL_CURSE);
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "warded_curse"), WARDED_HERBAL_CURSE);
+    public static void init(BiConsumer<StatusEffect, Identifier> biConsumer) {
+        biConsumer.accept(SCENTED_HERBAL_CURSE, new Identifier(MOD_ID, "scented_curse"));
+        biConsumer.accept(BITTER_HERBAL_CURSE, new Identifier(MOD_ID, "bitter_curse"));
+        biConsumer.accept(SOUR_HERBAL_CURSE, new Identifier(MOD_ID, "sour_curse"));
+        biConsumer.accept(WARDED_HERBAL_CURSE, new Identifier(MOD_ID, "warded_curse"));
     }
 
 }

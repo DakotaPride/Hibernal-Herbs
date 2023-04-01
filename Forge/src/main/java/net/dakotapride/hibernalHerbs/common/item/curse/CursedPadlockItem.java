@@ -94,24 +94,25 @@ public class CursedPadlockItem extends Item {
                 user.addEffect(new MobEffectInstance(effectRegistry.WARDED_HERBAL_CURSE.get(), 24000, 1));
             }
 
-            if (!isVexation && hasSourCurse) {
-                user.removeEffect(effectRegistry.SOUR_HERBAL_CURSE.get());
-            } else if (!isPique && hasScentedCurse) {
-                user.removeEffect(effectRegistry.SCENTED_HERBAL_CURSE.get());
-            } else if (!isGourmandizing && hasBitterCurse) {
-                user.removeEffect(effectRegistry.BITTER_HERBAL_CURSE.get());
-            } else if (!isAvarice && hasWardedCurse) {
-                user.removeEffect(effectRegistry.WARDED_HERBAL_CURSE.get());
-            }
+            user.getOffhandItem().hurtAndBreak(1, user, (player) -> player.broadcastBreakEvent(player.getUsedItemHand()));
 
-            if (user.getOffhandItem().is(this.getDefaultInstance().getItem())) {
-                user.getCooldowns().addCooldown(itemRegistry.VEXATION_PADLOCK.get(), 24000);
-                user.getCooldowns().addCooldown(itemRegistry.PIQUE_PADLOCK.get(), 24000);
-                user.getCooldowns().addCooldown(itemRegistry.GOURMANDIZING_PADLOCK.get(), 24000);
-                user.getCooldowns().addCooldown(itemRegistry.AVARICE_PADLOCK.get(), 24000);
+        }
 
-                user.getOffhandItem().hurtAndBreak(1, user, (player) -> player.broadcastBreakEvent(player.getUsedItemHand()));
-            }
+        if (!isVexation && hasSourCurse) {
+            user.removeEffect(effectRegistry.SOUR_HERBAL_CURSE.get());
+        } else if (!isPique && hasScentedCurse) {
+            user.removeEffect(effectRegistry.SCENTED_HERBAL_CURSE.get());
+        } else if (!isGourmandizing && hasBitterCurse) {
+            user.removeEffect(effectRegistry.BITTER_HERBAL_CURSE.get());
+        } else if (!isAvarice && hasWardedCurse) {
+            user.removeEffect(effectRegistry.WARDED_HERBAL_CURSE.get());
+        }
+
+        if (user.getOffhandItem().is(HibernalHerbsForge.PADLOCKS_TAG)) {
+            user.getCooldowns().addCooldown(itemRegistry.VEXATION_PADLOCK.get(), 24000);
+            user.getCooldowns().addCooldown(itemRegistry.PIQUE_PADLOCK.get(), 24000);
+            user.getCooldowns().addCooldown(itemRegistry.GOURMANDIZING_PADLOCK.get(), 24000);
+            user.getCooldowns().addCooldown(itemRegistry.AVARICE_PADLOCK.get(), 24000);
         }
 
         return super.use(level, user, hand);

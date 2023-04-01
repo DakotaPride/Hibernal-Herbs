@@ -95,24 +95,25 @@ public class CursedPadlockItem extends Item {
                 user.addStatusEffect(new StatusEffectInstance(EffectInit.WARDED_HERBAL_CURSE, 24000, 1));
             }
 
-            if (!isVexation && hasSourCurse) {
-                user.removeStatusEffect(EffectInit.SOUR_HERBAL_CURSE);
-            } else if (!isPique && hasScentedCurse) {
-                user.removeStatusEffect(EffectInit.SCENTED_HERBAL_CURSE);
-            } else if (!isGourmandizing && hasBitterCurse) {
-                user.removeStatusEffect(EffectInit.BITTER_HERBAL_CURSE);
-            } else if (!isAvarice && hasWardedCurse) {
-                user.removeStatusEffect(EffectInit.WARDED_HERBAL_CURSE);
-            }
+            user.getOffHandStack().damage(1, user, (player) -> player.sendToolBreakStatus(player.getActiveHand()));
 
-            if (user.getOffHandStack().isOf(this.getDefaultStack().getItem())) {
-                user.getItemCooldownManager().set(ItemInit.VEXATION_PADLOCK, 24000);
-                user.getItemCooldownManager().set(ItemInit.PIQUE_PADLOCK, 24000);
-                user.getItemCooldownManager().set(ItemInit.GOURMANDIZING_PADLOCK, 24000);
-                user.getItemCooldownManager().set(ItemInit.AVARICE_PADLOCK, 24000);
+        }
 
-                user.getOffHandStack().damage(1, user, (player) -> player.sendToolBreakStatus(player.getActiveHand()));
-            }
+        if (!isVexation && hasSourCurse) {
+            user.removeStatusEffect(EffectInit.SOUR_HERBAL_CURSE);
+        } else if (!isPique && hasScentedCurse) {
+            user.removeStatusEffect(EffectInit.SCENTED_HERBAL_CURSE);
+        } else if (!isGourmandizing && hasBitterCurse) {
+            user.removeStatusEffect(EffectInit.BITTER_HERBAL_CURSE);
+        } else if (!isAvarice && hasWardedCurse) {
+            user.removeStatusEffect(EffectInit.WARDED_HERBAL_CURSE);
+        }
+
+        if (user.getOffHandStack().isIn(util.PADLOCKS)) {
+            user.getItemCooldownManager().set(ItemInit.VEXATION_PADLOCK, 24000);
+            user.getItemCooldownManager().set(ItemInit.PIQUE_PADLOCK, 24000);
+            user.getItemCooldownManager().set(ItemInit.GOURMANDIZING_PADLOCK, 24000);
+            user.getItemCooldownManager().set(ItemInit.AVARICE_PADLOCK, 24000);
         }
 
         return super.use(world, user, hand);
