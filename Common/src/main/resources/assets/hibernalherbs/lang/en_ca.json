@@ -355,11 +355,21 @@
   "text.hibernalherbs.herbal_curse.sour.warning": "You have a Sour Herbal Curse...",
   "text.hibernalherbs.herbal_curse.warded.warning": "You have a Warded Herbal Curse...",
 
-  "text.hibernalherbs.padlocks.unbound.greed": "Bound To The Prince Of Greed",
-  "text.hibernalherbs.padlocks.unbound.pride": "Bound To The Prince Of Pride",
-  "text.hibernalherbs.padlocks.unbound.gluttony": "Bound To The Prince Of Gluttony",
-  "text.hibernalherbs.padlocks.unbound.wrath": "Bound To The Prince Of Wrath",
-  "text.hibernalherbs.padlocks.bound": "Not Bound To A Price Of Sin",
+  "item.hibernalherbs.bound_padlock_wrath": "Bound Padlock",
+  "item.hibernalherbs.bound_padlock_greed": "Bound Padlock",
+  "item.hibernalherbs.bound_padlock_pride": "Bound Padlock",
+  "item.hibernalherbs.bound_padlock_gluttony": "Bound Padlock",
+
+  "item.hibernalherbs.padlock_wrath": "Padlock",
+  "item.hibernalherbs.padlock_greed": "Padlock",
+  "item.hibernalherbs.padlock_pride": "Padlock",
+  "item.hibernalherbs.padlock_gluttony": "Padlock",
+
+  "text.hibernalherbs.padlocks.bound.greed": "Bound To The Prince Of Greed",
+  "text.hibernalherbs.padlocks.bound.pride": "Bound To The Prince Of Pride",
+  "text.hibernalherbs.padlocks.bound.gluttony": "Bound To The Prince Of Gluttony",
+  "text.hibernalherbs.padlocks.bound.wrath": "Bound To The Prince Of Wrath",
+  "text.hibernalherbs.padlocks.unbound": "Not Bound To A Price Of Sin",
 
   // Forge
   "block.hibernalherbs.bloforia": "Bloforia",

@@ -3,8 +3,8 @@ package net.dakotapride.hibernalHerbs.common.init;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.canister.AbstractCanisterItem;
-import net.dakotapride.hibernalHerbs.common.item.curse.CursedPadlockItem;
 import net.dakotapride.hibernalHerbs.common.item.curse.CursedConfigurationRingItem;
+import net.dakotapride.hibernalHerbs.common.item.curse.CursedPadlockItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.GluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.adv.AdvancedGluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.pouch.AbstractPouchItem;
@@ -17,17 +17,17 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
 
-    public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
-    public static Item VEXATION_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item VEXATION_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
-    public static Item PIQUE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
-    public static Item PIQUE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item PIQUE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item PIQUE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
-    public static Item GOURMANDIZING_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
-    public static Item GOURMANDIZING_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item GOURMANDIZING_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item GOURMANDIZING_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
-    public static Item AVARICE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
-    public static Item AVARICE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item AVARICE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item AVARICE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
     public static Item RING = new Item(new FabricItemSettings()
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
