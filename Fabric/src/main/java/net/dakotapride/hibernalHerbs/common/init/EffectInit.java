@@ -17,9 +17,9 @@ public class EffectInit {
     public static StatusEffect SOUR_HERBAL_CURSE = new HerbalCurseEffect(StatusEffectCategory.HARMFUL, 0x4A8F28);
     public static StatusEffect WARDED_HERBAL_CURSE = new HerbalCurseEffect(StatusEffectCategory.NEUTRAL, 0x4A8F28)
             .addAttributeModifier(EntityAttributes.GENERIC_ARMOR, "51884d70-fae3-4061-8731-9327b39287b8",
-                    4, EntityAttributeModifier.Operation.ADDITION)
+                    2, EntityAttributeModifier.Operation.ADDITION)
             .addAttributeModifier(EntityAttributes.GENERIC_MAX_HEALTH, "2ee98b9b-7180-46ac-97ce-d8f7307bffb4",
-                    -4, EntityAttributeModifier.Operation.ADDITION);
+                    -2, EntityAttributeModifier.Operation.ADDITION);
 
 
     public static void init() {

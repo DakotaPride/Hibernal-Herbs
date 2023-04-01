@@ -34,7 +34,23 @@
   "item.hibernalherbs.pounded_fennkystral": "Pounded Fennkystral",
 
   "item.hibernalherbs.pounded_calendula": "Pounded Calendula",
+
   "item.hibernalherbs.dried_calendula": "Dried Calendula",
+  "item.hibernalherbs.dried_rosemary": "Dried Rosemary",
+  "item.hibernalherbs.dried_thyme": "Dried Thyme",
+  "item.hibernalherbs.dried_tarragon": "Dried Tarragon",
+  "item.hibernalherbs.dried_chamomile": "Dried Chamomile",
+  "item.hibernalherbs.dried_chives": "Dried Chives",
+  "item.hibernalherbs.dried_verbena": "Dried Verbena",
+  "item.hibernalherbs.dried_sorrel": "Dried Sorrel",
+  "item.hibernalherbs.dried_marjoram": "Dried Marjoram",
+  "item.hibernalherbs.dried_chervil": "Dried Chervil",
+  "item.hibernalherbs.dried_fennsel": "Dried Fennsel",
+  "item.hibernalherbs.dried_ceillis": "Dried Ceillis",
+  "item.hibernalherbs.dried_punuel": "Dried Punuel",
+  "item.hibernalherbs.dried_essitte": "Dried Essitte",
+  "item.hibernalherbs.dried_thyocielle": "Dried Thyocielle",
+  "item.hibernalherbs.dried_fennkystral": "Dried Fennkystral",
 
   "block.hibernalherbs.potted_rosemary": "Potted Rosemary",
   "block.hibernalherbs.potted_thyme": "Potted Thyme",
@@ -338,6 +354,12 @@
   "text.hibernalherbs.herbal_curse.bitter.warning": "You have a Bitter Herbal Curse...",
   "text.hibernalherbs.herbal_curse.sour.warning": "You have a Sour Herbal Curse...",
   "text.hibernalherbs.herbal_curse.warded.warning": "You have a Warded Herbal Curse...",
+
+  "text.hibernalherbs.padlocks.unbound.greed": "Bound To The Prince Of Greed",
+  "text.hibernalherbs.padlocks.unbound.pride": "Bound To The Prince Of Pride",
+  "text.hibernalherbs.padlocks.unbound.gluttony": "Bound To The Prince Of Gluttony",
+  "text.hibernalherbs.padlocks.unbound.wrath": "Bound To The Prince Of Wrath",
+  "text.hibernalherbs.padlocks.bound": "Not Bound To A Price Of Sin",
 
   // Forge
   "block.hibernalherbs.bloforia": "Bloforia",

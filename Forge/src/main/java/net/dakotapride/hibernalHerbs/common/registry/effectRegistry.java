@@ -25,9 +25,9 @@ public class effectRegistry {
     public static final RegistryObject<MobEffect> WARDED_HERBAL_CURSE = MOB_EFFECTS.register("warded_curse",
             () -> new HerbalCurseEffect(MobEffectCategory.NEUTRAL, 0x4A9F28)
                     .addAttributeModifier(Attributes.ARMOR, "51884d70-fae3-4061-8731-9327b39287b8",
-                            4, AttributeModifier.Operation.ADDITION)
+                            2, AttributeModifier.Operation.ADDITION)
                     .addAttributeModifier(Attributes.MAX_HEALTH, "2ee98b9b-7180-46ac-97ce-d8f7307bffb4",
-                            -4, AttributeModifier.Operation.ADDITION));
+                            -2, AttributeModifier.Operation.ADDITION));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
