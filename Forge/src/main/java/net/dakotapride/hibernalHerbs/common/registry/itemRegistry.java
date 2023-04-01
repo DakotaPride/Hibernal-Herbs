@@ -25,22 +25,22 @@ public class itemRegistry implements FoodComponentList {
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
 
     public static final RegistryObject<Item> VEXATION_PADLOCK_BOUND = ITEMS.register("bound_padlock_wrath",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(5)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
     public static final RegistryObject<Item> VEXATION_PADLOCK = ITEMS.register("padlock_wrath",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> PIQUE_PADLOCK_BOUND = ITEMS.register("bound_padlock_pride",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(5)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
     public static final RegistryObject<Item> PIQUE_PADLOCK = ITEMS.register("padlock_pride",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> GOURMANDIZING_PADLOCK_BOUND = ITEMS.register("bound_padlock_gluttony",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(5)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
     public static final RegistryObject<Item> GOURMANDIZING_PADLOCK = ITEMS.register("padlock_gluttony",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> AVARICE_PADLOCK_BOUND = ITEMS.register("bound_padlock_greed",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(5)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
     public static final RegistryObject<Item> AVARICE_PADLOCK = ITEMS.register("padlock_greed",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
 

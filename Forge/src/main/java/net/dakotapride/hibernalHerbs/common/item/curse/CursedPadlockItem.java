@@ -85,13 +85,13 @@ public class CursedPadlockItem extends Item {
 
         if (user.getOffhandItem().is(HibernalHerbsForge.BOUND_PADLOCKS_TAG)) {
             if (isBoundVexation) {
-                user.addEffect(new MobEffectInstance(effectRegistry.SOUR_HERBAL_CURSE.get(), 24000, 1));
+                user.addEffect(new MobEffectInstance(effectRegistry.SOUR_HERBAL_CURSE.get(), 24000 * 5, 1));
             } else if (isBoundPique) {
-                user.addEffect(new MobEffectInstance(effectRegistry.SCENTED_HERBAL_CURSE.get(), 24000, 1));
+                user.addEffect(new MobEffectInstance(effectRegistry.SCENTED_HERBAL_CURSE.get(), 24000 * 5, 1));
             } else if (isBoundGourmandizing) {
-                user.addEffect(new MobEffectInstance(effectRegistry.BITTER_HERBAL_CURSE.get(), 24000, 1));
+                user.addEffect(new MobEffectInstance(effectRegistry.BITTER_HERBAL_CURSE.get(), 24000 * 5, 1));
             } else if (isBoundAvarice) {
-                user.addEffect(new MobEffectInstance(effectRegistry.WARDED_HERBAL_CURSE.get(), 24000, 1));
+                user.addEffect(new MobEffectInstance(effectRegistry.WARDED_HERBAL_CURSE.get(), 24000 * 5, 1));
             }
 
             user.getOffhandItem().hurtAndBreak(1, user, (player) -> player.broadcastBreakEvent(player.getUsedItemHand()));
@@ -109,10 +109,10 @@ public class CursedPadlockItem extends Item {
         }
 
         if (user.getOffhandItem().is(HibernalHerbsForge.BOUND_PADLOCKS_TAG)) {
-            user.getCooldowns().addCooldown(itemRegistry.VEXATION_PADLOCK_BOUND.get(), 24000);
-            user.getCooldowns().addCooldown(itemRegistry.PIQUE_PADLOCK_BOUND.get(), 24000);
-            user.getCooldowns().addCooldown(itemRegistry.GOURMANDIZING_PADLOCK_BOUND.get(), 24000);
-            user.getCooldowns().addCooldown(itemRegistry.AVARICE_PADLOCK_BOUND.get(), 24000);
+            user.getCooldowns().addCooldown(itemRegistry.VEXATION_PADLOCK_BOUND.get(), 24000 * 5);
+            user.getCooldowns().addCooldown(itemRegistry.PIQUE_PADLOCK_BOUND.get(), 24000 * 5);
+            user.getCooldowns().addCooldown(itemRegistry.GOURMANDIZING_PADLOCK_BOUND.get(), 24000 * 5);
+            user.getCooldowns().addCooldown(itemRegistry.AVARICE_PADLOCK_BOUND.get(), 24000 * 5);
         }
 
         return super.use(level, user, hand);

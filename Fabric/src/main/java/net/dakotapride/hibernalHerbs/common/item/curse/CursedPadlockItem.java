@@ -87,13 +87,13 @@ public class CursedPadlockItem extends Item {
 
         if (user.getOffHandStack().isIn(util.BOUND_PADLOCKS)) {
             if (isBoundVexation) {
-                user.addStatusEffect(new StatusEffectInstance(EffectInit.SOUR_HERBAL_CURSE, 24000, 1));
+                user.addStatusEffect(new StatusEffectInstance(EffectInit.SOUR_HERBAL_CURSE, 24000 * 5, 1));
             } else if (isBoundPique) {
-                user.addStatusEffect(new StatusEffectInstance(EffectInit.SCENTED_HERBAL_CURSE, 24000, 1));
+                user.addStatusEffect(new StatusEffectInstance(EffectInit.SCENTED_HERBAL_CURSE, 24000 * 5, 1));
             } else if (isBoundGourmandizing) {
-                user.addStatusEffect(new StatusEffectInstance(EffectInit.BITTER_HERBAL_CURSE, 24000, 1));
+                user.addStatusEffect(new StatusEffectInstance(EffectInit.BITTER_HERBAL_CURSE, 24000 * 5, 1));
             } else if (isBoundAvarice) {
-                user.addStatusEffect(new StatusEffectInstance(EffectInit.WARDED_HERBAL_CURSE, 24000, 1));
+                user.addStatusEffect(new StatusEffectInstance(EffectInit.WARDED_HERBAL_CURSE, 24000 * 5, 1));
             }
 
             user.getOffHandStack().damage(1, user, (player) -> player.sendToolBreakStatus(player.getActiveHand()));
@@ -111,10 +111,10 @@ public class CursedPadlockItem extends Item {
         }
 
         if (user.getOffHandStack().isIn(util.BOUND_PADLOCKS)) {
-            user.getItemCooldownManager().set(ItemInit.VEXATION_PADLOCK_BOUND, 24000);
-            user.getItemCooldownManager().set(ItemInit.PIQUE_PADLOCK_BOUND, 24000);
-            user.getItemCooldownManager().set(ItemInit.GOURMANDIZING_PADLOCK_BOUND, 24000);
-            user.getItemCooldownManager().set(ItemInit.AVARICE_PADLOCK_BOUND, 24000);
+            user.getItemCooldownManager().set(ItemInit.VEXATION_PADLOCK_BOUND, 24000 * 5);
+            user.getItemCooldownManager().set(ItemInit.PIQUE_PADLOCK_BOUND, 24000 * 5);
+            user.getItemCooldownManager().set(ItemInit.GOURMANDIZING_PADLOCK_BOUND, 24000 * 5);
+            user.getItemCooldownManager().set(ItemInit.AVARICE_PADLOCK_BOUND, 24000 * 5);
         }
 
         return super.use(world, user, hand);

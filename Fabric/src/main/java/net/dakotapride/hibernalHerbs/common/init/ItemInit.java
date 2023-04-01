@@ -17,16 +17,16 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
 
-    public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
     public static Item VEXATION_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
-    public static Item PIQUE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item PIQUE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
     public static Item PIQUE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
-    public static Item GOURMANDIZING_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item GOURMANDIZING_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
     public static Item GOURMANDIZING_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
-    public static Item AVARICE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(5));
+    public static Item AVARICE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
     public static Item AVARICE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
     public static Item RING = new Item(new FabricItemSettings()
