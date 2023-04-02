@@ -265,6 +265,8 @@
 
   "item.hibernalherbs.cracked_sigil": "Cracked Sigil",
 
+  "item.hibernalherbs.sigil": "Sigil",
+
   "text.hibernalherbs.cracked_sigil.assist.1": "Looks Like You've Used Up This",
   "text.hibernalherbs.cracked_sigil.assist.2": "Sigil's Energy, Reconstruct It",
   "text.hibernalherbs.cracked_sigil.assist.3": "In Order To Reuse It",
@@ -345,16 +347,6 @@
   "text.hibernalherbs.ring.gluttonous.1.adv": "All Foods Regenerate Forever, As Long As",
   "text.hibernalherbs.ring.gluttonous.2.adv": "This Item Is In Your Inventory",
 
-  "effect.hibernalherbs.scented_curse": "Scented Curse",
-  "effect.hibernalherbs.bitter_curse": "Bitter Curse",
-  "effect.hibernalherbs.sour_curse": "Sour Curse",
-  "effect.hibernalherbs.warded_curse": "Warded Curse",
-  "item.hibernalherbs.configuration_ring": "Configuration Ring",
-  "text.hibernalherbs.herbal_curse.scented.warning": "You have a Scented Herbal Curse...",
-  "text.hibernalherbs.herbal_curse.bitter.warning": "You have a Bitter Herbal Curse...",
-  "text.hibernalherbs.herbal_curse.sour.warning": "You have a Sour Herbal Curse...",
-  "text.hibernalherbs.herbal_curse.warded.warning": "You have a Warded Herbal Curse...",
-
   "item.hibernalherbs.bound_padlock_wrath": "Bound Padlock",
   "item.hibernalherbs.bound_padlock_greed": "Bound Padlock",
   "item.hibernalherbs.bound_padlock_pride": "Bound Padlock",
@@ -370,6 +362,15 @@
   "text.hibernalherbs.padlocks.bound.gluttony": "Bound To The Prince Of Gluttony",
   "text.hibernalherbs.padlocks.bound.wrath": "Bound To The Prince Of Wrath",
   "text.hibernalherbs.padlocks.unbound": "Not Bound To A Price Of Sin",
+
+  "item.hibernalherbs.lumbinetrik_petals": "Lumbinetrik Petals",
+  "item.hibernalherbs.sin_petals": "Siliptium Petals",
+  "item.hibernalherbs.singed_grimoire": "Singed Herbal Grimoire",
+  "item.hibernalherbs.grimoire": "Herbal Grimoire",
+
+  "text.hibernalherbs.unfinished": "This Feature Is Currently Unfinished, Apologies",
+  "text.hibernalherbs.grimoire": "Sinful Texts Regarding The Herbal Testaments...",
+  "text.hibernalherbs.grimoire.singed": "Burnt To Ash, Not Very Useful...",
 
   // Forge
   "block.hibernalherbs.bloforia": "Bloforia",

@@ -1,15 +1,18 @@
 package net.dakotapride.hibernalHerbs.common.item.curse;
 
-import net.dakotapride.hibernalHerbs.common.init.EffectInit;
+import com.google.common.collect.Multimap;
+import dev.emi.trinkets.api.SlotReference;
+import dev.emi.trinkets.api.TrinketItem;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.util;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -19,10 +22,54 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.UUID;
 
-public class CursedPadlockItem extends Item {
+public class CursedPadlockItem extends TrinketItem {
     public CursedPadlockItem(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public void tick(ItemStack stack, SlotReference slot, LivingEntity entity) {
+        if (stack.isOf(ItemInit.AVARICE_PADLOCK_BOUND)) {
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, 40, 1));
+        } else if (stack.isOf(ItemInit.GOURMANDIZING_PADLOCK_BOUND)) {
+            entity.removeStatusEffect(StatusEffects.HUNGER);
+        } else if (stack.isOf(ItemInit.PIQUE_PADLOCK_BOUND)) {
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 1));
+        }
+    }
+
+    @Override
+    public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid) {
+        Multimap<EntityAttribute, EntityAttributeModifier> modifiers = super.getModifiers(stack, slot, entity, uuid);
+
+        EntityAttributeModifier wrathHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:wrath_health",
+                0.1, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+        EntityAttributeModifier wrathAttackDamageModifier = new EntityAttributeModifier(uuid, "hibernalherbs:wrath_damage",
+                0.4, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        EntityAttributeModifier prideHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:pride_health",
+                0.4, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        EntityAttributeModifier gluttonyHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:gluttony_health",
+                0.3, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        EntityAttributeModifier greedHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:greed_health",
+                0.6, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        if (stack.isOf(ItemInit.VEXATION_PADLOCK_BOUND)) {
+            modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, wrathHealthModifier);
+            modifiers.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, wrathAttackDamageModifier);
+        } else if (stack.isOf(ItemInit.PIQUE_PADLOCK_BOUND)) {
+            modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, prideHealthModifier);
+        } else if (stack.isOf(ItemInit.GOURMANDIZING_PADLOCK_BOUND)) {
+            modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, gluttonyHealthModifier);
+        } else if (stack.isOf(ItemInit.AVARICE_PADLOCK_BOUND)) {
+            modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, greedHealthModifier);
+        }
+
+        return modifiers;
     }
 
     @Override
@@ -42,81 +89,4 @@ public class CursedPadlockItem extends Item {
         }
     }
 
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-
-        boolean isPrideSigil = user.getOffHandStack().isOf(ItemInit.SIGIL_PRIDE);
-        boolean isGluttonySigil = user.getOffHandStack().isOf(ItemInit.SIGIL_GLUTTONY);
-        boolean isWrathSigil = user.getOffHandStack().isOf(ItemInit.SIGIL_WRATH);
-        boolean isGreedSigil = user.getOffHandStack().isOf(ItemInit.SIGIL_GREED);
-
-        boolean isBoundVexation = user.getOffHandStack().isOf(ItemInit.VEXATION_PADLOCK_BOUND);
-        boolean isBoundPique = user.getOffHandStack().isOf(ItemInit.PIQUE_PADLOCK_BOUND);
-        boolean isBoundGourmandizing = user.getOffHandStack().isOf(ItemInit.GOURMANDIZING_PADLOCK_BOUND);
-        boolean isBoundAvarice = user.getOffHandStack().isOf(ItemInit.AVARICE_PADLOCK_BOUND);
-
-        boolean isVexation = user.getMainHandStack().isOf(ItemInit.VEXATION_PADLOCK);
-        boolean isPique = user.getMainHandStack().isOf(ItemInit.PIQUE_PADLOCK);
-        boolean isGourmandizing = user.getMainHandStack().isOf(ItemInit.GOURMANDIZING_PADLOCK);
-        boolean isAvarice = user.getMainHandStack().isOf(ItemInit.AVARICE_PADLOCK);
-
-        boolean hasSourCurse = user.hasStatusEffect(EffectInit.SOUR_HERBAL_CURSE);
-        boolean hasScentedCurse = user.hasStatusEffect(EffectInit.SCENTED_HERBAL_CURSE);
-        boolean hasBitterCurse = user.hasStatusEffect(EffectInit.BITTER_HERBAL_CURSE);
-        boolean hasWardedCurse = user.hasStatusEffect(EffectInit.WARDED_HERBAL_CURSE);
-
-        if (user.getMainHandStack().isIn(util.PADLOCKS)) {
-            if (isWrathSigil && isVexation) {
-                user.getMainHandStack().decrement(1);
-
-                user.giveItemStack(new ItemStack(ItemInit.VEXATION_PADLOCK_BOUND, 1));
-            } else if (isPrideSigil && isPique) {
-                user.getMainHandStack().decrement(1);
-
-                user.giveItemStack(new ItemStack(ItemInit.PIQUE_PADLOCK_BOUND, 1));
-            } else if (isGluttonySigil && isGourmandizing) {
-                user.getMainHandStack().decrement(1);
-
-                user.giveItemStack(new ItemStack(ItemInit.GOURMANDIZING_PADLOCK_BOUND, 1));
-            } else if (isGreedSigil && isAvarice) {
-                user.getMainHandStack().decrement(1);
-
-                user.giveItemStack(new ItemStack(ItemInit.AVARICE_PADLOCK_BOUND, 1));
-            }
-        }
-
-        if (user.getOffHandStack().isIn(util.BOUND_PADLOCKS)) {
-            if (isBoundVexation) {
-                user.addStatusEffect(new StatusEffectInstance(EffectInit.SOUR_HERBAL_CURSE, 24000 * 5, 1));
-            } else if (isBoundPique) {
-                user.addStatusEffect(new StatusEffectInstance(EffectInit.SCENTED_HERBAL_CURSE, 24000 * 5, 1));
-            } else if (isBoundGourmandizing) {
-                user.addStatusEffect(new StatusEffectInstance(EffectInit.BITTER_HERBAL_CURSE, 24000 * 5, 1));
-            } else if (isBoundAvarice) {
-                user.addStatusEffect(new StatusEffectInstance(EffectInit.WARDED_HERBAL_CURSE, 24000 * 5, 1));
-            }
-
-            user.getOffHandStack().damage(1, user, (player) -> player.sendToolBreakStatus(player.getActiveHand()));
-
-        }
-
-        if (!isBoundVexation && hasSourCurse) {
-            user.removeStatusEffect(EffectInit.SOUR_HERBAL_CURSE);
-        } else if (!isBoundPique && hasScentedCurse) {
-            user.removeStatusEffect(EffectInit.SCENTED_HERBAL_CURSE);
-        } else if (!isBoundGourmandizing && hasBitterCurse) {
-            user.removeStatusEffect(EffectInit.BITTER_HERBAL_CURSE);
-        } else if (!isBoundAvarice && hasWardedCurse) {
-            user.removeStatusEffect(EffectInit.WARDED_HERBAL_CURSE);
-        }
-
-        if (user.getOffHandStack().isIn(util.BOUND_PADLOCKS)) {
-            user.getItemCooldownManager().set(ItemInit.VEXATION_PADLOCK_BOUND, 24000 * 5);
-            user.getItemCooldownManager().set(ItemInit.PIQUE_PADLOCK_BOUND, 24000 * 5);
-            user.getItemCooldownManager().set(ItemInit.GOURMANDIZING_PADLOCK_BOUND, 24000 * 5);
-            user.getItemCooldownManager().set(ItemInit.AVARICE_PADLOCK_BOUND, 24000 * 5);
-        }
-
-        return super.use(world, user, hand);
-    }
 }

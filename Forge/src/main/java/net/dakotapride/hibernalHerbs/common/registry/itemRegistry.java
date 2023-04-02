@@ -6,7 +6,6 @@ import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoatEntity;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
-import net.dakotapride.hibernalHerbs.common.item.curse.CursedConfigurationRingItem;
 import net.dakotapride.hibernalHerbs.common.item.curse.CursedPadlockItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.GluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.adv.AdvancedGluttonousRingItem;
@@ -50,9 +49,6 @@ public class itemRegistry implements FoodComponentList {
             () -> new GluttonousRingItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> ADV_GLUTTONOUS_RING = ITEMS.register("gluttonous_ring_adv",
             () -> new AdvancedGluttonousRingItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
-
-    public static final RegistryObject<Item> CURSED_CONFIGURATION_RING = ITEMS.register("configuration_ring",
-            () -> new CursedConfigurationRingItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> CRACKED_SIGIL = ITEMS.register("cracked_sigil",
             () -> new Item(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));

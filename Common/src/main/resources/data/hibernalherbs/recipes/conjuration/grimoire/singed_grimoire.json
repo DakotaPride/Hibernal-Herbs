@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "minecraft:magma_block"
+    },
+    {
+      "item": "hibernalherbs:sin_petals"
+    },
+    {
+      "item": "minecraft:flint"
+    },
+    {
+      "item": "hibernalherbs:grimoire"
+    },
+    {
+      "item": "minecraft:flint"
+    },
+    {
+      "item": "hibernalherbs:sin_petals"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:singed_grimoire"
+  }
+}

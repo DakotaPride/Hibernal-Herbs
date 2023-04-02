@@ -243,8 +243,6 @@ public class HibernalHerbsMod implements ModInitializer {
 		BlockInit.init();
 		ItemInit.init();
 
-		EffectInit.init(bind(Registry.STATUS_EFFECT));
-
 		HibernalHerbsBoatTypes.register();
 
 		util.utilsInit();

@@ -21,8 +21,9 @@ dependencies {
     // REI
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
 
-    // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    // Trinkets
+    modImplementation("dev.emi:trinkets:${trinkets_version}")
+
 }
 
 repositories {
@@ -35,6 +36,12 @@ repositories {
         name = 'TerraformersMC'
         url = 'https://maven.terraformersmc.com/'
     }
+
+    maven {
+        name = ("LadySnake Libs")
+        url = ("https://ladysnake.jfrog.io/artifactory/mods")
+    }
+
     mavenCentral()
 }
 

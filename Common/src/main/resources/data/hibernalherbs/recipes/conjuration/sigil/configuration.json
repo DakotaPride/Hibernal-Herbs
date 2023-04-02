@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:dried_marjoram"
+    },
+    {
+      "item": "hibernalherbs:dried_marjoram"
+    },
+    {
+      "tag": "hibernalherbs:sigil/lust"
+    },
+    {
+      "tag": "hibernalherbs:sigil/pride"
+    },
+    {
+      "tag": "hibernalherbs:sigil/gluttony"
+    },
+    {
+      "item": "hibernalherbs:dried_rosemary"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil_configuration"
+  }
+}

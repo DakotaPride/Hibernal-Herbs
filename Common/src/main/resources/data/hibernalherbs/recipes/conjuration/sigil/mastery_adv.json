@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:dried_chamomile"
+    },
+    {
+      "item": "hibernalherbs:dried_essitte"
+    },
+    {
+      "tag": "hibernalherbs:sigil/lust"
+    },
+    {
+      "item": "hibernalherbs:sigil_mastery"
+    },
+    {
+      "tag": "hibernalherbs:sigil/pride"
+    },
+    {
+      "item": "hibernalherbs:dried_essitte"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil_mastery_adv"
+  }
+}

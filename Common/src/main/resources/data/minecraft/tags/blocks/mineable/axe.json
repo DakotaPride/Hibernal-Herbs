@@ -12,6 +12,25 @@
     "hibernalherbs:myqueste_button",
     "hibernalherbs:myqueste_sign",
 
+    "hibernalherbs:calendula_herb_barrel",
+    "hibernalherbs:ceillis_herb_barrel",
+    "hibernalherbs:chamomile_herb_barrel",
+    "hibernalherbs:chervil_herb_barrel",
+    "hibernalherbs:chives_herb_barrel",
+    "hibernalherbs:essitte_herb_barrel",
+    "hibernalherbs:fennkystral_herb_barrel",
+    "hibernalherbs:fennsel_herb_barrel",
+    "hibernalherbs:marjoram_herb_barrel",
+    "hibernalherbs:punuel_herb_barrel",
+    "hibernalherbs:rosemary_herb_barrel",
+    "hibernalherbs:sorrel_herb_barrel",
+    "hibernalherbs:tarragon_herb_barrel",
+    "hibernalherbs:thyme_herb_barrel",
+    "hibernalherbs:thyocielle_herb_barrel",
+    "hibernalherbs:verbena_herb_barrel",
+
+    "hibernalherbs:conjuration_altar",
+
     {
       "required": false,
       "id": "hibernalherbs:myqueste_wall_sign"

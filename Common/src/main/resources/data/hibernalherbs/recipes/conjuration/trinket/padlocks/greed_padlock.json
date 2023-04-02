@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:singed_grimoire"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "hibernalherbs:sin_petals"
+    },
+    {
+      "item": "hibernalherbs:sigil_greed"
+    },
+    {
+      "item": "hibernalherbs:sin_petals"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:padlock_greed"
+  }
+}

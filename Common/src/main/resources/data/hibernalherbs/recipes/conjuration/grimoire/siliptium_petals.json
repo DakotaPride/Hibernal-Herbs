@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:dried_thyocielle"
+    },
+    {
+      "item": "hibernalherbs:pounded_essitte"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "item": "minecraft:grass"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "item": "hibernalherbs:pounded_essitte"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sin_petals",
+    "count": 3
+  }
+}

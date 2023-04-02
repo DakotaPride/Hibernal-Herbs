@@ -1,0 +1,27 @@
+{
+  "values": [
+    "hibernalherbs:dried_rosemary",
+    "hibernalherbs:dried_thyme",
+    "hibernalherbs:dried_tarragon",
+    "hibernalherbs:dried_chamomile",
+    "hibernalherbs:dried_chives",
+    "hibernalherbs:dried_verbena",
+    "hibernalherbs:dried_sorrel",
+    "hibernalherbs:dried_marjoram",
+    "hibernalherbs:dried_chervil",
+    "hibernalherbs:dried_fennsel",
+    "hibernalherbs:dried_ceillis",
+    "hibernalherbs:dried_punuel",
+    "hibernalherbs:dried_essitte",
+    "hibernalherbs:dried_thyocielle",
+    "hibernalherbs:dried_fennkystral",
+
+    "hibernalherbs:dried_calendula",
+    "hibernalherbs:dried_calendula",
+
+    {
+      "required": false,
+      "id": "hibernalherbs:dried_bloforia"
+    }
+  ]
+}

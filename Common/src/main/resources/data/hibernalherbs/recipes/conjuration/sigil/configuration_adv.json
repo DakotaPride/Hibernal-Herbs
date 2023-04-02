@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:dried_ceillis"
+    },
+    {
+      "item": "hibernalherbs:dried_thyme"
+    },
+    {
+      "tag": "hibernalherbs:sigil/lust"
+    },
+    {
+      "item": "hibernalherbs:sigil_configuration"
+    },
+    {
+      "tag": "hibernalherbs:sigil/pride"
+    },
+    {
+      "item": "hibernalherbs:dried_thyme"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:sigil_configuration_adv"
+  }
+}

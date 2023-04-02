@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "tag": "hibernalherbs:dried_herbs"
+    },
+    {
+      "item": "hibernalherbs:sin_petals"
+    },
+    {
+      "item": "hibernalherbs:sin_petals"
+    },
+    {
+      "item": "minecraft:gold_block"
+    },
+    {
+      "item": "hibernalherbs:sin_petals"
+    },
+    {
+      "item": "hibernalherbs:sin_petals"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:lumbinetrik_petals",
+    "count": 2
+  }
+}
