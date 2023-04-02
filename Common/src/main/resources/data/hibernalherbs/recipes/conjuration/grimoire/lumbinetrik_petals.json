@@ -2,19 +2,19 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
+      "item": "hibernalherbs:pounded_fennkystral"
+    },
+    {
+      "item": "hibernalherbs:sin_petals"
+    },
+    {
       "tag": "hibernalherbs:dried_herbs"
     },
     {
-      "item": "hibernalherbs:sin_petals"
+      "item": "minecraft:gold_ingot"
     },
     {
-      "item": "hibernalherbs:sin_petals"
-    },
-    {
-      "item": "minecraft:gold_block"
-    },
-    {
-      "item": "hibernalherbs:sin_petals"
+      "tag": "hibernalherbs:dried_herbs"
     },
     {
       "item": "hibernalherbs:sin_petals"
@@ -22,6 +22,6 @@
   ],
   "output": {
     "item": "hibernalherbs:lumbinetrik_petals",
-    "count": 2
+    "count": 3
   }
 }

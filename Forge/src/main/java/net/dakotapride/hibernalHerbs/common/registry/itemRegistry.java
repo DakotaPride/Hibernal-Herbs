@@ -7,6 +7,7 @@ import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
 import net.dakotapride.hibernalHerbs.common.item.curse.CursedPadlockItem;
+import net.dakotapride.hibernalHerbs.common.item.curse.grimoire.HerbalGrimoireItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.GluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.adv.AdvancedGluttonousRingItem;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -22,6 +23,16 @@ import net.minecraftforge.registries.RegistryObject;
 public class itemRegistry implements FoodComponentList {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
+
+    public static final RegistryObject<Item> HERBAL_GRIMOIRE = ITEMS.register("grimoire",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SINGED_GRIMOIRE = ITEMS.register("singed_grimoire",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> SILIPTIUM_PETAL = ITEMS.register("sin_petals",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> LUMBINETRIK_PETAL = ITEMS.register("lumbinetrik_petals",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> VEXATION_PADLOCK_BOUND = ITEMS.register("bound_padlock_wrath",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));

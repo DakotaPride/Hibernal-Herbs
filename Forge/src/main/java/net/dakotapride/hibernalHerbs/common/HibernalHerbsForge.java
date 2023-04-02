@@ -268,9 +268,6 @@ public class HibernalHerbsForge {
         HibernalHerbsConfigured.register(eventBus);
         HibernalHerbsPlaced.register(eventBus);
 
-        // Effects & Potions
-        effectRegistry.register(eventBus);
-
         // Entities
         HibernalEntityTypes.ENTITY_TYPES.register(eventBus);
 

@@ -21,7 +21,7 @@ public class ItemInit {
     public static Item SINGED_GRIMOIRE = new HerbalGrimoireItem(new FabricItemSettings().maxCount(1));
 
     public static Item SILIPTIUM_PETAL = new Item(new FabricItemSettings());
-    public static Item LUMBINETRIK_PETALS = new Item(new FabricItemSettings());
+    public static Item LUMBINETRIK_PETAL = new Item(new FabricItemSettings());
 
     public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
     public static Item VEXATION_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
@@ -238,7 +238,7 @@ public class ItemInit {
 
     public static void init () {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sin_petals"), SILIPTIUM_PETAL);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lumbinetrik_petals"), LUMBINETRIK_PETALS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lumbinetrik_petals"), LUMBINETRIK_PETAL);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "singed_grimoire"), SINGED_GRIMOIRE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "grimoire"), HERBAL_GRIMOIRE);

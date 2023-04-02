@@ -2,7 +2,7 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
-      "item": "hibernalherbs:padlock_wrath"
+      "item": "hibernalherbs:padlock_gluttony"
     },
     {
       "item": "minecraft:netherite_ingot"
@@ -21,6 +21,6 @@
     }
   ],
   "output": {
-    "item": "hibernalherbs:bound_padlock_wrath"
+    "item": "hibernalherbs:bound_padlock_gluttony"
   }
 }
