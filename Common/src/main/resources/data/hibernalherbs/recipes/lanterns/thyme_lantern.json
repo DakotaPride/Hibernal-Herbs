@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AXA",
+    "X#X",
+    "AXA"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lantern"
+    },
+    "X": {
+      "item": "hibernalherbs:sin_petals"
+    },
+    "A": {
+      "item": "hibernalherbs:dried_thyme"
+    }
+  },
+  "result": {
+    "item": "hibernalherbs:thyme_lantern",
+    "count": 2
+  }
+}

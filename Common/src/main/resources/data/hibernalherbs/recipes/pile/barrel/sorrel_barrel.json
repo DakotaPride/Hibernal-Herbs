@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wool",
+  "ingredients": [
+    {
+      "item": "minecraft:barrel"
+    },
+    {
+      "item": "hibernalherbs:sorrel_herb_pile"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:sorrel_herb_barrel"
+  }
+}
