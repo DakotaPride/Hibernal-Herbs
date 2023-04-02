@@ -230,55 +230,39 @@ public class itemRegistry implements FoodComponentList {
     public static final RegistryObject<Item> DRIED_CALENDULA = ITEMS.register("dried_calendula",
             () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_ROSEMARY = ITEMS.register("dried_rosemary",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_THYME = ITEMS.register("dried_thyme",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_TARRAGON = ITEMS.register("dried_tarragon",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_CHAMOMILE = ITEMS.register("dried_chamomile",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_CHIVES = ITEMS.register("dried_chives",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_VERBENA = ITEMS.register("dried_verbena",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_SORREL = ITEMS.register("dried_sorrel",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_MARJORAM = ITEMS.register("dried_marjoram",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_CHERVIL = ITEMS.register("dried_chervil",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_FENNSEL = ITEMS.register("dried_fennsel",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_CEILLIS = ITEMS.register("dried_ceillis",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_PUNUEL = ITEMS.register("dried_punuel",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_ESSITTE = ITEMS.register("dried_essitte",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_THYOCIELLE = ITEMS.register("dried_thyocielle",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(8).saturationMod(6f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_FENNKYSTRAL = ITEMS.register("dried_fennkystral",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(8).saturationMod(6f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
 
     // Compat (Pounded) Herbs (Forge)
     public static final RegistryObject<Item> POUNDED_BLOFORIA = ITEMS.register("pounded_bloforia",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
 
     public static final RegistryObject<Item> REGENERATIVE_BLEND = ITEMS.register("blend_regeneration",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
