@@ -10,10 +10,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
@@ -22,6 +24,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public class CursedPadlockItem extends TrinketItem {
@@ -37,6 +40,14 @@ public class CursedPadlockItem extends TrinketItem {
             entity.removeStatusEffect(StatusEffects.HUNGER);
         } else if (stack.isOf(ItemInit.PIQUE_PADLOCK_BOUND)) {
             entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 1));
+        } else if (stack.isOf(ItemInit.APATHY_PADLOCK_BOUND)) {
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 40, 0));
+        } else if (stack.isOf(ItemInit.SALACIOUS_PADLOCK_BOUND)) {
+            if (entity.hasStatusEffect(StatusEffects.POISON)) {
+                entity.removeStatusEffect(StatusEffects.POISON);
+            } else if (entity.hasStatusEffect(StatusEffects.WITHER)) {
+                entity.removeStatusEffect(StatusEffects.WITHER);
+            }
         }
     }
 
@@ -45,18 +56,31 @@ public class CursedPadlockItem extends TrinketItem {
         Multimap<EntityAttribute, EntityAttributeModifier> modifiers = super.getModifiers(stack, slot, entity, uuid);
 
         EntityAttributeModifier wrathHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:wrath_health",
-                0.1, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                0.15, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
         EntityAttributeModifier wrathAttackDamageModifier = new EntityAttributeModifier(uuid, "hibernalherbs:wrath_damage",
-                0.4, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                0.25, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
         EntityAttributeModifier prideHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:pride_health",
-                0.4, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                0.25, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
         EntityAttributeModifier gluttonyHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:gluttony_health",
-                0.3, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                0.35, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
         EntityAttributeModifier greedHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:greed_health",
-                0.6, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                0.45, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        EntityAttributeModifier envyHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:envy_health",
+                0.55, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+        EntityAttributeModifier envyMovementModifier = new EntityAttributeModifier(uuid, "hibernalherbs:envy_movement",
+                0.04, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        EntityAttributeModifier slothHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:sloth_health",
+                0.05, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+        EntityAttributeModifier slothMovementModifier = new EntityAttributeModifier(uuid, "hibernalherbs:sloth_movement",
+                -0.02, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        EntityAttributeModifier lustHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:lust_health",
+                0.55, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
         if (stack.isOf(ItemInit.VEXATION_PADLOCK_BOUND)) {
             modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, wrathHealthModifier);
@@ -67,6 +91,14 @@ public class CursedPadlockItem extends TrinketItem {
             modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, gluttonyHealthModifier);
         } else if (stack.isOf(ItemInit.AVARICE_PADLOCK_BOUND)) {
             modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, greedHealthModifier);
+        } else if (stack.isOf(ItemInit.SPITEFUL_PADLOCK_BOUND)) {
+            modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, envyHealthModifier);
+            modifiers.put(EntityAttributes.GENERIC_MOVEMENT_SPEED, envyMovementModifier);
+        } else if (stack.isOf(ItemInit.APATHY_PADLOCK_BOUND)) {
+            modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, slothHealthModifier);
+            modifiers.put(EntityAttributes.GENERIC_MOVEMENT_SPEED, slothMovementModifier);
+        } else if (stack.isOf(ItemInit.SALACIOUS_PADLOCK_BOUND)) {
+            modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, lustHealthModifier);
         }
 
         return modifiers;
@@ -85,8 +117,34 @@ public class CursedPadlockItem extends TrinketItem {
                 tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.gluttony").formatted(Formatting.GRAY));
             } else if (stack.isOf(ItemInit.AVARICE_PADLOCK_BOUND)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.greed").formatted(Formatting.GRAY));
+            } else if (stack.isOf(ItemInit.SPITEFUL_PADLOCK_BOUND)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.envy").formatted(Formatting.GRAY));
+            } else if (stack.isOf(ItemInit.APATHY_PADLOCK_BOUND)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.sloth").formatted(Formatting.GRAY));
+            } else if (stack.isOf(ItemInit.SALACIOUS_PADLOCK_BOUND)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.lust").formatted(Formatting.GRAY));
             }
         }
     }
 
+    @Override
+    public void onEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
+        if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
+            if (stack.isOf(ItemInit.VEXATION_PADLOCK_BOUND)) {
+                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Wrath"), true);
+            } else if (stack.isOf(ItemInit.PIQUE_PADLOCK_BOUND)) {
+                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Pride"), true);
+            } else if (stack.isOf(ItemInit.GOURMANDIZING_PADLOCK_BOUND)) {
+                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Gluttony"), true);
+            } else if (stack.isOf(ItemInit.AVARICE_PADLOCK_BOUND)) {
+                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Greed"), true);
+            } else if (stack.isOf(ItemInit.SPITEFUL_PADLOCK_BOUND)) {
+                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Envy"), true);
+            } else if (stack.isOf(ItemInit.APATHY_PADLOCK_BOUND)) {
+                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Sloth"), true);
+            } else if (stack.isOf(ItemInit.SALACIOUS_PADLOCK_BOUND)) {
+                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Lust"), true);
+            }
+        }
+    }
 }

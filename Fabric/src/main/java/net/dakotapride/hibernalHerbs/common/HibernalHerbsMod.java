@@ -41,6 +41,39 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.AMETHYST_CANISTER));
 					itemStacks.add(new ItemStack(ItemInit.DIAMOND_CANISTER));
 
+					itemStacks.add(new ItemStack(ItemInit.SIGIL));
+					itemStacks.add(new ItemStack(ItemInit.CRACKED_SIGIL));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_PRIDE));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_WRATH));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_GLUTTONY));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_SLOTH));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_LUST));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_ENVY));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_GREED));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_CONFIGURATION));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_CONFIGURATION_ADVANCED));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_MASTERY));
+					itemStacks.add(new ItemStack(ItemInit.SIGIL_MASTERY_ADVANCED));
+
+					itemStacks.add(new ItemStack(ItemInit.RING));
+					itemStacks.add(new ItemStack(ItemInit.GLUTTONOUS_RING));
+					itemStacks.add(new ItemStack(ItemInit.ADV_GLUTTONOUS_RING));
+
+					itemStacks.add(new ItemStack(ItemInit.VEXATION_PADLOCK));
+					itemStacks.add(new ItemStack(ItemInit.VEXATION_PADLOCK_BOUND));
+					itemStacks.add(new ItemStack(ItemInit.PIQUE_PADLOCK));
+					itemStacks.add(new ItemStack(ItemInit.PIQUE_PADLOCK_BOUND));
+					itemStacks.add(new ItemStack(ItemInit.GOURMANDIZING_PADLOCK));
+					itemStacks.add(new ItemStack(ItemInit.GOURMANDIZING_PADLOCK_BOUND));
+					itemStacks.add(new ItemStack(ItemInit.AVARICE_PADLOCK));
+					itemStacks.add(new ItemStack(ItemInit.AVARICE_PADLOCK_BOUND));
+
+					itemStacks.add(new ItemStack(ItemInit.HERBAL_GRIMOIRE));
+					itemStacks.add(new ItemStack(ItemInit.SINGED_GRIMOIRE));
+
+					itemStacks.add(new ItemStack(ItemInit.SILIPTIUM_PETAL));
+					itemStacks.add(new ItemStack(ItemInit.LUMBINETRIK_PETAL));
+
 					itemStacks.add(new ItemStack(BlockInit.CONJURATION_ALTAR.asItem()));
 
 					itemStacks.add(new ItemStack(BlockInit.CALENDULA_LANTERN.asItem()));

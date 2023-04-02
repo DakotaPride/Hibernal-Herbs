@@ -360,7 +360,10 @@
   "text.hibernalherbs.padlocks.bound.pride": "Bound To The Prince Of Pride",
   "text.hibernalherbs.padlocks.bound.gluttony": "Bound To The Prince Of Gluttony",
   "text.hibernalherbs.padlocks.bound.wrath": "Bound To The Prince Of Wrath",
-  "text.hibernalherbs.padlocks.unbound": "Not Bound To A Price Of Sin",
+  "text.hibernalherbs.padlocks.bound.lust": "Bound To The Prince Of Lust",
+  "text.hibernalherbs.padlocks.bound.sloth": "Bound To The Prince Of Sloth",
+  "text.hibernalherbs.padlocks.bound.envy": "Bound To The Prince Of Envy",
+  "text.hibernalherbs.padlocks.unbound": "Not Bound To A Prince Of Sin",
 
   "item.hibernalherbs.lumbinetrik_petals": "Lumbinetrik Petals",
   "item.hibernalherbs.sin_petals": "Siliptium Petals",

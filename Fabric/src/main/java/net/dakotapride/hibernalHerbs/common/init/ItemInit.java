@@ -35,6 +35,15 @@ public class ItemInit {
     public static Item AVARICE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
     public static Item AVARICE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
+    public static Item SPITEFUL_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item SPITEFUL_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+
+    public static Item APATHY_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item APATHY_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+
+    public static Item SALACIOUS_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item SALACIOUS_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+
     public static Item RING = new Item(new FabricItemSettings()
             .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
     public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings()
@@ -258,6 +267,15 @@ public class ItemInit {
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_greed"), AVARICE_PADLOCK_BOUND);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_greed"), AVARICE_PADLOCK);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_envy"), SPITEFUL_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_envy"), SPITEFUL_PADLOCK);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_sloth"), APATHY_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_sloth"), APATHY_PADLOCK);
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_lust"), SALACIOUS_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_lust"), SALACIOUS_PADLOCK);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyme"), POUNDED_THYME);

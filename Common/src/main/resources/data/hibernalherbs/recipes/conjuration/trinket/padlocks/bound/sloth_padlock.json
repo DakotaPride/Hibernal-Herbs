@@ -1,0 +1,26 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:padlock_sloth"
+    },
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    {
+      "item": "hibernalherbs:lumbinetrik_petals"
+    },
+    {
+      "item": "hibernalherbs:sigil_mastery_adv"
+    },
+    {
+      "item": "hibernalherbs:lumbinetrik_petals"
+    },
+    {
+      "item": "minecraft:netherite_ingot"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:bound_padlock_sloth"
+  }
+}
