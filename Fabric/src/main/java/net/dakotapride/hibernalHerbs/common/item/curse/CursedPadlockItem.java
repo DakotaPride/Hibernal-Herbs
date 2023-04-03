@@ -75,7 +75,7 @@ public class CursedPadlockItem extends TrinketItem {
                 0.04, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
         EntityAttributeModifier slothHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:sloth_health",
-                0.05, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                0.1, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
         EntityAttributeModifier slothMovementModifier = new EntityAttributeModifier(uuid, "hibernalherbs:sloth_movement",
                 -0.02, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
@@ -131,19 +131,19 @@ public class CursedPadlockItem extends TrinketItem {
     public void onEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
         if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
             if (stack.isOf(ItemInit.VEXATION_PADLOCK_BOUND)) {
-                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Wrath"), true);
+                serverPlayerEntity.sendMessage(Text.translatable("text.hibernalherbs.wrath.unholy_blessing").formatted(Formatting.ITALIC), false);
             } else if (stack.isOf(ItemInit.PIQUE_PADLOCK_BOUND)) {
-                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Pride"), true);
+                serverPlayerEntity.sendMessage(Text.translatable("text.hibernalherbs.pride.unholy_blessing").formatted(Formatting.ITALIC), false);
             } else if (stack.isOf(ItemInit.GOURMANDIZING_PADLOCK_BOUND)) {
-                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Gluttony"), true);
+                serverPlayerEntity.sendMessage(Text.translatable("text.hibernalherbs.gluttony.unholy_blessing").formatted(Formatting.ITALIC), false);
             } else if (stack.isOf(ItemInit.AVARICE_PADLOCK_BOUND)) {
-                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Greed"), true);
+                serverPlayerEntity.sendMessage(Text.translatable("text.hibernalherbs.greed.unholy_blessing").formatted(Formatting.ITALIC), false);
             } else if (stack.isOf(ItemInit.SPITEFUL_PADLOCK_BOUND)) {
-                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Envy"), true);
+                serverPlayerEntity.sendMessage(Text.translatable("text.hibernalherbs.envy.unholy_blessing").formatted(Formatting.ITALIC), false);
             } else if (stack.isOf(ItemInit.APATHY_PADLOCK_BOUND)) {
-                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Sloth"), true);
+                serverPlayerEntity.sendMessage(Text.translatable("text.hibernalherbs.sloth.unholy_blessing").formatted(Formatting.ITALIC), false);
             } else if (stack.isOf(ItemInit.SALACIOUS_PADLOCK_BOUND)) {
-                serverPlayerEntity.sendMessage(Text.literal("You Have Gained An Unholy Blessing From The Prince Of Lust"), true);
+                serverPlayerEntity.sendMessage(Text.translatable("text.hibernalherbs.lust.unholy_blessing").formatted(Formatting.ITALIC), false);
             }
         }
     }

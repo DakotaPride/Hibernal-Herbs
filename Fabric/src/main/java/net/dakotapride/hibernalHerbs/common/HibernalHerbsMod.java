@@ -128,20 +128,6 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(BlockInit.THYOCIELLE_HERB_PILE.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.FENNKYSTRAL_HERB_PILE.asItem()));
 
-					itemStacks.add(new ItemStack(ItemInit.RING));
-					itemStacks.add(new ItemStack(ItemInit.GLUTTONOUS_RING));
-					itemStacks.add(new ItemStack(ItemInit.ADV_GLUTTONOUS_RING));
-
-					itemStacks.add(new ItemStack(ItemInit.SIGIL));
-					itemStacks.add(new ItemStack(ItemInit.CRACKED_SIGIL));
-					itemStacks.add(new ItemStack(ItemInit.SIGIL_PRIDE));
-					itemStacks.add(new ItemStack(ItemInit.SIGIL_SLOTH));
-					itemStacks.add(new ItemStack(ItemInit.SIGIL_LUST));
-					itemStacks.add(new ItemStack(ItemInit.SIGIL_GLUTTONY));
-					itemStacks.add(new ItemStack(ItemInit.SIGIL_WRATH));
-					itemStacks.add(new ItemStack(ItemInit.SIGIL_GREED));
-					itemStacks.add(new ItemStack(ItemInit.SIGIL_ENVY));
-
 					itemStacks.add(new ItemStack(ItemInit.REGENERATIVE_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.VIRULENT_BLEND));
 					itemStacks.add(new ItemStack(ItemInit.SEDATING_BLEND));

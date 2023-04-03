@@ -1,19 +1,28 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "recipe_dependant_herb_pounded",
+  "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
       "item": "hibernalherbs:pounded_thyme"
     },
     {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:andesite"
+    },
+    {
       "item": "hibernalherbs:pounded_chamomile"
     },
     {
-      "item": "hibernalherbs:herb_fertilizer"
+      "item": "minecraft:andesite"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
     }
   ],
-  "result": {
+  "output": {
     "item": "hibernalherbs:pounded_thyocielle",
     "count": 2
   }
 }
+

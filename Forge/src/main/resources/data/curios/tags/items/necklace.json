@@ -4,6 +4,9 @@
     "hibernalherbs:bound_padlock_gluttony",
     "hibernalherbs:bound_padlock_pride",
     "hibernalherbs:bound_padlock_greed",
-    "hibernalherbs:bound_padlock_wrath"
+    "hibernalherbs:bound_padlock_wrath",
+    "hibernalherbs:bound_padlock_envy",
+    "hibernalherbs:bound_padlock_sloth",
+    "hibernalherbs:bound_padlock_lust"
   ]
 }

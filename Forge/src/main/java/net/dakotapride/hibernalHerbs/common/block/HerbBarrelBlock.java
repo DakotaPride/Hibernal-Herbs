@@ -105,6 +105,11 @@ public class HerbBarrelBlock extends Block {
 
                 tooltip.add(Component.translatable(string).withStyle(formattingColour));
             }
+            if (stack.is(blockRegistry.BLOFORIA_BARREL.get().asItem())) {
+                string = "text.hibernalherbs.pile.bloforia";
+
+                tooltip.add(Component.translatable(string).withStyle(formattingColour));
+            }
         }
     }
 }

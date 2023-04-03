@@ -18,7 +18,7 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 @JeiPlugin
 public class JEIHibernalHerbsPlugin implements IModPlugin {
     public static RecipeType<HerbalConjurationRecipe> HERBAL_CONJURATION_TYPE =
-            new RecipeType<>(HerbalConjurationRecipeCategory.UID, HerbalConjurationRecipe.class);
+            RecipeType.create(MOD_ID, "herbal_conjuration", HerbalConjurationRecipe.class);
 
     @Override
     public ResourceLocation getPluginUid() {
@@ -35,7 +35,7 @@ public class JEIHibernalHerbsPlugin implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registration) {
         RecipeManager rm = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
 
-        List<HerbalConjurationRecipe> recipesInfusing = rm.getAllRecipesFor(HerbalConjurationRecipe.Type.INSTANCE);
-        registration.addRecipes(HERBAL_CONJURATION_TYPE, recipesInfusing);
+        List<HerbalConjurationRecipe> herbalConjurationRecipes = rm.getAllRecipesFor(HerbalConjurationRecipe.Type.INSTANCE);
+        registration.addRecipes(HERBAL_CONJURATION_TYPE, herbalConjurationRecipes);
     }
 }

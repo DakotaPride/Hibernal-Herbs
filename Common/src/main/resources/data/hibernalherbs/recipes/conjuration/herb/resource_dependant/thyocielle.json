@@ -1,18 +1,26 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "recipe_dependant_herb",
+  "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
       "item": "hibernalherbs:thyme"
     },
     {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:andesite"
+    },
+    {
       "item": "hibernalherbs:chamomile"
     },
     {
-      "item": "hibernalherbs:herb_fertilizer"
+      "item": "minecraft:andesite"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
     }
   ],
-  "result": {
-    "item": "hibernalherbs:thyocielle"
+  "output": {
+    "item": "hibernalherbs:fennkystral"
   }
 }

@@ -26,6 +26,9 @@ dependencies {
     // Trinkets
     modImplementation("dev.emi:trinkets:${trinkets_version}")
 
+    // Patchouli
+    modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC"
+
 }
 
 repositories {
@@ -43,6 +46,9 @@ repositories {
         name = ("LadySnake Libs")
         url = ("https://ladysnake.jfrog.io/artifactory/mods")
     }
+
+    // Patchouli Repo
+    maven { url 'https://maven.blamejared.com' }
 
     mavenCentral()
 }

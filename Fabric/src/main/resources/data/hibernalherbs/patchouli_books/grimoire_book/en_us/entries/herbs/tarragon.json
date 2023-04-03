@@ -1,0 +1,11 @@
+{
+  "name": "Tarragon",
+  "icon": "hibernalherbs:pounded_tarragon",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Testing Page!"
+    }
+  ]
+}

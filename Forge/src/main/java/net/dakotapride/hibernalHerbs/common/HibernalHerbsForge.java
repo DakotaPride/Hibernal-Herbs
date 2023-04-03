@@ -92,6 +92,45 @@ public class HibernalHerbsForge {
 
             nonNullList.add(0, blockRegistry.MYQUESTE_PLANKS.get().asItem().getDefaultInstance());
 
+            nonNullList.add(0, itemRegistry.LUMBINETRIK_PETAL.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SILIPTIUM_PETAL.get().getDefaultInstance());
+
+            nonNullList.add(0, itemRegistry.SINGED_GRIMOIRE.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.HERBAL_GRIMOIRE.get().getDefaultInstance());
+
+            nonNullList.add(0, itemRegistry.SALACIOUS_PADLOCK_BOUND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SALACIOUS_PADLOCK.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.APATHY_PADLOCK_BOUND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.APATHY_PADLOCK.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SPITEFUL_PADLOCK_BOUND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SPITEFUL_PADLOCK.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.AVARICE_PADLOCK_BOUND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.AVARICE_PADLOCK.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.GOURMANDIZING_PADLOCK_BOUND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.GOURMANDIZING_PADLOCK.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.PIQUE_PADLOCK_BOUND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.PIQUE_PADLOCK.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.VEXATION_PADLOCK_BOUND.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.VEXATION_PADLOCK.get().getDefaultInstance());
+
+            nonNullList.add(0, itemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.GLUTTONOUS_RING.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.RING.get().getDefaultInstance());
+
+            nonNullList.add(0, itemRegistry.SIGIL_MASTERY_ADV.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_MASTERY.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_CONFIGURATION_ADV.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_CONFIGURATION.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_GREED.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_ENVY.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_LUST.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_SLOTH.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_GLUTTONY.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_WRATH.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL_PRIDE.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.CRACKED_SIGIL.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.SIGIL.get().getDefaultInstance());
+
             // Smoked
             nonNullList.add(0, itemRegistry.SMOKED_BLOOMING_BLEND.get().getDefaultInstance());
 

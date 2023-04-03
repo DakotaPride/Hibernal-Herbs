@@ -54,6 +54,21 @@ public class itemRegistry implements FoodComponentList {
     public static final RegistryObject<Item> AVARICE_PADLOCK = ITEMS.register("padlock_greed",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> SPITEFUL_PADLOCK_BOUND = ITEMS.register("bound_padlock_envy",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+    public static final RegistryObject<Item> SPITEFUL_PADLOCK = ITEMS.register("padlock_envy",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> APATHY_PADLOCK_BOUND = ITEMS.register("bound_padlock_sloth",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+    public static final RegistryObject<Item> APATHY_PADLOCK = ITEMS.register("padlock_sloth",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> SALACIOUS_PADLOCK_BOUND = ITEMS.register("bound_padlock_lust",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+    public static final RegistryObject<Item> SALACIOUS_PADLOCK = ITEMS.register("padlock_lust",
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+
     public static final RegistryObject<Item> RING = ITEMS.register("ring",
             () -> new Item(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> GLUTTONOUS_RING = ITEMS.register("gluttonous_ring",

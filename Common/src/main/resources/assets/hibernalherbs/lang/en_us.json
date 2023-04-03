@@ -263,9 +263,8 @@
   "text.hibernalherbs.sigil.mastery": "  - Mastery",
   "text.hibernalherbs.sigil.mastery.adv": "  - Mastery [Advanced]",
 
-  "item.hibernalherbs.cracked_sigil": "Cracked Sigil",
-
   "item.hibernalherbs.sigil": "Sigil",
+  "item.hibernalherbs.cracked_sigil": "Cracked Sigil",
 
   "text.hibernalherbs.cracked_sigil.assist.1": "Looks Like You've Used Up This",
   "text.hibernalherbs.cracked_sigil.assist.2": "Sigil's Energy, Reconstruct It",
@@ -351,26 +350,43 @@
   "item.hibernalherbs.bound_padlock_greed": "Bound Padlock",
   "item.hibernalherbs.bound_padlock_pride": "Bound Padlock",
   "item.hibernalherbs.bound_padlock_gluttony": "Bound Padlock",
+  "item.hibernalherbs.bound_padlock_envy": "Bound Padlock",
+  "item.hibernalherbs.bound_padlock_sloth": "Bound Padlock",
+  "item.hibernalherbs.bound_padlock_lust": "Bound Padlock",
 
   "item.hibernalherbs.padlock_wrath": "Padlock",
   "item.hibernalherbs.padlock_greed": "Padlock",
   "item.hibernalherbs.padlock_pride": "Padlock",
   "item.hibernalherbs.padlock_gluttony": "Padlock",
+  "item.hibernalherbs.padlock_envy": "Padlock",
+  "item.hibernalherbs.padlock_sloth": "Padlock",
+  "item.hibernalherbs.padlock_lust": "Padlock",
 
   "text.hibernalherbs.padlocks.bound.greed": "Bound To The Prince Of Greed",
   "text.hibernalherbs.padlocks.bound.pride": "Bound To The Prince Of Pride",
   "text.hibernalherbs.padlocks.bound.gluttony": "Bound To The Prince Of Gluttony",
   "text.hibernalherbs.padlocks.bound.wrath": "Bound To The Prince Of Wrath",
-  "text.hibernalherbs.padlocks.unbound": "Not Bound To A Price Of Sin",
+  "text.hibernalherbs.padlocks.bound.lust": "Bound To The Prince Of Lust",
+  "text.hibernalherbs.padlocks.bound.sloth": "Bound To The Prince Of Sloth",
+  "text.hibernalherbs.padlocks.bound.envy": "Bound To The Prince Of Envy",
+  "text.hibernalherbs.padlocks.unbound": "Not Bound To A Prince Of Sin",
 
   "item.hibernalherbs.lumbinetrik_petals": "Lumbinetrik Petals",
   "item.hibernalherbs.sin_petals": "Siliptium Petals",
   "item.hibernalherbs.singed_grimoire": "Singed Herbal Grimoire",
   "item.hibernalherbs.grimoire": "Herbal Grimoire",
 
-  "text.hibernalherbs.unfinished": "This Feature Is Currently Unfinished, Apologies",
+  "text.hibernalherbs.patchouli": "Install Patchouli For Full Usage Of This Item",
   "text.hibernalherbs.grimoire": "Sinful Texts Regarding The Herbal Testaments...",
   "text.hibernalherbs.grimoire.singed": "Burnt To Ash, Not Very Useful...",
+
+  "text.hibernalherbs.wrath.unholy_blessing": "You Have Gained An Unholy Blessing From The Prince Of Wrath",
+  "text.hibernalherbs.pride.unholy_blessing": "You Have Gained An Unholy Blessing From The Prince Of Pride",
+  "text.hibernalherbs.greed.unholy_blessing": "You Have Gained An Unholy Blessing From The Prince Of Greed",
+  "text.hibernalherbs.lust.unholy_blessing": "You Have Gained An Unholy Blessing From The Prince Of Lust",
+  "text.hibernalherbs.envy.unholy_blessing": "You Have Gained An Unholy Blessing From The Prince Of Envy",
+  "text.hibernalherbs.gluttony.unholy_blessing": "You Have Gained An Unholy Blessing From The Prince Of Gluttony",
+  "text.hibernalherbs.sloth.unholy_blessing": "You Have Gained An Unholy Blessing From The Prince Of Sloth",
 
   // Forge
   "block.hibernalherbs.bloforia": "Bloforia",
@@ -389,6 +405,7 @@
 
   "block.hibernalherbs.bloforia_herb_pile": "Herb Pile",
   "block.hibernalherbs.bloforia_herb_barrel": "Herb Barrel",
+  "block.hibernalherbs.bloforia_lantern": "Bloforia Lantern",
 
   "text.hibernalherbs.pile.bloforia": "  - Bloforia",
 
