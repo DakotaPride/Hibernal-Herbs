@@ -40,7 +40,7 @@
     "fabric": "*",
     "minecraft": "~1.19",
     "java": ">=17",
-    "trinkets": "3.4.1"
+    "trinkets": ">=3.4.1"
   },
   "recommends": {
     "lambdabettergrass": "*",
