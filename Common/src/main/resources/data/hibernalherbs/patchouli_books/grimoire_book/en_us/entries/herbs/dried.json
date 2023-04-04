@@ -10,97 +10,97 @@
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_tarragon",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Tarragon can be used to make an Herbal Sigil of Mastery, as well as a Blank Sigil. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_chamomile",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Chamomile can be used to make an Herbal Sigil of Advanced Mastery, as well as a Blank Sigil and Diminished Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_ceillis",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Ceillis can be used to make an Herbal Sigil of Advanced Configuration, as well as Decaying Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_chives",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Chives can be used to create an Herbal Sigil aligned with Envy. It can also be used to make Acceleration, Sedating, and Shaded Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_chervil",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Chervil can be used to make an Herbal Sigil aligned with Greed. It can also be used to make Hindering Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_essitte",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Essitte can be used to create two seperate Herbal Sigils: an Advanced Mastery Sigil and another that is aligned with Wrath. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_calendula",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Calendula can be used to make all other Dried Herb Variants, as well as to make a Blank Sigil. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_fennkystral",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Fennkystral is used to create an Herbal Sigil aligned with Greed. It can also be used to make a Golden Ring and Alternative Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_fennsel",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Fennsel can be used to make Herbal Sigils aligned with either Lust or Pride. It is also used to make an Advanced Gluttonous Ring. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_marjoram",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Marjoram can be used to make multiple Herbal Sigils; Aligned with Lust, Greed, and/or Envy. As well as creating an Herbal Sigil of Configuration, Advanced Gluttonous Ring, or Dashing Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_punuel",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Punuel can be used to create Herbal Sigils aligned with either Wrath or Sloth, as well as Virulent and Incinerating Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_rosemary",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Rosemary can be used to make Herbal Sigils aligned with Gluttony, as well as Herbal Sigils of both Mastery and Configuration. It can also be used for Regenererative Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_sorrel",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Sorrel can be used for Herbal Sigils aligned with Lust, as well as Observing Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_thyocielle",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Thyocielle can be used to create Herbal Sigils aligned with Sloth or Gluttony. It can be used for Conflicting Blends and Siliptium Petals as well. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_thyme",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Thyme can be used to create an Herbal Sigil aligned with Envy, as well as an Herbal Sigil of Advanced Configuration. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:dried_verbena",
-      "link_recipe": true,
+      "link_recipe": false,
       "text": "Dried Verbena can be used for Herbal Sigils that are aligned with Pride or Gluttony. (as well as other previously mentioned uses)"
     },
     {

@@ -27,12 +27,12 @@ public class HerbalGrimoireItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (!FabricLoader.getInstance().isModLoaded("patchouli")) {
-            tooltip.add(Text.translatable("text.hibernalherbs.patchouli"));
-            tooltip.add(Text.literal(" "));
-        }
-
         if (stack.isOf(ItemInit.HERBAL_GRIMOIRE)) {
+            if (!FabricLoader.getInstance().isModLoaded("patchouli")) {
+                tooltip.add(Text.translatable("text.hibernalherbs.patchouli"));
+                tooltip.add(Text.literal(" "));
+            }
+
             tooltip.add(Text.translatable("text.hibernalherbs.grimoire").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
         } else if (stack.isOf(ItemInit.SINGED_GRIMOIRE)) {
             tooltip.add(Text.translatable("text.hibernalherbs.grimoire.singed").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
@@ -43,11 +43,14 @@ public class HerbalGrimoireItem extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
 
-        if (user instanceof ServerPlayerEntity && FabricLoader.getInstance().isModLoaded("patchouli")) {
+        if (user instanceof ServerPlayerEntity && FabricLoader.getInstance().isModLoaded("patchouli")
+                && itemStack.isOf(ItemInit.HERBAL_GRIMOIRE)) {
             ServerPlayerEntity player = (ServerPlayerEntity) user;
             PatchouliAPI.get().openBookGUI(player, new Identifier(MOD_ID, "grimoire_book"));
-        }
 
-        return TypedActionResult.success(itemStack);
+            return TypedActionResult.success(itemStack);
+        } else {
+            return TypedActionResult.fail(itemStack);
+        }
     }
 }

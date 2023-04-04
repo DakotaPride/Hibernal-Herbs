@@ -10,10 +10,14 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class RecipeInit {
 
+    public static RecipeSerializer<HerbalConjurationRecipe> HERBAL_CONJURATION_SERIALIZER;
+
+    public static RecipeType<HerbalConjurationRecipe> HERBAL_CONJURATION_TYPE;
+
     public static void init() {
-        Registry.register(Registry.RECIPE_SERIALIZER,
+        HERBAL_CONJURATION_SERIALIZER = Registry.register(Registry.RECIPE_SERIALIZER,
                 new Identifier(MOD_ID, HerbalConjurationRecipe.Serializer.ID), HerbalConjurationRecipe.Serializer.INSTANCE);
-        Registry.register(Registry.RECIPE_TYPE,
+        HERBAL_CONJURATION_TYPE = Registry.register(Registry.RECIPE_TYPE,
                 new Identifier(MOD_ID, HerbalConjurationRecipe.Type.ID), HerbalConjurationRecipe.Type.INSTANCE);
     }
 }

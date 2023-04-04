@@ -23,9 +23,9 @@ import java.util.Map;
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class HerbalConjurationRecipe implements Recipe<SimpleContainer> {
-    private final ResourceLocation id;
-    private final ItemStack output;
-    private final NonNullList<Ingredient> input;
+    public final ResourceLocation id;
+    public final ItemStack output;
+    public final NonNullList<Ingredient> input;
 
     public HerbalConjurationRecipe(ResourceLocation id, ItemStack output,
                                    NonNullList<Ingredient> recipeItems) {
