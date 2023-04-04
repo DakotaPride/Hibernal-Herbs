@@ -3,11 +3,14 @@ package net.dakotapride.hibernalHerbs.common.integration.jei;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.recipe.RecipeType;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
+import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeManager;
 
 import java.util.List;
@@ -22,13 +25,18 @@ public class JEIHibernalHerbsPlugin implements IModPlugin {
 
     @Override
     public ResourceLocation getPluginUid() {
-        return new ResourceLocation(MOD_ID, "herbal_conjuration_plugin");
+        return new ResourceLocation(MOD_ID, "jei");
     }
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new
                 HerbalConjurationRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+    }
+
+    @Override
+    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+        registration.addRecipeCatalyst(new ItemStack(blockRegistry.CONJURATION_ALTAR.get()), HERBAL_CONJURATION_TYPE);
     }
 
     @Override
