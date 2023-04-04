@@ -1,7 +1,0 @@
-{
-  "name": "Herbal Grimoire",
-  "landing_text": "This Grimoire was used to learn what effects herbs had. Studiers of the Dark Arts used herbs to make powerful brews and harnessed the power of the seven princes, altering themselves. Will you do the same?",
-  "custom_book_item": "hibernalherbs:grimoire",
-  "dont_generate_book": true,
-  "show_progress": false
-}
