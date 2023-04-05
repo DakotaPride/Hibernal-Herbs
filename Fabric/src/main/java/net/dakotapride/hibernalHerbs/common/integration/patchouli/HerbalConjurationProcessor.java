@@ -18,13 +18,12 @@ import java.util.List;
 
 @SuppressWarnings("ConstantConditions")
 public class HerbalConjurationProcessor implements IComponentProcessor {
-
     @Nullable
     private HerbalConjurationRecipe recipe;
 
     @Override
     public void setup(IVariableProvider vars) {
-        this.recipe = PatchouliUtils.getRecipe(HerbalConjurationRecipe.class, HibernalRecipes.HERBAL_CONJURATION_TYPE.get(), vars.get("recipe").asString());
+        this.recipe = PatchouliUtils.getRecipe(HerbalConjurationRecipe.class, RecipeInit.HERBAL_CONJURATION_TYPE, vars.get("recipe").asString());
     }
 
     @Nonnull
@@ -33,12 +32,13 @@ public class HerbalConjurationProcessor implements IComponentProcessor {
         if (recipe == null) return IVariable.empty();
         return switch (key) {
             case "output" -> IVariable.from(this.recipe.getOutput());
-            case "ingredient0" -> IVariable.from(this.getInput(0));
-            case "ingredient1" -> IVariable.from(this.getInput(1));
-            case "ingredient2" -> IVariable.from(this.getInput(2));
-            case "ingredient3" -> IVariable.from(this.getInput(3));
-            case "ingredient4" -> IVariable.from(this.getInput(4));
-            case "ingredient5" -> IVariable.from(this.getInput(5));
+            case "ingredient0" -> IVariable.from(this.getInput(0).getMatchingStacks());
+            case "ingredient1" -> IVariable.from(this.getInput(1).getMatchingStacks());
+            case "ingredient2" -> IVariable.from(this.getInput(2).getMatchingStacks());
+            case "ingredient3" -> IVariable.from(this.getInput(3).getMatchingStacks());
+            case "ingredient4" -> IVariable.from(this.getInput(4).getMatchingStacks());
+            case "ingredient5" -> IVariable.from(this.getInput(5).getMatchingStacks());
+            case "header" -> IVariable.from(Text.translatable("text.hibernalherbs.herbal_conjuration"));
             default -> IVariable.empty();
         };
     }

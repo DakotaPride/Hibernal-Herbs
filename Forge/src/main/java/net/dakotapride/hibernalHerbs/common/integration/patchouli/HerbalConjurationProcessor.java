@@ -38,6 +38,7 @@ public class HerbalConjurationProcessor implements IComponentProcessor {
             case "ingredient3" -> IVariable.from(this.getInput(3).getItems());
             case "ingredient4" -> IVariable.from(this.getInput(4).getItems());
             case "ingredient5" -> IVariable.from(this.getInput(5).getItems());
+            case "header" -> IVariable.from(Component.translatable("text.hibernalherbs.herbal_conjuration"));
             default -> IVariable.empty();
         };
     }

@@ -35,6 +35,8 @@
     "hibernalherbs.mixins.json"
   ],
 
+  "accessWidener": "hibernalherbs.accesswidener",
+
   "depends": {
     "fabricloader": "*",
     "fabric": "*",

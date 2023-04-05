@@ -68,6 +68,8 @@ loom {
             runDir("run")
         }
     }
+
+    accessWidenerPath = file("src/main/resources/hibernalherbs.accesswidener")
 }
 
 
