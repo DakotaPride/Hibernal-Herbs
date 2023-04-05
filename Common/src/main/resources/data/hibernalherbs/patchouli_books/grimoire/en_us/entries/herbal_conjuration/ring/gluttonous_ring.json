@@ -1,0 +1,32 @@
+{
+  "name": "Gluttonous Ring",
+  "icon": "hibernalherbs:gluttonous_ring",
+  "category": "hibernalherbs:herbal_conjuration",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A Gluttonous Ring allows the beholder to consume Herb Blends for as long as they have this ring on them. (Forever regenerating)"
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/ring/base/ring",
+      "text": "You first have to create a Golden Ring, the conjuration for which has been shown above."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/ring/gluttonous",
+      "text": "Above is the conjuration for the Gluttonous Ring."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The Gluttonous Ring was the result of a deal made between the Prince of Gluttony and a mortal, whom dreamt for regenerating food. The Prince of Gluttony decided to provide the mortal his dream, with a cost however. That if the mortal hadn't enhanced the ring within 24 hours, then the Prince would obtain his soul. It was too late by the time the mortal had finally figured it out."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbal_conjuration/conjuration_altar"
+      ],
+      "text": "These entries may also be useful in your studies."
+    }
+  ]
+}

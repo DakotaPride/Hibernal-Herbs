@@ -1,0 +1,50 @@
+{
+  "name": "Herbal Sigils",
+  "icon": "hibernalherbs:cracked_sigil",
+  "category": "hibernalherbs:herbal_conjuration",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Herbal Sigils are used in high-tier conjurations, such as Padlocks."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:sigil",
+      "text": "Sigils are made by using a combination of herbs and a non-cracked Sigil. To create a Sigil, you will need certain herbs and a Smoothened Stone or a Cracked Sigil.",
+      "title": "First Sigil"
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/base",
+      "text": "The conjuration to create a Sigil is shown above. These currently do not have many major uses, but that will change in future updates :)"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Herbal Sigils can come in many forms, some of the most powerful ones being in correlation to the Princes of Sin; Envy, Gluttony, Greed, Lust, Pride, Sloth, and Wrath. Some of the other variations of Herbal Sigils include; Configuration (Non-Advanced & Advanced) and Mastery (Non-Advanced & Advanced)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:sigil_envy",
+      "text": "",
+      "title": "Envy Alignment"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbal_conjuration/conjuration_altar",
+        "hibernalherbs:herbal_conjuration/singed_grimoire",
+        "hibernalherbs:herbal_conjuration/siliptium_petals",
+        "hibernalherbs:herbal_conjuration/lumbinetrik_petals",
+
+        "hibernalherbs:herbal_conjuration/sigil/sins/envy",
+        "hibernalherbs:herbal_conjuration/sigil/sins/gluttony",
+        "hibernalherbs:herbal_conjuration/sigil/sins/greed",
+        "hibernalherbs:herbal_conjuration/sigil/sins/lust",
+        "hibernalherbs:herbal_conjuration/sigil/sins/pride",
+        "hibernalherbs:herbal_conjuration/sigil/sins/sloth",
+        "hibernalherbs:herbal_conjuration/sigil/sins/wrath"
+      ],
+      "text": "These entries may also be useful in your studies."
+    }
+  ]
+}

@@ -104,7 +104,7 @@
       "text": "Dried Verbena can be used for Herbal Sigils that are aligned with Pride or Gluttony. (as well as other previously mentioned uses)"
     },
     {
-      "type": "relations",
+      "type": "patchouli:relations",
       "entries": [
         "hibernalherbs:herbs/non_pounded",
         "hibernalherbs:herbs/pounded"

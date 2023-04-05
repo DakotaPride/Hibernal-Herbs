@@ -1,0 +1,33 @@
+{
+  "name": "Lumbinetrik Petals",
+  "icon": "hibernalherbs:lumbinetrik_petals",
+  "category": "hibernalherbs:herbal_conjuration",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Lumbinetrik Petals currently don't have many uses, but the uses that they do have are for late-game purposes."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/grimoire/lumbinetrik_petals",
+      "text": "Lumbinetrik Petals are used in many conjurations, more importantly Bound Padlocks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Lumbinetrik Petals are said to have been created by the Prince of Gluttony. Using the Siliptium Petals as a base for them, altering their use was what made an entirely new kind of Vegetation. While Siliptium Petals would assist with Agility, Lumbinetrik Petals would numb any pain that one might come across."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A conjuration was developed to combine the two kinds of petals, in an attempt to create an even stronger variation. Ju- l- --i- m Petals would numb any pain, while also providing an agility boost. It also had an unexpected side effect, which w- ld- "
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbal_conjuration/conjuration_altar",
+        "hibernalherbs:herbal_conjuration/singed_grimoire",
+        "hibernalherbs:herbal_conjuration/siliptium_petals"
+      ],
+      "text": "These entries may also be useful in your studies."
+    }
+  ]
+}

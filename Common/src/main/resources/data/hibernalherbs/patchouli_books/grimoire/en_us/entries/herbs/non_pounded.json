@@ -104,7 +104,7 @@
       "text": "Verbena is used to make two different Herbal Sigils: One aligned with Wrath and the other aligned with Sloth."
     },
     {
-      "type": "relations",
+      "type": "patchouli:relations",
       "entries": [
         "hibernalherbs:herbs/dried",
         "hibernalherbs:herbs/pounded"

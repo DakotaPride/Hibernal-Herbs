@@ -31,6 +31,13 @@
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/regeneration",
       "text": "Above, you'll find the conjuration for creating a Regenerative Blend. Other blends can be made in a similar manor, just with different herbs/ingredients."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbs/dried"
+      ],
+      "text": "These entries may also be useful in your studies."
     }
   ]
 }

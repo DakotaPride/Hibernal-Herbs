@@ -4,63 +4,63 @@
     {
       "type": "patchouli:image",
       "image": "hibernalherbs:textures/gui/patchouli/crafting.png",
-      "x": 4,
+      "x": 0,
       "y": 9,
       "u": 0,
       "v": 0,
       "texture_width": 256,
       "texture_height": 256,
-      "width": 106,
-      "height": 50,
+      "width": 110,
+      "height": 56,
       "scale": 1
     },
     {
       "type": "patchouli:item",
       "item": "#ingredient0",
-      "x": 28,
-      "y": 11
+      "x": 26,
+      "y": 13
     },
     {
       "type": "patchouli:item",
       "item": "#ingredient1",
-      "x": 50,
-      "y": 15
+      "x": 48,
+      "y": 17
     },
     {
       "type": "patchouli:item",
       "item": "#ingredient2",
-      "x": 6,
-      "y": 37
+      "x": 4,
+      "y": 40
     },
     {
       "type": "patchouli:item",
       "item": "#ingredient3",
-      "x": 28,
-      "y": 41
+      "x": 26,
+      "y": 44
     },
     {
       "type": "patchouli:item",
       "item": "#ingredient4",
-      "x": 50,
-      "y": 37
+      "x": 48,
+      "y": 40
     },
     {
       "type": "patchouli:item",
       "item": "#ingredient5",
-      "x": 6,
-      "y": 15
+      "x": 4,
+      "y": 17
     },
     {
       "type": "patchouli:item",
       "item": "#output",
-      "x": 92,
-      "y": 26
+      "x": 90,
+      "y": 28
     },
     {
       "type": "patchouli:text",
       "text": "#text",
       "x": 0,
-      "y": 62
+      "y": 66
     },
     {
       "type": "patchouli:header",
