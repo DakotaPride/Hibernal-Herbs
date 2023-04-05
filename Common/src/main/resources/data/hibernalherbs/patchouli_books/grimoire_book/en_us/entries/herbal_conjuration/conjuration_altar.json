@@ -25,12 +25,12 @@
     },
     {
       "type": "patchouli:text",
-      "text": "One of the more basic uses of Herbal Conjuration is to make powerful blends. Some more useful than others, but either way change the playing field for those participating in combat. A blend that you might find useful is a Regenerative Blend."
+      "text": "One of the more basic uses of Herbal Conjuration is to make powerful blends. Some more useful than others, but either way change the playing field for those participating in combat. A blend that you might find useful is a Regenerative Blend. This blend, as the name might suggest, provides regeneration to the target."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/regeneration",
-      "text": "Above, you'll find the conjuration for creating a Regenerative Blend."
+      "text": "Above, you'll find the conjuration for creating a Regenerative Blend. Other blends can be made in a similar manor, just with different herbs/ingredients."
     }
   ]
 }

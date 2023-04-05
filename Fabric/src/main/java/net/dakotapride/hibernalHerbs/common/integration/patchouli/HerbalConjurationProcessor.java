@@ -11,6 +11,8 @@ import net.minecraft.util.Identifier;
 import vazkii.patchouli.api.IComponentProcessor;
 import vazkii.patchouli.api.IVariable;
 import vazkii.patchouli.api.IVariableProvider;
+import vazkii.patchouli.api.PatchouliAPI;
+import vazkii.patchouli.common.base.PatchouliAPIImpl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -30,17 +32,26 @@ public class HerbalConjurationProcessor implements IComponentProcessor {
     @Override
     public IVariable process(@Nonnull String key) {
         if (recipe == null) return IVariable.empty();
-        return switch (key) {
-            case "output" -> IVariable.from(this.recipe.getOutput());
-            case "ingredient0" -> IVariable.from(this.getInput(0).getMatchingStacks());
-            case "ingredient1" -> IVariable.from(this.getInput(1).getMatchingStacks());
-            case "ingredient2" -> IVariable.from(this.getInput(2).getMatchingStacks());
-            case "ingredient3" -> IVariable.from(this.getInput(3).getMatchingStacks());
-            case "ingredient4" -> IVariable.from(this.getInput(4).getMatchingStacks());
-            case "ingredient5" -> IVariable.from(this.getInput(5).getMatchingStacks());
-            case "header" -> IVariable.from(Text.translatable("text.hibernalherbs.herbal_conjuration"));
-            default -> IVariable.empty();
-        };
+
+        if (key.equals("output")) {
+            return IVariable.from(this.recipe.getOutput());
+        } else if (key.equals("ingredient0")) {
+            return IVariable.from(this.getInput(0).getMatchingStacks());
+        } else if (key.equals("ingredient1")) {
+            return IVariable.from(this.getInput(1).getMatchingStacks());
+        } else if (key.equals("ingredient2")) {
+            return IVariable.from(this.getInput(2).getMatchingStacks());
+        } else if (key.equals("ingredient3")) {
+            return IVariable.from(this.getInput(3).getMatchingStacks());
+        } else if (key.equals("ingredient4")) {
+            return IVariable.from(this.getInput(4).getMatchingStacks());
+        } else if (key.equals("ingredient5")) {
+            return IVariable.from(this.getInput(5).getMatchingStacks());
+        } else if (key.equals("header")) {
+            return IVariable.from(Text.translatable("text.hibernalherbs.herbal_conjuration"));
+        }
+
+        return null;
     }
 
     private Ingredient getInput(int idx) {
