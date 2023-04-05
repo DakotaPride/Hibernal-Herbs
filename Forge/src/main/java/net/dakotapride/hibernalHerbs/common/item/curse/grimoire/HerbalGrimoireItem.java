@@ -29,25 +29,25 @@ public class HerbalGrimoireItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
 
-        if (player instanceof ServerPlayer && ModList.get().isLoaded("patchouli")
-                && itemStack.is(itemRegistry.HERBAL_GRIMOIRE.get())) {
+        if (player instanceof ServerPlayer && ModList.get().isLoaded("patchouli")) {
             ServerPlayer serverPlayer = (ServerPlayer) player;
-            PatchouliAPI.get().openBookGUI(serverPlayer, new ResourceLocation(MOD_ID, "grimoire_book"));
+
+            PatchouliAPI.get().openBookGUI(serverPlayer, new ResourceLocation(MOD_ID, "grimoire"));
 
             return InteractionResultHolder.success(itemStack);
-        } else {
-            return InteractionResultHolder.fail(itemStack);
         }
+
+        return InteractionResultHolder.fail(itemStack);
     }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag tooltipFlag) {
-        if (stack.is(itemRegistry.HERBAL_GRIMOIRE.get())) {
-            if (!ModList.get().isLoaded("patchouli")) {
-                tooltip.add(Component.translatable("text.hibernalherbs.patchouli"));
-                tooltip.add(Component.literal(" "));
-            }
+        if (!ModList.get().isLoaded("patchouli")) {
+            tooltip.add(Component.translatable("text.hibernalherbs.patchouli"));
+            tooltip.add(Component.literal(" "));
+        }
 
+        if (stack.is(itemRegistry.HERBAL_GRIMOIRE.get())) {
             tooltip.add(Component.translatable("text.hibernalherbs.grimoire").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
         } else if (stack.is(itemRegistry.SINGED_GRIMOIRE.get())) {
             tooltip.add(Component.translatable("text.hibernalherbs.grimoire.singed").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
