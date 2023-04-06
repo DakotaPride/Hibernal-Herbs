@@ -34,7 +34,12 @@
       "title": "Fertilizer Effectiveness"
     },
     {
-      "type": "patchouli:relations"
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbs/pounded",
+        "hibernalherbs:herbs/non_pounded"
+      ],
+      "text": "These entries may also be useful in your studies."
     }
   ]
 }
