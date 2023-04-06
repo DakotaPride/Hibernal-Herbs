@@ -2,7 +2,7 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
-      "item": "hibernalherbs:netherrack"
+      "item": "minecraft:netherrack"
     },
     {
       "item": "hibernalherbs:dried_fennkystral"
@@ -17,7 +17,7 @@
       "item": "hibernalherbs:dried_thyocielle"
     },
     {
-      "item": "hibernalherbs:dried_fennksytral"
+      "item": "hibernalherbs:dried_fennkystral"
     }
   ],
   "output": {

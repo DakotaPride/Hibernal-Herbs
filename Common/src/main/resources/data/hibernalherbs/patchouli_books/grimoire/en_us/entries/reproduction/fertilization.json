@@ -1,0 +1,22 @@
+{
+  "name": "Herbal Fertilization",
+  "icon": "hibernalherbs:herb_fertilizer",
+  "category": "hibernalherbs:herb_reproduction",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "As of recently, this system was changed! So any information found here will be in regards to the new system.$(br2)The old system is completely irrelevant here."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:herb_fertilizer",
+      "text": "In order to obtain Herb Fertilizer of any kind, you will first need to obtain something called Herb Humus of the respective type.",
+      "title": "Obtaining Fertilizer"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:herb_humus",
+      "text": "In its base state, it's not very useful. Which is because it will need to have an association attached to it!$(br2)By right-clicking on any vanilla wood-type, you can associate the Herb Humus with it!"
+    }
+  ]
+}
