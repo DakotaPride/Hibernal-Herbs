@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "type": "patchouli:text",
+      "text": "WORK IN PROGRESS PAGE",
+      "x": 25,
+      "y": 50
+    }
+  ]
+}
