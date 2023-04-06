@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:netherrack"
+    },
+    {
+      "item": "hibernalherbs:dried_fennkystral"
+    },
+    {
+      "item": "hibernalherbs:dried_thyocielle"
+    },
+    {
+      "item": "hibernalherbs:blend_regen_slow"
+    },
+    {
+      "item": "hibernalherbs:dried_thyocielle"
+    },
+    {
+      "item": "hibernalherbs:dried_fennksytral"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:blend_regen_slow_smoked",
+    "count": 1
+  }
+}

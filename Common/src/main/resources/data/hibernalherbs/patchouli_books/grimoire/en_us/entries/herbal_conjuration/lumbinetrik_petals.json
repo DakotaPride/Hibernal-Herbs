@@ -23,7 +23,6 @@
     {
       "type": "patchouli:relations",
       "entries": [
-        "hibernalherbs:herbal_conjuration/conjuration_altar",
         "hibernalherbs:herbal_conjuration/singed_grimoire",
         "hibernalherbs:herbal_conjuration/siliptium_petals"
       ],

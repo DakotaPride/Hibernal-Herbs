@@ -107,7 +107,8 @@
       "type": "patchouli:relations",
       "entries": [
         "hibernalherbs:herbs/dried",
-        "hibernalherbs:herbs/pounded"
+        "hibernalherbs:herbs/pounded",
+        "hibernalherbs:herbs/blends"
       ],
       "text": "These entries may also be useful in your studies."
     }

@@ -35,7 +35,9 @@
     {
       "type": "patchouli:relations",
       "entries": [
-        "hibernalherbs:herbs/dried"
+        "hibernalherbs:herbs/dried",
+        "hibernalherbs:herbal_conjuration/sigil/sigil",
+        "hibernalherbs:herbs/blends"
       ],
       "text": "These entries may also be useful in your studies."
     }

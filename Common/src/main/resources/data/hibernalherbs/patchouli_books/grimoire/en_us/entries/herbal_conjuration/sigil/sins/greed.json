@@ -1,6 +1,23 @@
 {
-  "name": "Lumbinetrik Petals",
-  "icon": "hibernalherbs:lumbinetrik_petals",
+  "name": "Herbal Sigil [Greed]",
+  "icon": "hibernalherbs:sigil_greed",
   "category": "hibernalherbs:herbal_conjuration",
-  "pages": []
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This Herbal Sigil is mainly used to create padlocks, this will eventually change, as I plan to have an update dedicated to these later on down the line."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/greed",
+      "text": "The conjuration for creating this sigil is shown above."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbal_conjuration/sigil/sigil"
+      ],
+      "text": "These entries may also be useful in your studies."
+    }
+  ]
 }
