@@ -1,0 +1,11 @@
+{
+  "name": "Herb Pouches",
+  "icon": "hibernalherbs:pouch",
+  "category": "hibernalherbs:misc",
+  "pages": [
+    {
+      "type": "hibernalherbs:work_in_progress",
+      "item": "hibernalherbs:pouch_scratched"
+    }
+  ]
+}

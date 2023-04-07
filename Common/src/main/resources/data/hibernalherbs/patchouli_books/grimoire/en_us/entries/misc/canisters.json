@@ -1,0 +1,11 @@
+{
+  "name": "Herb Canisters",
+  "icon": "hibernalherbs:canister",
+  "category": "hibernalherbs:misc",
+  "pages": [
+    {
+      "type": "hibernalherbs:work_in_progress",
+      "item": "hibernalherbs:canister_iron"
+    }
+  ]
+}

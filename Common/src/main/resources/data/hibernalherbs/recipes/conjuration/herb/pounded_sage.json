@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "minecraft:shulker_shell"
+    },
+    {
+      "item": "minecraft:end_stone"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "item": "hibernalherbs:pounded_tarragon"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "item": "minecraft:end_stone"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:pounded_sage",
+    "count": 2
+  }
+}

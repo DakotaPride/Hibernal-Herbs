@@ -95,24 +95,27 @@
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:thyme",
       "link_recipe": false,
-      "text": "Thyme is used to make a Blank Sigil. (as well as other previously mentioned uses)"
+      "text": "Thyme is not used very frequently. (as well as other previously mentioned uses)"
     },
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:verbena",
       "link_recipe": false,
-      "text": "Verbena is used to make two different Herbal Sigils: One aligned with Wrath and the other aligned with Sloth."
+      "text": "Verbena is used to make two different Herbal Sigils: One aligned with Wrath and the other aligned with Sloth. (as well as other previously mentioned uses)"
     },
     {
-      "type": "hibernalherbs:work_in_progress",
-      "item": "hibernalherbs:sage"
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:sage",
+      "text": "Sage is used to make Blank Sigils. However, this may change later on. (as well as other previously mentioned uses)"
     },
     {
       "type": "patchouli:relations",
       "entries": [
         "hibernalherbs:herbs/dried",
         "hibernalherbs:herbs/pounded",
-        "hibernalherbs:herbs/blends"
+        "hibernalherbs:herbs/blends",
+
+        "hibernalherbs:herbal_conjuration/sigil/sigil"
       ],
       "text": "These entries may also be useful in your studies."
     }

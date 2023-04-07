@@ -2,10 +2,10 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
-      "item": "hibernalherbs:thyme"
+      "item": "hibernalherbs:sage"
     },
     {
-      "item": "hibernalherbs:dried_tarragon"
+      "item": "hibernalherbs:dried_sage"
     },
     {
       "item": "hibernalherbs:dried_calendula"
@@ -22,7 +22,7 @@
       "item": "hibernalherbs:dried_calendula"
     },
     {
-      "item": "hibernalherbs:dried_chamomile"
+      "item": "hibernalherbs:dried_sage"
     }
   ],
   "output": {

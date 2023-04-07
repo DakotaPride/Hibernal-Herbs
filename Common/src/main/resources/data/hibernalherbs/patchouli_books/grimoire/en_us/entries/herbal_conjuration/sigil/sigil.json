@@ -109,7 +109,7 @@
     },
     {
       "type": "hibernalherbs:conjuration",
-      "recipe": "hibernalherbs:conjuration/sigil/Sloth",
+      "recipe": "hibernalherbs:conjuration/sigil/sloth",
       "text": "The conjuration for creating the Herbal Sigil aligned with Sloth is shown above."
     },
     {
