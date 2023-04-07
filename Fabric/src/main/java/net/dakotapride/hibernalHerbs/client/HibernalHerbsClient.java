@@ -37,6 +37,8 @@ public class HibernalHerbsClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CALENDULA, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SAGE, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.MYQUESTE_SAPLING, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.POTTED_ROSEMARY, RenderLayer.getCutout());
@@ -58,6 +60,8 @@ public class HibernalHerbsClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.POTTED_CALENDULA, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.POTTED_SAGE, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.POTTED_MYQUESTE_SAPLING, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CALENDULA_LANTERN, RenderLayer.getCutout());
@@ -76,6 +80,7 @@ public class HibernalHerbsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.ESSITTE_LANTERN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.THYOCIELLE_LANTERN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.FENNKYSTRAL_LANTERN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SAGE_LANTERN, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.MYQUESTE_LEAF_PILE, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.ROSEMARY_HERB_PILE, RenderLayer.getCutoutMipped());
@@ -94,6 +99,7 @@ public class HibernalHerbsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.FENNKYSTRAL_HERB_PILE, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.THYOCIELLE_HERB_PILE, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CALENDULA_HERB_PILE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SAGE_HERB_PILE, RenderLayer.getCutoutMipped());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CONJURATION_ALTAR, RenderLayer.getCutout());
 

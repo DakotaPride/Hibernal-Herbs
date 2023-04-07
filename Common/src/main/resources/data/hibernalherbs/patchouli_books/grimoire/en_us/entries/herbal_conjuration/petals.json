@@ -4,6 +4,9 @@
   "category": "hibernalherbs:herbal_conjuration",
   "pages": [
     {
+      "type": "hibernalherbs:work_in_progress"
+    },
+    {
       "type": "patchouli:text",
       "text": "While there are only 2 variations of petals, both of which not having a very specific theme, there are plans to make a more expanded 'system' of sorts past v0.8.$(br2)This will be where some general knowledge will be kept!"
     },

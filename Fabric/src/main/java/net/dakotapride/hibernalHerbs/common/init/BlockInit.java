@@ -7,6 +7,7 @@ import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.block.HerbBarrelBlock;
 import net.dakotapride.hibernalHerbs.common.block.HerbConjurationAltarBlock;
 import net.dakotapride.hibernalHerbs.common.block.HibernalLeafPileBlock;
+import net.dakotapride.hibernalHerbs.common.block.SageHerbBlock;
 import net.dakotapride.hibernalHerbs.common.gen.saplingGenerator.MyquesteSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -47,6 +48,8 @@ public class BlockInit {
 
     public static LeafPileBlock CALENDULA_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
 
+    public static LeafPileBlock SAGE_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
+
     public static HerbBarrelBlock ROSEMARY_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
     public static HerbBarrelBlock THYME_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
     public static HerbBarrelBlock TARRAGON_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
@@ -65,6 +68,8 @@ public class BlockInit {
     public static HerbBarrelBlock FENNKYSTRAL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
 
     public static HerbBarrelBlock CALENDULA_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+
+    public static HerbBarrelBlock SAGE_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
 
     public static FlowerBlock ROSEMARY =
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));
@@ -103,9 +108,10 @@ public class BlockInit {
     // Spring Herb(s)
 
     public static FlowerBlock CALENDULA =
-            new FlowerBlock(StatusEffects.GLOWING, 200, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY).luminance((state) -> {
-                return 6;
-            }));
+            new FlowerBlock(StatusEffects.GLOWING, 200, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY).luminance((state) -> 6));
+
+    public static FlowerBlock SAGE =
+            new SageHerbBlock(StatusEffects.LEVITATION, 200, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY).luminance((state) -> 8));
 
     public static FlowerPotBlock POTTED_ROSEMARY =
             new FlowerPotBlock(ROSEMARY, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY));
@@ -144,9 +150,10 @@ public class BlockInit {
     // Spring (Potted) Herb(s)
 
     public static FlowerPotBlock POTTED_CALENDULA =
-            new FlowerPotBlock(CALENDULA, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY).luminance((state) -> {
-                return 4;
-            }));
+            new FlowerPotBlock(CALENDULA, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY).luminance((state) -> 4));
+
+    public static FlowerPotBlock POTTED_SAGE =
+            new FlowerPotBlock(SAGE, FabricBlockSettings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY).luminance((state) -> 6));
 
     public static LanternBlock CALENDULA_LANTERN =
             new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
@@ -179,6 +186,8 @@ public class BlockInit {
     public static LanternBlock FENNKYSTRAL_LANTERN =
             new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
     public static LanternBlock THYOCIELLE_LANTERN =
+            new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
+    public static LanternBlock SAGE_LANTERN =
             new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN));
 
     public static SaplingBlock MYQUESTE_SAPLING = new SaplingBlock(new MyquesteSaplingGenerator(),
@@ -239,6 +248,8 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennkystral"), new BlockItem(FENNKYSTRAL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula"), CALENDULA);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula"), new BlockItem(CALENDULA, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sage"), SAGE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sage"), new BlockItem(SAGE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_rosemary"), POTTED_ROSEMARY);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_thyme"), POTTED_THYME);
@@ -256,6 +267,7 @@ public class BlockInit {
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_thyocielle"), POTTED_THYOCIELLE);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_fennkystral"), POTTED_FENNKYSTRAL);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_calendula"), POTTED_CALENDULA);
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_sage"), POTTED_SAGE);
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_myqueste_sapling"), POTTED_MYQUESTE_SAPLING);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "myqueste_sapling"), MYQUESTE_SAPLING);
@@ -328,6 +340,8 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennkystral_herb_pile"), new BlockItem(FENNKYSTRAL_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_herb_pile"), CALENDULA_HERB_PILE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_herb_pile"), new BlockItem(CALENDULA_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sage_herb_pile"), SAGE_HERB_PILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sage_herb_pile"), new BlockItem(SAGE_HERB_PILE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "rosemary_herb_barrel"), ROSEMARY_HERB_BARREL);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "rosemary_herb_barrel"), new BlockItem(ROSEMARY_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
@@ -361,6 +375,8 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennkystral_herb_barrel"), new BlockItem(FENNKYSTRAL_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_herb_barrel"), CALENDULA_HERB_BARREL);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_herb_barrel"), new BlockItem(CALENDULA_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sage_herb_barrel"), SAGE_HERB_BARREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sage_herb_barrel"), new BlockItem(SAGE_HERB_BARREL, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "calendula_lantern"), CALENDULA_LANTERN);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula_lantern"), new BlockItem(CALENDULA_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
@@ -394,6 +410,8 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "thyocielle_lantern"), new BlockItem(THYOCIELLE_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "fennkystral_lantern"), FENNKYSTRAL_LANTERN);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "fennkystral_lantern"), new BlockItem(FENNKYSTRAL_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sage_lantern"), SAGE_LANTERN);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sage_lantern"), new BlockItem(SAGE_LANTERN, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "conjuration_altar"), CONJURATION_ALTAR);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "conjuration_altar"), new BlockItem(CONJURATION_ALTAR, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS)));

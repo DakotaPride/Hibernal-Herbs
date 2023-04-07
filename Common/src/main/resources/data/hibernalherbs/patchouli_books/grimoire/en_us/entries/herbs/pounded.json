@@ -104,6 +104,10 @@
       "text": "Pounded Verbena can be used to create Diminished, Conflicting, Regenerative, and Incinerating Blends. (as well as other previously mentioned uses)"
     },
     {
+      "type": "hibernalherbs:work_in_progress",
+      "item": "hibernalherbs:pounded_sage"
+    },
+    {
       "type": "patchouli:relations",
       "entries": [
         "hibernalherbs:herbs/non_pounded",

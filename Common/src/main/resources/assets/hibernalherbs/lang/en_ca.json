@@ -17,6 +17,8 @@
 
   "block.hibernalherbs.calendula": "Calendula",
 
+  "block.hibernalherbs.sage": "Sage",
+
   "item.hibernalherbs.pounded_rosemary": "Pounded Rosemary",
   "item.hibernalherbs.pounded_thyme": "Pounded Thyme",
   "item.hibernalherbs.pounded_tarragon": "Pounded Tarragon",
@@ -35,6 +37,8 @@
 
   "item.hibernalherbs.pounded_calendula": "Pounded Calendula",
 
+  "item.hibernalherbs.pounded_sage": "Pounded Sage",
+
   "item.hibernalherbs.dried_calendula": "Dried Calendula",
   "item.hibernalherbs.dried_rosemary": "Dried Rosemary",
   "item.hibernalherbs.dried_thyme": "Dried Thyme",
@@ -51,6 +55,7 @@
   "item.hibernalherbs.dried_essitte": "Dried Essitte",
   "item.hibernalherbs.dried_thyocielle": "Dried Thyocielle",
   "item.hibernalherbs.dried_fennkystral": "Dried Fennkystral",
+  "item.hibernalherbs.dried_sage": "Dried Sage",
 
   "block.hibernalherbs.potted_rosemary": "Potted Rosemary",
   "block.hibernalherbs.potted_thyme": "Potted Thyme",
@@ -70,6 +75,8 @@
 
   "block.hibernalherbs.potted_calendula": "Potted Calendula",
 
+  "block.hibernalherbs.potted_sage": "Potted Sage",
+
   "block.hibernalherbs.rosemary_herb_barrel": "Herb Barrel",
   "block.hibernalherbs.thyme_herb_barrel": "Herb Barrel",
   "block.hibernalherbs.tarragon_herb_barrel": "Herb Barrel",
@@ -87,6 +94,8 @@
   "block.hibernalherbs.fennkystral_herb_barrel": "Herb Barrel",
 
   "block.hibernalherbs.calendula_herb_barrel": "Herb Barrel",
+
+  "block.hibernalherbs.sage_herb_barrel": "Herb Barrel",
 
   "block.hibernalherbs.rosemary_herb_pile": "Herb Pile",
   "block.hibernalherbs.thyme_herb_pile": "Herb Pile",
@@ -106,6 +115,8 @@
 
   "block.hibernalherbs.calendula_herb_pile": "Herb Pile",
 
+  "block.hibernalherbs.sage_herb_pile": "Herb Pile",
+
   "text.hibernalherbs.pile.rosemary": "  - Rosemary",
   "text.hibernalherbs.pile.thyme": "  - Thyme",
   "text.hibernalherbs.pile.tarragon": "  - Tarragon",
@@ -123,6 +134,8 @@
   "text.hibernalherbs.pile.fennkystral": "  - Fennkystral",
 
   "text.hibernalherbs.pile.calendula": "  - Calendula",
+
+  "text.hibernalherbs.pile.sage": "  - Sage",
 
   "item.hibernalherbs.blend_regeneration": "Regenerative Blend",
   "item.hibernalherbs.blend_poison": "Virulent Blend",
@@ -234,6 +247,7 @@
   "block.hibernalherbs.essitte_lantern": "Essitte Lantern",
   "block.hibernalherbs.thyocielle_lantern": "Thyocielle Lantern",
   "block.hibernalherbs.fennkystral_lantern": "Fennkystral Lantern",
+  "block.hibernalherbs.sage_lantern": "Sage Lantern",
 
   "block.hibernalherbs.conjuration_altar": "Conjuration Altar",
 
@@ -378,7 +392,7 @@
 
   "text.hibernalherbs.patchouli": "Install Patchouli For Full Usage Of This Item",
   "text.hibernalherbs.grimoire": "Sinful Texts Regarding The Herbal Testaments...",
-  "text.hibernalherbs.grimoire.singed": "Burnt To Ash, Not Very Useful...",
+  "text.hibernalherbs.grimoire.singed": "Burnt by Sin, It Might Still Have Some Useful Knowledge...",
 
   "text.hibernalherbs.wrath.unholy_blessing": "You Have Gained An Unholy Blessing From The Prince Of Wrath",
   "text.hibernalherbs.pride.unholy_blessing": "You Have Gained An Unholy Blessing From The Prince Of Pride",

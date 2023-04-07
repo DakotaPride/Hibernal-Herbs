@@ -16,7 +16,7 @@
       "type": "patchouli:relations",
       "entries": [
         "hibernalherbs:herbal_conjuration/ring/gluttonous",
-        "hibernalherbs:herbal_conjuration/sigils/sins/gluttony"
+        "hibernalherbs:herbal_conjuration/sigil/sigil"
       ],
       "text": "These entries may also be useful in your studies."
     }

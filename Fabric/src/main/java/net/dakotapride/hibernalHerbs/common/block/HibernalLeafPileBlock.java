@@ -104,6 +104,11 @@ public class HibernalLeafPileBlock extends LeafPileBlock {
 
                 tooltip.add(Text.translatable(string).formatted(formattingColour));
             }
+            if (stack.isOf(BlockInit.SAGE_HERB_PILE.asItem())) {
+                string = "text.hibernalherbs.pile.sage";
+
+                tooltip.add(Text.translatable(string).formatted(formattingColour));
+            }
         }
     }
 }

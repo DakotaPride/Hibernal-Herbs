@@ -18,6 +18,8 @@
 
     "hibernalherbs:calendula",
 
+    "hibernalherbs:sage",
+
     {
       "required": false,
       "id": "hibernalherbs:bloforia"

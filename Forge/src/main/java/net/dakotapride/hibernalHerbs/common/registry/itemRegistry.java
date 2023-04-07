@@ -25,49 +25,49 @@ public class itemRegistry implements FoodComponentList {
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
 
     public static final RegistryObject<Item> HERBAL_GRIMOIRE = ITEMS.register("grimoire",
-            () -> new HerbalGrimoireItem(new Item.Properties().stacksTo(1)));
+            () -> new HerbalGrimoireItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> SINGED_GRIMOIRE = ITEMS.register("singed_grimoire",
-            () -> new HerbalGrimoireItem(new Item.Properties().stacksTo(1)));
+            () -> new HerbalGrimoireItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> SILIPTIUM_PETAL = ITEMS.register("sin_petals",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> LUMBINETRIK_PETAL = ITEMS.register("lumbinetrik_petals",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> VEXATION_PADLOCK_BOUND = ITEMS.register("bound_padlock_wrath",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> VEXATION_PADLOCK = ITEMS.register("padlock_wrath",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> PIQUE_PADLOCK_BOUND = ITEMS.register("bound_padlock_pride",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> PIQUE_PADLOCK = ITEMS.register("padlock_pride",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> GOURMANDIZING_PADLOCK_BOUND = ITEMS.register("bound_padlock_gluttony",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> GOURMANDIZING_PADLOCK = ITEMS.register("padlock_gluttony",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> AVARICE_PADLOCK_BOUND = ITEMS.register("bound_padlock_greed",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> AVARICE_PADLOCK = ITEMS.register("padlock_greed",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> SPITEFUL_PADLOCK_BOUND = ITEMS.register("bound_padlock_envy",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> SPITEFUL_PADLOCK = ITEMS.register("padlock_envy",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> APATHY_PADLOCK_BOUND = ITEMS.register("bound_padlock_sloth",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> APATHY_PADLOCK = ITEMS.register("padlock_sloth",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> SALACIOUS_PADLOCK_BOUND = ITEMS.register("bound_padlock_lust",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> SALACIOUS_PADLOCK = ITEMS.register("padlock_lust",
-            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
+            () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> RING = ITEMS.register("ring",
             () -> new Item(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
@@ -107,9 +107,9 @@ public class itemRegistry implements FoodComponentList {
             () -> new HerbalSigilItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> MYQUESTE_BOAT = ITEMS.register("myqueste_boat",
-            () -> new MyquesteBoatItem(false, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties().stacksTo(1)));
+            () -> new MyquesteBoatItem(false, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> MYQUESTE_CHEST_BOAT = ITEMS.register("myqueste_chest_boat",
-            () -> new MyquesteBoatItem(true, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties().stacksTo(1)));
+            () -> new MyquesteBoatItem(true, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> MYQUESTE_SIGN = ITEMS.register("myqueste_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16).tab(HibernalHerbsForge.HIBERNAL_HERBS),
@@ -119,51 +119,51 @@ public class itemRegistry implements FoodComponentList {
             () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> HERB_FERTILIZER_OAK = ITEMS.register("herb_fertilizer_oak",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_FERTILIZER_BIRCH = ITEMS.register("herb_fertilizer_birch",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_FERTILIZER_DARK_OAK = ITEMS.register("herb_fertilizer_dark_oak",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_FERTILIZER_ACACIA = ITEMS.register("herb_fertilizer_acacia",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_FERTILIZER_JUNGLE = ITEMS.register("herb_fertilizer_jungle",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_FERTILIZER_SPRUCE = ITEMS.register("herb_fertilizer_spruce",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_FERTILIZER_MANGROVE = ITEMS.register("herb_fertilizer_mangrove",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_FERTILIZER_CRIMSON = ITEMS.register("herb_fertilizer_crimson",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_FERTILIZER_WARPED = ITEMS.register("herb_fertilizer_warped",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> HERB_FERTILIZER_MYQUESTE = ITEMS.register("herb_fertilizer_myqueste",
-            () -> new HerbFertilizerItem(new Item.Properties()));
+            () -> new HerbFertilizerItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> HERB_HUMUS = ITEMS.register("herb_humus",
             () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> HERB_HUMUS_OAK = ITEMS.register("herb_humus_oak",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_HUMUS_BIRCH = ITEMS.register("herb_humus_birch",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_HUMUS_DARK_OAK = ITEMS.register("herb_humus_dark_oak",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_HUMUS_ACACIA = ITEMS.register("herb_humus_acacia",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_HUMUS_JUNGLE = ITEMS.register("herb_humus_jungle",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_HUMUS_SPRUCE = ITEMS.register("herb_humus_spruce",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_HUMUS_MANGROVE = ITEMS.register("herb_humus_mangrove",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_HUMUS_CRIMSON = ITEMS.register("herb_humus_crimson",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> HERB_HUMUS_WARPED = ITEMS.register("herb_humus_warped",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
     public static final RegistryObject<Item> HERB_HUMUS_MYQUESTE = ITEMS.register("herb_humus_myqueste",
-            () -> new HerbHumusItem(new Item.Properties()));
+            () -> new HerbHumusItem(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
 
 
     // Refined Pouches/Canisters
@@ -172,11 +172,11 @@ public class itemRegistry implements FoodComponentList {
     public static final RegistryObject<Item> CANISTER_IRON = ITEMS.register("canister_iron",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 128));
     public static final RegistryObject<Item> POUCH_STITCHED = ITEMS.register("pouch_stitched",
-            () -> new HerbPouchItem(new Item.Properties().stacksTo(1), 192));
+            () -> new HerbPouchItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 192));
     public static final RegistryObject<Item> CANISTER_AMETHYST = ITEMS.register("canister_amethyst",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 256));
     public static final RegistryObject<Item> POUCH_PROPER = ITEMS.register("pouch_proper",
-            () -> new HerbPouchItem(new Item.Properties().stacksTo(1), 256));
+            () -> new HerbPouchItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 256));
     public static final RegistryObject<Item> CANISTER_DIAMOND = ITEMS.register("canister_diamond",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS), 384));
 
@@ -242,6 +242,10 @@ public class itemRegistry implements FoodComponentList {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .fast().nutrition(8).saturationMod(6f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
 
+    public static final RegistryObject<Item> POUNDED_SAGE = ITEMS.register("pounded_sage",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .fast().nutrition(4).saturationMod(3f).build()).tab(HibernalHerbsForge.POUNDED_HERBS)));
+
     public static final RegistryObject<Item> DRIED_CALENDULA = ITEMS.register("dried_calendula",
             () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_ROSEMARY = ITEMS.register("dried_rosemary",
@@ -273,6 +277,8 @@ public class itemRegistry implements FoodComponentList {
     public static final RegistryObject<Item> DRIED_THYOCIELLE = ITEMS.register("dried_thyocielle",
             () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
     public static final RegistryObject<Item> DRIED_FENNKYSTRAL = ITEMS.register("dried_fennkystral",
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
+    public static final RegistryObject<Item> DRIED_SAGE = ITEMS.register("dried_sage",
             () -> new Item(new Item.Properties().tab(HibernalHerbsForge.POUNDED_HERBS)));
 
     // Compat (Pounded) Herbs (Forge)

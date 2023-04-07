@@ -104,6 +104,12 @@ public class HerbBarrelBlock extends Block {
 
                 tooltip.add(Text.translatable(string).formatted(formattingColour));
             }
+
+            if (stack.isOf(BlockInit.SAGE_HERB_BARREL.asItem())) {
+                string = "text.hibernalherbs.pile.sage";
+
+                tooltip.add(Text.translatable(string).formatted(formattingColour));
+            }
         }
     }
 }

@@ -18,6 +18,8 @@
 
     "hibernalherbs:dried_calendula",
 
+    "hibernalherbs:dried_sage",
+
     {
       "required": false,
       "id": "hibernalherbs:dried_bloforia"

@@ -28,19 +28,19 @@ public class PackLoader {
             if (event.getPackType() == PackType.CLIENT_RESOURCES)
             {
                 if (ModList.get().isLoaded("eatinganimation")) {
-                    var eatingAnimationResourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("eatinganimation");
+                    var eatingAnimationResourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("resourcepacks/eatinganimations");
                     var eatingAnimationPackResources = new PathPackResources(ModList.get().getModFileById(MOD_ID).getFile().getFileName() + ":" + eatingAnimationResourcePath, eatingAnimationResourcePath);
                     var eatingAnimationMetaDataSelection = eatingAnimationPackResources.getMetadataSection(PackMetadataSection.SERIALIZER);
                     if (eatingAnimationMetaDataSelection != null)
                     {
                         event.addRepositorySource((packConsumer, packConstructor) ->
                                 packConsumer.accept(packConstructor.create(
-                                        "eatinganimation", Component.literal("hibernalherbs/eatinganimation"), false,
+                                        "eatinganimation", Component.literal("hibernalherbs/eatinganimations"), false,
                                         () -> eatingAnimationPackResources, eatingAnimationMetaDataSelection, Pack.Position.BOTTOM, PackSource.BUILT_IN, false)));
                     }
                 }
 
-                var bareBonesResourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("barebones");
+                var bareBonesResourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("resourcepacks/barebones");
                 var bareBonesPackResources = new PathPackResources(ModList.get().getModFileById(MOD_ID).getFile().getFileName() + ":" + bareBonesResourcePath, bareBonesResourcePath);
                 var bareBonesMetaDataSelection = bareBonesPackResources.getMetadataSection(PackMetadataSection.SERIALIZER);
                 if (bareBonesMetaDataSelection != null)

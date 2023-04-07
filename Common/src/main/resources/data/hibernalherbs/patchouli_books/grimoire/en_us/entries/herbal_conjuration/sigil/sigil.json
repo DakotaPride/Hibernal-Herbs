@@ -79,15 +79,49 @@
       "text": "Advanced Mastery Sigils, as listed prior, are used for Advanced Gluttonous Rings and Padlocks."
     },
     {
+      "type": "patchouli:text",
+      "text": "The following conjurations are for creating the Herbal Sigils aligned with sin."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/envy",
+      "text": "The conjuration for creating the Herbal Sigil aligned with Envy is shown above."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/pride",
+      "text": "The conjuration for creating the Herbal Sigil aligned with Pride is shown above."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/wrath",
+      "text": "The conjuration for creating the Herbal Sigil aligned with Wrath is shown above."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/gluttony",
+      "text": "The conjuration for creating the Herbal Sigil aligned with gluttony is shown above."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/greed",
+      "text": "The conjuration for creating the Herbal Sigil aligned with Greed is shown above."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/Sloth",
+      "text": "The conjuration for creating the Herbal Sigil aligned with Sloth is shown above."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/lust",
+      "text": "The conjuration for creating the Herbal Sigil aligned with Lust is shown above."
+    },
+    {
       "type": "patchouli:relations",
       "entries": [
-        "hibernalherbs:herbal_conjuration/sigil/sins/envy",
-        "hibernalherbs:herbal_conjuration/sigil/sins/gluttony",
-        "hibernalherbs:herbal_conjuration/sigil/sins/greed",
-        "hibernalherbs:herbal_conjuration/sigil/sins/lust",
-        "hibernalherbs:herbal_conjuration/sigil/sins/pride",
-        "hibernalherbs:herbal_conjuration/sigil/sins/sloth",
-        "hibernalherbs:herbal_conjuration/sigil/sins/wrath"
+        "hibernalherbs:herbal_conjuration/padlocks",
+        "hibernalherbs:herbal_conjuration/petals"
       ],
       "text": "These entries may also be useful in your studies."
     }

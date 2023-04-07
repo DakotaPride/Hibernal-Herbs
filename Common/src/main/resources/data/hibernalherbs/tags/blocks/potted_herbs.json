@@ -18,6 +18,8 @@
 
     "hibernalherbs:potted_calendula",
 
+    "hibernalherbs:potted_sage",
+
     {
       "required": false,
       "id": "hibernalherbs:potted_bloforia"

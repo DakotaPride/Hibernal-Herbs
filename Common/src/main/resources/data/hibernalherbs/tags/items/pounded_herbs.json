@@ -18,6 +18,8 @@
 
     "hibernalherbs:pounded_calendula",
 
+    "hibernalherbs:pounded_sage",
+
     {
       "required": false,
       "id": "hibernalherbs:pounded_bloforia"

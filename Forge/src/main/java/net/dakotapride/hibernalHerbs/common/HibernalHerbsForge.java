@@ -168,6 +168,7 @@ public class HibernalHerbsForge {
             nonNullList.add(0, itemRegistry.REGENERATIVE_BLEND.get().getDefaultInstance());
 
             nonNullList.add(0, blockRegistry.BLOFORIA_HERB_PILE.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.SAGE_HERB_PILE.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.FENNKYSTRAL_HERB_PILE.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.THYOCIELLE_HERB_PILE.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.VERBENA_HERB_PILE.get().asItem().getDefaultInstance());
@@ -187,6 +188,7 @@ public class HibernalHerbsForge {
             nonNullList.add(0, blockRegistry.MYQUESTE_LEAF_PILE.get().asItem().getDefaultInstance());
 
             nonNullList.add(0, blockRegistry.BLOFORIA_BARREL.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.SAGE_BARREL.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.FENNKYSTRAL_BARREL.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.THYOCIELLE_BARREL.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.VERBENA_BARREL.get().asItem().getDefaultInstance());
@@ -205,6 +207,7 @@ public class HibernalHerbsForge {
             nonNullList.add(0, blockRegistry.CALENDULA_BARREL.get().asItem().getDefaultInstance());
 
             nonNullList.add(0, blockRegistry.BLOFORIA_LANTERN.get().asItem().getDefaultInstance());
+            nonNullList.add(0, blockRegistry.SAGE_LANTERN.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.FENNKYSTRAL_LANTERN.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.THYOCIELLE_LANTERN.get().asItem().getDefaultInstance());
             nonNullList.add(0, blockRegistry.VERBENA_LANTERN.get().asItem().getDefaultInstance());
@@ -246,24 +249,42 @@ public class HibernalHerbsForge {
             nonNullList.add(0, itemRegistry.POUNDED_BLOFORIA.get().getDefaultInstance());
 
 
+            nonNullList.add(0, itemRegistry.DRIED_SAGE.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.POUNDED_SAGE.get().getDefaultInstance());
+
             nonNullList.add(0, itemRegistry.DRIED_CALENDULA.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_CALENDULA.get().getDefaultInstance());
 
+            nonNullList.add(0, itemRegistry.DRIED_FENNKYSTRAL.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_FENNKYSTRAL.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_THYOCIELLE.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_THYOCIELLE.get().getDefaultInstance());
 
+            nonNullList.add(0, itemRegistry.DRIED_VERBENA.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_VERBENA.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_THYME.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_THYME.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_TARRAGON.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_TARRAGON.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_SORREL.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_SORREL.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_ROSEMARY.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_ROSEMARY.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_PUNUEL.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_PUNUEL.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_MARJORAM.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_MARJORAM.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_FENNSEL.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_FENNSEL.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_ESSITTE.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_ESSITTE.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_CHIVES.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_CHIVES.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_CHERVIL.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_CHERVIL.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_CHAMOMILE.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_CHAMOMILE.get().getDefaultInstance());
+            nonNullList.add(0, itemRegistry.DRIED_CEILLIS.get().getDefaultInstance());
             nonNullList.add(0, itemRegistry.POUNDED_CEILLIS.get().getDefaultInstance());
         }
     };
@@ -277,6 +298,8 @@ public class HibernalHerbsForge {
         @Override
         public void fillItemList(NonNullList<ItemStack> nonNullList) {
             nonNullList.add(0, blockRegistry.BLOFORIA.get().asItem().getDefaultInstance());
+
+            nonNullList.add(0, blockRegistry.SAGE.get().asItem().getDefaultInstance());
 
             nonNullList.add(0, blockRegistry.CALENDULA.get().asItem().getDefaultInstance());
 
@@ -357,6 +380,8 @@ public class HibernalHerbsForge {
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.CALENDULA.getId(), blockRegistry.POTTED_CALENDULA);
 
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.SAGE.getId(), blockRegistry.POTTED_SAGE);
+
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(blockRegistry.MYQUESTE_SAPLING.getId(), blockRegistry.POTTED_MYQUESTE_SAPLING);
 
         });
@@ -380,7 +405,29 @@ public class HibernalHerbsForge {
             ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_FENNKYSTRAL.get(), 0.3f);
 
             ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_CALENDULA.get(), 0.3f);
+
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.POUNDED_SAGE.get(), 0.3f);
+
             ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_CALENDULA.get(), 0.15f);
+
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_CEILLIS.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_CHAMOMILE.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_CHERVIL.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_CHIVES.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_ESSITTE.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_FENNSEL.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_MARJORAM.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_PUNUEL.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_ROSEMARY.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_SORREL.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_TARRAGON.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_THYME.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_VERBENA.get(), 0.15f);
+
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_THYOCIELLE.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_FENNKYSTRAL.get(), 0.15f);
+
+            ComposterBlock.COMPOSTABLES.put(itemRegistry.DRIED_SAGE.get(), 0.15f);
 
             ComposterBlock.COMPOSTABLES.put(blockRegistry.CEILLIS.get().asItem(), 0.3f);
             ComposterBlock.COMPOSTABLES.put(blockRegistry.CHAMOMILE.get().asItem(), 0.3f);
@@ -400,6 +447,8 @@ public class HibernalHerbsForge {
             ComposterBlock.COMPOSTABLES.put(blockRegistry.FENNKYSTRAL.get().asItem(), 0.3f);
 
             ComposterBlock.COMPOSTABLES.put(blockRegistry.CALENDULA.get().asItem(), 0.3f);
+
+            ComposterBlock.COMPOSTABLES.put(blockRegistry.SAGE.get().asItem(), 0.3f);
 
             ComposterBlock.COMPOSTABLES.put(blockRegistry.MYQUESTE_SAPLING.get().asItem(), 0.3f);
             ComposterBlock.COMPOSTABLES.put(blockRegistry.MYQUESTE_LEAVES.get().asItem(), 0.3f);
@@ -445,7 +494,4 @@ public class HibernalHerbsForge {
         }
     }
 
-    public static ResourceLocation createLocation(String path) {
-        return new ResourceLocation(MOD_ID, path);
-    }
 }

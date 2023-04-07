@@ -17,68 +17,68 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
 
-    public static Item HERBAL_GRIMOIRE = new HerbalGrimoireItem(new FabricItemSettings().maxCount(1));
-    public static Item SINGED_GRIMOIRE = new HerbalGrimoireItem(new FabricItemSettings().maxCount(1));
+    public static Item HERBAL_GRIMOIRE = new HerbalGrimoireItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item SINGED_GRIMOIRE = new HerbalGrimoireItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static Item SILIPTIUM_PETAL = new Item(new FabricItemSettings());
-    public static Item LUMBINETRIK_PETAL = new Item(new FabricItemSettings());
+    public static Item SILIPTIUM_PETAL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item LUMBINETRIK_PETAL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item VEXATION_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item VEXATION_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static Item PIQUE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item PIQUE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item PIQUE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item PIQUE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static Item GOURMANDIZING_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item GOURMANDIZING_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item GOURMANDIZING_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item GOURMANDIZING_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static Item AVARICE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item AVARICE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item AVARICE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item AVARICE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static Item SPITEFUL_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item SPITEFUL_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item SPITEFUL_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item SPITEFUL_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static Item APATHY_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item APATHY_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item APATHY_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item APATHY_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
-    public static Item SALACIOUS_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item SALACIOUS_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item SALACIOUS_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+    public static Item SALACIOUS_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static Item RING = new Item(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item ADV_GLUTTONOUS_RING = new AdvancedGluttonousRingItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static Item CRACKED_SIGIL = new Item(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL_LUST = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL_GLUTTONY = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL_WRATH = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL_GREED = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL_ENVY = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static Item SIGIL_CONFIGURATION = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL_CONFIGURATION_ADVANCED = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL_MASTERY = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SIGIL_MASTERY_ADVANCED = new HerbalSigilItem(new FabricItemSettings()
-            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1));
+            .group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS).maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
     public static Item POUNDED_ROSEMARY = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
@@ -109,9 +109,9 @@ public class ItemInit {
 
     // Resource Dependant (Pounded) Herbs
 
-    public static Item POUNDED_THYOCIELLE = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+    public static Item POUNDED_THYOCIELLE = new Item(new FabricItemSettings().food(FoodComponentInit.ARTIFICIAL_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item POUNDED_FENNKYSTRAL = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+    public static Item POUNDED_FENNKYSTRAL = new Item(new FabricItemSettings().food(FoodComponentInit.ARTIFICIAL_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
     // Spring (Pounded) Herb(s)
@@ -119,22 +119,26 @@ public class ItemInit {
     public static Item POUNDED_CALENDULA = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
             .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
 
-    public static Item DRIED_CALENDULA = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_ROSEMARY = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_THYME = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_TARRAGON = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_CHAMOMILE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_CHIVES = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_VERBENA = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_SORREL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_MARJORAM = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_CHERVIL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_FENNSEL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_CEILLIS = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_PUNUEL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_ESSITTE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_THYOCIELLE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
-    public static Item DRIED_FENNKYSTRAL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+    public static Item POUNDED_SAGE = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB)
+            .group(HibernalHerbsMod.groupManager.POUNDED_HERBS));
+
+    public static Item DRIED_CALENDULA = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_ROSEMARY = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_THYME = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_TARRAGON = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_CHAMOMILE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_CHIVES = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_VERBENA = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_SORREL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_MARJORAM = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_CHERVIL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_FENNSEL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_CEILLIS = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_PUNUEL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_ESSITTE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_THYOCIELLE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_FENNKYSTRAL = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
+    public static Item DRIED_SAGE = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.POUNDED_HERBS).food(FoodComponentInit.DRIED_HERB));
 
     public static HerbBlendItem REGENERATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.REGENERATIVE_BLEND)
             .maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
@@ -293,6 +297,7 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyocielle"), POUNDED_THYOCIELLE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_fennkystral"), POUNDED_FENNKYSTRAL);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_calendula"), POUNDED_CALENDULA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_sage"), POUNDED_SAGE);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_calendula"), DRIED_CALENDULA);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_rosemary"), DRIED_ROSEMARY);
@@ -310,6 +315,7 @@ public class ItemInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_essitte"), DRIED_ESSITTE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_thyocielle"), DRIED_THYOCIELLE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_fennkystral"), DRIED_FENNKYSTRAL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_sage"), DRIED_SAGE);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regeneration"), REGENERATIVE_BLEND);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_poison"), VIRULENT_BLEND);

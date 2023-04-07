@@ -8,6 +8,9 @@ import net.minecraft.item.FoodComponent;
 public class FoodComponentInit implements FoodComponentList {
 
     public static final FoodComponent POUNDED_HERB = (new FoodComponent.Builder()).snack().hunger(4).saturationModifier(0.3F).build();
+    public static final FoodComponent DRIED_HERB = (new FoodComponent.Builder()).snack().hunger(8).saturationModifier(0.5F).build();
+
+    public static final FoodComponent ARTIFICIAL_HERB = (new FoodComponent.Builder()).snack().hunger(8).saturationModifier(0.6F).build();
 
     public static final FoodComponent REGENERATIVE_BLEND = (new FoodComponent.Builder()).alwaysEdible().hunger(7).saturationModifier(0.6F)
             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, healthDuration, baseMultiplier), baseChance).build();

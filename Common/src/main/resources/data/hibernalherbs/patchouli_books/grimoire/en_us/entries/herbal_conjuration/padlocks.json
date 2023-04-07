@@ -4,9 +4,12 @@
   "category": "hibernalherbs:herbal_conjuration",
   "pages": [
     {
+      "type": "hibernalherbs:work_in_progress"
+    },
+    {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/trinket/padlocks/lust_padlock",
-      "text": "Padlocks are created by combining your Singed Grimoire, the corresponding Sigil, and a few other ingredients in a conjuration, as shown above.$(br2)There currently exists 7 padlocks, each for a Prince of Sin."
+      "text": "The conjuration to create the Unbound Padlock for the Prince of Lust is shown above.$(br2)There currently exists 7 padlocks, each for a Prince of Sin."
     }
   ]
 }

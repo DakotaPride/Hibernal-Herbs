@@ -82,6 +82,11 @@ public class FeaturesInit {
                     ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                             new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.CALENDULA)))));
 
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> SAGE_CONFIGURED =
+            ConfiguredFeatures.register(MOD_ID + ":herb_sage_configured", Feature.FLOWER,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(16, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.SAGE)))));
+
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> MYQUESTE_CONFIGURED =
             ConfiguredFeatures.register(MOD_ID + ":tree_myqueste_configured", Feature.TREE, (new TreeFeatureConfig.Builder(BlockStateProvider.of
                     (BlockInit.MYQUESTE_LOG), new StraightTrunkPlacer(5, 2, 1), BlockStateProvider.of(BlockInit.MYQUESTE_LEAVES),
@@ -145,6 +150,10 @@ public class FeaturesInit {
             CALENDULA_CONFIGURED, RarityFilterPlacementModifier.of(2), SquarePlacementModifier.of(),
             PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
+    public static final RegistryEntry<PlacedFeature> SAGE_PLACED = PlacedFeatures.register(MOD_ID + ":sage_placed",
+            SAGE_CONFIGURED, RarityFilterPlacementModifier.of(2), SquarePlacementModifier.of(),
+            PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
     public static final RegistryEntry<PlacedFeature> MYQUESTE_PLACED =
             PlacedFeatures.register(MOD_ID + ":myqueste_placed", MYQUESTE_SPAWN,
                     VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
@@ -181,6 +190,9 @@ public class FeaturesInit {
 
         BiomeModifications.addFeature(BiomeSelectors.tag(util.HAS_HERBS),
                 GenerationStep.Feature.VEGETAL_DECORATION, CALENDULA_PLACED.getKey().get());
+
+        BiomeModifications.addFeature(BiomeSelectors.tag(util.HAS_HERBS),
+                GenerationStep.Feature.VEGETAL_DECORATION, SAGE_PLACED.getKey().get());
 
         BiomeModifications.addFeature(BiomeSelectors.tag(util.HAS_HERBS),
                 GenerationStep.Feature.VEGETAL_DECORATION, MYQUESTE_PLACED.getKey().get());

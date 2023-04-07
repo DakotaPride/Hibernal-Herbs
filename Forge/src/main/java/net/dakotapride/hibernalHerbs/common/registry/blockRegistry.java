@@ -72,6 +72,9 @@ public class blockRegistry {
     public static RegistryObject<Block> CALENDULA_HERB_PILE = registerBlock("calendula_herb_pile",
             () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
 
+    public static RegistryObject<Block> SAGE_HERB_PILE = registerBlock("sage_herb_pile",
+            () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
+
     public static RegistryObject<Block> BLOFORIA_HERB_PILE = registerBlock("bloforia_herb_pile",
             () -> new HibernalLeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
 
@@ -128,7 +131,11 @@ public class blockRegistry {
     // Spring Herbs (Forge)
 
     public static final RegistryObject<Block> CALENDULA = registerBlock("calendula",
-            () -> new FlowerBlock(MobEffects.GLOWING, 240,
+            () -> new FlowerBlock(MobEffects.GLOWING, 200,
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
+
+    public static final RegistryObject<Block> SAGE = registerBlock("sage",
+            () -> new FlowerBlock(MobEffects.LEVITATION, 180,
                     BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
 
     public static final RegistryObject<Block> CALENDULA_LANTERN = registerBlock("calendula_lantern",
@@ -162,6 +169,8 @@ public class blockRegistry {
     public static final RegistryObject<Block> THYOCIELLE_LANTERN = registerBlock("thyocielle_lantern",
             () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
     public static final RegistryObject<Block> FENNKYSTRAL_LANTERN = registerBlock("fennkystral_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> SAGE_LANTERN = registerBlock("sage_lantern",
             () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);
 
     public static final RegistryObject<Block> BLOFORIA_LANTERN = registerBlock("bloforia_lantern",
@@ -201,6 +210,8 @@ public class blockRegistry {
     public static final RegistryObject<Block> FENNKYSTRAL_BARREL = registerBlock("fennkystral_herb_barrel",
             () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
     public static final RegistryObject<Block> BLOFORIA_BARREL = registerBlock("bloforia_herb_barrel",
+            () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
+    public static final RegistryObject<Block> SAGE_BARREL = registerBlock("sage_herb_barrel",
             () -> new HerbBarrelBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), HibernalHerbsForge.HIBERNAL_HERBS);
 
 
@@ -267,6 +278,10 @@ public class blockRegistry {
 
     public static final RegistryObject<Block> POTTED_CALENDULA = BLOCKS.register("potted_calendula",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.CALENDULA,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
+
+    public static final RegistryObject<Block> POTTED_SAGE = BLOCKS.register("potted_sage",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.SAGE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     public static final RegistryObject<Block> MYQUESTE_LOG = registerBlock("myqueste_log",

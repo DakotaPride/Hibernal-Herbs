@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "hibernalherbs:block/sage_lantern"
+    },
+    "hanging=true": {
+      "model": "hibernalherbs:block/sage_lantern_hanging"
+    }
+  }
+}
