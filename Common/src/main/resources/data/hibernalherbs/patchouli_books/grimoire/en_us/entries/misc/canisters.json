@@ -4,8 +4,31 @@
   "category": "hibernalherbs:misc",
   "pages": [
     {
-      "type": "hibernalherbs:work_in_progress",
-      "item": "hibernalherbs:canister_iron"
+      "type": "patchouli:text",
+      "text": "Canisters are a fast and compact way for players to store Herb Blends."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:canister/iron",
+      "text": "Iron Canisters can only hold up to 2 Herb Blends, making it the lowest tier that you can craft."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:canister/amethyst",
+      "text": "Amethyst Canisters can hold up to 4 Herb Blends, with it being the second tier that you can craft."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:canister/diamond",
+      "text": "Diamond Canisters can hold up to 6 Herb Blends, which makes it the highest tier that you can currently craft."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbs/blends",
+        "hibernalherbs:herbs/smoked_blends"
+      ],
+      "text": "These entries may also be useful in your studies."
     }
   ]
 }

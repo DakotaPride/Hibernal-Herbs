@@ -4,12 +4,20 @@
   "category": "hibernalherbs:herbal_conjuration",
   "pages": [
     {
-      "type": "hibernalherbs:work_in_progress"
+      "type": "patchouli:text",
+      "text": "Padlocks are a way to provide buffs to the player. Via conjuration, and potentially some help from the Grimoire, you can bound a padlock to a Prince of Sin!$(br2)This is when you are able to be granted these abilities.$(br2)Of course, these buffs depend on the padlock/price of sin."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/trinket/padlocks/lust_padlock",
       "text": "The conjuration to create the Unbound Padlock for the Prince of Lust is shown above.$(br2)There currently exists 7 padlocks, each for a Prince of Sin."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbal_conjuration/sigil/sigil"
+      ],
+      "text": "These entries may also be useful in your studies."
     }
   ]
 }

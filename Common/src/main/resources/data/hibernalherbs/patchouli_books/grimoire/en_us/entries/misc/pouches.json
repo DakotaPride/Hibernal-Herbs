@@ -4,8 +4,31 @@
   "category": "hibernalherbs:misc",
   "pages": [
     {
-      "type": "hibernalherbs:work_in_progress",
-      "item": "hibernalherbs:pouch_scratched"
+      "type": "patchouli:text",
+      "text": "Pouches are a fast and compact way for players to store all kinds of Herbs (Pounded and Non-Pounded)."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:pouch/scratched",
+      "text": "Scratched Pouches can only hold up to a stack of herbs, making it the lowest tier that you can craft."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:pouch/stitched",
+      "text": "Stitched Pouches can hold up to 3 stacks of herbs, with it being the second tier that you can craft."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:pouch/proper",
+      "text": "Proper Pouches can hold up to 4 stacks of herbs, which makes it the highest tier that you can currently craft."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbs/blends",
+        "hibernalherbs:herbs/smoked_blends"
+      ],
+      "text": "These entries may also be useful in your studies."
     }
   ]
 }
