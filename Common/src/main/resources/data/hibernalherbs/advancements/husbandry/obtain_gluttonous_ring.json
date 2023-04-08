@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:gluttonous_ring"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.obtain_gluttonous_ring.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.obtain_gluttonous_ring.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:husbandry/obtain_a_sigil",
+  "criteria": {
+    "has_ring": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:gluttonous_ring"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ring"
+    ]
+  ]
+}

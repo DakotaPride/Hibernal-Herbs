@@ -17,6 +17,8 @@
 
   "block.hibernalherbs.calendula": "Calendula",
 
+  "block.hibernalherbs.sage": "Sage",
+
   "item.hibernalherbs.pounded_rosemary": "Pounded Rosemary",
   "item.hibernalherbs.pounded_thyme": "Pounded Thyme",
   "item.hibernalherbs.pounded_tarragon": "Pounded Tarragon",
@@ -35,6 +37,8 @@
 
   "item.hibernalherbs.pounded_calendula": "Pounded Calendula",
 
+  "item.hibernalherbs.pounded_sage": "Pounded Sage",
+
   "item.hibernalherbs.dried_calendula": "Dried Calendula",
   "item.hibernalherbs.dried_rosemary": "Dried Rosemary",
   "item.hibernalherbs.dried_thyme": "Dried Thyme",
@@ -51,6 +55,7 @@
   "item.hibernalherbs.dried_essitte": "Dried Essitte",
   "item.hibernalherbs.dried_thyocielle": "Dried Thyocielle",
   "item.hibernalherbs.dried_fennkystral": "Dried Fennkystral",
+  "item.hibernalherbs.dried_sage": "Dried Sage",
 
   "block.hibernalherbs.potted_rosemary": "Potted Rosemary",
   "block.hibernalherbs.potted_thyme": "Potted Thyme",
@@ -70,6 +75,8 @@
 
   "block.hibernalherbs.potted_calendula": "Potted Calendula",
 
+  "block.hibernalherbs.potted_sage": "Potted Sage",
+
   "block.hibernalherbs.rosemary_herb_barrel": "Herb Barrel",
   "block.hibernalherbs.thyme_herb_barrel": "Herb Barrel",
   "block.hibernalherbs.tarragon_herb_barrel": "Herb Barrel",
@@ -87,6 +94,8 @@
   "block.hibernalherbs.fennkystral_herb_barrel": "Herb Barrel",
 
   "block.hibernalherbs.calendula_herb_barrel": "Herb Barrel",
+
+  "block.hibernalherbs.sage_herb_barrel": "Herb Barrel",
 
   "block.hibernalherbs.rosemary_herb_pile": "Herb Pile",
   "block.hibernalherbs.thyme_herb_pile": "Herb Pile",
@@ -106,6 +115,8 @@
 
   "block.hibernalherbs.calendula_herb_pile": "Herb Pile",
 
+  "block.hibernalherbs.sage_herb_pile": "Herb Pile",
+
   "text.hibernalherbs.pile.rosemary": "  - Rosemary",
   "text.hibernalherbs.pile.thyme": "  - Thyme",
   "text.hibernalherbs.pile.tarragon": "  - Tarragon",
@@ -123,6 +134,8 @@
   "text.hibernalherbs.pile.fennkystral": "  - Fennkystral",
 
   "text.hibernalherbs.pile.calendula": "  - Calendula",
+
+  "text.hibernalherbs.pile.sage": "  - Sage",
 
   "item.hibernalherbs.blend_regeneration": "Regenerative Blend",
   "item.hibernalherbs.blend_poison": "Virulent Blend",
@@ -234,6 +247,7 @@
   "block.hibernalherbs.essitte_lantern": "Essitte Lantern",
   "block.hibernalherbs.thyocielle_lantern": "Thyocielle Lantern",
   "block.hibernalherbs.fennkystral_lantern": "Fennkystral Lantern",
+  "block.hibernalherbs.sage_lantern": "Sage Lantern",
 
   "block.hibernalherbs.conjuration_altar": "Conjuration Altar",
 
@@ -333,6 +347,19 @@
   "advancements.hibernalherbs.conflicting_blend.description": "Obtain An Herb Blend That Probably Shouldn't Exist",
   "advancements.hibernalherbs.consume_fire_blend_at_world_height.title": "Have You Got Wax Wings?",
   "advancements.hibernalherbs.consume_fire_blend_at_world_height.description": "Consume An Incinerating Blend While At World Height",
+
+  "advancements.hibernalherbs.obtain_altar.title": "Mystical Beginnings!",
+  "advancements.hibernalherbs.obtain_altar.description": "Obtain a Conjuration Altar",
+  "advancements.hibernalherbs.obtain_bound_padlock.title": "A Deal With A Prince!",
+  "advancements.hibernalherbs.obtain_bound_padlock.description": "Obtain a Bound Padlock Corresponding To A Prince Of Sin",
+  "advancements.hibernalherbs.obtain_sigil.title": "Dabble In The Arts?",
+  "advancements.hibernalherbs.obtain_sigil.description": "Obtain an Herbal Sigil",
+  "advancements.hibernalherbs.obtain_petals.title": "These Aren't Herbs?",
+  "advancements.hibernalherbs.obtain_petals.description": "Obtain Conjured Petals",
+  "advancements.hibernalherbs.obtain_gluttonous_ring.title": "Blending Forever!",
+  "advancements.hibernalherbs.obtain_gluttonous_ring.description": "Obtain a Gluttonous Ring",
+  "advancements.hibernalherbs.obtain_gluttonous_ring_adv.title": "Nom Nom Nom",
+  "advancements.hibernalherbs.obtain_gluttonous_ring_adv.description": "Obtain an Advanced Gluttonous Ring",
 
   "item.hibernalherbs.ring": "Golden Ring",
   "item.hibernalherbs.gluttonous_ring": "Gluttonous Ring",

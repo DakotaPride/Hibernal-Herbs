@@ -1,15 +1,14 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "wool",
   "ingredients": [
     {
       "item": "hibernalherbs:myqueste_leaf_pile"
     },
     {
-      "item": "hibernalherbs:pounded_chervil"
+      "item": "hibernalherbs:pounded_punuel"
     }
   ],
   "result": {
-    "item": "hibernalherbs:chervil_herb_pile"
+    "item": "hibernalherbs:punuel_herb_pile"
   }
 }

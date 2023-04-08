@@ -29,11 +29,17 @@
     "hibernalherbs:thyocielle_herb_barrel",
     "hibernalherbs:verbena_herb_barrel",
 
+    "hibernalherbs:sage_herb_barrel",
+
     "hibernalherbs:conjuration_altar",
 
     {
       "required": false,
       "id": "hibernalherbs:myqueste_wall_sign"
+    },
+    {
+      "required": false,
+      "id": "hibernalherbs:bloforia_herb_barrel"
     }
   ]
 }

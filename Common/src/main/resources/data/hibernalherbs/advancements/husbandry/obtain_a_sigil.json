@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:sigil_lust"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.obtain_sigil.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.obtain_sigil.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:husbandry/herbal_conjuration",
+  "criteria": {
+    "has_herbal_sigil": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:advancement/is_herbal_sigil"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_herbal_sigil"
+    ]
+  ]
+}

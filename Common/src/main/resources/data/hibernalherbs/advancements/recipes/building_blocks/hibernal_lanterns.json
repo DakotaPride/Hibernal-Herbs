@@ -1,0 +1,187 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dried_herb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:dried_herbs"
+          }
+        ]
+      }
+    },
+    "has_iron_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_iron_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_nugget"
+            ]
+          }
+        ]
+      }
+    },
+    "has_calendula_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/calendula_lantern"
+      }
+    },
+    "has_ceillis_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/ceillis_lantern"
+      }
+    },
+    "has_chamomile_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/chamomile_lantern"
+      }
+    },
+    "has_chervil_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/chervil_lantern"
+      }
+    },
+    "has_chives_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/chives_lantern"
+      }
+    },
+    "has_essitte_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/essitte_lantern"
+      }
+    },
+    "has_fennkystral_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/fennkystral_lantern"
+      }
+    },
+    "has_fennsel_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/fennsel_lantern"
+      }
+    },
+    "has_marjoram_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/marjoram_lantern"
+      }
+    },
+    "has_punuel_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/punuel_lantern"
+      }
+    },
+    "has_rosemary_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/rosemary_lantern"
+      }
+    },
+    "has_sage_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/sage_lantern"
+      }
+    },
+    "has_sorrel_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/sorrel_lantern"
+      }
+    },
+    "has_tarragon_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/tarragon_lantern"
+      }
+    },
+    "has_thyme_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/thyme_lantern"
+      }
+    },
+    "has_thyocielle_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/thyocielle_lantern"
+      }
+    },
+    "has_verbena_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hibernalherbs:lanterns/verbena_lantern"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dried_herb",
+      "has_iron_nugget",
+      "has_iron_ingot",
+
+      "has_calendula_recipe",
+      "has_ceillis_recipe",
+      "has_chamomile_recipe",
+      "has_chervil_recipe",
+      "has_chives_recipe",
+      "has_essitte_recipe",
+      "has_fennkystral_recipe",
+      "has_fennsel_recipe",
+      "has_marjoram_recipe",
+      "has_punuel_recipe",
+      "has_rosemary_recipe",
+      "has_sage_recipe",
+      "has_sorrel_recipe",
+      "has_tarragon_recipe",
+      "has_thyme_recipe",
+      "has_thyocielle_recipe",
+      "has_verbena_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:lanterns/calendula_lantern",
+      "hibernalherbs:lanterns/ceillis_lantern",
+      "hibernalherbs:lanterns/chamomile_lantern",
+      "hibernalherbs:lanterns/chervil_lantern",
+      "hibernalherbs:lanterns/chives_lantern",
+      "hibernalherbs:lanterns/essitte_lantern",
+      "hibernalherbs:lanterns/fennkystral_lantern",
+      "hibernalherbs:lanterns/fennsel_lantern",
+      "hibernalherbs:lanterns/marjoram_lantern",
+      "hibernalherbs:lanterns/punuel_lantern",
+      "hibernalherbs:lanterns/rosemary_lantern",
+      "hibernalherbs:lanterns/sage_lantern",
+      "hibernalherbs:lanterns/sorrel_lantern",
+      "hibernalherbs:lanterns/tarragon_lantern",
+      "hibernalherbs:lanterns/thyme_lantern",
+      "hibernalherbs:lanterns/thyocielle_lantern",
+      "hibernalherbs:lanterns/verbena_lantern"
+    ]
+  }
+}

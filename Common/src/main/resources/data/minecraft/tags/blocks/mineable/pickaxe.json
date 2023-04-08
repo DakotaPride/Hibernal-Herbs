@@ -1,6 +1,22 @@
 {
   "replace": false,
   "values": [
-    "hibernalherbs:calendula_lantern"
+    "hibernalherbs:calendula_lantern",
+    "hibernalherbs:ceillis_lantern",
+    "hibernalherbs:chamomile_lantern",
+    "hibernalherbs:chives_lantern",
+    "hibernalherbs:chervil_lantern",
+    "hibernalherbs:essitte_lantern",
+    "hibernalherbs:fennkystral_lantern",
+    "hibernalherbs:fennsel_lantern",
+    "hibernalherbs:marjoram_lantern",
+    "hibernalherbs:punuel_lantern",
+    "hibernalherbs:rosemary_lantern",
+    "hibernalherbs:sage_lantern",
+    "hibernalherbs:sorrel_lantern",
+    "hibernalherbs:tarragon_lantern",
+    "hibernalherbs:thyme_lantern",
+    "hibernalherbs:thyocielle_lantern",
+    "hibernalherbs:verbena_lantern"
   ]
 }

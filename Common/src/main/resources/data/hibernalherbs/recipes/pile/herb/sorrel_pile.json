@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "wool",
   "ingredients": [
     {
       "item": "hibernalherbs:myqueste_leaf_pile"

@@ -27,8 +27,6 @@ public abstract class ItemStackMixin implements FoodComponentList {
 
     @Shadow public abstract int getCount();
 
-    @Shadow public abstract ItemStack finishUsing(World world, LivingEntity user);
-
     @Inject(method = "finishUsing", at = @At("HEAD"), cancellable = true)
     private void finishUsing(World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
         if (user.getActiveItem().isOf(ItemInit.INCINERATING_BLEND)) {

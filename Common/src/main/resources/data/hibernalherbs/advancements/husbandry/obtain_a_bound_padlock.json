@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:bound_padlock_lust"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.obtain_bound_padlock.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.obtain_bound_padlock.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "hibernalherbs:husbandry/obtain_a_sigil",
+  "criteria": {
+    "has_bound_padlock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:padlocks/bound"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bound_padlock"
+    ]
+  ]
+}

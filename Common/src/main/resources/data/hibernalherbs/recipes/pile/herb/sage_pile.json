@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:myqueste_leaf_pile"
+    },
+    {
+      "item": "hibernalherbs:pounded_sage"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:sage_herb_pile"
+  }
+}
