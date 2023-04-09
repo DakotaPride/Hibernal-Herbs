@@ -208,6 +208,8 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(BlockInit.THYOCIELLE.asItem()));
 					itemStacks.add(new ItemStack(BlockInit.FENNKYSTRAL.asItem()));
 
+					itemStacks.add(new ItemStack(BlockInit.SAGE.asItem()));
+
 					itemStacks.add(new ItemStack(BlockInit.CALENDULA.asItem()));
 				}).build();
 
@@ -246,6 +248,9 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.DRIED_THYOCIELLE));
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_FENNKYSTRAL));
 					itemStacks.add(new ItemStack(ItemInit.DRIED_FENNKYSTRAL));
+
+					itemStacks.add(new ItemStack(ItemInit.POUNDED_SAGE));
+					itemStacks.add(new ItemStack(ItemInit.DRIED_SAGE));
 
 					itemStacks.add(new ItemStack(ItemInit.POUNDED_CALENDULA));
 					itemStacks.add(new ItemStack(ItemInit.DRIED_CALENDULA));
