@@ -42,13 +42,13 @@
     "fabric": "*",
     "minecraft": "~1.19",
     "java": ">=17",
-    "trinkets": ">=3.4.1"
+    "trinkets": ">=3.4.1",
+    "patchouli": "*"
   },
   "recommends": {
     "lambdabettergrass": "*",
     "modmenu": "*",
-    "roughlyenoughitems": "*",
-    "patchouli": "*"
+    "roughlyenoughitems": "*"
   },
   "breaks": {
     "optifabric": "*"
