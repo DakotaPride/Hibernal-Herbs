@@ -2,5 +2,6 @@
   "parent": "minecraft:block/cross",
   "textures": {
     "cross": "hibernalherbs:block/herb/sage"
-  }
+  },
+  "render_type": "cutout"
 }
