@@ -4,10 +4,7 @@ import com.terraformersmc.terraform.leaves.block.LeafPileBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
-import net.dakotapride.hibernalHerbs.common.block.HerbBarrelBlock;
-import net.dakotapride.hibernalHerbs.common.block.HerbConjurationAltarBlock;
-import net.dakotapride.hibernalHerbs.common.block.HibernalLeafPileBlock;
-import net.dakotapride.hibernalHerbs.common.block.SageHerbBlock;
+import net.dakotapride.hibernalHerbs.common.block.*;
 import net.dakotapride.hibernalHerbs.common.gen.saplingGenerator.MyquesteSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -25,6 +22,22 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 public class BlockInit {
 
     public static Block CONJURATION_ALTAR = new HerbConjurationAltarBlock(FabricBlockSettings.copy(Blocks.LECTERN).nonOpaque());
+
+    // TODO: v0.9 Herbs For Princes Of Sin (Required in Bound Padlock Recipes + Additional Uses)
+    public static SinHerbBlock PRIDE_HERB = new SinHerbBlock(StatusEffects.WITHER, 20,
+            FabricBlockSettings.copy(Blocks.WITHER_ROSE));
+    public static SinHerbBlock ENVY_HERB = new SinHerbBlock(StatusEffects.WITHER, 20,
+            FabricBlockSettings.copy(Blocks.WITHER_ROSE));
+    public static SinHerbBlock WRATH_HERB = new SinHerbBlock(StatusEffects.WITHER, 20,
+            FabricBlockSettings.copy(Blocks.WITHER_ROSE));
+    public static SinHerbBlock GREED_HERB = new SinHerbBlock(StatusEffects.WITHER, 20,
+            FabricBlockSettings.copy(Blocks.WITHER_ROSE));
+    public static SinHerbBlock GLUTTONY_HERB = new SinHerbBlock(StatusEffects.WITHER, 20,
+            FabricBlockSettings.copy(Blocks.WITHER_ROSE));
+    public static SinHerbBlock SLOTH_HERB = new SinHerbBlock(StatusEffects.WITHER, 20,
+            FabricBlockSettings.copy(Blocks.WITHER_ROSE));
+    public static SinHerbBlock LUST_HERB = new SinHerbBlock(StatusEffects.WITHER, 20,
+            FabricBlockSettings.copy(Blocks.WITHER_ROSE));
 
     // "Leaf" (Herb) Piles
     public static LeafPileBlock MYQUESTE_LEAF_PILE = new LeafPileBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).nonOpaque());
@@ -250,6 +263,21 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "calendula"), new BlockItem(CALENDULA, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sage"), SAGE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sage"), new BlockItem(SAGE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
+
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "pride_herb"), PRIDE_HERB);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pride_herb"), new BlockItem(PRIDE_HERB, new FabricItemSettings()));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "envy_herb"), ENVY_HERB);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "envy_herb"), new BlockItem(ENVY_HERB, new FabricItemSettings()));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "wrath_herb"), WRATH_HERB);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "wrath_herb"), new BlockItem(WRATH_HERB, new FabricItemSettings()));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "greed_herb"), GREED_HERB);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "greed_herb"), new BlockItem(GREED_HERB, new FabricItemSettings()));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "gluttony_herb"), GLUTTONY_HERB);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gluttony_herb"), new BlockItem(GLUTTONY_HERB, new FabricItemSettings()));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sloth_herb"), SLOTH_HERB);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sloth_herb"), new BlockItem(SLOTH_HERB, new FabricItemSettings()));
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "lust_herb"), LUST_HERB);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lust_herb"), new BlockItem(LUST_HERB, new FabricItemSettings()));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_rosemary"), POTTED_ROSEMARY);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_thyme"), POTTED_THYME);
