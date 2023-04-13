@@ -33,6 +33,22 @@ public class blockRegistry {
     public static RegistryObject<Block> CONJURATION_ALTAR = registerBlock("conjuration_altar",
             () -> new ConjurationAltarBlock(BlockBehaviour.Properties.copy(Blocks.LECTERN).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
 
+    // TODO: v0.9 Herbs For Princes Of Sin (Required in Bound Padlock Recipes + Additional Uses)
+    public static RegistryObject<Block> PRIDE_HERB = registerBlock("pride_herb",
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), CreativeModeTab.TAB_MISC);
+    public static RegistryObject<Block> ENVY_HERB = registerBlock("envy_herb",
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), CreativeModeTab.TAB_MISC);
+    public static RegistryObject<Block> WRATH_HERB = registerBlock("wrath_herb",
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), CreativeModeTab.TAB_MISC);
+    public static RegistryObject<Block> GLUTTONY_HERB = registerBlock("gluttony_herb",
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), CreativeModeTab.TAB_MISC);
+    public static RegistryObject<Block> GREED_HERB = registerBlock("greed_herb",
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), CreativeModeTab.TAB_MISC);
+    public static RegistryObject<Block> LUST_HERB = registerBlock("lust_herb",
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), CreativeModeTab.TAB_MISC);
+    public static RegistryObject<Block> SLOTH_HERB = registerBlock("sloth_herb",
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), CreativeModeTab.TAB_MISC);
+
     // "Leaf" (Herb) Piles
     public static RegistryObject<Block> MYQUESTE_LEAF_PILE = registerBlock("myqueste_leaf_pile",
             () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), HibernalHerbsForge.HIBERNAL_HERBS);
@@ -135,8 +151,7 @@ public class blockRegistry {
                     BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
 
     public static final RegistryObject<Block> SAGE = registerBlock("sage",
-            () -> new FlowerBlock(MobEffects.LEVITATION, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
+            () -> new SageHerbBlock(180, BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), HibernalHerbsForge.HERBS);
 
     public static final RegistryObject<Block> CALENDULA_LANTERN = registerBlock("calendula_lantern",
         () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), HibernalHerbsForge.HIBERNAL_HERBS);

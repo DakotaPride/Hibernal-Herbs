@@ -14,9 +14,9 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.Supplier;
 
-public class SageHerbBlock extends FlowerBlock {
-    public SageHerbBlock(int effectDuration, Properties properties) {
-        super(MobEffects.LEVITATION, effectDuration, properties);
+public class SinHerbBlock extends FlowerBlock {
+    public SinHerbBlock(int effectDuration, Properties properties) {
+        super(MobEffects.WITHER, effectDuration, properties);
     }
 
     @Override
