@@ -37,7 +37,7 @@ public abstract class ItemStackMixin implements FoodComponentList {
             user.setFireTicks(smokedFireDuration);
         }
 
-        if (user instanceof PlayerEntity playerEntity) {
+        if (user instanceof PlayerEntity playerEntity && !(playerEntity.getAbilities().creativeMode)) {
             ItemStack advGluttonousRingStack = ItemInit.ADV_GLUTTONOUS_RING.getDefaultStack();
 
             if (playerEntity.getInventory().contains(advGluttonousRingStack)) {

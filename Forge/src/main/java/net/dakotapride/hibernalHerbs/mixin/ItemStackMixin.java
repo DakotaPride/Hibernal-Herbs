@@ -36,7 +36,7 @@ public abstract class ItemStackMixin implements FoodComponentList {
         if (livingEntity instanceof Player player) {
             ItemStack advGluttonousRingStack = itemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance();
 
-            if (player.getInventory().contains(advGluttonousRingStack)) {
+            if (player.getInventory().contains(advGluttonousRingStack) && !(player.getAbilities().instabuild)) {
 
                 if (this.getItem().getDefaultInstance().is(HibernalHerbsForge.BLENDS_TAG)) {
                     cir.setReturnValue(((Player)livingEntity).getAbilities().instabuild
