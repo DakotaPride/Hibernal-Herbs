@@ -22,8 +22,8 @@ public class SinHerbBlock extends FlowerBlock {
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity livingEntity) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 100, 1));
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 100, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
         }
     }
 
@@ -38,7 +38,7 @@ public class SinHerbBlock extends FlowerBlock {
             double d3 = source.nextFloat() * (float)j;
             double d4 = ((double)source.nextFloat() - 0.5) * 0.125;
             double d5 = source.nextFloat() * (float)k;
-            level.addParticle(ParticleTypes.PORTAL, d0, d1, d2, d3, d4, d5);
+            level.addParticle(ParticleTypes.SMOKE, d0, d1, d2, d3, d4, d5);
         }
 
     }

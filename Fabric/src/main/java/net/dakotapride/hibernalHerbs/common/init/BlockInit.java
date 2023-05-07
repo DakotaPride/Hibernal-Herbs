@@ -24,19 +24,19 @@ public class BlockInit {
     public static Block CONJURATION_ALTAR = new HerbConjurationAltarBlock(FabricBlockSettings.copy(Blocks.LECTERN).nonOpaque());
 
     // TODO: v0.9 Herbs For Princes Of Sin (Required in Bound Padlock Recipes + Additional Uses)
-    public static SinHerbBlock PRIDE_HERB = new SinHerbBlock(StatusEffects.WITHER, 200,
+    public static SinHerbBlock PRIDE_HERB = new SinHerbBlock(200,
             FabricBlockSettings.copy(Blocks.WITHER_ROSE));
-    public static SinHerbBlock ENVY_HERB = new SinHerbBlock(StatusEffects.WITHER, 200,
+    public static SinHerbBlock ENVY_HERB = new SinHerbBlock(200,
             FabricBlockSettings.copy(Blocks.WITHER_ROSE));
-    public static SinHerbBlock WRATH_HERB = new SinHerbBlock(StatusEffects.WITHER, 200,
+    public static SinHerbBlock WRATH_HERB = new SinHerbBlock(200,
             FabricBlockSettings.copy(Blocks.WITHER_ROSE));
-    public static SinHerbBlock GREED_HERB = new SinHerbBlock(StatusEffects.WITHER, 200,
+    public static SinHerbBlock GREED_HERB = new SinHerbBlock(200,
             FabricBlockSettings.copy(Blocks.WITHER_ROSE));
-    public static SinHerbBlock GLUTTONY_HERB = new SinHerbBlock(StatusEffects.WITHER, 200,
+    public static SinHerbBlock GLUTTONY_HERB = new SinHerbBlock(200,
             FabricBlockSettings.copy(Blocks.WITHER_ROSE));
-    public static SinHerbBlock SLOTH_HERB = new SinHerbBlock(StatusEffects.WITHER, 200,
+    public static SinHerbBlock SLOTH_HERB = new SinHerbBlock(200,
             FabricBlockSettings.copy(Blocks.WITHER_ROSE));
-    public static SinHerbBlock LUST_HERB = new SinHerbBlock(StatusEffects.WITHER, 200,
+    public static SinHerbBlock LUST_HERB = new SinHerbBlock(200,
             FabricBlockSettings.copy(Blocks.WITHER_ROSE));
 
     // "Leaf" (Herb) Piles

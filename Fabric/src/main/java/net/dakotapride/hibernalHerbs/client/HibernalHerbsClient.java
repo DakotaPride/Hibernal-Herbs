@@ -103,6 +103,14 @@ public class HibernalHerbsClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.CONJURATION_ALTAR, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.LUST_HERB, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.GREED_HERB, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.ENVY_HERB, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.WRATH_HERB, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.GLUTTONY_HERB, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SLOTH_HERB, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.PRIDE_HERB, RenderLayer.getCutout());
+
         HandledScreens.register(ScreenHandlersInit.CONJURATION_ALTAR_SCREEN_HANDLER, HerbConjurationAltarScreen::new);
 
         // Render Layers (Terraform)
