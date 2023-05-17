@@ -81,18 +81,6 @@ public class util {
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.MYQUESTE_SAPLING.asItem(), 0.3f);
         ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(BlockInit.MYQUESTE_LEAVES.asItem(), 0.3f);
 
-
-        // Model Predicate Providers
-
-        FabricModelPredicateProviderRegistry.register(ItemInit.CANISTER, new Identifier(MOD_ID, "filled"),
-                ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
-
-        FabricModelPredicateProviderRegistry.register(ItemInit.IRON_CANISTER, new Identifier(MOD_ID, "filled"),
-                ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
-        FabricModelPredicateProviderRegistry.register(ItemInit.AMETHYST_CANISTER, new Identifier(MOD_ID, "filled"),
-                ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
-        FabricModelPredicateProviderRegistry.register(ItemInit.DIAMOND_CANISTER, new Identifier(MOD_ID, "filled"),
-                ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
     }
 
 }

@@ -4,14 +4,19 @@ import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsMod;
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
+import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.init.ScreenHandlersInit;
 import net.dakotapride.hibernalHerbs.common.screen.HerbConjurationAltarScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.util.SpriteIdentifier;
+import net.minecraft.util.Identifier;
+
+import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class HibernalHerbsClient implements ClientModInitializer {
 
@@ -116,5 +121,19 @@ public class HibernalHerbsClient implements ClientModInitializer {
         // Render Layers (Terraform)
         TerraformBoatClientHelper.registerModelLayers(HibernalHerbsMod.MYQUESTE_ID);
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, BlockInit.MYQUESTE_SIGN_TEXTURE));
+
+
+        // Model Predicate Providers
+
+        FabricModelPredicateProviderRegistry.register(ItemInit.CANISTER, new Identifier(MOD_ID, "filled"),
+                ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
+
+        FabricModelPredicateProviderRegistry.register(ItemInit.IRON_CANISTER, new Identifier(MOD_ID, "filled"),
+                ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
+        FabricModelPredicateProviderRegistry.register(ItemInit.AMETHYST_CANISTER, new Identifier(MOD_ID, "filled"),
+                ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
+        FabricModelPredicateProviderRegistry.register(ItemInit.DIAMOND_CANISTER, new Identifier(MOD_ID, "filled"),
+                ((stack, world, entity, seed) -> stack.hasNbt() ? 1f : 0f));
+
     }
 }

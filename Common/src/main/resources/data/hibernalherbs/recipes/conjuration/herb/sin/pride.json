@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "item": "minecraft:shulker_shell"
+    },
+    {
+      "item": "minecraft:end_stone"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "item": "hibernalherbs:pounded_sage"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "tag": "hibernalherbs:contains_mystical_energy"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:pride_herb",
+    "count": 2
+  }
+}

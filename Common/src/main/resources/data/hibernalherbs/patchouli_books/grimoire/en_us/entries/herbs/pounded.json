@@ -11,7 +11,7 @@
       "type": "spotlight",
       "item": "hibernalherbs:pounded_tarragon",
       "link_recipe": false,
-      "text": "Pounded Tarragon can be used to create Shaded Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Tarragon can be used to create Shaded Blends. It can also be used to create Sage. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
@@ -104,8 +104,10 @@
       "text": "Pounded Verbena can be used to create Diminished, Conflicting, Regenerative, and Incinerating Blends. (as well as other previously mentioned uses)"
     },
     {
-      "type": "hibernalherbs:work_in_progress",
-      "item": "hibernalherbs:pounded_sage"
+      "type": "spotlight",
+      "item": "hibernalherbs:pounded_sage",
+      "link_recipe": false,
+      "text": "Pounded Sage can be used to create herbs of sin, which are used to create bound padlocks. (as well as other previously mentioned uses)"
     },
     {
       "type": "patchouli:relations",

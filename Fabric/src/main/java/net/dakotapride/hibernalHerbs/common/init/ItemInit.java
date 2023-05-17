@@ -17,6 +17,8 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class ItemInit {
 
+    public static Item GROUND_HERBS = new Item(new FabricItemSettings().group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
+
     public static Item HERBAL_GRIMOIRE = new HerbalGrimoireItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
     public static Item SINGED_GRIMOIRE = new HerbalGrimoireItem(new FabricItemSettings().maxCount(1).group(HibernalHerbsMod.groupManager.HIBERNAL_HERBS));
 
@@ -250,6 +252,8 @@ public class ItemInit {
     public static AbstractCanisterItem CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1), 384);
 
     public static void init () {
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ground_herbs"), GROUND_HERBS);
+
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sin_petals"), SILIPTIUM_PETAL);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lumbinetrik_petals"), LUMBINETRIK_PETAL);
 

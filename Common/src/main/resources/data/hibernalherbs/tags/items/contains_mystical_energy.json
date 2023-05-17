@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:ground_herbs",
+
+    {
+      "required": false,
+      "id": "boilingwitch:mystic_essence"
+    }
+  ]
+}

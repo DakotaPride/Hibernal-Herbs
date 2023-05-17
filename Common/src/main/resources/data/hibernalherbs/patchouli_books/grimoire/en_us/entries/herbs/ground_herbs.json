@@ -1,0 +1,17 @@
+{
+  "name": "Ground Herbs",
+  "icon": "hibernalherbs:ground_herbs",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "hibernalherbs:ground_herbs",
+      "text": "Ground Herbs are created from combining any herb provided by Hibernal Herbs in a 2x2 crafting area of some kind."
+    },
+    {
+      "type": "crafting",
+      "recipe": "hibernalherbs:ground_herbs",
+      "text": "The recipe for ground herbs is showcased above."
+    }
+  ]
+}
