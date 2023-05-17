@@ -24,6 +24,9 @@ public class itemRegistry implements FoodComponentList {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
 
+    public static final RegistryObject<Item> GROUND_HERBS = ITEMS.register("ground_herbs",
+            () -> new Item(new Item.Properties().tab(HibernalHerbsForge.HIBERNAL_HERBS)));
+
     public static final RegistryObject<Item> HERBAL_GRIMOIRE = ITEMS.register("grimoire",
             () -> new HerbalGrimoireItem(new Item.Properties().stacksTo(1).tab(HibernalHerbsForge.HIBERNAL_HERBS)));
     public static final RegistryObject<Item> SINGED_GRIMOIRE = ITEMS.register("singed_grimoire",
