@@ -265,19 +265,19 @@ public class BlockInit {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sage"), new BlockItem(SAGE, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "pride_herb"), PRIDE_HERB);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pride_herb"), new BlockItem(PRIDE_HERB, new FabricItemSettings()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pride_herb"), new BlockItem(PRIDE_HERB, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "envy_herb"), ENVY_HERB);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "envy_herb"), new BlockItem(ENVY_HERB, new FabricItemSettings()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "envy_herb"), new BlockItem(ENVY_HERB, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "wrath_herb"), WRATH_HERB);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "wrath_herb"), new BlockItem(WRATH_HERB, new FabricItemSettings()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "wrath_herb"), new BlockItem(WRATH_HERB, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "greed_herb"), GREED_HERB);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "greed_herb"), new BlockItem(GREED_HERB, new FabricItemSettings()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "greed_herb"), new BlockItem(GREED_HERB, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "gluttony_herb"), GLUTTONY_HERB);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gluttony_herb"), new BlockItem(GLUTTONY_HERB, new FabricItemSettings()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gluttony_herb"), new BlockItem(GLUTTONY_HERB, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "sloth_herb"), SLOTH_HERB);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sloth_herb"), new BlockItem(SLOTH_HERB, new FabricItemSettings()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sloth_herb"), new BlockItem(SLOTH_HERB, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "lust_herb"), LUST_HERB);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lust_herb"), new BlockItem(LUST_HERB, new FabricItemSettings()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lust_herb"), new BlockItem(LUST_HERB, new FabricItemSettings().group(HibernalHerbsMod.groupManager.HERBS)));
 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_rosemary"), POTTED_ROSEMARY);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "potted_thyme"), POTTED_THYME);

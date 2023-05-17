@@ -74,6 +74,8 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(ItemInit.SILIPTIUM_PETAL));
 					itemStacks.add(new ItemStack(ItemInit.LUMBINETRIK_PETAL));
 
+					itemStacks.add(new ItemStack(ItemInit.GROUND_HERBS));
+
 					itemStacks.add(new ItemStack(BlockInit.CONJURATION_ALTAR.asItem()));
 
 					itemStacks.add(new ItemStack(BlockInit.CALENDULA_LANTERN.asItem()));
@@ -211,6 +213,14 @@ public class HibernalHerbsMod implements ModInitializer {
 					itemStacks.add(new ItemStack(BlockInit.SAGE.asItem()));
 
 					itemStacks.add(new ItemStack(BlockInit.CALENDULA.asItem()));
+
+					itemStacks.add(new ItemStack(BlockInit.PRIDE_HERB.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.ENVY_HERB.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.SLOTH_HERB.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.GLUTTONY_HERB.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.GREED_HERB.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.WRATH_HERB.asItem()));
+					itemStacks.add(new ItemStack(BlockInit.LUST_HERB.asItem()));
 				}).build();
 
 		public static ItemGroup POUNDED_HERBS = FabricItemGroupBuilder.create(

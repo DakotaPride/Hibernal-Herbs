@@ -39,6 +39,16 @@
 
   "item.hibernalherbs.pounded_sage": "Pounded Sage",
 
+  "block.hibernalherbs.pride_herb": "Herb of Contentment",
+  "block.hibernalherbs.lust_herb": "Herb of Coveting",
+  "block.hibernalherbs.envy_herb": "Herb of Spite",
+  "block.hibernalherbs.gluttony_herb": "Herb of Ravenous Desire",
+  "block.hibernalherbs.wrath_herb": "Herb of Exasperation",
+  "block.hibernalherbs.greed_herb": "Herb of Rapacity",
+  "block.hibernalherbs.sloth_herb": "Herb of Indolence",
+
+  "item.hibernalherbs.ground_herbs": "Ground Herbs",
+
   "item.hibernalherbs.dried_calendula": "Dried Calendula",
   "item.hibernalherbs.dried_rosemary": "Dried Rosemary",
   "item.hibernalherbs.dried_thyme": "Dried Thyme",
