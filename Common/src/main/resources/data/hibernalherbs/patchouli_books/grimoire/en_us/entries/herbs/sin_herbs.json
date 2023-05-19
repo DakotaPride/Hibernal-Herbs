@@ -1,0 +1,12 @@
+{
+  "name": "Herbs Of Sin",
+  "icon": "hibernalherbs:lust_herb",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "hibernalherbs:lust_herb",
+      "text": "Herbs of Coveting allow the player to create a padlock bound to the Prince of Lust"
+    }
+  ]
+}

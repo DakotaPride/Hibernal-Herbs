@@ -2,7 +2,7 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
-      "item": "hibernalherbs:singed_grimoire"
+      "item": "hibernalherbs:wrath_herb"
     },
     {
       "item": "minecraft:iron_ingot"

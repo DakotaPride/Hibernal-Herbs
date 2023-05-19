@@ -2,19 +2,19 @@
   "type": "hibernalherbs:herbal_conjuration",
   "ingredients": [
     {
-      "item": "minecraft:shulker_shell"
+      "item": "hibernalherbs:singed_grimoire"
     },
     {
-      "item": "minecraft:end_stone"
+      "tag": "hibernalherbs:contains_mystical_energy"
     },
     {
-      "item": "minecraft:chorus_fruit"
+      "item": "hibernalherbs:lumbinetrik_petals"
     },
     {
       "item": "hibernalherbs:pounded_sage"
     },
     {
-      "item": "minecraft:chorus_fruit"
+      "item": "hibernalherbs:lumbinetrik_petals"
     },
     {
       "tag": "hibernalherbs:contains_mystical_energy"
