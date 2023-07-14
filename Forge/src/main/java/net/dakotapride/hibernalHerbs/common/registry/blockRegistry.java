@@ -347,11 +347,14 @@ public class blockRegistry {
     public static final RegistryObject<Block> MYQUESTE_BUTTON = registerBlock("myqueste_button",
             () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON), MYQUESTE_SET, 30, true));
 
-    public static final RegistryObject<Block> MYQUESTE_SIGN = registerBlockWithoutTab("myqueste_sign", () ->
+    public static final RegistryObject<Block> MYQUESTE_SIGN = registerBlockWithoutItem("myqueste_sign", () ->
             new MyquesteSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SIGN), MyquesteType.MYQUESTE));
-    public static final RegistryObject<Block> MYQUESTE_WALL_SIGN = registerBlockWithoutTab("myqueste_wall_sign", () ->
-            new MyquesteWallSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WALL_SIGN).lootFrom(MYQUESTE_SIGN),
-                    MyquesteType.MYQUESTE));
+    public static final RegistryObject<Block> MYQUESTE_WALL_SIGN = registerBlockWithoutItem("myqueste_wall_sign", () ->
+            new MyquesteWallSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WALL_SIGN).lootFrom(MYQUESTE_SIGN), MyquesteType.MYQUESTE));
+    public static final RegistryObject<Block> MYQUESTE_HANGING_SIGN = registerBlockWithoutItem("myqueste_hanging_sign", () ->
+            new MyquesteHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_HANGING_SIGN), MyquesteType.MYQUESTE));
+    public static final RegistryObject<Block> MYQUESTE_WALL_HANGING_SIGN = registerBlockWithoutItem("myqueste_wall_hanging_sign", () ->
+            new MyquesteHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WALL_HANGING_SIGN).lootFrom(MYQUESTE_HANGING_SIGN), MyquesteType.MYQUESTE));
 
     public static final RegistryObject<Block> MYQUESTE_LEAVES = registerBlock("myqueste_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES)){
@@ -379,8 +382,7 @@ public class blockRegistry {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.MYQUESTE_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_SPRUCE_SAPLING)));
 
-
-    private static <T extends Block> RegistryObject<T> registerBlockWithoutTab(String name, Supplier<T> block) {
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }
 

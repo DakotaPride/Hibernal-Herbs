@@ -5,12 +5,15 @@ import net.dakotapride.hibernalHerbs.common.entity.HibernalEntityTypes;
 import net.dakotapride.hibernalHerbs.common.entity.render.MyquesteBoatRenderer;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.resource.ResourcePackLoader;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
@@ -22,6 +25,7 @@ public class ClientEvents {
         event.registerEntityRenderer(HibernalEntityTypes.MYQUESTE_BOAT.get(), context -> new MyquesteBoatRenderer(context, false));
         event.registerEntityRenderer(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), context -> new MyquesteBoatRenderer(context, true));
         event.registerBlockEntityRenderer(HibernalBlockEntities.MYQUESTE_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(HibernalBlockEntities.MYQUESTE_HANGING_SIGN.get(), HangingSignRenderer::new);
     }
 
     @SubscribeEvent

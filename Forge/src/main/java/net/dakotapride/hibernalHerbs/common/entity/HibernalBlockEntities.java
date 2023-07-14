@@ -1,6 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.entity;
 
 import net.dakotapride.hibernalHerbs.common.entity.block.ConjurationAltarBlockEntity;
+import net.dakotapride.hibernalHerbs.common.entity.block.MyquesteHangingSignBlockEntity;
 import net.dakotapride.hibernalHerbs.common.entity.block.MyquesteSignBlockEntity;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -25,5 +26,9 @@ public class HibernalBlockEntities {
     public static final RegistryObject<BlockEntityType<MyquesteSignBlockEntity>> MYQUESTE_SIGN =
             BLOCK_ENTITIES.register("myqueste_sign", () -> BlockEntityType.Builder.of(MyquesteSignBlockEntity::new,
                     blockRegistry.MYQUESTE_SIGN.get(), blockRegistry.MYQUESTE_WALL_SIGN.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<MyquesteHangingSignBlockEntity>> MYQUESTE_HANGING_SIGN =
+            BLOCK_ENTITIES.register("myqueste_hanging_sign", () -> BlockEntityType.Builder.of(MyquesteHangingSignBlockEntity::new,
+                    blockRegistry.MYQUESTE_HANGING_SIGN.get(), blockRegistry.MYQUESTE_WALL_HANGING_SIGN.get()).build(null));
 
 }

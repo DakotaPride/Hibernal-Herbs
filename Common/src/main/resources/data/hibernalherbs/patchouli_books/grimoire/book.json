@@ -5,7 +5,7 @@
   "dont_generate_book": true,
   "show_progress": true,
   "filler_texture": "hibernalherbs:textures/gui/patchouli/filler.png",
-  "version": "8",
+  "version": "9",
   "link_color": "3D474C",
   "link_hover_color": "3D474C",
   "progress_bar_color": "67D3B3",

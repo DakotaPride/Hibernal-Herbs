@@ -1,8 +1,9 @@
 package net.dakotapride.hibernalHerbs.client;
 
-import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
-import net.minecraft.SharedConstants;
+import net.minecraft.client.resources.metadata.texture.TextureMetadataSection;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
@@ -12,10 +13,10 @@ import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.forgespi.locating.IModFile;
 import net.minecraftforge.resource.PathPackResources;
 
 import java.io.IOException;
-import java.nio.file.Path;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
@@ -25,31 +26,36 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 public class PackLoader {
 
     @SubscribeEvent
-    public static void onAddPackFinders(final AddPackFindersEvent event) {
-        if(event.getPackType() == PackType.SERVER_DATA) {
-            // register Quark data pack
-            if(ModList.get().isLoaded("eatinganimation")) {
-                registerPack(event, "hibernalherbs/eatinganimations");
+    public static void onAddPackFinders(AddPackFindersEvent event) {
+
+        if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+            registerBuiltinResourcePack(event, Component.literal("hibernalherbs/barebones"), "barebones");
+            registerBuiltinResourcePack(event, Component.literal("hibernalherbs/modernized"), "modernized");
+
+            if (ModList.get().isLoaded("eatinganimation")) {
+                registerBuiltinResourcePack(event, Component.literal("hibernalherbs/eatinganimations"), "eatinganimations");
             }
-
-            registerPack(event, "hibernalherbs/barebones");
-            registerPack(event, "hibernalherbs/modernized");
-
         }
     }
 
-    private static void registerPack(final AddPackFindersEvent event, final String packName) {
-        event.addRepositorySource(packConsumer -> {
-            // create pack data
-            final String packId = MOD_ID + ":" + packName;
-            final Component packTitle = Component.literal(packName);
-            final Path path = ModList.get().getModFileById(MOD_ID).getFile().findResource("/" + packName);
-            final Pack.Info info = new Pack.Info(packTitle, SharedConstants.RESOURCE_PACK_FORMAT, FeatureFlagSet.of());
-            // create the pack
-            Pack pack = Pack.create(packId, packTitle, true, s -> new PathPackResources(packName, false, path), info,
-                    PackType.SERVER_DATA, Pack.Position.TOP, true, PackSource.DEFAULT);
-            // consume the pack
-            packConsumer.accept(pack);
+    private static void registerBuiltinResourcePack(AddPackFindersEvent event, MutableComponent name, String folder) {
+        event.addRepositorySource((consumer) -> {
+            String path = new ResourceLocation(MOD_ID, folder).toString();
+            IModFile file = ModList.get().getModFileById(MOD_ID).getFile();
+            try (PathPackResources pack = new PathPackResources(
+                    path, true, file.findResource("resourcepacks/" + folder))) {
+                consumer.accept(Pack.create(
+                        new ResourceLocation(MOD_ID, folder).toString(),
+                        name,
+                        false,
+                        (pack1) -> pack,
+                        new Pack.Info(Component.literal("hibernalherbs/" + folder), 15, FeatureFlagSet.of()),
+                        PackType.CLIENT_RESOURCES,
+                        Pack.Position.TOP,
+                        false,
+                        PackSource.BUILT_IN));
+
+            }
         });
     }
 }

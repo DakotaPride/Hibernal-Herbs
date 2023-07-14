@@ -1,6 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.init;
 
 import com.terraformersmc.terraform.leaves.block.LeafPileBlock;
+import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.block.*;
@@ -10,6 +11,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.HangingSignItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SignItem;
 import net.minecraft.registry.Registries;
@@ -223,10 +225,15 @@ public class BlockInit {
     public static PressurePlateBlock MYQUESTE_PRESSURE_PLATE = new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, 
             FabricBlockSettings.copy(Blocks.SPRUCE_PRESSURE_PLATE), TypeInit.SetType.MYQUESTE);
 
-    public static final Identifier MYQUESTE_SIGN_TEXTURE = new Identifier(MOD_ID, "entity/sign/myqueste");
-    public static final TerraformSignBlock MYQUESTE_SIGN = new TerraformSignBlock(MYQUESTE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.SPRUCE_SIGN));
-    public static final Block MYQUESTE_WALL_SIGN = new TerraformWallSignBlock(MYQUESTE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.SPRUCE_WALL_SIGN));
+    public static final Identifier MYQUESTE_SIGN_TEXTURE = new Identifier(MOD_ID, "entity/signs/myqueste");
+    protected static final Identifier MYQUESTE_HANGING_SIGN_TEXTURE = new Identifier(MOD_ID, "entity/signs/hanging/myqueste");
+    protected static final Identifier MYQUESTE_HANGING_SIGN_GUI_TEXTURE = new Identifier(MOD_ID, "textures/gui/hanging_signs/myqueste");
+    public static final TerraformSignBlock MYQUESTE_SIGN = new TerraformSignBlock(MYQUESTE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN));
+    public static final Block MYQUESTE_WALL_SIGN = new TerraformWallSignBlock(MYQUESTE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN));
     public static final Item MYQUESTE_SIGN_ITEM = new SignItem(new Item.Settings().maxCount(16), MYQUESTE_SIGN, MYQUESTE_WALL_SIGN);
+    public static final TerraformHangingSignBlock MYQUESTE_HANGING_SIGN = new TerraformHangingSignBlock(MYQUESTE_HANGING_SIGN_TEXTURE, MYQUESTE_HANGING_SIGN_GUI_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN));
+    public static final TerraformHangingSignBlock MYQUESTE_WALL_HANGING_SIGN = new TerraformHangingSignBlock(MYQUESTE_HANGING_SIGN_TEXTURE, MYQUESTE_HANGING_SIGN_GUI_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN));
+    public static final Item MYQUESTE_HANGING_SIGN_ITEM = new HangingSignItem(MYQUESTE_HANGING_SIGN, MYQUESTE_WALL_HANGING_SIGN, new Item.Settings().maxCount(16));
 
     public static void init() {
         Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "rosemary"), ROSEMARY);
@@ -333,6 +340,9 @@ public class BlockInit {
         Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "myqueste_sign"), MYQUESTE_SIGN);
         Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "myqueste_wall_sign"), MYQUESTE_WALL_SIGN);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "myqueste_sign"), MYQUESTE_SIGN_ITEM);
+        Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "myqueste_hanging_sign"), MYQUESTE_HANGING_SIGN);
+        Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "myqueste_wall_hanging_sign"), MYQUESTE_WALL_HANGING_SIGN);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "myqueste_hanging_sign"), MYQUESTE_HANGING_SIGN_ITEM);
 
         Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "myqueste_leaf_pile"), MYQUESTE_LEAF_PILE);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "myqueste_leaf_pile"), new BlockItem(MYQUESTE_LEAF_PILE, new FabricItemSettings()));
