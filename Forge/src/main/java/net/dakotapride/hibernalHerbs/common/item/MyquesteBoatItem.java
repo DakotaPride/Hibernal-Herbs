@@ -12,11 +12,13 @@ import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.entity.vehicle.ChestBoat;
+import net.minecraft.world.item.BoatItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
@@ -26,53 +28,54 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class MyquesteBoatItem extends Item {
+@SuppressWarnings("NullableProblems")
+public class MyquesteBoatItem extends BoatItem {
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
-    private final MyquesteBoatEntity.BoatType type;
-    private final boolean hasChest;
+    private final String WOOD_TYPE;
+    private final boolean HAS_CHEST;
 
-    public MyquesteBoatItem(boolean hasChest, MyquesteBoatEntity.BoatType type, Item.Properties properties) {
-        super(properties);
-        this.hasChest = hasChest;
-        this.type = type;
+    public MyquesteBoatItem(boolean pHasChest, Properties pProperties, WoodType pType) {
+        super(pHasChest, Boat.Type.MANGROVE, pProperties);
+        this.WOOD_TYPE = pType.name();
+        this.HAS_CHEST = pHasChest;
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-        ItemStack itemstack = player.getItemInHand(hand);
-        HitResult hitresult = getPlayerPOVHitResult(world, player, ClipContext.Fluid.ANY);
-        if (hitresult.getType() == HitResult.Type.MISS) {
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+        ItemStack itemstack = pPlayer.getItemInHand(pHand);
+        HitResult hitresult = getPlayerPOVHitResult(pLevel, pPlayer, ClipContext.Fluid.ANY);
+        if(hitresult.getType() == HitResult.Type.MISS) {
             return InteractionResultHolder.pass(itemstack);
         } else {
-            Vec3 vec3 = player.getViewVector(1.0F);
-            List<Entity> list = world.getEntities(player, player.getBoundingBox().expandTowards(vec3.scale(5.0D)).inflate(1.0D), ENTITY_PREDICATE);
-            if (!list.isEmpty()) {
-                Vec3 vec31 = player.getEyePosition();
+            Vec3 vec3 = pPlayer.getViewVector(1);
+            List<Entity> list = pLevel.getEntities(pPlayer, pPlayer.getBoundingBox().expandTowards(vec3.scale(5.0D)).inflate(1.0D), ENTITY_PREDICATE);
+            if(!list.isEmpty()) {
+                Vec3 vec31 = pPlayer.getEyePosition();
 
-                for (Entity entity : list) {
+                for(Entity entity : list) {
                     AABB aabb = entity.getBoundingBox().inflate(entity.getPickRadius());
-                    if (aabb.contains(vec31)) {
+                    if(aabb.contains(vec31)) {
                         return InteractionResultHolder.pass(itemstack);
                     }
                 }
             }
-            if (hitresult.getType() == HitResult.Type.BLOCK) {
-                MyquesteBoatEntity boat = this.getBoat(world, hitresult);
-                boat.setBoatType(this.type);
-                boat.setYRot(player.getYRot());
-                if (!world.noCollision(boat, boat.getBoundingBox().inflate(-0.1D))) {
+
+            if(hitresult.getType() == HitResult.Type.BLOCK) {
+                Boat boat = getBoat(pLevel, hitresult);
+                boat.setYRot(pPlayer.getYRot());
+                if(!pLevel.noCollision(boat, boat.getBoundingBox())) {
                     return InteractionResultHolder.fail(itemstack);
                 } else {
-                    if (!world.isClientSide) {
-                        world.addFreshEntity(boat);
-                        world.gameEvent(player, GameEvent.ENTITY_PLACE, hitresult.getLocation());
-                        if (!player.getAbilities().instabuild) {
+                    if(!pLevel.isClientSide) {
+                        pLevel.addFreshEntity(boat);
+                        pLevel.gameEvent(pPlayer, GameEvent.ENTITY_PLACE, hitresult.getLocation());
+                        if(!pPlayer.getAbilities().instabuild) {
                             itemstack.shrink(1);
                         }
                     }
 
-                    player.awardStat(Stats.ITEM_USED.get(this));
-                    return InteractionResultHolder.sidedSuccess(itemstack, world.isClientSide());
+                    pPlayer.awardStat(Stats.ITEM_USED.get(this));
+                    return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
                 }
             } else {
                 return InteractionResultHolder.pass(itemstack);
@@ -80,7 +83,7 @@ public class MyquesteBoatItem extends Item {
         }
     }
 
-    private MyquesteBoatEntity getBoat(Level world, HitResult hit) {
-        return this.hasChest ? new MyquesteChestBoatEntity(world, hit.getLocation().x, hit.getLocation().y, hit.getLocation().z) : new MyquesteBoatEntity(world, hit.getLocation().x, hit.getLocation().y, hit.getLocation().z);
+    private Boat getBoat(Level level, HitResult hitResult) {
+        return HAS_CHEST ? new MyquesteChestBoatEntity(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z, WOOD_TYPE) : new MyquesteBoatEntity(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z, WOOD_TYPE);
     }
 }

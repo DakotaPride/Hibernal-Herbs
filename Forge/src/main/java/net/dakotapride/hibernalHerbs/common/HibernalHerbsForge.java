@@ -3,6 +3,7 @@ package net.dakotapride.hibernalHerbs.common;
 import net.dakotapride.hibernalHerbs.client.PackLoader;
 import net.dakotapride.hibernalHerbs.common.entity.HibernalBlockEntities;
 import net.dakotapride.hibernalHerbs.common.entity.HibernalEntityTypes;
+import net.dakotapride.hibernalHerbs.common.entity.render.MyquesteBoatRenderer;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsConfigured;
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsPlaced;
 import net.dakotapride.hibernalHerbs.common.recipe.HibernalRecipes;
@@ -12,6 +13,7 @@ import net.dakotapride.hibernalHerbs.common.screen.HerbalConjurationScreen;
 import net.dakotapride.hibernalHerbs.common.screen.menu.HibernalHerbsMenues;
 import net.dakotapride.hibernalHerbs.platform.Services;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
@@ -62,7 +64,7 @@ public class HibernalHerbsForge {
         blockRegistry.register(eventBus);
 
         // Entities
-        HibernalEntityTypes.ENTITY_TYPES.register(eventBus);
+        HibernalEntityTypes.ENTITIES.register(eventBus);
 
         HibernalBlockEntities.BLOCK_ENTITIES.register(eventBus);
         HibernalHerbsMenues.register(eventBus);
@@ -196,6 +198,9 @@ public class HibernalHerbsForge {
                 ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
 
         MenuScreens.register(HibernalHerbsMenues.CONJURATION_ALTAR_MENU.get(), HerbalConjurationScreen::new);
+
+        EntityRenderers.register(HibernalEntityTypes.MYQUESTE_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, false));
+        EntityRenderers.register(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, true));
     }
 
     public static void init() {

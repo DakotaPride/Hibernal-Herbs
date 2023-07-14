@@ -1,7 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.registry;
 
 import net.dakotapride.hibernalHerbs.common.Constants;
-import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.block.*;
 import net.dakotapride.hibernalHerbs.common.block.leaf.LeafPileBlock;
 import net.dakotapride.hibernalHerbs.common.block.leaf.hibernal.HibernalLeafPileBlock;
@@ -16,6 +15,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,6 +25,9 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class blockRegistry {
+
+    public static final BlockSetType MYQUESTE_SET = BlockSetType.register(new BlockSetType("myqueste"));
+    public static final WoodType MYQUESTE_TYPE = WoodType.register(new WoodType("myqueste", MYQUESTE_SET));
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Constants.MOD_ID);
@@ -329,19 +333,19 @@ public class blockRegistry {
     public static final RegistryObject<Block> MYQUESTE_STAIRS = registerBlock("myqueste_stairs",
             () -> new StairBlock(MYQUESTE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SPRUCE_STAIRS)));
     public static final RegistryObject<Block> MYQUESTE_DOOR = registerBlock("myqueste_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_DOOR), TypeRegistry.SetType.MYQUESTE));
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_DOOR), MYQUESTE_SET));
     public static final RegistryObject<Block> MYQUESTE_TRAPDOOR = registerBlock("myqueste_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_TRAPDOOR), TypeRegistry.SetType.MYQUESTE));
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_TRAPDOOR), MYQUESTE_SET));
     public static final RegistryObject<Block> MYQUESTE_FENCE = registerBlock("myqueste_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE)));
     public static final RegistryObject<Block> MYQUESTE_FENCE_GATE = registerBlock("myqueste_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE_GATE), TypeRegistry.WoodType.MYQUESTE));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE_GATE), MYQUESTE_TYPE));
 
     public static final RegistryObject<Block> MYQUESTE_PRESSURE_PLATE = registerBlock("myqueste_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
-                    BlockBehaviour.Properties.copy(Blocks.SPRUCE_PRESSURE_PLATE), TypeRegistry.SetType.MYQUESTE));
+                    BlockBehaviour.Properties.copy(Blocks.SPRUCE_PRESSURE_PLATE), MYQUESTE_SET));
     public static final RegistryObject<Block> MYQUESTE_BUTTON = registerBlock("myqueste_button",
-            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON), TypeRegistry.SetType.MYQUESTE, 30, true));
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON), MYQUESTE_SET, 30, true));
 
     public static final RegistryObject<Block> MYQUESTE_SIGN = registerBlockWithoutTab("myqueste_sign", () ->
             new MyquesteSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SIGN), MyquesteType.MYQUESTE));

@@ -4,6 +4,9 @@ import net.dakotapride.hibernalHerbs.common.entity.HibernalEntityTypes;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -17,6 +20,7 @@ import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.entity.vehicle.ContainerEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
@@ -27,50 +31,27 @@ import net.minecraft.world.level.gameevent.GameEvent;
 
 import javax.annotation.Nullable;
 
-public class MyquesteChestBoatEntity extends MyquesteBoatEntity implements HasCustomInventoryScreen, ContainerEntity {
-    private NonNullList<ItemStack> itemStacks = NonNullList.withSize(27, ItemStack.EMPTY);
-    @Nullable
-    private ResourceLocation lootTable;
-    private long lootTableSeed;
+@SuppressWarnings("NullableProblems")
+public class MyquesteChestBoatEntity extends ChestBoat {
+    private static final EntityDataAccessor<String> WOOD_TYPE = SynchedEntityData.defineId(MyquesteBoatEntity.class, EntityDataSerializers.STRING);
 
-    public MyquesteChestBoatEntity(EntityType<? extends Boat> type, Level world) {
-        super(type, world);
+    public MyquesteChestBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
     }
 
-    public MyquesteChestBoatEntity(Level world, double x, double y, double z) {
-        this(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), world);
+    public MyquesteChestBoatEntity(Level level, double x, double y, double z, String woodType) {
+        this(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), level);
         this.setPos(x, y, z);
         this.xo = x;
         this.yo = y;
         this.zo = z;
+        this.entityData.set(WOOD_TYPE, woodType);
     }
 
     @Override
-    protected float getSinglePassengerXOffset() {
-        return 0.15F;
-    }
-
-    @Override
-    protected int getMaxPassengers() {
-        return 1;
-    }
-
-    @Override
-    protected void addAdditionalSaveData(CompoundTag tag) {
-        super.addAdditionalSaveData(tag);
-        this.addChestVehicleSaveData(tag);
-    }
-
-    @Override
-    protected void readAdditionalSaveData(CompoundTag tag) {
-        super.readAdditionalSaveData(tag);
-        this.readChestVehicleSaveData(tag);
-    }
-
-    @Override
-    public void destroy(DamageSource source) {
-        super.destroy(source);
-        this.chestVehicleDestroyed(source, this.level(), this);
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(WOOD_TYPE, "myqueste");
     }
 
     @Override
@@ -79,109 +60,27 @@ public class MyquesteChestBoatEntity extends MyquesteBoatEntity implements HasCu
     }
 
     @Override
-    public void remove(Entity.RemovalReason reason) {
-        if (!this.level().isClientSide && reason.shouldDestroy()) {
-            Containers.dropContents(this.level(), this, this);
-        }
-
-        super.remove(reason);
+    protected void addAdditionalSaveData(CompoundTag pCompound) {
+        super.addAdditionalSaveData(pCompound);
+        pCompound.putString("Type", this.getWoodType());
     }
 
     @Override
-    public InteractionResult interact(Player player, InteractionHand hand) {
-        return this.canAddPassenger(player) && !player.isSecondaryUseActive() ? super.interact(player, hand) : this.interactWithContainerVehicle(player);
+    protected void readAdditionalSaveData(CompoundTag pCompound) {
+        super.readAdditionalSaveData(pCompound);
+        this.setWoodType(pCompound.getString("Type"));
+    }
+
+    public String getWoodType() {
+        return this.entityData.get(WOOD_TYPE);
+    }
+
+    public void setWoodType(String woodType) {
+        this.entityData.set(WOOD_TYPE, woodType);
     }
 
     @Override
-    public void openCustomInventoryScreen(Player player) {
-        player.openMenu(this);
-        if (!player.level().isClientSide) {
-            this.gameEvent(GameEvent.CONTAINER_OPEN, player);
-            PiglinAi.angerNearbyPiglins(player, true);
-        }
-
-    }
-
-    public void clearContent() {
-        this.clearChestVehicleContent();
-    }
-
-    public int getContainerSize() {
-        return 27;
-    }
-
-    public ItemStack getItem(int index) {
-        return this.getChestVehicleItem(index);
-    }
-
-    public ItemStack removeItem(int index, int count) {
-        return this.removeChestVehicleItem(index, count);
-    }
-
-    public ItemStack removeItemNoUpdate(int index) {
-        return this.removeChestVehicleItemNoUpdate(index);
-    }
-
-    public void setItem(int index, ItemStack p_219886_) {
-        this.setChestVehicleItem(index, p_219886_);
-    }
-
-    @Override
-    public SlotAccess getSlot(int slot) {
-        return this.getChestVehicleSlot(slot);
-    }
-
-    @Override
-    public void setChanged() {
-    }
-
-    @Override
-    public boolean stillValid(Player player) {
-        return this.isChestVehicleStillValid(player);
-    }
-
-    @Override
-    @Nullable
-    public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        if (this.lootTable != null && player.isSpectator()) {
-            return null;
-        } else {
-            this.unpackLootTable(inventory.player);
-            return ChestMenu.threeRows(id, inventory, this);
-        }
-    }
-
-    public void unpackLootTable(@Nullable Player player) {
-        this.unpackChestVehicleLootTable(player);
-    }
-
-    @Nullable
-    public ResourceLocation getLootTable() {
-        return this.lootTable;
-    }
-
-    @Override
-    public void setLootTable(@Nullable ResourceLocation location) {
-        this.lootTable = location;
-    }
-
-    @Override
-    public long getLootTableSeed() {
-        return this.lootTableSeed;
-    }
-
-    @Override
-    public void setLootTableSeed(long seed) {
-        this.lootTableSeed = seed;
-    }
-
-    @Override
-    public NonNullList<ItemStack> getItemStacks() {
-        return this.itemStacks;
-    }
-
-    @Override
-    public void clearItemStacks() {
-        this.itemStacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+    public ItemStack getPickResult() {
+        return new ItemStack(this.getDropItem());
     }
 }

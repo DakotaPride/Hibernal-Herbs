@@ -110,9 +110,9 @@ public class itemRegistry implements FoodComponentList {
             () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> MYQUESTE_BOAT = ITEMS.register("myqueste_boat",
-            () -> new MyquesteBoatItem(false, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties().stacksTo(1)));
+            () -> new MyquesteBoatItem(false, new Item.Properties().stacksTo(1), blockRegistry.MYQUESTE_TYPE));
     public static final RegistryObject<Item> MYQUESTE_CHEST_BOAT = ITEMS.register("myqueste_chest_boat",
-            () -> new MyquesteBoatItem(true, MyquesteBoatEntity.BoatType.MYQUESTE, new Item.Properties().stacksTo(1)));
+            () -> new MyquesteBoatItem(true, new Item.Properties().stacksTo(1), blockRegistry.MYQUESTE_TYPE));
 
     public static final RegistryObject<Item> MYQUESTE_SIGN = ITEMS.register("myqueste_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16),
