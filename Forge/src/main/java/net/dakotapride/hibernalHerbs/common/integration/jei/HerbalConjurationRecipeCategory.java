@@ -11,6 +11,7 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -64,6 +65,6 @@ public class HerbalConjurationRecipeCategory implements IRecipeCategory<HerbalCo
         builder.addSlot(RecipeIngredientRole.INPUT, 68, 49).addIngredients(recipe.getIngredients().get(3));
         builder.addSlot(RecipeIngredientRole.INPUT, 90, 45).addIngredients(recipe.getIngredients().get(4));
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 63).addItemStack(recipe.getResultItem());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 63).addItemStack(recipe.getResultItem(RegistryAccess.EMPTY));
     }
 }

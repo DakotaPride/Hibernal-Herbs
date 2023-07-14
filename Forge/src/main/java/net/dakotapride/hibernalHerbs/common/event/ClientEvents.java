@@ -26,7 +26,7 @@ public class ClientEvents {
 
     @SubscribeEvent
     public static void registerEntityModelLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(MOD_ID, "boat/myqueste"), "main"), () -> BoatModel.createBodyModel(false));
-        event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(MOD_ID, "chest_boat/myqueste"), "main"), () -> BoatModel.createBodyModel(true));
+        event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(MOD_ID, "boat/myqueste"), "main"), BoatModel::createBodyModel);
+        event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(MOD_ID, "chest_boat/myqueste"), "main"), BoatModel::createBodyModel);
     }
 }

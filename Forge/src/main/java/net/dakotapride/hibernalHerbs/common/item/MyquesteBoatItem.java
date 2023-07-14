@@ -65,7 +65,7 @@ public class MyquesteBoatItem extends Item {
                 } else {
                     if (!world.isClientSide) {
                         world.addFreshEntity(boat);
-                        world.gameEvent(player, GameEvent.ENTITY_PLACE, new BlockPos(hitresult.getLocation()));
+                        world.gameEvent(player, GameEvent.ENTITY_PLACE, hitresult.getLocation());
                         if (!player.getAbilities().instabuild) {
                             itemstack.shrink(1);
                         }

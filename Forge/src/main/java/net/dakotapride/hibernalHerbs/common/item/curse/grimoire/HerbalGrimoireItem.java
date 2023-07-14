@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.ModList;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vazkii.patchouli.api.PatchouliAPI;
 
@@ -26,11 +27,10 @@ public class HerbalGrimoireItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
 
-        if (player instanceof ServerPlayer && ModList.get().isLoaded("patchouli")) {
-            ServerPlayer serverPlayer = (ServerPlayer) player;
+        if (player instanceof ServerPlayer serverPlayer && ModList.get().isLoaded("patchouli")) {
 
             PatchouliAPI.get().openBookGUI(serverPlayer, new ResourceLocation(MOD_ID, "grimoire"));
 
@@ -41,7 +41,7 @@ public class HerbalGrimoireItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag tooltipFlag) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
         if (!ModList.get().isLoaded("patchouli")) {
             tooltip.add(Component.translatable("text.hibernalherbs.patchouli"));
             tooltip.add(Component.literal(" "));

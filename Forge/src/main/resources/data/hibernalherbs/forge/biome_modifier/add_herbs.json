@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#hibernalherbs:has_herbs",
-  "features": "hibernalherbs:rosemary_placed",
+  "features": "hibernalherbs:herbs_placed",
   "step": "vegetal_decoration"
 }

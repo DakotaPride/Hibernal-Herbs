@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#hibernalherbs:has_herbs",
-  "features": "hibernalherbs:marjoram_placed",
-  "step": "vegetal_decoration"
-}

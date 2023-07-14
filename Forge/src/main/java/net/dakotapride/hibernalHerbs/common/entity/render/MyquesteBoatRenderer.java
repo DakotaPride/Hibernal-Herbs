@@ -2,6 +2,7 @@ package net.dakotapride.hibernalHerbs.common.entity.render;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.ListModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -15,11 +16,11 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 @OnlyIn(Dist.CLIENT)
 public class MyquesteBoatRenderer extends BoatRenderer {
-    private final Pair<ResourceLocation, BoatModel> myqueste;
+    private final Pair<ResourceLocation, ListModel<Boat>> myqueste;
 
     public MyquesteBoatRenderer(EntityRendererProvider.Context context, boolean hasChest) {
         super(context, hasChest);
-        this.myqueste = Pair.of(this.getTexture(hasChest), new BoatModel(context.bakeLayer(createModelLayerLocation(hasChest)), hasChest));
+        this.myqueste =  Pair.of(this.getTexture(hasChest), new BoatModel(context.bakeLayer(createModelLayerLocation(hasChest))));
     }
 
     @NotNull
@@ -35,7 +36,7 @@ public class MyquesteBoatRenderer extends BoatRenderer {
     }
 
     @Override
-    public Pair<ResourceLocation, BoatModel> getModelWithLocation(Boat boat) {
+    public @NotNull Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(@NotNull Boat boat) {
         return this.myqueste;
     }
 }

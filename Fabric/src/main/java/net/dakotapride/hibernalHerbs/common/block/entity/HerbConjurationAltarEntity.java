@@ -5,6 +5,7 @@ import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
 import net.dakotapride.hibernalHerbs.common.screen.HerbConjurationAltarScreenHandler;
 import net.dakotapride.hibernalHerbs.common.util;
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,9 +15,11 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class HerbConjurationAltarEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
+public class HerbConjurationAltarEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(7, ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
@@ -178,8 +181,8 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
                 entity.setStack(5, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
             }
 
-            entity.setStack(6, new ItemStack(recipe.get().getOutput().getItem(),
-                    entity.getStack(6).getCount() + recipe.get().getOutput().getCount()));
+            entity.setStack(6, new ItemStack(recipe.get().getOutput(DynamicRegistryManager.EMPTY).getItem(),
+                    entity.getStack(6).getCount() + recipe.get().getOutput(DynamicRegistryManager.EMPTY).getCount()));
 
             entity.resetProgress();
         }
@@ -195,7 +198,7 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
                 .getFirstMatch(HerbalConjurationRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
+                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput(DynamicRegistryManager.EMPTY).getItem());
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
@@ -205,5 +208,10 @@ public class HerbConjurationAltarEntity extends BlockEntity implements NamedScre
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
         return inventory.getStack(6).getMaxCount() > inventory.getStack(6).getCount();
+    }
+
+    @Override
+    public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
+        buf.writeBlockPos(this.pos);
     }
 }

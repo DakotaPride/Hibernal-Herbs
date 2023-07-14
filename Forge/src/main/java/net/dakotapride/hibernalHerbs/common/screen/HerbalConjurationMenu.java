@@ -19,14 +19,14 @@ public class HerbalConjurationMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public HerbalConjurationMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
+        this(id, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public HerbalConjurationMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(HibernalHerbsMenues.CONJURATION_ALTAR_MENU.get(), id);
         checkContainerSize(inv, 7);
         blockEntity = (ConjurationAltarBlockEntity) entity;
-        this.level = inv.player.level;
+        this.level = inv.player.level();
         this.data = data;
 
         addPlayerInventory(inv);

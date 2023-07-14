@@ -7,6 +7,7 @@ import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.dakotapride.hibernalHerbs.common.screen.HerbalConjurationMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Containers;
@@ -191,8 +192,8 @@ public class ConjurationAltarBlockEntity extends BlockEntity implements MenuProv
             } else {
                 entity.itemHandler.setStackInSlot(5, new ItemStack(itemRegistry.CRACKED_SIGIL.get(), 1));
             }
-            entity.itemHandler.setStackInSlot(6, new ItemStack(recipe.get().getResultItem().getItem(),
-                    entity.itemHandler.getStackInSlot(6).getCount() + recipe.get().getResultItem().getCount()));
+            entity.itemHandler.setStackInSlot(6, new ItemStack(recipe.get().getResultItem(RegistryAccess.EMPTY).getItem(),
+                    entity.itemHandler.getStackInSlot(6).getCount() + recipe.get().getResultItem(RegistryAccess.EMPTY).getCount()));
 
             entity.resetProgress();
         }
@@ -210,7 +211,7 @@ public class ConjurationAltarBlockEntity extends BlockEntity implements MenuProv
                 .getRecipeFor(HerbalConjurationRecipe.Type.INSTANCE, inventory, level);
 
         return recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) &&
-                canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem());
+                canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem(RegistryAccess.EMPTY));
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack stack) {

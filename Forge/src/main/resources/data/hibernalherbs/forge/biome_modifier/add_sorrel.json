@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#hibernalherbs:has_herbs",
-  "features": "hibernalherbs:sorrel_placed",
-  "step": "vegetal_decoration"
-}

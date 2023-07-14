@@ -6,6 +6,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -13,6 +14,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -64,12 +66,12 @@ public class HerbalConjurationRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public NonNullList<Ingredient> getIngredients() {
+    public @NotNull NonNullList<Ingredient> getIngredients() {
         return input;
     }
 
     @Override
-    public ItemStack assemble(SimpleContainer pContainer) {
+    public @NotNull ItemStack assemble(@NotNull SimpleContainer container, @NotNull RegistryAccess access) {
         return output;
     }
 
@@ -79,22 +81,22 @@ public class HerbalConjurationRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public ItemStack getResultItem() {
+    public @NotNull ItemStack getResultItem(@NotNull RegistryAccess access) {
         return output.copy();
     }
 
     @Override
-    public ResourceLocation getId() {
+    public @NotNull ResourceLocation getId() {
         return id;
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public @NotNull RecipeType<?> getType() {
         return Type.INSTANCE;
     }
 
@@ -110,7 +112,7 @@ public class HerbalConjurationRecipe implements Recipe<SimpleContainer> {
                 new ResourceLocation(MOD_ID, "herbal_conjuration");
 
         @Override
-        public HerbalConjurationRecipe fromJson(ResourceLocation recipeId, JsonObject serializedRecipe) {
+        public @NotNull HerbalConjurationRecipe fromJson(ResourceLocation recipeId, JsonObject serializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(serializedRecipe, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(serializedRecipe, "ingredients");
@@ -124,12 +126,10 @@ public class HerbalConjurationRecipe implements Recipe<SimpleContainer> {
         }
 
         @Override
-        public @Nullable HerbalConjurationRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+        public @Nullable HerbalConjurationRecipe fromNetwork(@NotNull ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromNetwork(buf));
-            }
+            inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
 
             ItemStack output = buf.readItem();
             return new HerbalConjurationRecipe(id, output, inputs);
@@ -142,7 +142,7 @@ public class HerbalConjurationRecipe implements Recipe<SimpleContainer> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
             }
-            buf.writeItemStack(recipe.getResultItem(), false);
+            buf.writeItemStack(recipe.getResultItem(RegistryAccess.EMPTY), false);
         }
     }
 }

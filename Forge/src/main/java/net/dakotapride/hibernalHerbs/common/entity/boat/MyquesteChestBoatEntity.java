@@ -70,7 +70,7 @@ public class MyquesteChestBoatEntity extends MyquesteBoatEntity implements HasCu
     @Override
     public void destroy(DamageSource source) {
         super.destroy(source);
-        this.chestVehicleDestroyed(source, this.level, this);
+        this.chestVehicleDestroyed(source, this.level(), this);
     }
 
     @Override
@@ -80,8 +80,8 @@ public class MyquesteChestBoatEntity extends MyquesteBoatEntity implements HasCu
 
     @Override
     public void remove(Entity.RemovalReason reason) {
-        if (!this.level.isClientSide && reason.shouldDestroy()) {
-            Containers.dropContents(this.level, this, this);
+        if (!this.level().isClientSide && reason.shouldDestroy()) {
+            Containers.dropContents(this.level(), this, this);
         }
 
         super.remove(reason);
@@ -89,13 +89,13 @@ public class MyquesteChestBoatEntity extends MyquesteBoatEntity implements HasCu
 
     @Override
     public InteractionResult interact(Player player, InteractionHand hand) {
-        return this.canAddPassenger(player) && !player.isSecondaryUseActive() ? super.interact(player, hand) : this.interactWithChestVehicle(this::gameEvent, player);
+        return this.canAddPassenger(player) && !player.isSecondaryUseActive() ? super.interact(player, hand) : this.interactWithContainerVehicle(player);
     }
 
     @Override
     public void openCustomInventoryScreen(Player player) {
         player.openMenu(this);
-        if (!player.level.isClientSide) {
+        if (!player.level().isClientSide) {
             this.gameEvent(GameEvent.CONTAINER_OPEN, player);
             PiglinAi.angerNearbyPiglins(player, true);
         }

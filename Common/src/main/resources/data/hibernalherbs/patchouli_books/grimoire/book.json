@@ -8,5 +8,6 @@
   "version": "8",
   "link_color": "3D474C",
   "link_hover_color": "3D474C",
-  "progress_bar_color": "67D3B3"
+  "progress_bar_color": "67D3B3",
+  "use_resource_pack": true
 }
