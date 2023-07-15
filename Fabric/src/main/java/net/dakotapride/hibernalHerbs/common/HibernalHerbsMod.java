@@ -1,6 +1,7 @@
 package net.dakotapride.hibernalHerbs.common;
 
 import net.dakotapride.hibernalHerbs.common.init.*;
+import net.dakotapride.hibernalHerbs.common.item.HibernalItemTabs;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
@@ -24,6 +25,7 @@ public class HibernalHerbsMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		HibernalItemTabs.init();
 
 		TypeInit.SetType.init();
 

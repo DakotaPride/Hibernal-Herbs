@@ -295,9 +295,9 @@
   "text.hibernalherbs.cracked_sigil.assist.2": "Sigil's Energy, Reconstruct It",
   "text.hibernalherbs.cracked_sigil.assist.3": "In Order To Reuse It",
 
-  "itemGroup.hibernalherbs.hibernal_herbs": "Hibernal Herbs - Misc",
-  "itemGroup.hibernalherbs.herbs": "Hibernal Herbs - Herbs",
-  "itemGroup.hibernalherbs.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
+  "itemGroup.hibernalherbs.hibernal_herbs": "Herbs Misc",
+  "itemGroup.hibernalherbs.herbs": "Herbs",
+  "itemGroup.hibernalherbs.pounded_herbs": "Pounded Herbs",
 
   "text.hibernalherbs.blend_regeneration": "Huh, Tastes Better Than Actual Medicine...",
   "text.hibernalherbs.blend_poison": "Are You a Witch or Something?",

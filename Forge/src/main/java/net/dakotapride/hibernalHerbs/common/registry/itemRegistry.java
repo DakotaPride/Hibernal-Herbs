@@ -1,8 +1,5 @@
 package net.dakotapride.hibernalHerbs.common.registry;
 
-import net.dakotapride.hibernalHerbs.common.Constants;
-import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
-import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoatEntity;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.item.*;
 import net.dakotapride.hibernalHerbs.common.item.abstractItem.AbstractCanisterItem;
@@ -10,20 +7,24 @@ import net.dakotapride.hibernalHerbs.common.item.curse.CursedPadlockItem;
 import net.dakotapride.hibernalHerbs.common.item.curse.grimoire.HerbalGrimoireItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.GluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.adv.AdvancedGluttonousRingItem;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
+
 public class itemRegistry implements FoodComponentList {
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
     public static final RegistryObject<Item> GROUND_HERBS = ITEMS.register("ground_herbs",
             () -> new Item(new Item.Properties()));
@@ -406,7 +407,227 @@ public class itemRegistry implements FoodComponentList {
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                     .effect(new MobEffectInstance(MobEffects.GLOWING, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
 
+    // Tabs
+    public static final RegistryObject<CreativeModeTab> HIBERNAL_HERBS_TAB = CREATIVE_MODE_TABS.register("hibernal_herbs",
+            () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.hibernalherbs.hibernal_herbs"))
+                    .icon(() -> new ItemStack(blockRegistry.CONJURATION_ALTAR.get().asItem())).displayItems((parameters, output) -> {
+                        output.accept(GROUND_HERBS.get());
+                        output.accept(HERB_FERTILIZER.get());
+                        output.accept(HERB_HUMUS.get());
+                        output.accept(POUCH_SCRATCHED.get());
+                        output.accept(CANISTER_IRON.get());
+                        output.accept(CANISTER_AMETHYST.get());
+                        output.accept(CANISTER_DIAMOND.get());
+
+                        output.accept(REGENERATIVE_BLEND.get());
+                        output.accept(SMOKED_REGENERATIVE_BLEND.get());
+                        output.accept(VIRULENT_BLEND.get());
+                        output.accept(SMOKED_VIRULENT_BLEND.get());
+                        output.accept(SEDATING_BLEND.get());
+                        output.accept(SMOKED_SEDATING_BLEND.get());
+                        output.accept(HINDERING_BLEND.get());
+                        output.accept(SMOKED_HINDERING_BLEND.get());
+                        output.accept(DASHING_BLEND.get());
+                        output.accept(SMOKED_DASHING_BLEND.get());
+                        output.accept(ACCELERATION_BLEND.get());
+                        output.accept(SMOKED_ACCELERATION_BLEND.get());
+                        output.accept(INCINERATING_BLEND.get());
+                        output.accept(SMOKED_INCINERATING_BLEND.get());
+                        output.accept(DECAYING_BLEND.get());
+                        output.accept(SMOKED_DECAYING_BLEND.get());
+                        output.accept(OBSERVING_BLEND.get());
+                        output.accept(SMOKED_OBSERVING_BLEND.get());
+                        output.accept(DIMINISHED_BLEND.get());
+                        output.accept(SMOKED_DIMINISHED_BLEND.get());
+                        output.accept(SHADED_BLEND.get());
+                        output.accept(SMOKED_SHADED_BLEND.get());
+                        output.accept(CONFLICTING_BLEND.get());
+                        output.accept(SMOKED_CONFLICTING_BLEND.get());
+                        output.accept(ALTERNATIVE_BLEND.get());
+                        output.accept(SMOKED_ALTERNATIVE_BLEND.get());
+
+                        output.accept(HERBAL_GRIMOIRE.get());
+                        output.accept(SINGED_GRIMOIRE.get());
+
+                        output.accept(SILIPTIUM_PETAL.get());
+                        output.accept(LUMBINETRIK_PETAL.get());
+
+                        output.accept(SIGIL.get());
+                        output.accept(SIGIL_PRIDE.get());
+                        output.accept(SIGIL_WRATH.get());
+                        output.accept(SIGIL_GLUTTONY.get());
+                        output.accept(SIGIL_SLOTH.get());
+                        output.accept(SIGIL_LUST.get());
+                        output.accept(SIGIL_ENVY.get());
+                        output.accept(SIGIL_GREED.get());
+                        output.accept(SIGIL_CONFIGURATION.get());
+                        output.accept(SIGIL_CONFIGURATION_ADV.get());
+                        output.accept(SIGIL_MASTERY.get());
+                        output.accept(SIGIL_MASTERY_ADV.get());
+
+                        output.accept(PIQUE_PADLOCK.get());
+                        output.accept(PIQUE_PADLOCK_BOUND.get());
+                        output.accept(VEXATION_PADLOCK.get());
+                        output.accept(VEXATION_PADLOCK_BOUND.get());
+                        output.accept(GOURMANDIZING_PADLOCK.get());
+                        output.accept(GOURMANDIZING_PADLOCK_BOUND.get());
+                        output.accept(APATHY_PADLOCK.get());
+                        output.accept(APATHY_PADLOCK_BOUND.get());
+                        output.accept(SALACIOUS_PADLOCK.get());
+                        output.accept(SALACIOUS_PADLOCK_BOUND.get());
+                        output.accept(SPITEFUL_PADLOCK.get());
+                        output.accept(SPITEFUL_PADLOCK_BOUND.get());
+                        output.accept(AVARICE_PADLOCK.get());
+                        output.accept(AVARICE_PADLOCK_BOUND.get());
+
+                        output.accept(blockRegistry.CONJURATION_ALTAR.get().asItem());
+
+                        output.accept(blockRegistry.CALENDULA_LANTERN.get().asItem());
+                        output.accept(blockRegistry.ROSEMARY_LANTERN.get().asItem());
+                        output.accept(blockRegistry.THYME_LANTERN.get().asItem());
+                        output.accept(blockRegistry.TARRAGON_LANTERN.get().asItem());
+                        output.accept(blockRegistry.CHAMOMILE_LANTERN.get().asItem());
+                        output.accept(blockRegistry.CHIVES_LANTERN.get().asItem());
+                        output.accept(blockRegistry.VERBENA_LANTERN.get().asItem());
+                        output.accept(blockRegistry.SORREL_LANTERN.get().asItem());
+                        output.accept(blockRegistry.MARJORAM_LANTERN.get().asItem());
+                        output.accept(blockRegistry.CHERVIL_LANTERN.get().asItem());
+                        output.accept(blockRegistry.FENNSEL_LANTERN.get().asItem());
+                        output.accept(blockRegistry.CEILLIS_LANTERN.get().asItem());
+                        output.accept(blockRegistry.PUNUEL_LANTERN.get().asItem());
+                        output.accept(blockRegistry.ESSITTE_LANTERN.get().asItem());
+                        output.accept(blockRegistry.FENNKYSTRAL_LANTERN.get().asItem());
+                        output.accept(blockRegistry.THYOCIELLE_LANTERN.get().asItem());
+                        output.accept(blockRegistry.SAGE_LANTERN.get().asItem());
+
+                        output.accept(blockRegistry.CALENDULA_BARREL.get().asItem());
+                        output.accept(blockRegistry.ROSEMARY_BARREL.get().asItem());
+                        output.accept(blockRegistry.THYME_BARREL.get().asItem());
+                        output.accept(blockRegistry.TARRAGON_BARREL.get().asItem());
+                        output.accept(blockRegistry.CHAMOMILE_BARREL.get().asItem());
+                        output.accept(blockRegistry.CHIVES_BARREL.get().asItem());
+                        output.accept(blockRegistry.VERBENA_BARREL.get().asItem());
+                        output.accept(blockRegistry.SORREL_BARREL.get().asItem());
+                        output.accept(blockRegistry.MARJORAM_BARREL.get().asItem());
+                        output.accept(blockRegistry.CHERVIL_BARREL.get().asItem());
+                        output.accept(blockRegistry.FENNSEL_BARREL.get().asItem());
+                        output.accept(blockRegistry.CEILLIS_BARREL.get().asItem());
+                        output.accept(blockRegistry.PUNUEL_BARREL.get().asItem());
+                        output.accept(blockRegistry.ESSITTE_BARREL.get().asItem());
+                        output.accept(blockRegistry.FENNKYSTRAL_BARREL.get().asItem());
+                        output.accept(blockRegistry.THYOCIELLE_BARREL.get().asItem());
+                        output.accept(blockRegistry.SAGE_BARREL.get().asItem());
+
+                        output.accept(blockRegistry.MYQUESTE_LEAF_PILE.get().asItem());
+                        output.accept(blockRegistry.CALENDULA_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.ROSEMARY_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.THYME_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.TARRAGON_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.CHAMOMILE_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.CHIVES_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.VERBENA_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.SORREL_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.MARJORAM_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.CHERVIL_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.FENNSEL_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.CEILLIS_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.PUNUEL_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.ESSITTE_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.FENNKYSTRAL_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.THYOCIELLE_HERB_PILE.get().asItem());
+                        output.accept(blockRegistry.SAGE_HERB_PILE.get().asItem());
+
+                        output.accept(blockRegistry.MYQUESTE_LOG.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_WOOD.get().asItem());
+                        output.accept(blockRegistry.STRIPPED_MYQUESTE_LOG.get().asItem());
+                        output.accept(blockRegistry.STRIPPED_MYQUESTE_WOOD.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_PLANKS.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_STAIRS.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_SLAB.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_FENCE.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_FENCE_GATE.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_DOOR.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_TRAPDOOR.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_PRESSURE_PLATE.get().asItem());
+                        output.accept(blockRegistry.MYQUESTE_BUTTON.get().asItem());
+                        output.accept(MYQUESTE_BOAT.get());
+                        output.accept(MYQUESTE_CHEST_BOAT.get());
+                        output.accept(MYQUESTE_SIGN.get());
+                        output.accept(MYQUESTE_HANGING_SIGN.get());
+
+
+                    }).build());
+    public static final RegistryObject<CreativeModeTab> POUNDED_HERBS_TAB = CREATIVE_MODE_TABS.register("pounded_herbs",
+            () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.hibernalherbs.pounded_herbs"))
+                    .icon(() -> new ItemStack(POUNDED_TARRAGON.get())).displayItems(((parameters, output) -> {
+                        output.accept(POUNDED_CALENDULA.get());
+                        output.accept(POUNDED_ROSEMARY.get());
+                        output.accept(POUNDED_THYME.get());
+                        output.accept(POUNDED_TARRAGON.get());
+                        output.accept(POUNDED_CHAMOMILE.get());
+                        output.accept(POUNDED_CHIVES.get());
+                        output.accept(POUNDED_VERBENA.get());
+                        output.accept(POUNDED_SORREL.get());
+                        output.accept(POUNDED_MARJORAM.get());
+                        output.accept(POUNDED_CHERVIL.get());
+                        output.accept(POUNDED_FENNSEL.get());
+                        output.accept(POUNDED_CEILLIS.get());
+                        output.accept(POUNDED_PUNUEL.get());
+                        output.accept(POUNDED_ESSITTE.get());
+                        output.accept(POUNDED_FENNKYSTRAL.get());
+                        output.accept(POUNDED_THYOCIELLE.get());
+                        output.accept(POUNDED_SAGE.get());
+
+                        output.accept(DRIED_CALENDULA.get());
+                        output.accept(DRIED_ROSEMARY.get());
+                        output.accept(DRIED_THYME.get());
+                        output.accept(DRIED_TARRAGON.get());
+                        output.accept(DRIED_CHAMOMILE.get());
+                        output.accept(DRIED_CHIVES.get());
+                        output.accept(DRIED_VERBENA.get());
+                        output.accept(DRIED_SORREL.get());
+                        output.accept(DRIED_MARJORAM.get());
+                        output.accept(DRIED_CHERVIL.get());
+                        output.accept(DRIED_FENNSEL.get());
+                        output.accept(DRIED_CEILLIS.get());
+                        output.accept(DRIED_PUNUEL.get());
+                        output.accept(DRIED_ESSITTE.get());
+                        output.accept(DRIED_FENNKYSTRAL.get());
+                        output.accept(DRIED_THYOCIELLE.get());
+                        output.accept(DRIED_SAGE.get());
+                    })).build());
+    public static final RegistryObject<CreativeModeTab> HERBS_TAB = CREATIVE_MODE_TABS.register("herbs",
+            () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.hibernalherbs.herbs"))
+                    .icon(() -> new ItemStack(blockRegistry.TARRAGON.get().asItem())).displayItems(((parameters, output) -> {
+                        output.accept(blockRegistry.CALENDULA.get().asItem());
+                        output.accept(blockRegistry.ROSEMARY.get().asItem());
+                        output.accept(blockRegistry.THYME.get().asItem());
+                        output.accept(blockRegistry.TARRAGON.get().asItem());
+                        output.accept(blockRegistry.CHAMOMILE.get().asItem());
+                        output.accept(blockRegistry.CHIVES.get().asItem());
+                        output.accept(blockRegistry.VERBENA.get().asItem());
+                        output.accept(blockRegistry.SORREL.get().asItem());
+                        output.accept(blockRegistry.MARJORAM.get().asItem());
+                        output.accept(blockRegistry.CHERVIL.get().asItem());
+                        output.accept(blockRegistry.FENNSEL.get().asItem());
+                        output.accept(blockRegistry.CEILLIS.get().asItem());
+                        output.accept(blockRegistry.PUNUEL.get().asItem());
+                        output.accept(blockRegistry.ESSITTE.get().asItem());
+                        output.accept(blockRegistry.FENNKYSTRAL.get().asItem());
+                        output.accept(blockRegistry.THYOCIELLE.get().asItem());
+                        output.accept(blockRegistry.SAGE.get().asItem());
+
+                        output.accept(blockRegistry.PRIDE_HERB.get());
+                        output.accept(blockRegistry.WRATH_HERB.get());
+                        output.accept(blockRegistry.GLUTTONY_HERB.get());
+                        output.accept(blockRegistry.SLOTH_HERB.get());
+                        output.accept(blockRegistry.LUST_HERB.get());
+                        output.accept(blockRegistry.ENVY_HERB.get());
+                        output.accept(blockRegistry.GREED_HERB.get());
+                    })).build());
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+        CREATIVE_MODE_TABS.register(eventBus);
     }
 }
