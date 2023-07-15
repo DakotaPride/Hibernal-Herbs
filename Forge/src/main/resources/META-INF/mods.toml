@@ -49,8 +49,8 @@ description='''[MMD Winterjam 2022] Wanna celebrate the holidays with a touch of
 [[dependencies.hibernalherbs]]
 modId="patchouli"
 mandatory=true
-versionRange="[1.19.4-79,)"
+versionRange="[1.20.1-81,)"
 [[dependencies.hibernalherbs]]
 modId="curios"
 mandatory=true
-versionRange="[1.19.2-5.2.0,)"
+versionRange="[1.20.1-5.2.0,)"
