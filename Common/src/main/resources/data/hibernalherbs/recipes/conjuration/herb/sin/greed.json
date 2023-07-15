@@ -11,7 +11,7 @@
       "item": "hibernalherbs:lumbinetrik_petals"
     },
     {
-      "item": "hibernalherbs:sigil_pride"
+      "item": "hibernalherbs:sigil_greed"
     },
     {
       "item": "hibernalherbs:lumbinetrik_petals"
@@ -21,7 +21,7 @@
     }
   ],
   "output": {
-    "item": "hibernalherbs:pride_herb",
+    "item": "hibernalherbs:greed_herb",
     "count": 2
   }
 }
