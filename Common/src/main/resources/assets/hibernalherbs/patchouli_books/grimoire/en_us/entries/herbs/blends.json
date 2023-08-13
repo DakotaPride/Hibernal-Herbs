@@ -10,67 +10,67 @@
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/blindness",
-      "text": "The conjuration to create a $(t:Provides blindness to the targeted player)Shaded Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides blindness to the targeted player)Shaded Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/fire",
-      "text": "The conjuration to create a $(t:Sets the target on fire)Incinerating Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Sets the target on fire)Incinerating Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/haste",
-      "text": "The conjuration to create a $(t:Provides haste to the targeted player)Dashing Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides haste to the targeted player)Dashing Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/mining_fatigue",
-      "text": "The conjuration to create a $(t:Provides mining fatigue to the targeted player)Hindering Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides mining fatigue to the targeted player)Hindering Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/night_vision",
-      "text": "The conjuration to create a $(t:Provides night vision to the targeted player)Observing Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides night vision to the targeted player)Observing Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/poison",
-      "text": "The conjuration to create a $(t:Provides poison to the targeted player)Virulent Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides poison to the targeted player)Virulent Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/regeneration",
-      "text": "The conjuration to create a $(t:Provides regeneration to the targeted player)Regenerative Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides regeneration to the targeted player)Regenerative Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/regeneration_slowness",
-      "text": "The conjuration to create a $(t:Provides regeneration and slowness to the targeted player)Conflicting Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides regeneration and slowness to the targeted player)Conflicting Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/regeneration_speed_weakness",
-      "text": "The conjuration to create a $(t:Provides regeneration, speed, and weakness to the targeted player)Alternative Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides regeneration, speed, and weakness to the targeted player)Alternative Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/slowness",
-      "text": "The conjuration to create a $(t:Provides slowness to the targeted player)Sedating Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides slowness to the targeted player)Sedating Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/speed",
-      "text": "The conjuration to create a $(t:Provides speed to the targeted player)Acceleration Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides speed to the targeted player)Acceleration Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/weakness",
-      "text": "The conjuration to create a $(t:Provides weakness to the targeted player)Diminished Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides weakness to the targeted player)Diminished Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/wither",
-      "text": "The conjuration to create a $(t:Provides wither to the targeted player)Decaying Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides wither to the targeted player)Decaying Herb Blend$() is shown above."
     },
     {
       "type": "patchouli:relations",

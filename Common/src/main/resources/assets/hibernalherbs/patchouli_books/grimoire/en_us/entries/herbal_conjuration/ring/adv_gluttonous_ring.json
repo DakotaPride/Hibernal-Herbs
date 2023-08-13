@@ -1,16 +1,16 @@
 {
-  "name": "Advanced Gluttonous Ring",
+  "name": "Adv. Gluttonous Herb Ring",
   "icon": "hibernalherbs:gluttonous_ring_adv",
   "category": "hibernalherbs:herbal_conjuration",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "This Advanced Ring allows all foods to regenerate, as long as this item is held by the user. (Forever regenerating)"
+      "text": "This Advanced Herb Ring allows all foods to regenerate, as long as this item is held by the user. (Forever regenerating)"
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/ring/adv/gluttonous",
-      "text": "The conjuration for an Advanced Gluttonous Ring is shown above."
+      "text": "The conjuration for an Advanced Gluttonous Herb Ring is shown above."
     },
     {
       "type": "patchouli:relations",

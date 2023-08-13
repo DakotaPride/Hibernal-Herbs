@@ -11,37 +11,37 @@
       "type": "spotlight",
       "item": "hibernalherbs:pounded_tarragon",
       "link_recipe": false,
-      "text": "Pounded Tarragon can be used to create Shaded Blends. It can also be used to create Sage. (as well as other previously mentioned uses)"
+      "text": "Pounded Tarragon can be used to create Shaded Herb Blends. It can also be used to create Sage. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_chamomile",
       "link_recipe": false,
-      "text": "Pounded Chamomile can be used to create Decaying, Diminished, Virulent, and Dashing Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Chamomile can be used to create Decaying, Diminished, Virulent, and Dashing Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_ceillis",
       "link_recipe": false,
-      "text": "Pounded Ceillis can be used to create Decaying, Sedating, Acceleration, Alternative, Observing, and Hindering Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Ceillis can be used to create Decaying, Sedating, Acceleration, Alternative, Observing, and Hindering Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_chives",
       "link_recipe": false,
-      "text": "Pounded Chives can be used to create Acceleration, Sedating, Alternative, Conflicting, Observing, and Shaded Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Chives can be used to create Acceleration, Sedating, Alternative, Conflicting, Observing, and Shaded Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_chervil",
       "link_recipe": false,
-      "text": "Pounded Chervil can be used to create Hindering and Shaded Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Chervil can be used to create Hindering and Shaded Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_essitte",
       "link_recipe": false,
-      "text": "Pounded Essitte can be used to create Incinerating Blends, as well as Siliptium Petals. (as well as other previously mentioned uses)"
+      "text": "Pounded Essitte can be used to create Incinerating Herb Blends, as well as Siliptium Petals. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
@@ -53,61 +53,61 @@
       "type": "spotlight",
       "item": "hibernalherbs:pounded_fennkystral",
       "link_recipe": false,
-      "text": "Pounded Fennkystral can be used to create Alternative Blends, as well as Lumbinetrik Petals. (as well as other previously mentioned uses)"
+      "text": "Pounded Fennkystral can be used to create Alternative Herb Blends, as well as Lumbinetrik Petals. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_fennsel",
       "link_recipe": false,
-      "text": "Pounded Fennsel can be used to create Acceleration Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Fennsel can be used to create Acceleration Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_marjoram",
       "link_recipe": false,
-      "text": "Pounded Marjoram can be used to create an Advanced Gluttonous Ring, as well as Virulent and Dashing Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Marjoram can be used to create an Advanced Gluttonous Herb Ring, as well as Virulent and Dashing Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_punuel",
       "link_recipe": false,
-      "text": "Pounded Punuel can be used to create Virulent and Incinerating Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Punuel can be used to create Virulent and Incinerating Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_rosemary",
       "link_recipe": false,
-      "text": "Pounded Rosemary can be used to create Decaying, Alternative, Conflicting, and Regenerative Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Rosemary can be used to create Decaying, Alternative, Conflicting, and Regenerative Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_sorrel",
       "link_recipe": false,
-      "text": "Pounded Sorrel can be used to create Diminished, Sedating, Observing, Hindering, and Dashing Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Sorrel can be used to create Diminished, Sedating, Observing, Hindering, and Dashing Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_thyocielle",
       "link_recipe": false,
-      "text": "Pounded Thyocielle can be used to create Conflicting Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Thyocielle can be used to create Conflicting Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_thyme",
       "link_recipe": false,
-      "text": "Pounded Thyme can be used to create Regenerative Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Thyme can be used to create Regenerative Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_verbena",
       "link_recipe": false,
-      "text": "Pounded Verbena can be used to create Diminished, Conflicting, Regenerative, and Incinerating Blends. (as well as other previously mentioned uses)"
+      "text": "Pounded Verbena can be used to create Diminished, Conflicting, Regenerative, and Incinerating Herb Blends. (as well as other previously mentioned uses)"
     },
     {
       "type": "spotlight",
       "item": "hibernalherbs:pounded_sage",
       "link_recipe": false,
-      "text": "Pounded Sage can be used to create herbs of sin, which are used to create bound padlocks. (as well as other previously mentioned uses)"
+      "text": "Pounded Sage can be used to create herbs of sin, which are used to create bound prince of sin padlocks. (as well as other previously mentioned uses)"
     },
     {
       "type": "patchouli:relations",

@@ -10,67 +10,67 @@
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/blindness",
-      "text": "The conjuration to create a $(t:Provides blindness to the targeted player)Smoked Shaded Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides blindness to the targeted player)Smoked Shaded Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/fire",
-      "text": "The conjuration to create a $(t:Sets the target on fire)Smoked Incinerating Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Sets the target on fire)Smoked Incinerating Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/haste",
-      "text": "The conjuration to create a $(t:Provides haste to the targeted player)Smoked Dashing Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides haste to the targeted player)Smoked Dashing Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/mining_fatigue",
-      "text": "The conjuration to create a $(t:Provides mining fatigue to the targeted player)Smoked Hindering Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides mining fatigue to the targeted player)Smoked Hindering Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/night_vision",
-      "text": "The conjuration to create a $(t:Provides night vision to the targeted player)Smoked Observing Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides night vision to the targeted player)Smoked Observing Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/poison",
-      "text": "The conjuration to create a $(t:Provides poison to the targeted player)Smoked Virulent Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides poison to the targeted player)Smoked Virulent Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/regeneration",
-      "text": "The conjuration to create a $(t:Provides regeneration to the targeted player)Smoked Regenerative Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides regeneration to the targeted player)Smoked Regenerative Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/regeneration_slowness",
-      "text": "The conjuration to create a $(t:Provides regeneration and slowness to the targeted player)Smoked Conflicting Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides regeneration and slowness to the targeted player)Smoked Conflicting Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/regeneration_speed_weakness",
-      "text": "The conjuration to create a $(t:Provides regeneration, speed, and weakness to the targeted player)Smoked Alternative Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides regeneration, speed, and weakness to the targeted player)Smoked Alternative Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/slowness",
-      "text": "The conjuration to create a $(t:Provides slowness to the targeted player)Smoked Sedating Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides slowness to the targeted player)Smoked Sedating Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/speed",
-      "text": "The conjuration to create a $(t:Provides speed to the targeted player)Smoked Acceleration Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides speed to the targeted player)Smoked Acceleration Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/weakness",
-      "text": "The conjuration to create a $(t:Provides weakness to the targeted player)Smoked Diminished Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides weakness to the targeted player)Smoked Diminished Herb Blend$() is shown above."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/smoked/wither",
-      "text": "The conjuration to create a $(t:Provides wither to the targeted player)Smoked Decaying Blend$() is shown above."
+      "text": "The conjuration to create a $(t:Provides wither to the targeted player)Smoked Decaying Herb Blend$() is shown above."
     },
     {
       "type": "patchouli:relations",

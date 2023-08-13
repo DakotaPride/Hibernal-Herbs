@@ -1,5 +1,5 @@
 {
-  "name": "Conjuration Altar",
+  "name": "Herbal Conjuration Altar",
   "icon": "hibernalherbs:conjuration_altar",
   "category": "hibernalherbs:herbal_conjuration",
   "pages": [
@@ -10,7 +10,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "hibernalherbs:conjuration_altar",
-      "text": "Above, you'll find the recipe for creating a Conjuration Altar of your own. In order to craft the altar, you'll need any four non-pounded herbs, 4 Myqueste planks, and an anvil."
+      "text": "Above, you'll find the recipe for creating a Herbal Conjuration Altar of your own. In order to craft the altar, you'll need any four non-pounded herbs, 4 Myqueste planks, and an anvil."
     },
     {
       "type": "patchouli:spotlight",
@@ -25,12 +25,12 @@
     },
     {
       "type": "patchouli:text",
-      "text": "One of the more basic uses of Herbal Conjuration is to make powerful blends. Some more useful than others, but either way change the playing field for those participating in combat. A blend that you might find useful is a Regenerative Blend. This blend, as the name might suggest, provides regeneration to the target."
+      "text": "One of the more basic uses of Herbal Conjuration is to make powerful blends. Some more useful than others, but either way change the playing field for those participating in combat. A blend that you might find useful is a Regenerative Herb Blend. This blend, as the name might suggest, provides regeneration to the target."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/herb/blend/regeneration",
-      "text": "Above, you'll find the conjuration for creating a Regenerative Blend. Other blends can be made in a similar manor, just with different herbs/ingredients."
+      "text": "Above, you'll find the conjuration for creating a Regenerative Herb Blend. Other blends can be made in a similar manor, just with different herbs/ingredients."
     },
     {
       "type": "patchouli:relations",

@@ -5,18 +5,18 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Herbal Sigils are used in high-tier conjurations, such as Padlocks."
+      "text": "Herbal Sigils are used in high-tier conjurations, such as Prince of Sin Padlocks."
     },
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:sigil",
-      "text": "Sigils are made by using a combination of herbs and a non-cracked Sigil. To create a Sigil, you will need certain herbs and a Smoothened Stone or a Cracked Sigil.",
+      "text": "Herbal Sigils are made by using a combination of herbs and a non-cracked Herbal Sigil. To create a Herbal Sigil, you will need certain herbs and a Smoothened Stone or a Cracked Herbal Sigil.",
       "title": "First Sigil"
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/sigil/base",
-      "text": "The conjuration to create a Sigil is shown above. These currently do not have many major uses, but that will change in future updates :)"
+      "text": "The conjuration to create a Blank Herbal Sigil is shown above. These currently do not have many major uses, but that will change in future updates :)"
     },
     {
       "type": "patchouli:text",
@@ -25,58 +25,58 @@
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:sigil_envy",
-      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/envy)Herbal Sigil$() is aligned with the Prince of Envy.$(br2)This allows you to create mystical items such as a padlock that, once bound, provides more health and speed to the user.",
+      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/envy)Herbal Sigil$() is aligned with the Prince of Envy.$(br2)This allows you to create mystical items such as a prince of sin padlock that, once bound, provides more health and speed to the user.",
       "title": "Envy Alignment"
     },
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:sigil_gluttony",
-      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/gluttony)Herbal Sigil$() is aligned with the Prince of Gluttony,$(br2)This allows you to create mystical items such as a padlock that, once bound, provides more health and makes you immune to hunger.",
+      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/gluttony)Herbal Sigil$() is aligned with the Prince of Gluttony,$(br2)This allows you to create mystical items such as a prince of sin padlock that, once bound, provides more health and makes you immune to hunger.",
       "title": "Gluttony Alignment"
     },
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:sigil_greed",
-      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/greed)Herbal Sigil$() is aligned with the Prince of Greed,$(br2)This allows you to create mystical items such as a padlock that, once bound, provides more health and makes you more lucky.",
+      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/greed)Herbal Sigil$() is aligned with the Prince of Greed,$(br2)This allows you to create mystical items such as a prince of sin padlock that, once bound, provides more health and makes you more lucky.",
       "title": "Greed Alignment"
     },
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:sigil_lust",
-      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/lust)Herbal Sigil$() is aligned with the Prince of Lust,$(br2)This allows you to create mystical items such as a padlock that, once bound, provides more health and makes you immune to both poisoning and withering.",
+      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/lust)Herbal Sigil$() is aligned with the Prince of Lust,$(br2)This allows you to create mystical items such as a prince of sin padlock that, once bound, provides more health and makes you immune to both poisoning and withering.",
       "title": "Lust Alignment"
     },
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:sigil_pride",
-      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/pride)Herbal Sigil$() is aligned with the Prince of Gluttony,$(br2)This allows you to create mystical items such as a padlock that, once bound, provides more health and gives you regeneration.",
+      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/pride)Herbal Sigil$() is aligned with the Prince of Gluttony,$(br2)This allows you to create mystical items such as a prince of sin padlock that, once bound, provides more health and gives you regeneration.",
       "title": "Pride Alignment"
     },
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:sigil_sloth",
-      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/sloth)Herbal Sigil$() is aligned with the Prince of Greed,$(br2)This allows you to create mystical items such as a padlock that, once bound, provides more health and gives you slow falling. Be careful however, as you are slowed while this padlock is in effect.",
+      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/sloth)Herbal Sigil$() is aligned with the Prince of Greed,$(br2)This allows you to create mystical items such as a prince of sin padlock that, once bound, provides more health and gives you slow falling. Be careful however, as you are slowed while this padlock is in effect.",
       "title": "Sloth Alignment"
     },
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:sigil_wrath",
-      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/wrath)Herbal Sigil$() is aligned with the Prince of Lust,$(br2)This allows you to create mystical items such as a padlock that, once bound, provides more health and damage to the user.",
+      "text": "This $(l:hibernalherbs:herbal_conjuration/sigil/sins/wrath)Herbal Sigil$() is aligned with the Prince of Lust,$(br2)This allows you to create mystical items such as a prince of sin padlock that, once bound, provides more health and damage to the user.",
       "title": "Wrath Alignment"
     },
     {
       "type": "patchouli:text",
-      "text": "While these Herbal Sigils are very powerful, there are some other variations that may be worth looking into.$(br2)The Configuration Sigils aren't currently used for anything, but is planned to change.$(br2)Mastery Sigils on the other hand are very useful!"
+      "text": "While these Herbal Sigils are very powerful, there are some other variations that may be worth looking into.$(br2)The Configuration Herbal Sigils aren't currently used for anything, but is planned to change.$(br2)Mastery Herbal Sigils on the other hand are very useful!"
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/sigil/mastery",
-      "text": "Mastery Sigils are used to create Golden Rings, as well as Advanced Mastery Sigils.$(br2)Advanced Mastery Sigils are used to create Padlocks and the Advanced Gluttonous Ring."
+      "text": "Mastery Herbal Sigils are used to create Golden Herb Rings, as well as Advanced Mastery Herbal Sigils.$(br2)Advanced Mastery Herbal Sigils are used to create Padlocks and the Advanced Gluttonous Herb Ring."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/sigil/mastery_adv",
-      "text": "Advanced Mastery Sigils, as listed prior, are used for Advanced Gluttonous Rings and Padlocks."
+      "text": "Advanced Mastery Herbal Sigils, as listed prior, are used for Advanced Gluttonous Herb Rings and Prince of Sin Padlocks."
     },
     {
       "type": "patchouli:text",
