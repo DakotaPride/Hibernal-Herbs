@@ -164,6 +164,7 @@ public class ItemInit {
     public static HerbFertilizerItem HERB_FERTILIZER_ACACIA = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_SPRUCE = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_MANGROVE = new HerbFertilizerItem(new FabricItemSettings());
+    public static HerbFertilizerItem HERB_FERTILIZER_CHERRY = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_CRIMSON = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_WARPED = new HerbFertilizerItem(new FabricItemSettings());
 
@@ -178,6 +179,7 @@ public class ItemInit {
     public static HerbHumusItem HERB_HUMUS_ACACIA = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_SPRUCE = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_MANGROVE = new HerbHumusItem(new FabricItemSettings());
+    public static HerbHumusItem HERB_HUMUS_CHERRY = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_CRIMSON = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_WARPED = new HerbHumusItem(new FabricItemSettings());
 
@@ -352,6 +354,7 @@ public class ItemInit {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_birch"), HERB_FERTILIZER_BIRCH);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_spruce"), HERB_FERTILIZER_SPRUCE);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_mangrove"), HERB_FERTILIZER_MANGROVE);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_cherry"), HERB_FERTILIZER_CHERRY);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_crimson"), HERB_FERTILIZER_CRIMSON);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_warped"), HERB_FERTILIZER_WARPED);
 
@@ -366,6 +369,7 @@ public class ItemInit {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_birch"), HERB_HUMUS_BIRCH);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_spruce"), HERB_HUMUS_SPRUCE);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_mangrove"), HERB_HUMUS_MANGROVE);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_cherry"), HERB_HUMUS_CHERRY);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_crimson"), HERB_HUMUS_CRIMSON);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_warped"), HERB_HUMUS_WARPED);
 

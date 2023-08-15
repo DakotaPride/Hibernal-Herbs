@@ -16,10 +16,5 @@ public class GluttonousRingItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("text.hibernalherbs.inventory").formatted(Formatting.WHITE));
-        tooltip.add(Text.literal(""));
-        tooltip.add(Text.translatable("text.hibernalherbs.ring.gluttonous.1").formatted(Formatting.BLUE));
-        tooltip.add(Text.translatable("text.hibernalherbs.ring.gluttonous.2").formatted(Formatting.BLUE));
-    }
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {}
 }

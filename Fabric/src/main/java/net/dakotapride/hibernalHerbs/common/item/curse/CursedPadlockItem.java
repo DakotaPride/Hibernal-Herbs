@@ -105,27 +105,7 @@ public class CursedPadlockItem extends TrinketItem {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (stack.isIn(util.PADLOCKS)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.padlocks.unbound").formatted(Formatting.GRAY));
-        } else if (stack.isIn(util.BOUND_PADLOCKS)) {
-            if (stack.isOf(ItemInit.VEXATION_PADLOCK_BOUND)) {
-                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.wrath").formatted(Formatting.GRAY));
-            } else if (stack.isOf(ItemInit.PIQUE_PADLOCK_BOUND)) {
-                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.pride").formatted(Formatting.GRAY));
-            } else if (stack.isOf(ItemInit.GOURMANDIZING_PADLOCK_BOUND)) {
-                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.gluttony").formatted(Formatting.GRAY));
-            } else if (stack.isOf(ItemInit.AVARICE_PADLOCK_BOUND)) {
-                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.greed").formatted(Formatting.GRAY));
-            } else if (stack.isOf(ItemInit.SPITEFUL_PADLOCK_BOUND)) {
-                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.envy").formatted(Formatting.GRAY));
-            } else if (stack.isOf(ItemInit.APATHY_PADLOCK_BOUND)) {
-                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.sloth").formatted(Formatting.GRAY));
-            } else if (stack.isOf(ItemInit.SALACIOUS_PADLOCK_BOUND)) {
-                tooltip.add(Text.translatable("text.hibernalherbs.padlocks.bound.lust").formatted(Formatting.GRAY));
-            }
-        }
-    }
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {}
 
     @Override
     public void onEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {

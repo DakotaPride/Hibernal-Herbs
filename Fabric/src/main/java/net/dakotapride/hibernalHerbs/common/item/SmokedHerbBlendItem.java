@@ -114,41 +114,7 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_REGENERATIVE_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_regeneration").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_VIRULENT_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_poison").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_SEDATING_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_slowness").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_HINDERING_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_mining_fatigue").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_DASHING_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_haste").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_ACCELERATION_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_speed").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_INCINERATING_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_fire").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_DECAYING_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_wither").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_OBSERVING_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_night_vision").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_DIMINISHED_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_weakness").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_SHADED_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_blindness").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        }
-
-        else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_CONFLICTING_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_regen_slow").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        } else if (stack.getItem().getDefaultStack().isOf(ItemInit.SMOKED_ALTERNATIVE_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend_regen_speed_weak").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-        }
-
-        tooltip.add(Text.literal(""));
-
-        tooltip.add(Text.translatable("text.hibernalherbs.smoked_blend").formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
-    }
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {}
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {

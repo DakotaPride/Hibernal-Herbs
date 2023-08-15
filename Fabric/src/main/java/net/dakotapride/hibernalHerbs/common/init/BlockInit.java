@@ -65,26 +65,26 @@ public class BlockInit {
 
     public static LeafPileBlock SAGE_HERB_PILE = new HibernalLeafPileBlock(FabricBlockSettings.of().sounds(BlockSoundGroup.GRASS).nonOpaque());
 
-    public static HerbBarrelBlock ROSEMARY_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock THYME_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock TARRAGON_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock CHAMOMILE_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock CHIVES_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock VERBENA_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock SORREL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock MARJORAM_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock CHERVIL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock FENNSEL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock CEILLIS_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock PUNUEL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock ESSITTE_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block ROSEMARY_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block THYME_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block TARRAGON_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block CHAMOMILE_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block CHIVES_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block VERBENA_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block SORREL_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block MARJORAM_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block CHERVIL_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block FENNSEL_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block CEILLIS_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block PUNUEL_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block ESSITTE_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
 
-    public static HerbBarrelBlock THYOCIELLE_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
-    public static HerbBarrelBlock FENNKYSTRAL_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block THYOCIELLE_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block FENNKYSTRAL_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
 
-    public static HerbBarrelBlock CALENDULA_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block CALENDULA_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
 
-    public static HerbBarrelBlock SAGE_HERB_BARREL = new HerbBarrelBlock(FabricBlockSettings.copy(Blocks.BARREL));
+    public static Block SAGE_HERB_BARREL = new Block(FabricBlockSettings.copy(Blocks.BARREL));
 
     public static FlowerBlock ROSEMARY =
             new FlowerBlock(StatusEffects.SLOWNESS, 180, FabricBlockSettings.copy(Blocks.LILY_OF_THE_VALLEY));

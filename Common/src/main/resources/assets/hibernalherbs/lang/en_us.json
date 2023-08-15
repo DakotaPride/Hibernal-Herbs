@@ -1,4 +1,4 @@
-{
+/* {
   "block.hibernalherbs.rosemary": "Rosemary",
   "block.hibernalherbs.thyme": "Thyme",
   "block.hibernalherbs.tarragon": "Tarragon",
@@ -450,3 +450,4 @@
   // REI & JEI Integration
   "text.hibernalherbs.herbal_conjuration": "Herbal Conjuration"
 }
+*/
