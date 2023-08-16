@@ -288,7 +288,8 @@
   "text.hibernalherbs.pile.bloforia": "  - Bloforia",
 
   // Tooltips
-  "text.hibernalherbs.shift.details": "[§7SHIFT§7] For More Details",
+  "text.hibernalherbs.controls.shift": "[§7Shift§8] For More Details",
+  "text.hibernalherbs.controls.right_click": "[§7Right-Click§8]",
 
   "itemGroup.hibernalherbs.hibernal_herbs": "Herbs Misc",
   "itemGroup.hibernalherbs.herbs": "Herbs",
@@ -306,7 +307,30 @@
   "text.hibernalherbs.association.cherry": "§6Association:§7 Cherry",
   "text.hibernalherbs.association.crimson": "§6Association:§7 Crimson",
   "text.hibernalherbs.association.warped": "§6Association:§7 Warped",
+  "text.hibernalherbs.association.myqueste": "§6Association:§7 Myqueste",
 
+  "text.hibernalherbs.association.help.none": "§6None",
+  "text.hibernalherbs.association.help.oak": "§6Oak",
+  "text.hibernalherbs.association.help.spruce": "§6Spruce",
+  "text.hibernalherbs.association.help.birch": "§6Birch",
+  "text.hibernalherbs.association.help.acacia": "§6Acacia",
+  "text.hibernalherbs.association.help.jungle": "§6Jungle",
+  "text.hibernalherbs.association.help.dark_oak": "§6Dark Oak",
+  "text.hibernalherbs.association.help.mangrove": "§6Mangrove",
+  "text.hibernalherbs.association.help.cherry": "§6Cherry",
+  "text.hibernalherbs.association.help.crimson": "§6Crimson",
+  "text.hibernalherbs.association.help.warped": "§6Warped",
+  "text.hibernalherbs.association.help.myqueste": "§6Myqueste",
+
+  "text.hibernalherbs.humus.usage.first": "Use on §dStripped Logs §5to replace",
+  "text.hibernalherbs.humus.usage.secondary": "the association [%d]",
+  "text.hibernalherbs.humus.production": "§6Production Value:§7 %dx",
+  "text.hibernalherbs.humus.additional_text.one": "§dHerbal Humus§5 is used to create",
+  "text.hibernalherbs.humus.additional_text.two": "§dHerbal Fertilizer§5, increasing your",
+  "text.hibernalherbs.humus.additional_text.three": "herb production rates",
+
+  // Canisters/Pouches
+  "text.hibernalherbs.canister.container": "§6Contained Blends:§7 %s/%s",
 
   // REI & JEI Integration
   "text.hibernalherbs.herbal_conjuration": "Herbal Conjuration"

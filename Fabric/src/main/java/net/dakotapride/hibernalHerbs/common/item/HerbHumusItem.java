@@ -1,8 +1,10 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
+import net.dakotapride.hibernalHerbs.common.util;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
@@ -10,6 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
@@ -19,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class HerbHumusItem extends Item {
+public class HerbHumusItem extends Item implements ITooltipProvider {
     public HerbHumusItem(Settings settings) {
         super(settings);
     }
@@ -94,43 +97,140 @@ public class HerbHumusItem extends Item {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
 
         if (!Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("text.hibernalherbs.shift.details").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_OAK)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_OAK)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.oak").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_SPRUCE)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_SPRUCE)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.spruce").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_BIRCH)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_BIRCH)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.birch").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_ACACIA)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_ACACIA)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.acacia").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_JUNGLE)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_JUNGLE)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.jungle").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_DARK_OAK)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_DARK_OAK)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.dark_oak").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_MANGROVE)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_MANGROVE)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.mangrove").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_CHERRY)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_CHERRY)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.cherry").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_CRIMSON)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_CRIMSON)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.crimson").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_WARPED)) {
+            if (stack.isOf(ItemInit.HERB_HUMUS_WARPED)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.warped").formatted(Formatting.GRAY));
             }
+            if (stack.isOf(ItemInit.HERB_HUMUS_MYQUESTE)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.association.myqueste").formatted(Formatting.GRAY));
+            }
 
-            else {
+            else if (!stack.isIn(util.HUMUS)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.none").formatted(Formatting.GRAY));
             }
+
+            getProductionValueTooltip(stack, tooltip);
+
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("text.hibernalherbs.humus.additional_text.one").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.humus.additional_text.two").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.humus.additional_text.three").formatted(Formatting.DARK_PURPLE));
+
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable(rightClickControlsText).formatted(Formatting.DARK_GRAY));
+
+            getAssociationTooltip(stack, tooltip);
         }
+    }
+
+    public static void getAssociationTooltip(ItemStack stack, List<Text> tooltip) {
+        MutableText association = Associations.NONE.getTranslatableAssociation();
+
+        if (stack.isOf(ItemInit.HERB_HUMUS_OAK)) {
+            association = Associations.OAK.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_SPRUCE)) {
+            association = Associations.SPRUCE.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_BIRCH)) {
+            association = Associations.BIRCH.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_ACACIA)) {
+            association = Associations.ACACIA.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_JUNGLE)) {
+            association = Associations.JUNGLE.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_DARK_OAK)) {
+            association = Associations.DARK_OAK.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_MANGROVE)) {
+            association = Associations.MANGROVE.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_CHERRY)) {
+            association = Associations.CHERRY.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_CRIMSON)) {
+            association = Associations.CRIMSON.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_WARPED)) {
+            association = Associations.WARPED.getTranslatableAssociation();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_MYQUESTE)) {
+            association = Associations.MYQUESTE.getTranslatableAssociation();
+        }
+
+        tooltip.add(Text.translatable("text.hibernalherbs.humus.usage.first").formatted(Formatting.DARK_PURPLE));
+        tooltip.add(Text.translatable("text.hibernalherbs.humus.usage.secondary", association).formatted(Formatting.DARK_PURPLE));
+
+    }
+
+    public static void getProductionValueTooltip(ItemStack stack, List<Text> tooltip) {
+        int productionValue = Associations.NONE.getProductionValue();
+
+        if (stack.isOf(ItemInit.HERB_HUMUS_OAK)) {
+            productionValue = Associations.OAK.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_SPRUCE)) {
+            productionValue = Associations.SPRUCE.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_BIRCH)) {
+            productionValue = Associations.BIRCH.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_ACACIA)) {
+            productionValue = Associations.ACACIA.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_JUNGLE)) {
+            productionValue = Associations.JUNGLE.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_DARK_OAK)) {
+            productionValue = Associations.DARK_OAK.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_MANGROVE)) {
+            productionValue = Associations.MANGROVE.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_CHERRY)) {
+            productionValue = Associations.CHERRY.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_CRIMSON)) {
+            productionValue = Associations.CRIMSON.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_WARPED)) {
+            productionValue = Associations.WARPED.getProductionValue();
+        }
+        if (stack.isOf(ItemInit.HERB_HUMUS_MYQUESTE)) {
+            productionValue = Associations.MYQUESTE.getProductionValue();
+        }
+
+        tooltip.add(Text.translatable("text.hibernalherbs.humus.production", productionValue).formatted(Formatting.GRAY));
     }
 
 }

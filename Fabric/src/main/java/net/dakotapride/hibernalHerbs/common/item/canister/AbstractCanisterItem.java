@@ -1,7 +1,9 @@
 package net.dakotapride.hibernalHerbs.common.item.canister;
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.util;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.BundleTooltipData;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.item.TooltipData;
@@ -28,13 +30,14 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
+import java.text.Format;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class AbstractCanisterItem extends BundleItem {
+public class AbstractCanisterItem extends BundleItem implements ITooltipProvider {
 
     //
     // Credit To Cheaterpaul (Owner Of Better Bundles Mod For Forge)
@@ -135,8 +138,24 @@ public class AbstractCanisterItem extends BundleItem {
     }
 
     @Override
-    public void appendTooltip(@Nonnull ItemStack stack, @Nonnull World level, List<Text> components, @Nonnull TooltipContext flag) {
-        components.add((Text.translatable("item.minecraft.bundle.fullness", getContentWeight(stack, 64), size)).formatted(Formatting.GRAY));
+    public void appendTooltip(@Nonnull ItemStack stack, @Nonnull World world, List<Text> tooltip, @Nonnull TooltipContext context) {
+        int actualSize;
+
+        if (size == 128) {
+            actualSize = 2;
+        } else if (size == 256) {
+            actualSize = 4;
+        } else if (size == 384) {
+            actualSize = 6;
+        } else {
+            actualSize = 0;
+        }
+
+        if (!Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
+        } else if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("text.hibernalherbs.canister.container", getContentWeight(stack, 1), actualSize).formatted(Formatting.GRAY));
+        }
     }
 
     @Override

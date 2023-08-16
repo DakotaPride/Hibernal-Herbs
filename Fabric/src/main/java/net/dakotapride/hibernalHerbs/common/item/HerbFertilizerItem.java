@@ -1,6 +1,8 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
+import net.dakotapride.hibernalHerbs.common.util;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
@@ -11,7 +13,7 @@ import net.minecraft.text.Text;
 
 import java.util.List;
 
-public class HerbFertilizerItem extends Item {
+public class HerbFertilizerItem extends Item implements ITooltipProvider {
     public HerbFertilizerItem(Settings settings) {
         super(settings);
     }
@@ -20,7 +22,7 @@ public class HerbFertilizerItem extends Item {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
 
         if (!Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("text.hibernalherbs.shift.details").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
             if (stack.isOf(ItemInit.HERB_FERTILIZER_OAK)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.oak").formatted(Formatting.GRAY));
@@ -52,10 +54,15 @@ public class HerbFertilizerItem extends Item {
             if (stack.isOf(ItemInit.HERB_FERTILIZER_WARPED)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.warped").formatted(Formatting.GRAY));
             }
+            if (stack.isOf(ItemInit.HERB_FERTILIZER_MYQUESTE)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.association.myqueste").formatted(Formatting.GRAY));
+            }
 
-            else {
+            else if (!stack.isIn(util.FERTILIZER)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.none").formatted(Formatting.GRAY));
             }
+
+            HerbHumusItem.getProductionValueTooltip(stack, tooltip);
         }
 
     }
