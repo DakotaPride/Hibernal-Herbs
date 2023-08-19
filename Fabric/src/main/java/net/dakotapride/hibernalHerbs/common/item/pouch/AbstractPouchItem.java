@@ -199,19 +199,24 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
 
             tooltip.add((Text.translatable("text.hibernalherbs.pouch.container", getContentWeight(stack, 64), size)).formatted(Formatting.GRAY));
 
-            tooltip.add(Text.literal(""));
-            tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.one").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.two").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.literal(""));
-            tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.one").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.two").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.three").formatted(Formatting.DARK_PURPLE));
+            if (!Screen.hasAltDown()) {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable(leftAltControlsText).formatted(Formatting.DARK_GRAY));
+            } else {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.three").formatted(Formatting.DARK_PURPLE));
 
-            tooltip.add(Text.literal(""));
-            tooltip.add(Text.translatable(rightClickInventoryControlsText).formatted(Formatting.DARK_GRAY));
-            tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.one").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.two").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.three").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable(rightClickInventoryControlsText).formatted(Formatting.DARK_GRAY));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.three").formatted(Formatting.DARK_PURPLE));
+            }
 
             tooltip.add(Text.literal(""));
             tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.help").formatted(Formatting.DARK_GRAY));

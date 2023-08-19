@@ -7,9 +7,13 @@ import net.minecraft.text.Text;
 
 public interface ITooltipProvider {
     String shiftControlsText = "text.hibernalherbs.controls.shift";
+    String leftAltControlsText = "text.hibernalherbs.controls.left_alt";
     String rightClickControlsText = "text.hibernalherbs.controls.right_click";
     String leftClickControlsText = "text.hibernalherbs.controls.left_click";
     String rightClickInventoryControlsText = "text.hibernalherbs.controls.right_click.inventory";
+    String leftClickInventoryControlsText = "text.hibernalherbs.controls.left_click.inventory";
+    String rightClickOnPlayerControlsText = "text.hibernalherbs.controls.right_click.player";
+    String leftClickOnPlayerControlsText = "text.hibernalherbs.controls.left_click.player";
 
 
     enum Associations {
@@ -103,6 +107,31 @@ public interface ITooltipProvider {
 
         public StatusEffect getEffect3() {
             return effect3;
+        }
+    }
+
+    enum SigilAlignments {
+        NONE(Text.translatable("none")),
+        PRIDE(Text.translatable("pride")),
+        ENVY(Text.translatable("envy")),
+        SLOTH(Text.translatable("sloth")),
+        WRATH(Text.translatable("wrath")),
+        GREED(Text.translatable("greed")),
+        LUST(Text.translatable("lust")),
+        GLUTTONY(Text.translatable("gluttony")),
+        MASTERY(Text.translatable("mastery")),
+        ADVANCED_MASTERY(Text.translatable("advanced_mastery")),
+        CONFIGURATION(Text.translatable("configuration")),
+        ADVANCED_CONFIGURATION(Text.translatable("advanced_configuration"));
+
+        final MutableText text;
+
+        SigilAlignments(MutableText alignment) {
+            text = alignment;
+        }
+
+        public MutableText getAlignment() {
+            return text;
         }
     }
 

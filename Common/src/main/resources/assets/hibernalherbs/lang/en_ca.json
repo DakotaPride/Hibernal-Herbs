@@ -285,8 +285,13 @@
 
   // Basic Tooltips
   "text.hibernalherbs.controls.shift": "[§7Shift§8] For More Details",
+  "text.hibernalherbs.controls.left_alt": "[§7Left Alt§8] For Assistance",
   "text.hibernalherbs.controls.right_click": "[§7Right-Click§8]",
+  "text.hibernalherbs.controls.left_click": "[§7Left-Click§8]",
   "text.hibernalherbs.controls.right_click.inventory": "[§7Right-Click in Inventory§8]",
+  "text.hibernalherbs.controls.left_click.inventory": "[§7Left-Click in Inventory§8]",
+  "text.hibernalherbs.controls.right_click.player": "[§7Right-Click on Player§8]",
+  "text.hibernalherbs.controls.left_click.player": "[§7Left-Click on Player§8]",
 
   "itemGroup.hibernalherbs.hibernal_herbs": "Herbs Misc",
   "itemGroup.hibernalherbs.herbs": "Herbs",
@@ -372,12 +377,15 @@
   "text.hibernalherbs.blend.effect.help.two": "or §dpositive§5, and can",
   "text.hibernalherbs.blend.effect.help.three": "even be both in some cases!",
   "text.hibernalherbs.blend.attacking.help.one": "Attacking a player will apply",
-  "text.hibernalherbs.blend.attacking.help.two": "its effect for a duration",
+  "text.hibernalherbs.blend.attacking.help.two": "its effect(s) for a duration",
   "text.hibernalherbs.blend.attacking.help.three": "of time.",
   "text.hibernalherbs.blend.attacking.help.fire.one": "In the case of",
   "text.hibernalherbs.blend.attacking.help.fire.two": "§dIncinerating Herbal Blends§5",
   "text.hibernalherbs.blend.attacking.help.fire.three": "though, it will light the target",
   "text.hibernalherbs.blend.attacking.help.fire.four": "on fire for a duration of time.",
+  "text.hibernalherbs.blend.player_pour.help.one": "Interacting with a player with",
+  "text.hibernalherbs.blend.player_pour.help.two": "an §dHerbal Blend§5 will also",
+  "text.hibernalherbs.blend.player_pour.help.three": "provide the target with the effect(s).",
   "text.hibernalherbs.blend.exception.help.one": "There are some exceptions to",
   "text.hibernalherbs.blend.exception.help.two": "how typical §dHerbal Blends§5 function.",
   "text.hibernalherbs.blend.exception.help.three": "These other Herbal Blends",
@@ -388,6 +396,11 @@
   "text.hibernalherbs.blend.provided_effects.first": " -%s",
   "text.hibernalherbs.blend.provided_effects.secondary": " -%s",
   "text.hibernalherbs.blend.provided_effects.third": " -%s",
+  "text.hibernalherbs.blend.modifier.smoked.false": "§6Modifier:§7 None",
+  "text.hibernalherbs.blend.modifier.smoked.true": "§6Modifier:§7 Smoked",
+  "text.hibernalherbs.modifier.blend.smoked.help.one": "§dSmoked Herbal Blends§5 provide",
+  "text.hibernalherbs.modifier.blend.smoked.help.two": "increased potency and duration to",
+  "text.hibernalherbs.modifier.blend.smoked.help.three": "the §dHerbal Blend§5.",
 
   "text.hibernalherbs.ability.none": "None",
   "text.hibernalherbs.ability.regeneration": "Regenerative",
@@ -403,6 +416,9 @@
   "text.hibernalherbs.ability.blindness": "Shaded",
   "text.hibernalherbs.ability.regeneration_slowness": "Conflicting",
   "text.hibernalherbs.ability.regeneration_speed_weakness": "Alternative",
+
+  // Herbal Sigils
+  "text.hibernalherbs.sigil.alignment": "§6Alignment:§7 %s",
 
   // REI & JEI Integration
   "text.hibernalherbs.herbal_conjuration": "Herbal Conjuration"

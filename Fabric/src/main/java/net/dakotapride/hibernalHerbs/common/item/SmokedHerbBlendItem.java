@@ -1,7 +1,10 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
+import net.dakotapride.hibernalHerbs.common.util;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -12,13 +15,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SmokedHerbBlendItem extends Item implements FoodComponentList {
+public class SmokedHerbBlendItem extends Item implements FoodComponentList, ITooltipProvider {
     public SmokedHerbBlendItem(Settings settings) {
         super(settings);
     }
@@ -114,7 +118,84 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        if (!Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
+        } else if (Screen.hasShiftDown()) {
+            if (!stack.isIn(util.ARTIFICIAL_BLENDS)) {
+                HerbBlendItem.effectToAbilityTooltip(stack, tooltip);
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.modifier.smoked.true").formatted(Formatting.GRAY));
 
+                if (!Screen.hasAltDown()) {
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable(leftAltControlsText).formatted(Formatting.DARK_GRAY));
+                } else {
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable("text.hibernalherbs.modifier.blend.smoked.help.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.modifier.blend.smoked.help.two").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.modifier.blend.smoked.help.three").formatted(Formatting.DARK_PURPLE));
+
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.ability.help.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.ability.help.two").formatted(Formatting.DARK_PURPLE));
+
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.effect.help.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.effect.help.two").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.effect.help.three").formatted(Formatting.DARK_PURPLE));
+
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable(leftClickOnPlayerControlsText).formatted(Formatting.DARK_GRAY));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.two").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.three").formatted(Formatting.DARK_PURPLE));
+
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.two").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.three").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.four").formatted(Formatting.DARK_PURPLE));
+
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable(rightClickOnPlayerControlsText).formatted(Formatting.DARK_GRAY));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.player_pour.help.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.player_pour.help.two").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.player_pour.help.three").formatted(Formatting.DARK_PURPLE));
+                }
+
+            } else {
+                HerbBlendItem.getExceptionTooltip(stack, tooltip);
+                tooltip.add(Text.translatable("text.hibernalherbs.modifier.blend.smoked.false").formatted(Formatting.GRAY));
+
+                if (!Screen.hasAltDown()) {
+                    tooltip.add(Text.translatable(leftAltControlsText).formatted(Formatting.DARK_GRAY));
+                } else {
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable("text.hibernalherbs.modifier.blend.smoked.help.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.modifier.blend.smoked.help.two").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.modifier.blend.smoked.help.three").formatted(Formatting.DARK_PURPLE));
+
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.exception.help.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.exception.help.two").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.exception.help.three").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.exception.help.four").formatted(Formatting.DARK_PURPLE));
+
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable(leftClickOnPlayerControlsText).formatted(Formatting.DARK_GRAY));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.two").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.three").formatted(Formatting.DARK_PURPLE));
+
+                    tooltip.add(Text.literal(""));
+                    tooltip.add(Text.translatable(rightClickOnPlayerControlsText).formatted(Formatting.DARK_GRAY));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.player_pour.help.one").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.player_pour.help.two").formatted(Formatting.DARK_PURPLE));
+                    tooltip.add(Text.translatable("text.hibernalherbs.blend.player_pour.help.three").formatted(Formatting.DARK_PURPLE));
+                }
+
+            }
+
+        }
     }
 
     @Override
