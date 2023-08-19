@@ -95,6 +95,14 @@ public interface ITooltipProvider {
         public StatusEffect getEffect() {
             return effect;
         }
+
+        public StatusEffect getEffect2() {
+            return effect2;
+        }
+
+        public StatusEffect getEffect3() {
+            return effect3;
+        }
     }
 
 }

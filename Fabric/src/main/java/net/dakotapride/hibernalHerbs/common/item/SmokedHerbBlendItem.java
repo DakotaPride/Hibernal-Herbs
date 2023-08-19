@@ -113,7 +113,9 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {}
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+
+    }
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {

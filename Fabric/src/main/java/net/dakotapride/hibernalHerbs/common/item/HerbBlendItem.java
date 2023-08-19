@@ -124,13 +124,36 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
             tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
             if (!stack.isIn(util.ARTIFICIAL_BLENDS)) {
-                callForAbilityTooltip(stack, tooltip);
-                tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects").formatted(Formatting.GRAY));
-                providedEffects(stack, tooltip);
+                effectToAbilityTooltip(stack, tooltip);
 
                 tooltip.add(Text.literal(""));
                 tooltip.add(Text.translatable("text.hibernalherbs.blend.ability.help.one").formatted(Formatting.DARK_PURPLE));
                 tooltip.add(Text.translatable("text.hibernalherbs.blend.ability.help.two").formatted(Formatting.DARK_PURPLE));
+
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.effect.help.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.effect.help.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.effect.help.three").formatted(Formatting.DARK_PURPLE));
+
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.three").formatted(Formatting.DARK_PURPLE));
+
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.three").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.four").formatted(Formatting.DARK_PURPLE));
+            } else {
+                getExceptionTooltip(stack, tooltip);
+
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.exception.help.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.blend.exception.help.two").formatted(Formatting.DARK_PURPLE));
+
+                tooltip.add(Text.literal(""));
+
             }
         }
 
@@ -158,7 +181,77 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
         return stack;
     }
 
-    public static void callForAbilityTooltip(ItemStack stack, List<Text> tooltip) {
+    public static void effectToAbilityTooltip(ItemStack stack, List<Text> tooltip) {
+        StatusEffect effectFromAbility = BlendAbilities.NONE.getEffect();
+
+        if (stack.isOf(ItemInit.REGENERATION_BLEND)) {
+            effectFromAbility = BlendAbilities.REGENERATIVE.getEffect();
+        }
+        if (stack.isOf(ItemInit.POISON_BLEND)) {
+            effectFromAbility = BlendAbilities.VIRULENT.getEffect();
+        }
+        if (stack.isOf(ItemInit.SLOWNESS_BLEND)) {
+            effectFromAbility = BlendAbilities.SEDATING.getEffect();
+        }
+        if (stack.isOf(ItemInit.MINING_FATIGUE_BLEND)) {
+            effectFromAbility = BlendAbilities.HINDERING.getEffect();
+        }
+        if (stack.isOf(ItemInit.HASTE_BLEND)) {
+            effectFromAbility = BlendAbilities.DASHING.getEffect();
+        }
+        if (stack.isOf(ItemInit.SPEED_BLEND)) {
+            effectFromAbility = BlendAbilities.ACCELERATION.getEffect();
+        }
+        if (stack.isOf(ItemInit.WITHER_BLEND)) {
+            effectFromAbility = BlendAbilities.DECAYING.getEffect();
+        }
+        if (stack.isOf(ItemInit.NIGHT_VISION_BLEND)) {
+            effectFromAbility = BlendAbilities.OBSERVING.getEffect();
+        }
+        if (stack.isOf(ItemInit.WEAKNESS_BLEND)) {
+            effectFromAbility = BlendAbilities.DIMINISHED.getEffect();
+        }
+        if (stack.isOf(ItemInit.BLINDNESS_BLEND)) {
+            effectFromAbility = BlendAbilities.SHADED.getEffect();
+        }
+
+        callForAbility(stack, tooltip);
+
+        if (!stack.isOf(ItemInit.FIRE_BLEND)) {
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effect", effectFromAbility.getName()).formatted(Formatting.GRAY));
+        } else {
+            callFireAbilityFromBlend(stack, tooltip);
+        }
+
+    }
+
+    public static void getExceptionTooltip(ItemStack stack, List<Text> tooltip) {
+        StatusEffect firstEffect;
+        StatusEffect secondaryEffect;
+        StatusEffect thirdEffect;
+
+        callForAbility(stack, tooltip);
+
+        if (stack.isOf(ItemInit.REGENERATION_SLOWNESS_BLEND)) {
+            firstEffect = BlendAbilities.CONFLICTING.getEffect();
+            secondaryEffect = BlendAbilities.CONFLICTING.getEffect2();
+
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.first", firstEffect.getName()).formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.secondary", secondaryEffect.getName()).formatted(Formatting.GRAY));
+        } else if (stack.isOf(ItemInit.REGENERATION_SPEED_WEAKNESS_BLEND)) {
+            firstEffect = BlendAbilities.ALTERNATIVE.getEffect();
+            secondaryEffect = BlendAbilities.ALTERNATIVE.getEffect2();
+            thirdEffect = BlendAbilities.ALTERNATIVE.getEffect3();
+
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.first", firstEffect.getName()).formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.secondary", secondaryEffect.getName()).formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.third", thirdEffect.getName()).formatted(Formatting.GRAY));
+        }
+    }
+
+    private static void callForAbility(ItemStack stack, List<Text> tooltip) {
         MutableText callAbility = BlendAbilities.NONE.getAbility();
 
         if (stack.isOf(ItemInit.REGENERATION_BLEND)) {
@@ -179,9 +272,6 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
         if (stack.isOf(ItemInit.SPEED_BLEND)) {
             callAbility = BlendAbilities.ACCELERATION.getAbility();
         }
-        if (stack.isOf(ItemInit.FIRE_BLEND)) {
-            callAbility = BlendAbilities.INCINERATING.getAbility();
-        }
         if (stack.isOf(ItemInit.WITHER_BLEND)) {
             callAbility = BlendAbilities.DECAYING.getAbility();
         }
@@ -194,14 +284,20 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
         if (stack.isOf(ItemInit.BLINDNESS_BLEND)) {
             callAbility = BlendAbilities.SHADED.getAbility();
         }
+        if (stack.isOf(ItemInit.REGENERATION_SLOWNESS_BLEND)) {
+            callAbility = BlendAbilities.CONFLICTING.getAbility();
+        }
+        if (stack.isOf(ItemInit.REGENERATION_SPEED_WEAKNESS_BLEND)) {
+            callAbility = BlendAbilities.ALTERNATIVE.getAbility();
+        }
 
         tooltip.add(Text.translatable("text.hibernalherbs.blend.ability", callAbility).formatted(Formatting.GRAY));
-
     }
 
-    public static void providedEffects(ItemStack stack, List<Text> tooltip) {
-        StatusEffect effect = BlendAbilities.NONE.getEffect();
-
-        tooltip.add(Text.translatable("text.hibernalherbs.blend.effect", effect.getName()).formatted(Formatting.DARK_PURPLE));
+    private static void callFireAbilityFromBlend(ItemStack stack, List<Text> tooltip) {
+        if (stack.isOf(ItemInit.FIRE_BLEND)) {
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effect.fire").formatted(Formatting.GRAY));
+        }
     }
+
 }
