@@ -16,6 +16,7 @@ public class util {
     public static final TagKey<Item> HERBS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "herbs"));
     public static final TagKey<Item> POUNDED_HERBS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "pounded_herbs"));
     public static final TagKey<Item> BLENDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "herb_blends"));
+    public static final TagKey<Item> ARTIFICIAL_BLENDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "herbs/artificial/blends"));
 
     public static final TagKey<Item> HUMUS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "humus"));
     public static final TagKey<Item> FERTILIZER = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "fertilizer"));

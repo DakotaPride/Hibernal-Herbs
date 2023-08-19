@@ -154,6 +154,15 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
         if (!Screen.hasShiftDown()) {
             tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
+            if (stack.isOf(ItemInit.IRON_CANISTER)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.canister.quality.iron").formatted(Formatting.GRAY));
+            } else if (stack.isOf(ItemInit.AMETHYST_CANISTER)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.canister.quality.amethyst").formatted(Formatting.GRAY));
+            } else if (stack.isOf(ItemInit.DIAMOND_CANISTER)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.canister.quality.diamond").formatted(Formatting.GRAY));
+            }
+
+            tooltip.add(Text.literal(""));
             tooltip.add(Text.translatable("text.hibernalherbs.canister.help.one").formatted(Formatting.DARK_PURPLE));
             tooltip.add(Text.translatable("text.hibernalherbs.canister.help.two").formatted(Formatting.DARK_PURPLE));
             tooltip.add(Text.literal(""));

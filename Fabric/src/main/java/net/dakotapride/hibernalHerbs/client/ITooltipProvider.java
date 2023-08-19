@@ -1,5 +1,7 @@
 package net.dakotapride.hibernalHerbs.client;
 
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 
@@ -38,6 +40,60 @@ public interface ITooltipProvider {
 
         public int getProductionValue() {
             return productionValue;
+        }
+    }
+
+    enum BlendAbilities {
+        NONE(StatusEffects.SATURATION, Text.translatable("text.hibernalherbs.ability.none")),
+        REGENERATIVE(StatusEffects.REGENERATION, Text.translatable("text.hibernalherbs.ability.regeneration")),
+        VIRULENT(StatusEffects.POISON, Text.translatable("text.hibernalherbs.ability.poison")),
+        SEDATING(StatusEffects.SLOWNESS, Text.translatable("text.hibernalherbs.ability.slowness")),
+        HINDERING(StatusEffects.MINING_FATIGUE, Text.translatable("text.hibernalherbs.ability.mining_fatigue")),
+        DASHING(StatusEffects.HASTE, Text.translatable("text.hibernalherbs.ability.haste")),
+        ACCELERATION(StatusEffects.SPEED, Text.translatable("text.hibernalherbs.ability.speed")),
+        INCINERATING(Text.translatable("text.hibernalherbs.ability.fire")),
+        DECAYING(StatusEffects.WITHER, Text.translatable("text.hibernalherbs.ability.wither")),
+        OBSERVING(StatusEffects.NIGHT_VISION, Text.translatable("text.hibernalherbs.ability.night_vision")),
+        DIMINISHED(StatusEffects.WEAKNESS, Text.translatable("text.hibernalherbs.ability.weakness")),
+        SHADED(StatusEffects.BLINDNESS, Text.translatable("text.hibernalherbs.ability.blindness")),
+        CONFLICTING(StatusEffects.REGENERATION, StatusEffects.SLOWNESS, Text.translatable("text.hibernalherbs.ability.regeneration_slowness")),
+        ALTERNATIVE(StatusEffects.REGENERATION, StatusEffects.SPEED, StatusEffects.WEAKNESS, Text.translatable("text.hibernalherbs.ability.regeneration_speed_weakness"));
+
+        final MutableText ability;
+
+        StatusEffect effect;
+        StatusEffect effect2;
+        StatusEffect effect3;
+
+
+        BlendAbilities(StatusEffect firstEffect, StatusEffect secondEffect, MutableText callAbility) {
+            effect = firstEffect;
+            effect2 = secondEffect;
+            ability = callAbility;
+        }
+
+        BlendAbilities(StatusEffect firstEffect, StatusEffect secondEffect, StatusEffect thirdEffect, MutableText callAbility) {
+            effect = firstEffect;
+            effect2 = secondEffect;
+            effect3 = thirdEffect;
+            ability = callAbility;
+        }
+
+        BlendAbilities(StatusEffect abilityForEffect, MutableText callAbility) {
+            effect = abilityForEffect;
+            ability = callAbility;
+        }
+
+        BlendAbilities(MutableText callAbility) {
+            ability = callAbility;
+        }
+
+        public MutableText getAbility() {
+            return ability;
+        }
+
+        public StatusEffect getEffect() {
+            return effect;
         }
     }
 

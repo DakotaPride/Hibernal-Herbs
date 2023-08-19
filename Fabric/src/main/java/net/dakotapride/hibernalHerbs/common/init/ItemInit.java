@@ -125,34 +125,34 @@ public class ItemInit {
     public static Item DRIED_FENNKYSTRAL = new Item(new FabricItemSettings().food(FoodComponentInit.DRIED_HERB));
     public static Item DRIED_SAGE = new Item(new FabricItemSettings().food(FoodComponentInit.DRIED_HERB));
 
-    public static HerbBlendItem REGENERATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.REGENERATIVE_BLEND)
+    public static HerbBlendItem REGENERATION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.REGENERATIVE_BLEND)
             .maxCount(1));
-    public static HerbBlendItem VIRULENT_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.VIRULENT_BLEND)
+    public static HerbBlendItem POISON_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.VIRULENT_BLEND)
             .maxCount(1));
-    public static HerbBlendItem SEDATING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SEDATING_BLEND)
+    public static HerbBlendItem SLOWNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SEDATING_BLEND)
             .maxCount(1));
-    public static HerbBlendItem HINDERING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.HINDERING_BLEND)
+    public static HerbBlendItem MINING_FATIGUE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.HINDERING_BLEND)
             .maxCount(1));
-    public static HerbBlendItem DASHING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DASHING_BLEND)
+    public static HerbBlendItem HASTE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DASHING_BLEND)
             .maxCount(1));
-    public static HerbBlendItem ACCELERATION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ACCELERATION_BLEND)
+    public static HerbBlendItem SPEED_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ACCELERATION_BLEND)
             .maxCount(1));
-    public static HerbBlendItem INCINERATING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
+    public static HerbBlendItem FIRE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
             .maxCount(1));
-    public static HerbBlendItem DECAYING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DECAYING_BLEND)
+    public static HerbBlendItem WITHER_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DECAYING_BLEND)
             .maxCount(1));
-    public static HerbBlendItem OBSERVING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.OBSERVING_BLEND)
+    public static HerbBlendItem NIGHT_VISION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.OBSERVING_BLEND)
             .maxCount(1));
-    public static HerbBlendItem DIMINISHED_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DIMINISHED_BLEND)
+    public static HerbBlendItem WEAKNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DIMINISHED_BLEND)
             .maxCount(1));
-    public static HerbBlendItem SHADED_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SHADED_BLEND)
+    public static HerbBlendItem BLINDNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SHADED_BLEND)
             .maxCount(1));
 
     // Resource Dependant (Blends) Herbs
 
-    public static HerbBlendItem CONFLICTING_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.CONFLICTING_BLEND)
+    public static HerbBlendItem REGENERATION_SLOWNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.CONFLICTING_BLEND)
             .maxCount(1));
-    public static HerbBlendItem ALTERNATIVE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ALTERNATIVE_BLEND)
+    public static HerbBlendItem REGENERATION_SPEED_WEAKNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ALTERNATIVE_BLEND)
             .maxCount(1));
 
     public static HerbFertilizerItem HERB_FERTILIZER = new HerbFertilizerItem(new FabricItemSettings());
@@ -186,34 +186,34 @@ public class ItemInit {
     public static HerbHumusItem HERB_HUMUS_MYQUESTE = new HerbHumusItem(new FabricItemSettings());
 
     // Smoked Herb Blends (Fabric)
-    public static SmokedHerbBlendItem SMOKED_REGENERATIVE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_REGENERATIVE_BLEND)
+    public static SmokedHerbBlendItem SMOKED_REGENERATION_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_REGENERATIVE_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_VIRULENT_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_VIRULENT_BLEND)
+    public static SmokedHerbBlendItem SMOKED_POISON_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_VIRULENT_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_SEDATING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SEDATING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_SLOWNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SEDATING_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_HINDERING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_HINDERING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_MINING_FATIGUE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_HINDERING_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_DASHING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DASHING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_HASTE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DASHING_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_ACCELERATION_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ACCELERATION_BLEND)
+    public static SmokedHerbBlendItem SMOKED_SPEED_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ACCELERATION_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_INCINERATING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_INCINERATING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_FIRE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_INCINERATING_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_DECAYING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DECAYING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_WITHER_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DECAYING_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_OBSERVING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_OBSERVING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_NIGHT_VISION_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_OBSERVING_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_DIMINISHED_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DIMINISHED_BLEND)
+    public static SmokedHerbBlendItem SMOKED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DIMINISHED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_SHADED_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SHADED_BLEND)
+    public static SmokedHerbBlendItem SMOKED_BLINDNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SHADED_BLEND)
             .maxCount(1));
 
     // Resource Dependant (Smoked Blends) Herbs
 
-    public static SmokedHerbBlendItem SMOKED_CONFLICTING_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_CONFLICTING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_REGENERATION_SLOWNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_CONFLICTING_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_ALTERNATIVE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ALTERNATIVE_BLEND)
+    public static SmokedHerbBlendItem SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ALTERNATIVE_BLEND)
             .maxCount(1));
 
     // Refined Pouches/Canisters
@@ -302,34 +302,34 @@ public class ItemInit {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_fennkystral"), DRIED_FENNKYSTRAL);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_sage"), DRIED_SAGE);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regeneration"), REGENERATIVE_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_poison"), VIRULENT_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_slowness"), SEDATING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue"), HINDERING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_haste"), DASHING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_speed"), ACCELERATION_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_fire"), INCINERATING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_wither"), DECAYING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_night_vision"), OBSERVING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_weakness"), DIMINISHED_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_blindness"), SHADED_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_slow"), CONFLICTING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak"), ALTERNATIVE_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regeneration"), REGENERATION_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_poison"), POISON_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_slowness"), SLOWNESS_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue"), MINING_FATIGUE_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_haste"), HASTE_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_speed"), SPEED_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_fire"), FIRE_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_wither"), WITHER_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_night_vision"), NIGHT_VISION_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_weakness"), WEAKNESS_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_blindness"), BLINDNESS_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_slow"), REGENERATION_SLOWNESS_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak"), REGENERATION_SPEED_WEAKNESS_BLEND);
 
         // Smoked
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regeneration_smoked"), SMOKED_REGENERATIVE_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_poison_smoked"), SMOKED_VIRULENT_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_slowness_smoked"), SMOKED_SEDATING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue_smoked"), SMOKED_HINDERING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_haste_smoked"), SMOKED_DASHING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_speed_smoked"), SMOKED_ACCELERATION_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_fire_smoked"), SMOKED_INCINERATING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_wither_smoked"), SMOKED_DECAYING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_night_vision_smoked"), SMOKED_OBSERVING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_weakness_smoked"), SMOKED_DIMINISHED_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_blindness_smoked"), SMOKED_SHADED_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_slow_smoked"), SMOKED_CONFLICTING_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak_smoked"), SMOKED_ALTERNATIVE_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regeneration_smoked"), SMOKED_REGENERATION_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_poison_smoked"), SMOKED_POISON_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_slowness_smoked"), SMOKED_SLOWNESS_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue_smoked"), SMOKED_MINING_FATIGUE_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_haste_smoked"), SMOKED_HASTE_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_speed_smoked"), SMOKED_SPEED_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_fire_smoked"), SMOKED_FIRE_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_wither_smoked"), SMOKED_WITHER_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_night_vision_smoked"), SMOKED_NIGHT_VISION_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_weakness_smoked"), SMOKED_WEAKNESS_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_blindness_smoked"), SMOKED_BLINDNESS_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_slow_smoked"), SMOKED_REGENERATION_SLOWNESS_BLEND);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak_smoked"), SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND);
 
         // Refined Pouches/Canisters
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_scratched"), SCRATCHED_POUCH);

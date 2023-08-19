@@ -189,6 +189,15 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
         if (!Screen.hasShiftDown()) {
             tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
+            if (stack.isOf(ItemInit.SCRATCHED_POUCH)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.scratched").formatted(Formatting.GRAY));
+            } else if (stack.isOf(ItemInit.STITCHED_POUCH)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.stitched").formatted(Formatting.GRAY));
+            } else if (stack.isOf(ItemInit.PROPER_POUCH)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.proper").formatted(Formatting.GRAY));
+            }
+
+            tooltip.add(Text.literal(""));
             tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.one").formatted(Formatting.DARK_PURPLE));
             tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.two").formatted(Formatting.DARK_PURPLE));
             tooltip.add(Text.literal(""));
