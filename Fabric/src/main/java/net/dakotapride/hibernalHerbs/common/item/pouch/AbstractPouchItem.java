@@ -197,6 +197,8 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
                 tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.proper").formatted(Formatting.GRAY));
             }
 
+            tooltip.add((Text.translatable("text.hibernalherbs.pouch.container", getContentWeight(stack, 64), size)).formatted(Formatting.GRAY));
+
             tooltip.add(Text.literal(""));
             tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.one").formatted(Formatting.DARK_PURPLE));
             tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.two").formatted(Formatting.DARK_PURPLE));
@@ -217,8 +219,6 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
             tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.pounded_herbs").formatted(Formatting.DARK_GRAY));
             tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.dried_herbs").formatted(Formatting.DARK_GRAY));
 
-            tooltip.add(Text.literal(""));
-            tooltip.add((Text.translatable("text.hibernalherbs.pouch.container", getContentWeight(stack, 64), size)).formatted(Formatting.GRAY));
         }
     }
 

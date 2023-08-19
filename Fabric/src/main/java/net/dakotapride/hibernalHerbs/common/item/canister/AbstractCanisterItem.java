@@ -162,6 +162,8 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
                 tooltip.add(Text.translatable("text.hibernalherbs.canister.quality.diamond").formatted(Formatting.GRAY));
             }
 
+            tooltip.add(Text.translatable("text.hibernalherbs.canister.container", getContentWeight(stack, 1), actualSize).formatted(Formatting.GRAY));
+
             tooltip.add(Text.literal(""));
             tooltip.add(Text.translatable("text.hibernalherbs.canister.help.one").formatted(Formatting.DARK_PURPLE));
             tooltip.add(Text.translatable("text.hibernalherbs.canister.help.two").formatted(Formatting.DARK_PURPLE));
@@ -182,7 +184,6 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
             tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.smoked_blends").formatted(Formatting.DARK_GRAY));
 
             tooltip.add(Text.literal(""));
-            tooltip.add(Text.translatable("text.hibernalherbs.canister.container", getContentWeight(stack, 1), actualSize).formatted(Formatting.GRAY));
         }
     }
 

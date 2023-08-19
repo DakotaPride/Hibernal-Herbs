@@ -380,6 +380,8 @@
   "text.hibernalherbs.blend.attacking.help.fire.four": "on fire for a duration of time.",
   "text.hibernalherbs.blend.exception.help.one": "There are some exceptions to",
   "text.hibernalherbs.blend.exception.help.two": "how typical §dHerbal Blends§5 function.",
+  "text.hibernalherbs.blend.exception.help.three": "These other Herbal Blends",
+  "text.hibernalherbs.blend.exception.help.four": "provide multiple effects at once.",
   "text.hibernalherbs.blend.provided_effect": "§6Provided Effect:§7 %s",
   "text.hibernalherbs.blend.provided_effect.fire": "§6Provided Effect:§7 Fire",
   "text.hibernalherbs.blend.provided_effects": "§6Provided Effects:",
