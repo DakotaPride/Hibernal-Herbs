@@ -287,15 +287,17 @@
 
   "text.hibernalherbs.pile.bloforia": "  - Bloforia",
 
-  // Tooltips
+
+  // BasicTooltips
   "text.hibernalherbs.controls.shift": "[§7Shift§8] For More Details",
   "text.hibernalherbs.controls.right_click": "[§7Right-Click§8]",
+  "text.hibernalherbs.controls.right_click.inventory": "[§7Right-Click in Inventory§8]",
 
   "itemGroup.hibernalherbs.hibernal_herbs": "Herbs Misc",
   "itemGroup.hibernalherbs.herbs": "Herbs",
   "itemGroup.hibernalherbs.pounded_herbs": "Pounded Herbs",
 
-  // Herb Fertilizer/Humus
+  // Herb Fertilizer/Humus Tooltips
   "text.hibernalherbs.association.none": "§6Association:§7 None",
   "text.hibernalherbs.association.oak": "§6Association:§7 Oak",
   "text.hibernalherbs.association.spruce": "§6Association:§7 Spruce",
@@ -329,8 +331,37 @@
   "text.hibernalherbs.humus.additional_text.two": "§dHerbal Fertilizer§5, increasing your",
   "text.hibernalherbs.humus.additional_text.three": "herb production rates",
 
+  "text.hibernalherbs.fertilizer.additional_text.one": "§dHerbal Fertilizer§5 can be used",
+  "text.hibernalherbs.fertilizer.additional_text.two": "to §8(§7functionally§8)§5 multiply",
+  "text.hibernalherbs.fertilizer.additional_text.three": "your herbs in varying",
+  "text.hibernalherbs.fertilizer.additional_text.four": "amounts.",
+
   // Canisters/Pouches
   "text.hibernalherbs.canister.container": "§6Contained Blends:§7 %s/%s",
+  "text.hibernalherbs.pouch.container": "§6Contained Herbs:§7 %s/%s",
+  "text.hibernalherbs.container.can_contain.help": "§6Can Hold:",
+
+  "text.hibernalherbs.container.can_contain.blends": " -§5Blends",
+  "text.hibernalherbs.container.can_contain.smoked_blends": " -§5Smoked Blends",
+  "text.hibernalherbs.container.can_contain.pounded_herbs": " -§5Pounded Herbs",
+  "text.hibernalherbs.container.can_contain.dried_herbs": " -§5Dried Herbs",
+  "text.hibernalherbs.container.can_contain.nonpounded_herbs": " -§5Herbs §8[§7Regular§8]",
+
+  "text.hibernalherbs.container.variant.help.one": "The amount that can be held,",
+  "text.hibernalherbs.container.variant.help.two": "however, is dependant on the",
+  "text.hibernalherbs.container.variant.help.three": "material used.",
+
+  "text.hibernalherbs.canister.help.one": "§dBlend Canisters §5can hold, well,",
+  "text.hibernalherbs.canister.help.two": "§dHerbal Blends§5.",
+  "text.hibernalherbs.canister.inventory_controls.help.one": "Similarly to a bundle,",
+  "text.hibernalherbs.canister.inventory_controls.help.two": "right-click an §dHerbal Blend§5",
+  "text.hibernalherbs.canister.inventory_controls.help.three": "while in your inventory to store it",
+
+  "text.hibernalherbs.pouch.help.one": "§dHerbal Pouches §5can hold",
+  "text.hibernalherbs.pouch.help.two": "different kinds of herbs.",
+  "text.hibernalherbs.pouch.inventory_controls.help.one": "Similarly to a bundle,",
+  "text.hibernalherbs.pouch.inventory_controls.help.two": "right-click certain herbs",
+  "text.hibernalherbs.pouch.inventory_controls.help.three": "while in your inventory to store it",
 
   // REI & JEI Integration
   "text.hibernalherbs.herbal_conjuration": "Herbal Conjuration"

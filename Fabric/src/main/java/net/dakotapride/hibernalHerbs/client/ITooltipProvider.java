@@ -6,6 +6,7 @@ import net.minecraft.text.Text;
 public interface ITooltipProvider {
     String shiftControlsText = "text.hibernalherbs.controls.shift";
     String rightClickControlsText = "text.hibernalherbs.controls.right_click";
+    String rightClickInventoryControlsText = "text.hibernalherbs.controls.right_click.inventory";
 
 
     enum Associations {

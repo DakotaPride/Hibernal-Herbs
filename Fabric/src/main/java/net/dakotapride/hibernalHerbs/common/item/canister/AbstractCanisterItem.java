@@ -154,6 +154,25 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
         if (!Screen.hasShiftDown()) {
             tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("text.hibernalherbs.canister.help.one").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.canister.help.two").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.one").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.two").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.three").formatted(Formatting.DARK_PURPLE));
+
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable(rightClickInventoryControlsText).formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.canister.inventory_controls.help.one").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.canister.inventory_controls.help.two").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.canister.inventory_controls.help.three").formatted(Formatting.DARK_PURPLE));
+
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.help").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.blends").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.smoked_blends").formatted(Formatting.DARK_GRAY));
+
+            tooltip.add(Text.literal(""));
             tooltip.add(Text.translatable("text.hibernalherbs.canister.container", getContentWeight(stack, 1), actualSize).formatted(Formatting.GRAY));
         }
     }

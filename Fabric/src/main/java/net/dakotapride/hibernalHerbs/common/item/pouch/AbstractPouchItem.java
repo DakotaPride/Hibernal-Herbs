@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.item.pouch;
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.util;
 import net.minecraft.client.gui.screen.Screen;
@@ -34,7 +35,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class AbstractPouchItem extends BundleItem {
+public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
 
     //
     // Credit To Cheaterpaul (Owner Of Better Bundles Mod For Forge)
@@ -184,8 +185,32 @@ public class AbstractPouchItem extends BundleItem {
     }
 
     @Override
-    public void appendTooltip(@Nonnull ItemStack stack, @Nonnull World level, List<Text> components, @Nonnull TooltipContext flag) {
-        components.add((Text.translatable("item.minecraft.bundle.fullness", getContentWeight(stack, 64), size)).formatted(Formatting.GRAY));
+    public void appendTooltip(@Nonnull ItemStack stack, @Nonnull World level, List<Text> tooltip, @Nonnull TooltipContext flag) {
+        if (!Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
+        } else if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.one").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.two").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.one").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.two").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.three").formatted(Formatting.DARK_PURPLE));
+
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable(rightClickInventoryControlsText).formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.one").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.two").formatted(Formatting.DARK_PURPLE));
+            tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.three").formatted(Formatting.DARK_PURPLE));
+
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.help").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.nonpounded_herbs").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.pounded_herbs").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.dried_herbs").formatted(Formatting.DARK_GRAY));
+
+            tooltip.add(Text.literal(""));
+            tooltip.add((Text.translatable("text.hibernalherbs.pouch.container", getContentWeight(stack, 64), size)).formatted(Formatting.GRAY));
+        }
     }
 
     @Override
