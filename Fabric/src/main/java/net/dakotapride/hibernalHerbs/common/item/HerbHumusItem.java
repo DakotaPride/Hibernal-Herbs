@@ -139,15 +139,20 @@ public class HerbHumusItem extends Item implements ITooltipProvider {
 
             getProductionValueTooltip(stack, tooltip);
 
-            tooltip.add(Text.literal(""));
-            tooltip.add(Text.translatable("text.hibernalherbs.humus.additional_text.one").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.humus.additional_text.two").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.humus.additional_text.three").formatted(Formatting.DARK_PURPLE));
+            if (!Screen.hasAltDown()) {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable(leftAltControlsText).formatted(Formatting.DARK_GRAY));
+            } else {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.humus.additional_text.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.humus.additional_text.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.humus.additional_text.three").formatted(Formatting.DARK_PURPLE));
 
-            tooltip.add(Text.literal(""));
-            tooltip.add(Text.translatable(rightClickControlsText).formatted(Formatting.DARK_GRAY));
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable(rightClickControlsText).formatted(Formatting.DARK_GRAY));
 
-            getAssociationTooltip(stack, tooltip);
+                getAssociationTooltip(stack, tooltip);
+            }
         }
     }
 

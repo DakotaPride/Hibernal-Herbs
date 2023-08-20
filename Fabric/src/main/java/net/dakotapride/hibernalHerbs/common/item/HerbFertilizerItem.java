@@ -64,11 +64,16 @@ public class HerbFertilizerItem extends Item implements ITooltipProvider {
 
             HerbHumusItem.getProductionValueTooltip(stack, tooltip);
 
-            tooltip.add(Text.literal(""));
-            tooltip.add(Text.translatable("text.hibernalherbs.fertilizer.additional_text.one").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.fertilizer.additional_text.two").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.fertilizer.additional_text.three").formatted(Formatting.DARK_PURPLE));
-            tooltip.add(Text.translatable("text.hibernalherbs.fertilizer.additional_text.four").formatted(Formatting.DARK_PURPLE));
+            if (!Screen.hasAltDown()) {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable(leftAltControlsText).formatted(Formatting.DARK_GRAY));
+            } else {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.fertilizer.additional_text.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.fertilizer.additional_text.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.fertilizer.additional_text.three").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.fertilizer.additional_text.four").formatted(Formatting.DARK_PURPLE));
+            }
         }
 
     }

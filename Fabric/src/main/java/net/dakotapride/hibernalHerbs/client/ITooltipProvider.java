@@ -111,18 +111,18 @@ public interface ITooltipProvider {
     }
 
     enum SigilAlignments {
-        NONE(Text.translatable("none")),
-        PRIDE(Text.translatable("pride")),
-        ENVY(Text.translatable("envy")),
-        SLOTH(Text.translatable("sloth")),
-        WRATH(Text.translatable("wrath")),
-        GREED(Text.translatable("greed")),
-        LUST(Text.translatable("lust")),
-        GLUTTONY(Text.translatable("gluttony")),
-        MASTERY(Text.translatable("mastery")),
-        ADVANCED_MASTERY(Text.translatable("advanced_mastery")),
-        CONFIGURATION(Text.translatable("configuration")),
-        ADVANCED_CONFIGURATION(Text.translatable("advanced_configuration"));
+        NONE(Text.translatable("text.hibernalherbs.sigil.alignment.none")),
+        PRIDE(Text.translatable("text.hibernalherbs.sigil.alignment.pride")),
+        ENVY(Text.translatable("text.hibernalherbs.sigil.alignment.envy")),
+        SLOTH(Text.translatable("text.hibernalherbs.sigil.alignment.sloth")),
+        WRATH(Text.translatable("text.hibernalherbs.sigil.alignment.wrath")),
+        GREED(Text.translatable("text.hibernalherbs.sigil.alignment.greed")),
+        LUST(Text.translatable("text.hibernalherbs.sigil.alignment.lust")),
+        GLUTTONY(Text.translatable("text.hibernalherbs.sigil.alignment.gluttony")),
+        MASTERY(Text.translatable("text.hibernalherbs.sigil.alignment.mastery")),
+        ADVANCED_MASTERY(Text.translatable("text.hibernalherbs.sigil.alignment.advanced_mastery")),
+        CONFIGURATION(Text.translatable("text.hibernalherbs.sigil.alignment.configuration")),
+        ADVANCED_CONFIGURATION(Text.translatable("text.hibernalherbs.sigil.alignment.advanced_configuration"));
 
         final MutableText text;
 

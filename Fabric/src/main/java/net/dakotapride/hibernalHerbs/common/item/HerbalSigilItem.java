@@ -24,7 +24,23 @@ public class HerbalSigilItem extends Item implements ITooltipProvider {
         if (!Screen.hasShiftDown()) {
             tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable(""));
+            getSigilAlignment(stack, tooltip);
+
+            if (!Screen.hasAltDown()) {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable(leftAltControlsText).formatted(Formatting.DARK_GRAY));
+            } else {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.sigil.help.padlock.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.sigil.help.padlock.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.sigil.help.padlock.three").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.sigil.help.padlock.four").formatted(Formatting.DARK_PURPLE));
+
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.sigil.help.herbs.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.sigil.help.herbs.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.sigil.help.herbs.three").formatted(Formatting.DARK_PURPLE));
+            }
         }
     }
 

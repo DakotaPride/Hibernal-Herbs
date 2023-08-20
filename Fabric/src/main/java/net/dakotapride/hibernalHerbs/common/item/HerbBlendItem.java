@@ -164,6 +164,7 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
                 tooltip.add(Text.translatable("text.hibernalherbs.blend.modifier.smoked.false").formatted(Formatting.GRAY));
 
                 if (!Screen.hasAltDown()) {
+                    tooltip.add(Text.literal(""));
                     tooltip.add(Text.translatable(leftAltControlsText).formatted(Formatting.DARK_GRAY));
                 } else {
                     tooltip.add(Text.literal(""));
@@ -215,43 +216,43 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
     public static void effectToAbilityTooltip(ItemStack stack, List<Text> tooltip) {
         StatusEffect effectFromAbility = BlendAbilities.NONE.getEffect();
 
-        if (stack.isOf(ItemInit.REGENERATION_BLEND)) {
+        if (stack.isOf(ItemInit.REGENERATION_BLEND) || stack.isOf(ItemInit.SMOKED_REGENERATION_BLEND)) {
             effectFromAbility = BlendAbilities.REGENERATIVE.getEffect();
         }
-        if (stack.isOf(ItemInit.POISON_BLEND)) {
+        if (stack.isOf(ItemInit.POISON_BLEND) || stack.isOf(ItemInit.SMOKED_POISON_BLEND)) {
             effectFromAbility = BlendAbilities.VIRULENT.getEffect();
         }
-        if (stack.isOf(ItemInit.SLOWNESS_BLEND)) {
+        if (stack.isOf(ItemInit.SLOWNESS_BLEND) || stack.isOf(ItemInit.SMOKED_SLOWNESS_BLEND)) {
             effectFromAbility = BlendAbilities.SEDATING.getEffect();
         }
-        if (stack.isOf(ItemInit.MINING_FATIGUE_BLEND)) {
+        if (stack.isOf(ItemInit.MINING_FATIGUE_BLEND) || stack.isOf(ItemInit.SMOKED_MINING_FATIGUE_BLEND)) {
             effectFromAbility = BlendAbilities.HINDERING.getEffect();
         }
-        if (stack.isOf(ItemInit.HASTE_BLEND)) {
+        if (stack.isOf(ItemInit.HASTE_BLEND) || stack.isOf(ItemInit.SMOKED_HASTE_BLEND)) {
             effectFromAbility = BlendAbilities.DASHING.getEffect();
         }
-        if (stack.isOf(ItemInit.SPEED_BLEND)) {
+        if (stack.isOf(ItemInit.SPEED_BLEND) || stack.isOf(ItemInit.SMOKED_SPEED_BLEND)) {
             effectFromAbility = BlendAbilities.ACCELERATION.getEffect();
         }
-        if (stack.isOf(ItemInit.WITHER_BLEND)) {
+        if (stack.isOf(ItemInit.WITHER_BLEND) || stack.isOf(ItemInit.SMOKED_WITHER_BLEND)) {
             effectFromAbility = BlendAbilities.DECAYING.getEffect();
         }
-        if (stack.isOf(ItemInit.NIGHT_VISION_BLEND)) {
+        if (stack.isOf(ItemInit.NIGHT_VISION_BLEND) || stack.isOf(ItemInit.SMOKED_NIGHT_VISION_BLEND)) {
             effectFromAbility = BlendAbilities.OBSERVING.getEffect();
         }
-        if (stack.isOf(ItemInit.WEAKNESS_BLEND)) {
+        if (stack.isOf(ItemInit.WEAKNESS_BLEND) || stack.isOf(ItemInit.SMOKED_WEAKNESS_BLEND)) {
             effectFromAbility = BlendAbilities.DIMINISHED.getEffect();
         }
-        if (stack.isOf(ItemInit.BLINDNESS_BLEND)) {
+        if (stack.isOf(ItemInit.BLINDNESS_BLEND) || stack.isOf(ItemInit.SMOKED_BLINDNESS_BLEND)) {
             effectFromAbility = BlendAbilities.SHADED.getEffect();
         }
 
         callForAbility(stack, tooltip);
 
-        if (!stack.isOf(ItemInit.FIRE_BLEND)) {
-            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effect", effectFromAbility.getName()).formatted(Formatting.GRAY));
-        } else {
+        if (stack.isOf(ItemInit.FIRE_BLEND) || stack.isOf(ItemInit.SMOKED_FIRE_BLEND)) {
             callFireAbilityFromBlend(stack, tooltip);
+        } else {
+            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effect", effectFromAbility.getName()).formatted(Formatting.GRAY));
         }
 
     }
@@ -285,40 +286,43 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
     private static void callForAbility(ItemStack stack, List<Text> tooltip) {
         MutableText callAbility = BlendAbilities.NONE.getAbility();
 
-        if (stack.isOf(ItemInit.REGENERATION_BLEND)) {
+        if (stack.isOf(ItemInit.REGENERATION_BLEND) || stack.isOf(ItemInit.SMOKED_REGENERATION_BLEND)) {
             callAbility = BlendAbilities.REGENERATIVE.getAbility();
         }
-        if (stack.isOf(ItemInit.POISON_BLEND)) {
+        if (stack.isOf(ItemInit.POISON_BLEND) || stack.isOf(ItemInit.SMOKED_POISON_BLEND)) {
             callAbility = BlendAbilities.VIRULENT.getAbility();
         }
-        if (stack.isOf(ItemInit.SLOWNESS_BLEND)) {
+        if (stack.isOf(ItemInit.SLOWNESS_BLEND) || stack.isOf(ItemInit.SMOKED_SLOWNESS_BLEND)) {
             callAbility = BlendAbilities.SEDATING.getAbility();
         }
-        if (stack.isOf(ItemInit.MINING_FATIGUE_BLEND)) {
+        if (stack.isOf(ItemInit.MINING_FATIGUE_BLEND) || stack.isOf(ItemInit.SMOKED_MINING_FATIGUE_BLEND)) {
             callAbility = BlendAbilities.HINDERING.getAbility();
         }
-        if (stack.isOf(ItemInit.HASTE_BLEND)) {
+        if (stack.isOf(ItemInit.HASTE_BLEND) || stack.isOf(ItemInit.SMOKED_HASTE_BLEND)) {
             callAbility = BlendAbilities.DASHING.getAbility();
         }
-        if (stack.isOf(ItemInit.SPEED_BLEND)) {
+        if (stack.isOf(ItemInit.SPEED_BLEND) || stack.isOf(ItemInit.SMOKED_SPEED_BLEND)) {
             callAbility = BlendAbilities.ACCELERATION.getAbility();
         }
-        if (stack.isOf(ItemInit.WITHER_BLEND)) {
+        if (stack.isOf(ItemInit.WITHER_BLEND) || stack.isOf(ItemInit.SMOKED_WITHER_BLEND)) {
             callAbility = BlendAbilities.DECAYING.getAbility();
         }
-        if (stack.isOf(ItemInit.NIGHT_VISION_BLEND)) {
+        if (stack.isOf(ItemInit.FIRE_BLEND) || stack.isOf(ItemInit.SMOKED_FIRE_BLEND)) {
+            callAbility = BlendAbilities.INCINERATING.getAbility();
+        }
+        if (stack.isOf(ItemInit.NIGHT_VISION_BLEND) || stack.isOf(ItemInit.SMOKED_NIGHT_VISION_BLEND)) {
             callAbility = BlendAbilities.OBSERVING.getAbility();
         }
-        if (stack.isOf(ItemInit.WEAKNESS_BLEND)) {
+        if (stack.isOf(ItemInit.WEAKNESS_BLEND) || stack.isOf(ItemInit.SMOKED_WEAKNESS_BLEND)) {
             callAbility = BlendAbilities.DIMINISHED.getAbility();
         }
-        if (stack.isOf(ItemInit.BLINDNESS_BLEND)) {
+        if (stack.isOf(ItemInit.BLINDNESS_BLEND) || stack.isOf(ItemInit.SMOKED_BLINDNESS_BLEND)) {
             callAbility = BlendAbilities.SHADED.getAbility();
         }
-        if (stack.isOf(ItemInit.REGENERATION_SLOWNESS_BLEND)) {
+        if (stack.isOf(ItemInit.REGENERATION_SLOWNESS_BLEND) || stack.isOf(ItemInit.SMOKED_REGENERATION_SLOWNESS_BLEND)) {
             callAbility = BlendAbilities.CONFLICTING.getAbility();
         }
-        if (stack.isOf(ItemInit.REGENERATION_SPEED_WEAKNESS_BLEND)) {
+        if (stack.isOf(ItemInit.REGENERATION_SPEED_WEAKNESS_BLEND) || stack.isOf(ItemInit.SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND)) {
             callAbility = BlendAbilities.ALTERNATIVE.getAbility();
         }
 
@@ -326,7 +330,7 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
     }
 
     private static void callFireAbilityFromBlend(ItemStack stack, List<Text> tooltip) {
-        if (stack.isOf(ItemInit.FIRE_BLEND)) {
+        if (stack.isOf(ItemInit.FIRE_BLEND) || stack.isOf(ItemInit.SMOKED_FIRE_BLEND)) {
             tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effect.fire").formatted(Formatting.GRAY));
         }
     }

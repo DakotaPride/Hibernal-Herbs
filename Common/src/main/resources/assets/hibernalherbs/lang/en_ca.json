@@ -420,6 +420,27 @@
   // Herbal Sigils
   "text.hibernalherbs.sigil.alignment": "§6Alignment:§7 %s",
 
+  "text.hibernalherbs.sigil.help.padlock.one": "§dHerbal Sigils§5 are",
+  "text.hibernalherbs.sigil.help.padlock.two": "used to create §dHerbal",
+  "text.hibernalherbs.sigil.help.padlock.three": "§dPadlocks§5, which can",
+  "text.hibernalherbs.sigil.help.padlock.four": "prove to be useful.",
+  "text.hibernalherbs.sigil.help.herbs.one": "§dHerbs of sin§5 can also",
+  "text.hibernalherbs.sigil.help.herbs.two": "be created utilizing",
+  "text.hibernalherbs.sigil.help.herbs.three": "§dHerbal Sigils§5.",
+
+  "text.hibernalherbs.sigil.alignment.none": "None",
+  "text.hibernalherbs.sigil.alignment.pride": "Pride",
+  "text.hibernalherbs.sigil.alignment.envy": "Envy",
+  "text.hibernalherbs.sigil.alignment.sloth": "Sloth",
+  "text.hibernalherbs.sigil.alignment.wrath": "Wrath",
+  "text.hibernalherbs.sigil.alignment.greed": "Greed",
+  "text.hibernalherbs.sigil.alignment.lust": "Lust",
+  "text.hibernalherbs.sigil.alignment.gluttony": "Gluttony",
+  "text.hibernalherbs.sigil.alignment.mastery": "Mastery",
+  "text.hibernalherbs.sigil.alignment.advanced_mastery": "Advanced Mastery",
+  "text.hibernalherbs.sigil.alignment.configuration": "Configuration",
+  "text.hibernalherbs.sigil.alignment.advanced_configuration": "Advanced Mastery",
+
   // REI & JEI Integration
   "text.hibernalherbs.herbal_conjuration": "Herbal Conjuration"
 }
