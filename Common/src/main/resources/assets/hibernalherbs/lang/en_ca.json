@@ -221,6 +221,8 @@
   "item.hibernalherbs.herb_fertilizer_myqueste": "Herbal Fertilizer",
 
   // Magic Items
+  "item.hibernalherbs.sigil": "Blank Herbal Sigil",
+  "item.hibernalherbs.cracked_sigil": "Cracked Herbal Sigil",
   "item.hibernalherbs.sigil_pride": "Herbal Sigil",
   "item.hibernalherbs.sigil_sloth": "Herbal Sigil",
   "item.hibernalherbs.sigil_lust": "Herbal Sigil",
