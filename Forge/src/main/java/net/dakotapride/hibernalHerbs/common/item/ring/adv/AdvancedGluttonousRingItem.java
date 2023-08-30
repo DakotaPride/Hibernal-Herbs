@@ -1,6 +1,8 @@
 package net.dakotapride.hibernalHerbs.common.item.ring.adv;
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -11,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class AdvancedGluttonousRingItem extends Item {
+public class AdvancedGluttonousRingItem extends Item implements ITooltipProvider {
     public AdvancedGluttonousRingItem(Properties properties) {
         super(properties);
     }
@@ -19,9 +21,14 @@ public class AdvancedGluttonousRingItem extends Item {
 
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag flag) {
-        tooltip.add(Component.translatable("text.hibernalherbs.inventory").withStyle(ChatFormatting.WHITE));
-        tooltip.add(Component.literal(""));
-        tooltip.add(Component.translatable("text.hibernalherbs.ring.gluttonous.1.adv").withStyle(ChatFormatting.BLUE));
-        tooltip.add(Component.translatable("text.hibernalherbs.ring.gluttonous.2.adv").withStyle(ChatFormatting.BLUE));
+        if (!Screen.hasShiftDown()) {
+            tooltip.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
+        } else if (Screen.hasShiftDown()) {
+            tooltip.add(Component.translatable(inInventoryPassiveText).withStyle(ChatFormatting.GRAY));
+
+            tooltip.add(Component.literal(""));
+            tooltip.add(Component.translatable("text.hibernalherbs.gluttony.advanced.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+            tooltip.add(Component.translatable("text.hibernalherbs.gluttony.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+        }
     }
 }

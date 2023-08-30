@@ -1,8 +1,10 @@
 package net.dakotapride.hibernalHerbs.common.item.abstractItem;
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -34,7 +36,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class AbstractCanisterItem extends BundleItem {
+public class AbstractCanisterItem extends BundleItem implements ITooltipProvider {
 
     //
     // Credit Goes To Cheaterpaul (Owner Of Better Bundles Mod For Forge) For BundleItem Code Used Below (slightly modified)
@@ -136,7 +138,57 @@ public class AbstractCanisterItem extends BundleItem {
 
     @Override
     public void appendHoverText(@Nonnull ItemStack stack, @Nonnull Level level, List<Component> components, @Nonnull TooltipFlag flag) {
-        components.add((Component.translatable("item.minecraft.bundle.fullness", getContentWeight(stack, 64), size)).withStyle(ChatFormatting.GRAY));
+        int actualSize;
+
+        if (size == 128) {
+            actualSize = 2;
+        } else if (size == 256) {
+            actualSize = 4;
+        } else if (size == 384) {
+            actualSize = 6;
+        } else {
+            actualSize = 0;
+        }
+
+        if (!Screen.hasShiftDown()) {
+            components.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
+        } else if (Screen.hasShiftDown()) {
+            if (stack.is(itemRegistry.CANISTER_IRON.get())) {
+                components.add(Component.translatable("text.hibernalherbs.canister.quality.iron").withStyle(ChatFormatting.GRAY));
+            } else if (stack.is(itemRegistry.CANISTER_AMETHYST.get())) {
+                components.add(Component.translatable("text.hibernalherbs.canister.quality.amethyst").withStyle(ChatFormatting.GRAY));
+            } else if (stack.is(itemRegistry.CANISTER_DIAMOND.get())) {
+                components.add(Component.translatable("text.hibernalherbs.canister.quality.diamond").withStyle(ChatFormatting.GRAY));
+            }
+
+            components.add(Component.translatable("text.hibernalherbs.canister.container", getContentWeight(stack, 1), actualSize).withStyle(ChatFormatting.GRAY));
+
+            if (!Screen.hasAltDown()) {
+                components.add(Component.literal(""));
+                components.add(Component.translatable(leftAltControlsText).withStyle(ChatFormatting.DARK_GRAY));
+            } else {
+                components.add(Component.literal(""));
+                components.add(Component.translatable("text.hibernalherbs.canister.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.canister.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.literal(""));
+                components.add(Component.translatable("text.hibernalherbs.container.variant.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.container.variant.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.container.variant.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+
+                components.add(Component.literal(""));
+                components.add(Component.translatable(rightClickInventoryControlsText).withStyle(ChatFormatting.DARK_GRAY));
+                components.add(Component.translatable("text.hibernalherbs.canister.inventory_controls.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.canister.inventory_controls.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.canister.inventory_controls.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+            }
+
+            components.add(Component.literal(""));
+            components.add(Component.translatable("text.hibernalherbs.container.can_contain.help").withStyle(ChatFormatting.DARK_GRAY));
+            components.add(Component.translatable("text.hibernalherbs.container.can_contain.blends").withStyle(ChatFormatting.DARK_GRAY));
+            components.add(Component.translatable("text.hibernalherbs.container.can_contain.smoked_blends").withStyle(ChatFormatting.DARK_GRAY));
+
+            components.add(Component.literal(""));
+        }
     }
 
     @Override

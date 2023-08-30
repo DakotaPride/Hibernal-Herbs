@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.item.abstractItem;
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.ChatFormatting;
@@ -33,7 +34,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class AbstractPouchItem extends BundleItem {
+public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
 
     //
     // Credit Goes To Cheaterpaul (Owner Of Better Bundles Mod For Forge) For BundleItem Code Used Below (slightly modified)
@@ -168,17 +169,44 @@ public class AbstractPouchItem extends BundleItem {
 
     @Override
     public void appendHoverText(@Nonnull ItemStack stack, @Nonnull Level level, List<Component> components, @Nonnull TooltipFlag flag) {
-        components.add(Component.translatable("item.hibernalherbs.pouch_condition").withStyle(ChatFormatting.GRAY));
+        if (!Screen.hasShiftDown()) {
+            components.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
+        } else if (Screen.hasShiftDown()) {
+            if (stack.is(itemRegistry.POUCH_SCRATCHED.get())) {
+                components.add(Component.translatable("text.hibernalherbs.pouch.quality.scratched").withStyle(ChatFormatting.GRAY));
+            } else if (stack.is(itemRegistry.POUCH_STITCHED.get())) {
+                components.add(Component.translatable("text.hibernalherbs.pouch.quality.stitched").withStyle(ChatFormatting.GRAY));
+            } else if (stack.is(itemRegistry.POUCH_PROPER.get())) {
+                components.add(Component.translatable("text.hibernalherbs.pouch.quality.proper").withStyle(ChatFormatting.GRAY));
+            }
 
-        if (stack.is(itemRegistry.POUCH_SCRATCHED.get()) && Screen.hasShiftDown()) {
-            components.add(Component.translatable("item.hibernalherbs.scratched").withStyle(ChatFormatting.GRAY));
-        } else if (stack.is(itemRegistry.POUCH_STITCHED.get()) && Screen.hasShiftDown()) {
-            components.add(Component.translatable("item.hibernalherbs.stitched").withStyle(ChatFormatting.GRAY));
-        } else if (stack.is(itemRegistry.POUCH_PROPER.get()) && Screen.hasShiftDown()) {
-            components.add(Component.translatable("item.hibernalherbs.proper").withStyle(ChatFormatting.GRAY));
+            components.add((Component.translatable("text.hibernalherbs.pouch.container", getContentWeight(stack, 64), size)).withStyle(ChatFormatting.GRAY));
+
+            if (!Screen.hasAltDown()) {
+                components.add(Component.literal(""));
+                components.add(Component.translatable(leftAltControlsText).withStyle(ChatFormatting.DARK_GRAY));
+            } else {
+                components.add(Component.literal(""));
+                components.add(Component.translatable("text.hibernalherbs.pouch.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.pouch.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.literal(""));
+                components.add(Component.translatable("text.hibernalherbs.container.variant.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.container.variant.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.container.variant.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+
+                components.add(Component.literal(""));
+                components.add(Component.translatable(rightClickInventoryControlsText).withStyle(ChatFormatting.DARK_GRAY));
+                components.add(Component.translatable("text.hibernalherbs.pouch.inventory_controls.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.pouch.inventory_controls.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                components.add(Component.translatable("text.hibernalherbs.pouch.inventory_controls.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+            }
+
+            components.add(Component.literal(""));
+            components.add(Component.translatable("text.hibernalherbs.container.can_contain.help").withStyle(ChatFormatting.DARK_GRAY));
+            components.add(Component.translatable("text.hibernalherbs.container.can_contain.nonpounded_herbs").withStyle(ChatFormatting.DARK_GRAY));
+            components.add(Component.translatable("text.hibernalherbs.container.can_contain.pounded_herbs").withStyle(ChatFormatting.DARK_GRAY));
+            components.add(Component.translatable("text.hibernalherbs.container.can_contain.dried_herbs").withStyle(ChatFormatting.DARK_GRAY));
         }
-
-        components.add((Component.translatable("item.minecraft.bundle.fullness", getContentWeight(stack, 64), size)).withStyle(ChatFormatting.GRAY));
     }
 
     @Override

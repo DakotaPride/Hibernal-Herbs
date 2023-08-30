@@ -2,10 +2,12 @@ package net.dakotapride.hibernalHerbs.common.item.curse;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.Constants;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -25,7 +27,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import java.util.List;
 import java.util.UUID;
 
-public class CursedPadlockItem extends Item implements ICurioItem {
+public class CursedPadlockItem extends Item implements ICurioItem, ITooltipProvider {
     public CursedPadlockItem(Properties properties) {
         super(properties);
     }
@@ -98,45 +100,119 @@ public class CursedPadlockItem extends Item implements ICurioItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
-        if (stack.is(HibernalHerbsForge.PADLOCKS_TAG)) {
-            tooltip.add(Component.translatable("text.hibernalherbs.padlocks.unbound").withStyle(ChatFormatting.GRAY));
-        } else if (stack.is(HibernalHerbsForge.BOUND_PADLOCKS_TAG)) {
-            if (stack.is(itemRegistry.VEXATION_PADLOCK_BOUND.get())) {
-                tooltip.add(Component.translatable("text.hibernalherbs.padlocks.bound.wrath").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(itemRegistry.PIQUE_PADLOCK_BOUND.get())) {
-                tooltip.add(Component.translatable("text.hibernalherbs.padlocks.bound.pride").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(itemRegistry.GOURMANDIZING_PADLOCK_BOUND.get())) {
-                tooltip.add(Component.translatable("text.hibernalherbs.padlocks.bound.gluttony").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(itemRegistry.AVARICE_PADLOCK_BOUND.get())) {
-                tooltip.add(Component.translatable("text.hibernalherbs.padlocks.bound.greed").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(itemRegistry.SPITEFUL_PADLOCK_BOUND.get())) {
-                tooltip.add(Component.translatable("text.hibernalherbs.padlocks.bound.envy").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(itemRegistry.APATHY_PADLOCK_BOUND.get())) {
-                tooltip.add(Component.translatable("text.hibernalherbs.padlocks.bound.sloth").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(itemRegistry.SALACIOUS_PADLOCK_BOUND.get())) {
-                tooltip.add(Component.translatable("text.hibernalherbs.padlocks.bound.lust").withStyle(ChatFormatting.GRAY));
+        if (!Screen.hasShiftDown()) {
+            tooltip.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
+            tooltip.add(Component.literal(""));
+        } else if (Screen.hasShiftDown()) {
+            getBoundPrinceFromTooltip(stack, tooltip);
+            tooltip.add(Component.literal(""));
+
+            if (!Screen.hasAltDown()) {
+                tooltip.add(Component.translatable(leftAltControlsText).withStyle(ChatFormatting.DARK_GRAY));
+            } else if (Screen.hasAltDown()) {
+
+                if (stack.is(HibernalHerbsForge.BOUND_PADLOCKS_TAG)) {
+                    tooltip.add(Component.literal(""));
+                    getBoundPadlockAssistance(stack, tooltip);
+                }
+
+                if (stack.is(HibernalHerbsForge.PADLOCKS_TAG)) {
+                    tooltip.add(Component.literal(""));
+                    getUnboundPadlockAssistance(stack, tooltip);
+                }
             }
+
+            if (stack.is(HibernalHerbsForge.BOUND_PADLOCKS_TAG)) {
+                tooltip.add(Component.literal(""));
+            }
+
         }
     }
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (slotContext.entity() instanceof ServerPlayer serverPlayer) {
-            if (stack.is(itemRegistry.VEXATION_PADLOCK_BOUND.get())) {
-                serverPlayer.displayClientMessage(Component.translatable("text.hibernalherbs.wrath.unholy_blessing").withStyle(ChatFormatting.ITALIC), false);
-            } else if (stack.is(itemRegistry.PIQUE_PADLOCK_BOUND.get())) {
-                serverPlayer.displayClientMessage(Component.translatable("text.hibernalherbs.pride.unholy_blessing").withStyle(ChatFormatting.ITALIC), false);
-            } else if (stack.is(itemRegistry.GOURMANDIZING_PADLOCK_BOUND.get())) {
-                serverPlayer.displayClientMessage(Component.translatable("text.hibernalherbs.gluttony.unholy_blessing").withStyle(ChatFormatting.ITALIC), false);
-            } else if (stack.is(itemRegistry.AVARICE_PADLOCK_BOUND.get())) {
-                serverPlayer.displayClientMessage(Component.translatable("text.hibernalherbs.greed.unholy_blessing").withStyle(ChatFormatting.ITALIC), false);
-            } else if (stack.is(itemRegistry.SPITEFUL_PADLOCK_BOUND.get())) {
-                serverPlayer.displayClientMessage(Component.translatable("text.hibernalherbs.envy.unholy_blessing").withStyle(ChatFormatting.ITALIC), false);
-            } else if (stack.is(itemRegistry.APATHY_PADLOCK_BOUND.get())) {
-                serverPlayer.displayClientMessage(Component.translatable("text.hibernalherbs.sloth.unholy_blessing").withStyle(ChatFormatting.ITALIC), false);
-            } else if (stack.is(itemRegistry.SALACIOUS_PADLOCK_BOUND.get())) {
-                serverPlayer.displayClientMessage(Component.translatable("text.hibernalherbs.lust.unholy_blessing").withStyle(ChatFormatting.ITALIC), false);
-            }
+            getUnholyBlessingFromPrince(stack, serverPlayer);
         }
+    }
+
+    public static void getUnboundPadlockAssistance(ItemStack stack, List<Component> tooltip) {
+        String getPrince = BoundPrinces.NONE.getPrince();
+
+        if (stack.is(itemRegistry.VEXATION_PADLOCK.get())) {
+            getPrince = BoundPrinces.WRATH.getPrince();
+        } else if (stack.is(itemRegistry.PIQUE_PADLOCK.get())) {
+            getPrince = BoundPrinces.PRIDE.getPrince();
+        } else if (stack.is(itemRegistry.GOURMANDIZING_PADLOCK.get())) {
+            getPrince = BoundPrinces.GLUTTONY.getPrince();
+        } else if (stack.is(itemRegistry.AVARICE_PADLOCK.get())) {
+            getPrince = BoundPrinces.GREED.getPrince();
+        } else if (stack.is(itemRegistry.SPITEFUL_PADLOCK.get())) {
+            getPrince = BoundPrinces.ENVY.getPrince();
+        } else if (stack.is(itemRegistry.APATHY_PADLOCK.get())) {
+            getPrince = BoundPrinces.SLOTH.getPrince();
+        } else if (stack.is(itemRegistry.SALACIOUS_PADLOCK.get())) {
+            getPrince = BoundPrinces.LUST.getPrince();
+        }
+
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.unbound.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.unbound.help.two", Component.translatable(getPrince)).withStyle(ChatFormatting.DARK_PURPLE));
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.unbound.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+    }
+
+    public static void getBoundPadlockAssistance(ItemStack stack, List<Component> tooltip) {
+
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.bound.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.bound.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.bound.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.bound.help.four").withStyle(ChatFormatting.DARK_PURPLE));
+
+        tooltip.add(Component.literal(""));
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.bound.abilities.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.bound.abilities.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+    }
+
+    public static void getBoundPrinceFromTooltip(ItemStack stack, List<Component> tooltip) {
+        String boundPrince = BoundPrinces.NONE.getPrince();
+
+        if (stack.is(itemRegistry.VEXATION_PADLOCK_BOUND.get())) {
+            boundPrince = BoundPrinces.WRATH.getPrince();
+        } else if (stack.is(itemRegistry.PIQUE_PADLOCK_BOUND.get())) {
+            boundPrince = BoundPrinces.PRIDE.getPrince();
+        } else if (stack.is(itemRegistry.GOURMANDIZING_PADLOCK_BOUND.get())) {
+            boundPrince = BoundPrinces.GLUTTONY.getPrince();
+        } else if (stack.is(itemRegistry.AVARICE_PADLOCK_BOUND.get())) {
+            boundPrince = BoundPrinces.GREED.getPrince();
+        } else if (stack.is(itemRegistry.SPITEFUL_PADLOCK_BOUND.get())) {
+            boundPrince = BoundPrinces.ENVY.getPrince();
+        } else if (stack.is(itemRegistry.APATHY_PADLOCK_BOUND.get())) {
+            boundPrince = BoundPrinces.SLOTH.getPrince();
+        } else if (stack.is(itemRegistry.SALACIOUS_PADLOCK_BOUND.get())) {
+            boundPrince = BoundPrinces.LUST.getPrince();
+        }
+
+        tooltip.add(Component.translatable("text.hibernalherbs.padlock.get_prince", Component.translatable(boundPrince)).withStyle(ChatFormatting.GRAY));
+    }
+
+    public static void getUnholyBlessingFromPrince(ItemStack stack, ServerPlayer serverPlayer) {
+        String unholyBlessing = BoundPrinces.NONE.getSinFromPrince();
+
+        if (stack.is(itemRegistry.VEXATION_PADLOCK_BOUND.get())) {
+            unholyBlessing = BoundPrinces.WRATH.getSinFromPrince();
+        } else if (stack.is(itemRegistry.PIQUE_PADLOCK_BOUND.get())) {
+            unholyBlessing = BoundPrinces.PRIDE.getSinFromPrince();
+        } else if (stack.is(itemRegistry.GOURMANDIZING_PADLOCK_BOUND.get())) {
+            unholyBlessing = BoundPrinces.GLUTTONY.getSinFromPrince();
+        } else if (stack.is(itemRegistry.AVARICE_PADLOCK_BOUND.get())) {
+            unholyBlessing = BoundPrinces.GREED.getSinFromPrince();
+        } else if (stack.is(itemRegistry.SPITEFUL_PADLOCK_BOUND.get())) {
+            unholyBlessing = BoundPrinces.ENVY.getSinFromPrince();
+        } else if (stack.is(itemRegistry.APATHY_PADLOCK_BOUND.get())) {
+            unholyBlessing = BoundPrinces.SLOTH.getSinFromPrince();
+        } else if (stack.is(itemRegistry.SALACIOUS_PADLOCK_BOUND.get())) {
+            unholyBlessing = BoundPrinces.LUST.getSinFromPrince();
+        }
+
+        serverPlayer.displayClientMessage(Component.translatable("text.hibernalherbs.padlock.unholy_blessing", Component.translatable(unholyBlessing)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC), false);
     }
 }

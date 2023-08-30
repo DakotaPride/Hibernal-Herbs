@@ -25,11 +25,11 @@ public abstract class ItemStackMixin implements FoodComponentList {
 
     @Inject(method = "finishUsingItem", at = @At("HEAD"))
     private void finishUsingItem(Level level, LivingEntity livingEntity, CallbackInfoReturnable<ItemStack> cir) {
-        if (livingEntity.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) {
+        if (livingEntity.getMainHandItem().is(itemRegistry.FIRE_BLEND.get())) {
             livingEntity.setSecondsOnFire(secondsOnFire);
         }
 
-        if (livingEntity.getMainHandItem().is(itemRegistry.SMOKED_INCINERATING_BLEND.get())) {
+        if (livingEntity.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) {
             livingEntity.setSecondsOnFire(smokedSecondsOnFire);
         }
 
@@ -57,11 +57,11 @@ public abstract class ItemStackMixin implements FoodComponentList {
 
     @Inject(method = "interactLivingEntity", at = @At("HEAD"))
     private void interactLivingEntity(Player player, LivingEntity livingEntity, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
-        if (player.getMainHandItem().is(itemRegistry.INCINERATING_BLEND.get())) {
+        if (player.getMainHandItem().is(itemRegistry.FIRE_BLEND.get())) {
             livingEntity.setSecondsOnFire(secondsOnFire);
         }
 
-        if (player.getMainHandItem().is(itemRegistry.SMOKED_INCINERATING_BLEND.get())) {
+        if (player.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) {
             livingEntity.setSecondsOnFire(smokedSecondsOnFire);
         }
     }

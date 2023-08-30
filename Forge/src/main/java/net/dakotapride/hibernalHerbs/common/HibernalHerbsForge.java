@@ -18,6 +18,7 @@ import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
@@ -25,6 +26,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -46,16 +48,24 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 @Mod(MOD_ID)
 public class HibernalHerbsForge {
+
     public static final TagKey<Item> HERBS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "herbs"));
     public static final TagKey<Item> POUNDED_HERBS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "pounded_herbs"));
     public static final TagKey<Item> BLENDS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "herb_blends"));
+    public static final TagKey<Item> ARTIFICIAL_BLENDS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "herbs/artificial/blends"));
+
+    public static final TagKey<Item> HUMUS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "humus"));
+    public static final TagKey<Item> FERTILIZER_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "fertilizer"));
 
     public static final TagKey<Item> POUCHES_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "pouches"));
+    public static final TagKey<Item> CANISTERS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "canisters"));
 
     public static final TagKey<Item> SIGILS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "sigil/sigils"));
 
     public static final TagKey<Item> BOUND_PADLOCKS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "padlocks/bound"));
     public static final TagKey<Item> PADLOCKS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "padlocks/unbound"));
+
+    public static final TagKey<Item> GRIMOIRES_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "grimoires"));
     
     public HibernalHerbsForge() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();

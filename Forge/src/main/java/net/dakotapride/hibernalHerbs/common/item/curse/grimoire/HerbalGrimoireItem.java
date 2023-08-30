@@ -1,7 +1,9 @@
 package net.dakotapride.hibernalHerbs.common.item.curse.grimoire;
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -21,7 +23,7 @@ import java.util.List;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
-public class HerbalGrimoireItem extends Item {
+public class HerbalGrimoireItem extends Item implements ITooltipProvider {
     public HerbalGrimoireItem(Item.Properties properties) {
         super(properties);
     }
@@ -43,14 +45,15 @@ public class HerbalGrimoireItem extends Item {
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
         if (!ModList.get().isLoaded("patchouli")) {
-            tooltip.add(Component.translatable("text.hibernalherbs.patchouli"));
+            tooltip.add(Component.translatable("text.hibernalherbs.required_mod.patchouli"));
             tooltip.add(Component.literal(" "));
         }
 
-        if (stack.is(itemRegistry.HERBAL_GRIMOIRE.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.grimoire").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.is(itemRegistry.SINGED_GRIMOIRE.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.grimoire.singed").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+        if (!Screen.hasShiftDown()) {
+            tooltip.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
+        } else if (Screen.hasShiftDown()) {
+            tooltip.add(Component.translatable("text.hibernalherbs.grimoire.integration.one").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+            tooltip.add(Component.translatable("text.hibernalherbs.grimoire.integration.two").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         }
     }
 }

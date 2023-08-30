@@ -1,8 +1,11 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
+import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
+import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -20,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SmokedHerbBlendItem extends Item implements FoodComponentList {
+public class SmokedHerbBlendItem extends Item implements FoodComponentList, ITooltipProvider {
     public SmokedHerbBlendItem(Properties properties) {
         super(properties);
     }
@@ -34,36 +37,36 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
 
     @Override
     public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack stack, Player player, @NotNull LivingEntity livingEntity, @NotNull InteractionHand hand) {
-        if (player.getMainHandItem().is(itemRegistry.SMOKED_REGENERATIVE_BLEND.get())) {
+        if (player.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_VIRULENT_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_POISON_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, smokedHealthDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_SEDATING_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_SLOWNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_HINDERING_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_MINING_FATIGUE_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, smokedMiningSpeedDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_DASHING_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_HASTE_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, smokedMiningSpeedDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_ACCELERATION_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_SPEED_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_DECAYING_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_WITHER_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, smokedHealthDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_OBSERVING_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_NIGHT_VISION_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, smokedVisionDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_DIMINISHED_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_WEAKNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_SHADED_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_BLINDNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_INCINERATING_BLEND.get())) { }
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) { }
 
-        else if (player.getMainHandItem().is(itemRegistry.SMOKED_BLOOMING_BLEND.get())) {
+        else if (player.getMainHandItem().is(itemRegistry.SMOKED_GLOWING_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedGlowingDuration, smokedMultiplier));
         }
 
-        else if (player.getMainHandItem().is(itemRegistry.SMOKED_CONFLICTING_BLEND.get())) {
+        else if (player.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedHealthDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_CONFLICTING_BLEND.get())) {
+        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration + 120, smokedMultiplier));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration + 100, smokedMultiplier));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration + 80, smokedMultiplier));
@@ -83,38 +86,38 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
 
         Player player = (Player) target.getLastHurtByMob();
         if (attacker instanceof Player) {
-            if (attacker.getMainHandItem().is(itemRegistry.SMOKED_REGENERATIVE_BLEND.get())) {
+            if (attacker.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration - 80, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_VIRULENT_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_POISON_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.POISON, smokedHealthDuration - 80, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_SEDATING_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_SLOWNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration - 60, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_HINDERING_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_MINING_FATIGUE_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, smokedMiningSpeedDuration - 600, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_DASHING_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_HASTE_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, smokedMiningSpeedDuration - 600, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_ACCELERATION_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_SPEED_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration - 60, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_DECAYING_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_WITHER_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.WITHER, smokedHealthDuration - 80, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_OBSERVING_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_NIGHT_VISION_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, smokedVisionDuration - 100, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_DIMINISHED_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_WEAKNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration - 40, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_SHADED_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_BLINDNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration - 100, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_INCINERATING_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) {
                 target.setSecondsOnFire(smokedSecondsOnFire - 2);
             }
 
-            else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_BLOOMING_BLEND.get())) {
+            else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_GLOWING_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.GLOWING, smokedGlowingDuration - 60, smokedMultiplier - 1));
             }
 
-            else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_CONFLICTING_BLEND.get())) {
+            else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration - 80, smokedMultiplier - 1));
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration - 60, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_CONFLICTING_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (smokedHealthDuration + 120) - 40, smokedMultiplier - 1));
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (smokedSpeedDuration + 100) - 40, smokedMultiplier - 1));
                 target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, (smokedDamageDuration + 80) - 60, smokedMultiplier));
@@ -131,39 +134,84 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
-        if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_REGENERATIVE_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_regeneration").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_VIRULENT_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_poison").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_SEDATING_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_slowness").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_HINDERING_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_mining_fatigue").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_DASHING_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_haste").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_ACCELERATION_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_speed").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_INCINERATING_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_fire").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_DECAYING_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_wither").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_OBSERVING_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_night_vision").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_DIMINISHED_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_weakness").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_SHADED_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_blindness").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_BLOOMING_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_glowing").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_CONFLICTING_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_regen_slow").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
-        } else if (stack.getItem().getDefaultInstance().is(itemRegistry.SMOKED_ALTERNATIVE_BLEND.get())) {
-            tooltip.add(Component.translatable("text.hibernalherbs.blend_regen_speed_weak").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+    public void appendHoverText(ItemStack stack, @Nullable Level level, @NotNull List<Component> components, @NotNull TooltipFlag tooltipFlag) {
+        if (!Screen.hasShiftDown()) {
+            components.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
+        } else if (Screen.hasShiftDown()) {
+            if (!stack.is(HibernalHerbsForge.ARTIFICIAL_BLENDS_TAG)) {
+                HerbBlendItem.effectToAbilityTooltip(stack, components);
+                components.add(Component.translatable("text.hibernalherbs.blend.modifier.smoked.true").withStyle(ChatFormatting.GRAY));
+
+                if (!Screen.hasAltDown()) {
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable(leftAltControlsText).withStyle(ChatFormatting.DARK_GRAY));
+                } else {
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable("text.hibernalherbs.modifier.blend.smoked.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.modifier.blend.smoked.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.modifier.blend.smoked.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable("text.hibernalherbs.blend.ability.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.ability.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable("text.hibernalherbs.blend.effect.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.effect.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.effect.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable(leftClickOnPlayerControlsText).withStyle(ChatFormatting.DARK_GRAY));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.two").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.three").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.four").withStyle(ChatFormatting.DARK_PURPLE));
+
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable(rightClickOnPlayerControlsText).withStyle(ChatFormatting.DARK_GRAY));
+                    components.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+                }
+
+            } else {
+                HerbBlendItem.getExceptionTooltip(stack, components);
+                components.add(Component.translatable("text.hibernalherbs.blend.modifier.smoked.false").withStyle(ChatFormatting.GRAY));
+
+                if (!Screen.hasAltDown()) {
+                    components.add(Component.translatable(leftAltControlsText).withStyle(ChatFormatting.DARK_GRAY));
+                } else {
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable("text.hibernalherbs.modifier.blend.smoked.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.modifier.blend.smoked.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.modifier.blend.smoked.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable("text.hibernalherbs.blend.exception.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.exception.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.exception.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.exception.help.four").withStyle(ChatFormatting.DARK_PURPLE));
+
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable(leftClickOnPlayerControlsText).withStyle(ChatFormatting.DARK_GRAY));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+
+                    components.add(Component.literal(""));
+                    components.add(Component.translatable(rightClickOnPlayerControlsText).withStyle(ChatFormatting.DARK_GRAY));
+                    components.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                    components.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+                }
+
+            }
+
         }
-
-        tooltip.add(Component.literal(""));
-
-        tooltip.add(Component.translatable("text.hibernalherbs.smoked_blend").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
     }
 }
