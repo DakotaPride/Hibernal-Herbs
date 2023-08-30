@@ -43,8 +43,8 @@ repositories {
     }
 
     maven {
-        name = ("LadySnake Libs")
-        url = ("https://ladysnake.jfrog.io/artifactory/mods")
+        name = "Ladysnake Libs"
+        url = "https://maven.ladysnake.org/releases"
     }
 
     // Patchouli Repo
