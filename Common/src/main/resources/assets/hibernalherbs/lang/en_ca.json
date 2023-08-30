@@ -294,6 +294,8 @@
   "text.hibernalherbs.controls.left_click.inventory": "[§7Left-Click in Inventory§8]",
   "text.hibernalherbs.controls.right_click.player": "[§7Right-Click on Player§8]",
   "text.hibernalherbs.controls.left_click.player": "[§7Left-Click on Player§8]",
+  "text.hibernalherbs.controls.passive.inventory": "While In Inventory: ",
+  "text.hibernalherbs.required_mod.patchouli": "Install Patchouli For Proper Integration",
 
   "itemGroup.hibernalherbs.hibernal_herbs": "Herbs Misc",
   "itemGroup.hibernalherbs.herbs": "Herbs",
@@ -418,6 +420,7 @@
   "text.hibernalherbs.ability.blindness": "Shaded",
   "text.hibernalherbs.ability.regeneration_slowness": "Conflicting",
   "text.hibernalherbs.ability.regeneration_speed_weakness": "Alternative",
+  "text.hibernalherbs.ability.glowing": "Blooming",
 
   // Herbal Sigils
   "text.hibernalherbs.sigil.alignment": "§6Alignment:§7 %s",
@@ -442,6 +445,78 @@
   "text.hibernalherbs.sigil.alignment.advanced_mastery": "Advanced Mastery",
   "text.hibernalherbs.sigil.alignment.configuration": "Configuration",
   "text.hibernalherbs.sigil.alignment.advanced_configuration": "Advanced Mastery",
+
+  // Padlocks
+  "text.hibernalherbs.padlock.unholy_blessing": "May The Prince of %s Guide You...",
+  "text.hibernalherbs.padlock.get_prince": "§6Prince Bound:§7 %s",
+
+  "text.hibernalherbs.padlock.unbound.help.one": "This padlock is unbound,",
+  "text.hibernalherbs.padlock.unbound.help.two": "bound it to %s in order to",
+  "text.hibernalherbs.padlock.unbound.help.three": "access its full potential.",
+  "text.hibernalherbs.padlock.bound.help.one": "§dBound padlocks §5provide the",
+  "text.hibernalherbs.padlock.bound.help.two": "player with certain buffs §7(§8or",
+  "text.hibernalherbs.padlock.bound.help.three": "§8debuffs§7) §5dependant on the",
+  "text.hibernalherbs.padlock.bound.help.four": "prince that is bound.",
+  "text.hibernalherbs.padlock.bound.abilities.help.one": "These §dbuffs/debuffs §5are",
+  "text.hibernalherbs.padlock.bound.abilities.help.two": "listed below.",
+
+  "text.hibernalherbs.padlock.prince.none": "None",
+  "text.hibernalherbs.padlock.prince.pride": "Lucifer",
+  "text.hibernalherbs.padlock.prince.envy": "Leviathan",
+  "text.hibernalherbs.padlock.prince.sloth": "Belphegor",
+  "text.hibernalherbs.padlock.prince.wrath": "Satan",
+  "text.hibernalherbs.padlock.prince.greed": "Mammon",
+  "text.hibernalherbs.padlock.prince.lust": "Asmodeus",
+  "text.hibernalherbs.padlock.prince.gluttony": "Beelzebub",
+
+  "text.hibernalherbs.padlock.sin.none": "None",
+  "text.hibernalherbs.padlock.sin.pride": "Pride",
+  "text.hibernalherbs.padlock.sin.envy": "Envy",
+  "text.hibernalherbs.padlock.sin.sloth": "Sloth",
+  "text.hibernalherbs.padlock.sin.wrath": "Wrath",
+  "text.hibernalherbs.padlock.sin.greed": "Greed",
+  "text.hibernalherbs.padlock.sin.lust": "Lust",
+  "text.hibernalherbs.padlock.sin.gluttony": "Gluttony",
+
+  // Grimoire
+  "text.hibernalherbs.grimoire.integration.one": "Used for assisting those",
+  "text.hibernalherbs.grimoire.integration.two": "who seek mystical guidance.",
+
+  // Rings
+  "text.hibernalherbs.gluttony.help.one": "All §dHerb Blends §5regenerate",
+  "text.hibernalherbs.gluttony.advanced.help.one": "All food types regenerate",
+  "text.hibernalherbs.gluttony.help.two": "as a passive ability.",
+
+  // Advancements
+  "advancements.hibernalherbs.root.title": "The Herbs Have Spoken!",
+  "advancements.hibernalherbs.root.description": "Root To Your Journey Of Herb Progression",
+  "advancements.hibernalherbs.pounded.title": "Pound It Up!",
+  "advancements.hibernalherbs.pounded.description": "Obtain Pounded Herbs",
+  "advancements.hibernalherbs.attack_blend.title": "I May Or May Not Be Sorry",
+  "advancements.hibernalherbs.attack_blend.description": "Inflict Another Player Using An Herb Blend",
+  "advancements.hibernalherbs.blends.title": "A Not So Balanced Diet",
+  "advancements.hibernalherbs.blends.description": "Consume All Herb Blend Types",
+  "advancements.hibernalherbs.all_pounded.title": "Pound All Of It Up!",
+  "advancements.hibernalherbs.all_pounded.description": "Consume All Pounded Herb Variants",
+  "advancements.hibernalherbs.resource_herb.title": "Was That Really Necessary?",
+  "advancements.hibernalherbs.resource_herb.description": "Obtain An Herb That Probably Shouldn't Exist",
+  "advancements.hibernalherbs.conflicting_blend.title": "Hold On Now, Don't Do That",
+  "advancements.hibernalherbs.conflicting_blend.description": "Obtain An Herb Blend That Probably Shouldn't Exist",
+  "advancements.hibernalherbs.consume_fire_blend_at_world_height.title": "Have You Got Wax Wings?",
+  "advancements.hibernalherbs.consume_fire_blend_at_world_height.description": "Consume An Incinerating Blend While At World Height",
+
+  "advancements.hibernalherbs.obtain_altar.title": "Mystical Beginnings!",
+  "advancements.hibernalherbs.obtain_altar.description": "Obtain a Conjuration Altar",
+  "advancements.hibernalherbs.obtain_bound_padlock.title": "A Deal With A Prince!",
+  "advancements.hibernalherbs.obtain_bound_padlock.description": "Obtain a Bound Padlock Corresponding To A Prince Of Sin",
+  "advancements.hibernalherbs.obtain_sigil.title": "Dabble In The Arts?",
+  "advancements.hibernalherbs.obtain_sigil.description": "Obtain an Herbal Sigil",
+  "advancements.hibernalherbs.obtain_petals.title": "These Aren't Herbs?",
+  "advancements.hibernalherbs.obtain_petals.description": "Obtain Conjured Petals",
+  "advancements.hibernalherbs.obtain_gluttonous_ring.title": "Blending Forever!",
+  "advancements.hibernalherbs.obtain_gluttonous_ring.description": "Obtain a Gluttonous Ring",
+  "advancements.hibernalherbs.obtain_gluttonous_ring_adv.title": "Nom Nom Nom",
+  "advancements.hibernalherbs.obtain_gluttonous_ring_adv.description": "Obtain an Advanced Gluttonous Ring",
 
   // REI & JEI Integration
   "text.hibernalherbs.herbal_conjuration": "Herbal Conjuration"

@@ -14,6 +14,7 @@ public interface ITooltipProvider {
     String leftClickInventoryControlsText = "text.hibernalherbs.controls.left_click.inventory";
     String rightClickOnPlayerControlsText = "text.hibernalherbs.controls.right_click.player";
     String leftClickOnPlayerControlsText = "text.hibernalherbs.controls.left_click.player";
+    String inInventoryPassiveText = "text.hibernalherbs.controls.passive.inventory";
 
 
     enum Associations {
@@ -132,6 +133,33 @@ public interface ITooltipProvider {
 
         public MutableText getAlignment() {
             return text;
+        }
+    }
+
+    enum BoundPrinces {
+        NONE("text.hibernalherbs.padlock.prince.none", "text.hibernalherbs.padlock.sin.none"),
+        PRIDE("text.hibernalherbs.padlock.prince.pride", "text.hibernalherbs.padlock.sin.pride"),
+        ENVY("text.hibernalherbs.padlock.prince.envy", "text.hibernalherbs.padlock.sin.envy"),
+        SLOTH("text.hibernalherbs.padlock.prince.sloth", "text.hibernalherbs.padlock.sin.sloth"),
+        WRATH("text.hibernalherbs.padlock.prince.wrath", "text.hibernalherbs.padlock.sin.wrath"),
+        GREED("text.hibernalherbs.padlock.prince.greed", "text.hibernalherbs.padlock.sin.greed"),
+        LUST("text.hibernalherbs.padlock.prince.lust", "text.hibernalherbs.padlock.sin.lust"),
+        GLUTTONY("text.hibernalherbs.padlock.prince.gluttony", "text.hibernalherbs.padlock.sin.gluttony");
+
+        final String princeBound;
+        final String sinFromPrince;
+
+        BoundPrinces(String prince, String sin) {
+            princeBound = prince;
+            sinFromPrince = sin;
+        }
+
+        public String getPrince() {
+            return princeBound;
+        }
+
+        public String getSinFromPrince() {
+            return sinFromPrince;
         }
     }
 

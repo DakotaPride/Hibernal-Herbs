@@ -201,37 +201,37 @@ public class HerbHumusItem extends Item implements ITooltipProvider {
     public static void getProductionValueTooltip(ItemStack stack, List<Text> tooltip) {
         int productionValue = Associations.NONE.getProductionValue();
 
-        if (stack.isOf(ItemInit.HERB_HUMUS_OAK)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_OAK) || stack.isOf(ItemInit.HERB_FERTILIZER_OAK)) {
             productionValue = Associations.OAK.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_SPRUCE)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_SPRUCE) || stack.isOf(ItemInit.HERB_FERTILIZER_SPRUCE)) {
             productionValue = Associations.SPRUCE.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_BIRCH)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_BIRCH) || stack.isOf(ItemInit.HERB_FERTILIZER_BIRCH)) {
             productionValue = Associations.BIRCH.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_ACACIA)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_ACACIA) || stack.isOf(ItemInit.HERB_FERTILIZER_ACACIA)) {
             productionValue = Associations.ACACIA.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_JUNGLE)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_JUNGLE) || stack.isOf(ItemInit.HERB_FERTILIZER_JUNGLE)) {
             productionValue = Associations.JUNGLE.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_DARK_OAK)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_DARK_OAK) || stack.isOf(ItemInit.HERB_FERTILIZER_DARK_OAK)) {
             productionValue = Associations.DARK_OAK.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_MANGROVE)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_MANGROVE) || stack.isOf(ItemInit.HERB_FERTILIZER_MANGROVE)) {
             productionValue = Associations.MANGROVE.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_CHERRY)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_CHERRY) || stack.isOf(ItemInit.HERB_FERTILIZER_CHERRY)) {
             productionValue = Associations.CHERRY.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_CRIMSON)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_CRIMSON) || stack.isOf(ItemInit.HERB_FERTILIZER_CRIMSON)) {
             productionValue = Associations.CRIMSON.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_WARPED)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_WARPED) || stack.isOf(ItemInit.HERB_FERTILIZER_WARPED)) {
             productionValue = Associations.WARPED.getProductionValue();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_MYQUESTE)) {
+        if (stack.isOf(ItemInit.HERB_HUMUS_MYQUESTE) || stack.isOf(ItemInit.HERB_FERTILIZER_MYQUESTE)) {
             productionValue = Associations.MYQUESTE.getProductionValue();
         }
 
