@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,6 +24,9 @@ public abstract class ItemStackMixin implements FoodComponentList {
 
     @Inject(method = "finishUsing", at = @At("HEAD"), cancellable = true)
     private void finishUsing(World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
+        ItemStack gluttonousRingStack = ItemInit.GLUTTONOUS_RING.getDefaultStack();
+        ItemStack advancedGluttonousRingStack = ItemInit.ADV_GLUTTONOUS_RING.getDefaultStack();
+
         if (user.getActiveItem().isOf(ItemInit.FIRE_BLEND)) {
             user.setFireTicks(fireDuration);
         }
@@ -31,23 +35,13 @@ public abstract class ItemStackMixin implements FoodComponentList {
             user.setFireTicks(smokedFireDuration);
         }
 
-        if (user instanceof PlayerEntity playerEntity && !(playerEntity.getAbilities().creativeMode)) {
-            ItemStack advGluttonousRingStack = ItemInit.ADV_GLUTTONOUS_RING.getDefaultStack();
+        if (user instanceof PlayerEntity player) {
+            if (!player.getInventory().contains(gluttonousRingStack) && player.getInventory().contains(advancedGluttonousRingStack)) {
+                player.getItemCooldownManager().set(player.getActiveItem().getItem(), 40);
 
-            if (playerEntity.getInventory().contains(advGluttonousRingStack)) {
+                user.applyFoodEffects(user.getActiveItem(), world, user);
 
-                if (this.getItem().getDefaultStack().isIn(util.BLENDS)) {
-                    cir.setReturnValue(((PlayerEntity)user).getAbilities().creativeMode
-                            ? this.getItem().getDefaultStack() : new ItemStack(this.getItem().asItem()));
-                }
-
-                if (this.getItem().isFood()) {
-                    ((PlayerEntity) user).getHungerManager().add(this.getItem().getFoodComponent().getHunger(),
-                            this.getItem().getFoodComponent().getSaturationModifier());
-                }
-
-                cir.setReturnValue(((PlayerEntity)user).getAbilities().creativeMode
-                        ? this.getItem().getDefaultStack() : new ItemStack(this.getItem().asItem(), this.getCount()));
+                cir.setReturnValue(player.getActiveItem());
             }
         }
     }

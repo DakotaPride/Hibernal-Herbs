@@ -200,9 +200,21 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList, IToo
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        ItemStack itemStack = super.finishUsing(stack, world, user);
+        ItemStack gluttonousRingStack = ItemInit.GLUTTONOUS_RING.getDefaultStack();
+        ItemStack advancedGluttonousRingStack = ItemInit.ADV_GLUTTONOUS_RING.getDefaultStack();
 
-        return user instanceof PlayerEntity && ((PlayerEntity)user).getAbilities().creativeMode
-                ? itemStack : new ItemStack(Items.BOWL);
+        user.applyFoodEffects(stack, world, user);
+
+        if (user instanceof PlayerEntity player) {
+            if (player.getInventory().contains(gluttonousRingStack) && !player.getInventory().contains(advancedGluttonousRingStack)) {
+                player.getItemCooldownManager().set(this, 40);
+
+                return stack;
+            } else {
+                return player.getAbilities().creativeMode ? super.finishUsing(stack, world, user) : new ItemStack(Items.BOWL);
+            }
+        } else {
+            return super.finishUsing(stack, world, user);
+        }
     }
 }

@@ -23,33 +23,26 @@ public abstract class ItemStackMixin implements FoodComponentList {
 
     @Shadow public abstract int getCount();
 
-    @Inject(method = "finishUsingItem", at = @At("HEAD"))
-    private void finishUsingItem(Level level, LivingEntity livingEntity, CallbackInfoReturnable<ItemStack> cir) {
-        if (livingEntity.getMainHandItem().is(itemRegistry.FIRE_BLEND.get())) {
-            livingEntity.setSecondsOnFire(secondsOnFire);
+    @Inject(method = "finishUsingItem", at = @At("HEAD"), cancellable = true)
+    private void finishUsingItem(Level level, LivingEntity entity, CallbackInfoReturnable<ItemStack> cir) {
+        ItemStack gluttonousRingStack = itemRegistry.GLUTTONOUS_RING.get().getDefaultInstance();
+        ItemStack advancedGluttonousRingStack = itemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance();
+
+        if (entity.getMainHandItem().is(itemRegistry.FIRE_BLEND.get())) {
+            entity.setSecondsOnFire(secondsOnFire);
         }
 
-        if (livingEntity.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) {
-            livingEntity.setSecondsOnFire(smokedSecondsOnFire);
+        if (entity.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) {
+            entity.setSecondsOnFire(smokedSecondsOnFire);
         }
 
-        if (livingEntity instanceof Player player) {
-            ItemStack advGluttonousRingStack = itemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance();
+        if (entity instanceof Player player) {
+            if (!player.getInventory().contains(gluttonousRingStack) && player.getInventory().contains(advancedGluttonousRingStack)) {
+                player.getCooldowns().addCooldown(player.getUseItem().getItem(), 40);
 
-            if (player.getInventory().contains(advGluttonousRingStack) && !(player.getAbilities().instabuild)) {
+                entity.addEatEffect(entity.getUseItem(), level, entity);
 
-                if (this.getItem().getDefaultInstance().is(HibernalHerbsForge.BLENDS_TAG)) {
-                    cir.setReturnValue(((Player)livingEntity).getAbilities().instabuild
-                            ? this.getItem().getDefaultInstance() : new ItemStack(this.getItem().asItem()));
-                }
-
-                if (this.getItem().isEdible()) {
-                    ((Player) livingEntity).getFoodData().eat(this.getItem().getFoodProperties().getNutrition(),
-                            this.getItem().getFoodProperties().getSaturationModifier());
-                }
-
-                cir.setReturnValue(((Player)livingEntity).getAbilities().instabuild
-                        ? this.getItem().getDefaultInstance() : new ItemStack(this.getItem().asItem(), this.getCount()));
+                cir.setReturnValue(player.getUseItem());
             }
         }
 

@@ -193,24 +193,22 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        ItemStack itemStack = super.finishUsing(stack, world, user);
-
         ItemStack gluttonousRingStack = ItemInit.GLUTTONOUS_RING.getDefaultStack();
         ItemStack advancedGluttonousRingStack = ItemInit.ADV_GLUTTONOUS_RING.getDefaultStack();
 
-        if (user instanceof PlayerEntity player) {
-            if (player.getInventory().contains(gluttonousRingStack)
-                    && !(player.getInventory().contains(advancedGluttonousRingStack))) {
-                ((PlayerEntity) user).getItemCooldownManager().set(this, 40);
+        user.applyFoodEffects(stack, world, user);
 
-                return ((PlayerEntity)user).getAbilities().creativeMode
-                        ? itemStack : new ItemStack(this.asItem());
+        if (user instanceof PlayerEntity player) {
+            if (player.getInventory().contains(gluttonousRingStack) && !player.getInventory().contains(advancedGluttonousRingStack)) {
+                player.getItemCooldownManager().set(this, 40);
+
+                return stack;
             } else {
-                return ((PlayerEntity)user).getAbilities().creativeMode
-                        ? itemStack : new ItemStack(Items.BOWL);
+                return player.getAbilities().creativeMode ? super.finishUsing(stack, world, user) : new ItemStack(Items.BOWL);
             }
+        } else {
+            return super.finishUsing(stack, world, user);
         }
-        return stack;
     }
 
     public static void effectToAbilityTooltip(ItemStack stack, List<Text> tooltip) {
@@ -264,14 +262,14 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
 
         callForAbility(stack, tooltip);
 
-        if (stack.isOf(ItemInit.REGENERATION_SLOWNESS_BLEND)) {
+        if (stack.isOf(ItemInit.REGENERATION_SLOWNESS_BLEND) || stack.isOf(ItemInit.SMOKED_REGENERATION_SLOWNESS_BLEND)) {
             firstEffect = BlendAbilities.CONFLICTING.getEffect();
             secondaryEffect = BlendAbilities.CONFLICTING.getEffect2();
 
             tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects").formatted(Formatting.DARK_GRAY));
             tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.first", firstEffect.getName()).formatted(Formatting.GRAY));
             tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.secondary", secondaryEffect.getName()).formatted(Formatting.GRAY));
-        } else if (stack.isOf(ItemInit.REGENERATION_SPEED_WEAKNESS_BLEND)) {
+        } else if (stack.isOf(ItemInit.REGENERATION_SPEED_WEAKNESS_BLEND) || stack.isOf(ItemInit.SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND)) {
             firstEffect = BlendAbilities.ALTERNATIVE.getEffect();
             secondaryEffect = BlendAbilities.ALTERNATIVE.getEffect2();
             thirdEffect = BlendAbilities.ALTERNATIVE.getEffect3();

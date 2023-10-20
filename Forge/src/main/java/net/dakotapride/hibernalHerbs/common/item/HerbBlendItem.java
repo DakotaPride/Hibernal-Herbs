@@ -31,25 +31,23 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
     }
 
     @Override
-    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity livingEntity) {
-        ItemStack itemStack = super.finishUsingItem(stack, level, livingEntity);
-
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
         ItemStack gluttonousRingStack = itemRegistry.GLUTTONOUS_RING.get().getDefaultInstance();
         ItemStack advancedGluttonousRingStack = itemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance();
 
-        if (livingEntity instanceof Player player) {
-            if (player.getInventory().contains(gluttonousRingStack)
-                    && !(player.getInventory().contains(advancedGluttonousRingStack))) {
-                ((Player) livingEntity).getCooldowns().addCooldown(this, 40);
+        entity.addEatEffect(stack, level, entity);
 
-                return ((Player)livingEntity).getAbilities().instabuild
-                        ? itemStack : new ItemStack(this.asItem());
+        if (entity instanceof Player player) {
+            if (player.getInventory().contains(gluttonousRingStack) && !player.getInventory().contains(advancedGluttonousRingStack)) {
+                player.getCooldowns().addCooldown(this, 40);
+
+                return stack;
             } else {
-                return ((Player)livingEntity).getAbilities().instabuild
-                        ? itemStack : new ItemStack(Items.BOWL);
+                return player.getAbilities().instabuild ? super.finishUsingItem(stack, level, entity) : new ItemStack(Items.BOWL);
             }
+        } else {
+            return super.finishUsingItem(stack, level, entity);
         }
-        return stack;
     }
 
     @Override
