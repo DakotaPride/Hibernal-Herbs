@@ -9,6 +9,7 @@ import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsPlaced;
 import net.dakotapride.hibernalHerbs.common.recipe.HibernalRecipes;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.wood.MyquesteType;
 import net.dakotapride.hibernalHerbs.common.screen.HerbalConjurationScreen;
 import net.dakotapride.hibernalHerbs.common.screen.menu.HibernalHerbsMenues;
 import net.dakotapride.hibernalHerbs.platform.Services;
@@ -30,9 +31,11 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -85,7 +88,7 @@ public class HibernalHerbsForge {
         eventBus.addListener(PackLoader::onAddPackFinders);
 
         eventBus.addListener(this::commonSetup);
-        eventBus.addListener(this::clientSetup);
+        // eventBus.addListener(this::clientSetup);
 
         // This method is invoked by the Forge mod loader when it is ready
         // to load your mod. You can access Forge and Common code in this
@@ -203,14 +206,21 @@ public class HibernalHerbsForge {
         });
     }
 
-    private void clientSetup(final FMLClientSetupEvent event) {
-        ItemProperties.register(itemRegistry.CANISTER.get(), new ResourceLocation(MOD_ID, "filled"),
-                ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
 
-        MenuScreens.register(HibernalHerbsMenues.CONJURATION_ALTAR_MENU.get(), HerbalConjurationScreen::new);
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class HibernalHerbsClientEvents {
+        @SubscribeEvent
+        public void clientSetup(final FMLClientSetupEvent event) {
+            ItemProperties.register(itemRegistry.CANISTER.get(), new ResourceLocation(MOD_ID, "filled"),
+                    ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
 
-        EntityRenderers.register(HibernalEntityTypes.MYQUESTE_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, false));
-        EntityRenderers.register(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, true));
+            MenuScreens.register(HibernalHerbsMenues.CONJURATION_ALTAR_MENU.get(), HerbalConjurationScreen::new);
+
+            EntityRenderers.register(HibernalEntityTypes.MYQUESTE_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, false));
+            EntityRenderers.register(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, true));
+
+            event.enqueueWork(MyquesteType::init);
+        }
     }
 
     public static void init() {
