@@ -9,7 +9,7 @@
     "description": {
       "translate": "advancements.hibernalherbs.all_pounded.description"
     },
-    "frame": "goal",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
