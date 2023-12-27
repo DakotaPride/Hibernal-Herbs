@@ -202,62 +202,62 @@ public class itemRegistry implements FoodComponentList {
 
     public static final RegistryObject<Item> POUNDED_ROSEMARY = ITEMS.register("pounded_rosemary",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_THYME = ITEMS.register("pounded_thyme",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_TARRAGON = ITEMS.register("pounded_tarragon",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_CHAMOMILE = ITEMS.register("pounded_chamomile",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_CHIVES = ITEMS.register("pounded_chives",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_VERBENA = ITEMS.register("pounded_verbena",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_SORREL = ITEMS.register("pounded_sorrel",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_MARJORAM = ITEMS.register("pounded_marjoram",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_CHERVIL = ITEMS.register("pounded_chervil",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_FENNSEL = ITEMS.register("pounded_fennsel",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_CEILLIS = ITEMS.register("pounded_ceillis",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_PUNUEL = ITEMS.register("pounded_punuel",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
     public static final RegistryObject<Item> POUNDED_ESSITTE = ITEMS.register("pounded_essitte",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
 
     // Resource Dependant (Pounded) Herbs (Forge)
 
     public static final RegistryObject<Item> POUNDED_THYOCIELLE = ITEMS.register("pounded_thyocielle",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(8).saturationMod(6f).build())));
+                    .fast().nutrition(8).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> POUNDED_FENNKYSTRAL = ITEMS.register("pounded_fennkystral",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(8).saturationMod(6f).build())));
+                    .fast().nutrition(8).saturationMod(0.6f).build())));
 
     // Spring (Pounded) Herbs (Forge)
 
     public static final RegistryObject<Item> POUNDED_CALENDULA = ITEMS.register("pounded_calendula",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(8).saturationMod(6f).build())));
+                    .fast().nutrition(8).saturationMod(0.6f).build())));
 
     public static final RegistryObject<Item> POUNDED_SAGE = ITEMS.register("pounded_sage",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .fast().nutrition(4).saturationMod(3f).build())));
+                    .fast().nutrition(4).saturationMod(0.3f).build())));
 
     public static final RegistryObject<Item> DRIED_CALENDULA = ITEMS.register("dried_calendula",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
@@ -317,100 +317,100 @@ public class itemRegistry implements FoodComponentList {
 
     public static final RegistryObject<Item> REGENERATION_BLEND = ITEMS.register("blend_regeneration",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> POISON_BLEND = ITEMS.register("blend_poison",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.POISON, healthDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.POISON, healthDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SLOWNESS_BLEND = ITEMS.register("blend_slowness",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, speedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, speedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> MINING_FATIGUE_BLEND = ITEMS.register("blend_mining_fatigue",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, miningSpeedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, miningSpeedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> HASTE_BLEND = ITEMS.register("blend_haste",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.DIG_SPEED, miningSpeedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.DIG_SPEED, miningSpeedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SPEED_BLEND = ITEMS.register("blend_speed",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, speedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, speedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> FIRE_BLEND = ITEMS.register("blend_fire",
-            () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(7).alwaysEat().saturationMod(6).build())));
+            () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(7).alwaysEat().saturationMod(0.6f).build())));
     public static final RegistryObject<Item> WITHER_BLEND = ITEMS.register("blend_wither",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.WITHER, healthDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.WITHER, healthDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> NIGHT_VISION_BLEND = ITEMS.register("blend_night_vision",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, visionDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, visionDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> WEAKNESS_BLEND = ITEMS.register("blend_weakness",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, damageDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, damageDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> BLINDNESS_BLEND = ITEMS.register("blend_blindness",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.BLINDNESS, visionDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.BLINDNESS, visionDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     // Resource Dependant (Blends) Herbs (Forge)
     public static final RegistryObject<Item> REGENERATION_SLOWNESS_BLEND = ITEMS.register("blend_regen_slow",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                     .effect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration, baseMultiplier), baseChance)
-                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, speedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, speedDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> REGENERATION_SPEED_WEAKNESS_BLEND = ITEMS.register("blend_regen_speed_weak",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                     .effect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration + 120, baseMultiplier), baseChance)
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, speedDuration + 100, baseMultiplier), baseChance)
-                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, damageDuration + 80, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, damageDuration + 80, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
 
     // Compat Herbs (Forge)
     public static final RegistryObject<Item> GLOWING_BLEND = ITEMS.register("blend_glowing",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.GLOWING, glowingDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.GLOWING, glowingDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
 
     // Smoked
     public static final RegistryObject<Item> SMOKED_REGENERATION_BLEND = ITEMS.register("blend_regeneration_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_POISON_BLEND = ITEMS.register("blend_poison_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.POISON, smokedHealthDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.POISON, smokedHealthDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_SLOWNESS_BLEND = ITEMS.register("blend_slowness_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_MINING_FATIGUE_BLEND = ITEMS.register("blend_mining_fatigue_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, smokedMiningSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, smokedMiningSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_HASTE_BLEND = ITEMS.register("blend_haste_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.DIG_SPEED, smokedMiningSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.DIG_SPEED, smokedMiningSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_SPEED_BLEND = ITEMS.register("blend_speed_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_FIRE_BLEND = ITEMS.register("blend_fire_smoked",
-            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(7).alwaysEat().saturationMod(6).build())));
+            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(7).alwaysEat().saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_WITHER_BLEND = ITEMS.register("blend_wither_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.WITHER, smokedHealthDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.WITHER, smokedHealthDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_NIGHT_VISION_BLEND = ITEMS.register("blend_night_vision_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_WEAKNESS_BLEND = ITEMS.register("blend_weakness_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_BLINDNESS_BLEND = ITEMS.register("blend_blindness_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     // Resource Dependant (Smoked Blends) Herbs (Forge)
     public static final RegistryObject<Item> SMOKED_REGENERATION_SLOWNESS_BLEND = ITEMS.register("blend_regen_slow_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                     .effect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier), baseChance)
-                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND = ITEMS.register("blend_regen_speed_weak_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                     .effect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration + 120, smokedMultiplier), baseChance)
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration + 100, smokedMultiplier), baseChance)
-                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration + 80, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration + 80, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
 
     // Compat Herbs (Forge)
     public static final RegistryObject<Item> SMOKED_GLOWING_BLEND = ITEMS.register("blend_glowing_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.GLOWING, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(6).build())));
+                    .effect(new MobEffectInstance(MobEffects.GLOWING, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
 
     // Tabs
     public static final RegistryObject<CreativeModeTab> HIBERNAL_HERBS_TAB = CREATIVE_MODE_TABS.register("hibernal_herbs",

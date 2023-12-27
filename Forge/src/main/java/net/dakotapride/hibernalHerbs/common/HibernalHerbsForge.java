@@ -99,7 +99,7 @@ public class HibernalHerbsForge {
 
         // Some code like events require special initialization from the
         // loader specific code.
-        MinecraftForge.EVENT_BUS.addListener(this::onItemTooltip);
+        // MinecraftForge.EVENT_BUS.addListener(this::onItemTooltip);
         
     }
 
@@ -233,7 +233,7 @@ public class HibernalHerbsForge {
     // the Common listener.
     private void onItemTooltip(ItemTooltipEvent event) {
 
-        Common$onItemTooltip(event.getItemStack(), event.getFlags(), event.getToolTip());
+        // Common$onItemTooltip(event.getItemStack(), event.getFlags(), event.getToolTip());
     }
 
     public static void Common$onItemTooltip(ItemStack stack, TooltipFlag context, List<Component> tooltip) {
