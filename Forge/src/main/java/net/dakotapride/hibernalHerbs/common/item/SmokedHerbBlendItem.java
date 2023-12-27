@@ -165,25 +165,10 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList, IToo
                     components.add(Component.translatable("text.hibernalherbs.modifier.blend.smoked.help.three").withStyle(ChatFormatting.DARK_PURPLE));
 
                     components.add(Component.literal(""));
-                    components.add(Component.translatable("text.hibernalherbs.blend.ability.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    components.add(Component.translatable("text.hibernalherbs.blend.ability.help.two").withStyle(ChatFormatting.DARK_PURPLE));
-
-                    components.add(Component.literal(""));
-                    components.add(Component.translatable("text.hibernalherbs.blend.effect.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    components.add(Component.translatable("text.hibernalherbs.blend.effect.help.two").withStyle(ChatFormatting.DARK_PURPLE));
-                    components.add(Component.translatable("text.hibernalherbs.blend.effect.help.three").withStyle(ChatFormatting.DARK_PURPLE));
-
-                    components.add(Component.literal(""));
                     components.add(Component.translatable(leftClickOnPlayerControlsText).withStyle(ChatFormatting.DARK_GRAY));
                     components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.one").withStyle(ChatFormatting.DARK_PURPLE));
                     components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.two").withStyle(ChatFormatting.DARK_PURPLE));
                     components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.three").withStyle(ChatFormatting.DARK_PURPLE));
-
-                    components.add(Component.literal(""));
-                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.two").withStyle(ChatFormatting.DARK_PURPLE));
-                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.three").withStyle(ChatFormatting.DARK_PURPLE));
-                    components.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.four").withStyle(ChatFormatting.DARK_PURPLE));
 
                     components.add(Component.literal(""));
                     components.add(Component.translatable(rightClickOnPlayerControlsText).withStyle(ChatFormatting.DARK_GRAY));

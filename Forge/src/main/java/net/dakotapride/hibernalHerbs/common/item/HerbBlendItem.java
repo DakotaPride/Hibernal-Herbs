@@ -177,12 +177,6 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
                     tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.three").withStyle(ChatFormatting.DARK_PURPLE));
 
                     tooltip.add(Component.literal(""));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.two").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.three").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.fire.four").withStyle(ChatFormatting.DARK_PURPLE));
-
-                    tooltip.add(Component.literal(""));
                     tooltip.add(Component.translatable(rightClickOnPlayerControlsText).withStyle(ChatFormatting.DARK_GRAY));
                     tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.one").withStyle(ChatFormatting.DARK_PURPLE));
                     tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.two").withStyle(ChatFormatting.DARK_PURPLE));

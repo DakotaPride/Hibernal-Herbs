@@ -135,25 +135,10 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList, IToo
                     tooltip.add(Text.translatable("text.hibernalherbs.modifier.blend.smoked.help.three").formatted(Formatting.DARK_PURPLE));
 
                     tooltip.add(Text.literal(""));
-                    tooltip.add(Text.translatable("text.hibernalherbs.blend.ability.help.one").formatted(Formatting.DARK_PURPLE));
-                    tooltip.add(Text.translatable("text.hibernalherbs.blend.ability.help.two").formatted(Formatting.DARK_PURPLE));
-
-                    tooltip.add(Text.literal(""));
-                    tooltip.add(Text.translatable("text.hibernalherbs.blend.effect.help.one").formatted(Formatting.DARK_PURPLE));
-                    tooltip.add(Text.translatable("text.hibernalherbs.blend.effect.help.two").formatted(Formatting.DARK_PURPLE));
-                    tooltip.add(Text.translatable("text.hibernalherbs.blend.effect.help.three").formatted(Formatting.DARK_PURPLE));
-
-                    tooltip.add(Text.literal(""));
                     tooltip.add(Text.translatable(leftClickOnPlayerControlsText).formatted(Formatting.DARK_GRAY));
                     tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.one").formatted(Formatting.DARK_PURPLE));
                     tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.two").formatted(Formatting.DARK_PURPLE));
                     tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.three").formatted(Formatting.DARK_PURPLE));
-
-                    tooltip.add(Text.literal(""));
-                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.one").formatted(Formatting.DARK_PURPLE));
-                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.two").formatted(Formatting.DARK_PURPLE));
-                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.three").formatted(Formatting.DARK_PURPLE));
-                    tooltip.add(Text.translatable("text.hibernalherbs.blend.attacking.help.fire.four").formatted(Formatting.DARK_PURPLE));
 
                     tooltip.add(Text.literal(""));
                     tooltip.add(Text.translatable(rightClickOnPlayerControlsText).formatted(Formatting.DARK_GRAY));
