@@ -282,6 +282,24 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
             tooltip.add(Component.translatable("text.hibernalherbs.blend.provided_effects.secondary", secondaryEffect.getDisplayName()).withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.translatable("text.hibernalherbs.blend.provided_effects.third", thirdEffect.getDisplayName()).withStyle(ChatFormatting.GRAY));
         }
+
+        if (stack.is(itemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
+            firstEffect = BlendAbilities.CONFLICTING.getEffect();
+            secondaryEffect = BlendAbilities.CONFLICTING.getEffect2();
+
+            tooltip.add(Component.translatable("text.hibernalherbs.blend.provided_effects").withStyle(ChatFormatting.DARK_GRAY));
+            tooltip.add(Component.translatable("text.hibernalherbs.blend.provided_effects.first", firstEffect.getDisplayName()).withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("text.hibernalherbs.blend.provided_effects.secondary", secondaryEffect.getDisplayName()).withStyle(ChatFormatting.GRAY));
+        } else if (stack.is(itemRegistry.SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND.get())) {
+            firstEffect = BlendAbilities.ALTERNATIVE.getEffect();
+            secondaryEffect = BlendAbilities.ALTERNATIVE.getEffect2();
+            thirdEffect = BlendAbilities.ALTERNATIVE.getEffect3();
+
+            tooltip.add(Component.translatable("text.hibernalherbs.blend.provided_effects").withStyle(ChatFormatting.DARK_GRAY));
+            tooltip.add(Component.translatable("text.hibernalherbs.blend.provided_effects.first", firstEffect.getDisplayName()).withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("text.hibernalherbs.blend.provided_effects.secondary", secondaryEffect.getDisplayName()).withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("text.hibernalherbs.blend.provided_effects.third", thirdEffect.getDisplayName()).withStyle(ChatFormatting.GRAY));
+        }
     }
 
     private static void callForAbility(ItemStack stack, List<Component> tooltip) {
