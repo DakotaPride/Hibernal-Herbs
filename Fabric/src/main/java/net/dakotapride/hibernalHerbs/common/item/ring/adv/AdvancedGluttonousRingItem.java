@@ -1,6 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.item.ring.adv;
 
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
+import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
@@ -27,6 +28,9 @@ public class AdvancedGluttonousRingItem extends Item implements ITooltipProvider
             tooltip.add(Text.literal(""));
             tooltip.add(Text.translatable("text.hibernalherbs.gluttony.advanced.help.one").formatted(Formatting.DARK_PURPLE));
             tooltip.add(Text.translatable("text.hibernalherbs.gluttony.help.two").formatted(Formatting.DARK_PURPLE));
+
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("text.hibernalherbs.warning.gluttony.one", ItemInit.GLUTTONOUS_RING.getDefaultStack().getName()).formatted(Formatting.DARK_PURPLE));
         }
     }
 }

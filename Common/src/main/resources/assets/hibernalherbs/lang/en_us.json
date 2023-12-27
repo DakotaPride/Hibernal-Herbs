@@ -487,6 +487,9 @@
   "text.hibernalherbs.gluttony.advanced.help.one": "All food types regenerate",
   "text.hibernalherbs.gluttony.help.two": "as a passive ability.",
 
+  "text.hibernalherbs.warning.gluttony.one": "Cannot be used alongside the %s",
+  "text.hibernalherbs.warning.gluttony.two": "Cannot be used alongside the Advanced Herbal Ring",
+
   // Advancements
   "advancements.hibernalherbs.root.title": "The Herbs Have Spoken!",
   "advancements.hibernalherbs.root.description": "Root To Your Journey Of Herb Progression",

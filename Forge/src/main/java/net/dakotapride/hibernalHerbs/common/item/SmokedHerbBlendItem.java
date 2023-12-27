@@ -179,9 +179,10 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList, IToo
 
             } else {
                 HerbBlendItem.getExceptionTooltip(stack, components);
-                components.add(Component.translatable("text.hibernalherbs.blend.modifier.smoked.false").withStyle(ChatFormatting.GRAY));
+                components.add(Component.translatable("text.hibernalherbs.blend.modifier.smoked.true").withStyle(ChatFormatting.GRAY));
 
                 if (!Screen.hasAltDown()) {
+                    components.add(Component.literal(""));
                     components.add(Component.translatable(leftAltControlsText).withStyle(ChatFormatting.DARK_GRAY));
                 } else {
                     components.add(Component.literal(""));

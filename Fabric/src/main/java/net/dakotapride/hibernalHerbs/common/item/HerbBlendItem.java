@@ -273,24 +273,6 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
             tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.secondary", secondaryEffect.getName()).formatted(Formatting.GRAY));
             tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.third", thirdEffect.getName()).formatted(Formatting.GRAY));
         }
-
-        if (stack.isOf(ItemInit.SMOKED_REGENERATION_SLOWNESS_BLEND)) {
-            firstEffect = BlendAbilities.CONFLICTING.getEffect();
-            secondaryEffect = BlendAbilities.CONFLICTING.getEffect2();
-
-            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects").formatted(Formatting.DARK_GRAY));
-            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.first", firstEffect.getName()).formatted(Formatting.GRAY));
-            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.secondary", secondaryEffect.getName()).formatted(Formatting.GRAY));
-        } else if (stack.isOf(ItemInit.SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND)) {
-            firstEffect = BlendAbilities.ALTERNATIVE.getEffect();
-            secondaryEffect = BlendAbilities.ALTERNATIVE.getEffect2();
-            thirdEffect = BlendAbilities.ALTERNATIVE.getEffect3();
-
-            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects").formatted(Formatting.DARK_GRAY));
-            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.first", firstEffect.getName()).formatted(Formatting.GRAY));
-            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.secondary", secondaryEffect.getName()).formatted(Formatting.GRAY));
-            tooltip.add(Text.translatable("text.hibernalherbs.blend.provided_effects.third", thirdEffect.getName()).formatted(Formatting.GRAY));
-        }
     }
 
     private static void callForAbility(ItemStack stack, List<Text> tooltip) {
