@@ -20,7 +20,7 @@ public class MyquesteSaplingGenerator extends LargeTreeSaplingGenerator {
     @Nullable
     @Override
     protected RegistryKey<ConfiguredFeature<?, ?>> getLargeTreeFeature(Random random) {
-        return getLargeTreeFeature(random);
+        return null;
     }
 
 }
