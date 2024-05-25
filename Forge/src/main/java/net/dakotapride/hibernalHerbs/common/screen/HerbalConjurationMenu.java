@@ -3,6 +3,7 @@ package net.dakotapride.hibernalHerbs.common.screen;
 import net.dakotapride.hibernalHerbs.common.entity.block.ConjurationAltarBlockEntity;
 import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
 import net.dakotapride.hibernalHerbs.common.screen.menu.HibernalHerbsMenues;
+import net.dakotapride.hibernalHerbs.common.screen.slot.ConjurationResultSlotHandler;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -39,7 +40,7 @@ public class HerbalConjurationMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 3, 46, 45));
             this.addSlot(new SlotItemHandler(handler, 4, 68, 49));
             this.addSlot(new SlotItemHandler(handler, 5, 90, 45));
-            this.addSlot(new SlotItemHandler(handler, 6, 116, 63));
+            this.addSlot(new ConjurationResultSlotHandler(handler, 6, 116, 63));
         });
 
         addDataSlots(data);

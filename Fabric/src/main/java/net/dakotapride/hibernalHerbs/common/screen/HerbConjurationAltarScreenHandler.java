@@ -1,6 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.screen;
 
 import net.dakotapride.hibernalHerbs.common.init.ScreenHandlersInit;
+import net.dakotapride.hibernalHerbs.common.screen.slot.ConjurationResultSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -33,7 +34,7 @@ public class HerbConjurationAltarScreenHandler extends ScreenHandler {
         this.addSlot(new Slot(inventory, 3, 46, 45));
         this.addSlot(new Slot(inventory, 4, 68, 49));
         this.addSlot(new Slot(inventory, 5, 90, 45));
-        this.addSlot(new Slot(inventory, 6, 116, 63));
+        this.addSlot(new ConjurationResultSlot(inventory, 6, 116, 63));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
