@@ -88,7 +88,7 @@ public class HibernalHerbsForge {
         eventBus.addListener(PackLoader::onAddPackFinders);
 
         eventBus.addListener(this::commonSetup);
-        // eventBus.addListener(this::clientSetup);
+        eventBus.addListener(this::clientSetup);
 
         // This method is invoked by the Forge mod loader when it is ready
         // to load your mod. You can access Forge and Common code in this
@@ -206,21 +206,14 @@ public class HibernalHerbsForge {
         });
     }
 
+    private void clientSetup(final FMLClientSetupEvent event) {
+        ItemProperties.register(itemRegistry.CANISTER.get(), new ResourceLocation(MOD_ID, "filled"),
+                ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
 
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class HibernalHerbsClientEvents {
-        @SubscribeEvent
-        public void clientSetup(final FMLClientSetupEvent event) {
-            ItemProperties.register(itemRegistry.CANISTER.get(), new ResourceLocation(MOD_ID, "filled"),
-                    ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
+        MenuScreens.register(HibernalHerbsMenues.CONJURATION_ALTAR_MENU.get(), HerbalConjurationScreen::new);
 
-            MenuScreens.register(HibernalHerbsMenues.CONJURATION_ALTAR_MENU.get(), HerbalConjurationScreen::new);
-
-            EntityRenderers.register(HibernalEntityTypes.MYQUESTE_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, false));
-            EntityRenderers.register(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, true));
-
-            event.enqueueWork(MyquesteType::init);
-        }
+        EntityRenderers.register(HibernalEntityTypes.MYQUESTE_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, false));
+        EntityRenderers.register(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, true));
     }
 
     public static void init() {
