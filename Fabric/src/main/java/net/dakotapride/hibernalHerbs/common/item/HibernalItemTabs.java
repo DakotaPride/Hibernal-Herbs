@@ -23,6 +23,8 @@ public class HibernalItemTabs {
                         entries.add(ItemInit.HERB_FERTILIZER);
                         entries.add(ItemInit.HERB_HUMUS);
                         entries.add(ItemInit.SCRATCHED_POUCH);
+                        entries.add(ItemInit.STITCHED_POUCH);
+                        entries.add(ItemInit.PROPER_POUCH);
                         entries.add(ItemInit.IRON_CANISTER);
                         entries.add(ItemInit.AMETHYST_CANISTER);
                         entries.add(ItemInit.DIAMOND_CANISTER);
