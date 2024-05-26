@@ -2,7 +2,7 @@ package net.dakotapride.hibernalHerbs.common.item.canister;
 
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
-import net.dakotapride.hibernalHerbs.common.util;
+import net.dakotapride.hibernalHerbs.common.Utilities;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.BundleTooltipData;
 import net.minecraft.client.item.TooltipContext;
@@ -30,7 +30,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
-import java.text.Format;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -66,7 +65,7 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
                     playRemoveOneSound(player);
                 }
 
-            } else if (itemStack.isIn(util.BLENDS)) {
+            } else if (itemStack.isIn(Utilities.BLENDS)) {
                 int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
 
                 playInsertSound(player);
@@ -200,7 +199,7 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
 
 
     public static int add(ItemStack bundleStack, ItemStack addStack, int size, PlayerEntity player) {
-        if (!addStack.isEmpty() && addStack.isIn(util.BLENDS)) {
+        if (!addStack.isEmpty() && addStack.isIn(Utilities.BLENDS)) {
             NbtCompound tag = bundleStack.getOrCreateNbt();
             if (!tag.contains("Items")) {
                 tag.put("Items", new NbtList());
@@ -241,7 +240,7 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
     }
 
     public static List<NbtCompound> getMatchingItem(ItemStack itemStack, NbtList listTag) {
-        if (itemStack.isIn(util.CANISTERS)) {
+        if (itemStack.isIn(Utilities.CANISTERS)) {
             return Collections.emptyList();
         } else {
             Stream<?> var10000 = listTag.stream();
@@ -256,7 +255,7 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
     }
 
     public static int getWeight(ItemStack stack, int size) {
-        if (stack.isIn(util.CANISTERS)) {
+        if (stack.isIn(Utilities.CANISTERS)) {
             return 4 + getContentWeight(stack, size);
         } else {
             return size / stack.getMaxCount();

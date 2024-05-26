@@ -1,7 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
-import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -47,27 +47,27 @@ public class HerbalSigilItem extends Item implements ITooltipProvider {
     public static void getSigilAlignment(ItemStack stack, List<Component> tooltip) {
         MutableComponent alignment = SigilAlignments.NONE.getAlignment();
 
-        if (stack.is(itemRegistry.SIGIL_PRIDE.get())) {
+        if (stack.is(ItemRegistry.SIGIL_PRIDE.get())) {
             alignment = SigilAlignments.PRIDE.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_ENVY.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_ENVY.get())) {
             alignment = SigilAlignments.ENVY.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_SLOTH.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_SLOTH.get())) {
             alignment = SigilAlignments.SLOTH.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_WRATH.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_WRATH.get())) {
             alignment = SigilAlignments.WRATH.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_GREED.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_GREED.get())) {
             alignment = SigilAlignments.GREED.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_LUST.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_LUST.get())) {
             alignment = SigilAlignments.LUST.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_GLUTTONY.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_GLUTTONY.get())) {
             alignment = SigilAlignments.GLUTTONY.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_MASTERY.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_MASTERY.get())) {
             alignment = SigilAlignments.MASTERY.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_MASTERY_ADV.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_MASTERY_ADV.get())) {
             alignment = SigilAlignments.ADVANCED_MASTERY.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_CONFIGURATION.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_CONFIGURATION.get())) {
             alignment = SigilAlignments.CONFIGURATION.getAlignment();
-        } else if (stack.is(itemRegistry.SIGIL_CONFIGURATION_ADV.get())) {
+        } else if (stack.is(ItemRegistry.SIGIL_CONFIGURATION_ADV.get())) {
             alignment = SigilAlignments.ADVANCED_CONFIGURATION.getAlignment();
         }
 

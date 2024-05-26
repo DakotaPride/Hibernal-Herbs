@@ -3,7 +3,7 @@ package net.dakotapride.hibernalHerbs.common.item;
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
-import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -30,8 +30,8 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList, IToo
 
     @Override
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
-        ItemStack gluttonousRingStack = itemRegistry.GLUTTONOUS_RING.get().getDefaultInstance();
-        ItemStack advancedGluttonousRingStack = itemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance();
+        ItemStack gluttonousRingStack = ItemRegistry.GLUTTONOUS_RING.get().getDefaultInstance();
+        ItemStack advancedGluttonousRingStack = ItemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance();
 
         entity.addEatEffect(stack, level, entity);
 
@@ -50,36 +50,36 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList, IToo
 
     @Override
     public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack stack, Player player, @NotNull LivingEntity livingEntity, @NotNull InteractionHand hand) {
-        if (player.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_BLEND.get())) {
+        if (player.getMainHandItem().is(ItemRegistry.SMOKED_REGENERATION_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_POISON_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_POISON_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, smokedHealthDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_SLOWNESS_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_SLOWNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_MINING_FATIGUE_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_MINING_FATIGUE_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, smokedMiningSpeedDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_HASTE_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_HASTE_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, smokedMiningSpeedDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_SPEED_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_SPEED_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_WITHER_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_WITHER_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, smokedHealthDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_NIGHT_VISION_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_NIGHT_VISION_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, smokedVisionDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_WEAKNESS_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_WEAKNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_BLINDNESS_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_BLINDNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) { }
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_FIRE_BLEND.get())) { }
 
-        else if (player.getMainHandItem().is(itemRegistry.SMOKED_GLOWING_BLEND.get())) {
+        else if (player.getMainHandItem().is(ItemRegistry.SMOKED_GLOWING_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedGlowingDuration, smokedMultiplier));
         }
 
-        else if (player.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
+        else if (player.getMainHandItem().is(ItemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedHealthDuration, smokedMultiplier));
-        } else if (player.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
+        } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration + 120, smokedMultiplier));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration + 100, smokedMultiplier));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration + 80, smokedMultiplier));
@@ -99,38 +99,38 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList, IToo
 
         Player player = (Player) target.getLastHurtByMob();
         if (attacker instanceof Player) {
-            if (attacker.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_BLEND.get())) {
+            if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_REGENERATION_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration - 80, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_POISON_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_POISON_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.POISON, smokedHealthDuration - 80, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_SLOWNESS_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_SLOWNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration - 60, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_MINING_FATIGUE_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_MINING_FATIGUE_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, smokedMiningSpeedDuration - 600, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_HASTE_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_HASTE_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, smokedMiningSpeedDuration - 600, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_SPEED_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_SPEED_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration - 60, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_WITHER_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_WITHER_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.WITHER, smokedHealthDuration - 80, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_NIGHT_VISION_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_NIGHT_VISION_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, smokedVisionDuration - 100, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_WEAKNESS_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_WEAKNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration - 40, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_BLINDNESS_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_BLINDNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration - 100, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_FIRE_BLEND.get())) {
                 target.setSecondsOnFire(smokedSecondsOnFire - 2);
             }
 
-            else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_GLOWING_BLEND.get())) {
+            else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_GLOWING_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.GLOWING, smokedGlowingDuration - 60, smokedMultiplier - 1));
             }
 
-            else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
+            else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration - 80, smokedMultiplier - 1));
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedSpeedDuration - 60, smokedMultiplier - 1));
-            } else if (attacker.getMainHandItem().is(itemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
+            } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
                 target.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (smokedHealthDuration + 120) - 40, smokedMultiplier - 1));
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (smokedSpeedDuration + 100) - 40, smokedMultiplier - 1));
                 target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, (smokedDamageDuration + 80) - 60, smokedMultiplier));

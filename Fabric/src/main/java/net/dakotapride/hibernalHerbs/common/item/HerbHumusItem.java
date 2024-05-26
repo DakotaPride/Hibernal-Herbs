@@ -4,7 +4,7 @@ package net.dakotapride.hibernalHerbs.common.item;
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
-import net.dakotapride.hibernalHerbs.common.util;
+import net.dakotapride.hibernalHerbs.common.Utilities;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
@@ -133,7 +133,7 @@ public class HerbHumusItem extends Item implements ITooltipProvider {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.myqueste").formatted(Formatting.GRAY));
             }
 
-            else if (!stack.isIn(util.HUMUS)) {
+            else if (!stack.isIn(Utilities.HUMUS)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.none").formatted(Formatting.GRAY));
             }
 

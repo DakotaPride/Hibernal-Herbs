@@ -1,7 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.item.ring.adv;
 
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
-import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -32,7 +32,7 @@ public class AdvancedGluttonousRingItem extends Item implements ITooltipProvider
             tooltip.add(Component.translatable("text.hibernalherbs.gluttony.help.two").withStyle(ChatFormatting.DARK_PURPLE));
 
             tooltip.add(Component.literal(""));
-            tooltip.add(Component.translatable("text.hibernalherbs.warning.gluttony.one", itemRegistry.GLUTTONOUS_RING.get().getDefaultInstance().getDisplayName()).withStyle(ChatFormatting.DARK_PURPLE));
+            tooltip.add(Component.translatable("text.hibernalherbs.warning.gluttony.one", ItemRegistry.GLUTTONOUS_RING.get().getDefaultInstance().getDisplayName()).withStyle(ChatFormatting.DARK_PURPLE));
         }
     }
 }

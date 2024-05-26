@@ -1,7 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.entity.boat;
 
 import net.dakotapride.hibernalHerbs.common.entity.HibernalEntityTypes;
-import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.ItemRegistry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -37,7 +37,7 @@ public class MyquesteBoatEntity extends Boat {
 
     @Override
     public Item getDropItem() {
-        return itemRegistry.MYQUESTE_BOAT.get();
+        return ItemRegistry.MYQUESTE_BOAT.get();
     }
 
     @Override

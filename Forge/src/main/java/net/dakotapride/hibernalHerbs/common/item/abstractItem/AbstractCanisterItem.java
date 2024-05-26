@@ -2,7 +2,7 @@ package net.dakotapride.hibernalHerbs.common.item.abstractItem;
 
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
-import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.NonNullList;
@@ -153,11 +153,11 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
         if (!Screen.hasShiftDown()) {
             components.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
-            if (stack.is(itemRegistry.CANISTER_IRON.get())) {
+            if (stack.is(ItemRegistry.CANISTER_IRON.get())) {
                 components.add(Component.translatable("text.hibernalherbs.canister.quality.iron").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(itemRegistry.CANISTER_AMETHYST.get())) {
+            } else if (stack.is(ItemRegistry.CANISTER_AMETHYST.get())) {
                 components.add(Component.translatable("text.hibernalherbs.canister.quality.amethyst").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(itemRegistry.CANISTER_DIAMOND.get())) {
+            } else if (stack.is(ItemRegistry.CANISTER_DIAMOND.get())) {
                 components.add(Component.translatable("text.hibernalherbs.canister.quality.diamond").withStyle(ChatFormatting.GRAY));
             }
 
@@ -240,7 +240,7 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
     }
 
     public static List<CompoundTag> getMatchingItem(ItemStack itemStack, ListTag listTag) {
-        if (itemStack.is(itemRegistry.POUCH.get())) {
+        if (itemStack.is(ItemRegistry.POUCH.get())) {
             return Collections.emptyList();
         } else {
             Stream<?> var10000 = listTag.stream();
@@ -255,7 +255,7 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
     }
 
     public static int getWeight(ItemStack stack, int size) {
-        if (stack.is(itemRegistry.POUCH.get())) {
+        if (stack.is(ItemRegistry.POUCH.get())) {
             return 4 + getContentWeight(stack, size);
         } else {
             return size / stack.getMaxStackSize();

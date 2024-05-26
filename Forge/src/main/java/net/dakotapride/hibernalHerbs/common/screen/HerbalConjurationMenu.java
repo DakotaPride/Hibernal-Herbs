@@ -1,7 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.screen;
 
 import net.dakotapride.hibernalHerbs.common.entity.block.ConjurationAltarBlockEntity;
-import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.BlockRegistry;
 import net.dakotapride.hibernalHerbs.common.screen.menu.HibernalHerbsMenues;
 import net.dakotapride.hibernalHerbs.common.screen.slot.ConjurationResultSlotHandler;
 import net.minecraft.network.FriendlyByteBuf;
@@ -112,7 +112,7 @@ public class HerbalConjurationMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, blockRegistry.CONJURATION_ALTAR.get());
+                player, BlockRegistry.CONJURATION_ALTAR.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

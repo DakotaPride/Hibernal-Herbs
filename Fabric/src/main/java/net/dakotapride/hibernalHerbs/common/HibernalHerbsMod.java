@@ -34,7 +34,7 @@ public class HibernalHerbsMod implements ModInitializer {
 
 		HibernalHerbsBoatTypes.init();
 
-		util.utilsInit();
+		Utilities.utilsInit();
 
 		FeaturesInit.init();
 

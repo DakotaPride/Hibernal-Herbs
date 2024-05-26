@@ -2,12 +2,10 @@ package net.dakotapride.hibernalHerbs.mixin;
 
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
-import net.dakotapride.hibernalHerbs.common.util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

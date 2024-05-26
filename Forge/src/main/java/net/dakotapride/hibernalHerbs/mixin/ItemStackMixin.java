@@ -1,8 +1,7 @@
 package net.dakotapride.hibernalHerbs.mixin;
 
-import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
-import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.ItemRegistry;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -24,37 +23,36 @@ public abstract class ItemStackMixin implements FoodComponentList {
     @Shadow public abstract int getCount();
 
     @Inject(method = "finishUsingItem", at = @At("HEAD"), cancellable = true)
-    private void finishUsingItem(Level level, LivingEntity entity, CallbackInfoReturnable<ItemStack> cir) {
-        ItemStack gluttonousRingStack = itemRegistry.GLUTTONOUS_RING.get().getDefaultInstance();
-        ItemStack advancedGluttonousRingStack = itemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance();
+    private void finishUsing(Level world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
+        ItemStack gluttonousRingStack = ItemRegistry.GLUTTONOUS_RING.get().getDefaultInstance();
+        ItemStack advancedGluttonousRingStack = ItemRegistry.ADV_GLUTTONOUS_RING.get().getDefaultInstance();
 
-        if (entity.getMainHandItem().is(itemRegistry.FIRE_BLEND.get())) {
-            entity.setSecondsOnFire(secondsOnFire);
+        if (user.getUseItem().is(ItemRegistry.FIRE_BLEND.get())) {
+            user.setRemainingFireTicks(fireDuration);
         }
 
-        if (entity.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) {
-            entity.setSecondsOnFire(smokedSecondsOnFire);
+        if (user.getUseItem().is(ItemRegistry.SMOKED_FIRE_BLEND.get())) {
+            user.setRemainingFireTicks(smokedFireDuration);
         }
 
-        if (entity instanceof Player player) {
+        if (user instanceof Player player) {
             if (!player.getInventory().contains(gluttonousRingStack) && player.getInventory().contains(advancedGluttonousRingStack)) {
                 player.getCooldowns().addCooldown(player.getUseItem().getItem(), 40);
 
-                entity.addEatEffect(entity.getUseItem(), level, entity);
+                user.addEatEffect(user.getUseItem(), world, user);
 
                 cir.setReturnValue(player.getUseItem());
             }
         }
-
     }
 
     @Inject(method = "interactLivingEntity", at = @At("HEAD"))
     private void interactLivingEntity(Player player, LivingEntity livingEntity, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
-        if (player.getMainHandItem().is(itemRegistry.FIRE_BLEND.get())) {
+        if (player.getMainHandItem().is(ItemRegistry.FIRE_BLEND.get())) {
             livingEntity.setSecondsOnFire(secondsOnFire);
         }
 
-        if (player.getMainHandItem().is(itemRegistry.SMOKED_FIRE_BLEND.get())) {
+        if (player.getMainHandItem().is(ItemRegistry.SMOKED_FIRE_BLEND.get())) {
             livingEntity.setSecondsOnFire(smokedSecondsOnFire);
         }
     }

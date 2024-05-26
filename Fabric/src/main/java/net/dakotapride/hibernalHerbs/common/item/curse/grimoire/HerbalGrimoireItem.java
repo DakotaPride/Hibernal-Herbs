@@ -1,9 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.item.curse.grimoire;
 
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
-import net.dakotapride.hibernalHerbs.common.Constants;
-import net.dakotapride.hibernalHerbs.common.init.ItemInit;
-import net.dakotapride.hibernalHerbs.common.util;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;

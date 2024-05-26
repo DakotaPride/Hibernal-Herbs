@@ -1,7 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.item.curse.grimoire;
 
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
-import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

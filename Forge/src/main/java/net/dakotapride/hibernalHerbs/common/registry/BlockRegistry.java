@@ -23,7 +23,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class blockRegistry {
+public class BlockRegistry {
 
     public static final BlockSetType MYQUESTE_SET = BlockSetType.register(new BlockSetType("myqueste"));
     public static final WoodType MYQUESTE_TYPE = WoodType.register(new WoodType("myqueste", MYQUESTE_SET));
@@ -237,67 +237,67 @@ public class blockRegistry {
                     BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
 
     public static final RegistryObject<Block> POTTED_ROSEMARY = BLOCKS.register("potted_rosemary",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.ROSEMARY,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.ROSEMARY,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_THYME = BLOCKS.register("potted_thyme",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.THYME,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.THYME,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_TARRAGON = BLOCKS.register("potted_tarragon",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.TARRAGON,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.TARRAGON,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_CHAMOMILE = BLOCKS.register("potted_chamomile",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.CHAMOMILE,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CHAMOMILE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_CHIVES = BLOCKS.register("potted_chives",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.CHIVES,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CHIVES,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_VERBENA = BLOCKS.register("potted_verbena",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.VERBENA,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.VERBENA,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_SORREL = BLOCKS.register("potted_sorrel",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.SORREL,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.SORREL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_MARJORAM = BLOCKS.register("potted_marjoram",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.MARJORAM,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.MARJORAM,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_CHERVIL = BLOCKS.register("potted_chervil",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.CHERVIL,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CHERVIL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_FENNSEL = BLOCKS.register("potted_fennsel",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.FENNSEL,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.FENNSEL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_CEILLIS = BLOCKS.register("potted_ceillis",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.CEILLIS,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CEILLIS,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_PUNUEL = BLOCKS.register("potted_punuel",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.PUNUEL,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.PUNUEL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_ESSITTE = BLOCKS.register("potted_essitte",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.ESSITTE,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.ESSITTE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     // Resource Dependant (Potted) Herbs (Forge)
 
     public static final RegistryObject<Block> POTTED_THYOCIELLE = BLOCKS.register("potted_thyocielle",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.THYOCIELLE,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.THYOCIELLE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
     public static final RegistryObject<Block> POTTED_FENNKYSTRAL = BLOCKS.register("potted_fennkystral",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.FENNKYSTRAL,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.FENNKYSTRAL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     // Compat (Potted) Herbs (Forge)
     public static final RegistryObject<Block> POTTED_BLOFORIA = BLOCKS.register("potted_bloforia",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.BLOFORIA,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.BLOFORIA,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     // Spring (Potted) Herbs (Forge)
 
     public static final RegistryObject<Block> POTTED_CALENDULA = BLOCKS.register("potted_calendula",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.CALENDULA,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CALENDULA,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     public static final RegistryObject<Block> POTTED_SAGE = BLOCKS.register("potted_sage",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.SAGE,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.SAGE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     public static final RegistryObject<Block> MYQUESTE_LOG = registerBlock("myqueste_log",
@@ -378,7 +378,7 @@ public class blockRegistry {
                     BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)));
 
     public static final RegistryObject<Block> POTTED_MYQUESTE_SAPLING = BLOCKS.register("potted_myqueste_sapling",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), blockRegistry.MYQUESTE_SAPLING,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.MYQUESTE_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_SPRUCE_SAPLING)));
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String name, Supplier<T> block) {
@@ -392,7 +392,7 @@ public class blockRegistry {
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return itemRegistry.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return ItemRegistry.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {

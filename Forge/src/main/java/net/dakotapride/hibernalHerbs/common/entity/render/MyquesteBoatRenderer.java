@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.util.Pair;
 import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoatEntity;
 import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteChestBoatEntity;
-import net.dakotapride.hibernalHerbs.common.registry.blockRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.BlockRegistry;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.ListModel;
@@ -14,9 +14,6 @@ import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
@@ -30,7 +27,7 @@ public class MyquesteBoatRenderer extends BoatRenderer {
 
     public MyquesteBoatRenderer(EntityRendererProvider.Context context, boolean hasChest) {
         super(context, hasChest);
-        this.BOAT_RESOURCES = ImmutableMap.of(blockRegistry.MYQUESTE_TYPE.name(), Pair.of(new ResourceLocation(MOD_ID, "textures/entity/" + (hasChest ? "chest_boat" : "boat") + "/" + blockRegistry.MYQUESTE_TYPE.name() + ".png"), this.createBoatModel(context, hasChest)));
+        this.BOAT_RESOURCES = ImmutableMap.of(BlockRegistry.MYQUESTE_TYPE.name(), Pair.of(new ResourceLocation(MOD_ID, "textures/entity/" + (hasChest ? "chest_boat" : "boat") + "/" + BlockRegistry.MYQUESTE_TYPE.name() + ".png"), this.createBoatModel(context, hasChest)));
         this.HAS_CHEST = hasChest;
     }
 

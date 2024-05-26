@@ -3,7 +3,7 @@ package net.dakotapride.hibernalHerbs.common.item;
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.food.FoodComponentList;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
-import net.dakotapride.hibernalHerbs.common.util;
+import net.dakotapride.hibernalHerbs.common.Utilities;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
@@ -123,7 +123,7 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
         if (!Screen.hasShiftDown()) {
             tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
-            if (!stack.isIn(util.ARTIFICIAL_BLENDS)) {
+            if (!stack.isIn(Utilities.ARTIFICIAL_BLENDS)) {
                 effectToAbilityTooltip(stack, tooltip);
                 tooltip.add(Text.translatable("text.hibernalherbs.blend.modifier.smoked.false").formatted(Formatting.GRAY));
 

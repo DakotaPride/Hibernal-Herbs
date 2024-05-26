@@ -5,7 +5,7 @@ import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketItem;
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
-import net.dakotapride.hibernalHerbs.common.util;
+import net.dakotapride.hibernalHerbs.common.Utilities;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
@@ -15,9 +15,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemStackSet;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
@@ -116,18 +114,18 @@ public class CursedPadlockItem extends TrinketItem implements ITooltipProvider {
                 tooltip.add(Text.translatable(leftAltControlsText).formatted(Formatting.DARK_GRAY));
             } else if (Screen.hasAltDown()) {
 
-                if (stack.isIn(util.BOUND_PADLOCKS)) {
+                if (stack.isIn(Utilities.BOUND_PADLOCKS)) {
                     tooltip.add(Text.literal(""));
                     getBoundPadlockAssistance(stack, tooltip);
                 }
 
-                if (stack.isIn(util.PADLOCKS)) {
+                if (stack.isIn(Utilities.PADLOCKS)) {
                     tooltip.add(Text.literal(""));
                     getUnboundPadlockAssistance(stack, tooltip);
                 }
             }
 
-            if (stack.isIn(util.BOUND_PADLOCKS)) {
+            if (stack.isIn(Utilities.BOUND_PADLOCKS)) {
                 tooltip.add(Text.literal(""));
             }
 

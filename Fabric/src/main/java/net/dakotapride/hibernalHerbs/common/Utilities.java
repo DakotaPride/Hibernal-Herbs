@@ -12,7 +12,7 @@ import net.minecraft.world.biome.Biome;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
-public class util {
+public class Utilities {
     public static final TagKey<Item> HERBS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "herbs"));
     public static final TagKey<Item> POUNDED_HERBS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "pounded_herbs"));
     public static final TagKey<Item> BLENDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "herb_blends"));

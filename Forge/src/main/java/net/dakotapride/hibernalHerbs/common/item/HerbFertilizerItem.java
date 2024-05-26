@@ -2,7 +2,7 @@ package net.dakotapride.hibernalHerbs.common.item;
 
 import net.dakotapride.hibernalHerbs.client.ITooltipProvider;
 import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
-import net.dakotapride.hibernalHerbs.common.registry.itemRegistry;
+import net.dakotapride.hibernalHerbs.common.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -26,37 +26,37 @@ public class HerbFertilizerItem extends Item implements ITooltipProvider {
         if (!Screen.hasShiftDown()) {
             list.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
-            if (stack.is(itemRegistry.HERB_FERTILIZER_OAK.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_OAK.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.oak").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_SPRUCE.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_SPRUCE.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.spruce").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_BIRCH.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_BIRCH.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.birch").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_ACACIA.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_ACACIA.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.acacia").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_JUNGLE.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_JUNGLE.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.jungle").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_DARK_OAK.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_DARK_OAK.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.dark_oak").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_MANGROVE.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_MANGROVE.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.mangrove").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_CHERRY.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_CHERRY.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.cherry").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_CRIMSON.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_CRIMSON.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.crimson").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_WARPED.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_WARPED.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.warped").withStyle(ChatFormatting.GRAY));
             }
-            if (stack.is(itemRegistry.HERB_FERTILIZER_MYQUESTE.get())) {
+            if (stack.is(ItemRegistry.HERB_FERTILIZER_MYQUESTE.get())) {
                 list.add(Component.translatable("text.hibernalherbs.association.myqueste").withStyle(ChatFormatting.GRAY));
             }
 

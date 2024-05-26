@@ -88,6 +88,10 @@ public class HibernalItemTabs {
                         entries.add(ItemInit.AVARICE_PADLOCK);
                         entries.add(ItemInit.AVARICE_PADLOCK_BOUND);
 
+                        entries.add(ItemInit.RING);
+                        entries.add(ItemInit.GLUTTONOUS_RING);
+                        entries.add(ItemInit.ADV_GLUTTONOUS_RING);
+
                         entries.add(BlockInit.CONJURATION_ALTAR.asItem());
 
                         entries.add(BlockInit.CALENDULA_LANTERN.asItem());
@@ -234,6 +238,30 @@ public class HibernalItemTabs {
                         entries.add(BlockInit.LUST_HERB);
                         entries.add(BlockInit.ENVY_HERB);
                         entries.add(BlockInit.GREED_HERB);
+                    })).build());
+    public static final ItemGroup AUTOMATION_TAB = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(MOD_ID, "reproduction"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hibernalherbs.reproduction"))
+                    .icon(() -> new ItemStack(ItemInit.HERB_FERTILIZER)).entries(((displayContext, entries) -> {
+                        entries.add(ItemInit.HERB_FERTILIZER_OAK.asItem());
+                        entries.add(ItemInit.HERB_FERTILIZER_DARK_OAK.asItem());
+                        entries.add(ItemInit.HERB_FERTILIZER_ACACIA.asItem());
+                        entries.add(ItemInit.HERB_FERTILIZER_SPRUCE.asItem());
+                        entries.add(ItemInit.HERB_FERTILIZER_BIRCH.asItem());
+                        entries.add(ItemInit.HERB_FERTILIZER_JUNGLE.asItem());
+                        entries.add(ItemInit.HERB_FERTILIZER_MANGROVE.asItem());
+                        entries.add(ItemInit.HERB_FERTILIZER_CHERRY.asItem());
+                        entries.add(ItemInit.HERB_FERTILIZER_MYQUESTE.asItem());
+
+                        entries.add(ItemInit.HERB_HUMUS_OAK.asItem());
+                        entries.add(ItemInit.HERB_HUMUS_DARK_OAK.asItem());
+                        entries.add(ItemInit.HERB_HUMUS_ACACIA.asItem());
+                        entries.add(ItemInit.HERB_HUMUS_SPRUCE.asItem());
+                        entries.add(ItemInit.HERB_HUMUS_BIRCH.asItem());
+                        entries.add(ItemInit.HERB_HUMUS_JUNGLE.asItem());
+                        entries.add(ItemInit.HERB_HUMUS_MANGROVE.asItem());
+                        entries.add(ItemInit.HERB_HUMUS_CHERRY.asItem());
+                        entries.add(ItemInit.HERB_HUMUS_MYQUESTE.asItem());
                     })).build());
 
     public static void init() {}
