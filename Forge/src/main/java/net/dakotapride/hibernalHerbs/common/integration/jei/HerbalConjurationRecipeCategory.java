@@ -20,13 +20,13 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 public class HerbalConjurationRecipeCategory implements IRecipeCategory<HerbalConjurationRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(MOD_ID, "herbal_conjuration");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(MOD_ID, "textures/gui/conjuration_altar.png");
+            new ResourceLocation(MOD_ID, "textures/gui/recipe_viewer/testing.png");
 
     private final IDrawable background;
     private final IDrawable icon;
 
     public HerbalConjurationRecipeCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
+        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 84);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(BlockRegistry.CONJURATION_ALTAR.get()));
     }
 
@@ -53,13 +53,13 @@ public class HerbalConjurationRecipeCategory implements IRecipeCategory<HerbalCo
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, HerbalConjurationRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 46, 23).addIngredients(recipe.getIngredients().get(5));
-        builder.addSlot(RecipeIngredientRole.INPUT, 68, 19).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 90, 23).addIngredients(recipe.getIngredients().get(1));
-        builder.addSlot(RecipeIngredientRole.INPUT, 46, 45).addIngredients(recipe.getIngredients().get(2));
-        builder.addSlot(RecipeIngredientRole.INPUT, 68, 49).addIngredients(recipe.getIngredients().get(3));
-        builder.addSlot(RecipeIngredientRole.INPUT, 90, 45).addIngredients(recipe.getIngredients().get(4));
+        builder.addSlot(RecipeIngredientRole.INPUT, 46, 17).addIngredients(recipe.getIngredients().get(5));
+        builder.addSlot(RecipeIngredientRole.INPUT, 68, 13).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 90, 17).addIngredients(recipe.getIngredients().get(1));
+        builder.addSlot(RecipeIngredientRole.INPUT, 46, 39).addIngredients(recipe.getIngredients().get(2));
+        builder.addSlot(RecipeIngredientRole.INPUT, 68, 43).addIngredients(recipe.getIngredients().get(3));
+        builder.addSlot(RecipeIngredientRole.INPUT, 90, 39).addIngredients(recipe.getIngredients().get(4));
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 63).addItemStack(recipe.getResultItem(RegistryAccess.EMPTY));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 57).addItemStack(recipe.getResultItem(RegistryAccess.EMPTY));
     }
 }
