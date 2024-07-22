@@ -53,31 +53,31 @@ public class CursedPadlockItem extends TrinketItem implements ITooltipProvider {
         Multimap<EntityAttribute, EntityAttributeModifier> modifiers = super.getModifiers(stack, slot, entity, uuid);
 
         EntityAttributeModifier wrathHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:wrath_health",
-                15, EntityAttributeModifier.Operation.ADDITION);
+                3, EntityAttributeModifier.Operation.ADDITION);
         EntityAttributeModifier wrathAttackDamageModifier = new EntityAttributeModifier(uuid, "hibernalherbs:wrath_damage",
-                0.25, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                4, EntityAttributeModifier.Operation.ADDITION);
 
         EntityAttributeModifier prideHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:pride_health",
-                25, EntityAttributeModifier.Operation.ADDITION);
+                5, EntityAttributeModifier.Operation.ADDITION);
 
         EntityAttributeModifier gluttonyHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:gluttony_health",
-                35, EntityAttributeModifier.Operation.ADDITION);
+                7, EntityAttributeModifier.Operation.ADDITION);
 
         EntityAttributeModifier greedHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:greed_health",
-                45, EntityAttributeModifier.Operation.ADDITION);
+                9, EntityAttributeModifier.Operation.ADDITION);
 
         EntityAttributeModifier envyHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:envy_health",
-                55, EntityAttributeModifier.Operation.ADDITION);
+                11, EntityAttributeModifier.Operation.ADDITION);
         EntityAttributeModifier envyMovementModifier = new EntityAttributeModifier(uuid, "hibernalherbs:envy_movement",
-                0.04, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                0.04, EntityAttributeModifier.Operation.ADDITION);
 
         EntityAttributeModifier slothHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:sloth_health",
-                10, EntityAttributeModifier.Operation.ADDITION);
+                2, EntityAttributeModifier.Operation.ADDITION);
         EntityAttributeModifier slothMovementModifier = new EntityAttributeModifier(uuid, "hibernalherbs:sloth_movement",
-                -0.02, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                -0.02, EntityAttributeModifier.Operation.ADDITION);
 
         EntityAttributeModifier lustHealthModifier = new EntityAttributeModifier(uuid, "hibernalherbs:lust_health",
-                55, EntityAttributeModifier.Operation.ADDITION);
+                11, EntityAttributeModifier.Operation.ADDITION);
 
         if (stack.isOf(ItemInit.VEXATION_PADLOCK_BOUND)) {
             modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, wrathHealthModifier);
