@@ -117,7 +117,6 @@ public class HerbConjurationAltarEntity extends BlockEntity implements ExtendedS
 
     private static void craftItem(HerbConjurationAltarEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
-        int itemStackCount = 1;
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
@@ -127,54 +126,42 @@ public class HerbConjurationAltarEntity extends BlockEntity implements ExtendedS
 
         if(hasRecipe(entity)) {
             if (!(entity.getStack(0).isIn(Utilities.SIGILS))) {
-                if (entity.getStack(0).isOf(ItemInit.SINGED_GRIMOIRE)) {
-                    entity.setStack(0, new ItemStack(ItemInit.SINGED_GRIMOIRE));
-                } else {
+                if (!entity.getStack(0).isOf(ItemInit.SINGED_GRIMOIRE)) {
                     entity.removeStack(0, 1);
                 }
             } else {
                 entity.setStack(0, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(1).isIn(Utilities.SIGILS))) {
-                if (entity.getStack(1).isOf(ItemInit.SINGED_GRIMOIRE)) {
-                    entity.setStack(1, new ItemStack(ItemInit.SINGED_GRIMOIRE));
-                } else {
+                if (!entity.getStack(1).isOf(ItemInit.SINGED_GRIMOIRE)) {
                     entity.removeStack(1, 1);
                 }
             } else {
                 entity.setStack(1, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(2).isIn(Utilities.SIGILS))) {
-                if (entity.getStack(2).isOf(ItemInit.SINGED_GRIMOIRE)) {
-                    entity.setStack(2, new ItemStack(ItemInit.SINGED_GRIMOIRE));
-                } else {
+                if (!entity.getStack(2).isOf(ItemInit.SINGED_GRIMOIRE)) {
                     entity.removeStack(2, 1);
                 }
             } else {
                 entity.setStack(2, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(3).isIn(Utilities.SIGILS))) {
-                if (entity.getStack(3).isOf(ItemInit.SINGED_GRIMOIRE)) {
-                    entity.setStack(3, new ItemStack(ItemInit.SINGED_GRIMOIRE));
-                } else {
+                if (!entity.getStack(3).isOf(ItemInit.SINGED_GRIMOIRE)) {
                     entity.removeStack(3, 1);
                 }
             } else {
                 entity.setStack(3, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(4).isIn(Utilities.SIGILS))) {
-                if (entity.getStack(4).isOf(ItemInit.SINGED_GRIMOIRE)) {
-                    entity.setStack(4, new ItemStack(ItemInit.SINGED_GRIMOIRE));
-                } else {
+                if (!entity.getStack(4).isOf(ItemInit.SINGED_GRIMOIRE)) {
                     entity.removeStack(4, 1);
                 }
             } else {
                 entity.setStack(4, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(5).isIn(Utilities.SIGILS))) {
-                if (entity.getStack(5).isOf(ItemInit.SINGED_GRIMOIRE)) {
-                    entity.setStack(5, new ItemStack(ItemInit.SINGED_GRIMOIRE));
-                } else {
+                if (!entity.getStack(5).isOf(ItemInit.SINGED_GRIMOIRE)) {
                     entity.removeStack(5, 1);
                 }
             } else {

@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.12-SNAPSHOT'
+    id 'fabric-loom' version '1.7-SNAPSHOT'
     id 'maven-publish'
     id 'idea'
     id 'org.jetbrains.kotlin.jvm' version '1.8.20-RC2'
@@ -21,7 +21,10 @@ dependencies {
     include "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
 
     // REI
+    // modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
+    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${rei_version}"
 
     // Trinkets
     modImplementation("dev.emi:trinkets:${trinkets_version}")
