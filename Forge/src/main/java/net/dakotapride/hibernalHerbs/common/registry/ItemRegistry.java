@@ -36,9 +36,9 @@ public class ItemRegistry implements FoodComponentList {
             () -> new HerbalGrimoireItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> SILIPTIUM_PETAL = ITEMS.register("sin_petals",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> LUMBINETRIK_PETAL = ITEMS.register("lumbinetrik_petals",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties().stacksTo(16)));
 
     public static final RegistryObject<Item> VEXATION_PADLOCK_BOUND = ITEMS.register("bound_padlock_wrath",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));

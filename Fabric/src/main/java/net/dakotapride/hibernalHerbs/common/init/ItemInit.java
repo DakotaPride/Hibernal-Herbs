@@ -22,8 +22,8 @@ public class ItemInit {
     public static Item HERBAL_GRIMOIRE = new HerbalGrimoireItem(new FabricItemSettings().maxCount(1));
     public static Item SINGED_GRIMOIRE = new HerbalGrimoireItem(new FabricItemSettings().maxCount(1));
 
-    public static Item SILIPTIUM_PETAL = new Item(new FabricItemSettings());
-    public static Item LUMBINETRIK_PETAL = new Item(new FabricItemSettings());
+    public static Item SILIPTIUM_PETAL = new Item(new FabricItemSettings().maxCount(16));
+    public static Item LUMBINETRIK_PETAL = new Item(new FabricItemSettings().maxCount(16));
 
     public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
     public static Item VEXATION_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
