@@ -1,18 +1,17 @@
 package net.dakotapride.hibernalHerbs.client;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.forgespi.locating.IModFile;
 import net.minecraftforge.resource.PathPackResources;
+
+import java.io.IOException;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
@@ -22,36 +21,41 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 public class PackLoader {
 
     @SubscribeEvent
-    public static void onAddPackFinders(AddPackFindersEvent event) {
+    public static void addPackFinders(AddPackFindersEvent event)
+    {
+        try
+        {
+            if (event.getPackType() == PackType.CLIENT_RESOURCES)
+            {
+                if (ModList.get().isLoaded("eatinganimation")) {
+                    var eatingAnimationResourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("resourcepacks/eatinganimations");
+                    var eatingAnimationPackResources = new PathPackResources(ModList.get().getModFileById(MOD_ID).getFile().getFileName() + ":" + eatingAnimationResourcePath, eatingAnimationResourcePath);
+                    var eatingAnimationMetaDataSelection = eatingAnimationPackResources.getMetadataSection(PackMetadataSection.SERIALIZER);
+                    if (eatingAnimationMetaDataSelection != null)
+                    {
+                        event.addRepositorySource((packConsumer, packConstructor) ->
+                                packConsumer.accept(packConstructor.create(
+                                        "eatinganimation", Component.literal("hibernalherbs/eatinganimations"), false,
+                                        () -> eatingAnimationPackResources, eatingAnimationMetaDataSelection, Pack.Position.BOTTOM, PackSource.BUILT_IN, false)));
+                    }
+                }
 
-        if (event.getPackType() == PackType.CLIENT_RESOURCES) {
-            registerBuiltinResourcePack(event, Component.literal("hibernalherbs/barebones"), "barebones");
-            registerBuiltinResourcePack(event, Component.literal("hibernalherbs/modernized"), "modernized");
+                var bareBonesResourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("resourcepacks/barebones");
+                var bareBonesPackResources = new PathPackResources(ModList.get().getModFileById(MOD_ID).getFile().getFileName() + ":" + bareBonesResourcePath, bareBonesResourcePath);
+                var bareBonesMetaDataSelection = bareBonesPackResources.getMetadataSection(PackMetadataSection.SERIALIZER);
+                if (bareBonesMetaDataSelection != null)
+                {
+                    event.addRepositorySource((packConsumer, packConstructor) ->
+                            packConsumer.accept(packConstructor.create(
+                                    "barebones", Component.literal("hibernalherbs/barebones"), false,
+                                    () -> bareBonesPackResources, bareBonesMetaDataSelection, Pack.Position.BOTTOM, PackSource.BUILT_IN, false)));
+                }
 
-            if (ModList.get().isLoaded("eatinganimation")) {
-                registerBuiltinResourcePack(event, Component.literal("hibernalherbs/eatinganimations"), "eatinganimations");
             }
         }
-    }
-
-    private static void registerBuiltinResourcePack(AddPackFindersEvent event, MutableComponent name, String folder) {
-        event.addRepositorySource((consumer) -> {
-            String path = new ResourceLocation(MOD_ID, folder).toString();
-            IModFile file = ModList.get().getModFileById(MOD_ID).getFile();
-            try (PathPackResources pack = new PathPackResources(
-                    path, true, file.findResource("resourcepacks/" + folder))) {
-                consumer.accept(Pack.create(
-                        new ResourceLocation(MOD_ID, folder).toString(),
-                        name,
-                        false,
-                        (pack1) -> pack,
-                        new Pack.Info(Component.literal("hibernalherbs/" + folder), 15, FeatureFlagSet.of()),
-                        PackType.CLIENT_RESOURCES,
-                        Pack.Position.TOP,
-                        false,
-                        PackSource.BUILT_IN));
-
-            }
-        });
+        catch(IOException ex)
+        {
+            throw new RuntimeException(ex);
+        }
     }
 }

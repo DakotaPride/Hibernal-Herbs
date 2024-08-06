@@ -1,7 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.entity;
 
 import net.dakotapride.hibernalHerbs.common.entity.block.ConjurationAltarBlockEntity;
-import net.dakotapride.hibernalHerbs.common.entity.block.MyquesteHangingSignBlockEntity;
 import net.dakotapride.hibernalHerbs.common.entity.block.MyquesteSignBlockEntity;
 import net.dakotapride.hibernalHerbs.common.registry.BlockRegistry;
 import net.minecraft.world.level.block.entity.BlockEntityType;

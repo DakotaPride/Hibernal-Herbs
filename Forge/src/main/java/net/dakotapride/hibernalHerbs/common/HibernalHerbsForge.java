@@ -74,7 +74,7 @@ public class HibernalHerbsForge {
         HibernalRecipes.register(eventBus);
 
         // Resource Pack Registration
-        eventBus.addListener(PackLoader::onAddPackFinders);
+        eventBus.addListener(PackLoader::addPackFinders);
 
         eventBus.addListener(this::commonSetup);
         eventBus.addListener(this::clientSetup);

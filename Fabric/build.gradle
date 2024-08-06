@@ -16,9 +16,9 @@ dependencies {
     implementation project(":Common")
 
     // Wood API
-    modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
+    modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:4.2.0"
 
-    include "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
+    include "com.terraformersmc.terraform-api:terraform-wood-api-v1:4.2.0"
 
     // REI
     // modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
@@ -30,7 +30,7 @@ dependencies {
     modImplementation("dev.emi:trinkets:${trinkets_version}")
 
     // Patchouli
-    modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC-SNAPSHOT"
+    modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC"
 
 }
 
