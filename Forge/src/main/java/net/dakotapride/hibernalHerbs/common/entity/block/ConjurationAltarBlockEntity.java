@@ -144,7 +144,7 @@ public class ConjurationAltarBlockEntity extends BlockEntity implements MenuProv
 
     private void craftItem() {
         Optional<HerbalConjurationRecipe> recipe = getCurrentRecipe();
-        ItemStack result = recipe.get().getResultItem(null);
+        ItemStack result = recipe.get().getResultItem();
 
 
         if (!this.itemHandler.getStackInSlot(0).is(HibernalHerbsForge.SIGILS_TAG)) {

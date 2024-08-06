@@ -10,7 +10,7 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class MyquesteType {
 
-    public static final WoodType MYQUESTE = WoodType.register(new WoodType(MOD_ID + ":myqueste", BlockRegistry.MYQUESTE_SET));
+    public static final WoodType MYQUESTE = WoodType.register(new WoodType(MOD_ID + ":myqueste"));
 
     @OnlyIn(Dist.CLIENT)
     public static void init() {

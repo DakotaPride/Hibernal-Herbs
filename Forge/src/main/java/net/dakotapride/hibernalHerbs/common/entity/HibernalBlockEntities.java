@@ -26,8 +26,4 @@ public class HibernalBlockEntities {
             BLOCK_ENTITIES.register("myqueste_sign", () -> BlockEntityType.Builder.of(MyquesteSignBlockEntity::new,
                     BlockRegistry.MYQUESTE_SIGN.get(), BlockRegistry.MYQUESTE_WALL_SIGN.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<MyquesteHangingSignBlockEntity>> MYQUESTE_HANGING_SIGN =
-            BLOCK_ENTITIES.register("myqueste_hanging_sign", () -> BlockEntityType.Builder.of(MyquesteHangingSignBlockEntity::new,
-                    BlockRegistry.MYQUESTE_HANGING_SIGN.get(), BlockRegistry.MYQUESTE_WALL_HANGING_SIGN.get()).build(null));
-
 }

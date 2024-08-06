@@ -14,15 +14,14 @@ import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class HibernalEntityTypes {
-    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MOD_ID);
 
-    public static final RegistryObject<EntityType<MyquesteBoatEntity>> MYQUESTE_BOAT = ENTITIES.register("myqueste_boat",
-            () -> EntityType.Builder.<MyquesteBoatEntity>of(MyquesteBoatEntity::new,
-                    MobCategory.MISC).sized(1.375f, 0.5625f).clientTrackingRange(10)
-                    .build(new ResourceLocation(MOD_ID, "myqueste_boat").toString()));
-    public static final RegistryObject<EntityType<MyquesteChestBoatEntity>> MYQUESTE_CHEST_BOAT = ENTITIES.register("myqueste_chest_boat",
-            () -> EntityType.Builder.<MyquesteChestBoatEntity>of(MyquesteChestBoatEntity::new,
-                    MobCategory.MISC).sized(1.375f, 0.5625f).clientTrackingRange(10)
-                    .build(new ResourceLocation(MOD_ID, "myqueste_chest_boat").toString()));
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MOD_ID);
+
+    public static final RegistryObject<EntityType<MyquesteBoatEntity>> MYQUESTE_BOAT = ENTITY_TYPES.register
+            ("myqueste_boat", () -> EntityType.Builder.<MyquesteBoatEntity>of(MyquesteBoatEntity::new, MobCategory.MISC)
+                    .sized(1.375F, 0.5625F).clientTrackingRange(10).build(new ResourceLocation(MOD_ID, "myqueste_boat").toString()));
+    public static final RegistryObject<EntityType<MyquesteChestBoatEntity>> MYQUESTE_CHEST_BOAT = ENTITY_TYPES.register
+            ("myqueste_chest_boat", () -> EntityType.Builder.<MyquesteChestBoatEntity>of(MyquesteChestBoatEntity::new, MobCategory.MISC)
+                    .sized(1.375F, 0.5625F).clientTrackingRange(10).build(new ResourceLocation(MOD_ID, "myqueste_chest_boat").toString()));
 
 }

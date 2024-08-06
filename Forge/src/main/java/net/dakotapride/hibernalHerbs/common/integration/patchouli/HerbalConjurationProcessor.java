@@ -3,12 +3,8 @@ package net.dakotapride.hibernalHerbs.common.integration.patchouli;
 import net.dakotapride.hibernalHerbs.common.integration.patchouli.util.PatchouliUtils;
 import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
 import net.dakotapride.hibernalHerbs.common.recipe.HibernalRecipes;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeManager;
-import net.minecraft.world.level.Level;
 import vazkii.patchouli.api.IComponentProcessor;
 import vazkii.patchouli.api.IVariable;
 import vazkii.patchouli.api.IVariableProvider;
@@ -23,13 +19,13 @@ public class HerbalConjurationProcessor implements IComponentProcessor {
     private HerbalConjurationRecipe recipe;
 
     @Override
-    public void setup(Level level, IVariableProvider vars) {
+    public void setup(IVariableProvider vars) {
         this.recipe = PatchouliUtils.getRecipe(HerbalConjurationRecipe.class, HibernalRecipes.HERBAL_CONJURATION_TYPE.get(), vars.get("recipe").asString());
     }
 
     @Nonnull
     @Override
-    public IVariable process(Level level, @Nonnull String key) {
+    public IVariable process(@Nonnull String key) {
         if (recipe == null) return IVariable.empty();
 
         if (key.equals("output")) {

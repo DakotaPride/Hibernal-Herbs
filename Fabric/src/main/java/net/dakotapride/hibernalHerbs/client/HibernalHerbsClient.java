@@ -119,7 +119,7 @@ public class HibernalHerbsClient implements ClientModInitializer {
         HandledScreens.register(ScreenHandlersInit.CONJURATION_ALTAR_SCREEN_HANDLER, HerbConjurationAltarScreen::new);
 
         // Render Layers (Terraform)
-        TerraformBoatClientHelper.registerModelLayers(HibernalHerbsMod.MYQUESTE_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(HibernalHerbsMod.MYQUESTE_ID);
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, BlockInit.MYQUESTE_SIGN_TEXTURE));
 
 

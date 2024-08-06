@@ -1,13 +1,11 @@
 package net.dakotapride.hibernalHerbs.common.screen;
 
 import net.dakotapride.hibernalHerbs.common.init.ScreenHandlersInit;
-import net.dakotapride.hibernalHerbs.common.screen.slot.ConjurationResultSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -17,7 +15,7 @@ public class HerbConjurationAltarScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
 
-    public HerbConjurationAltarScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
+    public HerbConjurationAltarScreenHandler(int syncId, PlayerInventory inventory) {
         this(syncId, inventory, new SimpleInventory(7), new ArrayPropertyDelegate(7));
     }
 
@@ -34,7 +32,7 @@ public class HerbConjurationAltarScreenHandler extends ScreenHandler {
         this.addSlot(new Slot(inventory, 3, 46, 45));
         this.addSlot(new Slot(inventory, 4, 68, 49));
         this.addSlot(new Slot(inventory, 5, 90, 45));
-        this.addSlot(new ConjurationResultSlot(inventory, 6, 116, 63));
+        this.addSlot(new Slot(inventory, 6, 116, 63));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -56,7 +54,7 @@ public class HerbConjurationAltarScreenHandler extends ScreenHandler {
     }
 
     @Override
-    public ItemStack quickMove(PlayerEntity player, int invSlot) {
+    public ItemStack transferSlot(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
         if (slot != null && slot.hasStack()) {

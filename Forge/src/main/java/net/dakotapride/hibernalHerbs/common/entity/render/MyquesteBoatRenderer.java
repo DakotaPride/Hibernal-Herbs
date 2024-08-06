@@ -1,47 +1,41 @@
 package net.dakotapride.hibernalHerbs.common.entity.render;
 
-import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.util.Pair;
-import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteBoatEntity;
-import net.dakotapride.hibernalHerbs.common.entity.boat.MyquesteChestBoatEntity;
-import net.dakotapride.hibernalHerbs.common.registry.BlockRegistry;
 import net.minecraft.client.model.BoatModel;
-import net.minecraft.client.model.ChestBoatModel;
-import net.minecraft.client.model.ListModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.vehicle.Boat;
-
-import java.util.Map;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
-// Boat code credited to Deeper And Darker Devs
-@SuppressWarnings("NullableProblems")
+@OnlyIn(Dist.CLIENT)
 public class MyquesteBoatRenderer extends BoatRenderer {
-    private final Map<String, Pair<ResourceLocation, ListModel<Boat>>> BOAT_RESOURCES;
-    private final boolean HAS_CHEST;
+    private final Pair<ResourceLocation, BoatModel> myqueste;
 
     public MyquesteBoatRenderer(EntityRendererProvider.Context context, boolean hasChest) {
         super(context, hasChest);
-        this.BOAT_RESOURCES = ImmutableMap.of(BlockRegistry.MYQUESTE_TYPE.name(), Pair.of(new ResourceLocation(MOD_ID, "textures/entity/" + (hasChest ? "chest_boat" : "boat") + "/" + BlockRegistry.MYQUESTE_TYPE.name() + ".png"), this.createBoatModel(context, hasChest)));
-        this.HAS_CHEST = hasChest;
+        this.myqueste = Pair.of(this.getTexture(hasChest), new BoatModel(context.bakeLayer(createModelLayerLocation(hasChest)), hasChest));
     }
 
-    private ListModel<Boat> createBoatModel(EntityRendererProvider.Context context, boolean chestBoat) {
-        ModelLayerLocation modellayerlocation = chestBoat ?
-                new ModelLayerLocation(new ResourceLocation("minecraft", "chest_boat/oak"), "main") :
-                new ModelLayerLocation(new ResourceLocation("minecraft", "boat/oak"), "main");
-        ModelPart modelpart = context.bakeLayer(modellayerlocation);
-        return chestBoat ? new ChestBoatModel(modelpart) : new BoatModel(modelpart);
+    @NotNull
+    public static ModelLayerLocation createModelLayerLocation(boolean hasChest) {
+        return new ModelLayerLocation(new ResourceLocation(MOD_ID, hasChest ? "chest_boat/myqueste" : "boat/myqueste"), "main");
+    }
+
+    public ResourceLocation getTexture(boolean hasChest) {
+        if (hasChest) {
+            return new ResourceLocation(MOD_ID, "textures/entity/chest_boat/myqueste.png");
+        }
+        return new ResourceLocation(MOD_ID, "textures/entity/boat/myqueste.png");
     }
 
     @Override
-    public Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(Boat boat) {
-        if(HAS_CHEST) return BOAT_RESOURCES.get(((MyquesteChestBoatEntity) boat).getWoodType());
-        return BOAT_RESOURCES.get(((MyquesteBoatEntity) boat).getWoodType());
+    public Pair<ResourceLocation, BoatModel> getModelWithLocation(Boat boat) {
+        return this.myqueste;
     }
 }

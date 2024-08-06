@@ -1,19 +1,23 @@
 package net.dakotapride.hibernalHerbs.common.gen.grower;
 
 import net.dakotapride.hibernalHerbs.common.gen.HibernalHerbsConfigured;
-import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
+import javax.annotation.Nullable;
+
 public class MyquesteTreeGrower extends AbstractMegaTreeGrower {
+    @Nullable
     @Override
-    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pLargeHive) {
-        return HibernalHerbsConfigured.MYQUESTE_CONFIGURED;
+    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pLargeHive) {
+        return HibernalHerbsConfigured.MYQUESTE.getHolder().get();
     }
 
+    @Nullable
     @Override
-    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource p_222904_) {
+    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource p_222904_) {
         return null;
     }
 }

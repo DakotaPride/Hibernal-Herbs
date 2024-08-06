@@ -5,33 +5,33 @@ import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 public class Utilities {
-    public static final TagKey<Item> HERBS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "herbs"));
-    public static final TagKey<Item> POUNDED_HERBS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "pounded_herbs"));
-    public static final TagKey<Item> BLENDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "herb_blends"));
-    public static final TagKey<Item> ARTIFICIAL_BLENDS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "herbs/artificial/blends"));
+    public static final TagKey<Item> HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "herbs"));
+    public static final TagKey<Item> POUNDED_HERBS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "pounded_herbs"));
+    public static final TagKey<Item> BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "herb_blends"));
+    public static final TagKey<Item> ARTIFICIAL_BLENDS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "herbs/artificial/blends"));
 
-    public static final TagKey<Item> HUMUS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "humus"));
-    public static final TagKey<Item> FERTILIZER = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "fertilizer"));
+    public static final TagKey<Item> HUMUS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "humus"));
+    public static final TagKey<Item> FERTILIZER = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "fertilizer"));
 
-    public static final TagKey<Item> POUCHES = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "pouches"));
-    public static final TagKey<Item> CANISTERS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "canisters"));
+    public static final TagKey<Item> POUCHES = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "pouches"));
+    public static final TagKey<Item> CANISTERS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "canisters"));
 
-    public static final TagKey<Biome> HAS_HERBS = TagKey.of(RegistryKeys.BIOME, new Identifier(MOD_ID, "has_herbs"));
+    public static final TagKey<Biome> HAS_HERBS = TagKey.of(Registry.BIOME_KEY, new Identifier(MOD_ID, "has_herbs"));
 
-    public static final TagKey<Item> SIGILS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "sigil/sigils"));
+    public static final TagKey<Item> SIGILS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "sigil/sigils"));
 
-    public static final TagKey<Item> BOUND_PADLOCKS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "padlocks/bound"));
-    public static final TagKey<Item> PADLOCKS = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "padlocks/unbound"));
+    public static final TagKey<Item> BOUND_PADLOCKS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "padlocks/bound"));
+    public static final TagKey<Item> PADLOCKS = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "padlocks/unbound"));
 
-    public static final TagKey<Item> GRIMOIRES = TagKey.of(RegistryKeys.ITEM, new Identifier(MOD_ID, "grimoires"));
+    public static final TagKey<Item> GRIMOIRES = TagKey.of(Registry.ITEM_KEY, new Identifier(MOD_ID, "grimoires"));
 
     public static void utilsInit() {
         // Strippable Blocks

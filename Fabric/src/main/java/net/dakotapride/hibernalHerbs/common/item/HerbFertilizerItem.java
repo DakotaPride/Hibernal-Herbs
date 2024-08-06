@@ -45,9 +45,6 @@ public class HerbFertilizerItem extends Item implements ITooltipProvider {
             if (stack.isOf(ItemInit.HERB_FERTILIZER_MANGROVE)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.mangrove").formatted(Formatting.GRAY));
             }
-            if (stack.isOf(ItemInit.HERB_FERTILIZER_CHERRY)) {
-                tooltip.add(Text.translatable("text.hibernalherbs.association.cherry").formatted(Formatting.GRAY));
-            }
             if (stack.isOf(ItemInit.HERB_FERTILIZER_CRIMSON)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.crimson").formatted(Formatting.GRAY));
             }

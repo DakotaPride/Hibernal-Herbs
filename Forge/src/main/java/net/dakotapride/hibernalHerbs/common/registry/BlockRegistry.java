@@ -1,6 +1,7 @@
 package net.dakotapride.hibernalHerbs.common.registry;
 
 import net.dakotapride.hibernalHerbs.common.Constants;
+import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.block.*;
 import net.dakotapride.hibernalHerbs.common.block.leaf.LeafPileBlock;
 import net.dakotapride.hibernalHerbs.common.gen.grower.MyquesteTreeGrower;
@@ -9,13 +10,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,216 +26,213 @@ import java.util.function.Supplier;
 
 public class BlockRegistry {
 
-    public static final BlockSetType MYQUESTE_SET = BlockSetType.register(new BlockSetType("myqueste"));
-    public static final WoodType MYQUESTE_TYPE = WoodType.register(new WoodType("myqueste", MYQUESTE_SET));
-
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Constants.MOD_ID);
 
     public static RegistryObject<Block> CONJURATION_ALTAR = registerBlock("conjuration_altar",
-            () -> new ConjurationAltarBlock(BlockBehaviour.Properties.copy(Blocks.LECTERN).noOcclusion()));
+            () -> new ConjurationAltarBlock(BlockBehaviour.Properties.copy(Blocks.LECTERN).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     // TODO: v0.9 Herbs For Princes Of Sin (Required in Bound Padlock Recipes + Additional Uses)
     public static RegistryObject<Block> PRIDE_HERB = registerBlock("pride_herb",
-            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)));
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> ENVY_HERB = registerBlock("envy_herb",
-            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)));
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> WRATH_HERB = registerBlock("wrath_herb",
-            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)));
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> GLUTTONY_HERB = registerBlock("gluttony_herb",
-            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)));
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> GREED_HERB = registerBlock("greed_herb",
-            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)));
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> LUST_HERB = registerBlock("lust_herb",
-            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)));
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> SLOTH_HERB = registerBlock("sloth_herb",
-            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)));
+            () -> new SinHerbBlock(200, BlockBehaviour.Properties.copy(Blocks.WITHER_ROSE)), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     // "Leaf" (Herb) Piles
     public static RegistryObject<Block> MYQUESTE_LEAF_PILE = registerBlock("myqueste_leaf_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static final RegistryObject<Block> ROSEMARY_HERB_PILE = registerBlock("rosemary_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> THYME_HERB_PILE = registerBlock("thyme_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> TARRAGON_HERB_PILE = registerBlock("tarragon_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> CHAMOMILE_HERB_PILE = registerBlock("chamomile_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> CHIVES_HERB_PILE = registerBlock("chives_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> VERBENA_HERB_PILE = registerBlock("verbena_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> SORREL_HERB_PILE = registerBlock("sorrel_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> MARJORAM_HERB_PILE = registerBlock("marjoram_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> CHERVIL_HERB_PILE = registerBlock("chervil_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> FENNSEL_HERB_PILE = registerBlock("fennsel_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> CEILLIS_HERB_PILE = registerBlock("ceillis_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> PUNUEL_HERB_PILE = registerBlock("punuel_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> ESSITTE_HERB_PILE = registerBlock("essitte_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static RegistryObject<Block> THYOCIELLE_HERB_PILE = registerBlock("thyocielle_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static RegistryObject<Block> FENNKYSTRAL_HERB_PILE = registerBlock("fennkystral_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static RegistryObject<Block> CALENDULA_HERB_PILE = registerBlock("calendula_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static RegistryObject<Block> SAGE_HERB_PILE = registerBlock("sage_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static RegistryObject<Block> BLOFORIA_HERB_PILE = registerBlock("bloforia_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
+            () -> new LeafPileBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), ItemRegistry.HIBERNAL_HERBS_TAB);
 
 
     public static final RegistryObject<Block> ROSEMARY = registerBlock("rosemary",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> THYME = registerBlock("thyme",
             () -> new FlowerBlock(MobEffects.POISON, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> TARRAGON = registerBlock("tarragon",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> CHAMOMILE = registerBlock("chamomile",
             () -> new FlowerBlock(MobEffects.ABSORPTION, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> CHIVES = registerBlock("chives",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> VERBENA = registerBlock("verbena",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> SORREL = registerBlock("sorrel",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> MARJORAM = registerBlock("marjoram",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> CHERVIL = registerBlock("chervil",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> FENNSEL = registerBlock("fennsel",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> CEILLIS = registerBlock("ceillis",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> PUNUEL = registerBlock("punuel",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> ESSITTE = registerBlock("essitte",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
 
     // Resource Dependant Herbs (Forge)
 
     public static final RegistryObject<Block> THYOCIELLE = registerBlock("thyocielle",
             () -> new FlowerBlock(MobEffects.REGENERATION, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
     public static final RegistryObject<Block> FENNKYSTRAL = registerBlock("fennkystral",
             () -> new FlowerBlock(MobEffects.REGENERATION, 240,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
 
     // Spring Herbs (Forge)
 
     public static final RegistryObject<Block> CALENDULA = registerBlock("calendula",
             () -> new FlowerBlock(MobEffects.GLOWING, 200,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
 
     public static final RegistryObject<Block> SAGE = registerBlock("sage",
-            () -> new SageHerbBlock(180, BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+            () -> new SageHerbBlock(180, BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
 
     public static final RegistryObject<Block> CALENDULA_LANTERN = registerBlock("calendula_lantern",
-        () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+        () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> ROSEMARY_LANTERN = registerBlock("rosemary_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> THYME_LANTERN = registerBlock("thyme_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> TARRAGON_LANTERN = registerBlock("tarragon_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> CHAMOMILE_LANTERN = registerBlock("chamomile_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> CHIVES_LANTERN = registerBlock("chives_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> VERBENA_LANTERN = registerBlock("verbena_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> SORREL_LANTERN = registerBlock("sorrel_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> MARJORAM_LANTERN = registerBlock("marjoram_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> CHERVIL_LANTERN = registerBlock("chervil_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> FENNSEL_LANTERN = registerBlock("fennsel_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> CEILLIS_LANTERN = registerBlock("ceillis_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> PUNUEL_LANTERN = registerBlock("punuel_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> ESSITTE_LANTERN = registerBlock("essitte_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> THYOCIELLE_LANTERN = registerBlock("thyocielle_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> FENNKYSTRAL_LANTERN = registerBlock("fennkystral_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> SAGE_LANTERN = registerBlock("sage_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static final RegistryObject<Block> BLOFORIA_LANTERN = registerBlock("bloforia_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)), ItemRegistry.HIBERNAL_HERBS_TAB);
 
 
     public static final RegistryObject<Block> CALENDULA_BARREL = registerBlock("calendula_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> ROSEMARY_BARREL = registerBlock("rosemary_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> THYME_BARREL = registerBlock("thyme_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> TARRAGON_BARREL = registerBlock("tarragon_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> CHAMOMILE_BARREL = registerBlock("chamomile_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> CHIVES_BARREL = registerBlock("chives_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> VERBENA_BARREL = registerBlock("verbena_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> SORREL_BARREL = registerBlock("sorrel_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> MARJORAM_BARREL = registerBlock("marjoram_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> CHERVIL_BARREL = registerBlock("chervil_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> FENNSEL_BARREL = registerBlock("fennsel_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> CEILLIS_BARREL = registerBlock("ceillis_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> PUNUEL_BARREL = registerBlock("punuel_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> ESSITTE_BARREL = registerBlock("essitte_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> THYOCIELLE_BARREL = registerBlock("thyocielle_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> FENNKYSTRAL_BARREL = registerBlock("fennkystral_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> BLOFORIA_BARREL = registerBlock("bloforia_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> SAGE_BARREL = registerBlock("sage_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)), ItemRegistry.HIBERNAL_HERBS_TAB);
 
 
     // Compat Herbs (Forge)
     public static final RegistryObject<Block> BLOFORIA = registerBlock("bloforia",
             () -> new FlowerBlock(MobEffects.NIGHT_VISION, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
+                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)), ItemRegistry.HERBS_TAB);
 
     public static final RegistryObject<Block> POTTED_ROSEMARY = BLOCKS.register("potted_rosemary",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.ROSEMARY,
@@ -301,13 +299,13 @@ public class BlockRegistry {
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     public static final RegistryObject<Block> MYQUESTE_LOG = registerBlock("myqueste_log",
-            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG)));
+            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> MYQUESTE_WOOD = registerBlock("myqueste_wood",
-            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WOOD)));
+            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WOOD)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> STRIPPED_MYQUESTE_LOG = registerBlock("stripped_myqueste_log",
-            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_SPRUCE_LOG)));
+            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_SPRUCE_LOG)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> STRIPPED_MYQUESTE_WOOD = registerBlock("stripped_myqueste_wood",
-            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_SPRUCE_WOOD)));
+            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_SPRUCE_WOOD)), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static final RegistryObject<Block> MYQUESTE_PLANKS = registerBlock("myqueste_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS)) {
@@ -325,35 +323,31 @@ public class BlockRegistry {
                 public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return 20;
                 }
-            });
+            }, ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static final RegistryObject<Block> MYQUESTE_SLAB = registerBlock("myqueste_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SLAB)));
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SLAB)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> MYQUESTE_STAIRS = registerBlock("myqueste_stairs",
-            () -> new StairBlock(MYQUESTE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SPRUCE_STAIRS)));
+            () -> new StairBlock(MYQUESTE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SPRUCE_STAIRS)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> MYQUESTE_DOOR = registerBlock("myqueste_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_DOOR), MYQUESTE_SET));
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_DOOR)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> MYQUESTE_TRAPDOOR = registerBlock("myqueste_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_TRAPDOOR), MYQUESTE_SET));
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_TRAPDOOR)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> MYQUESTE_FENCE = registerBlock("myqueste_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE)));
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> MYQUESTE_FENCE_GATE = registerBlock("myqueste_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE_GATE), MYQUESTE_TYPE));
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE_GATE)), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static final RegistryObject<Block> MYQUESTE_PRESSURE_PLATE = registerBlock("myqueste_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
-                    BlockBehaviour.Properties.copy(Blocks.SPRUCE_PRESSURE_PLATE), MYQUESTE_SET));
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.SPRUCE_PRESSURE_PLATE)), ItemRegistry.HIBERNAL_HERBS_TAB);
     public static final RegistryObject<Block> MYQUESTE_BUTTON = registerBlock("myqueste_button",
-            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON), MYQUESTE_SET, 30, true));
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_BUTTON)), ItemRegistry.HIBERNAL_HERBS_TAB);
 
-    public static final RegistryObject<Block> MYQUESTE_SIGN = registerBlockWithoutItem("myqueste_sign", () ->
+    public static final RegistryObject<Block> MYQUESTE_SIGN = registerBlockWithoutTab("myqueste_sign", () ->
             new MyquesteSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_SIGN), MyquesteType.MYQUESTE));
-    public static final RegistryObject<Block> MYQUESTE_WALL_SIGN = registerBlockWithoutItem("myqueste_wall_sign", () ->
-            new MyquesteWallSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WALL_SIGN).lootFrom(MYQUESTE_SIGN), MyquesteType.MYQUESTE));
-    public static final RegistryObject<Block> MYQUESTE_HANGING_SIGN = registerBlockWithoutItem("myqueste_hanging_sign", () ->
-            new MyquesteHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_HANGING_SIGN), MyquesteType.MYQUESTE));
-    public static final RegistryObject<Block> MYQUESTE_WALL_HANGING_SIGN = registerBlockWithoutItem("myqueste_wall_hanging_sign", () ->
-            new MyquesteHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WALL_HANGING_SIGN).lootFrom(MYQUESTE_HANGING_SIGN), MyquesteType.MYQUESTE));
+    public static final RegistryObject<Block> MYQUESTE_WALL_SIGN = registerBlockWithoutTab("myqueste_wall_sign", () ->
+            new MyquesteWallSignBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_WALL_SIGN).lootFrom(MYQUESTE_SIGN),
+                    MyquesteType.MYQUESTE));
 
     public static final RegistryObject<Block> MYQUESTE_LEAVES = registerBlock("myqueste_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES)){
@@ -371,11 +365,11 @@ public class BlockRegistry {
                 public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return 60;
                 }
-            });
+            }, ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static final RegistryObject<Block> MYQUESTE_SAPLING = registerBlock("myqueste_sapling",
             () -> new SaplingBlock(new MyquesteTreeGrower(),
-                    BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)));
+                    BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)), ItemRegistry.HIBERNAL_HERBS_TAB);
 
     public static final RegistryObject<Block> POTTED_MYQUESTE_SAPLING = BLOCKS.register("potted_myqueste_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.MYQUESTE_SAPLING,
@@ -385,14 +379,19 @@ public class BlockRegistry {
         return BLOCKS.register(name, block);
     }
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutTab(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
+    }
+
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn);
+        registerBlockItem(name, toReturn, tab);
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ItemRegistry.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
+                                                                            CreativeModeTab tab) {
+        return ItemRegistry.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 
     public static void register(IEventBus eventBus) {

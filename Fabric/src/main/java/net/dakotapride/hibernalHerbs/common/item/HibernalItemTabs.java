@@ -3,268 +3,261 @@ package net.dakotapride.hibernalHerbs.common.item;
 import net.dakotapride.hibernalHerbs.common.init.BlockInit;
 import net.dakotapride.hibernalHerbs.common.init.HibernalHerbsBoatTypes;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
 @SuppressWarnings({"unused"})
 public class HibernalItemTabs {
-    public static final ItemGroup HIBERNAL_HERBS_TAB = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(MOD_ID, "hibernal_herbs"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hibernalherbs.hibernal_herbs"))
-                    .icon(() -> new ItemStack(BlockInit.CONJURATION_ALTAR.asItem())).entries((displayContext, entries) -> {
-                        entries.add(ItemInit.GROUND_HERBS);
-                        entries.add(ItemInit.HERB_FERTILIZER);
-                        entries.add(ItemInit.HERB_HUMUS);
-                        entries.add(ItemInit.SCRATCHED_POUCH);
-                        entries.add(ItemInit.STITCHED_POUCH);
-                        entries.add(ItemInit.PROPER_POUCH);
-                        entries.add(ItemInit.IRON_CANISTER);
-                        entries.add(ItemInit.AMETHYST_CANISTER);
-                        entries.add(ItemInit.DIAMOND_CANISTER);
+    public static ItemGroup HIBERNAL_HERBS = FabricItemGroupBuilder.create(
+                    new Identifier(MOD_ID, "hibernal_herbs"))
+            .icon(() -> new ItemStack(BlockInit.CONJURATION_ALTAR.asItem()))
+            .appendItems(itemStacks -> {
+                itemStacks.add(ItemInit.GROUND_HERBS.getDefaultStack());
+                itemStacks.add(ItemInit.HERB_FERTILIZER.getDefaultStack());
+                itemStacks.add(ItemInit.HERB_HUMUS.getDefaultStack());
+                itemStacks.add(ItemInit.SCRATCHED_POUCH.getDefaultStack());
+                itemStacks.add(ItemInit.STITCHED_POUCH.getDefaultStack());
+                itemStacks.add(ItemInit.PROPER_POUCH.getDefaultStack());
+                itemStacks.add(ItemInit.IRON_CANISTER.getDefaultStack());
+                itemStacks.add(ItemInit.AMETHYST_CANISTER.getDefaultStack());
+                itemStacks.add(ItemInit.DIAMOND_CANISTER.getDefaultStack());
 
-                        entries.add(ItemInit.REGENERATION_BLEND);
-                        entries.add(ItemInit.SMOKED_REGENERATION_BLEND);
-                        entries.add(ItemInit.POISON_BLEND);
-                        entries.add(ItemInit.SMOKED_POISON_BLEND);
-                        entries.add(ItemInit.SLOWNESS_BLEND);
-                        entries.add(ItemInit.SMOKED_SLOWNESS_BLEND);
-                        entries.add(ItemInit.MINING_FATIGUE_BLEND);
-                        entries.add(ItemInit.SMOKED_MINING_FATIGUE_BLEND);
-                        entries.add(ItemInit.HASTE_BLEND);
-                        entries.add(ItemInit.SMOKED_HASTE_BLEND);
-                        entries.add(ItemInit.SPEED_BLEND);
-                        entries.add(ItemInit.SMOKED_SPEED_BLEND);
-                        entries.add(ItemInit.FIRE_BLEND);
-                        entries.add(ItemInit.SMOKED_FIRE_BLEND);
-                        entries.add(ItemInit.WITHER_BLEND);
-                        entries.add(ItemInit.SMOKED_WITHER_BLEND);
-                        entries.add(ItemInit.NIGHT_VISION_BLEND);
-                        entries.add(ItemInit.SMOKED_NIGHT_VISION_BLEND);
-                        entries.add(ItemInit.WEAKNESS_BLEND);
-                        entries.add(ItemInit.SMOKED_WEAKNESS_BLEND);
-                        entries.add(ItemInit.BLINDNESS_BLEND);
-                        entries.add(ItemInit.SMOKED_BLINDNESS_BLEND);
-                        entries.add(ItemInit.REGENERATION_SLOWNESS_BLEND);
-                        entries.add(ItemInit.SMOKED_REGENERATION_SLOWNESS_BLEND);
-                        entries.add(ItemInit.REGENERATION_SPEED_WEAKNESS_BLEND);
-                        entries.add(ItemInit.SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND);
+                itemStacks.add(ItemInit.REGENERATION_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_REGENERATION_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.POISON_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_POISON_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SLOWNESS_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_SLOWNESS_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.MINING_FATIGUE_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_MINING_FATIGUE_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.HASTE_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_HASTE_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SPEED_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_SPEED_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.FIRE_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_FIRE_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.WITHER_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_WITHER_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.NIGHT_VISION_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_NIGHT_VISION_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.WEAKNESS_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_WEAKNESS_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.BLINDNESS_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_BLINDNESS_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.REGENERATION_SLOWNESS_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_REGENERATION_SLOWNESS_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.REGENERATION_SPEED_WEAKNESS_BLEND.getDefaultStack());
+                itemStacks.add(ItemInit.SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND.getDefaultStack());
 
-                        entries.add(ItemInit.HERBAL_GRIMOIRE);
-                        entries.add(ItemInit.SINGED_GRIMOIRE);
+                itemStacks.add(ItemInit.HERBAL_GRIMOIRE.getDefaultStack());
+                itemStacks.add(ItemInit.SINGED_GRIMOIRE.getDefaultStack());
 
-                        entries.add(ItemInit.SILIPTIUM_PETAL);
-                        entries.add(ItemInit.LUMBINETRIK_PETAL);
+                itemStacks.add(ItemInit.SILIPTIUM_PETAL.getDefaultStack());
+                itemStacks.add(ItemInit.LUMBINETRIK_PETAL.getDefaultStack());
 
-                        entries.add(ItemInit.SIGIL);
-                        entries.add(ItemInit.SIGIL_PRIDE);
-                        entries.add(ItemInit.SIGIL_WRATH);
-                        entries.add(ItemInit.SIGIL_GLUTTONY);
-                        entries.add(ItemInit.SIGIL_SLOTH);
-                        entries.add(ItemInit.SIGIL_LUST);
-                        entries.add(ItemInit.SIGIL_ENVY);
-                        entries.add(ItemInit.SIGIL_GREED);
-                        entries.add(ItemInit.SIGIL_CONFIGURATION);
-                        entries.add(ItemInit.SIGIL_CONFIGURATION_ADVANCED);
-                        entries.add(ItemInit.SIGIL_MASTERY);
-                        entries.add(ItemInit.SIGIL_MASTERY_ADVANCED);
+                itemStacks.add(ItemInit.SIGIL.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_PRIDE.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_WRATH.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_GLUTTONY.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_SLOTH.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_LUST.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_ENVY.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_GREED.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_CONFIGURATION.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_CONFIGURATION_ADVANCED.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_MASTERY.getDefaultStack());
+                itemStacks.add(ItemInit.SIGIL_MASTERY_ADVANCED.getDefaultStack());
 
-                        entries.add(ItemInit.PIQUE_PADLOCK);
-                        entries.add(ItemInit.PIQUE_PADLOCK_BOUND);
-                        entries.add(ItemInit.VEXATION_PADLOCK);
-                        entries.add(ItemInit.VEXATION_PADLOCK_BOUND);
-                        entries.add(ItemInit.GOURMANDIZING_PADLOCK);
-                        entries.add(ItemInit.GOURMANDIZING_PADLOCK_BOUND);
-                        entries.add(ItemInit.APATHY_PADLOCK);
-                        entries.add(ItemInit.APATHY_PADLOCK_BOUND);
-                        entries.add(ItemInit.SALACIOUS_PADLOCK);
-                        entries.add(ItemInit.SALACIOUS_PADLOCK_BOUND);
-                        entries.add(ItemInit.SPITEFUL_PADLOCK);
-                        entries.add(ItemInit.SPITEFUL_PADLOCK_BOUND);
-                        entries.add(ItemInit.AVARICE_PADLOCK);
-                        entries.add(ItemInit.AVARICE_PADLOCK_BOUND);
+                itemStacks.add(ItemInit.PIQUE_PADLOCK.getDefaultStack());
+                itemStacks.add(ItemInit.PIQUE_PADLOCK_BOUND.getDefaultStack());
+                itemStacks.add(ItemInit.VEXATION_PADLOCK.getDefaultStack());
+                itemStacks.add(ItemInit.VEXATION_PADLOCK_BOUND.getDefaultStack());
+                itemStacks.add(ItemInit.GOURMANDIZING_PADLOCK.getDefaultStack());
+                itemStacks.add(ItemInit.GOURMANDIZING_PADLOCK_BOUND.getDefaultStack());
+                itemStacks.add(ItemInit.APATHY_PADLOCK.getDefaultStack());
+                itemStacks.add(ItemInit.APATHY_PADLOCK_BOUND.getDefaultStack());
+                itemStacks.add(ItemInit.SALACIOUS_PADLOCK.getDefaultStack());
+                itemStacks.add(ItemInit.SALACIOUS_PADLOCK_BOUND.getDefaultStack());
+                itemStacks.add(ItemInit.SPITEFUL_PADLOCK.getDefaultStack());
+                itemStacks.add(ItemInit.SPITEFUL_PADLOCK_BOUND.getDefaultStack());
+                itemStacks.add(ItemInit.AVARICE_PADLOCK.getDefaultStack());
+                itemStacks.add(ItemInit.AVARICE_PADLOCK_BOUND.getDefaultStack());
 
-                        entries.add(ItemInit.RING);
-                        entries.add(ItemInit.GLUTTONOUS_RING);
-                        entries.add(ItemInit.ADV_GLUTTONOUS_RING);
+                itemStacks.add(ItemInit.RING.getDefaultStack());
+                itemStacks.add(ItemInit.GLUTTONOUS_RING.getDefaultStack());
+                itemStacks.add(ItemInit.ADV_GLUTTONOUS_RING.getDefaultStack());
 
-                        entries.add(BlockInit.CONJURATION_ALTAR.asItem());
+                itemStacks.add(BlockInit.CONJURATION_ALTAR.asItem().getDefaultStack());
 
-                        entries.add(BlockInit.CALENDULA_LANTERN.asItem());
-                        entries.add(BlockInit.ROSEMARY_LANTERN.asItem());
-                        entries.add(BlockInit.THYME_LANTERN.asItem());
-                        entries.add(BlockInit.TARRAGON_LANTERN.asItem());
-                        entries.add(BlockInit.CHAMOMILE_LANTERN.asItem());
-                        entries.add(BlockInit.CHIVES_LANTERN.asItem());
-                        entries.add(BlockInit.VERBENA_LANTERN.asItem());
-                        entries.add(BlockInit.SORREL_LANTERN.asItem());
-                        entries.add(BlockInit.MARJORAM_LANTERN.asItem());
-                        entries.add(BlockInit.CHERVIL_LANTERN.asItem());
-                        entries.add(BlockInit.FENNSEL_LANTERN.asItem());
-                        entries.add(BlockInit.CEILLIS_LANTERN.asItem());
-                        entries.add(BlockInit.PUNUEL_LANTERN.asItem());
-                        entries.add(BlockInit.ESSITTE_LANTERN.asItem());
-                        entries.add(BlockInit.FENNKYSTRAL_LANTERN.asItem());
-                        entries.add(BlockInit.THYOCIELLE_LANTERN.asItem());
-                        entries.add(BlockInit.SAGE_LANTERN.asItem());
+                itemStacks.add(BlockInit.CALENDULA_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.ROSEMARY_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.THYME_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.TARRAGON_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHAMOMILE_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHIVES_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.VERBENA_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.SORREL_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MARJORAM_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHERVIL_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.FENNSEL_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CEILLIS_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.PUNUEL_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.ESSITTE_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.FENNKYSTRAL_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.THYOCIELLE_LANTERN.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.SAGE_LANTERN.asItem().getDefaultStack());
 
-                        entries.add(BlockInit.CALENDULA_HERB_BARREL.asItem());
-                        entries.add(BlockInit.ROSEMARY_HERB_BARREL.asItem());
-                        entries.add(BlockInit.THYME_HERB_BARREL.asItem());
-                        entries.add(BlockInit.TARRAGON_HERB_BARREL.asItem());
-                        entries.add(BlockInit.CHAMOMILE_HERB_BARREL.asItem());
-                        entries.add(BlockInit.CHIVES_HERB_BARREL.asItem());
-                        entries.add(BlockInit.VERBENA_HERB_BARREL.asItem());
-                        entries.add(BlockInit.SORREL_HERB_BARREL.asItem());
-                        entries.add(BlockInit.MARJORAM_HERB_BARREL.asItem());
-                        entries.add(BlockInit.CHERVIL_HERB_BARREL.asItem());
-                        entries.add(BlockInit.FENNSEL_HERB_BARREL.asItem());
-                        entries.add(BlockInit.CEILLIS_HERB_BARREL.asItem());
-                        entries.add(BlockInit.PUNUEL_HERB_BARREL.asItem());
-                        entries.add(BlockInit.ESSITTE_HERB_BARREL.asItem());
-                        entries.add(BlockInit.FENNKYSTRAL_HERB_BARREL.asItem());
-                        entries.add(BlockInit.THYOCIELLE_HERB_BARREL.asItem());
-                        entries.add(BlockInit.SAGE_HERB_BARREL.asItem());
+                itemStacks.add(BlockInit.CALENDULA_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.ROSEMARY_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.THYME_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.TARRAGON_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHAMOMILE_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHIVES_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.VERBENA_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.SORREL_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MARJORAM_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHERVIL_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.FENNSEL_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CEILLIS_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.PUNUEL_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.ESSITTE_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.FENNKYSTRAL_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.THYOCIELLE_HERB_BARREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.SAGE_HERB_BARREL.asItem().getDefaultStack());
 
-                        entries.add(BlockInit.MYQUESTE_LEAF_PILE.asItem());
-                        entries.add(BlockInit.CALENDULA_HERB_PILE.asItem());
-                        entries.add(BlockInit.ROSEMARY_HERB_PILE.asItem());
-                        entries.add(BlockInit.THYME_HERB_PILE.asItem());
-                        entries.add(BlockInit.TARRAGON_HERB_PILE.asItem());
-                        entries.add(BlockInit.CHAMOMILE_HERB_PILE.asItem());
-                        entries.add(BlockInit.CHIVES_HERB_PILE.asItem());
-                        entries.add(BlockInit.VERBENA_HERB_PILE.asItem());
-                        entries.add(BlockInit.SORREL_HERB_PILE.asItem());
-                        entries.add(BlockInit.MARJORAM_HERB_PILE.asItem());
-                        entries.add(BlockInit.CHERVIL_HERB_PILE.asItem());
-                        entries.add(BlockInit.FENNSEL_HERB_PILE.asItem());
-                        entries.add(BlockInit.CEILLIS_HERB_PILE.asItem());
-                        entries.add(BlockInit.PUNUEL_HERB_PILE.asItem());
-                        entries.add(BlockInit.ESSITTE_HERB_PILE.asItem());
-                        entries.add(BlockInit.FENNKYSTRAL_HERB_PILE.asItem());
-                        entries.add(BlockInit.THYOCIELLE_HERB_PILE.asItem());
-                        entries.add(BlockInit.SAGE_HERB_PILE.asItem());
+                itemStacks.add(BlockInit.MYQUESTE_LEAF_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CALENDULA_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.ROSEMARY_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.THYME_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.TARRAGON_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHAMOMILE_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHIVES_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.VERBENA_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.SORREL_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MARJORAM_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHERVIL_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.FENNSEL_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CEILLIS_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.PUNUEL_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.ESSITTE_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.FENNKYSTRAL_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.THYOCIELLE_HERB_PILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.SAGE_HERB_PILE.asItem().getDefaultStack());
 
-                        entries.add(BlockInit.MYQUESTE_LOG.asItem());
-                        entries.add(BlockInit.MYQUESTE_WOOD.asItem());
-                        entries.add(BlockInit.STRIPPED_MYQUESTE_LOG.asItem());
-                        entries.add(BlockInit.STRIPPED_MYQUESTE_WOOD.asItem());
-                        entries.add(BlockInit.MYQUESTE_PLANKS.asItem());
-                        entries.add(BlockInit.MYQUESTE_STAIRS.asItem());
-                        entries.add(BlockInit.MYQUESTE_SLAB.asItem());
-                        entries.add(BlockInit.MYQUESTE_FENCE.asItem());
-                        entries.add(BlockInit.MYQUESTE_FENCE_GATE.asItem());
-                        entries.add(BlockInit.MYQUESTE_DOOR.asItem());
-                        entries.add(BlockInit.MYQUESTE_TRAPDOOR.asItem());
-                        entries.add(BlockInit.MYQUESTE_PRESSURE_PLATE.asItem());
-                        entries.add(BlockInit.MYQUESTE_BUTTON.asItem());
-                        entries.add(HibernalHerbsBoatTypes.myqueste.getItem());
-                        entries.add(HibernalHerbsBoatTypes.myqueste.getChestItem());
-                        entries.add(BlockInit.MYQUESTE_SIGN_ITEM.asItem());
-                        entries.add(BlockInit.MYQUESTE_HANGING_SIGN_ITEM.asItem());
+                itemStacks.add(BlockInit.MYQUESTE_LOG.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_WOOD.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.STRIPPED_MYQUESTE_LOG.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.STRIPPED_MYQUESTE_WOOD.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_PLANKS.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_STAIRS.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_SLAB.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_FENCE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_FENCE_GATE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_DOOR.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_TRAPDOOR.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_PRESSURE_PLATE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_BUTTON.asItem().getDefaultStack());
+                itemStacks.add(HibernalHerbsBoatTypes.myqueste.getItem().getDefaultStack());
+                itemStacks.add(HibernalHerbsBoatTypes.myqueste.getChestItem().getDefaultStack());
+                itemStacks.add(BlockInit.MYQUESTE_SIGN_ITEM.asItem().getDefaultStack());
+            }).build();
+    public static ItemGroup POUNDED_HERBS = FabricItemGroupBuilder.create(
+                    new Identifier(MOD_ID, "pounded_herbs"))
+            .icon(() -> new ItemStack(ItemInit.POUNDED_TARRAGON))
+            .appendItems(itemStacks -> {
+                itemStacks.add(ItemInit.POUNDED_CALENDULA.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_ROSEMARY.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_THYME.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_TARRAGON.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_CHAMOMILE.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_CHIVES.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_VERBENA.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_SORREL.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_MARJORAM.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_CHERVIL.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_FENNSEL.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_CEILLIS.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_PUNUEL.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_ESSITTE.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_FENNKYSTRAL.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_THYOCIELLE.getDefaultStack());
+                itemStacks.add(ItemInit.POUNDED_SAGE.getDefaultStack());
 
+                itemStacks.add(ItemInit.DRIED_CALENDULA.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_ROSEMARY.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_THYME.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_TARRAGON.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_CHAMOMILE.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_CHIVES.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_VERBENA.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_SORREL.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_MARJORAM.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_CHERVIL.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_FENNSEL.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_CEILLIS.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_PUNUEL.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_ESSITTE.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_FENNKYSTRAL.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_THYOCIELLE.getDefaultStack());
+                itemStacks.add(ItemInit.DRIED_SAGE.getDefaultStack());
+            }).build();
+    public static ItemGroup HERBS = FabricItemGroupBuilder.create(
+                    new Identifier(MOD_ID, "herbs"))
+            .icon(() -> new ItemStack(BlockInit.TARRAGON.asItem()))
+            .appendItems(itemStacks -> {
+                itemStacks.add(BlockInit.CALENDULA.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.ROSEMARY.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.THYME.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.TARRAGON.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHAMOMILE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHIVES.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.VERBENA.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.SORREL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.MARJORAM.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CHERVIL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.FENNSEL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.CEILLIS.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.PUNUEL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.ESSITTE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.FENNKYSTRAL.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.THYOCIELLE.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.SAGE.asItem().getDefaultStack());
 
-                    }).build());
-    public static final ItemGroup POUNDED_HERBS_TAB = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(MOD_ID, "pounded_herbs"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hibernalherbs.pounded_herbs"))
-                    .icon(() -> new ItemStack(ItemInit.POUNDED_TARRAGON)).entries(((displayContext, entries) -> {
-                        entries.add(ItemInit.POUNDED_CALENDULA.asItem());
-                        entries.add(ItemInit.POUNDED_ROSEMARY.asItem());
-                        entries.add(ItemInit.POUNDED_THYME.asItem());
-                        entries.add(ItemInit.POUNDED_TARRAGON.asItem());
-                        entries.add(ItemInit.POUNDED_CHAMOMILE.asItem());
-                        entries.add(ItemInit.POUNDED_CHIVES.asItem());
-                        entries.add(ItemInit.POUNDED_VERBENA.asItem());
-                        entries.add(ItemInit.POUNDED_SORREL.asItem());
-                        entries.add(ItemInit.POUNDED_MARJORAM.asItem());
-                        entries.add(ItemInit.POUNDED_CHERVIL.asItem());
-                        entries.add(ItemInit.POUNDED_FENNSEL.asItem());
-                        entries.add(ItemInit.POUNDED_CEILLIS.asItem());
-                        entries.add(ItemInit.POUNDED_PUNUEL.asItem());
-                        entries.add(ItemInit.POUNDED_ESSITTE.asItem());
-                        entries.add(ItemInit.POUNDED_FENNKYSTRAL.asItem());
-                        entries.add(ItemInit.POUNDED_THYOCIELLE.asItem());
-                        entries.add(ItemInit.POUNDED_SAGE.asItem());
+                itemStacks.add(BlockInit.PRIDE_HERB.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.WRATH_HERB.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.GLUTTONY_HERB.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.SLOTH_HERB.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.LUST_HERB.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.ENVY_HERB.asItem().getDefaultStack());
+                itemStacks.add(BlockInit.GREED_HERB.asItem().getDefaultStack());
+            }).build();
+    public static ItemGroup AUTOMATION = FabricItemGroupBuilder.create(
+            new Identifier(MOD_ID, "reproduction"))
+            .icon(() -> new ItemStack(ItemInit.HERB_FERTILIZER))
+            .appendItems(itemStacks -> {
+                itemStacks.add(ItemInit.HERB_FERTILIZER_OAK.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_FERTILIZER_DARK_OAK.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_FERTILIZER_ACACIA.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_FERTILIZER_SPRUCE.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_FERTILIZER_BIRCH.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_FERTILIZER_JUNGLE.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_FERTILIZER_MANGROVE.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_FERTILIZER_MYQUESTE.asItem().getDefaultStack());
 
-                        entries.add(ItemInit.DRIED_CALENDULA.asItem());
-                        entries.add(ItemInit.DRIED_ROSEMARY.asItem());
-                        entries.add(ItemInit.DRIED_THYME.asItem());
-                        entries.add(ItemInit.DRIED_TARRAGON.asItem());
-                        entries.add(ItemInit.DRIED_CHAMOMILE.asItem());
-                        entries.add(ItemInit.DRIED_CHIVES.asItem());
-                        entries.add(ItemInit.DRIED_VERBENA.asItem());
-                        entries.add(ItemInit.DRIED_SORREL.asItem());
-                        entries.add(ItemInit.DRIED_MARJORAM.asItem());
-                        entries.add(ItemInit.DRIED_CHERVIL.asItem());
-                        entries.add(ItemInit.DRIED_FENNSEL.asItem());
-                        entries.add(ItemInit.DRIED_CEILLIS.asItem());
-                        entries.add(ItemInit.DRIED_PUNUEL.asItem());
-                        entries.add(ItemInit.DRIED_ESSITTE.asItem());
-                        entries.add(ItemInit.DRIED_FENNKYSTRAL.asItem());
-                        entries.add(ItemInit.DRIED_THYOCIELLE.asItem());
-                        entries.add(ItemInit.DRIED_SAGE.asItem());
-                    })).build());
-    public static final ItemGroup HERBS_TAB = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(MOD_ID, "herbs"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hibernalherbs.herbs"))
-                    .icon(() -> new ItemStack(BlockInit.TARRAGON.asItem())).entries(((displayContext, entries) -> {
-                        entries.add(BlockInit.CALENDULA.asItem());
-                        entries.add(BlockInit.ROSEMARY.asItem());
-                        entries.add(BlockInit.THYME.asItem());
-                        entries.add(BlockInit.TARRAGON.asItem());
-                        entries.add(BlockInit.CHAMOMILE.asItem());
-                        entries.add(BlockInit.CHIVES.asItem());
-                        entries.add(BlockInit.VERBENA.asItem());
-                        entries.add(BlockInit.SORREL.asItem());
-                        entries.add(BlockInit.MARJORAM.asItem());
-                        entries.add(BlockInit.CHERVIL.asItem());
-                        entries.add(BlockInit.FENNSEL.asItem());
-                        entries.add(BlockInit.CEILLIS.asItem());
-                        entries.add(BlockInit.PUNUEL.asItem());
-                        entries.add(BlockInit.ESSITTE.asItem());
-                        entries.add(BlockInit.FENNKYSTRAL.asItem());
-                        entries.add(BlockInit.THYOCIELLE.asItem());
-                        entries.add(BlockInit.SAGE.asItem());
+                itemStacks.add(ItemInit.HERB_HUMUS_OAK.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_HUMUS_DARK_OAK.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_HUMUS_ACACIA.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_HUMUS_SPRUCE.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_HUMUS_BIRCH.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_HUMUS_JUNGLE.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_HUMUS_MANGROVE.asItem().getDefaultStack());
+                itemStacks.add(ItemInit.HERB_HUMUS_MYQUESTE.asItem().getDefaultStack());
+            }).build();
 
-                        entries.add(BlockInit.PRIDE_HERB);
-                        entries.add(BlockInit.WRATH_HERB);
-                        entries.add(BlockInit.GLUTTONY_HERB);
-                        entries.add(BlockInit.SLOTH_HERB);
-                        entries.add(BlockInit.LUST_HERB);
-                        entries.add(BlockInit.ENVY_HERB);
-                        entries.add(BlockInit.GREED_HERB);
-                    })).build());
-    public static final ItemGroup AUTOMATION_TAB = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(MOD_ID, "reproduction"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hibernalherbs.reproduction"))
-                    .icon(() -> new ItemStack(ItemInit.HERB_FERTILIZER)).entries(((displayContext, entries) -> {
-                        entries.add(ItemInit.HERB_FERTILIZER_OAK.asItem());
-                        entries.add(ItemInit.HERB_FERTILIZER_DARK_OAK.asItem());
-                        entries.add(ItemInit.HERB_FERTILIZER_ACACIA.asItem());
-                        entries.add(ItemInit.HERB_FERTILIZER_SPRUCE.asItem());
-                        entries.add(ItemInit.HERB_FERTILIZER_BIRCH.asItem());
-                        entries.add(ItemInit.HERB_FERTILIZER_JUNGLE.asItem());
-                        entries.add(ItemInit.HERB_FERTILIZER_MANGROVE.asItem());
-                        entries.add(ItemInit.HERB_FERTILIZER_CHERRY.asItem());
-                        entries.add(ItemInit.HERB_FERTILIZER_MYQUESTE.asItem());
-
-                        entries.add(ItemInit.HERB_HUMUS_OAK.asItem());
-                        entries.add(ItemInit.HERB_HUMUS_DARK_OAK.asItem());
-                        entries.add(ItemInit.HERB_HUMUS_ACACIA.asItem());
-                        entries.add(ItemInit.HERB_HUMUS_SPRUCE.asItem());
-                        entries.add(ItemInit.HERB_HUMUS_BIRCH.asItem());
-                        entries.add(ItemInit.HERB_HUMUS_JUNGLE.asItem());
-                        entries.add(ItemInit.HERB_HUMUS_MANGROVE.asItem());
-                        entries.add(ItemInit.HERB_HUMUS_CHERRY.asItem());
-                        entries.add(ItemInit.HERB_HUMUS_MYQUESTE.asItem());
-                    })).build());
 
     public static void init() {}
 }

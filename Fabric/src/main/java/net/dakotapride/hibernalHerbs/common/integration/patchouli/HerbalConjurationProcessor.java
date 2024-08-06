@@ -2,19 +2,11 @@ package net.dakotapride.hibernalHerbs.common.integration.patchouli;
 
 import net.dakotapride.hibernalHerbs.common.init.RecipeInit;
 import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeManager;
-import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 import vazkii.patchouli.api.IComponentProcessor;
 import vazkii.patchouli.api.IVariable;
 import vazkii.patchouli.api.IVariableProvider;
-import vazkii.patchouli.api.PatchouliAPI;
-import vazkii.patchouli.common.base.PatchouliAPIImpl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -26,17 +18,17 @@ public class HerbalConjurationProcessor implements IComponentProcessor {
     private HerbalConjurationRecipe recipe;
 
     @Override
-    public void setup(World level, IVariableProvider vars) {
+    public void setup(IVariableProvider vars) {
         this.recipe = PatchouliUtils.getRecipe(HerbalConjurationRecipe.class, RecipeInit.HERBAL_CONJURATION_TYPE, vars.get("recipe").asString());
     }
 
     @Nonnull
     @Override
-    public IVariable process(World level, @Nonnull String key) {
+    public IVariable process(@Nonnull String key) {
         if (recipe == null) return IVariable.empty();
 
         if (key.equals("output")) {
-            return IVariable.from(this.recipe.getOutput(DynamicRegistryManager.EMPTY));
+            return IVariable.from(this.recipe.getOutput());
         } else if (key.equals("ingredient0")) {
             return IVariable.from(this.getInput(0).getMatchingStacks());
         } else if (key.equals("ingredient1")) {

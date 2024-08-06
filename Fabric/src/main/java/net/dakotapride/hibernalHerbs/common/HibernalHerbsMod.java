@@ -27,7 +27,7 @@ public class HibernalHerbsMod implements ModInitializer {
 	public void onInitialize() {
 		HibernalItemTabs.init();
 
-		TypeInit.SetType.init();
+		//TypeInit.SetType.init();
 
 		BlockInit.init();
 		ItemInit.init();

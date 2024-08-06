@@ -68,11 +68,6 @@ public class HerbHumusItem extends Item implements ITooltipProvider {
 
             player.giveItemStack(new ItemStack(ItemInit.HERB_HUMUS_MANGROVE));
 
-        } else if (world.getBlockState(blockPos).isOf(Blocks.STRIPPED_CHERRY_LOG)) {
-            itemStack.decrement(1);
-
-            player.giveItemStack(new ItemStack(ItemInit.HERB_HUMUS_CHERRY));
-
         } else if (world.getBlockState(blockPos).isOf(Blocks.STRIPPED_CRIMSON_STEM)) {
             itemStack.decrement(1);
 
@@ -119,9 +114,6 @@ public class HerbHumusItem extends Item implements ITooltipProvider {
             }
             if (stack.isOf(ItemInit.HERB_HUMUS_MANGROVE)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.mangrove").formatted(Formatting.GRAY));
-            }
-            if (stack.isOf(ItemInit.HERB_HUMUS_CHERRY)) {
-                tooltip.add(Text.translatable("text.hibernalherbs.association.cherry").formatted(Formatting.GRAY));
             }
             if (stack.isOf(ItemInit.HERB_HUMUS_CRIMSON)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.association.crimson").formatted(Formatting.GRAY));
@@ -180,9 +172,6 @@ public class HerbHumusItem extends Item implements ITooltipProvider {
         if (stack.isOf(ItemInit.HERB_HUMUS_MANGROVE)) {
             association = Associations.MANGROVE.getTranslatableAssociation();
         }
-        if (stack.isOf(ItemInit.HERB_HUMUS_CHERRY)) {
-            association = Associations.CHERRY.getTranslatableAssociation();
-        }
         if (stack.isOf(ItemInit.HERB_HUMUS_CRIMSON)) {
             association = Associations.CRIMSON.getTranslatableAssociation();
         }
@@ -221,9 +210,6 @@ public class HerbHumusItem extends Item implements ITooltipProvider {
         }
         if (stack.isOf(ItemInit.HERB_HUMUS_MANGROVE) || stack.isOf(ItemInit.HERB_FERTILIZER_MANGROVE)) {
             productionValue = Associations.MANGROVE.getProductionValue();
-        }
-        if (stack.isOf(ItemInit.HERB_HUMUS_CHERRY) || stack.isOf(ItemInit.HERB_FERTILIZER_CHERRY)) {
-            productionValue = Associations.CHERRY.getProductionValue();
         }
         if (stack.isOf(ItemInit.HERB_HUMUS_CRIMSON) || stack.isOf(ItemInit.HERB_FERTILIZER_CRIMSON)) {
             productionValue = Associations.CRIMSON.getProductionValue();

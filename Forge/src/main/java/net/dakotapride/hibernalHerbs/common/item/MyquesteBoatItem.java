@@ -31,12 +31,10 @@ import java.util.function.Predicate;
 @SuppressWarnings("NullableProblems")
 public class MyquesteBoatItem extends BoatItem {
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
-    private final String WOOD_TYPE;
     private final boolean HAS_CHEST;
 
-    public MyquesteBoatItem(boolean pHasChest, Properties pProperties, WoodType pType) {
+    public MyquesteBoatItem(boolean pHasChest, Properties pProperties) {
         super(pHasChest, Boat.Type.MANGROVE, pProperties);
-        this.WOOD_TYPE = pType.name();
         this.HAS_CHEST = pHasChest;
     }
 
@@ -84,6 +82,6 @@ public class MyquesteBoatItem extends BoatItem {
     }
 
     private Boat getBoat(Level level, HitResult hitResult) {
-        return HAS_CHEST ? new MyquesteChestBoatEntity(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z, WOOD_TYPE) : new MyquesteBoatEntity(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z, WOOD_TYPE);
+        return HAS_CHEST ? new MyquesteChestBoatEntity(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z) : new MyquesteBoatEntity(level, hitResult.getLocation().x, hitResult.getLocation().y, hitResult.getLocation().z);
     }
 }

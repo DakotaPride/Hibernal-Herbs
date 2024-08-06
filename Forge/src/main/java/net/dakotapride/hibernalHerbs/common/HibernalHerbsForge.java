@@ -66,7 +66,7 @@ public class HibernalHerbsForge {
         BlockRegistry.register(eventBus);
 
         // Entities
-        HibernalEntityTypes.ENTITIES.register(eventBus);
+        HibernalEntityTypes.ENTITY_TYPES.register(eventBus);
 
         HibernalBlockEntities.BLOCK_ENTITIES.register(eventBus);
         HibernalHerbsMenues.register(eventBus);

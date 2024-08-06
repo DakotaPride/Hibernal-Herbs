@@ -39,7 +39,7 @@ public abstract class ItemStackMixin implements FoodComponentList {
         if (user instanceof Player player) {
             ItemStack edibleStack = player.getUseItem();
             if (!player.getInventory().contains(gluttonousRingStack) && player.getInventory().contains(advancedGluttonousRingStack) && !player.getCooldowns().isOnCooldown(edibleStack.getItem())) {
-                cir.setReturnValue(this.consume(edibleStack.copy(), player.level(), player));
+                cir.setReturnValue(this.consume(edibleStack.copy(), player.level, player));
                 // player.getCooldowns().addCooldown(edibleStack.getItem(), 40);
                 // cir.cancel();
             }
@@ -51,7 +51,7 @@ public abstract class ItemStackMixin implements FoodComponentList {
         if (stack.isEdible()) {
             entity.eat(world, stack.copy());
 
-            if (!entity.level().isClientSide() && entity instanceof Player player) {
+            if (!entity.level.isClientSide() && entity instanceof Player player) {
                 player.getCooldowns().addCooldown(stack.getItem(), 40);
             }
         }

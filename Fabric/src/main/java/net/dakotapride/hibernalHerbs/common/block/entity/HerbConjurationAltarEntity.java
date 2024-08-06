@@ -1,10 +1,10 @@
 package net.dakotapride.hibernalHerbs.common.block.entity;
 
+import net.dakotapride.hibernalHerbs.common.Utilities;
 import net.dakotapride.hibernalHerbs.common.init.BlockEntityInit;
 import net.dakotapride.hibernalHerbs.common.init.ItemInit;
 import net.dakotapride.hibernalHerbs.common.recipe.HerbalConjurationRecipe;
 import net.dakotapride.hibernalHerbs.common.screen.HerbConjurationAltarScreenHandler;
-import net.dakotapride.hibernalHerbs.common.Utilities;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -16,7 +16,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -168,8 +167,8 @@ public class HerbConjurationAltarEntity extends BlockEntity implements ExtendedS
                 entity.setStack(5, new ItemStack(ItemInit.CRACKED_SIGIL, 1));
             }
 
-            entity.setStack(6, new ItemStack(recipe.get().getOutput(DynamicRegistryManager.EMPTY).getItem(),
-                    entity.getStack(6).getCount() + recipe.get().getOutput(DynamicRegistryManager.EMPTY).getCount()));
+            entity.setStack(6, new ItemStack(recipe.get().getOutput().getItem(),
+                    entity.getStack(6).getCount() + recipe.get().getOutput().getCount()));
 
             entity.resetProgress();
         }
@@ -185,7 +184,7 @@ public class HerbConjurationAltarEntity extends BlockEntity implements ExtendedS
                 .getFirstMatch(HerbalConjurationRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput(DynamicRegistryManager.EMPTY).getItem());
+                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput().getItem());
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {

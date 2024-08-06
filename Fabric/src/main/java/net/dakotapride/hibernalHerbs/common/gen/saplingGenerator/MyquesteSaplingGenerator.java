@@ -1,9 +1,10 @@
 package net.dakotapride.hibernalHerbs.common.gen.saplingGenerator;
 
+import net.dakotapride.hibernalHerbs.common.init.FeaturesInit;
 import net.dakotapride.hibernalHerbs.common.init.gen.ConfiguredFeatureInit;
 import net.minecraft.block.sapling.LargeTreeSaplingGenerator;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
 
@@ -13,14 +14,13 @@ public class MyquesteSaplingGenerator extends LargeTreeSaplingGenerator {
 
     @Nullable
     @Override
-    protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
+    protected RegistryEntry<? extends ConfiguredFeature<?, ?>> getLargeTreeFeature(Random random) {
         return ConfiguredFeatureInit.MYQUESTE_CONFIGURED;
     }
 
     @Nullable
     @Override
-    protected RegistryKey<ConfiguredFeature<?, ?>> getLargeTreeFeature(Random random) {
-        return null;
+    protected RegistryEntry<? extends ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
+        return getLargeTreeFeature(random);
     }
-
 }

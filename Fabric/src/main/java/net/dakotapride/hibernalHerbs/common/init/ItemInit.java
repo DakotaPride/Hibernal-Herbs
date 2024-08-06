@@ -9,9 +9,8 @@ import net.dakotapride.hibernalHerbs.common.item.ring.GluttonousRingItem;
 import net.dakotapride.hibernalHerbs.common.item.ring.adv.AdvancedGluttonousRingItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
@@ -164,7 +163,6 @@ public class ItemInit {
     public static HerbFertilizerItem HERB_FERTILIZER_ACACIA = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_SPRUCE = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_MANGROVE = new HerbFertilizerItem(new FabricItemSettings());
-    public static HerbFertilizerItem HERB_FERTILIZER_CHERRY = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_CRIMSON = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_WARPED = new HerbFertilizerItem(new FabricItemSettings());
 
@@ -179,7 +177,6 @@ public class ItemInit {
     public static HerbHumusItem HERB_HUMUS_ACACIA = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_SPRUCE = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_MANGROVE = new HerbHumusItem(new FabricItemSettings());
-    public static HerbHumusItem HERB_HUMUS_CHERRY = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_CRIMSON = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_WARPED = new HerbHumusItem(new FabricItemSettings());
 
@@ -233,161 +230,161 @@ public class ItemInit {
     public static AbstractCanisterItem CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1), 384);
 
     public static void init () {
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ground_herbs"), GROUND_HERBS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ground_herbs"), GROUND_HERBS);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sin_petals"), SILIPTIUM_PETAL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "lumbinetrik_petals"), LUMBINETRIK_PETAL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sin_petals"), SILIPTIUM_PETAL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lumbinetrik_petals"), LUMBINETRIK_PETAL);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "singed_grimoire"), SINGED_GRIMOIRE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "grimoire"), HERBAL_GRIMOIRE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "singed_grimoire"), SINGED_GRIMOIRE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "grimoire"), HERBAL_GRIMOIRE);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ring"), RING);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "gluttonous_ring"), GLUTTONOUS_RING);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "gluttonous_ring_adv"), ADV_GLUTTONOUS_RING);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ring"), RING);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gluttonous_ring"), GLUTTONOUS_RING);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "gluttonous_ring_adv"), ADV_GLUTTONOUS_RING);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_wrath"), VEXATION_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_wrath"), VEXATION_PADLOCK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_wrath"), VEXATION_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_wrath"), VEXATION_PADLOCK);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_pride"), PIQUE_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_pride"), PIQUE_PADLOCK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_pride"), PIQUE_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_pride"), PIQUE_PADLOCK);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_gluttony"), GOURMANDIZING_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_gluttony"), GOURMANDIZING_PADLOCK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_gluttony"), GOURMANDIZING_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_gluttony"), GOURMANDIZING_PADLOCK);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_greed"), AVARICE_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_greed"), AVARICE_PADLOCK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_greed"), AVARICE_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_greed"), AVARICE_PADLOCK);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_envy"), SPITEFUL_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_envy"), SPITEFUL_PADLOCK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_envy"), SPITEFUL_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_envy"), SPITEFUL_PADLOCK);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_sloth"), APATHY_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_sloth"), APATHY_PADLOCK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_sloth"), APATHY_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_sloth"), APATHY_PADLOCK);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_lust"), SALACIOUS_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_lust"), SALACIOUS_PADLOCK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bound_padlock_lust"), SALACIOUS_PADLOCK_BOUND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "padlock_lust"), SALACIOUS_PADLOCK);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_thyme"), POUNDED_THYME);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_tarragon"), POUNDED_TARRAGON);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_chamomile"), POUNDED_CHAMOMILE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_chives"), POUNDED_CHIVES);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_verbena"), POUNDED_VERBENA);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_sorrel"), POUNDED_SORREL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_marjoram"), POUNDED_MARJORAM);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_chervil"), POUNDED_CHERVIL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_fennsel"), POUNDED_FENNSEL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_ceillis"), POUNDED_CEILLIS);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_punuel"), POUNDED_PUNUEL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_essitte"), POUNDED_ESSITTE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_thyocielle"), POUNDED_THYOCIELLE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_fennkystral"), POUNDED_FENNKYSTRAL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_calendula"), POUNDED_CALENDULA);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_sage"), POUNDED_SAGE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyme"), POUNDED_THYME);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_tarragon"), POUNDED_TARRAGON);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_chamomile"), POUNDED_CHAMOMILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_chives"), POUNDED_CHIVES);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_verbena"), POUNDED_VERBENA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_sorrel"), POUNDED_SORREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_marjoram"), POUNDED_MARJORAM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_chervil"), POUNDED_CHERVIL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_fennsel"), POUNDED_FENNSEL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_ceillis"), POUNDED_CEILLIS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_punuel"), POUNDED_PUNUEL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_essitte"), POUNDED_ESSITTE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_thyocielle"), POUNDED_THYOCIELLE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_fennkystral"), POUNDED_FENNKYSTRAL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_calendula"), POUNDED_CALENDULA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pounded_sage"), POUNDED_SAGE);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_calendula"), DRIED_CALENDULA);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_rosemary"), DRIED_ROSEMARY);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_thyme"), DRIED_THYME);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_tarragon"), DRIED_TARRAGON);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_chamomile"), DRIED_CHAMOMILE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_chives"), DRIED_CHIVES);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_verbena"), DRIED_VERBENA);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_sorrel"), DRIED_SORREL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_marjoram"), DRIED_MARJORAM);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_chervil"), DRIED_CHERVIL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_fennsel"), DRIED_FENNSEL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_ceillis"), DRIED_CEILLIS);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_punuel"), DRIED_PUNUEL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_essitte"), DRIED_ESSITTE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_thyocielle"), DRIED_THYOCIELLE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_fennkystral"), DRIED_FENNKYSTRAL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "dried_sage"), DRIED_SAGE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_calendula"), DRIED_CALENDULA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_rosemary"), DRIED_ROSEMARY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_thyme"), DRIED_THYME);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_tarragon"), DRIED_TARRAGON);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_chamomile"), DRIED_CHAMOMILE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_chives"), DRIED_CHIVES);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_verbena"), DRIED_VERBENA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_sorrel"), DRIED_SORREL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_marjoram"), DRIED_MARJORAM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_chervil"), DRIED_CHERVIL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_fennsel"), DRIED_FENNSEL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_ceillis"), DRIED_CEILLIS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_punuel"), DRIED_PUNUEL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_essitte"), DRIED_ESSITTE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_thyocielle"), DRIED_THYOCIELLE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_fennkystral"), DRIED_FENNKYSTRAL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "dried_sage"), DRIED_SAGE);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regeneration"), REGENERATION_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_poison"), POISON_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_slowness"), SLOWNESS_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue"), MINING_FATIGUE_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_haste"), HASTE_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_speed"), SPEED_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_fire"), FIRE_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_wither"), WITHER_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_night_vision"), NIGHT_VISION_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_weakness"), WEAKNESS_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_blindness"), BLINDNESS_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_slow"), REGENERATION_SLOWNESS_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak"), REGENERATION_SPEED_WEAKNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regeneration"), REGENERATION_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_poison"), POISON_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_slowness"), SLOWNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue"), MINING_FATIGUE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_haste"), HASTE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_speed"), SPEED_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_fire"), FIRE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_wither"), WITHER_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_night_vision"), NIGHT_VISION_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_weakness"), WEAKNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_blindness"), BLINDNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_slow"), REGENERATION_SLOWNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak"), REGENERATION_SPEED_WEAKNESS_BLEND);
 
         // Smoked
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regeneration_smoked"), SMOKED_REGENERATION_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_poison_smoked"), SMOKED_POISON_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_slowness_smoked"), SMOKED_SLOWNESS_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue_smoked"), SMOKED_MINING_FATIGUE_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_haste_smoked"), SMOKED_HASTE_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_speed_smoked"), SMOKED_SPEED_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_fire_smoked"), SMOKED_FIRE_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_wither_smoked"), SMOKED_WITHER_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_night_vision_smoked"), SMOKED_NIGHT_VISION_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_weakness_smoked"), SMOKED_WEAKNESS_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_blindness_smoked"), SMOKED_BLINDNESS_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_slow_smoked"), SMOKED_REGENERATION_SLOWNESS_BLEND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak_smoked"), SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regeneration_smoked"), SMOKED_REGENERATION_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_poison_smoked"), SMOKED_POISON_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_slowness_smoked"), SMOKED_SLOWNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_mining_fatigue_smoked"), SMOKED_MINING_FATIGUE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_haste_smoked"), SMOKED_HASTE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_speed_smoked"), SMOKED_SPEED_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_fire_smoked"), SMOKED_FIRE_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_wither_smoked"), SMOKED_WITHER_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_night_vision_smoked"), SMOKED_NIGHT_VISION_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_weakness_smoked"), SMOKED_WEAKNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_blindness_smoked"), SMOKED_BLINDNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_slow_smoked"), SMOKED_REGENERATION_SLOWNESS_BLEND);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak_smoked"), SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND);
 
         // Refined Pouches/Canisters
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_scratched"), SCRATCHED_POUCH);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_stitched"), STITCHED_POUCH);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_proper"), PROPER_POUCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch_scratched"), SCRATCHED_POUCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch_stitched"), STITCHED_POUCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch_proper"), PROPER_POUCH);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "canister_iron"), IRON_CANISTER);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "canister_amethyst"), AMETHYST_CANISTER);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "canister_diamond"), DIAMOND_CANISTER);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "canister_iron"), IRON_CANISTER);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "canister_amethyst"), AMETHYST_CANISTER);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "canister_diamond"), DIAMOND_CANISTER);
 
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer"), HERB_FERTILIZER);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer"), HERB_FERTILIZER);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_oak"), HERB_FERTILIZER_OAK);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_dark_oak"), HERB_FERTILIZER_DARK_OAK);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_jungle"), HERB_FERTILIZER_JUNGLE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_acacia"), HERB_FERTILIZER_ACACIA);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_birch"), HERB_FERTILIZER_BIRCH);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_spruce"), HERB_FERTILIZER_SPRUCE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_mangrove"), HERB_FERTILIZER_MANGROVE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_cherry"), HERB_FERTILIZER_CHERRY);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_crimson"), HERB_FERTILIZER_CRIMSON);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_warped"), HERB_FERTILIZER_WARPED);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_oak"), HERB_FERTILIZER_OAK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_dark_oak"), HERB_FERTILIZER_DARK_OAK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_jungle"), HERB_FERTILIZER_JUNGLE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_acacia"), HERB_FERTILIZER_ACACIA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_birch"), HERB_FERTILIZER_BIRCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_spruce"), HERB_FERTILIZER_SPRUCE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_mangrove"), HERB_FERTILIZER_MANGROVE);
+        //Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_cherry"), HERB_FERTILIZER_CHERRY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_crimson"), HERB_FERTILIZER_CRIMSON);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_warped"), HERB_FERTILIZER_WARPED);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_fertilizer_myqueste"), HERB_FERTILIZER_MYQUESTE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_fertilizer_myqueste"), HERB_FERTILIZER_MYQUESTE);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus"), HERB_HUMUS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus"), HERB_HUMUS);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_oak"), HERB_HUMUS_OAK);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_dark_oak"), HERB_HUMUS_DARK_OAK);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_jungle"), HERB_HUMUS_JUNGLE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_acacia"), HERB_HUMUS_ACACIA);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_birch"), HERB_HUMUS_BIRCH);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_spruce"), HERB_HUMUS_SPRUCE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_mangrove"), HERB_HUMUS_MANGROVE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_cherry"), HERB_HUMUS_CHERRY);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_crimson"), HERB_HUMUS_CRIMSON);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_warped"), HERB_HUMUS_WARPED);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_oak"), HERB_HUMUS_OAK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_dark_oak"), HERB_HUMUS_DARK_OAK);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_jungle"), HERB_HUMUS_JUNGLE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_acacia"), HERB_HUMUS_ACACIA);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_birch"), HERB_HUMUS_BIRCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_spruce"), HERB_HUMUS_SPRUCE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_mangrove"), HERB_HUMUS_MANGROVE);
+        //Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_cherry"), HERB_HUMUS_CHERRY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_crimson"), HERB_HUMUS_CRIMSON);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_warped"), HERB_HUMUS_WARPED);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "herb_humus_myqueste"), HERB_HUMUS_MYQUESTE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "herb_humus_myqueste"), HERB_HUMUS_MYQUESTE);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil"), SIGIL);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_pride"), SIGIL_PRIDE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_sloth"), SIGIL_SLOTH);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_lust"), SIGIL_LUST);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_gluttony"), SIGIL_GLUTTONY);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_wrath"), SIGIL_WRATH);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_greed"), SIGIL_GREED);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_envy"), SIGIL_ENVY);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_configuration"), SIGIL_CONFIGURATION);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_mastery"), SIGIL_MASTERY);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_configuration_adv"), SIGIL_CONFIGURATION_ADVANCED);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sigil_mastery_adv"), SIGIL_MASTERY_ADVANCED);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "cracked_sigil"), CRACKED_SIGIL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil"), SIGIL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_pride"), SIGIL_PRIDE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_sloth"), SIGIL_SLOTH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_lust"), SIGIL_LUST);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_gluttony"), SIGIL_GLUTTONY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_wrath"), SIGIL_WRATH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_greed"), SIGIL_GREED);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_envy"), SIGIL_ENVY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_configuration"), SIGIL_CONFIGURATION);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_mastery"), SIGIL_MASTERY);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_configuration_adv"), SIGIL_CONFIGURATION_ADVANCED);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "sigil_mastery_adv"), SIGIL_MASTERY_ADVANCED);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "cracked_sigil"), CRACKED_SIGIL);
 
         // Legacy
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "canister"), CANISTER);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "pouch"), POUCH);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "canister"), CANISTER);
     }
 
 }

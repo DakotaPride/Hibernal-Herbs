@@ -68,11 +68,6 @@ public class HerbHumusItem extends Item implements ITooltipProvider {
 
             player.addItem(new ItemStack(ItemRegistry.HERB_HUMUS_MANGROVE.get()));
 
-        } else if (level.getBlockState(blockPos).is(Blocks.STRIPPED_CHERRY_LOG)) {
-            itemStack.shrink(1);
-
-            player.addItem(new ItemStack(ItemRegistry.HERB_HUMUS_CHERRY.get()));
-
         } else if (level.getBlockState(blockPos).is(Blocks.STRIPPED_CRIMSON_STEM)) {
             itemStack.shrink(1);
 

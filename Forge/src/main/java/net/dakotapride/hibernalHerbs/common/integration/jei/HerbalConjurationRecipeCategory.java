@@ -60,6 +60,6 @@ public class HerbalConjurationRecipeCategory implements IRecipeCategory<HerbalCo
         builder.addSlot(RecipeIngredientRole.INPUT, 68, 43).addIngredients(recipe.getIngredients().get(3));
         builder.addSlot(RecipeIngredientRole.INPUT, 90, 39).addIngredients(recipe.getIngredients().get(4));
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 57).addItemStack(recipe.getResultItem(RegistryAccess.EMPTY));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 63).addItemStack(recipe.getResultItem());
     }
 }
