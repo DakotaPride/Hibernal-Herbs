@@ -56,6 +56,12 @@ repositories {
     mavenCentral()
 }
 
+configurations.configureEach {
+    resolutionStrategy {
+        force("net.fabricmc:fabric-loader:${fabric_loader_version}")
+    }
+}
+
 loom {
     runs {
         client {
