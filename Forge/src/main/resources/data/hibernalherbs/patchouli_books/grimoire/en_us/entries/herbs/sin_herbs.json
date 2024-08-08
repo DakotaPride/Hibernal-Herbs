@@ -1,0 +1,22 @@
+{
+  "name": "Herbs Of Sin",
+  "icon": "hibernalherbs:lust_herb",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "hibernalherbs:lust_herb",
+      "text": "Herbs of Sin allow the player to create a padlock that is in the process of being bound to the the respective prince. You will need to complete the bounding process in order to achieve mystical capabilities."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbal_conjuration/siliptium_petals",
+        "hibernalherbs:herbal_conjuration/lumbinetrik_petals",
+        "hibernalherbs:herbal_conjuration/petals",
+        "hibernalherbs:herbal_conjuration/sigil/sigil"
+      ],
+      "text": "These entries may also be useful in your studies."
+    }
+  ]
+}

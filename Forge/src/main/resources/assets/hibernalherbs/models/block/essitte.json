@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "hibernalherbs:block/herb/essitte"
-  },
-  "render_type": "cutout"
-}

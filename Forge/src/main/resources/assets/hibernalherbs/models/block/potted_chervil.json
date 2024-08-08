@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/flower_pot_cross",
-  "textures": {
-    "plant": "hibernalherbs:block/herb/chervil"
-  },
-  "render_type": "cutout"
-}

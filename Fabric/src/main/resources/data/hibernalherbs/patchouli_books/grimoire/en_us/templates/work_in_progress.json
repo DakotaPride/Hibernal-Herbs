@@ -1,0 +1,22 @@
+{
+  "components": [
+    {
+      "type": "patchouli:header",
+      "text": "WORK IN PROGRESS",
+      "x": -1,
+      "y": 0
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This entry is still a work in progress, and may not be completed just yet.$(br2)Apologies for the inconvenience!",
+      "x": 0,
+      "y": 24
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#item",
+      "x": 50,
+      "y": 9
+    }
+  ]
+}

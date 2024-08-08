@@ -1,0 +1,454 @@
+package net.dakotapride.hibernalherbs.item.pouch;
+
+import net.dakotapride.hibernalherbs.client.ITooltipProvider;
+import net.dakotapride.hibernalherbs.registry.ItemRegistry;
+import net.dakotapride.hibernalherbs.registry.Utilities;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.item.BundleTooltipData;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.item.TooltipData;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.StackReference;
+import net.minecraft.item.BundleItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsage;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
+import net.minecraft.screen.slot.Slot;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
+import net.minecraft.util.ClickType;
+import net.minecraft.util.Formatting;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.world.World;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Stream;
+
+public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
+
+    //
+    // Credit To Cheaterpaul (Owner Of Better Bundles Mod For Forge)
+    // Ported Cheaterpaul's BundleItem Code To Fabric + 1.19+
+    //
+
+    public final int size;
+
+    public AbstractPouchItem(Settings settings, int size) {
+        super(settings);
+        this.size = size;
+    }
+
+    @Override
+    public boolean onStackClicked(ItemStack stack, Slot slot, ClickType clickType, PlayerEntity player) {
+        if (clickType != ClickType.RIGHT) {
+            return false;
+        } else {
+            ItemStack itemStack = slot.getStack();
+            ItemStack pouchStack = this.asItem().getDefaultStack();
+            if (itemStack.isEmpty()) {
+                removeOne(stack).ifPresent((stack1) -> {
+                    add(stack, slot.insertStack(stack1), size);
+                });
+
+                if (stack.hasNbt()) {
+                    playRemoveOneSound(player);
+                }
+
+            } else if (pouchStack.isOf(ItemRegistry.SCRATCHED_POUCH)) {
+                if (itemStack.isIn(Utilities.HERBS_ITEM_TAG) || itemStack.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                    int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
+
+                    playInsertSound(player);
+                    add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size);
+                }
+            } else if (pouchStack.isOf(ItemRegistry.STITCHED_POUCH)) {
+                if (itemStack.isIn(Utilities.HERBS_ITEM_TAG) || itemStack.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                    int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
+
+                    playInsertSound(player);
+                    add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size);
+                }
+            } else if (pouchStack.isOf(ItemRegistry.PROPER_POUCH)) {
+                if (itemStack.isIn(Utilities.HERBS_ITEM_TAG) || itemStack.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                    int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
+
+                    playInsertSound(player);
+                    add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size);
+                }
+            }
+
+            return true;
+        }
+    }
+
+    @Override
+    public boolean onClicked(ItemStack stack1, ItemStack stack2, Slot slot, ClickType action, PlayerEntity player, StackReference stackReference) {
+        if (action == ClickType.RIGHT && slot.canTakePartial(player)) {
+            if (stack2.isEmpty()) {
+                Optional<ItemStack> var10000 = removeOne(stack1);
+                Objects.requireNonNull(stackReference);
+                var10000.ifPresent(stackReference::set);
+
+                if (this.getDefaultStack().isIn(Utilities.POUCHES_ITEM_TAG)) {
+                    if (this.getDefaultStack().isOf(ItemRegistry.SCRATCHED_POUCH)) {
+                        if (stack2.isIn(Utilities.HERBS_ITEM_TAG) || stack2.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                            if (this.getDefaultStack().hasNbt()) {
+                                playRemoveOneSound(player);
+                            }
+                        }
+                    } else if (this.getDefaultStack().isOf(ItemRegistry.STITCHED_POUCH)) {
+                        if (stack2.isIn(Utilities.HERBS_ITEM_TAG) || stack2.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                            if (this.getDefaultStack().hasNbt()) {
+                                playRemoveOneSound(player);
+                            }
+                        }
+                    } else if (this.getDefaultStack().isOf(ItemRegistry.PROPER_POUCH)) {
+                        if (stack2.isIn(Utilities.HERBS_ITEM_TAG) || stack2.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                            if (this.getDefaultStack().hasNbt()) {
+                                playRemoveOneSound(player);
+                            }
+                        }
+                    }
+                }
+            } else if (this.getDefaultStack().isIn(Utilities.POUCHES_ITEM_TAG)) {
+                if (this.getDefaultStack().isOf(ItemRegistry.SCRATCHED_POUCH)) {
+                    if (stack2.isIn(Utilities.HERBS_ITEM_TAG) || stack2.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                        playInsertSound(player);
+                        stack2.decrement(add(stack1, stack2, size));
+                    }
+                } else if (this.getDefaultStack().isOf(ItemRegistry.STITCHED_POUCH)) {
+                    if (stack2.isIn(Utilities.HERBS_ITEM_TAG) || stack2.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                        playInsertSound(player);
+                        stack2.decrement(add(stack1, stack2, size));
+                    }
+                } else if (this.getDefaultStack().isOf(ItemRegistry.PROPER_POUCH)) {
+                    if (stack2.isIn(Utilities.HERBS_ITEM_TAG) || stack2.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                        playInsertSound(player);
+                        stack2.decrement(add(stack1, stack2, size));
+                    }
+                }
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+        ItemStack var4 = player.getStackInHand(hand);
+        if (dropAllBundledItems(var4, player)) {
+            playDropContentsSound(player);
+            player.incrementStat(Stats.USED.getOrCreateStat(ItemRegistry.POUCH));
+            return TypedActionResult.success(var4, world.isClient);
+        } else {
+            return TypedActionResult.fail(var4);
+        }
+    }
+
+    @Override
+    public boolean isItemBarVisible(ItemStack stack) {
+        return getContentWeight(stack, 64) > 0;
+    }
+
+    @Override
+    public int getItemBarStep(ItemStack stack) {
+        return Math.min(1 + 12 * getContentWeight(stack, 64) / size, 13);
+    }
+
+    @Override
+    public int getItemBarColor(ItemStack stack) {
+        return super.getItemBarColor(stack);
+    }
+
+    @Override
+    public Optional<TooltipData> getTooltipData(ItemStack stack) {
+        DefaultedList<ItemStack> var2 = DefaultedList.of();
+        Stream<ItemStack> var10000 = getContents(stack);
+        Objects.requireNonNull(var2);
+        var10000.forEach(var2::add);
+        return Optional.of(new BundleTooltipData(var2, getContentWeight(stack, 64)));
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, World level, List<Text> tooltip, TooltipContext flag) {
+        if (!Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
+        } else if (Screen.hasShiftDown()) {
+            if (stack.isOf(ItemRegistry.SCRATCHED_POUCH)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.scratched").formatted(Formatting.GRAY));
+            } else if (stack.isOf(ItemRegistry.STITCHED_POUCH)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.stitched").formatted(Formatting.GRAY));
+            } else if (stack.isOf(ItemRegistry.PROPER_POUCH)) {
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.proper").formatted(Formatting.GRAY));
+            }
+
+            tooltip.add((Text.translatable("text.hibernalherbs.pouch.container", getContentWeight(stack, 64), size)).formatted(Formatting.GRAY));
+
+            if (!Screen.hasAltDown()) {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable(leftAltControlsText).formatted(Formatting.DARK_GRAY));
+            } else {
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.help.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.container.variant.help.three").formatted(Formatting.DARK_PURPLE));
+
+                tooltip.add(Text.literal(""));
+                tooltip.add(Text.translatable(rightClickInventoryControlsText).formatted(Formatting.DARK_GRAY));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.one").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.two").formatted(Formatting.DARK_PURPLE));
+                tooltip.add(Text.translatable("text.hibernalherbs.pouch.inventory_controls.help.three").formatted(Formatting.DARK_PURPLE));
+            }
+
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.help").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.nonpounded_herbs").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.pounded_herbs").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("text.hibernalherbs.container.can_contain.dried_herbs").formatted(Formatting.DARK_GRAY));
+
+        }
+    }
+
+    @Override
+    public void onItemEntityDestroyed(ItemEntity entity) {
+        ItemUsage.spawnItemContents(entity, getContents(entity.getStack()));
+    }
+
+
+
+    public int add(ItemStack bundleStack, ItemStack addStack, int size) {
+        ItemStack pouchStack = this.asItem().getDefaultStack();
+
+        if (pouchStack.isOf(ItemRegistry.SCRATCHED_POUCH)) {
+            if (!addStack.isEmpty() && addStack.isIn(Utilities.HERBS_ITEM_TAG)
+                    || !addStack.isEmpty() && addStack.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                NbtCompound tag = bundleStack.getOrCreateNbt();
+                if (!tag.contains("Items")) {
+                    tag.put("Items", new NbtList());
+                }
+
+                int contentWeight = getContentWeight(bundleStack, 64);
+                int addStackWeight = getWeight(addStack, 64);
+                int remainingSlots = Math.min(addStack.getCount(), (size - contentWeight) / addStackWeight);
+                if (remainingSlots == 0) {
+                    return 0;
+                } else {
+                    int putSize = remainingSlots;
+                    NbtList list = tag.getList("Items", 10);
+                    List<NbtCompound> var7 = getMatchingItem(addStack, list);
+                    for (NbtCompound itemTag : var7) {
+                        if (remainingSlots <= 0) break;
+                        ItemStack var9 = ItemStack.fromNbt(itemTag);
+                        int freeSlots = Math.min(var9.getMaxCount() - var9.getCount(), remainingSlots);
+                        var9.increment(freeSlots);
+                        var9.writeNbt(itemTag);
+                        list.remove(itemTag);
+                        list.add(0, itemTag);
+                        remainingSlots -= freeSlots;
+                    }
+                    if (remainingSlots > 0) {
+                        ItemStack var10 = addStack.copy();
+                        var10.setCount(remainingSlots);
+                        NbtCompound var11 = new NbtCompound();
+                        var10.writeNbt(var11);
+                        list.add(0, var11);
+                    }
+
+                    return putSize;
+                }
+            } else {
+                return 0;
+            }
+        } else if (pouchStack.isOf(ItemRegistry.STITCHED_POUCH)) {
+            if (!addStack.isEmpty() && addStack.isIn(Utilities.HERBS_ITEM_TAG)
+                    || !addStack.isEmpty() && addStack.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                NbtCompound tag = bundleStack.getOrCreateNbt();
+                if (!tag.contains("Items")) {
+                    tag.put("Items", new NbtList());
+                }
+
+                int contentWeight = getContentWeight(bundleStack, 64);
+                int addStackWeight = getWeight(addStack, 64);
+                int remainingSlots = Math.min(addStack.getCount(), (size - contentWeight) / addStackWeight);
+                if (remainingSlots == 0) {
+                    return 0;
+                } else {
+                    int putSize = remainingSlots;
+                    NbtList list = tag.getList("Items", 10);
+                    List<NbtCompound> var7 = getMatchingItem(addStack, list);
+                    for (NbtCompound itemTag : var7) {
+                        if (remainingSlots <= 0) break;
+                        ItemStack var9 = ItemStack.fromNbt(itemTag);
+                        int freeSlots = Math.min(var9.getMaxCount() - var9.getCount(), remainingSlots);
+                        var9.increment(freeSlots);
+                        var9.writeNbt(itemTag);
+                        list.remove(itemTag);
+                        list.add(0, itemTag);
+                        remainingSlots -= freeSlots;
+                    }
+                    if (remainingSlots > 0) {
+                        ItemStack var10 = addStack.copy();
+                        var10.setCount(remainingSlots);
+                        NbtCompound var11 = new NbtCompound();
+                        var10.writeNbt(var11);
+                        list.add(0, var11);
+                    }
+
+                    return putSize;
+                }
+            } else {
+                return 0;
+            }
+        } else if (pouchStack.isOf(ItemRegistry.PROPER_POUCH)) {
+            if (!addStack.isEmpty() && addStack.isIn(Utilities.HERBS_ITEM_TAG)
+                    || !addStack.isEmpty() && addStack.isIn(Utilities.POUNDED_HERBS_ITEM_TAG)) {
+                NbtCompound tag = bundleStack.getOrCreateNbt();
+                if (!tag.contains("Items")) {
+                    tag.put("Items", new NbtList());
+                }
+
+                int contentWeight = getContentWeight(bundleStack, 64);
+                int addStackWeight = getWeight(addStack, 64);
+                int remainingSlots = Math.min(addStack.getCount(), (size - contentWeight) / addStackWeight);
+                if (remainingSlots == 0) {
+                    return 0;
+                } else {
+                    int putSize = remainingSlots;
+                    NbtList list = tag.getList("Items", 10);
+                    List<NbtCompound> var7 = getMatchingItem(addStack, list);
+                    for (NbtCompound itemTag : var7) {
+                        if (remainingSlots <= 0) break;
+                        ItemStack var9 = ItemStack.fromNbt(itemTag);
+                        int freeSlots = Math.min(var9.getMaxCount() - var9.getCount(), remainingSlots);
+                        var9.increment(freeSlots);
+                        var9.writeNbt(itemTag);
+                        list.remove(itemTag);
+                        list.add(0, itemTag);
+                        remainingSlots -= freeSlots;
+                    }
+                    if (remainingSlots > 0) {
+                        ItemStack var10 = addStack.copy();
+                        var10.setCount(remainingSlots);
+                        NbtCompound var11 = new NbtCompound();
+                        var10.writeNbt(var11);
+                        list.add(0, var11);
+                    }
+
+                    return putSize;
+                }
+            } else {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    }
+
+    public static List<NbtCompound> getMatchingItem(ItemStack itemStack, NbtList listTag) {
+        if (itemStack.isIn(Utilities.POUCHES_ITEM_TAG)) {
+            return Collections.emptyList();
+        } else {
+            Stream<?> var10000 = listTag.stream();
+            var10000 = var10000.filter(NbtCompound.class::isInstance);
+            return var10000.map(NbtCompound.class::cast).filter((p_150755_) -> {
+                return ItemStack.canCombine(ItemStack.fromNbt(p_150755_), itemStack);
+            }).filter(tag -> {
+                ItemStack stack = ItemStack.fromNbt(tag);
+                return stack.getCount() < stack.getMaxCount();
+            }).toList();
+        }
+    }
+
+    public static int getWeight(ItemStack stack, int size) {
+        if (stack.isIn(Utilities.POUCHES_ITEM_TAG)) {
+            return 4 + getContentWeight(stack, size);
+        } else {
+            return size / stack.getMaxCount();
+        }
+    }
+
+    public static int getContentWeight(ItemStack bundleStack, int size) {
+        return getContents(bundleStack).mapToInt((stack) -> {
+            return getWeight(stack,size) * stack.getCount();
+        }).sum();
+    }
+
+    public static Optional<ItemStack> removeOne(ItemStack stack) {
+        NbtCompound tag = stack.getOrCreateNbt();
+        if (!tag.contains("Items")) {
+            return Optional.empty();
+        } else {
+            NbtList tagList = tag.getList("Items", 10);
+            if (tagList.isEmpty()) {
+                return Optional.empty();
+            } else {
+                NbtCompound tag1 = tagList.getCompound(0);
+                ItemStack stack1 = ItemStack.fromNbt(tag1);
+                tagList.remove(0);
+                if (tagList.isEmpty()) {
+                    stack.removeSubNbt("Items");
+                }
+
+                return Optional.of(stack1);
+            }
+        }
+    }
+
+    private static boolean dropAllBundledItems(ItemStack stack, PlayerEntity player) {
+        NbtCompound tag = stack.getOrCreateNbt();
+        if (!tag.contains("Items")) {
+            return false;
+        } else {
+            if (player instanceof ServerPlayerEntity) {
+                NbtList tagList = tag.getList("Items", 10);
+
+                for(int i = 0; i < tagList.size(); ++i) {
+                    NbtCompound tag2 = tagList.getCompound(i);
+                    ItemStack stack2 = ItemStack.fromNbt(tag2);
+                    player.dropItem(stack2, true);
+                }
+            }
+
+            stack.removeSubNbt("Items");
+            return true;
+        }
+    }
+
+    public static Stream<ItemStack> getContents(ItemStack stack) {
+        NbtCompound tag = stack.getNbt();
+        if (tag == null) {
+            return Stream.empty();
+        } else {
+            NbtList itemList = tag.getList("Items", 10);
+            Stream<?> items = itemList.stream();
+            return items.map(NbtCompound.class::cast).map(ItemStack::fromNbt);
+        }
+    }
+
+    private void playRemoveOneSound(Entity entity) {
+        entity.playSound(SoundEvents.ITEM_BUNDLE_REMOVE_ONE, 0.8F, 0.8F + entity.getWorld().getRandom().nextFloat() * 0.4F);
+    }
+
+    private void playInsertSound(Entity entity) {
+        entity.playSound(SoundEvents.ITEM_BUNDLE_INSERT, 0.8F, 0.8F + entity.getWorld().getRandom().nextFloat() * 0.4F);
+    }
+
+    private void playDropContentsSound(Entity entity) {
+        entity.playSound(SoundEvents.ITEM_BUNDLE_DROP_CONTENTS, 0.8F, 0.8F + entity.getWorld().getRandom().nextFloat() * 0.4F);
+    }
+}

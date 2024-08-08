@@ -2,33 +2,28 @@
   "schemaVersion": 1,
   "id": "hibernalherbs",
   "version": "${version}",
-
   "name": "Hibernal Herbs",
   "description": "[MMD Winterjam 2022] Wanna celebrate the holidays with a touch of mystical blends? Here you are!",
   "authors": [
-    "DakotaPride (Author)",
-    "HoloScopeStudios (Mascot)"
+    "DakotaPride"
   ],
-
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/hibernal-herbs",
     "sources": "https://github.com/DakotaPride/hibernal-herbs",
     "issues": "https://github.com/DakotaPride/hibernal-herbs/issues"
   },
-
   "license": "MIT",
   "icon": "assets/hibernalherbs/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.dakotapride.hibernalHerbs.common.HibernalHerbsMod"
+      "net.dakotapride.hibernalherbs.fabric.HibernalHerbsFabric"
     ],
     "client": [
-      "net.dakotapride.hibernalHerbs.client.HibernalHerbsClient"
+      "net.dakotapride.hibernalherbs.fabric.client.HibernalHerbsFabricClient"
     ],
     "rei_client": [
-      "net.dakotapride.hibernalHerbs.common.integration.rei.ReiHibernalHerbsPlugin"
+      "net.dakotapride.hibernalherbs.fabric.integration.rei.ReiHibernalHerbsPlugin"
     ]
   },
   "mixins": [
@@ -38,10 +33,11 @@
   "accessWidener": "hibernalherbs.accesswidener",
 
   "depends": {
-    "fabricloader": "*",
-    "fabric": "*",
-    "minecraft": ">=1.20",
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.20.1",
     "java": ">=17",
+    "architectury": ">=9.2.14",
+    "fabric-api": "*",
     "trinkets": "*",
     "patchouli": "*"
   },

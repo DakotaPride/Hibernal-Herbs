@@ -1,0 +1,419 @@
+{
+  "minecraft:recipes/combat/iron_sword": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_pickaxe": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_leggings": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/shield": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/hopper": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/iron_bars": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_mining_fatigue": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_regen_speed_weak": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_regeneration_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_slowness": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:husbandry/resource_blends": {
+    "criteria": {
+      "obtain_artificial_blend_from_hibernal_herbs": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_boots": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_chestplate": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/lantern": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:husbandry/obtain_a_sigil": {
+    "criteria": {
+      "has_herbal_sigil": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:husbandry/obtain_petals": {
+    "criteria": {
+      "has_petals": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:husbandry/herbal_conjuration": {
+    "criteria": {
+      "has_altar": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/white_dye": {
+    "criteria": {
+      "has_bone_meal": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_night_vision": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_regen_slow": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_regeneration": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/bucket": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_fire_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_helmet": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:husbandry/obtain_a_bound_padlock": {
+    "criteria": {
+      "has_bound_padlock": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/minecart": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_hoe": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_shovel": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_blindness": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_wither_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_poison_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_weakness": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/composter": {
+    "criteria": {
+      "has_wood_slab": "2024-08-08 14:01:04 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_regen_slow_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500",
+      "has_regen_slow_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:story/smelt_iron": {
+    "criteria": {
+      "iron": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_fire": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_weakness_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/shears": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_slowness_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/iron_trapdoor": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_blindness_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chain": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:husbandry/resource_herbs": {
+    "criteria": {
+      "obtain_artificial_herb_from_hibernal_herbs": "2024-08-08 14:01:50 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_night_vision_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/iron_block": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_axe": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/herb_from_pounded_herb": {
+    "criteria": {
+      "has_herb": "2024-08-08 14:01:49 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/crossbow": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:snowy_plains": "2024-08-08 13:59:13 -0500"
+    },
+    "done": false
+  },
+  "minecraft:recipes/decorations/barrel": {
+    "criteria": {
+      "has_wood_slab": "2024-08-08 14:01:04 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/smithing_table": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_haste": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_mining_fatigue_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/building_blocks/hibernal_lanterns": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_wither": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_haste_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_poison": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:husbandry/herbs": {
+    "criteria": {
+      "obtain_herb_from_hibernal_herbs": "2024-08-08 14:01:49 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/misc/herb_humus": {
+    "criteria": {
+      "has_acceptable_item": "2024-08-08 14:01:49 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_regen_speed_weak_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/iron_door": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/heavy_weighted_pressure_plate": {
+    "criteria": {
+      "has_iron_ingot": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_speed_smoked": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/pounded_herb": {
+    "criteria": {
+      "has_herb": "2024-08-08 14:01:49 -0500",
+      "ceillis": "2024-08-08 14:01:49 -0500"
+    },
+    "done": true
+  },
+  "hibernalherbs:recipes/food/blend_speed": {
+    "criteria": {
+      "has_blend": "2024-08-08 14:01:22 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/bone_block": {
+    "criteria": {
+      "has_bone_meal": "2024-08-08 13:59:12 -0500"
+    },
+    "done": true
+  },
+  "DataVersion": 3465
+}

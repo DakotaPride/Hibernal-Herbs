@@ -1,8 +1,0 @@
-{
-  "parent": "hibernalherbs:block/pile/leaf_pile",
-  "textures": {
-    "all": "hibernalherbs:block/herb/pile/calendula",
-    "particle": "hibernalherbs:block/herb/pile/calendula"
-  },
-  "render_type": "cutout"
-}

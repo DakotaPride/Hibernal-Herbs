@@ -1,0 +1,35 @@
+{
+  "name": "Singed Grimoire",
+  "icon": "hibernalherbs:singed_grimoire",
+  "category": "hibernalherbs:herbal_conjuration",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In order to access higher-tier conjurations and more complex information, you will need to singe your Grimoire. This requires you to create Siliptium Petals, the conjuration can be shown on the right."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/grimoire/siliptium_petals",
+      "text": "The conjuration to create Siliptium Petals is shown above. They are used mainly to enhance your Grimoire, however, they can also be used to create decorational lanterns from dried herbs."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/grimoire/singed_grimoire",
+      "text": "The Singed Grimoire is acquired via the above conjuration."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The Herbal Grimoire was used by religious scholars despite its origins. The book was eventually banished to an unknown plane of conjuration. Until a conjurer obtained the ingredients needed, and had an Unholy Blessing put upon it. This left the book eternally singed, never to be brought back to it's original state. This Unholy Blessing however provided the book with additional information, said to be a gift from the King of the 7 rings themself."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbal_conjuration/conjuration_altar",
+        "hibernalherbs:herbal_conjuration/siliptium_petals",
+        "hibernalherbs:herbal_conjuration/lumbinetrik_petals",
+        "hibernalherbs:herbs/dried"
+      ],
+      "text": "These entries may also be useful in your studies."
+    }
+  ]
+}

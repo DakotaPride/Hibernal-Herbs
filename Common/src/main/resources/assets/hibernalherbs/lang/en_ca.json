@@ -274,10 +274,10 @@
   "item.hibernalherbs.blend_glowing": "Herbal Blend",
   "item.hibernalherbs.blend_glowing_smoked": "Smoked Herbal Blend",
 
-  "itemGroup.hibernal_herbs": "Hibernal Herbs - Misc",
-  "itemGroup.pounded_herbs": "Hibernal Herbs - Pounded Herbs",
-  "itemGroup.herbs": "Hibernal Herbs - Herbs",
-  "itemGroup.reproduction": "Hibernal Herbs - Reproduction",
+  "itemGroup.hibernal_herbs": "Herbs Misc",
+  "itemGroup.pounded_herbs": "Pounded Herbs",
+  "itemGroup.herbs": "Herbs",
+  "itemGroup.reproduction": "Herb Reproduction",
 
   "entity.hibernalherbs.myqueste_chest_boat": "Boat with Chest",
 
@@ -301,7 +301,7 @@
   "itemGroup.hibernalherbs.hibernal_herbs": "Herbs Misc",
   "itemGroup.hibernalherbs.herbs": "Herbs",
   "itemGroup.hibernalherbs.pounded_herbs": "Pounded Herbs",
-  "itemGroup.hibernalherbs.reproductin": "Herb Reproduction",
+  "itemGroup.hibernalherbs.reproduction": "Herb Reproduction",
 
   // Herb Fertilizer/Humus Tooltips
   "text.hibernalherbs.association.none": "§6Association:§7 None",

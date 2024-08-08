@@ -1,0 +1,45 @@
+{
+  "name": "Herbal Fertilization",
+  "icon": "hibernalherbs:herb_fertilizer",
+  "category": "hibernalherbs:herb_reproduction",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "As of recently, this system was changed! So any information found here will be in regards to the new system.$(br2)The old system is completely irrelevant here."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:herb_fertilizer",
+      "text": "In order to obtain Herb Fertilizer of any kind, you will first need to obtain something called Herb Humus of the respective type.",
+      "title": "Obtaining Fertilizer"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:herb_humus",
+      "text": "In its base state, it's not very useful. Which is because it will need to have an association attached to it!$(br2)By right-clicking on any vanilla wood-type or any other wood that may have built-in support, you can associate the Herb Humus with it!"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:herb_humus",
+      "text": "Again, Herb Humus is not very useful right after crafting due to not having an association!"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:fertilizer/herb_fertilizer_spruce",
+      "text": "An example recipe is provided above.$(br2)Specific Fertilizers will be more efficient in Herb Reproduction than others. For example, Spruce is more effective than Acacia."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Acacia, Crimson, and Warped$() Associations only reproduce 2 at a time.$(br2)Birch, Dark Oak, Jungle, Mangrove, and Oak$() Associations reproduce 3 at a time, which is better, but not max efficiency.$(br2)Spruce and Myqueste$() are most efficient, reproducing 4 at a time.",
+      "title": "Fertilizer Effectiveness"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbs/pounded",
+        "hibernalherbs:herbs/non_pounded"
+      ],
+      "text": "These entries may also be useful in your studies."
+    }
+  ]
+}

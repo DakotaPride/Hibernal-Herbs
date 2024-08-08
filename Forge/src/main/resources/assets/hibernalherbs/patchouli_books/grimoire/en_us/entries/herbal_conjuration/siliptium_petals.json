@@ -1,0 +1,26 @@
+{
+  "name": "Siliptium Petals",
+  "icon": "hibernalherbs:sin_petals",
+  "category": "hibernalherbs:herbal_conjuration",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Siliptium Petals originate from the Prince of Wrath, created with the intent to enhance agility among legions. It's said that the first Siliptium Petals were created with the help of the Ars Goetia, but no one can be sure."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:lumbinetrik_petals",
+      "text": "You can use Siliptium Petals to create a higher-form of vegetation, Lumbinetrik Petals. These petals are known for immense power, and used in higher-tier conjurations."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbal_conjuration/conjuration_altar",
+        "hibernalherbs:herbal_conjuration/singed_grimoire",
+        "hibernalherbs:herbal_conjuration/lumbinetrik_petals",
+        "hibernalherbs:herbs/dried"
+      ],
+      "text": "These entries may also be useful in your studies."
+    }
+  ]
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "hibernalherbs:block/herb/calendula"
-  },
-  "render_type": "cutout"
-}

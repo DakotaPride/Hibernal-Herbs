@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": ["create"]
+    }
+  ],
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "tag": "hibernalherbs:dye/white"
+    }
+  ],
+  "results": [
+    {
+      "item": "white_dye",
+      "count": 2
+    },
+    {
+      "item": "white_dye",
+	  "chance": 0.25,
+      "count": 1
+    }
+  ],
+  "processingTime": 50
+}

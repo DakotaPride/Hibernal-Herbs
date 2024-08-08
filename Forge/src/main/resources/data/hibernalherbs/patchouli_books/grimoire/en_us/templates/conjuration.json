@@ -1,0 +1,72 @@
+{
+  "processor": "net.dakotapride.hibernalherbs.forge.integration.patchouli.HerbalConjurationProcessor",
+  "components": [
+    {
+      "type": "patchouli:image",
+      "image": "hibernalherbs:textures/gui/patchouli/crafting.png",
+      "x": 0,
+      "y": 9,
+      "u": 0,
+      "v": 0,
+      "texture_width": 256,
+      "texture_height": 256,
+      "width": 110,
+      "height": 56,
+      "scale": 1
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#ingredient0",
+      "x": 26,
+      "y": 13
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#ingredient1",
+      "x": 48,
+      "y": 17
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#ingredient2",
+      "x": 4,
+      "y": 40
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#ingredient3",
+      "x": 26,
+      "y": 44
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#ingredient4",
+      "x": 48,
+      "y": 40
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#ingredient5",
+      "x": 4,
+      "y": 17
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#output",
+      "x": 90,
+      "y": 28
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#text",
+      "x": 0,
+      "y": 66
+    },
+    {
+      "type": "patchouli:header",
+      "text": "#header",
+      "x": -1,
+      "y": 0
+    }
+  ]
+}
