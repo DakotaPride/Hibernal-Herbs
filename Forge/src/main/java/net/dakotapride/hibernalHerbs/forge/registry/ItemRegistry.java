@@ -11,6 +11,7 @@ import net.dakotapride.hibernalherbs.item.ring.GluttonousRingItem;
 import net.dakotapride.hibernalherbs.item.ring.adv.AdvancedGluttonousRingItem;
 import net.dakotapride.hibernalherbs.registry.FoodComponentRegistry;
 import net.dakotapride.hibernalherbs.registry.TypeRegistry;
+import net.minecraft.block.WoodType;
 import net.minecraft.item.HangingSignItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SignItem;
@@ -111,9 +112,9 @@ public class ItemRegistry {
             () -> new HerbalSigilItem(new Item.Settings().maxCount(1)));
 
     public static final RegistryObject<Item> MYQUESTE_BOAT = ITEMS.register("myqueste_boat",
-            () -> new MyquesteBoatItem(false, new Item.Settings().maxCount(1), TypeRegistry.WoodType.MYQUESTE));
+            () -> new MyquesteBoatItem(false, new Item.Settings().maxCount(1), WoodType.ACACIA));
     public static final RegistryObject<Item> MYQUESTE_CHEST_BOAT = ITEMS.register("myqueste_chest_boat",
-            () -> new MyquesteBoatItem(true, new Item.Settings().maxCount(1), TypeRegistry.WoodType.MYQUESTE));
+            () -> new MyquesteBoatItem(true, new Item.Settings().maxCount(1), WoodType.ACACIA));
 
     public static final RegistryObject<Item> MYQUESTE_SIGN = ITEMS.register("myqueste_sign",
             () -> new SignItem(new Item.Settings().maxCount(16),

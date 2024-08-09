@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hibernalherbs.iml" filepath="$PROJECT_DIR$/.idea/modules/hibernalherbs.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/hibernalherbs.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/hibernalherbs.common.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/hibernalherbs.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/hibernalherbs.common.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/hibernalherbs.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/hibernalherbs.common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/hibernalherbs.fabric.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/hibernalherbs.fabric.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/hibernalherbs.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/hibernalherbs.fabric.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/hibernalherbs.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/hibernalherbs.fabric.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/hibernalherbs.forge.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/hibernalherbs.forge.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/hibernalherbs.forge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/hibernalherbs.forge.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/hibernalherbs.forge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/hibernalherbs.forge.test.iml" />
     </modules>

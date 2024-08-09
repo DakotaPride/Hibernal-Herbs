@@ -165,8 +165,8 @@ public class ItemGroupsRegistry {
                         output.add(BlockRegistry.MYQUESTE_BUTTON.get().asItem());
                         output.add(ItemRegistry.MYQUESTE_BOAT.get());
                         output.add(ItemRegistry.MYQUESTE_CHEST_BOAT.get());
-                        output.add(ItemRegistry.MYQUESTE_SIGN.get());
-                        output.add(ItemRegistry.MYQUESTE_HANGING_SIGN.get());
+                        //output.add(ItemRegistry.MYQUESTE_SIGN.get());
+                        //output.add(ItemRegistry.MYQUESTE_HANGING_SIGN.get());
 
 
                     }).build());
