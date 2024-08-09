@@ -1,23 +1,15 @@
-# eclipse
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
-
-# idea
-out
-*.ipr
-*.iws
-*.iml
-.idea/*
-!.idea/scopes
-
-# gradle
-build
+# .gradle
 .gradle
 
-# other
-eclipse
-run
+# .idea
+.idea
+.idea/runConfigurations
+
+# build
+common/build
+fabric/build
+forge/build
+
+# runs
+fabric/run
+forge/run

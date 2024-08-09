@@ -1,7 +1,7 @@
 package net.dakotapride.hibernalherbs.forge.integration.patchouli;
 
 import net.dakotapride.hibernalherbs.recipe.HerbalConjurationRecipe;
-import net.dakotapride.hibernalherbs.registry.RecipeRegistry;
+import net.dakotapride.hibernalherbs.forge.registry.RecipeRegistry;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.text.Text;
@@ -20,7 +20,7 @@ public class HerbalConjurationProcessor implements IComponentProcessor {
 
     @Override
     public void setup(World level, IVariableProvider vars) {
-        this.recipe = PatchouliUtils.getRecipe(HerbalConjurationRecipe.class, RecipeRegistry.HERBAL_CONJURATION_TYPE, vars.get("recipe").asString());
+        this.recipe = PatchouliUtils.getRecipe(HerbalConjurationRecipe.class, RecipeRegistry.HERBAL_CONJURATION_TYPE.get(), vars.get("recipe").asString());
     }
 
     @Override

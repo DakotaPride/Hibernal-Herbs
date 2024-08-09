@@ -41,7 +41,7 @@ public class HerbConjurationAltarEntity extends BlockEntity implements Implement
     }
 
     public HerbConjurationAltarEntity(BlockPos pos, BlockState state) {
-        super(BlockEntityRegistry.HERB_CONJURATION_ALTAR_ENTITY, pos, state);
+        super(BlockEntityRegistry.HERB_CONJURATION_ALTAR_ENTITY.get(), pos, state);
         this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {
                 switch (index) {
@@ -127,42 +127,42 @@ public class HerbConjurationAltarEntity extends BlockEntity implements Implement
 
         if(hasRecipe(entity)) {
             if (!(entity.getStack(0).isIn(Utilities.SIGILS_ITEM_TAG))) {
-                if (!entity.getStack(0).isOf(ItemRegistry.SINGED_GRIMOIRE)) {
+                if (!entity.getStack(0).isOf(ItemRegistry.SINGED_GRIMOIRE.get())) {
                     entity.removeStack(0, 1);
                 }
             } else {
                 entity.setStack(0, new ItemStack(net.dakotapride.hibernalherbs.registry.ItemRegistry.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(1).isIn(Utilities.SIGILS_ITEM_TAG))) {
-                if (!entity.getStack(1).isOf(ItemRegistry.SINGED_GRIMOIRE)) {
+                if (!entity.getStack(1).isOf(ItemRegistry.SINGED_GRIMOIRE.get())) {
                     entity.removeStack(1, 1);
                 }
             } else {
                 entity.setStack(1, new ItemStack(net.dakotapride.hibernalherbs.registry.ItemRegistry.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(2).isIn(Utilities.SIGILS_ITEM_TAG))) {
-                if (!entity.getStack(2).isOf(ItemRegistry.SINGED_GRIMOIRE)) {
+                if (!entity.getStack(2).isOf(ItemRegistry.SINGED_GRIMOIRE.get())) {
                     entity.removeStack(2, 1);
                 }
             } else {
                 entity.setStack(2, new ItemStack(net.dakotapride.hibernalherbs.registry.ItemRegistry.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(3).isIn(Utilities.SIGILS_ITEM_TAG))) {
-                if (!entity.getStack(3).isOf(ItemRegistry.SINGED_GRIMOIRE)) {
+                if (!entity.getStack(3).isOf(ItemRegistry.SINGED_GRIMOIRE.get())) {
                     entity.removeStack(3, 1);
                 }
             } else {
                 entity.setStack(3, new ItemStack(net.dakotapride.hibernalherbs.registry.ItemRegistry.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(4).isIn(Utilities.SIGILS_ITEM_TAG))) {
-                if (!entity.getStack(4).isOf(ItemRegistry.SINGED_GRIMOIRE)) {
+                if (!entity.getStack(4).isOf(ItemRegistry.SINGED_GRIMOIRE.get())) {
                     entity.removeStack(4, 1);
                 }
             } else {
                 entity.setStack(4, new ItemStack(net.dakotapride.hibernalherbs.registry.ItemRegistry.CRACKED_SIGIL, 1));
             }
             if (!(entity.getStack(5).isIn(Utilities.SIGILS_ITEM_TAG))) {
-                if (!entity.getStack(5).isOf(ItemRegistry.SINGED_GRIMOIRE)) {
+                if (!entity.getStack(5).isOf(ItemRegistry.SINGED_GRIMOIRE.get())) {
                     entity.removeStack(5, 1);
                 }
             } else {

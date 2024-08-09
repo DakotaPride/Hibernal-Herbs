@@ -32,12 +32,13 @@ public final class HibernalHerbsForge {
         EventBuses.registerModEventBus(HibernalHerbsCommon.MOD_ID, bus);
 
         // Run our common setup.
-        HibernalHerbsCommon.init();
+        // No you're not
+        //HibernalHerbsCommon.init();
 
         // Forge item register
-        ItemRegistry.register();
+        ItemRegistry.register(bus);
         // Forge Block register
-        BlockRegistry.register();
+        BlockRegistry.register(bus);
         // Forge Item Group register
         ItemGroupsRegistry.register();
 
@@ -49,7 +50,10 @@ public final class HibernalHerbsForge {
         // Mod Event Bus required for Screen Handler/Menu registry
         ScreenHandlersRegistry.register(FMLJavaModLoadingContext.get().getModEventBus());
 
-        BlockEntityRegistry.register();
+        BlockEntityRegistry.register(bus);
+        EntityTypeRegistry.register(bus);
+
+        RecipeRegistry.register(bus);
 
         // Resource Pack Registration
         bus.addListener(PackLoader::onAddPackFinders);

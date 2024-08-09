@@ -5,7 +5,6 @@ import net.dakotapride.hibernalherbs.item.canister.AbstractCanisterItem;
 import net.dakotapride.hibernalherbs.item.pouch.AbstractPouchItem;
 import net.dakotapride.hibernalherbs.item.ring.GluttonousRingItem;
 import net.dakotapride.hibernalherbs.item.ring.adv.AdvancedGluttonousRingItem;
-import net.minecraft.item.BoatItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -103,17 +102,17 @@ public class ItemRegistry {
     public static Item DRIED_FENNKYSTRAL = new Item(new Item.Settings().food(FoodComponentRegistry.DRIED_HERB));
     public static Item DRIED_SAGE = new Item(new Item.Settings().food(FoodComponentRegistry.DRIED_HERB));
 
-    public static HerbBlendItem REGENERATION_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.REGENERATIVE_BLEND).maxCount(1));
-    public static HerbBlendItem POISON_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.VIRULENT_BLEND).maxCount(1));
-    public static HerbBlendItem SLOWNESS_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SEDATING_BLEND).maxCount(1));
-    public static HerbBlendItem MINING_FATIGUE_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.HINDERING_BLEND).maxCount(1));
-    public static HerbBlendItem HASTE_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.DASHING_BLEND).maxCount(1));
-    public static HerbBlendItem SPEED_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.ACCELERATION_BLEND).maxCount(1));
-    public static HerbBlendItem FIRE_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.INCINERATING_BLEND).maxCount(1));
-    public static HerbBlendItem WITHER_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.DECAYING_BLEND).maxCount(1));
-    public static HerbBlendItem NIGHT_VISION_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.OBSERVING_BLEND).maxCount(1));
-    public static HerbBlendItem WEAKNESS_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.DIMINISHED_BLEND).maxCount(1));
-    public static HerbBlendItem BLINDNESS_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SHADED_BLEND).maxCount(1));
+    public static HerbBlendItem REGENERATION_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.REGENERATION_BLEND).maxCount(1));
+    public static HerbBlendItem POISON_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.POISON_BLEND).maxCount(1));
+    public static HerbBlendItem SLOWNESS_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SLOWNESS_BLEND).maxCount(1));
+    public static HerbBlendItem MINING_FATIGUE_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.MINING_FATIGUE_BLEND).maxCount(1));
+    public static HerbBlendItem HASTE_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.HASTE_BLEND).maxCount(1));
+    public static HerbBlendItem SPEED_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SPEED_BLEND).maxCount(1));
+    public static HerbBlendItem FIRE_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.FIRE_BLEND).maxCount(1));
+    public static HerbBlendItem WITHER_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.WITHER_BLEND).maxCount(1));
+    public static HerbBlendItem NIGHT_VISION_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.NIGHT_VISION_BLEND).maxCount(1));
+    public static HerbBlendItem WEAKNESS_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.WEAKNESS_BLEND).maxCount(1));
+    public static HerbBlendItem BLINDNESS_BLEND = new HerbBlendItem(new Item.Settings().food(FoodComponentRegistry.BLINDNESS_BLEND).maxCount(1));
 
     // Resource Dependant (Blends) Herbs
 
@@ -153,35 +152,35 @@ public class ItemRegistry {
     public static HerbHumusItem HERB_HUMUS_MYQUESTE = new HerbHumusItem(new Item.Settings());
 
     // Smoked Herb Blends (Fabric)
-    public static SmokedHerbBlendItem SMOKED_REGENERATION_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_REGENERATIVE_BLEND)
+    public static SmokedHerbBlendItem SMOKED_REGENERATION_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.REGENERATION_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_POISON_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_VIRULENT_BLEND)
+    public static SmokedHerbBlendItem SMOKED_POISON_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.POISON_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_SLOWNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_SEDATING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_SLOWNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SLOWNESS_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_MINING_FATIGUE_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_HINDERING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_MINING_FATIGUE_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.MINING_FATIGUE_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_HASTE_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_DASHING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_HASTE_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.HASTE_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_SPEED_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_ACCELERATION_BLEND)
+    public static SmokedHerbBlendItem SMOKED_SPEED_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SPEED_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_FIRE_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_INCINERATING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_FIRE_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.FIRE_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_WITHER_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_DECAYING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_WITHER_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.WITHER_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_NIGHT_VISION_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_OBSERVING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_NIGHT_VISION_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.NIGHT_VISION_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_DIMINISHED_BLEND)
+    public static SmokedHerbBlendItem SMOKED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.WEAKNESS_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_BLINDNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_SHADED_BLEND)
+    public static SmokedHerbBlendItem SMOKED_BLINDNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.BLINDNESS_SMOKED_BLEND)
             .maxCount(1));
 
 
     // Resource Dependant (Smoked Blends) Herbs
 
-    public static SmokedHerbBlendItem SMOKED_REGENERATION_SLOWNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_CONFLICTING_BLEND)
+    public static SmokedHerbBlendItem SMOKED_REGENERATION_SLOWNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.CONFLICTING_SMOKED_BLEND)
             .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.SMOKED_ALTERNATIVE_BLEND)
+    public static SmokedHerbBlendItem SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new Item.Settings().food(FoodComponentRegistry.ALTERNATIVE_SMOKED_BLEND)
             .maxCount(1));
 
     // Refined Pouches/Canisters

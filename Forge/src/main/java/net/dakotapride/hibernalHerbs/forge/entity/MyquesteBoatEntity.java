@@ -37,7 +37,7 @@ public class MyquesteBoatEntity extends BoatEntity {
 
     @Override
     public Item asItem() {
-        return ItemRegistry.MYQUESTE_BOAT;
+        return ItemRegistry.MYQUESTE_BOAT.get();
     }
 
     @Override

@@ -12,7 +12,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ScreenHandlersRegistry {
-    public static final DeferredRegister<ScreenHandlerType<?>> MENUS =
+    public static final DeferredRegister<ScreenHandlerType<?>> SCREEN_HANDLERS =
             DeferredRegister.create(RegistryKeys.SCREEN_HANDLER, HibernalHerbsCommon.MOD_ID);
 
     public static final RegistryObject<ScreenHandlerType<HerbConjurationAltarScreenHandler>> CONJURATION_ALTAR_SCREEN_HANDLER =
@@ -21,10 +21,10 @@ public class ScreenHandlersRegistry {
 
     private static <T extends ScreenHandler> RegistryObject<ScreenHandlerType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                    String name) {
-        return MENUS.register(name, () -> IForgeMenuType.create(factory));
+        return SCREEN_HANDLERS.register(name, () -> IForgeMenuType.create(factory));
     }
 
     public static void register(IEventBus bus) {
-        MENUS.register(bus);
+        SCREEN_HANDLERS.register(bus);
     }
 }

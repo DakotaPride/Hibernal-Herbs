@@ -43,11 +43,10 @@ dependencies {
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
 
-
     // REI
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-forge:${rei_version}"
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-forge:${rei_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-forge:${rei_version}"
+    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-forge:${rei_version}"
 
     // Patchouli
     modImplementation "vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}-FORGE-SNAPSHOT"
