@@ -20,7 +20,7 @@ import java.util.List;
 
 public class HerbalConjurationCategory implements DisplayCategory<HerbalConjurationDisplay> {
     public static final Text TITLE = Text.translatable("text.hibernalherbs.herbal_conjuration");
-    public static final EntryStack<ItemStack> ICON = EntryStacks.of(BlockRegistry.CONJURATION_ALTAR.asItem());
+    public static final EntryStack<ItemStack> ICON = EntryStacks.of(BlockRegistry.CONJURATION_ALTAR.get().asItem());
 
     @Override
     public Renderer getIcon() {
