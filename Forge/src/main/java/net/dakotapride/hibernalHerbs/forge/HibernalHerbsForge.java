@@ -48,7 +48,7 @@ public final class HibernalHerbsForge {
         //BoatTypeRegistry.register();
 
         // Mod Event Bus required for Screen Handler/Menu registry
-        ScreenHandlersRegistry.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ScreenHandlersRegistry.register(bus);
 
         BlockEntityRegistry.register(bus);
         EntityTypeRegistry.register(bus);
