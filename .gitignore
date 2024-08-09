@@ -4,6 +4,7 @@
 # .idea
 .idea
 .idea/runConfigurations
+.idea/modules
 
 # build
 common/build
