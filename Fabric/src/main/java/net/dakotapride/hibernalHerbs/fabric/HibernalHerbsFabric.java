@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
 public final class HibernalHerbsFabric implements ModInitializer {
     @Override
     public void onInitialize() {
+
+        HibernalHerbsCommon.LOG.info("[Hibernal Herbs Fabric] If you're seeing this message, stuff has begun to be registered");
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
@@ -60,6 +62,8 @@ public final class HibernalHerbsFabric implements ModInitializer {
 //        FabricLoader.getInstance().getModContainer(HibernalHerbsCommon.MOD_ID).ifPresent(modContainer -> {
 //            ResourceManagerHelper.registerBuiltinResourcePack(mc("modernized"), modContainer, ResourcePackActivationType.NORMAL);
 //        });
+
+        HibernalHerbsCommon.LOG.info("[Hibernal Herbs Fabric] If you're seeing this message, registration has finished");
     }
 
 

@@ -26,6 +26,9 @@ import top.theillusivec4.curios.api.SlotTypePreset;
 public final class HibernalHerbsForge {
 
     public HibernalHerbsForge() {
+
+        HibernalHerbsCommon.LOG.info("[Hibernal Herbs Forge] If you're seeing this message, stuff has begun to be registered");
+
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Submit our event bus to let Architectury API register our content on the right time.
@@ -61,6 +64,7 @@ public final class HibernalHerbsForge {
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
 
+        HibernalHerbsCommon.LOG.info("[Hibernal Herbs Forge] If you're seeing this message, registration has finished");
 
     }
 
