@@ -268,22 +268,14 @@
   "item.hibernalherbs.canister": "Blend Canister (Legacy)",
 
   // Forge Additions
-  "block.hibernalherbs.bloforia": "Bloforia",
-  "item.hibernalherbs.pounded_bloforia": "Pounded Bloforia",
-  "block.hibernalherbs.potted_bloforia": "Potted Bloforia",
-  "item.hibernalherbs.blend_glowing": "Herbal Blend",
-  "item.hibernalherbs.blend_glowing_smoked": "Smoked Herbal Blend",
 
-  "itemGroup.hibernal_herbs": "Herbs Misc",
+  "itemGroup.hibernal_herbs": "Hibernal Herbs Misc",
   "itemGroup.pounded_herbs": "Pounded Herbs",
   "itemGroup.herbs": "Herbs",
   "itemGroup.reproduction": "Herb Reproduction",
 
-  "entity.hibernalherbs.myqueste_chest_boat": "Boat with Chest",
-
-  "block.hibernalherbs.bloforia_herb_pile": "Bloforia Pile",
-  "block.hibernalherbs.bloforia_herb_barrel": "Bloforia Barrel",
-  "block.hibernalherbs.bloforia_lantern": "Bloforia Lantern",
+  "entity.hibernalherbs.myqueste_chest_boat": "Myqueste Boat with Chest",
+  "entity.hibernalherbs.myqueste_boat": "Myqueste Boat",
 
 
   // Basic Tooltips
@@ -386,7 +378,7 @@
   "text.hibernalherbs.blend.attacking.help.two": "its effect(s) for a duration",
   "text.hibernalherbs.blend.attacking.help.three": "of time.",
   "text.hibernalherbs.blend.attacking.help.fire.one": "In the case of",
-  "text.hibernalherbs.blend.attacking.help.fire.two": "§dIncinerating Herbal Blends§5",
+  "text.hibernalherbs.blend.attacking.help.fire.two": "§dIncendiary Herbal Blends§5",
   "text.hibernalherbs.blend.attacking.help.fire.three": "though, it will light the target",
   "text.hibernalherbs.blend.attacking.help.fire.four": "on fire for a duration of time.",
   "text.hibernalherbs.blend.player_pour.help.one": "Interacting with a player with",
@@ -415,7 +407,7 @@
   "text.hibernalherbs.ability.mining_fatigue": "Hindering",
   "text.hibernalherbs.ability.haste": "Dashing",
   "text.hibernalherbs.ability.speed": "Acceleration",
-  "text.hibernalherbs.ability.fire": "Incinerating",
+  "text.hibernalherbs.ability.fire": "Incendiary",
   "text.hibernalherbs.ability.wither": "Decaying",
   "text.hibernalherbs.ability.night_vision": "Observing",
   "text.hibernalherbs.ability.weakness": "Diminished",
@@ -508,7 +500,7 @@
   "advancements.hibernalherbs.conflicting_blend.title": "Hold On Now, Don't Do That",
   "advancements.hibernalherbs.conflicting_blend.description": "Obtain An Herb Blend That Probably Shouldn't Exist",
   "advancements.hibernalherbs.consume_fire_blend_at_world_height.title": "Have You Got Wax Wings?",
-  "advancements.hibernalherbs.consume_fire_blend_at_world_height.description": "Consume An Incinerating Blend While At World Height",
+  "advancements.hibernalherbs.consume_fire_blend_at_world_height.description": "Consume An Incendiary Blend While At World Height",
 
   "advancements.hibernalherbs.obtain_altar.title": "Mystical Beginnings!",
   "advancements.hibernalherbs.obtain_altar.description": "Obtain a Conjuration Altar",

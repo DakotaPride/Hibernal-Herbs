@@ -3,6 +3,7 @@ package net.dakotapride.hibernalHerbs.common.init;
 import com.terraformersmc.terraform.leaves.block.LeafPileBlock;
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.dakotapride.hibernalHerbs.common.block.*;
 import net.dakotapride.hibernalHerbs.common.gen.saplingGenerator.MyquesteSaplingGenerator;
@@ -232,7 +233,7 @@ public class BlockInit {
     public static final Block MYQUESTE_WALL_SIGN = new TerraformWallSignBlock(MYQUESTE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN));
     public static final Item MYQUESTE_SIGN_ITEM = new SignItem(new Item.Settings().maxCount(16), MYQUESTE_SIGN, MYQUESTE_WALL_SIGN);
     public static final TerraformHangingSignBlock MYQUESTE_HANGING_SIGN = new TerraformHangingSignBlock(MYQUESTE_HANGING_SIGN_TEXTURE, MYQUESTE_HANGING_SIGN_GUI_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN));
-    public static final TerraformHangingSignBlock MYQUESTE_WALL_HANGING_SIGN = new TerraformHangingSignBlock(MYQUESTE_HANGING_SIGN_TEXTURE, MYQUESTE_HANGING_SIGN_GUI_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN));
+    public static final TerraformWallHangingSignBlock MYQUESTE_WALL_HANGING_SIGN = new TerraformWallHangingSignBlock(MYQUESTE_HANGING_SIGN_TEXTURE, MYQUESTE_HANGING_SIGN_GUI_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN));
     public static final Item MYQUESTE_HANGING_SIGN_ITEM = new HangingSignItem(MYQUESTE_HANGING_SIGN, MYQUESTE_WALL_HANGING_SIGN, new Item.Settings().maxCount(16));
 
     public static void init() {

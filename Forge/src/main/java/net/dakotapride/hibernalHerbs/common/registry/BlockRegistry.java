@@ -92,9 +92,6 @@ public class BlockRegistry {
     public static RegistryObject<Block> SAGE_HERB_PILE = registerBlock("sage_herb_pile",
             () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
 
-    public static RegistryObject<Block> BLOFORIA_HERB_PILE = registerBlock("bloforia_herb_pile",
-            () -> new LeafPileBlock(BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion()));
-
 
     public static final RegistryObject<Block> ROSEMARY = registerBlock("rosemary",
             () -> new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 180,
@@ -189,9 +186,6 @@ public class BlockRegistry {
     public static final RegistryObject<Block> SAGE_LANTERN = registerBlock("sage_lantern",
             () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
 
-    public static final RegistryObject<Block> BLOFORIA_LANTERN = registerBlock("bloforia_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
-
 
     public static final RegistryObject<Block> CALENDULA_BARREL = registerBlock("calendula_herb_barrel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
@@ -225,78 +219,66 @@ public class BlockRegistry {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
     public static final RegistryObject<Block> FENNKYSTRAL_BARREL = registerBlock("fennkystral_herb_barrel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
-    public static final RegistryObject<Block> BLOFORIA_BARREL = registerBlock("bloforia_herb_barrel",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
     public static final RegistryObject<Block> SAGE_BARREL = registerBlock("sage_herb_barrel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL)));
 
 
-    // Compat Herbs (Forge)
-    public static final RegistryObject<Block> BLOFORIA = registerBlock("bloforia",
-            () -> new FlowerBlock(MobEffects.NIGHT_VISION, 180,
-                    BlockBehaviour.Properties.copy(Blocks.LILY_OF_THE_VALLEY)));
-
-    public static final RegistryObject<Block> POTTED_ROSEMARY = BLOCKS.register("potted_rosemary",
+    public static final RegistryObject<Block> POTTED_ROSEMARY = registerBlockWithoutItem("potted_rosemary",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.ROSEMARY,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_THYME = BLOCKS.register("potted_thyme",
+    public static final RegistryObject<Block> POTTED_THYME = registerBlockWithoutItem("potted_thyme",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.THYME,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_TARRAGON = BLOCKS.register("potted_tarragon",
+    public static final RegistryObject<Block> POTTED_TARRAGON = registerBlockWithoutItem("potted_tarragon",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.TARRAGON,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_CHAMOMILE = BLOCKS.register("potted_chamomile",
+    public static final RegistryObject<Block> POTTED_CHAMOMILE = registerBlockWithoutItem("potted_chamomile",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CHAMOMILE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_CHIVES = BLOCKS.register("potted_chives",
+    public static final RegistryObject<Block> POTTED_CHIVES = registerBlockWithoutItem("potted_chives",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CHIVES,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_VERBENA = BLOCKS.register("potted_verbena",
+    public static final RegistryObject<Block> POTTED_VERBENA = registerBlockWithoutItem("potted_verbena",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.VERBENA,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_SORREL = BLOCKS.register("potted_sorrel",
+    public static final RegistryObject<Block> POTTED_SORREL = registerBlockWithoutItem("potted_sorrel",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.SORREL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_MARJORAM = BLOCKS.register("potted_marjoram",
+    public static final RegistryObject<Block> POTTED_MARJORAM = registerBlockWithoutItem("potted_marjoram",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.MARJORAM,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_CHERVIL = BLOCKS.register("potted_chervil",
+    public static final RegistryObject<Block> POTTED_CHERVIL = registerBlockWithoutItem("potted_chervil",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CHERVIL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_FENNSEL = BLOCKS.register("potted_fennsel",
+    public static final RegistryObject<Block> POTTED_FENNSEL = registerBlockWithoutItem("potted_fennsel",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.FENNSEL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_CEILLIS = BLOCKS.register("potted_ceillis",
+    public static final RegistryObject<Block> POTTED_CEILLIS = registerBlockWithoutItem("potted_ceillis",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CEILLIS,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_PUNUEL = BLOCKS.register("potted_punuel",
+    public static final RegistryObject<Block> POTTED_PUNUEL = registerBlockWithoutItem("potted_punuel",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.PUNUEL,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_ESSITTE = BLOCKS.register("potted_essitte",
+    public static final RegistryObject<Block> POTTED_ESSITTE = registerBlockWithoutItem("potted_essitte",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.ESSITTE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     // Resource Dependant (Potted) Herbs (Forge)
 
-    public static final RegistryObject<Block> POTTED_THYOCIELLE = BLOCKS.register("potted_thyocielle",
+    public static final RegistryObject<Block> POTTED_THYOCIELLE = registerBlockWithoutItem("potted_thyocielle",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.THYOCIELLE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-    public static final RegistryObject<Block> POTTED_FENNKYSTRAL = BLOCKS.register("potted_fennkystral",
+    public static final RegistryObject<Block> POTTED_FENNKYSTRAL = registerBlockWithoutItem("potted_fennkystral",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.FENNKYSTRAL,
-                    BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
-
-    // Compat (Potted) Herbs (Forge)
-    public static final RegistryObject<Block> POTTED_BLOFORIA = BLOCKS.register("potted_bloforia",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.BLOFORIA,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
     // Spring (Potted) Herbs (Forge)
 
-    public static final RegistryObject<Block> POTTED_CALENDULA = BLOCKS.register("potted_calendula",
+    public static final RegistryObject<Block> POTTED_CALENDULA = registerBlockWithoutItem("potted_calendula",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.CALENDULA,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
-    public static final RegistryObject<Block> POTTED_SAGE = BLOCKS.register("potted_sage",
+    public static final RegistryObject<Block> POTTED_SAGE = registerBlockWithoutItem("potted_sage",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.SAGE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)));
 
@@ -377,7 +359,7 @@ public class BlockRegistry {
             () -> new SaplingBlock(new MyquesteTreeGrower(),
                     BlockBehaviour.Properties.copy(Blocks.SPRUCE_SAPLING)));
 
-    public static final RegistryObject<Block> POTTED_MYQUESTE_SAPLING = BLOCKS.register("potted_myqueste_sapling",
+    public static final RegistryObject<Block> POTTED_MYQUESTE_SAPLING = registerBlockWithoutItem("potted_myqueste_sapling",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistry.MYQUESTE_SAPLING,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_SPRUCE_SAPLING)));
 

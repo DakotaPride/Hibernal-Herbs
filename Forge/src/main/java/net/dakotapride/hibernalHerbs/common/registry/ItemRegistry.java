@@ -311,10 +311,6 @@ public class ItemRegistry implements FoodComponentList {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .fast().nutrition(8).saturationMod(0.5F).build())));
 
-    // Compat (Pounded) Herbs (Forge)
-    public static final RegistryObject<Item> POUNDED_BLOFORIA = ITEMS.register("pounded_bloforia",
-            () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> REGENERATION_BLEND = ITEMS.register("blend_regeneration",
             () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                     .effect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));

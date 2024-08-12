@@ -25,12 +25,7 @@ public class PackLoader {
     public static void onAddPackFinders(AddPackFindersEvent event) {
 
         if (event.getPackType() == PackType.CLIENT_RESOURCES) {
-            registerBuiltinResourcePack(event, Component.literal("hibernalherbs/barebones"), "barebones");
-            registerBuiltinResourcePack(event, Component.literal("hibernalherbs/modernized"), "modernized");
-
-            if (ModList.get().isLoaded("eatinganimation")) {
-                registerBuiltinResourcePack(event, Component.literal("hibernalherbs/eatinganimations"), "eatinganimations");
-            }
+            registerBuiltinResourcePack(event, Component.literal("hibernalherbs/stripped_planks"), "stripped_planks");
         }
     }
 

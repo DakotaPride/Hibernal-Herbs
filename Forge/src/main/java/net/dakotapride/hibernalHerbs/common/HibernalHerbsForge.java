@@ -3,38 +3,24 @@ package net.dakotapride.hibernalHerbs.common;
 import net.dakotapride.hibernalHerbs.client.PackLoader;
 import net.dakotapride.hibernalHerbs.common.entity.HibernalBlockEntities;
 import net.dakotapride.hibernalHerbs.common.entity.HibernalEntityTypes;
-import net.dakotapride.hibernalHerbs.common.entity.render.MyquesteBoatRenderer;
 import net.dakotapride.hibernalHerbs.common.recipe.HibernalRecipes;
 import net.dakotapride.hibernalHerbs.common.registry.BlockRegistry;
 import net.dakotapride.hibernalHerbs.common.registry.ItemRegistry;
-import net.dakotapride.hibernalHerbs.common.screen.HerbalConjurationScreen;
 import net.dakotapride.hibernalHerbs.common.screen.menu.HibernalHerbsMenues;
-import net.dakotapride.hibernalHerbs.platform.Services;
-import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
-
-import java.util.List;
 
 import static net.dakotapride.hibernalHerbs.common.Constants.MOD_ID;
 
@@ -77,14 +63,10 @@ public class HibernalHerbsForge {
         eventBus.addListener(PackLoader::onAddPackFinders);
 
         eventBus.addListener(this::commonSetup);
-        eventBus.addListener(this::clientSetup);
 
         // This method is invoked by the Forge mod loader when it is ready
         // to load your mod. You can access Forge and Common code in this
         // project.
-    
-        // Use Forge to bootstrap the Common mod.
-        init();
 
         // Some code like events require special initialization from the
         // loader specific code.
@@ -110,8 +92,6 @@ public class HibernalHerbsForge {
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockRegistry.THYOCIELLE.getId(), BlockRegistry.POTTED_THYOCIELLE);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockRegistry.FENNKYSTRAL.getId(), BlockRegistry.POTTED_FENNKYSTRAL);
-
-            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockRegistry.BLOFORIA.getId(), BlockRegistry.POTTED_BLOFORIA);
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockRegistry.CALENDULA.getId(), BlockRegistry.POTTED_CALENDULA);
 
@@ -193,43 +173,6 @@ public class HibernalHerbsForge {
             InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
                     () -> SlotTypePreset.NECKLACE.getMessageBuilder().build());
         });
-    }
-
-    private void clientSetup(final FMLClientSetupEvent event) {
-        ItemProperties.register(ItemRegistry.CANISTER.get(), new ResourceLocation(MOD_ID, "filled"),
-                ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
-
-        MenuScreens.register(HibernalHerbsMenues.CONJURATION_ALTAR_MENU.get(), HerbalConjurationScreen::new);
-
-        EntityRenderers.register(HibernalEntityTypes.MYQUESTE_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, false));
-        EntityRenderers.register(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), (context) -> new MyquesteBoatRenderer(context, true));
-    }
-
-    public static void init() {
-
-        Constants.LOG.info("Hello from Common init on {}! we are currently in a {} environment!", Services.PLATFORM.getPlatformName(), Services.PLATFORM.isDevelopmentEnvironment() ? "development" : "production");
-    }
-
-    // This method exists as a wrapper for the code in the Common project.
-    // It takes Forge's event object and passes the parameters along to
-    // the Common listener.
-    private void onItemTooltip(ItemTooltipEvent event) {
-
-        // Common$onItemTooltip(event.getItemStack(), event.getFlags(), event.getToolTip());
-    }
-
-    public static void Common$onItemTooltip(ItemStack stack, TooltipFlag context, List<Component> tooltip) {
-
-        if (!stack.isEmpty()) {
-
-            final FoodProperties food = stack.getItem().getFoodProperties();
-
-            if (food != null) {
-
-                tooltip.add(Component.literal("Nutrition: " + food.getNutrition()));
-                tooltip.add(Component.literal("Saturation: " + food.getSaturationModifier()));
-            }
-        }
     }
 
 }
