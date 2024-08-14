@@ -82,19 +82,19 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
                 var10000.ifPresent(slotAccess::set);
 
                 if (this.getDefaultInstance().is(HibernalHerbsForge.POUCHES_TAG)) {
-                    if (this.getDefaultInstance().is(ItemRegistry.POUCH_SCRATCHED.get())) {
+                    if (this.getDefaultInstance().is(ItemRegistry.IRON_POUCH.get())) {
                         if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                             if (this.getDefaultInstance().hasTag()) {
                                 playRemoveOneSound(player);
                             }
                         }
-                    } else if (this.getDefaultInstance().is(ItemRegistry.POUCH_STITCHED.get())) {
+                    } else if (this.getDefaultInstance().is(ItemRegistry.AMETHYST_POUCH.get())) {
                         if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                             if (this.getDefaultInstance().hasTag()) {
                                 playRemoveOneSound(player);
                             }
                         }
-                    } else if (this.getDefaultInstance().is(ItemRegistry.POUCH_PROPER.get())) {
+                    } else if (this.getDefaultInstance().is(ItemRegistry.DIAMOND_POUCH.get())) {
                         if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                             if (this.getDefaultInstance().hasTag()) {
                                 playRemoveOneSound(player);
@@ -104,17 +104,17 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
                 }
 
             } else if (this.getDefaultInstance().is(HibernalHerbsForge.POUCHES_TAG)) {
-                if (this.getDefaultInstance().is(ItemRegistry.POUCH_SCRATCHED.get())) {
+                if (this.getDefaultInstance().is(ItemRegistry.IRON_POUCH.get())) {
                     if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                         playInsertSound(player);
                         stack2.shrink(add(stack1, stack2, size, player));
                     }
-                } else if (this.getDefaultInstance().is(ItemRegistry.POUCH_STITCHED.get())) {
+                } else if (this.getDefaultInstance().is(ItemRegistry.AMETHYST_POUCH.get())) {
                     if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                         playInsertSound(player);
                         stack2.shrink(add(stack1, stack2, size, player));
                     }
-                } else if (this.getDefaultInstance().is(ItemRegistry.POUCH_PROPER.get())) {
+                } else if (this.getDefaultInstance().is(ItemRegistry.DIAMOND_POUCH.get())) {
                     if (stack2.is(HibernalHerbsForge.HERBS_TAG) || stack2.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                         playInsertSound(player);
                         stack2.shrink(add(stack1, stack2, size, player));
@@ -171,11 +171,11 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
         if (!Screen.hasShiftDown()) {
             components.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
-            if (stack.is(ItemRegistry.POUCH_SCRATCHED.get())) {
+            if (stack.is(ItemRegistry.IRON_POUCH.get())) {
                 components.add(Component.translatable("text.hibernalherbs.pouch.quality.scratched").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(ItemRegistry.POUCH_STITCHED.get())) {
+            } else if (stack.is(ItemRegistry.AMETHYST_POUCH.get())) {
                 components.add(Component.translatable("text.hibernalherbs.pouch.quality.stitched").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(ItemRegistry.POUCH_PROPER.get())) {
+            } else if (stack.is(ItemRegistry.DIAMOND_POUCH.get())) {
                 components.add(Component.translatable("text.hibernalherbs.pouch.quality.proper").withStyle(ChatFormatting.GRAY));
             }
 
@@ -216,7 +216,7 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
 
 
     public int add(ItemStack bundleStack, ItemStack addStack, int size, @Nullable Player player) {
-        if (this.getDefaultInstance().is(ItemRegistry.POUCH_SCRATCHED.get())) {
+        if (this.getDefaultInstance().is(ItemRegistry.IRON_POUCH.get())) {
             if (!addStack.isEmpty() && addStack.is(HibernalHerbsForge.HERBS_TAG)
                     || !addStack.isEmpty() && addStack.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                 CompoundTag tag = bundleStack.getOrCreateTag();
@@ -256,7 +256,7 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
             } else {
                 return 0;
             }
-        } else if (this.getDefaultInstance().is(ItemRegistry.POUCH_STITCHED.get())) {
+        } else if (this.getDefaultInstance().is(ItemRegistry.AMETHYST_POUCH.get())) {
             if (!addStack.isEmpty() && addStack.is(HibernalHerbsForge.HERBS_TAG)
                     || !addStack.isEmpty() && addStack.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                 CompoundTag tag = bundleStack.getOrCreateTag();
@@ -296,7 +296,7 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
             } else {
                 return 0;
             }
-        } else if (this.getDefaultInstance().is(ItemRegistry.POUCH_PROPER.get())) {
+        } else if (this.getDefaultInstance().is(ItemRegistry.DIAMOND_POUCH.get())) {
             if (!addStack.isEmpty() && addStack.is(HibernalHerbsForge.HERBS_TAG)
                     || !addStack.isEmpty() && addStack.is(HibernalHerbsForge.POUNDED_HERBS_TAG)) {
                 CompoundTag tag = bundleStack.getOrCreateTag();

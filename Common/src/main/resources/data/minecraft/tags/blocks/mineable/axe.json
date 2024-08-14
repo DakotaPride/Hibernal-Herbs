@@ -36,10 +36,6 @@
     {
       "required": false,
       "id": "hibernalherbs:myqueste_wall_sign"
-    },
-    {
-      "required": false,
-      "id": "hibernalherbs:bloforia_herb_barrel"
     }
   ]
 }

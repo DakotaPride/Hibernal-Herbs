@@ -34,15 +34,15 @@ public class CursedPadlockItem extends Item implements ICurioItem, ITooltipProvi
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        if (stack.is(ItemRegistry.AVARICE_PADLOCK_BOUND.get())) {
+        if (stack.is(ItemRegistry.BOUND_GREED_PADLOCK.get())) {
             slotContext.entity().addEffect(new MobEffectInstance(MobEffects.LUCK, 40, 1));
-        } else if (stack.is(ItemRegistry.GOURMANDIZING_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_GLUTTONY_PADLOCK.get())) {
             slotContext.entity().removeEffect(MobEffects.HUNGER);
-        } else if (stack.is(ItemRegistry.PIQUE_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_PRIDE_PADLOCK.get())) {
             slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, 1));
-        } else if (stack.is(ItemRegistry.APATHY_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_SLOTH_PADLOCK.get())) {
             slotContext.entity().addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 40, 0));
-        } else if (stack.is(ItemRegistry.SALACIOUS_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_LUST_PADLOCK.get())) {
             if (slotContext.entity().hasEffect(MobEffects.POISON)) {
                 slotContext.entity().removeEffect(MobEffects.POISON);
             } else if (slotContext.entity().hasEffect(MobEffects.WITHER)) {
@@ -53,51 +53,52 @@ public class CursedPadlockItem extends Item implements ICurioItem, ITooltipProvi
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> atts = HashMultimap.create();
+        Multimap<Attribute, AttributeModifier> modifiers = HashMultimap.create();
 
-        if (stack.is(ItemRegistry.VEXATION_PADLOCK_BOUND.get())) {
-            atts.put(Attributes.MAX_HEALTH, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":wrath_health",
-                            3, AttributeModifier.Operation.ADDITION));
-            atts.put(Attributes.ATTACK_DAMAGE, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":wrath_damage",
-                            4, AttributeModifier.Operation.ADDITION));
-        } else if (stack.is(ItemRegistry.PIQUE_PADLOCK_BOUND.get())) {
-            atts.put(Attributes.MAX_HEALTH, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":pride_health",
-                            5, AttributeModifier.Operation.ADDITION));
-        } else if (stack.is(ItemRegistry.GOURMANDIZING_PADLOCK_BOUND.get())) {
-            atts.put(Attributes.MAX_HEALTH, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":gluttony_health",
-                            7, AttributeModifier.Operation.ADDITION));
-        } else if (stack.is(ItemRegistry.AVARICE_PADLOCK_BOUND.get())) {
-            atts.put(Attributes.MAX_HEALTH, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":greed_health",
-                            9, AttributeModifier.Operation.ADDITION));
-        } else if (stack.is(ItemRegistry.SPITEFUL_PADLOCK_BOUND.get())) {
-            atts.put(Attributes.MAX_HEALTH, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":envy_health",
-                            11, AttributeModifier.Operation.ADDITION));
-            atts.put(Attributes.MOVEMENT_SPEED, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":envy_movement",
-                            0.04, AttributeModifier.Operation.ADDITION));
-        } else if (stack.is(ItemRegistry.APATHY_PADLOCK_BOUND.get())) {
-            atts.put(Attributes.MAX_HEALTH, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":sloth_health",
-                            2, AttributeModifier.Operation.ADDITION));
-            atts.put(Attributes.MOVEMENT_SPEED, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":sloth_movement",
-                            -0.02, AttributeModifier.Operation.ADDITION));
-        } else if (stack.is(ItemRegistry.SALACIOUS_PADLOCK_BOUND.get())) {
-            atts.put(Attributes.MAX_HEALTH, new AttributeModifier
-                    (uuid, Constants.MOD_ID + ":lust_health",
-                            11, AttributeModifier.Operation.ADDITION));
+        AttributeModifier baseHealthModifier = new AttributeModifier(uuid, "hibernalherbs:base_health",
+                8, AttributeModifier.Operation.ADDITION);
+        AttributeModifier baseAttackDamageModifier = new AttributeModifier(uuid, "hibernalherbs:base_attack_damage",
+                4, AttributeModifier.Operation.ADDITION);
+        // Unused
+//        AttributeModifier baseMovementSpeedModifier = new AttributeModifier(uuid, "hibernalherbs:base_movement_speed",
+//                0.02, AttributeModifier.Operation.ADDITION);
+
+        AttributeModifier prideHealthModifier = new AttributeModifier(uuid, "hibernalherbs:pride_health_modifier",
+                10, AttributeModifier.Operation.ADDITION);
+        AttributeModifier envyHealthModifier = new AttributeModifier(uuid, "hibernalherbs:envy_health_modifier",
+                6, AttributeModifier.Operation.ADDITION);
+        AttributeModifier lustHealthModifier = new AttributeModifier(uuid, "hibernalherbs:lust_health_modifier",
+                10, AttributeModifier.Operation.ADDITION);
+        AttributeModifier gluttonyMovementSpeedModifier = new AttributeModifier(uuid, "hibernalherbs:gluttony_movement_speed_modifier",
+                -0.02, AttributeModifier.Operation.ADDITION);
+        AttributeModifier envyMovementSpeedModifier = new AttributeModifier(uuid, "hibernalherbs:envy_movement_speed_modifier",
+                0.04, AttributeModifier.Operation.ADDITION);
+        AttributeModifier slothMovementSpeedModifier = new AttributeModifier(uuid, "hibernalherbs:sloth_movement_speed_modifier",
+                -0.04, AttributeModifier.Operation.ADDITION);
+
+        if (stack.is(ItemRegistry.BOUND_WRATH_PADLOCK.get())) {
+            modifiers.put(Attributes.MAX_HEALTH, baseHealthModifier);
+            modifiers.put(Attributes.ATTACK_DAMAGE, baseAttackDamageModifier);
+        } else if (stack.is(ItemRegistry.BOUND_PRIDE_PADLOCK.get())) {
+            modifiers.put(Attributes.MAX_HEALTH, prideHealthModifier);
+        } else if (stack.is(ItemRegistry.BOUND_GLUTTONY_PADLOCK.get())) {
+            modifiers.put(Attributes.MAX_HEALTH, baseHealthModifier);
+            modifiers.put(Attributes.MOVEMENT_SPEED, gluttonyMovementSpeedModifier);
+        } else if (stack.is(ItemRegistry.BOUND_GREED_PADLOCK.get())) {
+            modifiers.put(Attributes.MAX_HEALTH, baseHealthModifier);
+        } else if (stack.is(ItemRegistry.BOUND_ENVY_PADLOCK.get())) {
+            modifiers.put(Attributes.MAX_HEALTH, envyHealthModifier);
+            modifiers.put(Attributes.MOVEMENT_SPEED, envyMovementSpeedModifier);
+        } else if (stack.is(ItemRegistry.BOUND_SLOTH_PADLOCK.get())) {
+            modifiers.put(Attributes.MAX_HEALTH, baseHealthModifier);
+            modifiers.put(Attributes.MOVEMENT_SPEED, slothMovementSpeedModifier);
+        } else if (stack.is(ItemRegistry.BOUND_LUST_PADLOCK.get())) {
+            modifiers.put(Attributes.MAX_HEALTH, lustHealthModifier);
         }
 
-
-        return atts;
+        return modifiers;
     }
-
+    
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
         if (!Screen.hasShiftDown()) {
@@ -139,19 +140,19 @@ public class CursedPadlockItem extends Item implements ICurioItem, ITooltipProvi
     public static void getUnboundPadlockAssistance(ItemStack stack, List<Component> tooltip) {
         String getPrince = BoundPrinces.NONE.getPrince();
 
-        if (stack.is(ItemRegistry.VEXATION_PADLOCK.get())) {
+        if (stack.is(ItemRegistry.WRATH_PADLOCK.get())) {
             getPrince = BoundPrinces.WRATH.getPrince();
-        } else if (stack.is(ItemRegistry.PIQUE_PADLOCK.get())) {
+        } else if (stack.is(ItemRegistry.PRIDE_PADLOCK.get())) {
             getPrince = BoundPrinces.PRIDE.getPrince();
-        } else if (stack.is(ItemRegistry.GOURMANDIZING_PADLOCK.get())) {
+        } else if (stack.is(ItemRegistry.GLUTTONY_PADLOCK.get())) {
             getPrince = BoundPrinces.GLUTTONY.getPrince();
-        } else if (stack.is(ItemRegistry.AVARICE_PADLOCK.get())) {
+        } else if (stack.is(ItemRegistry.GREED_PADLOCK.get())) {
             getPrince = BoundPrinces.GREED.getPrince();
-        } else if (stack.is(ItemRegistry.SPITEFUL_PADLOCK.get())) {
+        } else if (stack.is(ItemRegistry.ENVY_PADLOCK.get())) {
             getPrince = BoundPrinces.ENVY.getPrince();
-        } else if (stack.is(ItemRegistry.APATHY_PADLOCK.get())) {
+        } else if (stack.is(ItemRegistry.SLOTH_PADLOCK.get())) {
             getPrince = BoundPrinces.SLOTH.getPrince();
-        } else if (stack.is(ItemRegistry.SALACIOUS_PADLOCK.get())) {
+        } else if (stack.is(ItemRegistry.LUST_PADLOCK.get())) {
             getPrince = BoundPrinces.LUST.getPrince();
         }
 
@@ -175,19 +176,19 @@ public class CursedPadlockItem extends Item implements ICurioItem, ITooltipProvi
     public static void getBoundPrinceFromTooltip(ItemStack stack, List<Component> tooltip) {
         String boundPrince = BoundPrinces.NONE.getPrince();
 
-        if (stack.is(ItemRegistry.VEXATION_PADLOCK_BOUND.get())) {
+        if (stack.is(ItemRegistry.BOUND_WRATH_PADLOCK.get())) {
             boundPrince = BoundPrinces.WRATH.getPrince();
-        } else if (stack.is(ItemRegistry.PIQUE_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_PRIDE_PADLOCK.get())) {
             boundPrince = BoundPrinces.PRIDE.getPrince();
-        } else if (stack.is(ItemRegistry.GOURMANDIZING_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_GLUTTONY_PADLOCK.get())) {
             boundPrince = BoundPrinces.GLUTTONY.getPrince();
-        } else if (stack.is(ItemRegistry.AVARICE_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_GREED_PADLOCK.get())) {
             boundPrince = BoundPrinces.GREED.getPrince();
-        } else if (stack.is(ItemRegistry.SPITEFUL_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_ENVY_PADLOCK.get())) {
             boundPrince = BoundPrinces.ENVY.getPrince();
-        } else if (stack.is(ItemRegistry.APATHY_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_SLOTH_PADLOCK.get())) {
             boundPrince = BoundPrinces.SLOTH.getPrince();
-        } else if (stack.is(ItemRegistry.SALACIOUS_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_LUST_PADLOCK.get())) {
             boundPrince = BoundPrinces.LUST.getPrince();
         }
 
@@ -197,19 +198,19 @@ public class CursedPadlockItem extends Item implements ICurioItem, ITooltipProvi
     public static void getUnholyBlessingFromPrince(ItemStack stack, ServerPlayer serverPlayer) {
         String unholyBlessing = BoundPrinces.NONE.getSinFromPrince();
 
-        if (stack.is(ItemRegistry.VEXATION_PADLOCK_BOUND.get())) {
+        if (stack.is(ItemRegistry.BOUND_WRATH_PADLOCK.get())) {
             unholyBlessing = BoundPrinces.WRATH.getSinFromPrince();
-        } else if (stack.is(ItemRegistry.PIQUE_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_PRIDE_PADLOCK.get())) {
             unholyBlessing = BoundPrinces.PRIDE.getSinFromPrince();
-        } else if (stack.is(ItemRegistry.GOURMANDIZING_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_GLUTTONY_PADLOCK.get())) {
             unholyBlessing = BoundPrinces.GLUTTONY.getSinFromPrince();
-        } else if (stack.is(ItemRegistry.AVARICE_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_GREED_PADLOCK.get())) {
             unholyBlessing = BoundPrinces.GREED.getSinFromPrince();
-        } else if (stack.is(ItemRegistry.SPITEFUL_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_ENVY_PADLOCK.get())) {
             unholyBlessing = BoundPrinces.ENVY.getSinFromPrince();
-        } else if (stack.is(ItemRegistry.APATHY_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_SLOTH_PADLOCK.get())) {
             unholyBlessing = BoundPrinces.SLOTH.getSinFromPrince();
-        } else if (stack.is(ItemRegistry.SALACIOUS_PADLOCK_BOUND.get())) {
+        } else if (stack.is(ItemRegistry.BOUND_LUST_PADLOCK.get())) {
             unholyBlessing = BoundPrinces.LUST.getSinFromPrince();
         }
 

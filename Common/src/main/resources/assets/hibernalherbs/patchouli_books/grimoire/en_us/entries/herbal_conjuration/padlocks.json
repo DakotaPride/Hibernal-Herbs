@@ -2,6 +2,7 @@
   "name": "Prince Of Sin Padlocks",
   "icon": "hibernalherbs:bound_padlock_lust",
   "category": "hibernalherbs:herbal_conjuration",
+  "advancement": "hibernalherbs:progression/obtain_singed_grimoire",
   "pages": [
     {
       "type": "patchouli:text",

@@ -74,10 +74,6 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
             livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, visionDuration, baseMultiplier));
         } else if (player.getMainHandItem().is(ItemRegistry.FIRE_BLEND.get())) { }
 
-        else if (player.getMainHandItem().is(ItemRegistry.GLOWING_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, glowingDuration, baseMultiplier));
-        }
-
         else if (player.getMainHandItem().is(ItemRegistry.REGENERATION_SLOWNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, healthDuration, baseMultiplier));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, healthDuration, baseMultiplier));
@@ -123,10 +119,6 @@ public class HerbBlendItem extends Item implements FoodComponentList, ITooltipPr
                 target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, visionDuration - 100, baseMultiplier - 1));
             } else if (attacker.getMainHandItem().is(ItemRegistry.FIRE_BLEND.get())) {
                 target.setSecondsOnFire(secondsOnFire - 2);
-            }
-
-            else if (attacker.getMainHandItem().is(ItemRegistry.GLOWING_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.GLOWING, glowingDuration - 60, baseMultiplier - 1));
             }
 
             else if (attacker.getMainHandItem().is(ItemRegistry.REGENERATION_SLOWNESS_BLEND.get())) {

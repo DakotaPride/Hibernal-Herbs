@@ -39,40 +39,36 @@ public class ItemRegistry implements FoodComponentList {
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> LUMBINETRIK_PETAL = ITEMS.register("lumbinetrik_petals",
             () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> JULISIUM_PETAL = ITEMS.register("julisium_petals",
+            () -> new Item(new Item.Properties().stacksTo(16)));
 
-    public static final RegistryObject<Item> VEXATION_PADLOCK_BOUND = ITEMS.register("bound_padlock_wrath",
+    public static final RegistryObject<Item> BOUND_WRATH_PADLOCK = ITEMS.register("bound_padlock_wrath",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
-    public static final RegistryObject<Item> VEXATION_PADLOCK = ITEMS.register("padlock_wrath",
+    public static final RegistryObject<Item> WRATH_PADLOCK = ITEMS.register("padlock_wrath",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> PIQUE_PADLOCK_BOUND = ITEMS.register("bound_padlock_pride",
+    public static final RegistryObject<Item> BOUND_PRIDE_PADLOCK = ITEMS.register("bound_padlock_pride",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
-    public static final RegistryObject<Item> PIQUE_PADLOCK = ITEMS.register("padlock_pride",
+    public static final RegistryObject<Item> PRIDE_PADLOCK = ITEMS.register("padlock_pride",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> GOURMANDIZING_PADLOCK_BOUND = ITEMS.register("bound_padlock_gluttony",
+    public static final RegistryObject<Item> BOUND_GLUTTONY_PADLOCK = ITEMS.register("bound_padlock_gluttony",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
-    public static final RegistryObject<Item> GOURMANDIZING_PADLOCK = ITEMS.register("padlock_gluttony",
+    public static final RegistryObject<Item> GLUTTONY_PADLOCK = ITEMS.register("padlock_gluttony",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> AVARICE_PADLOCK_BOUND = ITEMS.register("bound_padlock_greed",
+    public static final RegistryObject<Item> BOUND_GREED_PADLOCK = ITEMS.register("bound_padlock_greed",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
-    public static final RegistryObject<Item> AVARICE_PADLOCK = ITEMS.register("padlock_greed",
+    public static final RegistryObject<Item> GREED_PADLOCK = ITEMS.register("padlock_greed",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> SPITEFUL_PADLOCK_BOUND = ITEMS.register("bound_padlock_envy",
+    public static final RegistryObject<Item> BOUND_ENVY_PADLOCK = ITEMS.register("bound_padlock_envy",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
-    public static final RegistryObject<Item> SPITEFUL_PADLOCK = ITEMS.register("padlock_envy",
+    public static final RegistryObject<Item> ENVY_PADLOCK = ITEMS.register("padlock_envy",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> APATHY_PADLOCK_BOUND = ITEMS.register("bound_padlock_sloth",
+    public static final RegistryObject<Item> BOUND_SLOTH_PADLOCK = ITEMS.register("bound_padlock_sloth",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
-    public static final RegistryObject<Item> APATHY_PADLOCK = ITEMS.register("padlock_sloth",
+    public static final RegistryObject<Item> SLOTH_PADLOCK = ITEMS.register("padlock_sloth",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> SALACIOUS_PADLOCK_BOUND = ITEMS.register("bound_padlock_lust",
+    public static final RegistryObject<Item> BOUND_LUST_PADLOCK = ITEMS.register("bound_padlock_lust",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1).defaultDurability(1)));
-    public static final RegistryObject<Item> SALACIOUS_PADLOCK = ITEMS.register("padlock_lust",
+    public static final RegistryObject<Item> LUST_PADLOCK = ITEMS.register("padlock_lust",
             () -> new CursedPadlockItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> RING = ITEMS.register("ring",
@@ -86,7 +82,6 @@ public class ItemRegistry implements FoodComponentList {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SIGIL = ITEMS.register("sigil",
             () -> new HerbalSigilItem(new Item.Properties().stacksTo(8)));
-
     public static final RegistryObject<Item> SIGIL_WRATH = ITEMS.register("sigil_wrath",
             () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_GREED = ITEMS.register("sigil_greed",
@@ -101,12 +96,10 @@ public class ItemRegistry implements FoodComponentList {
             () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_SLOTH = ITEMS.register("sigil_sloth",
             () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
-
     public static final RegistryObject<Item> SIGIL_CONFIGURATION = ITEMS.register("sigil_configuration",
             () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_MASTERY = ITEMS.register("sigil_mastery",
             () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
-
     public static final RegistryObject<Item> SIGIL_CONFIGURATION_ADV = ITEMS.register("sigil_configuration_adv",
             () -> new HerbalSigilItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SIGIL_MASTERY_ADV = ITEMS.register("sigil_mastery_adv",
@@ -116,7 +109,6 @@ public class ItemRegistry implements FoodComponentList {
             () -> new MyquesteBoatItem(false, new Item.Properties().stacksTo(1), BlockRegistry.MYQUESTE_TYPE));
     public static final RegistryObject<Item> MYQUESTE_CHEST_BOAT = ITEMS.register("myqueste_chest_boat",
             () -> new MyquesteBoatItem(true, new Item.Properties().stacksTo(1), BlockRegistry.MYQUESTE_TYPE));
-
     public static final RegistryObject<Item> MYQUESTE_SIGN = ITEMS.register("myqueste_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16),
                     BlockRegistry.MYQUESTE_SIGN.get(), BlockRegistry.MYQUESTE_WALL_SIGN.get()));
@@ -126,7 +118,6 @@ public class ItemRegistry implements FoodComponentList {
 
     public static final RegistryObject<Item> HERB_FERTILIZER = ITEMS.register("herb_fertilizer",
             () -> new HerbFertilizerItem(new Item.Properties()));
-
     public static final RegistryObject<Item> HERB_FERTILIZER_OAK = ITEMS.register("herb_fertilizer_oak",
             () -> new HerbFertilizerItem(new Item.Properties()));
     public static final RegistryObject<Item> HERB_FERTILIZER_BIRCH = ITEMS.register("herb_fertilizer_birch",
@@ -147,13 +138,11 @@ public class ItemRegistry implements FoodComponentList {
             () -> new HerbFertilizerItem(new Item.Properties()));
     public static final RegistryObject<Item> HERB_FERTILIZER_WARPED = ITEMS.register("herb_fertilizer_warped",
             () -> new HerbFertilizerItem(new Item.Properties()));
-
     public static final RegistryObject<Item> HERB_FERTILIZER_MYQUESTE = ITEMS.register("herb_fertilizer_myqueste",
             () -> new HerbFertilizerItem(new Item.Properties()));
 
     public static final RegistryObject<Item> HERB_HUMUS = ITEMS.register("herb_humus",
             () -> new HerbHumusItem(new Item.Properties()));
-
     public static final RegistryObject<Item> HERB_HUMUS_OAK = ITEMS.register("herb_humus_oak",
             () -> new HerbHumusItem(new Item.Properties()));
     public static final RegistryObject<Item> HERB_HUMUS_BIRCH = ITEMS.register("herb_humus_birch",
@@ -174,23 +163,22 @@ public class ItemRegistry implements FoodComponentList {
             () -> new HerbHumusItem(new Item.Properties()));
     public static final RegistryObject<Item> HERB_HUMUS_WARPED = ITEMS.register("herb_humus_warped",
             () -> new HerbHumusItem(new Item.Properties()));
-
     public static final RegistryObject<Item> HERB_HUMUS_MYQUESTE = ITEMS.register("herb_humus_myqueste",
             () -> new HerbHumusItem(new Item.Properties()));
 
 
     // Refined Pouches/Canisters
-    public static final RegistryObject<Item> POUCH_SCRATCHED = ITEMS.register("pouch_scratched",
+    public static final RegistryObject<Item> IRON_POUCH = ITEMS.register("pouch_scratched",
             () -> new AbstractPouchItem(new Item.Properties().stacksTo(1), 64));
-    public static final RegistryObject<Item> CANISTER_IRON = ITEMS.register("canister_iron",
+    public static final RegistryObject<Item> IRON_CANISTER = ITEMS.register("canister_iron",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1), 128));
-    public static final RegistryObject<Item> POUCH_STITCHED = ITEMS.register("pouch_stitched",
+    public static final RegistryObject<Item> AMETHYST_POUCH = ITEMS.register("pouch_stitched",
             () -> new AbstractPouchItem(new Item.Properties().stacksTo(1), 192));
-    public static final RegistryObject<Item> CANISTER_AMETHYST = ITEMS.register("canister_amethyst",
+    public static final RegistryObject<Item> AMETHYST_CANISTER = ITEMS.register("canister_amethyst",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1), 256));
-    public static final RegistryObject<Item> POUCH_PROPER = ITEMS.register("pouch_proper",
+    public static final RegistryObject<Item> DIAMOND_POUCH = ITEMS.register("pouch_proper",
             () -> new AbstractPouchItem(new Item.Properties().stacksTo(1), 256));
-    public static final RegistryObject<Item> CANISTER_DIAMOND = ITEMS.register("canister_diamond",
+    public static final RegistryObject<Item> DIAMOND_CANISTER = ITEMS.register("canister_diamond",
             () -> new AbstractCanisterItem(new Item.Properties().stacksTo(1), 384));
 
 
@@ -239,22 +227,15 @@ public class ItemRegistry implements FoodComponentList {
     public static final RegistryObject<Item> POUNDED_ESSITTE = ITEMS.register("pounded_essitte",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .fast().nutrition(4).saturationMod(0.3f).build())));
-
-    // Resource Dependant (Pounded) Herbs (Forge)
-
     public static final RegistryObject<Item> POUNDED_THYOCIELLE = ITEMS.register("pounded_thyocielle",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .fast().nutrition(8).saturationMod(0.6f).build())));
     public static final RegistryObject<Item> POUNDED_FENNKYSTRAL = ITEMS.register("pounded_fennkystral",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .fast().nutrition(8).saturationMod(0.6f).build())));
-
-    // Spring (Pounded) Herbs (Forge)
-
     public static final RegistryObject<Item> POUNDED_CALENDULA = ITEMS.register("pounded_calendula",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .fast().nutrition(8).saturationMod(0.6f).build())));
-
     public static final RegistryObject<Item> POUNDED_SAGE = ITEMS.register("pounded_sage",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .fast().nutrition(4).saturationMod(0.3f).build())));
@@ -354,11 +335,6 @@ public class ItemRegistry implements FoodComponentList {
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, speedDuration + 100, baseMultiplier), baseChance)
                     .effect(new MobEffectInstance(MobEffects.WEAKNESS, damageDuration + 80, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
 
-    // Compat Herbs (Forge)
-    public static final RegistryObject<Item> GLOWING_BLEND = ITEMS.register("blend_glowing",
-            () -> new HerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.GLOWING, glowingDuration, baseMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
-
     // Smoked
     public static final RegistryObject<Item> SMOKED_REGENERATION_BLEND = ITEMS.register("blend_regeneration_smoked",
             () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
@@ -403,11 +379,6 @@ public class ItemRegistry implements FoodComponentList {
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, smokedSpeedDuration + 100, smokedMultiplier), baseChance)
                     .effect(new MobEffectInstance(MobEffects.WEAKNESS, smokedDamageDuration + 80, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
 
-    // Compat Herbs (Forge)
-    public static final RegistryObject<Item> SMOKED_GLOWING_BLEND = ITEMS.register("blend_glowing_smoked",
-            () -> new SmokedHerbBlendItem(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                    .effect(new MobEffectInstance(MobEffects.GLOWING, smokedVisionDuration, smokedMultiplier), baseChance).alwaysEat().nutrition(7).saturationMod(0.6f).build())));
-
     // Tabs
     public static final RegistryObject<CreativeModeTab> HIBERNAL_HERBS_TAB = CREATIVE_MODE_TABS.register("hibernal_herbs",
             () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.hibernalherbs.hibernal_herbs"))
@@ -415,12 +386,12 @@ public class ItemRegistry implements FoodComponentList {
                         output.accept(GROUND_HERBS.get());
                         output.accept(HERB_FERTILIZER.get());
                         output.accept(HERB_HUMUS.get());
-                        output.accept(POUCH_SCRATCHED.get());
-                        output.accept(POUCH_STITCHED.get());
-                        output.accept(POUCH_PROPER.get());
-                        output.accept(CANISTER_IRON.get());
-                        output.accept(CANISTER_AMETHYST.get());
-                        output.accept(CANISTER_DIAMOND.get());
+                        output.accept(IRON_POUCH.get());
+                        output.accept(AMETHYST_POUCH.get());
+                        output.accept(DIAMOND_POUCH.get());
+                        output.accept(IRON_CANISTER.get());
+                        output.accept(AMETHYST_CANISTER.get());
+                        output.accept(DIAMOND_CANISTER.get());
 
                         output.accept(REGENERATION_BLEND.get());
                         output.accept(SMOKED_REGENERATION_BLEND.get());
@@ -454,6 +425,7 @@ public class ItemRegistry implements FoodComponentList {
 
                         output.accept(SILIPTIUM_PETAL.get());
                         output.accept(LUMBINETRIK_PETAL.get());
+                        output.accept(JULISIUM_PETAL.get());
 
                         output.accept(SIGIL.get());
                         output.accept(SIGIL_PRIDE.get());
@@ -468,20 +440,20 @@ public class ItemRegistry implements FoodComponentList {
                         output.accept(SIGIL_MASTERY.get());
                         output.accept(SIGIL_MASTERY_ADV.get());
 
-                        output.accept(PIQUE_PADLOCK.get());
-                        output.accept(PIQUE_PADLOCK_BOUND.get());
-                        output.accept(VEXATION_PADLOCK.get());
-                        output.accept(VEXATION_PADLOCK_BOUND.get());
-                        output.accept(GOURMANDIZING_PADLOCK.get());
-                        output.accept(GOURMANDIZING_PADLOCK_BOUND.get());
-                        output.accept(APATHY_PADLOCK.get());
-                        output.accept(APATHY_PADLOCK_BOUND.get());
-                        output.accept(SALACIOUS_PADLOCK.get());
-                        output.accept(SALACIOUS_PADLOCK_BOUND.get());
-                        output.accept(SPITEFUL_PADLOCK.get());
-                        output.accept(SPITEFUL_PADLOCK_BOUND.get());
-                        output.accept(AVARICE_PADLOCK.get());
-                        output.accept(AVARICE_PADLOCK_BOUND.get());
+                        output.accept(PRIDE_PADLOCK.get());
+                        output.accept(BOUND_PRIDE_PADLOCK.get());
+                        output.accept(WRATH_PADLOCK.get());
+                        output.accept(BOUND_WRATH_PADLOCK.get());
+                        output.accept(GLUTTONY_PADLOCK.get());
+                        output.accept(BOUND_GLUTTONY_PADLOCK.get());
+                        output.accept(SLOTH_PADLOCK.get());
+                        output.accept(BOUND_SLOTH_PADLOCK.get());
+                        output.accept(LUST_PADLOCK.get());
+                        output.accept(BOUND_LUST_PADLOCK.get());
+                        output.accept(ENVY_PADLOCK.get());
+                        output.accept(BOUND_ENVY_PADLOCK.get());
+                        output.accept(GREED_PADLOCK.get());
+                        output.accept(BOUND_GREED_PADLOCK.get());
 
                         output.accept(RING.get());
                         output.accept(GLUTTONOUS_RING.get());

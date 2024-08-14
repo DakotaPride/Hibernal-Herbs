@@ -259,24 +259,22 @@
 
   "item.hibernalherbs.lumbinetrik_petals": "Lumbinetrik Petals",
   "item.hibernalherbs.sin_petals": "Siliptium Petals",
+  "item.hibernalherbs.julisium_petals": "Julisium Petals",
   "item.hibernalherbs.ground_herbs": "Ground Herbs",
 
   "block.hibernalherbs.conjuration_altar": "Herbal Conjuration Altar",
 
-  // Legacy
-  "item.hibernalherbs.pouch": "Herb Pouch (Legacy)",
-  "item.hibernalherbs.canister": "Blend Canister (Legacy)",
-
-  // Forge Additions
-
-  "itemGroup.hibernal_herbs": "Hibernal Herbs Misc",
-  "itemGroup.pounded_herbs": "Pounded Herbs",
-  "itemGroup.herbs": "Herbs",
-  "itemGroup.reproduction": "Herb Reproduction",
+  "itemGroup.hibernalherbs.hibernal_herbs": "Hibernal Herbs Misc",
+  "itemGroup.hibernalherbs.pounded_herbs": "Pounded Herbs",
+  "itemGroup.hibernalherbs.herbs": "Herbs",
+  "itemGroup.hibernalherbs.reproduction": "Herb Reproduction",
 
   "entity.hibernalherbs.myqueste_chest_boat": "Myqueste Boat with Chest",
   "entity.hibernalherbs.myqueste_boat": "Myqueste Boat",
 
+  // Legacy
+  "item.hibernalherbs.pouch": "Herb Pouch (Legacy)",
+  "item.hibernalherbs.canister": "Blend Canister (Legacy)",
 
   // Basic Tooltips
   "text.hibernalherbs.controls.shift": "[§7Shift§8] For More Details",
@@ -289,11 +287,6 @@
   "text.hibernalherbs.controls.left_click.player": "[§7Left-Click on Player§8]",
   "text.hibernalherbs.controls.passive.inventory": "While In Inventory: ",
   "text.hibernalherbs.required_mod.patchouli": "Install Patchouli For Proper Integration",
-
-  "itemGroup.hibernalherbs.hibernal_herbs": "Herbs Misc",
-  "itemGroup.hibernalherbs.herbs": "Herbs",
-  "itemGroup.hibernalherbs.pounded_herbs": "Pounded Herbs",
-  "itemGroup.hibernalherbs.reproduction": "Herb Reproduction",
 
   // Herb Fertilizer/Humus Tooltips
   "text.hibernalherbs.association.none": "§6Association:§7 None",
@@ -371,7 +364,7 @@
   "text.hibernalherbs.blend.ability": "§6Ability:§7 %s",
   "text.hibernalherbs.blend.ability.help.one": "§dHerbal Blends§5 will provide",
   "text.hibernalherbs.blend.ability.help.two": "the target with varying effects.",
-  "text.hibernalherbs.blend.effect.help.one": "These effects can either §dnegative§5",
+  "text.hibernalherbs.blend.effect.help.one": "These effects can either be §dnegative§5",
   "text.hibernalherbs.blend.effect.help.two": "or §dpositive§5, and can",
   "text.hibernalherbs.blend.effect.help.three": "even be both in some cases!",
   "text.hibernalherbs.blend.attacking.help.one": "Attacking a player will apply",
@@ -438,7 +431,7 @@
   "text.hibernalherbs.sigil.alignment.mastery": "Mastery",
   "text.hibernalherbs.sigil.alignment.advanced_mastery": "Advanced Mastery",
   "text.hibernalherbs.sigil.alignment.configuration": "Configuration",
-  "text.hibernalherbs.sigil.alignment.advanced_configuration": "Advanced Mastery",
+  "text.hibernalherbs.sigil.alignment.advanced_configuration": "Advanced Configuration",
 
   // Padlocks
   "text.hibernalherbs.padlock.unholy_blessing": "May The Prince of %s Guide You...",
@@ -514,6 +507,8 @@
   "advancements.hibernalherbs.obtain_gluttonous_ring.description": "Obtain a Gluttonous Ring",
   "advancements.hibernalherbs.obtain_gluttonous_ring_adv.title": "Nom Nom Nom",
   "advancements.hibernalherbs.obtain_gluttonous_ring_adv.description": "Obtain an Advanced Gluttonous Ring",
+  "advancements.hibernalherbs.obtain_singed_grimoire.title": "Hellfire! Hellfire in my skin!",
+  "advancements.hibernalherbs.obtain_singed_grimoire.description": "Obtain a Singed Grimoire to expand your knowledge",
 
   // REI & JEI Integration
   "text.hibernalherbs.herbal_conjuration": "Herbal Conjuration"

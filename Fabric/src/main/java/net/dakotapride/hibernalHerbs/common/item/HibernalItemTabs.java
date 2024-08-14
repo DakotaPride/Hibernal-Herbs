@@ -22,9 +22,9 @@ public class HibernalItemTabs {
                         entries.add(ItemInit.GROUND_HERBS);
                         entries.add(ItemInit.HERB_FERTILIZER);
                         entries.add(ItemInit.HERB_HUMUS);
-                        entries.add(ItemInit.SCRATCHED_POUCH);
-                        entries.add(ItemInit.STITCHED_POUCH);
-                        entries.add(ItemInit.PROPER_POUCH);
+                        entries.add(ItemInit.IRON_POUCH);
+                        entries.add(ItemInit.AMETHYST_POUCH);
+                        entries.add(ItemInit.DIAMOND_POUCH);
                         entries.add(ItemInit.IRON_CANISTER);
                         entries.add(ItemInit.AMETHYST_CANISTER);
                         entries.add(ItemInit.DIAMOND_CANISTER);
@@ -61,6 +61,7 @@ public class HibernalItemTabs {
 
                         entries.add(ItemInit.SILIPTIUM_PETAL);
                         entries.add(ItemInit.LUMBINETRIK_PETAL);
+                        entries.add(ItemInit.JULISIUM_PETAL);
 
                         entries.add(ItemInit.SIGIL);
                         entries.add(ItemInit.SIGIL_PRIDE);
@@ -75,20 +76,20 @@ public class HibernalItemTabs {
                         entries.add(ItemInit.SIGIL_MASTERY);
                         entries.add(ItemInit.SIGIL_MASTERY_ADVANCED);
 
-                        entries.add(ItemInit.PIQUE_PADLOCK);
-                        entries.add(ItemInit.PIQUE_PADLOCK_BOUND);
-                        entries.add(ItemInit.VEXATION_PADLOCK);
-                        entries.add(ItemInit.VEXATION_PADLOCK_BOUND);
-                        entries.add(ItemInit.GOURMANDIZING_PADLOCK);
-                        entries.add(ItemInit.GOURMANDIZING_PADLOCK_BOUND);
-                        entries.add(ItemInit.APATHY_PADLOCK);
-                        entries.add(ItemInit.APATHY_PADLOCK_BOUND);
-                        entries.add(ItemInit.SALACIOUS_PADLOCK);
-                        entries.add(ItemInit.SALACIOUS_PADLOCK_BOUND);
-                        entries.add(ItemInit.SPITEFUL_PADLOCK);
-                        entries.add(ItemInit.SPITEFUL_PADLOCK_BOUND);
-                        entries.add(ItemInit.AVARICE_PADLOCK);
-                        entries.add(ItemInit.AVARICE_PADLOCK_BOUND);
+                        entries.add(ItemInit.PRIDE_PADLOCK);
+                        entries.add(ItemInit.BOUND_PRIDE_PADLOCK);
+                        entries.add(ItemInit.WRATH_PADLOCK);
+                        entries.add(ItemInit.BOUND_WRATH_PADLOCK);
+                        entries.add(ItemInit.GLUTTONY_PADLOCK);
+                        entries.add(ItemInit.BOUND_GLUTTONY_PADLOCK);
+                        entries.add(ItemInit.SLOTH_PADLOCK);
+                        entries.add(ItemInit.BOUND_SLOTH_PADLOCK);
+                        entries.add(ItemInit.LUST_PADLOCK);
+                        entries.add(ItemInit.BOUND_LUST_PADLOCK);
+                        entries.add(ItemInit.ENVY_PADLOCK);
+                        entries.add(ItemInit.BOUND_ENVY_PADLOCK);
+                        entries.add(ItemInit.GREED_PADLOCK);
+                        entries.add(ItemInit.BOUND_GREED_PADLOCK);
 
                         entries.add(ItemInit.RING);
                         entries.add(ItemInit.GLUTTONOUS_RING);

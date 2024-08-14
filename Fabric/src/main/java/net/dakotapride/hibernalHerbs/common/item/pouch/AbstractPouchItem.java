@@ -65,21 +65,21 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
                     playRemoveOneSound(player);
                 }
 
-            } else if (pouchStack.isOf(ItemInit.SCRATCHED_POUCH)) {
+            } else if (pouchStack.isOf(ItemInit.IRON_POUCH)) {
                 if (itemStack.isIn(Utilities.HERBS) || itemStack.isIn(Utilities.POUNDED_HERBS)) {
                     int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
 
                     playInsertSound(player);
                     add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
                 }
-            } else if (pouchStack.isOf(ItemInit.STITCHED_POUCH)) {
+            } else if (pouchStack.isOf(ItemInit.AMETHYST_POUCH)) {
                 if (itemStack.isIn(Utilities.HERBS) || itemStack.isIn(Utilities.POUNDED_HERBS)) {
                     int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
 
                     playInsertSound(player);
                     add(stack, slot.takeStackRange(itemStack.getCount(), var6, player), size, player);
                 }
-            } else if (pouchStack.isOf(ItemInit.PROPER_POUCH)) {
+            } else if (pouchStack.isOf(ItemInit.DIAMOND_POUCH)) {
                 if (itemStack.isIn(Utilities.HERBS) || itemStack.isIn(Utilities.POUNDED_HERBS)) {
                     int var6 = (size - getContentWeight(stack, 64)) / getWeight(itemStack, 64);
 
@@ -101,19 +101,19 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
                 var10000.ifPresent(stackReference::set);
 
                 if (this.getDefaultStack().isIn(Utilities.POUCHES)) {
-                    if (this.getDefaultStack().isOf(ItemInit.SCRATCHED_POUCH)) {
+                    if (this.getDefaultStack().isOf(ItemInit.IRON_POUCH)) {
                         if (stack2.isIn(Utilities.HERBS) || stack2.isIn(Utilities.POUNDED_HERBS)) {
                             if (this.getDefaultStack().hasNbt()) {
                                 playRemoveOneSound(player);
                             }
                         }
-                    } else if (this.getDefaultStack().isOf(ItemInit.STITCHED_POUCH)) {
+                    } else if (this.getDefaultStack().isOf(ItemInit.AMETHYST_POUCH)) {
                         if (stack2.isIn(Utilities.HERBS) || stack2.isIn(Utilities.POUNDED_HERBS)) {
                             if (this.getDefaultStack().hasNbt()) {
                                 playRemoveOneSound(player);
                             }
                         }
-                    } else if (this.getDefaultStack().isOf(ItemInit.PROPER_POUCH)) {
+                    } else if (this.getDefaultStack().isOf(ItemInit.DIAMOND_POUCH)) {
                         if (stack2.isIn(Utilities.HERBS) || stack2.isIn(Utilities.POUNDED_HERBS)) {
                             if (this.getDefaultStack().hasNbt()) {
                                 playRemoveOneSound(player);
@@ -122,17 +122,17 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
                     }
                 }
             } else if (this.getDefaultStack().isIn(Utilities.POUCHES)) {
-                if (this.getDefaultStack().isOf(ItemInit.SCRATCHED_POUCH)) {
+                if (this.getDefaultStack().isOf(ItemInit.IRON_POUCH)) {
                     if (stack2.isIn(Utilities.HERBS) || stack2.isIn(Utilities.POUNDED_HERBS)) {
                         playInsertSound(player);
                         stack2.decrement(add(stack1, stack2, size, player));
                     }
-                } else if (this.getDefaultStack().isOf(ItemInit.STITCHED_POUCH)) {
+                } else if (this.getDefaultStack().isOf(ItemInit.AMETHYST_POUCH)) {
                     if (stack2.isIn(Utilities.HERBS) || stack2.isIn(Utilities.POUNDED_HERBS)) {
                         playInsertSound(player);
                         stack2.decrement(add(stack1, stack2, size, player));
                     }
-                } else if (this.getDefaultStack().isOf(ItemInit.PROPER_POUCH)) {
+                } else if (this.getDefaultStack().isOf(ItemInit.DIAMOND_POUCH)) {
                     if (stack2.isIn(Utilities.HERBS) || stack2.isIn(Utilities.POUNDED_HERBS)) {
                         playInsertSound(player);
                         stack2.decrement(add(stack1, stack2, size, player));
@@ -189,11 +189,11 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
         if (!Screen.hasShiftDown()) {
             tooltip.add(Text.translatable(shiftControlsText).formatted(Formatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
-            if (stack.isOf(ItemInit.SCRATCHED_POUCH)) {
+            if (stack.isOf(ItemInit.IRON_POUCH)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.scratched").formatted(Formatting.GRAY));
-            } else if (stack.isOf(ItemInit.STITCHED_POUCH)) {
+            } else if (stack.isOf(ItemInit.AMETHYST_POUCH)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.stitched").formatted(Formatting.GRAY));
-            } else if (stack.isOf(ItemInit.PROPER_POUCH)) {
+            } else if (stack.isOf(ItemInit.DIAMOND_POUCH)) {
                 tooltip.add(Text.translatable("text.hibernalherbs.pouch.quality.proper").formatted(Formatting.GRAY));
             }
 
@@ -237,7 +237,7 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
     public int add(ItemStack bundleStack, ItemStack addStack, int size, PlayerEntity player) {
         ItemStack pouchStack = this.asItem().getDefaultStack();
 
-        if (pouchStack.isOf(ItemInit.SCRATCHED_POUCH)) {
+        if (pouchStack.isOf(ItemInit.IRON_POUCH)) {
             if (!addStack.isEmpty() && addStack.isIn(Utilities.HERBS)
                     || !addStack.isEmpty() && addStack.isIn(Utilities.POUNDED_HERBS)) {
                 NbtCompound tag = bundleStack.getOrCreateNbt();
@@ -277,7 +277,7 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
             } else {
                 return 0;
             }
-        } else if (pouchStack.isOf(ItemInit.STITCHED_POUCH)) {
+        } else if (pouchStack.isOf(ItemInit.AMETHYST_POUCH)) {
             if (!addStack.isEmpty() && addStack.isIn(Utilities.HERBS)
                     || !addStack.isEmpty() && addStack.isIn(Utilities.POUNDED_HERBS)) {
                 NbtCompound tag = bundleStack.getOrCreateNbt();
@@ -317,7 +317,7 @@ public class AbstractPouchItem extends BundleItem implements ITooltipProvider {
             } else {
                 return 0;
             }
-        } else if (pouchStack.isOf(ItemInit.PROPER_POUCH)) {
+        } else if (pouchStack.isOf(ItemInit.DIAMOND_POUCH)) {
             if (!addStack.isEmpty() && addStack.isIn(Utilities.HERBS)
                     || !addStack.isEmpty() && addStack.isIn(Utilities.POUNDED_HERBS)) {
                 NbtCompound tag = bundleStack.getOrCreateNbt();

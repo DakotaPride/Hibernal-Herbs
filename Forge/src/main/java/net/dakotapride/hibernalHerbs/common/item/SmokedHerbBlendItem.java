@@ -72,10 +72,6 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList, IToo
             livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration, smokedMultiplier));
         } else if (player.getMainHandItem().is(ItemRegistry.SMOKED_FIRE_BLEND.get())) { }
 
-        else if (player.getMainHandItem().is(ItemRegistry.SMOKED_GLOWING_BLEND.get())) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedGlowingDuration, smokedMultiplier));
-        }
-
         else if (player.getMainHandItem().is(ItemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {
             livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, smokedHealthDuration, smokedMultiplier));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, smokedHealthDuration, smokedMultiplier));
@@ -121,10 +117,6 @@ public class SmokedHerbBlendItem extends Item implements FoodComponentList, IToo
                 target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, smokedVisionDuration - 100, smokedMultiplier - 1));
             } else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_FIRE_BLEND.get())) {
                 target.setSecondsOnFire(smokedSecondsOnFire - 2);
-            }
-
-            else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_GLOWING_BLEND.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.GLOWING, smokedGlowingDuration - 60, smokedMultiplier - 1));
             }
 
             else if (attacker.getMainHandItem().is(ItemRegistry.SMOKED_REGENERATION_SLOWNESS_BLEND.get())) {

@@ -2,6 +2,7 @@
   "name": "Advanced Gluttonous Ring",
   "icon": "hibernalherbs:gluttonous_ring_adv",
   "category": "hibernalherbs:herbal_conjuration",
+  "advancement": "hibernalherbs:progression/obtain_singed_grimoire",
   "pages": [
     {
       "type": "patchouli:text",

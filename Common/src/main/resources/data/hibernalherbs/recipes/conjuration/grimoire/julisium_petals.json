@@ -1,0 +1,27 @@
+{
+  "type": "hibernalherbs:herbal_conjuration",
+  "ingredients": [
+    {
+      "tag": "hibernalherbs:dried_herbs"
+    },
+    {
+      "item": "hibernalherbs:lumbinetrik_petals"
+    },
+    {
+      "item": "hibernalherbs:sigil_mastery_adv"
+    },
+    {
+      "tag": "hibernalherbs:sinful_herbs"
+    },
+    {
+      "item": "hibernalherbs:sigil_configuration_adv"
+    },
+    {
+      "item": "hibernalherbs:lumbinetrik_petals"
+    }
+  ],
+  "output": {
+    "item": "hibernalherbs:julisium_petals",
+    "count": 3
+  }
+}

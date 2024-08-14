@@ -153,11 +153,11 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
         if (!Screen.hasShiftDown()) {
             components.add(Component.translatable(shiftControlsText).withStyle(ChatFormatting.DARK_GRAY));
         } else if (Screen.hasShiftDown()) {
-            if (stack.is(ItemRegistry.CANISTER_IRON.get())) {
+            if (stack.is(ItemRegistry.IRON_CANISTER.get())) {
                 components.add(Component.translatable("text.hibernalherbs.canister.quality.iron").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(ItemRegistry.CANISTER_AMETHYST.get())) {
+            } else if (stack.is(ItemRegistry.AMETHYST_CANISTER.get())) {
                 components.add(Component.translatable("text.hibernalherbs.canister.quality.amethyst").withStyle(ChatFormatting.GRAY));
-            } else if (stack.is(ItemRegistry.CANISTER_DIAMOND.get())) {
+            } else if (stack.is(ItemRegistry.DIAMOND_CANISTER.get())) {
                 components.add(Component.translatable("text.hibernalherbs.canister.quality.diamond").withStyle(ChatFormatting.GRAY));
             }
 

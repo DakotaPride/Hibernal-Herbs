@@ -3,10 +3,16 @@ package net.dakotapride.hibernalHerbs.common;
 import net.dakotapride.hibernalHerbs.client.PackLoader;
 import net.dakotapride.hibernalHerbs.common.entity.HibernalBlockEntities;
 import net.dakotapride.hibernalHerbs.common.entity.HibernalEntityTypes;
+import net.dakotapride.hibernalHerbs.common.entity.render.MyquesteBoatRenderer;
+import net.dakotapride.hibernalHerbs.common.event.ClientEvents;
 import net.dakotapride.hibernalHerbs.common.recipe.HibernalRecipes;
 import net.dakotapride.hibernalHerbs.common.registry.BlockRegistry;
 import net.dakotapride.hibernalHerbs.common.registry.ItemRegistry;
+import net.dakotapride.hibernalHerbs.common.screen.HerbalConjurationScreen;
 import net.dakotapride.hibernalHerbs.common.screen.menu.HibernalHerbsMenues;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -15,8 +21,10 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import top.theillusivec4.curios.api.SlotTypeMessage;
@@ -63,6 +71,7 @@ public class HibernalHerbsForge {
         eventBus.addListener(PackLoader::onAddPackFinders);
 
         eventBus.addListener(this::commonSetup);
+        //eventBus.addListener(ClientEvents::clientSetup);
 
         // This method is invoked by the Forge mod loader when it is ready
         // to load your mod. You can access Forge and Common code in this

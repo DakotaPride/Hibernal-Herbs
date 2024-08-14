@@ -1,7 +1,8 @@
 {
   "name": "Herbal Sigils",
-  "icon": "hibernalherbs:cracked_sigil",
+  "icon": "hibernalherbs:sigil",
   "category": "hibernalherbs:herbal_conjuration",
+  "advancement": "hibernalherbs:progression/obtain_singed_grimoire",
   "pages": [
     {
       "type": "patchouli:text",
@@ -10,13 +11,13 @@
     {
       "type": "patchouli:spotlight",
       "item": "hibernalherbs:sigil",
-      "text": "Sigils are made by using a combination of herbs and a non-cracked Sigil. To create a Sigil, you will need certain herbs and a Smoothened Stone or a Cracked Sigil.",
+      "text": "Herbal Sigils are made by using a combination of herbs and a non-cracked Herbal Sigil. To create an Herbal Sigil, you will need certain herbs and a Smoothened Stone or a Cracked Herbal Sigil.",
       "title": "First Sigil"
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/sigil/base",
-      "text": "The conjuration to create a Sigil is shown above. These currently do not have many major uses, but that will change in future updates :)"
+      "text": "The conjuration to create a Herbal Sigil is shown above. A Blank Herbal Sigil allows the user to create more powerful Herbal Sigils."
     },
     {
       "type": "patchouli:text",
@@ -71,12 +72,22 @@
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/sigil/mastery",
-      "text": "Mastery Sigils are used to create Golden Rings, as well as Advanced Mastery Sigils.$(br2)Advanced Mastery Sigils are used to create Padlocks and the Advanced Gluttonous Ring."
+      "text": "Mastery Herbal Sigils are used to create Golden Rings, as well as Advanced Mastery Sigils.$(br2)Advanced Mastery Sigils are used to create Padlocks and the Advanced Gluttonous Ring."
     },
     {
       "type": "hibernalherbs:conjuration",
       "recipe": "hibernalherbs:conjuration/sigil/mastery_adv",
-      "text": "Advanced Mastery Sigils, as listed prior, are used for Advanced Gluttonous Rings and Padlocks."
+      "text": "Advanced Mastery Herbal Sigils, as listed prior, are used for Advanced Gluttonous Rings and Padlocks."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/configuration",
+      "text": "Configuration Herbal Sigils are currently only used to make Advanced Configuration Herbal Sigils."
+    },
+    {
+      "type": "hibernalherbs:conjuration",
+      "recipe": "hibernalherbs:conjuration/sigil/configuration_adv",
+      "text": "Advanced Configuration Herbal Sigils, alongside the Advanced Mastery Herbal Sigil, can be used to make Julisium Petals.$(br2)These petals can be used to make padlocks."
     },
     {
       "type": "patchouli:text",
@@ -121,7 +132,9 @@
       "type": "patchouli:relations",
       "entries": [
         "hibernalherbs:herbal_conjuration/padlocks",
-        "hibernalherbs:herbal_conjuration/petals"
+        "hibernalherbs:herbal_conjuration/siliptium_petals",
+        "hibernalherbs:herbal_conjuration/lumbinetrik_petals",
+        "hibernalherbs:herbal_conjuration/julisium_petals"
       ],
       "text": "These entries may also be useful in your studies."
     }

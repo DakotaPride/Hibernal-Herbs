@@ -2,6 +2,7 @@
   "name": "Smoked Herb Blends",
   "icon": "hibernalherbs:blend_regeneration_smoked",
   "category": "hibernalherbs:herbs",
+  "advancement": "hibernalherbs:progression/obtain_singed_grimoire",
   "pages": [
     {
       "type": "patchouli:text",
@@ -75,6 +76,7 @@
     {
       "type": "patchouli:relations",
       "entries": [
+        "hibernalherbs:herbal_conjuration/conjuration_altar",
         "hibernalherbs:herbs/blends",
         "hibernalherbs:herbs/non_pounded",
         "hibernalherbs:herbs/pounded",

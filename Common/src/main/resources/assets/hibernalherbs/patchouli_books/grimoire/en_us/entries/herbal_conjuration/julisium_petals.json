@@ -1,0 +1,28 @@
+{
+  "name": "Julisium Petals",
+  "icon": "hibernalherbs:julisium_petals",
+  "category": "hibernalherbs:herbal_conjuration",
+  "advancement": "hibernalherbs:progression/obtain_singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Julisium Petals, originally made by the prince of Lust to assist in other-worldly travel, can also be used against the princes in order to bound them to a padlock and utilize their powers for the user."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:julisium_petals",
+      "text": "Julisium Petals are used mainly for creating bound padlocks, which provide the user different enhancements and abilities. This ranges anywhere from additional health to increased movement speed or luck values."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "hibernalherbs:herbal_conjuration/conjuration_altar",
+        "hibernalherbs:herbal_conjuration/singed_grimoire",
+        "hibernalherbs:herbal_conjuration/lumbinetrik_petals",
+        "hibernalherbs:herbal_conjuration/padlocks",
+        "hibernalherbs:herbs/dried"
+      ],
+      "text": "These entries may also be useful in your studies."
+    }
+  ]
+}

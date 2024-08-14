@@ -1,5 +1,6 @@
 {
   "values": [
+    "#hibernalherbs:sinful_herbs",
     "hibernalherbs:rosemary",
     "hibernalherbs:thyme",
     "hibernalherbs:tarragon",
@@ -15,14 +16,7 @@
     "hibernalherbs:essitte",
     "hibernalherbs:thyocielle",
     "hibernalherbs:fennkystral",
-
     "hibernalherbs:calendula",
-
-    "hibernalherbs:sage",
-
-    {
-      "required": false,
-      "id": "hibernalherbs:bloforia"
-    }
+    "hibernalherbs:sage"
   ]
 }

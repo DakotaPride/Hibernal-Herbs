@@ -24,63 +24,42 @@ public class ItemInit {
 
     public static Item SILIPTIUM_PETAL = new Item(new FabricItemSettings().maxCount(16));
     public static Item LUMBINETRIK_PETAL = new Item(new FabricItemSettings().maxCount(16));
+    public static Item JULISIUM_PETAL = new Item(new FabricItemSettings().maxCount(16));
 
-    public static Item VEXATION_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item VEXATION_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item BOUND_WRATH_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item WRATH_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item BOUND_PRIDE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item PRIDE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item BOUND_GLUTTONY_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item GLUTTONY_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item BOUND_GREED_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item GREED_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item BOUND_ENVY_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item ENVY_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item BOUND_SLOTH_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item SLOTH_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item BOUND_LUST_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
+    public static Item LUST_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
 
-    public static Item PIQUE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item PIQUE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item RING = new Item(new FabricItemSettings().maxCount(1));
+    public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings().maxCount(1));
+    public static Item ADV_GLUTTONOUS_RING = new AdvancedGluttonousRingItem(new FabricItemSettings().maxCount(1));
 
-    public static Item GOURMANDIZING_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item GOURMANDIZING_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item CRACKED_SIGIL = new Item(new FabricItemSettings());
+    public static Item SIGIL = new HerbalSigilItem(new FabricItemSettings());
 
-    public static Item AVARICE_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item AVARICE_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_LUST = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_GLUTTONY = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_WRATH = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_GREED = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_ENVY = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
 
-    public static Item SPITEFUL_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item SPITEFUL_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
-
-    public static Item APATHY_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item APATHY_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
-
-    public static Item SALACIOUS_PADLOCK_BOUND = new CursedPadlockItem(new FabricItemSettings().maxCount(1).maxDamage(1));
-    public static Item SALACIOUS_PADLOCK = new CursedPadlockItem(new FabricItemSettings().maxCount(1));
-
-    public static Item RING = new Item(new FabricItemSettings()
-            .maxCount(1));
-    public static Item GLUTTONOUS_RING = new GluttonousRingItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item ADV_GLUTTONOUS_RING = new AdvancedGluttonousRingItem(new FabricItemSettings()
-            .maxCount(1));
-
-    public static Item CRACKED_SIGIL = new Item(new FabricItemSettings()
-            );
-    public static Item SIGIL = new HerbalSigilItem(new FabricItemSettings()
-            );
-
-    public static Item SIGIL_PRIDE = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item SIGIL_SLOTH = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item SIGIL_LUST = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item SIGIL_GLUTTONY = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item SIGIL_WRATH = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item SIGIL_GREED = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item SIGIL_ENVY = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-
-    public static Item SIGIL_CONFIGURATION = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item SIGIL_CONFIGURATION_ADVANCED = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item SIGIL_MASTERY = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
-    public static Item SIGIL_MASTERY_ADVANCED = new HerbalSigilItem(new FabricItemSettings()
-            .maxCount(1));
+    public static Item SIGIL_CONFIGURATION = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_CONFIGURATION_ADVANCED = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_MASTERY = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
+    public static Item SIGIL_MASTERY_ADVANCED = new HerbalSigilItem(new FabricItemSettings().maxCount(1));
 
     public static Item POUNDED_ROSEMARY = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB));
     public static Item POUNDED_THYME = new Item(new FabricItemSettings().food(FoodComponentInit.POUNDED_HERB));
@@ -125,38 +104,21 @@ public class ItemInit {
     public static Item DRIED_FENNKYSTRAL = new Item(new FabricItemSettings().food(FoodComponentInit.DRIED_HERB));
     public static Item DRIED_SAGE = new Item(new FabricItemSettings().food(FoodComponentInit.DRIED_HERB));
 
-    public static HerbBlendItem REGENERATION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.REGENERATIVE_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem POISON_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.VIRULENT_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem SLOWNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SEDATING_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem MINING_FATIGUE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.HINDERING_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem HASTE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DASHING_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem SPEED_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ACCELERATION_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem FIRE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem WITHER_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DECAYING_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem NIGHT_VISION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.OBSERVING_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem WEAKNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DIMINISHED_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem BLINDNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SHADED_BLEND)
-            .maxCount(1));
-
-    // Resource Dependant (Blends) Herbs
-
-    public static HerbBlendItem REGENERATION_SLOWNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.CONFLICTING_BLEND)
-            .maxCount(1));
-    public static HerbBlendItem REGENERATION_SPEED_WEAKNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ALTERNATIVE_BLEND)
-            .maxCount(1));
+    public static HerbBlendItem REGENERATION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.REGENERATIVE_BLEND).maxCount(1));
+    public static HerbBlendItem POISON_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.VIRULENT_BLEND).maxCount(1));
+    public static HerbBlendItem SLOWNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SEDATING_BLEND).maxCount(1));
+    public static HerbBlendItem MINING_FATIGUE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.HINDERING_BLEND).maxCount(1));
+    public static HerbBlendItem HASTE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DASHING_BLEND).maxCount(1));
+    public static HerbBlendItem SPEED_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ACCELERATION_BLEND).maxCount(1));
+    public static HerbBlendItem FIRE_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.INCINERATING_BLEND).maxCount(1));
+    public static HerbBlendItem WITHER_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DECAYING_BLEND).maxCount(1));
+    public static HerbBlendItem NIGHT_VISION_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.OBSERVING_BLEND).maxCount(1));
+    public static HerbBlendItem WEAKNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.DIMINISHED_BLEND).maxCount(1));
+    public static HerbBlendItem BLINDNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SHADED_BLEND).maxCount(1));
+    public static HerbBlendItem REGENERATION_SLOWNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.CONFLICTING_BLEND).maxCount(1));
+    public static HerbBlendItem REGENERATION_SPEED_WEAKNESS_BLEND = new HerbBlendItem(new FabricItemSettings().food(FoodComponentInit.ALTERNATIVE_BLEND).maxCount(1));
 
     public static HerbFertilizerItem HERB_FERTILIZER = new HerbFertilizerItem(new FabricItemSettings());
-
     public static HerbFertilizerItem HERB_FERTILIZER_OAK = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_DARK_OAK = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_BIRCH = new HerbFertilizerItem(new FabricItemSettings());
@@ -167,11 +129,9 @@ public class ItemInit {
     public static HerbFertilizerItem HERB_FERTILIZER_CHERRY = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_CRIMSON = new HerbFertilizerItem(new FabricItemSettings());
     public static HerbFertilizerItem HERB_FERTILIZER_WARPED = new HerbFertilizerItem(new FabricItemSettings());
-
     public static HerbFertilizerItem HERB_FERTILIZER_MYQUESTE = new HerbFertilizerItem(new FabricItemSettings());
 
     public static HerbHumusItem HERB_HUMUS = new HerbHumusItem(new FabricItemSettings());
-
     public static HerbHumusItem HERB_HUMUS_OAK = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_DARK_OAK = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_BIRCH = new HerbHumusItem(new FabricItemSettings());
@@ -182,49 +142,27 @@ public class ItemInit {
     public static HerbHumusItem HERB_HUMUS_CHERRY = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_CRIMSON = new HerbHumusItem(new FabricItemSettings());
     public static HerbHumusItem HERB_HUMUS_WARPED = new HerbHumusItem(new FabricItemSettings());
-
     public static HerbHumusItem HERB_HUMUS_MYQUESTE = new HerbHumusItem(new FabricItemSettings());
 
-    // Smoked Herb Blends (Fabric)
-    public static SmokedHerbBlendItem SMOKED_REGENERATION_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_REGENERATIVE_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_POISON_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_VIRULENT_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_SLOWNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SEDATING_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_MINING_FATIGUE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_HINDERING_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_HASTE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DASHING_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_SPEED_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ACCELERATION_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_FIRE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_INCINERATING_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_WITHER_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DECAYING_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_NIGHT_VISION_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_OBSERVING_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DIMINISHED_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_BLINDNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SHADED_BLEND)
-            .maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_REGENERATION_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_REGENERATIVE_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_POISON_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_VIRULENT_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_SLOWNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SEDATING_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_MINING_FATIGUE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_HINDERING_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_HASTE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DASHING_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_SPEED_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ACCELERATION_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_FIRE_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_INCINERATING_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_WITHER_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DECAYING_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_NIGHT_VISION_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_OBSERVING_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_DIMINISHED_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_BLINDNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_SHADED_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_REGENERATION_SLOWNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_CONFLICTING_BLEND).maxCount(1));
+    public static SmokedHerbBlendItem SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ALTERNATIVE_BLEND).maxCount(1));
 
-    // Resource Dependant (Smoked Blends) Herbs
-
-    public static SmokedHerbBlendItem SMOKED_REGENERATION_SLOWNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_CONFLICTING_BLEND)
-            .maxCount(1));
-    public static SmokedHerbBlendItem SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND = new SmokedHerbBlendItem(new FabricItemSettings().food(FoodComponentInit.SMOKED_ALTERNATIVE_BLEND)
-            .maxCount(1));
-
-    // Refined Pouches/Canisters
-
-    public static AbstractPouchItem SCRATCHED_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 64);
+    public static AbstractPouchItem IRON_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 64);
     public static AbstractCanisterItem IRON_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1), 128);
-
-    public static AbstractPouchItem STITCHED_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 192);
+    public static AbstractPouchItem AMETHYST_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 192);
     public static AbstractCanisterItem AMETHYST_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1), 256);
-
-    public static AbstractPouchItem PROPER_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 256);
+    public static AbstractPouchItem DIAMOND_POUCH = new AbstractPouchItem(new FabricItemSettings().maxCount(1), 256);
     public static AbstractCanisterItem DIAMOND_CANISTER = new AbstractCanisterItem(new FabricItemSettings().maxCount(1), 384);
 
     // Legacy
@@ -237,6 +175,7 @@ public class ItemInit {
 
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "sin_petals"), SILIPTIUM_PETAL);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "lumbinetrik_petals"), LUMBINETRIK_PETAL);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "julisium_petals"), JULISIUM_PETAL);
 
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "singed_grimoire"), SINGED_GRIMOIRE);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "grimoire"), HERBAL_GRIMOIRE);
@@ -245,26 +184,20 @@ public class ItemInit {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "gluttonous_ring"), GLUTTONOUS_RING);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "gluttonous_ring_adv"), ADV_GLUTTONOUS_RING);
 
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_wrath"), VEXATION_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_wrath"), VEXATION_PADLOCK);
-
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_pride"), PIQUE_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_pride"), PIQUE_PADLOCK);
-
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_gluttony"), GOURMANDIZING_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_gluttony"), GOURMANDIZING_PADLOCK);
-
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_greed"), AVARICE_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_greed"), AVARICE_PADLOCK);
-
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_envy"), SPITEFUL_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_envy"), SPITEFUL_PADLOCK);
-
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_sloth"), APATHY_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_sloth"), APATHY_PADLOCK);
-
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_lust"), SALACIOUS_PADLOCK_BOUND);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_lust"), SALACIOUS_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_wrath"), BOUND_WRATH_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_wrath"), WRATH_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_pride"), BOUND_PRIDE_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_pride"), PRIDE_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_gluttony"), BOUND_GLUTTONY_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_gluttony"), GLUTTONY_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_greed"), BOUND_GREED_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_greed"), GREED_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_envy"), BOUND_ENVY_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_envy"), ENVY_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_sloth"), BOUND_SLOTH_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_sloth"), SLOTH_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "bound_padlock_lust"), BOUND_LUST_PADLOCK);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "padlock_lust"), LUST_PADLOCK);
 
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_rosemary"), POUNDED_ROSEMARY);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pounded_thyme"), POUNDED_THYME);
@@ -332,9 +265,9 @@ public class ItemInit {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "blend_regen_speed_weak_smoked"), SMOKED_REGENERATION_SPEED_WEAKNESS_BLEND);
 
         // Refined Pouches/Canisters
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_scratched"), SCRATCHED_POUCH);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_stitched"), STITCHED_POUCH);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_proper"), PROPER_POUCH);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_scratched"), IRON_POUCH);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_stitched"), AMETHYST_POUCH);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "pouch_proper"), DIAMOND_POUCH);
 
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "canister_iron"), IRON_CANISTER);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "canister_amethyst"), AMETHYST_CANISTER);
