@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "hibernalherbs:item/blend/alternative"
+    "layer0": "hibernalherbs:item/blend/regen_speed_weak"
   }
 }

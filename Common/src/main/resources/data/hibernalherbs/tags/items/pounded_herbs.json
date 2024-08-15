@@ -15,14 +15,7 @@
     "hibernalherbs:pounded_essitte",
     "hibernalherbs:pounded_thyocielle",
     "hibernalherbs:pounded_fennkystral",
-
     "hibernalherbs:pounded_calendula",
-
-    "hibernalherbs:pounded_sage",
-
-    {
-      "required": false,
-      "id": "hibernalherbs:pounded_bloforia"
-    }
+    "hibernalherbs:pounded_sage"
   ]
 }

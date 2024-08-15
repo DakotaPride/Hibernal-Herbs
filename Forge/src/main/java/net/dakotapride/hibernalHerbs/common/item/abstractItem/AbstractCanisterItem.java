@@ -240,7 +240,7 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
     }
 
     public static List<CompoundTag> getMatchingItem(ItemStack itemStack, ListTag listTag) {
-        if (itemStack.is(ItemRegistry.POUCH.get())) {
+        if (itemStack.is(ItemRegistry.CANISTER.get())) {
             return Collections.emptyList();
         } else {
             Stream<?> var10000 = listTag.stream();
@@ -255,7 +255,7 @@ public class AbstractCanisterItem extends BundleItem implements ITooltipProvider
     }
 
     public static int getWeight(ItemStack stack, int size) {
-        if (stack.is(ItemRegistry.POUCH.get())) {
+        if (stack.is(ItemRegistry.CANISTER.get())) {
             return 4 + getContentWeight(stack, size);
         } else {
             return size / stack.getMaxStackSize();

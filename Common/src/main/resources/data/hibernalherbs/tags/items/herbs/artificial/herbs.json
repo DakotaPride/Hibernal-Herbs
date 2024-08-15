@@ -2,11 +2,6 @@
   "replace": false,
   "values": [
     "#hibernalherbs:herbs/fennkystral",
-    "#hibernalherbs:herbs/thyocielle",
-
-    {
-      "required": false,
-      "id": "#hibernalherbs:/herbs/bloforia"
-    }
+    "#hibernalherbs:herbs/thyocielle"
   ]
 }
