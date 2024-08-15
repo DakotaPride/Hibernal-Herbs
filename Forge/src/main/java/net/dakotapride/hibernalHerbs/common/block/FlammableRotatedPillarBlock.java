@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalHerbs.common.block;
 
+import net.dakotapride.hibernalHerbs.common.HibernalHerbsForge;
 import net.dakotapride.hibernalHerbs.common.registry.BlockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -33,7 +34,7 @@ public class FlammableRotatedPillarBlock extends RotatedPillarBlock {
 
     @Override
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-        if(context.getItemInHand().getItem() instanceof AxeItem) {
+        if(context.getItemInHand().getItem().getDefaultInstance().is(HibernalHerbsForge.AXES_OR_SIMILAR_TAG)) {
             if(state.is(BlockRegistry.MYQUESTE_LOG.get())) {
                 return BlockRegistry.STRIPPED_MYQUESTE_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }

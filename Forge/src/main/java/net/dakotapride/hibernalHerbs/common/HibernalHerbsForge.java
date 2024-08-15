@@ -44,6 +44,9 @@ public class HibernalHerbsForge {
     public static final TagKey<Item> PADLOCKS_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "padlocks/unbound"));
 
     public static final TagKey<Item> GRIMOIRES_TAG = ItemTags.create(new ResourceLocation(MOD_ID, "grimoires"));
+
+
+    public static final TagKey<Item> AXES_OR_SIMILAR_TAG = ItemTags.create(new ResourceLocation("forge", "tools/axes"));
     
     public HibernalHerbsForge() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
