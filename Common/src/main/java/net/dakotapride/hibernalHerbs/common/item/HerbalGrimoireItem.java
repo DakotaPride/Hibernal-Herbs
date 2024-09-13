@@ -1,6 +1,5 @@
 package net.dakotapride.hibernalHerbs.common.item;
 
-import net.dakotapride.hibernalHerbs.common.HibernalHerbsCommonMod;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -13,7 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import vazkii.patchouli.api.PatchouliAPI;
 
 import java.util.List;
 
@@ -28,7 +26,7 @@ public class HerbalGrimoireItem extends Item {
 
         if (player instanceof ServerPlayer serverPlayer) {
 
-            PatchouliAPI.get().openBookGUI(serverPlayer, HibernalHerbsCommonMod.asResource("grimoire"));
+            //PatchouliAPI.get().openBookGUI(serverPlayer, HibernalHerbsCommonMod.asResource("grimoire"));
 
             return InteractionResultHolder.success(itemStack);
         } else return InteractionResultHolder.fail(itemStack);

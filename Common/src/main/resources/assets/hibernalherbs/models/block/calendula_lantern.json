@@ -2,6 +2,5 @@
   "parent": "minecraft:block/template_lantern",
   "textures": {
     "lantern": "hibernalherbs:block/calendula_lantern"
-  },
-  "render_type": "cutout"
+  }
 }

@@ -2,6 +2,5 @@
   "parent": "minecraft:block/cross",
   "textures": {
     "cross": "hibernalherbs:block/herb/verbena"
-  },
-  "render_type": "cutout"
+  }
 }

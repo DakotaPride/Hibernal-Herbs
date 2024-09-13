@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/thyme",
     "particle": "hibernalherbs:block/herb/pile/thyme"
-  },
-  "render_type": "cutout"
+  }
 }

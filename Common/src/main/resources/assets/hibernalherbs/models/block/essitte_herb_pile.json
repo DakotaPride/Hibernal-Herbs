@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/essitte",
     "particle": "hibernalherbs:block/herb/pile/essitte"
-  },
-  "render_type": "cutout"
+  }
 }

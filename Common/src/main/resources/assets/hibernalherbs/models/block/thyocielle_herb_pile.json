@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/thyocielle",
     "particle": "hibernalherbs:block/herb/pile/thyocielle"
-  },
-  "render_type": "cutout"
+  }
 }

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:regeneration_slowness_herbal_blend",
+    "hibernalherbs:regeneration_speed_weakness_herbal_blend",
+    "hibernalherbs:smoked_regeneration_slowness_herbal_blend",
+    "hibernalherbs:smoked_regeneration_speed_weakness_herbal_blend"
+  ]
+}

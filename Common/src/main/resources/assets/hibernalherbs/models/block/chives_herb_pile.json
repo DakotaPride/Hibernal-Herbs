@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/chives",
     "particle": "hibernalherbs:block/herb/pile/chives"
-  },
-  "render_type": "cutout"
+  }
 }

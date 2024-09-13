@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/ceillis",
     "particle": "hibernalherbs:block/herb/pile/ceillis"
-  },
-  "render_type": "cutout"
+  }
 }

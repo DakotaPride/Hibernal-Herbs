@@ -25,6 +25,9 @@
     ],
     "client": [
       "net.dakotapride.hibernalHerbs.client.HibernalHerbsClient"
+    ],
+    "emi": [
+      "net.dakotapride.hibernalHerbs.common.emi.HibernalHerbsEmiPlugin"
     ]
   },
   "mixins": [

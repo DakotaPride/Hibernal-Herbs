@@ -10,14 +10,17 @@ import net.minecraft.world.item.Item;
 public class ItemInit {
     public static Registrar<Item> items = HibernalHerbsCommonMod.MANAGER.get().get(Registries.ITEM);
 
-    public static RegistrySupplier<Item> GRIMOIRE;
-    public static RegistrySupplier<Item> SINGED_GRIMOIRE;
+    public static RegistrySupplier<Item> GROUND_HERBS = register("ground_herbs", new Item(new Item.Properties()));
+
+    public static RegistrySupplier<Item> SILIPTIUM_PETALS = register("siliptium_petals", new Item(new Item.Properties()));
+    public static RegistrySupplier<Item> LUMBINETRIK_PETALS = register("lumbinetrik_petals", new Item(new Item.Properties()));
+    public static RegistrySupplier<Item> JULISIUM_PETALS = register("julisium_petals", new Item(new Item.Properties()));
+
+    public static RegistrySupplier<Item> GRIMOIRE = register("grimoire", new HerbalGrimoireItem(new Item.Properties().stacksTo(1)));
+    public static RegistrySupplier<Item> SINGED_GRIMOIRE = register("singed_grimoire", new HerbalGrimoireItem(new Item.Properties().stacksTo(1)));
 
     // Collective Registration
-    public static void register() {
-        GRIMOIRE = register("grimoire", new HerbalGrimoireItem(new Item.Properties().stacksTo(1)));
-        SINGED_GRIMOIRE = register("singed_grimoire", new HerbalGrimoireItem(new Item.Properties().stacksTo(1)));
-    }
+    public static void register() {}
 
     public static RegistrySupplier<Item> register(String name, Item item) {
         return items.register(HibernalHerbsCommonMod.asResource(name), () -> item);

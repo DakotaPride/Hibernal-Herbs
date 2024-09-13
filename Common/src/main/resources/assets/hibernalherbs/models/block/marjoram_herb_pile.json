@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/marjoram",
     "particle": "hibernalherbs:block/herb/pile/marjoram"
-  },
-  "render_type": "cutout"
+  }
 }

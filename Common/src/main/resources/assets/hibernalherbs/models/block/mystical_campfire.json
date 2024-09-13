@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/template_campfire",
+  "textures": {
+    "fire": "hibernalherbs:block/mystical_campfire_fire",
+    "lit_log": "hibernalherbs:block/mystical_campfire_log_lit",
+    "particle": "hibernalherbs:block/mystical_campfire_log",
+    "log": "hibernalherbs:block/mystical_campfire_log"
+  }
+}

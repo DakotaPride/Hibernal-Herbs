@@ -2,6 +2,5 @@
   "parent": "minecraft:block/cross",
   "textures": {
     "cross": "hibernalherbs:block/herb/tarragon"
-  },
-  "render_type": "cutout"
+  }
 }

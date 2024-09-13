@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "SCS",
+    "LLL"
+  ],
+  "key": {
+    "C": {
+      "item": "hibernalherbs:dried_calendula_block"
+    },
+    "L": {
+      "tag": "hibernalherbs:myqueste_logs"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "hibernalherbs:mystical_campfire",
+    "count": 1
+  }
+}

@@ -25,23 +25,11 @@ configurations {
 }
 
 repositories {
-    maven {
-        name = "REI"
-        url = "https://maven.shedaniel.me"
-    }
-
-    maven {
-        name = 'TerraformersMC'
-        url = 'https://maven.terraformersmc.com/'
-    }
 
     maven {
         name = "Ladysnake Libs"
         url = "https://maven.ladysnake.org/releases"
     }
-
-    // Patchouli Repo
-    maven { url 'https://maven.blamejared.com' }
 
     mavenCentral()
 }
@@ -55,17 +43,19 @@ dependencies {
     // Architectury API. This is optional, and you can comment it out if you don't need it.
     modImplementation "dev.architectury:architectury-fabric:${architectury_api_version}"
 
-    // REI
-    // modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
-    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
-    modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${rei_version}"
+    // EMI
+    modCompileOnly "dev.emi:emi-fabric:${emi_version}+${minecraft_version}:api"
+    modLocalRuntime "dev.emi:emi-fabric:${emi_version}+${minecraft_version}"
+
+    // Terraform API
+    //modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1"
+    //include "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1"
 
     // Trinkets
     //modImplementation("dev.emi:trinkets:${trinkets_version}")
 
     // Moving over to Accessories - recommended to utilise the Trinkets Compatibility Layer
-    //modImplementation("io.wispforest:accessories-fabric:${accessories_version}")
+    modImplementation("io.wispforest:accessories-fabric:${accessories_version}+${minecraft_version}")
 
     // Patchouli
     modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC-SNAPSHOT"

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "hibernalherbs:unbound_wrath_padlock",
+    "hibernalherbs:unbound_gluttony_padlock",
+    "hibernalherbs:unbound_pride_padlock",
+    "hibernalherbs:unbound_greed_padlock",
+    "hibernalherbs:unbound_lust_padlock",
+    "hibernalherbs:unbound_sloth_padlock",
+    "hibernalherbs:unbound_envy_padlock"
+  ]
+}

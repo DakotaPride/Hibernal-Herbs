@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/tarragon",
     "particle": "hibernalherbs:block/herb/pile/tarragon"
-  },
-  "render_type": "cutout"
+  }
 }

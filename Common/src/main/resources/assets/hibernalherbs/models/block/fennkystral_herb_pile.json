@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/fennkystral",
     "particle": "hibernalherbs:block/herb/pile/fennkystral"
-  },
-  "render_type": "cutout"
+  }
 }

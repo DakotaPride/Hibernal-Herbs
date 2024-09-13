@@ -3,6 +3,5 @@
   "textures": {
     "bottom": "hibernalherbs:block/myqueste_door_bottom",
     "top": "hibernalherbs:block/myqueste_door_top"
-  },
-  "render_type": "cutout"
+  }
 }

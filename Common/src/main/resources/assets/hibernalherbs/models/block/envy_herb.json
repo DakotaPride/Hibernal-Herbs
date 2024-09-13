@@ -2,6 +2,5 @@
   "parent": "minecraft:block/cross",
   "textures": {
     "cross": "hibernalherbs:block/herb/sin/envy"
-  },
-  "render_type": "cutout"
+  }
 }

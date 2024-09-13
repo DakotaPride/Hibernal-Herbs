@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/myqueste_leaves",
     "particle": "hibernalherbs:block/myqueste_leaves"
-  },
-  "render_type": "cutout"
+  }
 }

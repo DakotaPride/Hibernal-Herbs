@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/fennsel",
     "particle": "hibernalherbs:block/herb/pile/fennsel"
-  },
-  "render_type": "cutout"
+  }
 }

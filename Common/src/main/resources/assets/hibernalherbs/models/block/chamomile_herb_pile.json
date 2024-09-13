@@ -3,6 +3,5 @@
   "textures": {
     "all": "hibernalherbs:block/herb/pile/chamomile",
     "particle": "hibernalherbs:block/herb/pile/chamomile"
-  },
-  "render_type": "cutout"
+  }
 }

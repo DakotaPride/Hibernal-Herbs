@@ -1,0 +1,19 @@
+{
+  "values": [
+    "hibernalherbs:regeneration_herbal_blend",
+    "hibernalherbs:poison_herbal_blend",
+    "hibernalherbs:slowness_herbal_blend",
+    "hibernalherbs:mining_fatigue_herbal_blend",
+    "hibernalherbs:haste_herbal_blend",
+    "hibernalherbs:speed_herbal_blend",
+    "hibernalherbs:fire_herbal_blend",
+    "hibernalherbs:wither_herbal_blend",
+    "hibernalherbs:night_vision_herbal_blend",
+    "hibernalherbs:weakness_herbal_blend",
+    "hibernalherbs:blindness_herbal_blend",
+    "hibernalherbs:regeneration_slowness_herbal_blend",
+    "hibernalherbs:regeneration_speed_weakness_herbal_blend",
+
+    "#hibernalherbs:smoked_herbal_blends"
+  ]
+}

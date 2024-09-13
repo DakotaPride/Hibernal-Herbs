@@ -1,0 +1,11 @@
+{
+  "type": "hibernalherbs:mystical_campfire_conversion",
+  "cookingtime": 200,
+  "experience": 0.70,
+  "ingredient": {
+    "item": "hibernalherbs:pounded_rosemary"
+  },
+  "result": {
+    "id": "hibernalherbs:dried_rosemary"
+  }
+}
