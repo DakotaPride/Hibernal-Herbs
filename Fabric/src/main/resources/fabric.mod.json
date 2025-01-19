@@ -28,6 +28,9 @@
     ],
     "rei_client": [
       "net.dakotapride.hibernalHerbs.common.integration.rei.ReiHibernalHerbsPlugin"
+    ],
+    "emi": [
+      "net.dakotapride.hibernalHerbs.common.integration.emi.EmiHibernalHerbsPlugin"
     ]
   },
   "mixins": [

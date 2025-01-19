@@ -23,8 +23,13 @@ dependencies {
     // REI
     // modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
+    //modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${rei_version}"
+
+    // EMI
+    //modCompileOnly "dev.emi:emi-fabric:${emi_version}:api"
+    //modRuntimeOnly "dev.emi:emi-fabric:${emi_version}"
+    modImplementation "dev.emi:emi-fabric:${emi_version}+${minecraft_version}"
 
     // Trinkets
     modImplementation("dev.emi:trinkets:${trinkets_version}")
