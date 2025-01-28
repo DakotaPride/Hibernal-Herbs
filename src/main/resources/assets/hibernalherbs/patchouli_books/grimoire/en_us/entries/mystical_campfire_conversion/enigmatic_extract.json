@@ -1,0 +1,22 @@
+{
+  "name": "Enigmatic Extract",
+  "icon": "hibernalherbs:extract_mystical_ashes",
+  "category": "hibernalherbs:mystical_campfire_conversion",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:extract_mystical_ashes",
+      "text": "A basic Enigmatic Extract can be made by putting a Glass Bottle onto a Mystical Campfire. From here, you can use it to make either an Enigmatic Extract that extracts vial ashes or virtuous ashes, which can be used to make Herbal Blends."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Enigmatic Extract that extracts vial ashes can be used to make Herbal Blends that provide negative status effects.$(br2)Enigmatic Extract that extracts virtuous ashes can be used to make Herbal Blends that provide positive status effects."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:replication/pride_ashes",
+      "text": "Using all 3 kinds of Enigmatic Extracts also allows you to replicate your $(l:sin_alignments/ashes_of_sin)ashes of sin$()."
+    }
+  ]
+}

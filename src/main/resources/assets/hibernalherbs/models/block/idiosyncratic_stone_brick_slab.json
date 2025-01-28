@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "hibernalherbs:block/idiosyncratic_stone_bricks",
+    "side": "hibernalherbs:block/idiosyncratic_stone_bricks",
+    "top": "hibernalherbs:block/idiosyncratic_stone_bricks"
+  }
+}

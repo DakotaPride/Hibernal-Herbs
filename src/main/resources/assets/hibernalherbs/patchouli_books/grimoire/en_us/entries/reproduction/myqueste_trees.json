@@ -1,0 +1,18 @@
+{
+  "name": "Myqueste Wood",
+  "icon": "hibernalherbs:myqueste_log",
+  "category": "hibernalherbs:herb_reproduction",
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "hibernalherbs:textures/gui/entries/myqueste_trees.png"
+      ],
+      "title": "Myqueste Trees"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Myqueste Trees can be found in the same biomes that herbs can be found in, Snowy Plains and Snowy Taiga.$(br2)Stripped Myqueste logs and wood can be right-clicked with $(l:reproduction/herb_fertilizer)Herbal Humus$() to get a production value of 4."
+    }
+  ]
+}

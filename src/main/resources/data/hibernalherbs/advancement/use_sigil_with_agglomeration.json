@@ -1,0 +1,31 @@
+{
+  "parent": "hibernalherbs:sorcerer_agglomeration",
+  "criteria": {
+    "use_sigil_with_agglomeration": {
+      "conditions": {
+        "item": {
+          "items": "hibernalherbs:agglomeration"
+        }
+      },
+      "trigger": "hibernalherbs:used_sigil_with_agglomeration"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.use_sigil_with_agglomeration.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:agglomeration"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.use_sigil_with_agglomeration.title"
+    }
+  },
+  "requirements": [
+    [
+      "use_sigil_with_agglomeration"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

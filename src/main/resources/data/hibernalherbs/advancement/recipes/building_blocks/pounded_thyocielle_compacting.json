@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pounded_thyocielle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:pounded_thyocielle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hibernalherbs:pounded_thyocielle_compacting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pounded_thyocielle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:pounded_thyocielle_compacting"
+    ]
+  }
+}

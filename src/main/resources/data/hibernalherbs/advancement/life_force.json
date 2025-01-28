@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:sickle",
+  "criteria": {
+    "life_force": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:life_force"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.life_force.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:life_force"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.life_force.title"
+    }
+  },
+  "requirements": [
+    [
+      "life_force"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

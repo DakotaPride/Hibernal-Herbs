@@ -1,0 +1,17 @@
+{
+  "name": "Pounded Herbs",
+  "icon": "hibernalherbs:pounded_chamomile",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pounded_chamomile",
+      "text": "You can get pounded herbs by breaking a given herb with a Sickle of some kind.$(br2)Pounded herbs can be used to make Herbal Blends."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:incense_provider",
+      "text": "Can be used on an $(l:utilities/incense_provider)Incense Provider$() to provide a positive status effect to surrounding entities within a radius of 10 metres."
+    }
+  ]
+}

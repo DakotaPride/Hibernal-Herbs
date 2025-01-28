@@ -1,0 +1,12 @@
+{
+  "type": "hibernalherbs:mystical_campfire_conversion",
+  "category": "misc",
+  "cookingtime": 2400,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "hibernalherbs:grimoire"
+  },
+  "result": {
+    "id": "hibernalherbs:singed_grimoire"
+  }
+}

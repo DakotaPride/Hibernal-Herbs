@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pounded_tarragon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:pounded_tarragon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hibernalherbs:pounded_tarragon_compacting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pounded_tarragon"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:pounded_tarragon_compacting"
+    ]
+  }
+}

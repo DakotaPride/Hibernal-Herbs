@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "hibernalherbs:arcane_ruins",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 104707494103,
+    "spacing": 20,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

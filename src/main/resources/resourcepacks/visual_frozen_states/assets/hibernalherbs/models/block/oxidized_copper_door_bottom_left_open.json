@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "hibernalherbs:block/froze_state/oxidized_copper_door_bottom",
+    "top": "hibernalherbs:block/froze_state/oxidized_copper_door_top"
+  }
+}

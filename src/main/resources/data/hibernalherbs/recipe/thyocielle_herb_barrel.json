@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:thyocielle"
+    },
+    {
+      "item": "hibernalherbs:thyocielle"
+    },
+    {
+      "item": "hibernalherbs:thyocielle"
+    },
+    {
+      "item": "hibernalherbs:thyocielle"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:thyocielle_herb_barrel"
+  }
+}

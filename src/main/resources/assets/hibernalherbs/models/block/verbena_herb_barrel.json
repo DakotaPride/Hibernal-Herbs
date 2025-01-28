@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "hibernalherbs:block/herb/barrel/verbena",
+    "side": "minecraft:block/barrel_side"
+  }
+}

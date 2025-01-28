@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_fennkystral_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "hibernalherbs:pounded_fennkystral"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Sorcerer's Agglomeration",
+  "icon": "hibernalherbs:agglomeration",
+  "category": "hibernalherbs:sorcerer_books",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pride_herbal_sigil",
+      "text": "Use in combination with an Herbal Sigil to grant you with a special status effect relating to one of the $(l:sin_alignments/herbal_sigils)7 princes of Hell$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:sacrificial_rune_block",
+      "text": "Use in combination with certain items such as a Lodestone or a Wither Rose to convert it into an alternative version of the item."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:froze_state_copper_block",
+      "text": "Can freeze or unfreeze a blockstate.$(br2)Freezing a blockstate using the Sorcerer's Agglomeration is DIFFERENT than waxing a block functionality wise and texture wise if you're using the built-in resource pack for frozen over textures."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:sorcerer_agglomeration"
+    }
+  ]
+}

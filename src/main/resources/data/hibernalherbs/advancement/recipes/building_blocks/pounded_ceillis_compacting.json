@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pounded_ceillis": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:pounded_ceillis"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hibernalherbs:pounded_ceillis_compacting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pounded_ceillis"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:pounded_ceillis_compacting"
+    ]
+  }
+}

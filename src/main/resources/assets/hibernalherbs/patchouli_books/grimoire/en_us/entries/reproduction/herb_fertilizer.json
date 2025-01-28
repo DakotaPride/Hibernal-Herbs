@@ -1,0 +1,37 @@
+{
+  "name": "Herbal Fertilizer",
+  "icon": "hibernalherbs:spruce_herb_fertilizer",
+  "category": "hibernalherbs:herb_reproduction",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Combining 2 Bone Meal and an aligned Herbal Humus provides you with Herbal Fertilizer, which can be used to reproduce your herbs."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:spruce_herb_fertilizer",
+      "text": "In order to obtain Herb Fertilizer of any kind, you will first need to obtain something called Herb Humus of the respective type.",
+      "title": "Obtaining Fertilizer"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:herb_humus",
+      "text": "In its base state, it's not very useful. Which is because it will need to have an association attached to it!$(br2)Using Herbal Humus on a stripped log or wood will give an alignment to the Herbal Humus, which determines the alignment of Herbal Fertilizer."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:herb_humus",
+      "text": "Again, Herb Humus is not very useful right after crafting due to not having an association!"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:fertilizer/spruce",
+      "text": "An example recipe is provided above.$(br2)Specific Fertilizers will be more efficient in Herb Reproduction than others. For example, Spruce is more effective than Acacia."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Acacia, Crimson, and Warped$() Associations only reproduce 2 at a time.$(br2)Birch, Cherry, Bamboo, Dark Oak, Jungle, Mangrove, and Oak$() Associations reproduce 3 at a time, which is better, but not max efficiency.$(br2)Spruce and $(l:reproduction/myqueste_trees)Myqueste$() are most efficient, reproducing 4 at a time.",
+      "title": "Fertilizer Effectiveness"
+    }
+  ]
+}

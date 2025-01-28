@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_myqueste_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#hibernalherbs:myqueste_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hibernalherbs:mystical_campfire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_myqueste_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:mystical_campfire"
+    ]
+  }
+}

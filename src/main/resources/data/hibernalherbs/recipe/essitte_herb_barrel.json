@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:essitte"
+    },
+    {
+      "item": "hibernalherbs:essitte"
+    },
+    {
+      "item": "hibernalherbs:essitte"
+    },
+    {
+      "item": "hibernalherbs:essitte"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:essitte_herb_barrel"
+  }
+}

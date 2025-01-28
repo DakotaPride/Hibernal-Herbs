@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:herb_humus",
+  "criteria": {
+    "herb_fertilizer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#hibernalherbs:herbal_fertilizer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.herb_fertilizer.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:oak_herb_fertilizer"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.herb_fertilizer.title"
+    }
+  },
+  "requirements": [
+    [
+      "herb_fertilizer"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

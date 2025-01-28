@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hibernalherbs:block/polished_idiosyncratic_stone_slab"
+    },
+    "type=double": {
+      "model": "hibernalherbs:block/polished_idiosyncratic_stone_slab_double"
+    },
+    "type=top": {
+      "model": "hibernalherbs:block/polished_idiosyncratic_stone_slab_top"
+    }
+  }
+}

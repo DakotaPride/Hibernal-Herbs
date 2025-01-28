@@ -1,0 +1,12 @@
+{
+  "type": "hibernalherbs:mystical_campfire_conversion",
+  "category": "misc",
+  "cookingtime": 3200,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "minecraft:iron_block"
+  },
+  "result": {
+    "id": "hibernalherbs:arkonium_block"
+  }
+}

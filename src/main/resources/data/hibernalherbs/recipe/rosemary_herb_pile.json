@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:rosemary"
+    },
+    {
+      "item": "hibernalherbs:rosemary"
+    },
+    {
+      "item": "hibernalherbs:myqueste_leaves"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:rosemary_herb_pile"
+  }
+}

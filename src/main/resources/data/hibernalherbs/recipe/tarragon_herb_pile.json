@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:tarragon"
+    },
+    {
+      "item": "hibernalherbs:tarragon"
+    },
+    {
+      "item": "hibernalherbs:myqueste_leaves"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:tarragon_herb_pile"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_necromantic_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:necromantic_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hibernalherbs:incense_provider"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_necromantic_stone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:incense_provider"
+    ]
+  }
+}

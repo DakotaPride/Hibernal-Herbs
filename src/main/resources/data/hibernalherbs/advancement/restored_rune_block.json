@@ -1,0 +1,26 @@
+{
+  "parent": "hibernalherbs:deteriorated_rune_block",
+  "criteria": {
+    "restored_rune_block": {
+      "trigger": "hibernalherbs:sacrificial_rune_restoration"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.restored_rune_block.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:sacrificial_rune_block"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.restored_rune_block.title"
+    }
+  },
+  "requirements": [
+    [
+      "restored_rune_block"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

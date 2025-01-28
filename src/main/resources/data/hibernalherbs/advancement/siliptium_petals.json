@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:mystical_campfire",
+  "criteria": {
+    "siliptium_petals": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:siliptium_petals"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.siliptium_petals.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:siliptium_petals"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.siliptium_petals.title"
+    }
+  },
+  "requirements": [
+    [
+      "siliptium_petals"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

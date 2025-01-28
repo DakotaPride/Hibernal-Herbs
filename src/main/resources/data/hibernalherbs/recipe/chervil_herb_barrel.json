@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:chervil"
+    },
+    {
+      "item": "hibernalherbs:chervil"
+    },
+    {
+      "item": "hibernalherbs:chervil"
+    },
+    {
+      "item": "hibernalherbs:chervil"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:chervil_herb_barrel"
+  }
+}

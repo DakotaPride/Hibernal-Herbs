@@ -1,0 +1,22 @@
+{
+  "name": "Sorcerer's Tome",
+  "icon": "hibernalherbs:tome",
+  "category": "hibernalherbs:sorcerer_books",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pride_herbal_sigil",
+      "text": "Use in combination with an Herbal Sigil to grant you with a special status effect relating to one of the $(l:sin_alignments/herbal_sigils)7 princes of Hell$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:bone_meal",
+      "text": "When used on a bonemealable block, such as a sapling or tall flower, it will perform the respective action for bonemealing that block."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:sorcerer_tome"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "hibernalherbs:extract_vile_ashes"
+    },
+    {
+      "item": "hibernalherbs:pounded_marjoram"
+    },
+    {
+      "item": "hibernalherbs:pounded_chamomile"
+    },
+    {
+      "item": "hibernalherbs:pounded_punuel"
+    },
+    {
+      "item": "hibernalherbs:punuel"
+    },
+    {
+      "item": "hibernalherbs:punuel"
+    }
+  ],
+  "result": {
+    "id": "hibernalherbs:poison_herbal_blend",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:cherry_herb_fertilizer"
+    },
+    {
+      "item": "hibernalherbs:pounded_rosemary"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "id": "hibernalherbs:rosemary"
+  }
+}

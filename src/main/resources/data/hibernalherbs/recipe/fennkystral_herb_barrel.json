@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:fennkystral"
+    },
+    {
+      "item": "hibernalherbs:fennkystral"
+    },
+    {
+      "item": "hibernalherbs:fennkystral"
+    },
+    {
+      "item": "hibernalherbs:fennkystral"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:fennkystral_herb_barrel"
+  }
+}

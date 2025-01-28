@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:ceillis"
+    },
+    {
+      "item": "hibernalherbs:ceillis"
+    },
+    {
+      "item": "hibernalherbs:ceillis"
+    },
+    {
+      "item": "hibernalherbs:ceillis"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:ceillis_herb_barrel"
+  }
+}

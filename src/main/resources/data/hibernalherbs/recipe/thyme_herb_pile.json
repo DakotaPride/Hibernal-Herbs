@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:thyme"
+    },
+    {
+      "item": "hibernalherbs:thyme"
+    },
+    {
+      "item": "hibernalherbs:myqueste_leaves"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:thyme_herb_pile"
+  }
+}

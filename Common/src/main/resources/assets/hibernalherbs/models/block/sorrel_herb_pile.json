@@ -1,8 +1,0 @@
-{
-  "parent": "hibernalherbs:block/pile/leaf_pile",
-  "textures": {
-    "all": "hibernalherbs:block/herb/pile/sorrel",
-    "particle": "hibernalherbs:block/herb/pile/sorrel"
-  },
-  "render_type": "cutout"
-}

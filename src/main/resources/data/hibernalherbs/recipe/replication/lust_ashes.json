@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:lust_ashes"
+    },
+    {
+      "item": "hibernalherbs:extract_mystical_ashes"
+    },
+    {
+      "item": "hibernalherbs:extract_vile_ashes"
+    },
+    {
+      "item": "hibernalherbs:extract_virtuous_ashes"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "id": "hibernalherbs:lust_ashes"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "parent": "hibernalherbs:sorcerer_tome",
+  "criteria": {
+    "conjure_item_with_tome": {
+      "conditions": {
+        "item": {
+          "items": "hibernalherbs:tome"
+        }
+      },
+      "trigger": "hibernalherbs:tome_conjured_items"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.conjure_item_with_tome.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:tome"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.conjure_item_with_tome.title"
+    }
+  },
+  "requirements": [
+    [
+      "conjure_item_with_tome"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

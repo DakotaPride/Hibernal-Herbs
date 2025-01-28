@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:mystical_campfire",
+  "criteria": {
+    "dried_herbs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#hibernalherbs:dried_herbs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.dried_herbs.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:dried_tarragon"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.dried_herbs.title"
+    }
+  },
+  "requirements": [
+    [
+      "dried_herbs"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

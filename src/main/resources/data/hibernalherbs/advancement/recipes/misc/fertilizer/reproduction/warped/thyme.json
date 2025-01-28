@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pounded_thyme": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:pounded_thyme"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:fertilizer/reproduction/warped/thyme"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pounded_thyme"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:fertilizer/reproduction/warped/thyme"
+    ]
+  }
+}

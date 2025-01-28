@@ -1,0 +1,6 @@
+{
+  "parent": "hibernalherbs:item/template_brush",
+  "textures": {
+    "layer0": "hibernalherbs:item/syrum_brush"
+  }
+}

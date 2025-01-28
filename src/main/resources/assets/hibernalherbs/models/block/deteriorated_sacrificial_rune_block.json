@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "hibernalherbs:block/deteriorated_sacrificial_rune_block"
+  }
+}

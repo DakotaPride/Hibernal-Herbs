@@ -1,0 +1,17 @@
+{
+  "name": "Syrum Brush",
+  "icon": "hibernalherbs:syrum_brush",
+  "category": "hibernalherbs:utilities",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:syrum_brush",
+      "title": "Syrum Brush",
+      "text": "Syrum Brushes can be used on certain, more sturdier suspicious blocks, such as Suspicious End Stone!"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:syrum_brush"
+    }
+  ]
+}

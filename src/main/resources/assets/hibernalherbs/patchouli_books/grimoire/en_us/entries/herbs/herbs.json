@@ -1,0 +1,12 @@
+{
+  "name": "Herbs",
+  "icon": "hibernalherbs:chamomile",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:chamomile",
+      "text": "Herbs can be found in Snowy Plains and Snowy Taiga in typically large quantities.$(br2)By default, herbs will drop themselves upon breaking them. However, if broken with a sickle, it will drop $(l:herbs/pounded_herbs)pounded herbs$()."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Incense Provider",
+  "icon": "hibernalherbs:incense_provider",
+  "category": "hibernalherbs:utilities",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:incense_provider",
+      "title": "Incense Provider",
+      "text": "Right-clicking an Incense Provider with either a $(l:herbs/pounded_herbs)Pounded Herb$() or a $(l:herbs/dried_herbs)Dried Herbs$() will provide you with a status effect depending on the type of herb provided to it."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:incense_provider"
+    }
+  ]
+}

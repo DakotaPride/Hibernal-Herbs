@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:tarragon"
+    },
+    {
+      "item": "hibernalherbs:tarragon"
+    },
+    {
+      "item": "hibernalherbs:tarragon"
+    },
+    {
+      "item": "hibernalherbs:tarragon"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:tarragon_herb_barrel"
+  }
+}

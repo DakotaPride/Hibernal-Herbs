@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_Block{hibernalherbs:marjoram}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:marjoram"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:marjoram_herb_barrel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_Block{hibernalherbs:marjoram}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:marjoram_herb_barrel"
+    ]
+  }
+}

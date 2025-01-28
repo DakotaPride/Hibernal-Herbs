@@ -1,0 +1,19 @@
+{
+  "name": "Ashes of Sin",
+  "icon": "hibernalherbs:pride_ashes",
+  "category": "hibernalherbs:sin_alignments",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pride_ashes",
+      "title": "Ashes of Sin",
+      "text": "By sifting through $(l:sin_alignments/arcane_ruins)Suspicious End Stone$(), you can find some potentially useful items! Among these items, are ashes of sin, which are used in the creation of $(l:sin_alignments/herbal_sigils)aligned Herbal Sigils$()."
+    },
+    {
+      "type": "patchouli:text",
+      "item": "hibernalherbs:extract_vile_ashes",
+      "text": "Ashes of sin can also be used make $(l:mystical_campfire_conversion/enigmatic_extract)Enigmatic Extract$() that extracts Vile Ashes."
+    }
+  ]
+}

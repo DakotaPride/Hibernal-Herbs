@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:chamomile"
+    },
+    {
+      "item": "hibernalherbs:chamomile"
+    },
+    {
+      "item": "hibernalherbs:myqueste_leaves"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:chamomile_herb_pile"
+  }
+}

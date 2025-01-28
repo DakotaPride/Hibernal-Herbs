@@ -1,0 +1,22 @@
+{
+  "name": "Dried Herbs",
+  "icon": "hibernalherbs:dried_chamomile",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:dried_chamomile",
+      "text": "Can be used to make decorative lanterns and to make certain $(l:sin_alignments/herbal_sigils)Herbal Sigils$()."
+    },
+    {
+      "type": "hibernalherbs:mystical_campfire_conversion",
+      "recipe": "hibernalherbs:mystical_campfire_conversion/dried_rosemary",
+      "text": "Dried herbs can be made from pounded herbs by using a Mystical Campfire."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:incense_provider",
+      "text": "Can be used on an $(l:utilities/incense_provider)Incense Provider$() to provide a positive status effect to surrounding entities within a radius of 10 metres."
+    }
+  ]
+}

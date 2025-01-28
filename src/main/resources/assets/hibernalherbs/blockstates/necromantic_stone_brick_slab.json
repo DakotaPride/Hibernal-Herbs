@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hibernalherbs:block/necromantic_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "hibernalherbs:block/necromantic_stone_brick_slab_double"
+    },
+    "type=top": {
+      "model": "hibernalherbs:block/necromantic_stone_brick_slab_top"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:mystical_campfire",
+  "criteria": {
+    "singed_grimoire": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:singed_grimoire"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.singed_grimoire.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:singed_grimoire"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.singed_grimoire.title"
+    }
+  },
+  "requirements": [
+    [
+      "singed_grimoire"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

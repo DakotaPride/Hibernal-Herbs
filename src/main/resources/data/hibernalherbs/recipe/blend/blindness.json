@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "hibernalherbs:extract_vile_ashes"
+    },
+    {
+      "item": "hibernalherbs:pounded_tarragon"
+    },
+    {
+      "item": "hibernalherbs:pounded_chervil"
+    },
+    {
+      "item": "hibernalherbs:pounded_chives"
+    },
+    {
+      "item": "hibernalherbs:chives"
+    },
+    {
+      "item": "hibernalherbs:chives"
+    }
+  ],
+  "result": {
+    "id": "hibernalherbs:blindness_herbal_blend",
+    "count": 1
+  }
+}

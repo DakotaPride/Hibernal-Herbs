@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hibernalherbs:block/cut_copper_slab"
+    },
+    "type=double": {
+      "model": "hibernalherbs:block/cut_copper_block"
+    },
+    "type=top": {
+      "model": "hibernalherbs:block/cut_copper_slab_top"
+    }
+  }
+}

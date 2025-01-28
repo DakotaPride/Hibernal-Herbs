@@ -1,0 +1,17 @@
+{
+  "name": "Petals",
+  "icon": "hibernalherbs:siliptium_petals",
+  "category": "hibernalherbs:mystical_campfire_conversion",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:siliptium_petals",
+      "text": "Siliptium Petals can be made by putting Pink Petals onto a Mystical Campfire.$(br2)From here, you can put Siliptium Petals back onto a Mystical Campfire to make Lumbinetrik Petals, and even further to make Julisium Petals.$(br2)Julisium Petals can be used to make $(l:mystical_campfire_conversion/arkonium)Herbal Padlocks."
+    },
+    {
+      "type": "hibernalherbs:mystical_campfire_conversion",
+      "recipe": "hibernalherbs:mystical_campfire_conversion/siliptium_petals",
+      "text": "Can be made by putting Pink Petals onto a Mystical Campfire."
+    }
+  ]
+}

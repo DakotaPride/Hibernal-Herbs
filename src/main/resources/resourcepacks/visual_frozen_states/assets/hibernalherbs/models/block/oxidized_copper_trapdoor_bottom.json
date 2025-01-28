@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_bottom",
+  "textures": {
+    "texture": "hibernalherbs:block/froze_state/oxidized_copper_trapdoor"
+  }
+}

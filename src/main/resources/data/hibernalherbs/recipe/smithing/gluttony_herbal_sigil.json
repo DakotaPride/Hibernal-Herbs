@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "hibernalherbs:gluttony_ashes"
+  },
+  "base": [
+    {
+      "item": "hibernalherbs:blank_herbal_sigil"
+    },
+    {
+      "item": "hibernalherbs:cracked_herbal_sigil"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:gluttony_herbal_sigil"
+  },
+  "template": {
+    "item": "hibernalherbs:inscription_smithing_template"
+  }
+}

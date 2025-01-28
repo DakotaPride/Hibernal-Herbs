@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:punuel"
+    },
+    {
+      "item": "hibernalherbs:punuel"
+    },
+    {
+      "item": "hibernalherbs:punuel"
+    },
+    {
+      "item": "hibernalherbs:punuel"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:punuel_herb_barrel"
+  }
+}

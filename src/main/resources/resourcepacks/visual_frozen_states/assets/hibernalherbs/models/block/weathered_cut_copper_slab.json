@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "hibernalherbs:block/froze_state/weathered_cut_copper",
+    "side": "hibernalherbs:block/froze_state/weathered_cut_copper",
+    "top": "hibernalherbs:block/froze_state/weathered_cut_copper"
+  }
+}

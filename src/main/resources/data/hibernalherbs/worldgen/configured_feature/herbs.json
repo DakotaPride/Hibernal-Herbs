@@ -1,0 +1,79 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:noise_provider",
+            "noise": {
+              "amplitudes": [
+                1
+              ],
+              "firstOctave": 0
+            },
+            "scale": 0.020833334,
+            "seed": 4425,
+            "states": [
+              {
+                "Name": "hibernalherbs:rosemary"
+              },
+              {
+                "Name": "hibernalherbs:thyme"
+              },
+              {
+                "Name": "hibernalherbs:tarragon"
+              },
+              {
+                "Name": "hibernalherbs:punuel"
+              },
+              {
+                "Name": "hibernalherbs:chamomile"
+              },
+              {
+                "Name": "hibernalherbs:chives"
+              },
+              {
+                "Name": "hibernalherbs:verbena"
+              },
+              {
+                "Name": "hibernalherbs:sorrel"
+              },
+              {
+                "Name": "hibernalherbs:marjoram"
+              },
+              {
+                "Name": "hibernalherbs:chervil"
+              },
+              {
+                "Name": "hibernalherbs:fennel"
+              },
+              {
+                "Name": "hibernalherbs:ceillis"
+              },
+              {
+                "Name": "hibernalherbs:essitte"
+              },
+              {
+                "Name": "hibernalherbs:calendula"
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 32,
+    "xz_spread": 12,
+    "y_spread": 4
+  }
+}

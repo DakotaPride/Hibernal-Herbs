@@ -1,0 +1,35 @@
+{
+  "name": "Herbal Sigils",
+  "icon": "hibernalherbs:pride_herbal_sigil",
+  "category": "hibernalherbs:sin_alignments",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:deteriorated_sacrificial_rune_block",
+      "title": "Deteriorated Rune",
+      "text": "Herbal Sigils are made by using a Deteriorated Sacrificial Rune with a $(l:sorcerer_books/agglomeration)Sorcerer's Agglomeration$(). Though, this only creates a blank Herbal Sigil. To upgrade your blank Herbal Sigils, you must travel to the $(l:sin_alignments/arcane_ruins)Arcane Ruins$(). Make sure to bring a $(l:utilities/syrum_brush)Syrum Brush$() so that you can brush through the Suspicious End Stone!"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pride_ashes",
+      "title": "Ashes of Sin",
+      "text": "Using the $(l:sin_alignments/ashes_of_sin)Ashes of sin$() and Inscription Template that you've found in the Arcane Ruins, you can now align your blank Herbal Sigil with 1 of the 7 deadly sins - Pride, Wrath, Envy, Sloth, Greed, Gluttony, or Lust.$(br2)However, blank Herbal Sigils can also be used in standard crafting to make Mastery and Configuration Herbal Sigils, which are key components in late-game crafting."
+    },
+    {
+      "type": "patchouli:smithing",
+      "recipe": "hibernalherbs:smithing/pride_herbal_sigil",
+      "text": "When making Herbal Sigils, make sure to use $(l:sin_alignments/arcane_ruins)Inscription Smithing Templates$() instead of the Netherite Smithing Templates."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:configuration_herbal_sigil",
+      "recipe2": "hibernalherbs:mastery_herbal_sigil"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:advanced_configuration_herbal_sigil",
+      "recipe2": "hibernalherbs:advanced_mastery_herbal_sigil"
+    }
+  ]
+}

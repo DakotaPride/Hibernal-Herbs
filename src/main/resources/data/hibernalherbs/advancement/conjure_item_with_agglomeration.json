@@ -1,0 +1,31 @@
+{
+  "parent": "hibernalherbs:sorcerer_agglomeration",
+  "criteria": {
+    "conjure_item_with_agglomeration": {
+      "conditions": {
+        "item": {
+          "items": "hibernalherbs:agglomeration"
+        }
+      },
+      "trigger": "hibernalherbs:agglomeration_conjured_items"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.conjure_item_with_agglomeration.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:agglomeration"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.conjure_item_with_agglomeration.title"
+    }
+  },
+  "requirements": [
+    [
+      "conjure_item_with_agglomeration"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

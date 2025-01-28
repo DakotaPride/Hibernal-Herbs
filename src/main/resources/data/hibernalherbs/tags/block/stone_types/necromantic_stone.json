@@ -1,0 +1,22 @@
+{
+  "values": [
+    "hibernalherbs:necromantic_stone",
+    "hibernalherbs:cobbled_necromantic_stone",
+    "hibernalherbs:polished_necromantic_stone",
+    "hibernalherbs:necromantic_stone_bricks",
+    "hibernalherbs:necromantic_stone_slab",
+    "hibernalherbs:cobbled_necromantic_stone_slab",
+    "hibernalherbs:polished_necromantic_stone_slab",
+    "hibernalherbs:necromantic_stone_brick_slab",
+    "hibernalherbs:necromantic_stone_stairs",
+    "hibernalherbs:cobbled_necromantic_stone_stairs",
+    "hibernalherbs:polished_necromantic_stone_slab",
+    "hibernalherbs:necromantic_stone_brick_stairs",
+    "hibernalherbs:necromantic_stone_wall",
+    "hibernalherbs:cobbled_necromantic_stone_wall",
+    "hibernalherbs:polished_necromantic_stone_wall",
+    "hibernalherbs:necromantic_stone_brick_wall",
+    "hibernalherbs:necromantic_stone_button",
+    "hibernalherbs:necromantic_stone_pressure_plate"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "values": [
+    "minecraft:wither_rose",
+    "#hibernalherbs:herbal_sigils",
+    "minecraft:stone",
+    "minecraft:cobblestone",
+    "minecraft:stone_bricks",
+    "minecraft:smooth_stone",
+    "minecraft:deepslate",
+    "minecraft:cobbled_deepslate",
+    "minecraft:deepslate_bricks",
+    "minecraft:polished_deepslate"
+  ]
+}

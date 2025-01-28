@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:crimson_herb_fertilizer"
+    },
+    {
+      "item": "hibernalherbs:pounded_ceillis"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "hibernalherbs:ceillis"
+  }
+}

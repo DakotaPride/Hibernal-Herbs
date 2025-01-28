@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/custom_fence_post",
+  "textures": {
+    "particle": "hibernalherbs:block/myqueste_planks",
+    "texture": "hibernalherbs:block/myqueste_planks"
+  }
+}

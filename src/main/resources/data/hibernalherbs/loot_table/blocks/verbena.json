@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "#c:tools/sickles"
+                  }
+                }
+              ],
+              "name": "hibernalherbs:pounded_verbena"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "hibernalherbs:verbena"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

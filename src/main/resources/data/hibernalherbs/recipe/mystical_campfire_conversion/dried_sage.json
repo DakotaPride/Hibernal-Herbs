@@ -1,0 +1,12 @@
+{
+  "type": "hibernalherbs:mystical_campfire_conversion",
+  "category": "misc",
+  "cookingtime": 400,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "hibernalherbs:pounded_sage"
+  },
+  "result": {
+    "id": "hibernalherbs:dried_sage"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:spruce_herb_fertilizer"
+    },
+    {
+      "item": "hibernalherbs:pounded_chives"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "hibernalherbs:chives"
+  }
+}

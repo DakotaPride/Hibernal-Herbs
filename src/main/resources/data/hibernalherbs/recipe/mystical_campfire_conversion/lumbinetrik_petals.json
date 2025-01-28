@@ -1,0 +1,12 @@
+{
+  "type": "hibernalherbs:mystical_campfire_conversion",
+  "category": "misc",
+  "cookingtime": 1000,
+  "experience": 0.4,
+  "ingredient": {
+    "item": "hibernalherbs:siliptium_petals"
+  },
+  "result": {
+    "id": "hibernalherbs:lumbinetrik_petals"
+  }
+}

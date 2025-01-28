@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/template_campfire",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "fire": "hibernalherbs:block/mystical_campfire_fire",
+    "lit_log": "hibernalherbs:block/mystical_campfire_log_lit",
+    "log": "hibernalherbs:block/mystical_campfire_log",
+    "particle": "hibernalherbs:block/mystical_campfire_log"
+  }
+}

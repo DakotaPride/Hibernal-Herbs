@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pounded_chives": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:pounded_chives"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:fertilizer/reproduction/spruce/chives"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pounded_chives"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:fertilizer/reproduction/spruce/chives"
+    ]
+  }
+}

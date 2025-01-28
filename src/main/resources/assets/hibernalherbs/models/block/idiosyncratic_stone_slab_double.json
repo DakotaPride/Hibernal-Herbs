@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "hibernalherbs:block/idiosyncratic_stone",
+    "side": "hibernalherbs:block/idiosyncratic_stone"
+  }
+}

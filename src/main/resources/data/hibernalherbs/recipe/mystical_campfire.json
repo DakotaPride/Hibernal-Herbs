@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "A": {
+      "item": "hibernalherbs:life_force"
+    },
+    "B": {
+      "tag": "hibernalherbs:myqueste_logs"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#A#",
+    "BBB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:mystical_campfire"
+  }
+}

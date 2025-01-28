@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:chives"
+    },
+    {
+      "item": "hibernalherbs:chives"
+    },
+    {
+      "item": "hibernalherbs:chives"
+    },
+    {
+      "item": "hibernalherbs:chives"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:chives_herb_barrel"
+  }
+}

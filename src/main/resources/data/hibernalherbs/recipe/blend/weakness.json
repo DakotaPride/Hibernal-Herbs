@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "hibernalherbs:extract_vile_ashes"
+    },
+    {
+      "item": "hibernalherbs:pounded_sorrel"
+    },
+    {
+      "item": "hibernalherbs:pounded_verbena"
+    },
+    {
+      "item": "hibernalherbs:pounded_chamomile"
+    },
+    {
+      "item": "hibernalherbs:chamomile"
+    },
+    {
+      "item": "hibernalherbs:chamomile"
+    }
+  ],
+  "result": {
+    "id": "hibernalherbs:weakness_herbal_blend",
+    "count": 1
+  }
+}

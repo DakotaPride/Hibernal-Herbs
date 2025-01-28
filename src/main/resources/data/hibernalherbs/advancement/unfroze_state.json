@@ -1,0 +1,26 @@
+{
+  "parent": "hibernalherbs:froze_state",
+  "criteria": {
+    "unfroze_state": {
+      "trigger": "hibernalherbs:unfroze_blockstate"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.unfroze_state.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:weathered_copper"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.unfroze_state.title"
+    }
+  },
+  "requirements": [
+    [
+      "unfroze_state"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

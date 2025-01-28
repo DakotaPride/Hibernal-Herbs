@@ -1,0 +1,22 @@
+{
+  "name": "Herbal Padlocks",
+  "icon": "hibernalherbs:unbound_pride_padlock",
+  "category": "hibernalherbs:sin_alignments",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:unbound_pride_padlock",
+      "text": "Unbound Herbal Padlocks are a prerequisite to what you desire - the Bound Herbal Padlocks! Unbound Herbal Padlocks, as you might guess, are crafted using the Herbal Sigil of the given sin that you wish to make a Herbal Padlock for."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:tome",
+      "text": "Unbound Herbal Padlocks are useless on their own, you need to now bind its respective prince to the padlock."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "To bind a prince of sin, use the Unbound Herbal Padlock with a $(l:sorcerer_books/tome)Sorcerer's Tome$(), this will provide you with a Bound Herbal Padlock which can be equipped in your accessories necklace slot.$(br2)Once equipped, it will provide you with certain buffs that will last forever unless you unequip the herbal padlock."
+    }
+  ]
+}

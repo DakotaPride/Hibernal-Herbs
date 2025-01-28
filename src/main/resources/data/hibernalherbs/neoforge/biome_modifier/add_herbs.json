@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#hibernalherbs:has_herbs",
+  "features": "hibernalherbs:herbs",
+  "step": "vegetal_decoration"
+}

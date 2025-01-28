@@ -1,0 +1,46 @@
+{
+  "replace": false,
+  "sources": [
+    {
+      "type": "directory",
+      "source": "block",
+      "prefix": "block/"
+    },
+    {
+      "type": "directory",
+      "source": "item",
+      "prefix": "item/"
+    },
+    {
+      "type": "directory",
+      "source": "entity/conduit",
+      "prefix": "entity/conduit/"
+    },
+    {
+      "type": "single",
+      "resource": "entity/bell/bell_body"
+    },
+    {
+      "type": "single",
+      "resource": "entity/decorated_pot/decorated_pot_side"
+    },
+    {
+      "type": "single",
+      "resource": "entity/enchanting_table_book"
+    },
+    {
+      "type": "paletted_permutations",
+      "textures": [
+        "trims/items/leggings_trim",
+        "trims/items/chestplate_trim",
+        "trims/items/helmet_trim",
+        "trims/items/boots_trim"
+      ],
+      "palette_key": "trims/color_palettes/trim_palette",
+      "permutations": {
+        "arkonium": "hibernalherbs:trims/color_palettes/arkonium",
+        "syrum": "hibernalherbs:trims/color_palettes/syrum"
+      }
+    }
+  ]
+}

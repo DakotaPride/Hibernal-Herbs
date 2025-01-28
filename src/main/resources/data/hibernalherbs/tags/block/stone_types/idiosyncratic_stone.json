@@ -1,0 +1,22 @@
+{
+  "values": [
+    "hibernalherbs:idiosyncratic_stone",
+    "hibernalherbs:cobbled_idiosyncratic_stone",
+    "hibernalherbs:polished_idiosyncratic_stone",
+    "hibernalherbs:idiosyncratic_stone_bricks",
+    "hibernalherbs:idiosyncratic_stone_slab",
+    "hibernalherbs:cobbled_idiosyncratic_stone_slab",
+    "hibernalherbs:polished_idiosyncratic_stone_slab",
+    "hibernalherbs:idiosyncratic_stone_brick_slab",
+    "hibernalherbs:idiosyncratic_stone_stairs",
+    "hibernalherbs:cobbled_idiosyncratic_stone_stairs",
+    "hibernalherbs:polished_idiosyncratic_stone_slab",
+    "hibernalherbs:idiosyncratic_stone_brick_stairs",
+    "hibernalherbs:idiosyncratic_stone_wall",
+    "hibernalherbs:cobbled_idiosyncratic_stone_wall",
+    "hibernalherbs:polished_idiosyncratic_stone_wall",
+    "hibernalherbs:idiosyncratic_stone_brick_wall",
+    "hibernalherbs:idiosyncratic_stone_button",
+    "hibernalherbs:idiosyncratic_stone_pressure_plate"
+  ]
+}

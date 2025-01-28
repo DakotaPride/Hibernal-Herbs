@@ -1,0 +1,38 @@
+{
+  "processor": "net.dakotapride.hibernalherbs.patchouli.MysticalCampfireConversionProcessor",
+  "components": [
+    {
+      "type": "patchouli:header",
+      "text": "#header",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input",
+      "framed": true,
+      "x": 20,
+      "y": 21
+    },
+    {
+      "type": "patchouli:item",
+      "item": "hibernalherbs:mystical_campfire",
+      "framed": true,
+      "x": 48,
+      "y": 21
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#output",
+      "framed": true,
+      "x": 76,
+      "y": 21
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#text",
+      "x": -1,
+      "y": 50
+    }
+  ]
+}

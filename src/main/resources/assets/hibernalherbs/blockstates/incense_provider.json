@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "fed=false,facing=north": {
+      "model": "hibernalherbs:block/incense_provider",
+      "y": 180
+    },
+    "fed=true,facing=north": {
+      "model": "hibernalherbs:block/incense_provider_fed",
+      "y": 180
+    },
+
+    "fed=false,facing=south": {
+      "model": "hibernalherbs:block/incense_provider"
+    },
+    "fed=true,facing=south": {
+      "model": "hibernalherbs:block/incense_provider_fed"
+    },
+
+    "fed=false,facing=west": {
+      "model": "hibernalherbs:block/incense_provider",
+      "y": 90
+    },
+    "fed=true,facing=west": {
+      "model": "hibernalherbs:block/incense_provider_fed",
+      "y": 90
+    },
+
+    "fed=false,facing=east": {
+      "model": "hibernalherbs:block/incense_provider",
+      "y": 270
+    },
+    "fed=true,facing=east": {
+      "model": "hibernalherbs:block/incense_provider_fed",
+      "y": 270
+    }
+  }
+}

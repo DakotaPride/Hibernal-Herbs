@@ -1,0 +1,24 @@
+{
+  "name": "Sickles",
+  "icon": "hibernalherbs:iron_sickle",
+  "category": "hibernalherbs:utilities",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:iron_sickle",
+      "title": "Sickles",
+      "text": "Breaking an herb with a sickle will drop $(l:herbs/pounded_herbs)Pounded Herbs$() instead of the regular herb.$(br2)Sickles (and Wind Charges) can revert deterioration on certain blocks, such as Deteriorated Sacrificial Rune Blocks."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:life_force",
+      "title": "Bottles of Life Force",
+      "text": "Enchanting your sickle with the Slashing enchantment will enable you to gather Bottles of Life Force. Attacking a mob with this enchantment applied while a Glass Bottle is in your offhand will fill it with the life of the attacked mob."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Enchantments",
+      "text": "There are two other enchantments that you can apply to your sickles - Rapid and Culling.$(br2)Rapid increases your sneaking speed with each level.$(br2)Culling regenerates the player's health when killing lifestock such as Cows or Pigs. However, this does go on cooldown for a few seconds, so be wise with its use."
+    }
+  ]
+}

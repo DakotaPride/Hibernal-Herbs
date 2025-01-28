@@ -1,0 +1,9 @@
+{
+  "asset_name": "arkonium",
+  "description": {
+    "color": "#94ABC8",
+    "translate": "trim_material.hibernalherbs.arkonium"
+  },
+  "ingredient": "hibernalherbs:arkonium_ingot",
+  "item_model_index": 0.01
+}

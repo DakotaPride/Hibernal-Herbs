@@ -1,0 +1,17 @@
+{
+  "name": "Syrum",
+  "icon": "hibernalherbs:syrum_ingot",
+  "category": "hibernalherbs:mystical_campfire_conversion",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:syrum_block",
+      "text": "Higher tier gold tools and gear. With the full set equipped, you can freely look at Endermen.$(br2)Syrum can be used to make $(l:sin_alignments/herbal_padlocks)Unbound Herbal Padlocks$() from $(l:sin_alignments/herbal_sigils)Herbal Sigils$().$(br2)Syrum can also be used to make an $(l:utilities/incense_provider)Incense Provider$() and a $(l:utilities/syrum_brush)Syrum Brush$(), which is necessary for traversing to the $(l:sin_alignments/arcane_ruins)Arcane Ruins$()."
+    },
+    {
+      "type": "hibernalherbs:mystical_campfire_conversion",
+      "recipe": "hibernalherbs:mystical_campfire_conversion/syrum_ingot_from_gold_ingot",
+      "text": "Can be made by putting Gold Ingots, Nuggets, or Blocks onto a Mystical Campfire."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Arkonium",
+  "icon": "hibernalherbs:arkonium_ingot",
+  "category": "hibernalherbs:mystical_campfire_conversion",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:arkonium_block",
+      "text": "Higher tier iron tools and gear. Per piece of armour, you gain a minor speed boost.$(br2)Arkonium can be used to replicate $(l:sin_alignments/arcane_ruins)Inscription Templates$()."
+    },
+    {
+      "type": "hibernalherbs:mystical_campfire_conversion",
+      "recipe": "hibernalherbs:mystical_campfire_conversion/arkonium_ingot_from_iron_ingot",
+      "text": "Can be made by putting Iron Ingots, Nuggets, or Blocks onto a Mystical Campfire."
+    }
+  ]
+}

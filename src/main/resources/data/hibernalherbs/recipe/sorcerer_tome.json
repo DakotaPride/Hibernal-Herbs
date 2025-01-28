@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "hibernalherbs:syrum_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hibernalherbs:tome"
+  }
+}

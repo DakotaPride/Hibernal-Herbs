@@ -1,0 +1,28 @@
+{
+  "name": "Arcane Ruins",
+  "icon": "hibernalherbs:necromantic_stone",
+  "category": "hibernalherbs:sin_alignments",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:end_stone",
+      "title": "Arcane Ruins",
+      "text": "You can find the Arcane Ruins in the End Highlands, only inhabited with a few Pillagers guarding it's loot.$(br2)It's here that you'll find some key ingredients for your progression - $(l:sin_alignments/ashes_of_sin)Ashes of sin$() and Inscription Smithing Templates."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "hibernalherbs:textures/gui/entries/arcane_ruins.png"
+      ],
+      "text": "These items can be used in a Smithing Table to make an aligned Herbal Sigil."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "hibernalherbs:textures/gui/entries/suspicious_end_stone.png"
+      ],
+      "text": "Sift through Suspicious End Stone using a $(l:utilities/syrum_brush)Syrum Brush$() to find some loot!"
+    }
+  ]
+}

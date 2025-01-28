@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:life_force",
+  "criteria": {
+    "mystical_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:mystical_campfire"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.mystical_campfire.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:mystical_campfire"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.mystical_campfire.title"
+    }
+  },
+  "requirements": [
+    [
+      "mystical_campfire"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "hibernalherbs:block/necromantic_stone_bricks",
+    "side": "hibernalherbs:block/necromantic_stone_bricks"
+  }
+}

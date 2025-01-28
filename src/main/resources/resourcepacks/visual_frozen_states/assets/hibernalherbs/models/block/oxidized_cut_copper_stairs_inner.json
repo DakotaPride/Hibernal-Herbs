@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "hibernalherbs:block/froze_state/oxidized_cut_copper",
+    "side": "hibernalherbs:block/froze_state/oxidized_cut_copper",
+    "top": "hibernalherbs:block/froze_state/oxidized_cut_copper"
+  }
+}

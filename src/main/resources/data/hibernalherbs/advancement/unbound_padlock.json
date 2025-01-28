@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:herbal_sigil",
+  "criteria": {
+    "unbound_padlock": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#hibernalherbs:unbound_herbal_padlocks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.unbound_padlock.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:unbound_pride_padlock"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.unbound_padlock.title"
+    }
+  },
+  "requirements": [
+    [
+      "unbound_padlock"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

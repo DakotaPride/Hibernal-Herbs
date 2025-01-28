@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hibernalherbs:item/agglomeration"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "hibernalherbs:is_using_agglomeration": 1
+      },
+      "model": "hibernalherbs:item/active_agglomeration"
+    }
+  ]
+}

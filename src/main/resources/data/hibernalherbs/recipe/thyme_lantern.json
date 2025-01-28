@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_nugget"
+    },
+    "A": {
+      "item": "minecraft:lantern"
+    },
+    "X": {
+      "item": "hibernalherbs:dried_thyme"
+    }
+  },
+  "pattern": [
+    " X ",
+    "XAX",
+    " # "
+  ],
+  "result": {
+    "count": 3,
+    "id": "hibernalherbs:thyme_lantern"
+  }
+}

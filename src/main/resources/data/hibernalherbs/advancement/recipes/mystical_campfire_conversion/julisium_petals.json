@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lumbinetrik_petals": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:lumbinetrik_petals"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hibernalherbs:mystical_campfire_conversion/julisium_petals"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lumbinetrik_petals"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hibernalherbs:mystical_campfire_conversion/julisium_petals"
+    ]
+  }
+}

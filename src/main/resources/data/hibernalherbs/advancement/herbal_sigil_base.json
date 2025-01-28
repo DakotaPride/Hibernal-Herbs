@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:deteriorated_rune_block",
+  "criteria": {
+    "herbal_sigil_base": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hibernalherbs:blank_herbal_sigil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.herbal_sigil_base.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "hibernalherbs:blank_herbal_sigil"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.herbal_sigil_base.title"
+    }
+  },
+  "requirements": [
+    [
+      "herbal_sigil_base"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
