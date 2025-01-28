@@ -14,6 +14,6 @@ public class ModSignBlockEntity extends SignBlockEntity {
 
     @Override
     public @NotNull BlockEntityType<?> getType() {
-        return BlockEntityTypeInit.MOD_SIGN.get();
+        return BlockEntityTypeInit.MOD_SIGN;
     }
 }

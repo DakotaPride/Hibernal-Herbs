@@ -2,6 +2,7 @@ package net.dakotapride.hibernalherbs.mixin;
 
 import net.dakotapride.hibernalherbs.init.StatusEffectInit;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.npc.Villager;

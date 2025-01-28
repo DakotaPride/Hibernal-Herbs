@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_bottom_left_open",
-  "render_type": "minecraft:cutout",
   "textures": {
     "bottom": "hibernalherbs:block/myqueste_door_bottom",
     "top": "hibernalherbs:block/myqueste_door_top"

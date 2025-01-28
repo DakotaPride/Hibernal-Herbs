@@ -1,6 +1,7 @@
 package net.dakotapride.hibernalherbs.init.enum_registry;
 
 import net.dakotapride.hibernalherbs.init.ItemInit;
+import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
 import net.dakotapride.hibernalherbs.item.HerbalBlendItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -13,7 +14,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.List;
 import java.util.Locale;
@@ -35,7 +35,7 @@ public enum HerbalBlendTypes {
 
     public final String herbal_blend_id;
 
-    public DeferredItem<Item> herbal_blend;
+    public Item herbal_blend;
     //public Item smoked_herbal_blend;
 
     public FoodProperties.Builder food_properties;
@@ -50,7 +50,7 @@ public enum HerbalBlendTypes {
         this.food_properties = new FoodProperties.Builder()
                 .alwaysEdible().nutrition(7).saturationModifier(0.6f);
 
-        this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", () -> new HerbalBlendItem(new Item.Properties().stacksTo(1)
+        this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1)
                 .food(food_properties
                         .effect(new MobEffectInstance(effect0, ticks, amplifier), 1.0f).build())));
 //        this.smoked_herbal_blend = ItemInit.register("smoked_" + herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1)
@@ -70,7 +70,7 @@ public enum HerbalBlendTypes {
                 // .effect(new MobEffectInstance(effect0, ticks, amplifier), 1.0f)
                 .alwaysEdible().nutrition(7).saturationModifier(0.6f);
 
-        this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", () -> new HerbalBlendItem(new Item.Properties().stacksTo(1).food(food_properties.build())));
+        this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1).food(food_properties.build())));
 //        this.smoked_herbal_blend = ItemInit.register("smoked_" + herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1).food(food_properties.build())));
 
     }
@@ -86,7 +86,7 @@ public enum HerbalBlendTypes {
     }
 
     public Item getHerbalBlend() {
-        return herbal_blend.get();
+        return herbal_blend;
     }
 
 //    public Item getSmokedHerbalBlend() {

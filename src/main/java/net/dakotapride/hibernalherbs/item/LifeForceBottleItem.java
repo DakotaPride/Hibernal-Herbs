@@ -14,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 
@@ -23,7 +24,7 @@ import java.util.function.Supplier;
 public class LifeForceBottleItem extends Item {
     public static final Supplier<BiMap<Block, Block>> DETERIORATABLE = Suppliers.memoize(
             () -> ImmutableBiMap.<Block, Block>builder()
-                    .put(BlockInit.SACRIFICIAL_RUNE_BLOCK.get(), BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.get())
+                    .put(BlockInit.SACRIFICIAL_RUNE_BLOCK, BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK)
                     .build()
     );
 

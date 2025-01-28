@@ -52,12 +52,10 @@ public class SickleItem extends SwordItem {
                     Pair.of(SickleItem::onlyIfAirAbove, changeIntoState(Blocks.FARMLAND.defaultBlockState())),
                     Blocks.COARSE_DIRT,
                     Pair.of(SickleItem::onlyIfAirAbove, changeIntoState(Blocks.DIRT.defaultBlockState())),
-                    BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.get(),
-                    Pair.of(SickleItem::onlyIfAirAbove, changeIntoState(BlockInit.SACRIFICIAL_RUNE_BLOCK.get().defaultBlockState())),
+                    BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK,
+                    Pair.of(SickleItem::onlyIfAirAbove, changeIntoState(BlockInit.SACRIFICIAL_RUNE_BLOCK.defaultBlockState())),
                     Blocks.ROOTED_DIRT,
-                    Pair.of((useOnContext) -> {
-                        return true;
-                    }, changeIntoStateAndDropItem(Blocks.DIRT.defaultBlockState(), Items.HANGING_ROOTS))
+                    Pair.of(useOnContext -> true, changeIntoStateAndDropItem(Blocks.DIRT.defaultBlockState(), Items.HANGING_ROOTS))
             )
     );
 
@@ -107,8 +105,8 @@ public class SickleItem extends SwordItem {
                     level.playSound(player, blockPos, SoundEvents.DEEPSLATE_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
 
                     if (player instanceof ServerPlayer serverPlayer) {
-                        CriteriaTriggersInit.SACRIFICIAL_RUNE_RESTORATION.get().trigger(serverPlayer, blockPos);
-                        serverPlayer.awardStat(StatsInit.SACRIFICIAL_RUNE_RESTORATION.get().get(useOnContext.getLevel().getBlockState(blockPos).getBlock()));
+                        CriteriaTriggersInit.SACRIFICIAL_RUNE_RESTORATION.trigger(serverPlayer, blockPos);
+                        serverPlayer.awardStat(StatsInit.SACRIFICIAL_RUNE_RESTORATION.get(useOnContext.getLevel().getBlockState(blockPos).getBlock()));
                     }
 
                 } else {
@@ -171,7 +169,7 @@ public class SickleItem extends SwordItem {
                     && EnchantmentHelper.hasTag(itemStack, Tags.Enchantments.HARVESTS_LIFE_FORCE.getTag())) {
                 livingEntity2.getOffhandItem().shrink(1);
 
-                player.addItem(new ItemStack(ItemInit.LIFE_FORCE_BOTTLE.get(), 1));
+                player.addItem(new ItemStack(ItemInit.LIFE_FORCE_BOTTLE, 1));
             }
 
 

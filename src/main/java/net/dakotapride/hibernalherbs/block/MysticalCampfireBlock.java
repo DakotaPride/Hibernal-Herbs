@@ -15,6 +15,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
@@ -93,8 +94,8 @@ public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWate
             if (optional.isPresent()) {
                 if (!level.isClientSide && campfireBlockEntity.placeFood(player, itemStack2, ((MysticalCampfireCookingRecipe)((RecipeHolder)optional.get()).value()).getCookingTime())) {
                     if (player instanceof ServerPlayer player1) {
-                        CriteriaTriggersInit.MYSTICAL_CAMPFIRE_INTERACTIONS.get().trigger(player1, blockPos);
-                        player1.awardStat(StatsInit.MYSTICAL_CAMPFIRE_INTERACTIONS.get().get(this));
+                        CriteriaTriggersInit.MYSTICAL_CAMPFIRE_INTERACTIONS.trigger(player1, blockPos);
+                        player1.awardStat(StatsInit.MYSTICAL_CAMPFIRE_INTERACTIONS.get(this));
                     }
                     return ItemInteractionResult.SUCCESS;
                 }
@@ -298,9 +299,9 @@ public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWate
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> blockEntityType) {
         if (level.isClientSide) {
-            return blockState.getValue(LIT) ? createTickerHelper(blockEntityType, BlockEntityTypeInit.MYSTICAL_CAMPFIRE.get(), MysticalCampfireBlockEntity::particleTick) : null;
+            return blockState.getValue(LIT) ? createTickerHelper(blockEntityType, BlockEntityTypeInit.MYSTICAL_CAMPFIRE, MysticalCampfireBlockEntity::particleTick) : null;
         } else {
-            return blockState.getValue(LIT) ? createTickerHelper(blockEntityType, BlockEntityTypeInit.MYSTICAL_CAMPFIRE.get(), MysticalCampfireBlockEntity::cookTick) : createTickerHelper(blockEntityType, BlockEntityTypeInit.MYSTICAL_CAMPFIRE.get(), MysticalCampfireBlockEntity::cooldownTick);
+            return blockState.getValue(LIT) ? createTickerHelper(blockEntityType, BlockEntityTypeInit.MYSTICAL_CAMPFIRE, MysticalCampfireBlockEntity::cookTick) : createTickerHelper(blockEntityType, BlockEntityTypeInit.MYSTICAL_CAMPFIRE, MysticalCampfireBlockEntity::cooldownTick);
         }
     }
 

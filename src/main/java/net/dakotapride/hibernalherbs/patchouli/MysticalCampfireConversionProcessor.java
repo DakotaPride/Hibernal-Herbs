@@ -1,6 +1,8 @@
 package net.dakotapride.hibernalherbs.patchouli;
 
 import net.dakotapride.hibernalherbs.recipe.MysticalCampfireCookingRecipe;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;

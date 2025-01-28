@@ -7,7 +7,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.List;
 import java.util.Locale;
@@ -30,12 +29,12 @@ public enum HerbalSigilTypes {
     public final String sigil_id;
 
 
-    public DeferredItem<Item> herbal_sigil;
+    public Item herbal_sigil;
 
     HerbalSigilTypes() {
         this.sigil_id = name().toLowerCase(Locale.ROOT);
 
-        this.herbal_sigil = ItemInit.register(sigil_id + "_herbal_sigil", () -> new HerbalSigilItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).durability(10)));
+        this.herbal_sigil = ItemInit.register(sigil_id + "_herbal_sigil", new HerbalSigilItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).durability(10)));
     }
 
     HerbalSigilTypes(String nothing) {
@@ -43,7 +42,7 @@ public enum HerbalSigilTypes {
     }
 
     public Item getHerbalSigilItem() {
-        return herbal_sigil.get();
+        return herbal_sigil;
     }
 
     public String getSigilId() {

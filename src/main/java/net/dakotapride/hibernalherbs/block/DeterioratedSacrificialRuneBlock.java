@@ -26,7 +26,7 @@ public class DeterioratedSacrificialRuneBlock extends Block {
 
     public void setStateFromTriggeredExplosion(Level level, BlockState blockState, BlockPos blockPos) {
         if (blockState.is(this)) {
-            level.setBlock(blockPos, BlockInit.SACRIFICIAL_RUNE_BLOCK.get().defaultBlockState(), 3);
+            level.setBlock(blockPos, BlockInit.SACRIFICIAL_RUNE_BLOCK.defaultBlockState(), 3);
             //level.setBlock(blockPos, blockState.setValue(OPEN, Boolean.valueOf(bl)), 10);
             //this.playSound(entity, level, blockPos, bl);
             //level.gameEvent(entity, bl ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, blockPos);

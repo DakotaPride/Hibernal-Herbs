@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class MysticalCampfireCookingRecipe extends AbstractCookingRecipe {
     public MysticalCampfireCookingRecipe(String string, CookingBookCategory cookingBookCategory, Ingredient ingredient, ItemStack itemStack, float f, int i) {
-        super(RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE.get(), string, cookingBookCategory, ingredient, itemStack, f, i);
+        super(RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE, string, cookingBookCategory, ingredient, itemStack, f, i);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class MysticalCampfireCookingRecipe extends AbstractCookingRecipe {
 
     @Override
     public @NotNull RecipeSerializer<?> getSerializer() {
-        return RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_SERIALIZER.get();
+        return RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_SERIALIZER;
     }
 
 }

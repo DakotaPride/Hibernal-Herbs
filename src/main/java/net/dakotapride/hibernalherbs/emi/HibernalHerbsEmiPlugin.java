@@ -24,6 +24,7 @@ import net.dakotapride.hibernalherbs.recipe.MysticalCampfireCookingRecipe;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.block.Block;
@@ -110,7 +111,7 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Tags.Items.SICKLES.getTag()));
         registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Ingredient.of(Items.WIND_CHARGE)));
 
-        for (MysticalCampfireCookingRecipe recipe : getRecipes(registry, RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE.get())) {
+        for (MysticalCampfireCookingRecipe recipe : getRecipes(registry, RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE)) {
             addRecipeSafe(registry, () -> new EmiCookingRecipe(recipe, MYSTICAL_CAMPFIRE_CONVERSION, 1, true), recipe);
         }
 
@@ -167,7 +168,7 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         // Agglomeration Usages - item
         SorcererAgglomerationItem.createEmiRecipe(registry, Items.WITHER_ROSE, HerbTypes.SAGE.getBaseBlock().asItem());
         SorcererAgglomerationItem.createEmiRecipe(registry, Items.LODESTONE, BlockInit.SACRIFICIAL_RUNE_BLOCK.asItem());
-        SorcererAgglomerationItem.createEmiRecipe(registry, BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.asItem(), ItemInit.BLANK_HERBAL_SIGIL.get());
+        SorcererAgglomerationItem.createEmiRecipe(registry, BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.asItem(), ItemInit.BLANK_HERBAL_SIGIL);
         SorcererAgglomerationItem.createStoneConversionEmiRecipe(registry, Items.STONE, Items.COBBLESTONE, Items.STONE_BRICKS, Items.SMOOTH_STONE, StoneTypes.IDIOSYNCRATIC_STONE);
         SorcererAgglomerationItem.createStoneConversionEmiRecipe(registry, Items.DEEPSLATE, Items.COBBLED_DEEPSLATE, Items.DEEPSLATE_BRICKS, Items.POLISHED_DEEPSLATE, StoneTypes.NECROMANTIC_STONE);
 
@@ -231,10 +232,10 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         SorcererTomeItem.createBoundPadlockRecipe(registry, PadlockTypes.GLUTTONY);
         SorcererTomeItem.createBoundPadlockRecipe(registry, PadlockTypes.ENVY);
 
-        createDeteriorationRecipes(registry, BlockInit.SACRIFICIAL_RUNE_BLOCK.get(), BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.get());
+        createDeteriorationRecipes(registry, BlockInit.SACRIFICIAL_RUNE_BLOCK, BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK);
 
         // Freeze/Unfreeze blockstates
-        createFreezingRecipes(registry, BlockInit.SACRIFICIAL_RUNE_BLOCK.get(), BlockInit.FROZE_STATE_SACRIFICIAL_RUNE_BLOCK.get());
+        createFreezingRecipes(registry, BlockInit.SACRIFICIAL_RUNE_BLOCK, BlockInit.FROZE_STATE_SACRIFICIAL_RUNE_BLOCK);
 
         for (FrozeBlockstates states : FrozeBlockstates.values()) {
             // Copper

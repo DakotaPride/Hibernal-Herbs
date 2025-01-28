@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "hibernalherbs",
+	"version": "${version}",
+	"name": "Hibernal Herbs",
+	"description": "[MMD Winterjam 2022] Wanna celebrate the holidays with a touch of mystical blends? Here you are!",
+	"authors": [
+		"DakotaPride"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/hibernal-herbs",
+		"sources": "https://github.com/DakotaPride/hibernal-herbs",
+		"issues": "https://github.com/DakotaPride/hibernal-herbs/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/hibernalherbs/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.dakotapride.hibernalherbs.HibernalHerbsMod"
+		],
+		"client": [
+			"net.dakotapride.hibernalherbs.HibernalHerbsClientMod"
+		],
+		"emi": [
+			"net.dakotapride.hibernalherbs.emi.HibernalHerbsEmiPlugin"
+		]
+	},
+	"mixins": [
+		"hibernalherbs.mixins.json"
+	],
+	"accessWidener": "hibernalherbs.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*",
+		"emi": "*",
+		"accessories": "*",
+		"patchouli": "*"
+	},
+	"custom": {
+		"catalogue": {
+			"banner": "assets/hibernalherbs/banner.png",
+			"background": "assets/hibernalherbs/background.png"
+		}
+	}
+}

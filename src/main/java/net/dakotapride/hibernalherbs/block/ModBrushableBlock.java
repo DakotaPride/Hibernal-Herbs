@@ -15,6 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -44,7 +45,7 @@ public class ModBrushableBlock extends BaseEntityBlock implements Fallable {
         return CODEC;
     }
 
-    public ModBrushableBlock(Block block, SoundEvent soundEvent, SoundEvent soundEvent2, Properties properties) {
+    public ModBrushableBlock(Block block, SoundEvent soundEvent, SoundEvent soundEvent2, BlockBehaviour.Properties properties) {
         super(properties);
         this.turnsInto = block;
         this.brushSound = soundEvent;

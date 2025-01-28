@@ -2,11 +2,10 @@ package net.dakotapride.hibernalherbs.init.enum_registry;
 
 import net.dakotapride.hibernalherbs.block.*;
 import net.dakotapride.hibernalherbs.init.BlockInit;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.neoforged.neoforge.registries.DeferredBlock;
 
 import java.util.Locale;
 
@@ -18,15 +17,15 @@ public enum FrozeBlockstates {
 
     final String id;
 
-    final DeferredBlock<Block> froze_state;
-    final DeferredBlock<Block> froze_cut_state;
-    final DeferredBlock<Block> froze_cut_slab_state;
-    final DeferredBlock<Block> froze_cut_stairs_state;
-    final DeferredBlock<Block> froze_door_state;
-    final DeferredBlock<Block> froze_trapdoor_state;
-    final DeferredBlock<Block> froze_bulb_state;
-    final DeferredBlock<Block> froze_grate_state;
-    final DeferredBlock<Block> froze_chiseled_state;
+    final Block froze_state;
+    final Block froze_cut_state;
+    final Block froze_cut_slab_state;
+    final Block froze_cut_stairs_state;
+    final Block froze_door_state;
+    final Block froze_trapdoor_state;
+    final Block froze_bulb_state;
+    final Block froze_grate_state;
+    final Block froze_chiseled_state;
 
     final Block base;
     final Block cut;
@@ -51,15 +50,15 @@ public enum FrozeBlockstates {
         this.grate = grate;
         this.chiseled = chiseled;
 
-        this.froze_state = BlockInit.register("froze_state_" + id + "_block", () -> new FrozeStateBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
-        this.froze_cut_state = BlockInit.register("froze_state_cut_" + id + "_block", () -> new FrozeStateBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
-        this.froze_cut_slab_state = BlockInit.register("froze_state_cut_" + id + "_slab", () -> new FrozeStateSlabBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
-        this.froze_cut_stairs_state = BlockInit.register("froze_state_cut_" + id + "_stairs", () -> new FrozeStateStairsBlock(froze_state.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
-        this.froze_door_state = BlockInit.register("froze_state_" + id + "_door", () -> new FrozeStateDoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.ofFullCopy(base).noOcclusion().requiresCorrectToolForDrops()));
-        this.froze_trapdoor_state = BlockInit.register("froze_state_" + id + "_trapdoor", () -> new FrozeStateTrapdoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.ofFullCopy(base).noOcclusion().requiresCorrectToolForDrops()));
-        this.froze_bulb_state = BlockInit.register("froze_state_" + id + "_bulb", () -> new FrozeStateBulbBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
-        this.froze_grate_state = BlockInit.register("froze_state_" + id + "_grate", () -> new FrozeStateBlock(BlockBehaviour.Properties.ofFullCopy(base).noOcclusion().requiresCorrectToolForDrops()));
-        this.froze_chiseled_state = BlockInit.register("froze_state_chiseled_" + id + "_block", () -> new FrozeStateBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
+        this.froze_state = BlockInit.register("froze_state_" + id + "_block", new FrozeStateBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
+        this.froze_cut_state = BlockInit.register("froze_state_cut_" + id + "_block", new FrozeStateBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
+        this.froze_cut_slab_state = BlockInit.register("froze_state_cut_" + id + "_slab", new FrozeStateSlabBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
+        this.froze_cut_stairs_state = BlockInit.register("froze_state_cut_" + id + "_stairs", new FrozeStateStairsBlock(froze_state.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
+        this.froze_door_state = BlockInit.register("froze_state_" + id + "_door", new FrozeStateDoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.ofFullCopy(base).noOcclusion().requiresCorrectToolForDrops()));
+        this.froze_trapdoor_state = BlockInit.register("froze_state_" + id + "_trapdoor", new FrozeStateTrapdoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.ofFullCopy(base).noOcclusion().requiresCorrectToolForDrops()));
+        this.froze_bulb_state = BlockInit.register("froze_state_" + id + "_bulb", new FrozeStateBulbBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
+        this.froze_grate_state = BlockInit.register("froze_state_" + id + "_grate", new FrozeStateBlock(BlockBehaviour.Properties.ofFullCopy(base).noOcclusion().requiresCorrectToolForDrops()));
+        this.froze_chiseled_state = BlockInit.register("froze_state_chiseled_" + id + "_block", new FrozeStateBlock(BlockBehaviour.Properties.ofFullCopy(base).requiresCorrectToolForDrops()));
     }
 
     public String getId() {
@@ -103,31 +102,31 @@ public enum FrozeBlockstates {
     }
 
     public Block getFrozeState() {
-        return froze_state.get();
+        return froze_state;
     }
     public Block getFrozeCutState() {
-        return froze_cut_state.get();
+        return froze_cut_state;
     }
     public Block getFrozeCutStairsState() {
-        return froze_cut_stairs_state.get();
+        return froze_cut_stairs_state;
     }
     public Block getFrozeCutSlabState() {
-        return froze_cut_slab_state.get();
+        return froze_cut_slab_state;
     }
     public Block getFrozeDoorState() {
-        return froze_door_state.get();
+        return froze_door_state;
     }
     public Block getFrozeTrapdoorState() {
-        return froze_trapdoor_state.get();
+        return froze_trapdoor_state;
     }
     public Block getFrozeBulbState() {
-        return froze_bulb_state.get();
+        return froze_bulb_state;
     }
     public Block getFrozeGrateState() {
-        return froze_grate_state.get();
+        return froze_grate_state;
     }
     public Block getFrozeChiseledState() {
-        return froze_chiseled_state.get();
+        return froze_chiseled_state;
     }
 
     public static void register() {}

@@ -40,11 +40,11 @@ public class MysticalCampfireBlockEntity extends BlockEntity implements Clearabl
     private final RecipeManager.CachedCheck<SingleRecipeInput, MysticalCampfireCookingRecipe> quickCheck;
 
     public MysticalCampfireBlockEntity(BlockPos blockPos, BlockState blockState) {
-        super(BlockEntityTypeInit.MYSTICAL_CAMPFIRE.get(), blockPos, blockState);
+        super(BlockEntityTypeInit.MYSTICAL_CAMPFIRE, blockPos, blockState);
         this.items = NonNullList.withSize(4, ItemStack.EMPTY);
         this.cookingProgress = new int[4];
         this.cookingTime = new int[4];
-        this.quickCheck = RecipeManager.createCheck(RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE.get());
+        this.quickCheck = RecipeManager.createCheck(RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE);
     }
 
     public static void cookTick(Level level, BlockPos blockPos, BlockState blockState, MysticalCampfireBlockEntity campfireBlockEntity) {

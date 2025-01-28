@@ -15,7 +15,7 @@ public class ModWallSignBlock extends WallSignBlock {
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return BlockEntityTypeInit.MOD_SIGN.get().create(pos, state);
+        return BlockEntityTypeInit.MOD_SIGN.create(pos, state);
     }
 
 }

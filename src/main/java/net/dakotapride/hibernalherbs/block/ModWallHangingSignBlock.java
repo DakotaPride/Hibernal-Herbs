@@ -15,7 +15,7 @@ public class ModWallHangingSignBlock extends WallHangingSignBlock {
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return BlockEntityTypeInit.MOD_HANGING_SIGN.get().create(pos, state);
+        return BlockEntityTypeInit.MOD_HANGING_SIGN.create(pos, state);
     }
 
 }

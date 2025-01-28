@@ -9,7 +9,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.List;
 import java.util.Locale;
@@ -28,17 +27,17 @@ public enum PadlockTypes {
     public final String padlock_id;
 
 
-    public DeferredItem<Item> unbound_padlock;
-    public DeferredItem<Item> bound_padlock;
-    //public Item herbal_sigil;
+    public Item unbound_padlock;
+    public Item bound_padlock;
+    public Item herbal_sigil;
 
     PadlockTypes(HerbalSigilTypes sigil) {
         this.padlock_id = name().toLowerCase(Locale.ROOT);
 
-        //this.herbal_sigil = sigil.getHerbalSigilItem();
+        this.herbal_sigil = sigil.getHerbalSigilItem();
 
-        this.unbound_padlock = ItemInit.register("unbound_" + padlock_id + "_padlock", () -> new HerbalPadlockItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)));
-        this.bound_padlock = ItemInit.register("bound_" + padlock_id + "_padlock", () -> new HerbalPadlockItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)));
+        this.unbound_padlock = ItemInit.register("unbound_" + padlock_id + "_padlock", new HerbalPadlockItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)));
+        this.bound_padlock = ItemInit.register("bound_" + padlock_id + "_padlock", new HerbalPadlockItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)));
     }
 
     PadlockTypes(String nothing) {
@@ -46,16 +45,16 @@ public enum PadlockTypes {
     }
 
     public Item getUnboundPadlockItem() {
-        return unbound_padlock.get();
+        return unbound_padlock;
     }
 
     public Item getBoundPadlockItem() {
-        return bound_padlock.get();
+        return bound_padlock;
     }
 
-//    public Item getHerbalSigilItem() {
-//        return herbal_sigil;
-//    }
+    public Item getHerbalSigilItem() {
+        return herbal_sigil;
+    }
 
     public String getPadlockId() {
         return padlock_id;

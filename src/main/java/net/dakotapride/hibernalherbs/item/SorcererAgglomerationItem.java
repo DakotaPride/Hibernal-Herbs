@@ -46,7 +46,7 @@ import java.util.function.Supplier;
 public class SorcererAgglomerationItem extends Item {
     public static final Supplier<BiMap<Block, Block>> FREEZE_STATE = Suppliers.memoize(
             () -> ImmutableBiMap.<Block, Block>builder()
-                    .put(BlockInit.SACRIFICIAL_RUNE_BLOCK.get(), BlockInit.FROZE_STATE_SACRIFICIAL_RUNE_BLOCK.get())
+                    .put(BlockInit.SACRIFICIAL_RUNE_BLOCK, BlockInit.FROZE_STATE_SACRIFICIAL_RUNE_BLOCK)
                     .put(Blocks.COPPER_BLOCK, FrozeBlockstates.COPPER.getFrozeState())
                     .put(Blocks.EXPOSED_COPPER, FrozeBlockstates.EXPOSED_COPPER.getFrozeState())
                     .put(Blocks.WEATHERED_COPPER, FrozeBlockstates.WEATHERED_COPPER.getFrozeState())
@@ -130,8 +130,8 @@ public class SorcererAgglomerationItem extends Item {
                 if (player instanceof ServerPlayer) {
                     player.getCooldowns().addCooldown(this, 10);
 
-                    CriteriaTriggersInit.FROZE_BLOCKSTATE.get().trigger((ServerPlayer) player, blockPos);
-                    player.awardStat(StatsInit.FROZE_BLOCKSTATE.get().get(blockState.getBlock()));
+                    CriteriaTriggersInit.FROZE_BLOCKSTATE.trigger((ServerPlayer) player, blockPos);
+                    player.awardStat(StatsInit.FROZE_BLOCKSTATE.get(blockState.getBlock()));
                 }
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }).orElse(InteractionResult.PASS);
@@ -142,8 +142,8 @@ public class SorcererAgglomerationItem extends Item {
                 if (player instanceof ServerPlayer) {
                     player.getCooldowns().addCooldown(this, 10);
 
-                    CriteriaTriggersInit.UNFROZE_BLOCKSTATE.get().trigger((ServerPlayer) player, blockPos);
-                    player.awardStat(StatsInit.UNFROZE_BLOCKSTATE.get().get(blockStatex.getBlock()));
+                    CriteriaTriggersInit.UNFROZE_BLOCKSTATE.trigger((ServerPlayer) player, blockPos);
+                    player.awardStat(StatsInit.UNFROZE_BLOCKSTATE.get(blockStatex.getBlock()));
                 }
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }).orElse(InteractionResult.PASS);
@@ -249,15 +249,15 @@ public class SorcererAgglomerationItem extends Item {
                 if (livingEntity instanceof ServerPlayer player) {
                     //player.getAdvancements().award(ModAdvancementProvider.AdvancementHolders.sorcerer_agglomeration, "testing");
                     //CriteriaTriggers.CONSUME_ITEM.trigger(player, itemStack);
-                    CriteriaTriggersInit.USED_AGGLOMERATION.get().trigger(player, itemStack);
-                    CriteriaTriggersInit.SACRIFICED_BLOOD_FROM_AGGLOMERATION.get().trigger(player, itemStack);
-                    CriteriaTriggersInit.USED_SIGIL.get().trigger(player, itemStack);
-                    CriteriaTriggersInit.USED_SIGIL_WITH_AGGLOMERATION.get().trigger(player, itemStack);
+                    CriteriaTriggersInit.USED_AGGLOMERATION.trigger(player, itemStack);
+                    CriteriaTriggersInit.SACRIFICED_BLOOD_FROM_AGGLOMERATION.trigger(player, itemStack);
+                    CriteriaTriggersInit.USED_SIGIL.trigger(player, itemStack);
+                    CriteriaTriggersInit.USED_SIGIL_WITH_AGGLOMERATION.trigger(player, itemStack);
                     player.awardStat(Stats.ITEM_USED.get(this));
-                    player.awardStat(StatsInit.USED_AGGLOMERATION.get().get(this));
-                    player.awardStat(StatsInit.SACRIFICED_BLOOD_FROM_AGGLOMERATION.get().get(this));
-                    player.awardStat(StatsInit.USED_SIGIL.get().get(this));
-                    player.awardStat(StatsInit.USED_SIGIL_WITH_AGGLOMERATION.get().get(this));
+                    player.awardStat(StatsInit.USED_AGGLOMERATION.get(this));
+                    player.awardStat(StatsInit.SACRIFICED_BLOOD_FROM_AGGLOMERATION.get(this));
+                    player.awardStat(StatsInit.USED_SIGIL.get(this));
+                    player.awardStat(StatsInit.USED_SIGIL_WITH_AGGLOMERATION.get(this));
 
                     player.getCooldowns().addCooldown(this, (20 * 12));
 
@@ -274,7 +274,7 @@ public class SorcererAgglomerationItem extends Item {
         if (livingEntity instanceof ServerPlayer player) {
             createItemConversion(level, player, Items.WITHER_ROSE, HerbTypes.SAGE.getBaseBlock().asItem(), itemStack, itemStack1);
             createItemConversion(level, player, Items.LODESTONE, BlockInit.SACRIFICIAL_RUNE_BLOCK.asItem(), itemStack, itemStack1);
-            createItemConversion(level, player, BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.asItem(), ItemInit.BLANK_HERBAL_SIGIL.get(), itemStack, itemStack1);
+            createItemConversion(level, player, BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.asItem(), ItemInit.BLANK_HERBAL_SIGIL, itemStack, itemStack1);
             createStoneToItemConversion(level, player, Items.STONE, Items.COBBLESTONE, Items.STONE_BRICKS, Items.SMOOTH_STONE, StoneTypes.IDIOSYNCRATIC_STONE, itemStack, itemStack1);
             createStoneToItemConversion(level, player, Items.DEEPSLATE, Items.COBBLED_DEEPSLATE, Items.DEEPSLATE_BRICKS, Items.POLISHED_DEEPSLATE, StoneTypes.NECROMANTIC_STONE, itemStack, itemStack1);
         }
@@ -299,12 +299,12 @@ public class SorcererAgglomerationItem extends Item {
                 player.addItem(new ItemStack(result, 1));
 
                 CriteriaTriggers.CONSUME_ITEM.trigger(player, itemStack1);
-                CriteriaTriggersInit.USED_AGGLOMERATION.get().trigger(player, itemStack);
-                CriteriaTriggersInit.CONJURED_ITEMS_FROM_AGGLOMERATION.get().trigger(player, itemStack);
+                CriteriaTriggersInit.USED_AGGLOMERATION.trigger(player, itemStack);
+                CriteriaTriggersInit.CONJURED_ITEMS_FROM_AGGLOMERATION.trigger(player, itemStack);
 
                 player.awardStat(Stats.ITEM_USED.get(this));
-                player.awardStat(StatsInit.USED_AGGLOMERATION.get().get(this));
-                player.awardStat(StatsInit.CONJURED_ITEMS_FROM_AGGLOMERATION.get().get(this));
+                player.awardStat(StatsInit.USED_AGGLOMERATION.get(this));
+                player.awardStat(StatsInit.CONJURED_ITEMS_FROM_AGGLOMERATION.get(this));
                 player.awardStat(Stats.ITEM_CRAFTED.get(result));
 
                 player.getCooldowns().addCooldown(this, (20 * 12));

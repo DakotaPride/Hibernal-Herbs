@@ -17,14 +17,18 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -48,6 +52,30 @@ public class SorcererTomeItem extends Item {
 
     public static boolean isNotActive(ItemStack itemStack) {
         return Boolean.FALSE.equals(itemStack.get(DataComponentInit.IS_BEING_USED)) || !(itemStack.has(DataComponentInit.IS_BEING_USED));
+    }
+
+    @Override
+    public @NotNull InteractionResult useOn(UseOnContext ctx) {
+        Level level = ctx.getLevel();
+        BlockPos blockPos = ctx.getClickedPos();
+        BlockState blockState = level.getBlockState(blockPos);
+        Player player = ctx.getPlayer();
+
+        if (blockState.getBlock() instanceof BonemealableBlock block && level instanceof ServerLevel serverLevel && block.isValidBonemealTarget(serverLevel, blockPos, blockState)) {
+            block.performBonemeal(serverLevel, level.getRandom(), blockPos, blockState);
+
+            player.getCooldowns().addCooldown(this, (20 * 3));
+
+            BlockState blockState1 = Blocks.GRASS_BLOCK.defaultBlockState();
+
+            Vec3 vec3 = blockPos.getCenter().add(0.0, 0.5, 0.0);
+            int i = (int) Mth.clamp(50.0F * 0.5F, 0.0F, 200.0F);
+            serverLevel.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, blockState1), vec3.x, vec3.y, vec3.z, i, 0.3F, 0.3F, 0.3F, 0.15F);
+
+            return InteractionResult.SUCCESS;
+        }
+
+        return super.useOn(ctx);
     }
 
     @Override
@@ -147,15 +175,15 @@ public class SorcererTomeItem extends Item {
                 if (livingEntity instanceof ServerPlayer player) {
                     //player.getAdvancements().award(ModAdvancementProvider.AdvancementHolders.sorcerer_agglomeration, "testing");
                     //CriteriaTriggers.CONSUME_ITEM.trigger(player, itemStack);
-                    CriteriaTriggersInit.USED_TOME.get().trigger(player, itemStack);
-                    CriteriaTriggersInit.SACRIFICED_HUNGER_FROM_TOME.get().trigger(player, itemStack);
-                    CriteriaTriggersInit.USED_SIGIL.get().trigger(player, itemStack);
-                    CriteriaTriggersInit.USED_SIGIL_WITH_TOME.get().trigger(player, itemStack);
+                    CriteriaTriggersInit.USED_TOME.trigger(player, itemStack);
+                    CriteriaTriggersInit.SACRIFICED_HUNGER_FROM_TOME.trigger(player, itemStack);
+                    CriteriaTriggersInit.USED_SIGIL.trigger(player, itemStack);
+                    CriteriaTriggersInit.USED_SIGIL_WITH_TOME.trigger(player, itemStack);
                     player.awardStat(Stats.ITEM_USED.get(this));
-                    player.awardStat(StatsInit.USED_TOME.get().get(this));
-                    player.awardStat(StatsInit.SACRIFICED_HUNGER_FROM_TOME.get().get(this));
-                    player.awardStat(StatsInit.USED_SIGIL.get().get(this));
-                    player.awardStat(StatsInit.USED_SIGIL_WITH_TOME.get().get(this));
+                    player.awardStat(StatsInit.USED_TOME.get(this));
+                    player.awardStat(StatsInit.SACRIFICED_HUNGER_FROM_TOME.get(this));
+                    player.awardStat(StatsInit.USED_SIGIL.get(this));
+                    player.awardStat(StatsInit.USED_SIGIL_WITH_TOME.get(this));
 
                     player.getCooldowns().addCooldown(this, (20 * 12));
 
@@ -186,12 +214,12 @@ public class SorcererTomeItem extends Item {
                 player.addItem(new ItemStack(result, 1));
 
                 CriteriaTriggers.CONSUME_ITEM.trigger(player, itemStack1);
-                CriteriaTriggersInit.USED_TOME.get().trigger(player, itemStack);
-                CriteriaTriggersInit.CONJURED_ITEMS_FROM_TOME.get().trigger(player, itemStack);
+                CriteriaTriggersInit.USED_TOME.trigger(player, itemStack);
+                CriteriaTriggersInit.CONJURED_ITEMS_FROM_TOME.trigger(player, itemStack);
 
                 player.awardStat(Stats.ITEM_USED.get(this));
-                player.awardStat(StatsInit.USED_TOME.get().get(this));
-                player.awardStat(StatsInit.CONJURED_ITEMS_FROM_TOME.get().get(this));
+                player.awardStat(StatsInit.USED_TOME.get(this));
+                player.awardStat(StatsInit.CONJURED_ITEMS_FROM_TOME.get(this));
                 player.awardStat(Stats.ITEM_CRAFTED.get(result));
 
                 player.getCooldowns().addCooldown(this, (20 * 12));

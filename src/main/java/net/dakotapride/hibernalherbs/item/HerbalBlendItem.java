@@ -2,6 +2,7 @@ package net.dakotapride.hibernalherbs.item;
 
 import net.dakotapride.hibernalherbs.food.FoodComponentList;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalBlendTypes;
+import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

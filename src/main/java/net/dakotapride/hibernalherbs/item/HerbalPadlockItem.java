@@ -11,6 +11,8 @@ import io.wispforest.accessories.api.slot.SlotReference;
 import net.dakotapride.hibernalherbs.HibernalHerbsMod;
 import net.dakotapride.hibernalherbs.init.enum_registry.PadlockTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.model.EntityModel;
@@ -26,8 +28,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.fml.common.EventBusSubscriber;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -131,6 +131,7 @@ public class HerbalPadlockItem extends Item implements Accessory {
 
     // Rendering
 
+    @Environment(EnvType.CLIENT)
     public static void clientInit() {
         AccessoriesRendererRegistry.registerRenderer(PadlockTypes.PRIDE.getBoundPadlockItem(), Renderer::new);
         AccessoriesRendererRegistry.registerRenderer(PadlockTypes.SLOTH.getBoundPadlockItem(), Renderer::new);
@@ -141,7 +142,7 @@ public class HerbalPadlockItem extends Item implements Accessory {
         AccessoriesRendererRegistry.registerRenderer(PadlockTypes.ENVY.getBoundPadlockItem(), Renderer::new);
     }
 
-    //@EventBusSubscriber(Dist.CLIENT)
+    @Environment(EnvType.CLIENT)
     public static class Renderer implements SimpleAccessoryRenderer {
 
         @Override

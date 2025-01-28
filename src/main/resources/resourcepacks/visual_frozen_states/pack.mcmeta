@@ -1,8 +1,6 @@
 {
   "pack": {
-    "pack_format": 12,
-    "description": "Makes blocks with a frozen state easier to differentiate",
-    "forge:resource_pack_format": 12,
-    "forge:data_pack_format": 10
+    "pack_format": 34,
+    "description": "Makes blocks with a frozen state easier to differentiate"
   }
 }

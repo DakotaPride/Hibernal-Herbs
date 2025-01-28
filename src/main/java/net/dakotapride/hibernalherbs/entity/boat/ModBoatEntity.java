@@ -29,7 +29,7 @@ public class ModBoatEntity extends Boat {
     }
 
     public ModBoatEntity(Level level, double x, double y, double z) {
-        this(EntityTypeInit.MOD_BOAT.get(), level);
+        this(EntityTypeInit.MOD_BOAT, level);
         this.setPos(x, y, z);
         this.xo = x;
         this.yo = y;

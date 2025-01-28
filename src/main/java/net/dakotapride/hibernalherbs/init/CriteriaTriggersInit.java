@@ -5,46 +5,38 @@ import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.advancements.critereon.ConsumeItemTrigger;
 import net.minecraft.advancements.critereon.DefaultBlockInteractionTrigger;
 import net.minecraft.advancements.critereon.ItemUsedOnLocationTrigger;
-import net.minecraft.core.registries.Registries;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.function.Supplier;
+import net.minecraft.advancements.critereon.SummonedEntityTrigger;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 public class CriteriaTriggersInit {
-    public static final DeferredRegister<CriterionTrigger<?>> CRITERION_TRIGGERS = DeferredRegister.create(Registries.TRIGGER_TYPE, HibernalHerbsMod.MOD_ID);
+    public static final ConsumeItemTrigger USED_AGGLOMERATION = register("agglomeration_uses", new ConsumeItemTrigger());
+    public static final ConsumeItemTrigger USED_TOME = register("tome_uses", new ConsumeItemTrigger());
+    public static final ConsumeItemTrigger SACRIFICED_BLOOD_FROM_AGGLOMERATION = register("agglomeration_sacrifices", new ConsumeItemTrigger());
+    public static final ConsumeItemTrigger SACRIFICED_HUNGER_FROM_TOME = register("tome_sacrifices", new ConsumeItemTrigger());
+    public static final ConsumeItemTrigger CONJURED_ITEMS_FROM_AGGLOMERATION = register("agglomeration_conjured_items", new ConsumeItemTrigger());
+    public static final ConsumeItemTrigger CONJURED_ITEMS_FROM_TOME = register("tome_conjured_items", new ConsumeItemTrigger());
+    public static final ConsumeItemTrigger USED_SIGIL = register("used_sigil", new ConsumeItemTrigger());
+    public static final ConsumeItemTrigger USED_SIGIL_WITH_AGGLOMERATION = register("used_sigil_with_agglomeration", new ConsumeItemTrigger());
+    public static final ConsumeItemTrigger USED_SIGIL_WITH_TOME = register("used_sigil_with_tome", new ConsumeItemTrigger());
 
-    public static final DeferredHolder<CriterionTrigger<?>, ConsumeItemTrigger> USED_AGGLOMERATION = register("agglomeration_uses", ConsumeItemTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, ConsumeItemTrigger> USED_TOME = register("tome_uses", ConsumeItemTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, ConsumeItemTrigger> SACRIFICED_BLOOD_FROM_AGGLOMERATION = register("agglomeration_sacrifices", ConsumeItemTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, ConsumeItemTrigger> SACRIFICED_HUNGER_FROM_TOME = register("tome_sacrifices", ConsumeItemTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, ConsumeItemTrigger> CONJURED_ITEMS_FROM_AGGLOMERATION = register("agglomeration_conjured_items", ConsumeItemTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, ConsumeItemTrigger> CONJURED_ITEMS_FROM_TOME = register("tome_conjured_items", ConsumeItemTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, ConsumeItemTrigger> USED_SIGIL = register("used_sigil", ConsumeItemTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, ConsumeItemTrigger> USED_SIGIL_WITH_AGGLOMERATION = register("used_sigil_with_agglomeration", ConsumeItemTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, ConsumeItemTrigger> USED_SIGIL_WITH_TOME = register("used_sigil_with_tome", ConsumeItemTrigger::new);
+    public static final DefaultBlockInteractionTrigger DETERIORATED_RUNE_BLOCK = register("deteriorated_rune_block", new DefaultBlockInteractionTrigger());
 
-    public static final DeferredHolder<CriterionTrigger<?>, DefaultBlockInteractionTrigger> DETERIORATED_RUNE_BLOCK = register("deteriorated_rune_block", DefaultBlockInteractionTrigger::new);
+    public static final DefaultBlockInteractionTrigger FROZE_BLOCKSTATE = register("froze_blockstate", new DefaultBlockInteractionTrigger());
+    public static final DefaultBlockInteractionTrigger UNFROZE_BLOCKSTATE = register("unfroze_blockstate", new DefaultBlockInteractionTrigger());
 
-    public static final DeferredHolder<CriterionTrigger<?>, DefaultBlockInteractionTrigger> FROZE_BLOCKSTATE = register("froze_blockstate", DefaultBlockInteractionTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, DefaultBlockInteractionTrigger> UNFROZE_BLOCKSTATE = register("unfroze_blockstate", DefaultBlockInteractionTrigger::new);
+    public static final DefaultBlockInteractionTrigger SACRIFICIAL_RUNE_RESTORATION = register("sacrificial_rune_restoration", new DefaultBlockInteractionTrigger());
 
-    public static final DeferredHolder<CriterionTrigger<?>, DefaultBlockInteractionTrigger> SACRIFICIAL_RUNE_RESTORATION = register("sacrificial_rune_restoration", DefaultBlockInteractionTrigger::new);
+    public static final DefaultBlockInteractionTrigger INCENSE_PROVIDER_INTERACTIONS = register("incense_provider_interactions", new DefaultBlockInteractionTrigger());
+    public static final DefaultBlockInteractionTrigger MYSTICAL_CAMPFIRE_INTERACTIONS = register("mystical_campfire_interactions", new DefaultBlockInteractionTrigger());
 
-    public static final DeferredHolder<CriterionTrigger<?>, DefaultBlockInteractionTrigger> INCENSE_PROVIDER_INTERACTIONS = register("incense_provider_interactions", DefaultBlockInteractionTrigger::new);
-    public static final DeferredHolder<CriterionTrigger<?>, DefaultBlockInteractionTrigger> MYSTICAL_CAMPFIRE_INTERACTIONS = register("mystical_campfire_interactions", DefaultBlockInteractionTrigger::new);
-
-    public static final DeferredHolder<CriterionTrigger<?>, ItemUsedOnLocationTrigger> USE_HERB_HUMUS_ON_LOG = register("use_herb_humus_on_log", ItemUsedOnLocationTrigger::new);
+    public static final ItemUsedOnLocationTrigger USE_HERB_HUMUS_ON_LOG = register("use_herb_humus_on_log", new ItemUsedOnLocationTrigger());
 
     //public static final SummonedEntityTrigger COMPLETED_SACRIFICIAL_RITUAL = register("sacrificial_ritual_completed", new SummonedEntityTrigger());
 
-    public static <T extends CriterionTrigger<?>> DeferredHolder<CriterionTrigger<?>, T> register(String string, Supplier<T> criterionTrigger) {
-        return CRITERION_TRIGGERS.register(string, criterionTrigger);
-        //return Registry.register(BuiltInRegistries.TRIGGER_TYPES, HibernalHerbsMod.asResource(string), criterionTrigger);
+    public static <T extends CriterionTrigger<?>> T register(String string, T criterionTrigger) {
+        return Registry.register(BuiltInRegistries.TRIGGER_TYPES, HibernalHerbsMod.asResource(string), criterionTrigger);
     }
 
-    public static void load(IEventBus bus) {
-        CRITERION_TRIGGERS.register(bus);
-    }
+    public static void load() {}
 }

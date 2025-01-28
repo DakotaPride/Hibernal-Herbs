@@ -8,16 +8,14 @@ import net.dakotapride.hibernalherbs.item.ModBrushItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.Locale;
-import java.util.function.Supplier;
 
 public class Archaeology {
 
@@ -27,44 +25,44 @@ public class Archaeology {
 
         public final String metal_id;
 
-        public final DeferredItem<Item> ingot;
-        public final DeferredItem<Item> nugget;
-        public final DeferredBlock<Block> block;
+        public final Item ingot;
+        public final Item nugget;
+        public final Block block;
 
-        public Supplier<Item> alloy_ingredient0;
-        public Supplier<Item> alloy_ingredient1;
-        public DeferredItem<Item> scrap_item;
+        public Item alloy_ingredient0;
+        public Item alloy_ingredient1;
+        public Item scrap_item;
 
         Metals() {
             this.metal_id = name().toLowerCase(Locale.ROOT);
 
-            this.ingot = ItemInit.register(metal_id + "_ingot", () -> new Item(new Item.Properties()));
-            this.nugget = ItemInit.register(metal_id + "_nugget", () -> new Item(new Item.Properties()));
-            this.block = BlockInit.register(metal_id + "_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
+            this.ingot = ItemInit.register(metal_id + "_ingot", new Item(new Item.Properties()));
+            this.nugget = ItemInit.register(metal_id + "_nugget", new Item(new Item.Properties()));
+            this.block = BlockInit.register(metal_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
         }
 
-        Metals(Supplier<Item> alloy_ingredient0, Supplier<Item> alloy_ingredient1) {
+        Metals(Item alloy_ingredient0, Item alloy_ingredient1) {
             this.metal_id = name().toLowerCase(Locale.ROOT);
 
-            this.ingot = ItemInit.register(metal_id + "_alloy", () -> new Item(new Item.Properties()));
+            this.ingot = ItemInit.register(metal_id + "_alloy", new Item(new Item.Properties()));
             this.alloy_ingredient0 = alloy_ingredient0;
             this.alloy_ingredient1 = alloy_ingredient1;
             //this.scrap_item = ItemInit.register(metal_id + "_scrap", new Item(new Item.Properties()));
 
-            this.nugget = ItemInit.register(metal_id + "_nugget", () -> new Item(new Item.Properties()));
-            this.block = BlockInit.register(metal_id + "_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
+            this.nugget = ItemInit.register(metal_id + "_nugget", new Item(new Item.Properties()));
+            this.block = BlockInit.register(metal_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
         }
 
-        Metals(DeferredItem<Item> alloy_ingredient0) {
+        Metals(Item alloy_ingredient0) {
             this.metal_id = name().toLowerCase(Locale.ROOT);
 
-            this.ingot = ItemInit.register(metal_id + "_alloy", () -> new Item(new Item.Properties()));
+            this.ingot = ItemInit.register(metal_id + "_alloy", new Item(new Item.Properties()));
             this.alloy_ingredient0 = alloy_ingredient0;
             this.alloy_ingredient1 = scrap_item;
-            this.scrap_item = ItemInit.register(metal_id + "_scrap", () -> new Item(new Item.Properties()));
+            this.scrap_item = ItemInit.register(metal_id + "_scrap", new Item(new Item.Properties()));
 
-            this.nugget = ItemInit.register(metal_id + "_nugget", () -> new Item(new Item.Properties()));
-            this.block = BlockInit.register(metal_id + "_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
+            this.nugget = ItemInit.register(metal_id + "_nugget", new Item(new Item.Properties()));
+            this.block = BlockInit.register(metal_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
         }
 
         public String getMetalId() {
@@ -76,27 +74,27 @@ public class Archaeology {
         }
 
         public Item getAlloyIngredient() {
-            return alloy_ingredient0.get();
+            return alloy_ingredient0;
         }
 
         public Item getSecondaryAlloyIngredient() {
-            return alloy_ingredient1.get();
+            return alloy_ingredient1;
         }
 
         public Item getScrapItem() {
-            return scrap_item.get();
+            return scrap_item;
         }
 
-        public DeferredItem<Item> getIngotItem() {
+        public Item getIngotItem() {
             return ingot;
         }
 
         public Item getNuggetItem() {
-            return nugget.get();
+            return nugget;
         }
 
         public Block getBlock() {
-            return block.get();
+            return block;
         }
 
         public static void register() {}
@@ -107,7 +105,7 @@ public class Archaeology {
 
         public final String brush_id;
 
-        public final DeferredItem<Item> brush;
+        public final Item brush;
         public final Metals metal;
 
         Brushes(Metals metal) {
@@ -115,7 +113,7 @@ public class Archaeology {
 
             this.metal = metal;
 
-            this.brush = ItemInit.register(brush_id + "_brush", () -> new ModBrushItem(new Item.Properties().durability(96).stacksTo(1)));
+            this.brush = ItemInit.register(brush_id + "_brush", new ModBrushItem(new Item.Properties().durability(96).stacksTo(1)));
         }
 
         public String getBrushId() {
@@ -123,7 +121,7 @@ public class Archaeology {
         }
 
         public Item getBrushItem() {
-            return brush.get();
+            return brush;
         }
 
         public static void register() {}
@@ -135,7 +133,7 @@ public class Archaeology {
 
         public final String block_id;
 
-        public final DeferredBlock<Block> block;
+        public final Block block;
         public final Block turns_to;
         public final boolean requires_tier_above_basic;
 
@@ -148,7 +146,7 @@ public class Archaeology {
             this.requires_tier_above_basic = requires_tier_above_basic;
 
             this.block = BlockInit.register("suspicious_" + block_id,
-                    () -> new ModBrushableBlock(turns_to,
+                    new ModBrushableBlock(turns_to,
                             SoundEvents.BRUSH_GRAVEL, SoundEvents.BRUSH_GRAVEL_COMPLETED,
                             BlockBehaviour.Properties.ofFullCopy(turns_to).pushReaction(PushReaction.DESTROY)));
         }
@@ -161,7 +159,7 @@ public class Archaeology {
             this.brushable_by = brushable_by;
 
             this.block = BlockInit.register("suspicious_" + block_id,
-                    () -> new ModBrushableBlock(turns_to,
+                    new ModBrushableBlock(turns_to,
                             SoundEvents.BRUSH_GRAVEL, SoundEvents.BRUSH_GRAVEL_COMPLETED,
                             BlockBehaviour.Properties.ofFullCopy(turns_to).pushReaction(PushReaction.DESTROY)));
         }
@@ -183,7 +181,7 @@ public class Archaeology {
         }
 
         public Block getBlock() {
-            return block.get();
+            return block;
         }
 
         public static void register() {}
@@ -200,12 +198,12 @@ public class Archaeology {
 
         public final String ashes_id;
 
-        public final DeferredItem<Item> ashes;
+        public final Item ashes;
 
         Ashes() {
             this.ashes_id = name().toLowerCase(Locale.ROOT);
 
-            this.ashes = ItemInit.register(ashes_id + "_ashes", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+            this.ashes = ItemInit.register(ashes_id + "_ashes", new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
         }
 
         public String getAshesId() {
@@ -213,7 +211,7 @@ public class Archaeology {
         }
 
         public Item getAshesItem() {
-            return ashes.get();
+            return ashes;
         }
 
         public static void register() {}

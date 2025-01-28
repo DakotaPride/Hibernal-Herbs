@@ -2,6 +2,7 @@ package net.dakotapride.hibernalherbs.mixin;
 
 import net.dakotapride.hibernalherbs.block.ModBrushableBlock;
 import net.dakotapride.hibernalherbs.block.ModBrushableBlockEntity;
+import net.dakotapride.hibernalherbs.init.enum_registry.Archaeology;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;

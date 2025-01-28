@@ -53,7 +53,7 @@ public class ModBrushableBlockEntity extends BlockEntity {
     private long lootTableSeed;
 
     public ModBrushableBlockEntity(BlockPos blockPos, BlockState blockState) {
-        super(BlockEntityTypeInit.BRUSHABLE_BLOCK.get(), blockPos, blockState);
+        super(BlockEntityTypeInit.BRUSHABLE_BLOCK, blockPos, blockState);
     }
 
     public boolean brush(long l, Player player, Direction direction) {

@@ -1,8 +1,6 @@
 {
   "pack": {
-    "pack_format": 12,
-    "description": "Makes Myqueste Planks match Stripped Myqueste Wood",
-    "forge:resource_pack_format": 12,
-    "forge:data_pack_format": 10
+    "pack_format": 34,
+    "description": "Makes Myqueste Planks match Stripped Myqueste Wood"
   }
 }

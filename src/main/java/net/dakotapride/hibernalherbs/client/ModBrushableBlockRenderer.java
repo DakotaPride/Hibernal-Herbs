@@ -4,6 +4,8 @@ package net.dakotapride.hibernalherbs.client;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.dakotapride.hibernalherbs.block.ModBrushableBlockEntity;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -14,11 +16,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
-//@EventBusSubscriber(Dist.CLIENT)
-//@OnlyIn(Dist.CLIENT)
+@Environment(EnvType.CLIENT)
 public class ModBrushableBlockRenderer implements BlockEntityRenderer<ModBrushableBlockEntity> {
     private final ItemRenderer itemRenderer;
 

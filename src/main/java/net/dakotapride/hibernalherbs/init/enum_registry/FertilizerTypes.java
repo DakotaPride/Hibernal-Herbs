@@ -17,43 +17,41 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.List;
 import java.util.Locale;
-import java.util.function.Supplier;
 
 @SuppressWarnings({"unused"})
 public enum FertilizerTypes {
     NONE("text.nothing_to_see_here.null_registry", 0),
-    OAK(() -> Blocks.STRIPPED_OAK_LOG, 3),
-    SPRUCE(() -> Blocks.STRIPPED_SPRUCE_LOG, 4),
-    BIRCH(() -> Blocks.STRIPPED_BIRCH_LOG, 3),
-    ACACIA(() -> Blocks.STRIPPED_ACACIA_LOG, 2),
-    CHERRY(() -> Blocks.STRIPPED_CHERRY_LOG, 3),
-    JUNGLE(() -> Blocks.STRIPPED_JUNGLE_LOG, 3),
-    DARK_OAK(() -> Blocks.STRIPPED_DARK_OAK_LOG, 3),
-    CRIMSON(() -> Blocks.STRIPPED_CRIMSON_STEM, 2),
-    WARPED(() -> Blocks.STRIPPED_WARPED_STEM, 2),
-    MANGROVE(() -> Blocks.STRIPPED_MANGROVE_LOG, 3),
-    BAMBOO(() -> Blocks.STRIPPED_BAMBOO_BLOCK, 3),
+    OAK(Blocks.STRIPPED_OAK_LOG, 3),
+    SPRUCE(Blocks.STRIPPED_SPRUCE_LOG, 4),
+    BIRCH(Blocks.STRIPPED_BIRCH_LOG, 3),
+    ACACIA(Blocks.STRIPPED_ACACIA_LOG, 2),
+    CHERRY(Blocks.STRIPPED_CHERRY_LOG, 3),
+    JUNGLE(Blocks.STRIPPED_JUNGLE_LOG, 3),
+    DARK_OAK(Blocks.STRIPPED_DARK_OAK_LOG, 3),
+    CRIMSON(Blocks.STRIPPED_CRIMSON_STEM, 2),
+    WARPED(Blocks.STRIPPED_WARPED_STEM, 2),
+    MANGROVE(Blocks.STRIPPED_MANGROVE_LOG, 3),
+    BAMBOO(Blocks.STRIPPED_BAMBOO_BLOCK, 3),
     MYQUESTE(WoodTypes.MYQUESTE.getStrippedLogBlock(), 4);
 
     public final String fertilizer_id;
 
 
-    public DeferredItem<Item> herbal_fertilizer;
-    public final DeferredItem<Item> herbal_humus;
+    public Item herbal_fertilizer;
+    public final Item herbal_humus;
     public final int production_value;
 
-    public Supplier<Block> from_block;
+    public Block from_block;
 
-    FertilizerTypes(Supplier<Block> block, int prod_value) {
+    FertilizerTypes(Block block, int prod_value) {
         this.fertilizer_id = name().toLowerCase(Locale.ROOT);
         this.production_value = prod_value;
 
-        this.herbal_fertilizer = ItemInit.register(fertilizer_id + "_herb_fertilizer", () -> new HerbFertilizerItem(new Item.Properties().stacksTo(16)));
-        this.herbal_humus = ItemInit.register(fertilizer_id + "_herb_humus", () -> new HerbHumusItem(new Item.Properties().stacksTo(16)));
+        this.herbal_fertilizer = ItemInit.register(fertilizer_id + "_herb_fertilizer", new HerbFertilizerItem(new Item.Properties().stacksTo(16)));
+        this.herbal_humus = ItemInit.register(fertilizer_id + "_herb_humus", new HerbHumusItem(new Item.Properties().stacksTo(16)));
 
         this.from_block = block;
     }
@@ -62,19 +60,19 @@ public enum FertilizerTypes {
         this.fertilizer_id = name().toLowerCase(Locale.ROOT);
         this.production_value = prod_value;
 
-        this.herbal_humus = ItemInit.register("herb_humus", () -> new HerbHumusItem(new Item.Properties()));
+        this.herbal_humus = ItemInit.register("herb_humus", new HerbHumusItem(new Item.Properties()));
     }
 
     public Item getFertilizerItem() {
-        return herbal_fertilizer.get();
+        return herbal_fertilizer;
     }
 
     public Item getHerbHumusItem() {
-        return herbal_humus.get();
+        return herbal_humus;
     }
 
     public Block getBlockFrom() {
-        return from_block.get();
+        return from_block;
     }
 
     public int getProductionValue() {
@@ -191,9 +189,9 @@ public enum FertilizerTypes {
 
             if (player instanceof ServerPlayer serverPlayer) {
                 CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, blockPos, itemStack);
-                CriteriaTriggersInit.USE_HERB_HUMUS_ON_LOG.get().trigger(serverPlayer, blockPos, itemStack);
+                CriteriaTriggersInit.USE_HERB_HUMUS_ON_LOG.trigger(serverPlayer, blockPos, itemStack);
                 serverPlayer.awardStat(Stats.ITEM_USED.get(itemStack.getItem()));
-                serverPlayer.awardStat(StatsInit.USE_HERB_HUMUS_ON_LOG.get().get(type.getBlockFrom()));
+                serverPlayer.awardStat(StatsInit.USE_HERB_HUMUS_ON_LOG.get(type.getBlockFrom()));
             }
         }
     }
