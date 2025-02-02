@@ -1,0 +1,18 @@
+{
+  "name": "秘魁木",
+  "icon": "hibernalherbs:myqueste_log",
+  "category": "hibernalherbs:herb_reproduction",
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "hibernalherbs:textures/gui/entries/myqueste_trees.png"
+      ],
+      "title": "秘魁树"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "秘魁树可以在与草药相同的生物群落中找到，即雪原和积雪针叶林中。$(br2)用$(l:reproduction/herb_fertilizer)草药腐殖质$()右键点击去皮秘魁原木和木板可获得4的产值。"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "罪孽灰烬",
+  "icon": "hibernalherbs:pride_ashes",
+  "category": "hibernalherbs:sin_alignments",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pride_ashes",
+      "title": "罪孽灰烬",
+      "text": "通过扫刷$(l:sin_alignments/arcane_ruins)可疑的末地石$()，你可以找到一些潜在的有用物品！在这些物品中，有用于制作$(l:sin_alignments/herbal_sigils)匹配的草药符石$()的罪孽灰烬。"
+    },
+    {
+      "type": "patchouli:text",
+      "item": "hibernalherbs:extract_vile_ashes",
+      "text": "罪孽灰烬还可以被用于制作可提取恶性灰烬的$(l:mystical_campfire_conversion/enigmatic_extract)神秘提取物$()。"
+    }
+  ]
+}

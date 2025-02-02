@@ -1,0 +1,37 @@
+{
+  "name": "草药肥料",
+  "icon": "hibernalherbs:spruce_herb_fertilizer",
+  "category": "hibernalherbs:herb_reproduction",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "将2个骨粉和草药腐殖土混合，就能制成用于繁殖草药植物的草药肥料。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:spruce_herb_fertilizer",
+      "text": "要获得各种草药肥料，首先需要获得相应类型的草药腐殖质。",
+      "title": "获得肥料"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:herb_humus",
+      "text": "在基本状态下，它的作用不大。这是因为它需要附加一个关联！$(br2)在去皮原木或去皮木上使用草药腐殖质，可以使草药腐殖质匹配，从而决定草药肥料的匹配。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:herb_humus",
+      "text": "同样，由于没有关联，草药腐殖质在制作后并不是很有用！"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:fertilizer/spruce",
+      "text": "上面提供了一个配方示例。$(br2)特定肥料对草药的繁殖比其他肥料更有效。例如，云杉比金合欢更有效。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "金合欢、绯红和诡异$()关联一次只能复制2次。$(br2)白桦、樱花、竹子、深色橡木、丛林木、红树和橡木$()关联一次能复制3个，效果更好，但效力不是最高的。$(br2)云杉和$(l:reproduction/myqueste_trees)秘魁$()的繁殖效力最高，一次能繁殖4个。",
+      "title": "肥料效力"
+    }
+  ]
+}

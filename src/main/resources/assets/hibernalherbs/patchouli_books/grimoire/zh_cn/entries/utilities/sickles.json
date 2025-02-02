@@ -1,0 +1,24 @@
+{
+  "name": "镰刀",
+  "icon": "hibernalherbs:iron_sickle",
+  "category": "hibernalherbs:utilities",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:iron_sickle",
+      "title": "镰刀",
+      "text": "用镰刀破坏草药会掉落$(l:herbs/pounded_herbs)捣碎的草药$()，而不是普通的草药。$(br2)镰刀（以及风弹）可以复兴某些方块的衰败，例如衰败祭祀符文块。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:life_force",
+      "title": "生命力瓶",
+      "text": "为你的镰刀附魔劈砍后，你就可以收集生命力瓶。当你副手手持玻璃瓶时，使用此附魔攻击生物，会使玻璃瓶充满被攻击生物的生命力。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "附魔",
+      "text": "你还可以在镰刀上使用另外两种魔法——迅疾和捕杀。$(br2)每升一级，迅疾都会提高你的潜行速度。$(br2)当玩家杀死牛或猪等牲畜时，捕杀会恢复玩家的生命值。不过，这个技能会有几秒钟的冷却时间，因此要谨慎使用。"
+    }
+  ]
+}

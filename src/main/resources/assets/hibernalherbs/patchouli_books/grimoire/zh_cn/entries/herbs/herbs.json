@@ -1,0 +1,12 @@
+{
+  "name": "草药",
+  "icon": "hibernalherbs:chamomile",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:chamomile",
+      "text": "在雪原和积雪针叶林中可以找到大量草药。$(br2)默认情况下，草药在被破坏后会掉落自身。不过，如果用镰刀破坏，则会掉落$(l:herbs/pounded_herbs)捣碎的草药$()。"
+    }
+  ]
+}
