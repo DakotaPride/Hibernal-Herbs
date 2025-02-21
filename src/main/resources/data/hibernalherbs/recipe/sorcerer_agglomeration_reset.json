@@ -7,6 +7,11 @@
     }
   ],
   "result": {
+    "components": {
+      "minecraft:custom_data": {
+        "hibernalherbs:is_being_used": false
+      }
+    },
     "count": 1,
     "id": "hibernalherbs:agglomeration"
   }

@@ -3,12 +3,17 @@ package net.dakotapride.hibernalherbs.init;
 import net.dakotapride.hibernalherbs.HibernalHerbsMod;
 import net.dakotapride.hibernalherbs.init.enum_registry.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionContents;
 
 public class ItemGroupInit {
     public static final CreativeModeTab HIBERNAL_HERBS_TAB = register("hibernal_herbs",
@@ -18,6 +23,7 @@ public class ItemGroupInit {
 //                        for (Item item : ItemInit.ITEMS.stream().toList()) {
 //                            entries.accept(item);
 //                        }
+
                         entries.accept(ItemInit.GROUND_HERBS);
                         entries.accept(ItemInit.LIFE_FORCE_BOTTLE);
                         entries.accept(ItemInit.INSCRIPTION_SMITHING_TEMPLATE);
@@ -113,6 +119,9 @@ public class ItemGroupInit {
                         }
 
                         for (Archaeology.Metals metals : Archaeology.Metals.values()) {
+                            if (metals.isAlloy()) {
+                                entries.accept(metals.getScrapItem());
+                            }
                             entries.accept(metals.getIngotItem());
                             entries.accept(metals.getNuggetItem());
                             entries.accept(metals.getBlock());
@@ -168,7 +177,32 @@ public class ItemGroupInit {
                             entries.accept(blockstates.getFrozeChiseledState());
                         }
 
+                        displayContext.holders().lookup(Registries.POTION).ifPresent(
+                                registryLookup -> generatePotionEffectTypes(
+                                        entries, registryLookup, ItemInit.ENIGMATIC_POTION, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, displayContext.enabledFeatures()
+                                )
+                        );
+                        displayContext.holders().lookup(Registries.POTION).ifPresent(
+                                registryLookup -> generatePotionEffectTypes(
+                                        entries, registryLookup, ItemInit.SOLAR_POTION, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, displayContext.enabledFeatures()
+                                )
+                        );
+                        displayContext.holders().lookup(Registries.POTION).ifPresent(
+                                registryLookup -> generatePotionEffectTypes(
+                                        entries, registryLookup, ItemInit.LUNAR_POTION, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, displayContext.enabledFeatures()
+                                )
+                        );
+
                     }).build());
+
+    private static void generatePotionEffectTypes(
+            CreativeModeTab.Output output, HolderLookup<Potion> holderLookup, Item item, CreativeModeTab.TabVisibility tabVisibility, FeatureFlagSet featureFlagSet
+    ) {
+        holderLookup.listElements()
+                .filter(reference -> (reference.value()).isEnabled(featureFlagSet))
+                .map(reference -> PotionContents.createItemStack(item, reference))
+                .forEach(itemStack -> output.accept(itemStack, tabVisibility));
+    }
 
     public static CreativeModeTab register(String name, CreativeModeTab item) {
         return Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, HibernalHerbsMod.asResource(name), item);

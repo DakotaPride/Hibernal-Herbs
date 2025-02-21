@@ -7,6 +7,7 @@ import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.render.EmiTexture;
+import dev.emi.emi.api.stack.Comparison;
 import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
 import dev.emi.emi.recipe.EmiCookingRecipe;
@@ -24,7 +25,6 @@ import net.dakotapride.hibernalherbs.recipe.MysticalCampfireCookingRecipe;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.block.Block;
@@ -110,6 +110,13 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         registry.addWorkstation(UNFREEZING_STATE, SORCERER_AGGLOMERATION);
         registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Tags.Items.SICKLES.getTag()));
         registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Ingredient.of(Items.WIND_CHARGE)));
+
+        //Comparison potionComparison = Comparison.compareData(stack -> stack.get(DataComponents.POTION_CONTENTS));
+
+        //registry.setDefaultComparison(ItemInit.MYSTERIOUS_POTION, potionComparison);
+        registry.setDefaultComparison(ItemInit.ENIGMATIC_POTION, Comparison.compareComponents());
+        registry.setDefaultComparison(ItemInit.SOLAR_POTION, Comparison.compareComponents());
+        registry.setDefaultComparison(ItemInit.LUNAR_POTION, Comparison.compareComponents());
 
         for (MysticalCampfireCookingRecipe recipe : getRecipes(registry, RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE)) {
             addRecipeSafe(registry, () -> new EmiCookingRecipe(recipe, MYSTICAL_CAMPFIRE_CONVERSION, 1, true), recipe);

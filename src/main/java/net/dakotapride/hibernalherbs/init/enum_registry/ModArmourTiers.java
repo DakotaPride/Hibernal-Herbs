@@ -30,6 +30,13 @@ public class ModArmourTiers {
         enumMap.put(ArmorItem.Type.HELMET, 2);
         enumMap.put(ArmorItem.Type.BODY, 5);
     }), 9, SoundEvents.ARMOR_EQUIP_DIAMOND, 0.0F, 0.0F, () -> Ingredient.of(Archaeology.Metals.SYRUM.getIngotItem()));
+//    public static final Holder<ArmorMaterial> DALUM = register("dalum", Util.make(new EnumMap<>(ArmorItem.Type.class), enumMap -> {
+//        enumMap.put(ArmorItem.Type.BOOTS, 3);
+//        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
+//        enumMap.put(ArmorItem.Type.CHESTPLATE, 6);
+//        enumMap.put(ArmorItem.Type.HELMET, 3);
+//        enumMap.put(ArmorItem.Type.BODY, 6);
+//    }), 9, SoundEvents.ARMOR_EQUIP_DIAMOND, 0.0F, 0.0F, () -> Ingredient.of(Archaeology.Metals.DALUM.getIngotItem()));
 
     private static Holder<ArmorMaterial> register(
             String string, EnumMap<ArmorItem.Type, Integer> enumMap, int i, Holder<SoundEvent> holder, float f, float g, Supplier<Ingredient> supplier

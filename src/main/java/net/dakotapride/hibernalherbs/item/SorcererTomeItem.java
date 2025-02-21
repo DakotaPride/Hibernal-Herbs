@@ -7,6 +7,7 @@ import net.dakotapride.hibernalherbs.init.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalSigilTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.PadlockTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
+import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -47,6 +48,8 @@ public class SorcererTomeItem extends Item {
             list.add(Component.translatable("text.hibernalherbs.tome.is_active"));
             list.add(Component.literal(""));
             list.add(Component.translatable("text.hibernalherbs.tome.cannot_utilise"));
+        } else if (isNotActive(itemStack)) {
+            list.add(Component.translatable("text.hibernalherbs.not_active").withStyle(ChatFormatting.GRAY));
         }
     }
 

@@ -21,7 +21,8 @@ public class Archaeology {
 
     public enum Metals {
         ARKONIUM(),
-        SYRUM();
+        SYRUM(),;
+        //DALUM(Metals.ARKONIUM.getIngotItem());
 
         public final String metal_id;
 

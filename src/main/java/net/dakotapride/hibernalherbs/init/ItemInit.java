@@ -3,9 +3,11 @@ package net.dakotapride.hibernalherbs.init;
 import net.dakotapride.hibernalherbs.HibernalHerbsMod;
 import net.dakotapride.hibernalherbs.item.*;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.alchemy.PotionContents;
 
 @SuppressWarnings({"unused"})
 public class ItemInit {
@@ -29,10 +31,15 @@ public class ItemInit {
     public static Item SORCERER_AGGLOMERATION = register("agglomeration", new SorcererAgglomerationItem(new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1)));
     public static Item SORCERER_TOME = register("tome", new SorcererTomeItem(new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1)));
 
-    //public static Item TONIC = register("tonic", new CrypticTonicItem(new Item.Properties().stacksTo(1)));
     public static Item MYSTICAL_ASHES = register("extract_mystical_ashes", new ExtractItem("Mystical Flame", new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static Item VILE_ASHES = register("extract_vile_ashes", new ExtractItem("Vile Flame", new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static Item VIRTUOUS_ASHES = register("extract_virtuous_ashes", new ExtractItem("Virtuous Flame", new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+
+    public static Item ENIGMATIC_POTION = register("enigmatic_potion", new EnigmaticPotionItem(new Item.Properties().stacksTo(1).component(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)));
+    public static Item SOLAR_POTION = register("solar_potion", new TimeOfDayPotion(TimeOfDayPotion.Time.DAY, new Item.Properties().stacksTo(1).component(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)));
+    public static Item LUNAR_POTION = register("lunar_potion", new TimeOfDayPotion(TimeOfDayPotion.Time.NIGHT, new Item.Properties().stacksTo(1).component(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)));
+
+    //public static Item f = register("f", new Item(new Item.Properties()));
 
     // Collective Registration
     public static void register() {}

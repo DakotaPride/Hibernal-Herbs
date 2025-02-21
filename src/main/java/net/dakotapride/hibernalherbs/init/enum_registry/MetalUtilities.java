@@ -12,6 +12,7 @@ public class MetalUtilities {
     public enum Armour {
         ARKONIUM(Archaeology.Metals.ARKONIUM, ModArmourTiers.ARKONIUM, Rarity.UNCOMMON, Attributes.MOVEMENT_SPEED, 0.02F),
         SYRUM(Archaeology.Metals.SYRUM, ModArmourTiers.SYRUM, Rarity.UNCOMMON),;
+        //DALUM(Archaeology.Metals.DALUM, ModArmourTiers.DALUM, Rarity.EPIC, Attributes.MAX_HEALTH, 2.0F);
 
         public final Item helmet;
         public final Item chestplate;
@@ -93,6 +94,7 @@ public class MetalUtilities {
     public enum Tools {
         ARKONIUM(Archaeology.Metals.ARKONIUM, Sickles.ARKONIUM, ModTiers.ARKONIUM, Rarity.UNCOMMON),
         SYRUM(Archaeology.Metals.SYRUM, Sickles.SYRUM, ModTiers.SYRUM, Rarity.UNCOMMON),;
+        //DALUM(Archaeology.Metals.DALUM, Sickles.DALUM, ModTiers.DALUM, Rarity.EPIC),;
 
         public final Item sword;
         public final Item pickaxe;

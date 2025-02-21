@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hibernalherbs:item/mysterious_potion_overlay",
+    "layer1": "hibernalherbs:item/mysterious_potion"
+  }
+}

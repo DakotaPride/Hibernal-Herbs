@@ -12,6 +12,7 @@ import net.dakotapride.hibernalherbs.init.enum_registry.HerbTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalSigilTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.StoneTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
+import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -97,6 +98,8 @@ public class SorcererAgglomerationItem extends Item {
             list.add(Component.translatable("text.hibernalherbs.agglomeration.is_active"));
             list.add(Component.literal(""));
             list.add(Component.translatable("text.hibernalherbs.agglomeration.cannot_utilise"));
+        } else if (isNotActive(itemStack)) {
+            list.add(Component.translatable("text.hibernalherbs.not_active").withStyle(ChatFormatting.GRAY));
         }
     }
 

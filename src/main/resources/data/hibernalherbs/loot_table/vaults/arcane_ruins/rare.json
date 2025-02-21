@@ -38,8 +38,39 @@
           "weight": 10,
           "functions": [
             {
-              "function": "minecraft:enchant_randomly",
-              "options": "#minecraft:on_random_loot"
+              "function": "minecraft:enchant_with_levels",
+              "levels": 1,
+              "options": [
+                "hibernalherbs:culling"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 1,
+              "options": [
+                "hibernalherbs:rapid"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 1,
+              "options": [
+                "hibernalherbs:slashing"
+              ]
             }
           ]
         }
@@ -58,20 +89,6 @@
               "count": {
                 "min": 1,
                 "max": 3
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:snowball",
-          "weight": 40,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 4,
-                "max": 9
               }
             }
           ]
@@ -97,7 +114,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "hibernalherbs:pounded_rosemary",
+          "name": "hibernalherbs:dried_rosemary",
           "weight": 6,
           "functions": [
             {
@@ -111,7 +128,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "hibernalherbs:pounded_thyme",
+          "name": "hibernalherbs:dried_thyme",
           "weight": 2,
           "functions": [
             {
@@ -125,7 +142,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "hibernalherbs:pounded_tarragon",
+          "name": "hibernalherbs:dried_tarragon",
           "weight": 4,
           "functions": [
             {
@@ -143,10 +160,6 @@
       "rolls": 1,
       "bonus_rolls": 0,
       "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 3
-        },
         {
           "type": "minecraft:item",
           "name": "minecraft:spire_armor_trim_smithing_template",
@@ -172,5 +185,5 @@
       ]
     }
   ],
-  "random_sequence": "hibernalherbs:chests/arcane_ruins/common"
+  "random_sequence": "hibernalherbs:vaults/arcane_ruins/rare"
 }

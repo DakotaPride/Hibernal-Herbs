@@ -5,6 +5,7 @@ import net.dakotapride.hibernalherbs.effect.*;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
@@ -29,7 +30,14 @@ public class StatusEffectInit {
             .addAttributeModifier(Attributes.SNEAKING_SPEED, HibernalHerbsMod.asResource("effect.esurient.sneaking_speed"), -0.15F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
     public static final Holder<MobEffect> MIMICRY = register("mimicry", new MimicryStatusEffect());
 
-    public static final Holder<MobEffect> FROST_RESISTANCE = register("frost_resistance", new BasicStatusEffect(MobEffectCategory.BENEFICIAL, 0x0));
+    public static final Holder<MobEffect> FROST_RESISTANCE = register("frost_resistance", new BasicStatusEffect(MobEffectCategory.BENEFICIAL, 0xAEC9E5));
+
+    public static final Holder<MobEffect> SWARMING = register("swarming", new SwarmingStatusEffect(MobEffectCategory.HARMFUL,
+            0xEDC343, 0.40F, randomSource -> Mth.randomBetweenInclusive(randomSource, 1, 2)));
+    public static final Holder<MobEffect> INSTABILITY = register("instability", new InstabilityStatusEffect(MobEffectCategory.HARMFUL,
+            0xDB88F7));
+    public static final Holder<MobEffect> SHRIEKING = register("shrieking", new ShriekingStatusEffect(MobEffectCategory.HARMFUL,
+            0x111B21, 0.01F));
 
     // Collective Registration
     public static void register() {}

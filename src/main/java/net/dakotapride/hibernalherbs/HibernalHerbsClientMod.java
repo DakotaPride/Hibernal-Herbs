@@ -11,12 +11,14 @@ import net.dakotapride.hibernalherbs.init.enum_registry.WoodTypes;
 import net.dakotapride.hibernalherbs.item.HerbalPadlockItem;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.particle.SpellParticle;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -74,5 +76,9 @@ public class HibernalHerbsClientMod implements ClientModInitializer {
         }
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.MYSTICAL_CAMPFIRE, RenderType.cutout());
+
+        ParticleFactoryRegistry.getInstance().register(ParticleTypeInit.SWARMING, SpellParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(ParticleTypeInit.INSTABILITY, SpellParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(ParticleTypeInit.SHRIEKING, SpellParticle.Provider::new);
     }
 }

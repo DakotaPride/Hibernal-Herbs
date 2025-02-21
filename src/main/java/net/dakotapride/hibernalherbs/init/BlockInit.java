@@ -9,6 +9,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+
+import java.util.function.ToIntFunction;
 
 public class BlockInit {
     // WIP
@@ -22,8 +26,14 @@ public class BlockInit {
     public static Block MYSTICAL_CAMPFIRE = register("mystical_campfire",
             new MysticalCampfireBlock(true, 10, BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE).noOcclusion()));
     public static Block INCENSE_PROVIDER = register("incense_provider",
-            new IncenseProviderBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).noOcclusion().lightLevel(l -> 7).requiresCorrectToolForDrops()));
+            new IncenseProviderBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).noOcclusion().lightLevel(incenseLightEmission(7)).requiresCorrectToolForDrops()));
 
+    public static ToIntFunction<BlockState> incenseLightEmission(int i) {
+        return blockState -> blockState.getValue(PropertiesInit.FED) ? i : 0;
+    }
+
+//    public static Block UNSTABLE_DALUM_ORE = register("unstable_dalum_ore",
+//            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).requiresCorrectToolForDrops()));
     // Collective Registration
     public static void register() {}
 

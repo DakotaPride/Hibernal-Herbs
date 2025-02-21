@@ -9,9 +9,11 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 public class FeaturesInit {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYQUESTE_CONFIGURED = registerConfiguredFeature("myqueste");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HERBS_CONFIGURED = registerConfiguredFeature("herbs");
+    //public static final ResourceKey<ConfiguredFeature<?, ?>> DALUM_ORE_CONFIGURED = registerConfiguredFeature("dalum_ore");
 
-    public static final ResourceKey<PlacedFeature> MYQUESTE_PLACED = registerPlacedFeature("myqueste_placed");
-    public static final ResourceKey<PlacedFeature> HERBS_PLACED = registerPlacedFeature("herbs_placed");
+    public static final ResourceKey<PlacedFeature> MYQUESTE_PLACED = registerPlacedFeature("myqueste");
+    public static final ResourceKey<PlacedFeature> HERBS_PLACED = registerPlacedFeature("herbs");
+    //public static final ResourceKey<PlacedFeature> DALUM_ORE_PLACED = registerPlacedFeature("dalum_ore");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerConfiguredFeature(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, HibernalHerbsMod.asResource(name));

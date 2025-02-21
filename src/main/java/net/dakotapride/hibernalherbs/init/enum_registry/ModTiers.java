@@ -12,6 +12,7 @@ import java.util.function.Supplier;
 public enum ModTiers implements Tier {
     ARKONIUM(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1561, 6.0F, 2.0F, 14, () -> Ingredient.of(Archaeology.Metals.ARKONIUM.getIngotItem())),
     SYRUM(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1561, 12.0F, 0.0F, 22, () -> Ingredient.of(Archaeology.Metals.SYRUM.getIngotItem())),;
+    //DALUM(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 2045, 12.0F, 2.0F, 18, () -> Ingredient.of(Archaeology.Metals.DALUM.getIngotItem())),;
 
     private final TagKey<Block> incorrectBlocksForDrops;
     private final int uses;

@@ -7,12 +7,17 @@
     "EnderManMixin",
     "GiveGiftToHeroMixin",
     "LivingEntityMixin",
+    "MaceItemMixin",
     "PiglinAiMixin",
     "PlayerMixin",
+    "PotionSlotMixin",
     "VillagerMixin",
     "WoodTypeAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "client": [
+    "ItemColoursMixin"
+  ]
 }

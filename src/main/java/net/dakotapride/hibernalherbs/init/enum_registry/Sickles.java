@@ -20,6 +20,7 @@ public enum Sickles {
 
     ARKONIUM(ModTiers.ARKONIUM, Archaeology.Metals.ARKONIUM.getIngotItem(), Rarity.UNCOMMON),
     SYRUM(ModTiers.SYRUM, Archaeology.Metals.SYRUM.getIngotItem(), Rarity.UNCOMMON),;
+    //DALUM(ModTiers.DALUM, Archaeology.Metals.DALUM.getIngotItem(), Rarity.EPIC),;
 
     public final String material_id;
 
