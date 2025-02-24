@@ -659,6 +659,7 @@
   "trim_material.hibernalherbs.syrum": "Syrum Material",
   "tag.item.accessories.necklace": "Necklace Accessories",
   "tag.item.c.tools.sickles": "Sickles",
+  "tag.item.c.tools.acceptable_potions_for_brewing": "Acceptable in Potion Input Slots",
   "tag.item.hibernalherbs.agglomeration_duration.long": "Long Agglomeration Usage",
   "tag.item.hibernalherbs.agglomeration_duration.short": "Short Agglomeration Usage",
   "tag.item.hibernalherbs.ashes": "Ashes of Sin",
