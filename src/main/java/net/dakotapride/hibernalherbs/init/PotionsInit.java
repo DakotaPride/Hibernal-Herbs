@@ -34,6 +34,11 @@ public class PotionsInit {
 
     private static void potionRecipes() {
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+
+            builder.addContainer(ItemInit.ENIGMATIC_POTION);
+            builder.addContainer(ItemInit.SOLAR_POTION);
+            builder.addContainer(ItemInit.LUNAR_POTION);
+
             builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(HerbTypes.SAGE.getDriedHerb()), FROST_RESISTANCE);
 
             builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.BEE_NEST), SWARMING);

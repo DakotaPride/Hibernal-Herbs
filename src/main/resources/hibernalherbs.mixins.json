@@ -10,7 +10,6 @@
     "MaceItemMixin",
     "PiglinAiMixin",
     "PlayerMixin",
-    "PotionSlotMixin",
     "VillagerMixin",
     "WoodTypeAccessor"
   ],
