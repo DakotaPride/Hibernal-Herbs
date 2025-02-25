@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 35,
+          "functions": [
+            {
+              "add": false,
+              "count": 1,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "hibernalherbs:herbal_sigils"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "hibernalherbs:modifiers/ominous_vault_loot"
+}

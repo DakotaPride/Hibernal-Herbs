@@ -205,7 +205,7 @@ public class Archaeology {
         Ashes() {
             this.ashes_id = name().toLowerCase(Locale.ROOT);
 
-            this.ashes = ItemInit.register(ashes_id + "_ashes", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+            this.ashes = ItemInit.register(ashes_id + "_ashes", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
         }
 
         public String getAshesId() {

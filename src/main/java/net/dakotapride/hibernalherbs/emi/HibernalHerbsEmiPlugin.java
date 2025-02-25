@@ -7,6 +7,7 @@ import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.render.EmiTexture;
+import dev.emi.emi.api.stack.Comparison;
 import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
 import dev.emi.emi.recipe.EmiCookingRecipe;
@@ -22,6 +23,7 @@ import net.dakotapride.hibernalherbs.item.SorcererAgglomerationItem;
 import net.dakotapride.hibernalherbs.item.SorcererTomeItem;
 import net.dakotapride.hibernalherbs.recipe.MysticalCampfireCookingRecipe;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -93,6 +95,14 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         registry.addCategory(FREEZING_STATE);
         registry.addCategory(UNFREEZING_STATE);
         registry.addCategory(REVERT_DETERIORATION);
+
+        Comparison potionComparison = Comparison.compareData(stack -> stack.get(DataComponents.POTION_CONTENTS));
+
+        //registry.setDefaultComparison(Items.POTION, potionComparison);
+
+        registry.setDefaultComparison(ItemInit.ENIGMATIC_POTION.get(), potionComparison);
+        registry.setDefaultComparison(ItemInit.SOLAR_POTION.get(), potionComparison);
+        registry.setDefaultComparison(ItemInit.LUNAR_POTION.get(), potionComparison);
 
         //registry.addRecipe(new EmiInfoRecipe(List.of(EmiIngredient.of(Ingredient.of(ItemInit.LIFE_FORCE_BOTTLE))), List.of(Component.translatable("emi.hibernalherbs.information.life_force"), Component.translatable("emi.hibernalherbs.information.life_force.usage"), Component.translatable("emi.hibernalherbs.information.life_force.slashing")), HibernalHerbsMod.asResource("life_force")));
 

@@ -1,5 +1,6 @@
 {
   "name": "Mystical Campfire Conversion",
   "description": "Transform normality through the mystical arts.",
-  "icon": "hibernalherbs:mystical_campfire"
+  "icon": "hibernalherbs:mystical_campfire",
+  "sortnum": 2
 }

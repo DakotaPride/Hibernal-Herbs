@@ -7,12 +7,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class BlockInit {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(HibernalHerbsMod.MOD_ID);
@@ -27,7 +29,11 @@ public class BlockInit {
     public static DeferredBlock<Block> MYSTICAL_CAMPFIRE = register("mystical_campfire",
             () -> new MysticalCampfireBlock(true, 10, BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE).noOcclusion()));
     public static DeferredBlock<Block> INCENSE_PROVIDER = register("incense_provider",
-            () -> new IncenseProviderBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).noOcclusion().lightLevel(l -> 7).requiresCorrectToolForDrops()));
+            () -> new IncenseProviderBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).noOcclusion().lightLevel(incenseLightEmission(7)).requiresCorrectToolForDrops()));
+
+    public static ToIntFunction<BlockState> incenseLightEmission(int i) {
+        return blockState -> blockState.getValue(PropertiesInit.FED) ? i : 0;
+    }
 
     // Collective Registration
     public static void register(IEventBus bus) {

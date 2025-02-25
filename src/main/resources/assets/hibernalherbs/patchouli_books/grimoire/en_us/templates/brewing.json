@@ -1,0 +1,58 @@
+{
+  "components": [
+    {
+      "type": "patchouli:header",
+      "text": "Brewing",
+      "x": -1,
+      "y": -6
+    },
+    {
+      "type": "patchouli:image",
+      "image": "patchouli:textures/gui/crafting.png",
+      "x": 7,
+      "y": 2,
+      "u": 10,
+      "v": 134,
+      "texture_width": 128,
+      "texture_height": 256,
+      "width": 100,
+      "height": 62
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input",
+      "x": 12,
+      "y": 7
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#ingredient",
+      "x": 12,
+      "y": 26
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#output",
+      "link_recipe": true,
+      "x": 84,
+      "y": 16
+    },
+    {
+      "type": "patchouli:item",
+      "item": "minecraft:blaze_powder",
+      "x": 49,
+      "y": 26
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#text",
+      "y": 69
+    },
+    {
+      "type": "patchouli:item",
+      "item": "minecraft:brewing_stand",
+      "x": 49,
+      "y": 7
+    }
+  ]
+}

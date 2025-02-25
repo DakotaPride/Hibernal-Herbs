@@ -7,6 +7,7 @@
     "EnderManMixin",
     "GiveGiftToHeroMixin",
     "LivingEntityMixin",
+    "MaceItemMixin",
     "PiglinAiMixin",
     "PlayerMixin",
     "VillagerMixin",
@@ -14,5 +15,5 @@
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }

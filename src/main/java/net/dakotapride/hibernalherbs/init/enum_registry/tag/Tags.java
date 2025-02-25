@@ -37,7 +37,8 @@ public class Tags {
         LONG_AGGLOMERATION_DURATION("agglomeration_duration/long"),
         CAN_USE_WITH_AGGLOMERATION("can_use_with_agglomeration"),
         CAN_USE_WITH_TOME("can_use_with_tome"),
-        CAN_BE_CONVERTED_WITH_AGGLOMERATION("can_be_converted_with_agglomeration"),;
+        CAN_BE_CONVERTED_WITH_AGGLOMERATION("can_be_converted_with_agglomeration"),
+        IS_ACCEPTABLE_IN_BREWING_STAND("c", "acceptable_potions_for_brewing");
         // Added for recipe functionality, do NOT add your own agglomeration-like items to this tag, it may cause compatibility issues
         //AGGLOMERATION("agglomerations");
 

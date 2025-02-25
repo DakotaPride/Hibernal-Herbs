@@ -64,6 +64,20 @@
         },
         {
           "type": "minecraft:item",
+          "name": "minecraft:snowball",
+          "weight": 40,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 4,
+                "max": 9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:lapis_lazuli",
           "weight": 10,
           "functions": [
@@ -83,7 +97,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "hibernalherbs:dried_rosemary",
+          "name": "hibernalherbs:pounded_rosemary",
           "weight": 6,
           "functions": [
             {
@@ -97,7 +111,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "hibernalherbs:dried_thyme",
+          "name": "hibernalherbs:pounded_thyme",
           "weight": 2,
           "functions": [
             {
@@ -111,7 +125,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "hibernalherbs:dried_tarragon",
+          "name": "hibernalherbs:pounded_tarragon",
           "weight": 4,
           "functions": [
             {
@@ -129,6 +143,10 @@
       "rolls": 1,
       "bonus_rolls": 0,
       "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 3
+        },
         {
           "type": "minecraft:item",
           "name": "minecraft:spire_armor_trim_smithing_template",
@@ -154,5 +172,5 @@
       ]
     }
   ],
-  "random_sequence": "hibernalherbs:chests/arcane_ruins/common"
+  "random_sequence": "hibernalherbs:vaults/arcane_ruins/common"
 }

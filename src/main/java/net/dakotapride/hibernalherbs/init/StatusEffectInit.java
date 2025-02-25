@@ -1,15 +1,13 @@
 package net.dakotapride.hibernalherbs.init;
 
 import net.dakotapride.hibernalherbs.HibernalHerbsMod;
-import net.dakotapride.hibernalherbs.effect.ApplyEffectOnAttackStatusEffect;
-import net.dakotapride.hibernalherbs.effect.BasicStatusEffect;
-import net.dakotapride.hibernalherbs.effect.MimicryStatusEffect;
-import net.dakotapride.hibernalherbs.effect.SiphonHealthStatusEffect;
+import net.dakotapride.hibernalherbs.effect.*;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.stats.StatType;
+import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
@@ -40,7 +38,14 @@ public class StatusEffectInit {
             .addAttributeModifier(Attributes.SNEAKING_SPEED, HibernalHerbsMod.asResource("effect.esurient.sneaking_speed"), -0.15F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
     public static final DeferredHolder<MobEffect, MobEffect> MIMICRY = register("mimicry", MimicryStatusEffect::new);
 
-    public static final DeferredHolder<MobEffect, MobEffect> FROST_RESISTANCE = register("frost_resistance", () -> new BasicStatusEffect(MobEffectCategory.BENEFICIAL, 0x0));
+    public static final DeferredHolder<MobEffect, MobEffect> FROST_RESISTANCE = register("frost_resistance", () -> new BasicStatusEffect(MobEffectCategory.BENEFICIAL, 0xAEC9E5));
+
+    public static final DeferredHolder<MobEffect, MobEffect> SWARMING = register("swarming", () -> new SwarmingStatusEffect(MobEffectCategory.HARMFUL,
+            0xEDC343, 0.40F, randomSource -> Mth.randomBetweenInclusive(randomSource, 1, 2)));
+    public static final DeferredHolder<MobEffect, MobEffect> INSTABILITY = register("instability", () -> new InstabilityStatusEffect(MobEffectCategory.HARMFUL,
+            0xDB88F7));
+    public static final DeferredHolder<MobEffect, MobEffect> SHRIEKING = register("shrieking", () -> new ShriekingStatusEffect(MobEffectCategory.HARMFUL,
+            0x111B21, 0.01F));
 
     // Collective Registration
     public static void register(IEventBus bus) {

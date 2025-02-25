@@ -3,9 +3,11 @@ package net.dakotapride.hibernalherbs.init;
 import net.dakotapride.hibernalherbs.HibernalHerbsMod;
 import net.dakotapride.hibernalherbs.item.*;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.alchemy.PotionContents;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -38,6 +40,10 @@ public class ItemInit {
     public static DeferredItem<Item> MYSTICAL_ASHES = register("extract_mystical_ashes", () -> new ExtractItem("Mystical Flame", new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static DeferredItem<Item> VILE_ASHES = register("extract_vile_ashes", () -> new ExtractItem("Vile Flame", new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static DeferredItem<Item> VIRTUOUS_ASHES = register("extract_virtuous_ashes", () -> new ExtractItem("Virtuous Flame", new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+
+    public static DeferredItem<Item> ENIGMATIC_POTION = register("enigmatic_potion", () -> new EnigmaticPotionItem(new Item.Properties().stacksTo(1).component(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)));
+    public static DeferredItem<Item> SOLAR_POTION = register("solar_potion", () -> new TimeOfDayPotion(TimeOfDayPotion.Time.DAY, new Item.Properties().stacksTo(1).component(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)));
+    public static DeferredItem<Item> LUNAR_POTION = register("lunar_potion", () -> new TimeOfDayPotion(TimeOfDayPotion.Time.NIGHT, new Item.Properties().stacksTo(1).component(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)));
 
     // Collective Registration
     public static void register(IEventBus bus) {

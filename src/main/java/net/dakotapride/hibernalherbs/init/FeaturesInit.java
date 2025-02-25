@@ -10,8 +10,8 @@ public class FeaturesInit {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYQUESTE_CONFIGURED = registerConfiguredFeature("myqueste");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HERBS_CONFIGURED = registerConfiguredFeature("herbs");
 
-    public static final ResourceKey<PlacedFeature> MYQUESTE_PLACED = registerPlacedFeature("myqueste_placed");
-    public static final ResourceKey<PlacedFeature> HERBS_PLACED = registerPlacedFeature("herbs_placed");
+    public static final ResourceKey<PlacedFeature> MYQUESTE_PLACED = registerPlacedFeature("myqueste");
+    public static final ResourceKey<PlacedFeature> HERBS_PLACED = registerPlacedFeature("herbs");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerConfiguredFeature(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, HibernalHerbsMod.asResource(name));
