@@ -1,0 +1,22 @@
+{
+  "name": "巫师卷册",
+  "icon": "hibernalherbs:tome",
+  "category": "hibernalherbs:sorcerer_books",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pride_herbal_sigil",
+      "text": "与草药符石结合使用，可获得与$(l:sin_alignments/herbal_sigils)七宗罪$()之一相关的特殊状态效果。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:bone_meal",
+      "text": "对树苗或大型花朵等可用骨粉催熟的方块使用时，会催熟该方块。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:sorcerer_tome"
+    }
+  ]
+}

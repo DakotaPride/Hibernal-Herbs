@@ -1,0 +1,28 @@
+{
+  "name": "奥术废墟",
+  "icon": "hibernalherbs:necromantic_stone",
+  "category": "hibernalherbs:sin_alignments",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:end_stone",
+      "title": "奥术废墟",
+      "text": "你可以在末地高地找到奥术废墟，这里只有几个守卫着战利品的掠夺者。$(br2)在这里，你可以找到一些关键的进阶材料——$(l:sin_alignments/ashes_of_sin)罪孽灰烬$()和铭文铸造模板。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "hibernalherbs:textures/gui/entries/arcane_ruins.png"
+      ],
+      "text": "这些物品可以在锻造台上使用来制作对应的的草药符石。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "hibernalherbs:textures/gui/entries/suspicious_end_stone.png"
+      ],
+      "text": "使用$(l:utilities/syrum_brush)秘金刷子$()扫刷可疑的末地石，即可找到一些战利品！"
+    }
+  ]
+}

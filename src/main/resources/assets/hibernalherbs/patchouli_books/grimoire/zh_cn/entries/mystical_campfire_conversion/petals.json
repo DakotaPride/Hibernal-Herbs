@@ -1,0 +1,17 @@
+{
+  "name": "花瓣",
+  "icon": "hibernalherbs:siliptium_petals",
+  "category": "hibernalherbs:mystical_campfire_conversion",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:siliptium_petals",
+      "text": "将粉红色花簇放入神秘营火中，就可以制作出罪恶花瓣。$(br2)从这里开始，你可以将罪恶花瓣放回神秘营火中，制作出凶残花瓣，甚至可以进一步制作出乙太花瓣。$(br2)乙太花瓣可以用来制作$(l:mystical_campfire_conversion/arkonium)草药挂锁。"
+    },
+    {
+      "type": "hibernalherbs:mystical_campfire_conversion",
+      "recipe": "hibernalherbs:mystical_campfire_conversion/siliptium_petals",
+      "text": "将粉红色花簇放在神秘营火上即可制作。"
+    }
+  ]
+}
