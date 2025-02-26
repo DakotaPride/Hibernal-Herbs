@@ -1,0 +1,17 @@
+{
+  "name": "秘金",
+  "icon": "hibernalherbs:syrum_ingot",
+  "category": "hibernalherbs:mystical_campfire_conversion",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:syrum_block",
+      "text": "更高级的金制工具和装备。当装备全套时，你可以无顾虑地看着末影人.$(br2)秘金可用于和$(l:sin_alignments/herbal_sigils)草药符石$()制作$(l:sin_alignments/herbal_padlocks)未捣碎的草药挂锁$()。$(br2)秘金还可以用来制作$(l:utilities/incense_provider)供香台$()和$(l:utilities/syrum_brush)秘金刷子$()，这是探索$(l:sin_alignments/arcane_ruins)奥术废墟$()的必要品。"
+    },
+    {
+      "type": "hibernalherbs:mystical_campfire_conversion",
+      "recipe": "hibernalherbs:mystical_campfire_conversion/syrum_ingot_from_gold_ingot",
+      "text": "将放置的金锭、金粒、或金块放到神秘营火上即可制作。"
+    }
+  ]
+}

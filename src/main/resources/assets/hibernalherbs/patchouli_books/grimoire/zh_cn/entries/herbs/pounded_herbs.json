@@ -1,0 +1,17 @@
+{
+  "name": "捣碎的草药",
+  "icon": "hibernalherbs:pounded_chamomile",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pounded_chamomile",
+      "text": "用任意一种镰刀破坏草药，就能获得相应的捣碎的草药。$(br2)捣碎的草药可以用来制作草药合剂。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:incense_provider",
+      "text": "可用于$(l:utilities/incense_provider)供香盘$()，为周围半径10米内的实体提供正面状态效果。"
+    }
+  ]
+}

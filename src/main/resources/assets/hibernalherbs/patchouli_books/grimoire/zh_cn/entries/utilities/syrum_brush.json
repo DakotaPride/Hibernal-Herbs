@@ -1,0 +1,17 @@
+{
+  "name": "秘金刷子",
+  "icon": "hibernalherbs:syrum_brush",
+  "category": "hibernalherbs:utilities",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:syrum_brush",
+      "title": "秘金刷子",
+      "text": "秘金刷子可扫刷某些更坚固的可疑的方块，如可疑的谜底是！"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:syrum_brush"
+    }
+  ]
+}

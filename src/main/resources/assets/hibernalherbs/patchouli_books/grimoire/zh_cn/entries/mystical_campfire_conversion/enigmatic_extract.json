@@ -1,0 +1,22 @@
+{
+  "name": "神秘提取物",
+  "icon": "hibernalherbs:extract_mystical_ashes",
+  "category": "hibernalherbs:mystical_campfire_conversion",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:extract_mystical_ashes",
+      "text": "将玻璃瓶放到神秘营火上，就能制作出基本的神秘提取物。你可以用它来提取出恶性灰烬或良性灰烬，后者可以用来制作草药合剂。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "提取恶性灰烬的神秘提取物可用于制作提供恶性状态效果的草药合剂。$(br2)提取良性灰烬的神秘提取物可用于制作提供正面状态效果的草药合剂。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:replication/pride_ashes",
+      "text": "使用这三种神秘提取物还可以复制你的$(l:sin_alignments/ashes_of_sin)罪孽灰烬$()。"
+    }
+  ]
+}

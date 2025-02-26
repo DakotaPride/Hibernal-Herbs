@@ -1,0 +1,22 @@
+{
+  "name": "草药挂锁",
+  "icon": "hibernalherbs:unbound_pride_padlock",
+  "category": "hibernalherbs:sin_alignments",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:unbound_pride_padlock",
+      "text": "未绑定的草药挂锁是实现你所期望的——绑定的草药挂锁的先决条件！未绑定的草药挂锁，和你想的一样，是用与你想要制作的草药挂锁拥有相同罪恶的草药符石制作而成的。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:tome",
+      "text": "未绑定的草药挂锁本身毫无用处，你需要将其对应的罪孽绑定到挂锁上。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "要绑定罪孽，未绑定的草药挂锁和一本$(l:sorcerer_books/tome)巫师卷册$()，这将为你提供一个绑定的草药挂锁，可以装备在你的项链插槽中。$(br2)装备后，它将为你提供特定的BUFF，除非你脱下草药挂锁，否则这些BUFF将永远持续。"
+    }
+  ]
+}

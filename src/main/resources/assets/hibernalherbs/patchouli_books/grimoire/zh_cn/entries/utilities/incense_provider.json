@@ -1,0 +1,17 @@
+{
+  "name": "供香盆",
+  "icon": "hibernalherbs:incense_provider",
+  "category": "hibernalherbs:utilities",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:incense_provider",
+      "title": "供香盆",
+      "text": "手持$(l:herbs/pounded_herbs)捣碎的草药$()或$(l:herbs/dried_herbs)干草药$()右键点击供香盆会根据所提供的草药类型为你提供状态效果。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:incense_provider"
+    }
+  ]
+}

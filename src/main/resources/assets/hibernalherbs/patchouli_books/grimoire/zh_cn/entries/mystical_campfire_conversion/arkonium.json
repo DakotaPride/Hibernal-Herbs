@@ -1,0 +1,17 @@
+{
+  "name": "秘铁",
+  "icon": "hibernalherbs:arkonium_ingot",
+  "category": "hibernalherbs:mystical_campfire_conversion",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:arkonium_block",
+      "text": "更高级的铁制工具和装备。每件盔甲都会获得轻微的速度提升。$(br2)秘铁可用于复制$(l:sin_alignments/arcane_ruins)铭文模板$()。"
+    },
+    {
+      "type": "hibernalherbs:mystical_campfire_conversion",
+      "recipe": "hibernalherbs:mystical_campfire_conversion/arkonium_ingot_from_iron_ingot",
+      "text": "将铁锭、铁粒或铁块放到神秘营火上即可制作。"
+    }
+  ]
+}

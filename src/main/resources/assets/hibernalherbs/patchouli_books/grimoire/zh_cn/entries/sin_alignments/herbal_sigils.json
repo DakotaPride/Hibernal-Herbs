@@ -1,0 +1,35 @@
+{
+  "name": "草药符石",
+  "icon": "hibernalherbs:pride_herbal_sigil",
+  "category": "hibernalherbs:sin_alignments",
+  "advancement": "hibernalherbs:singed_grimoire",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:deteriorated_sacrificial_rune_block",
+      "title": "衰败符文",
+      "text": "草药符石是使用$(l:sorcerer_books/agglomeration)衰败祭祀符文$()和巫师凝聚册制作而成的。不过，这只能创建一个空白的草药符石。要升级空白草药符石，必须前往$(l:sin_alignments/arcane_ruins)奥数废墟$()。请务必携带一把$(l:utilities/syrum_brush)秘金刷子$()，以便扫刷可疑的末地石！"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pride_ashes",
+      "title": "罪孽灰烬",
+      "text": "使用在奥数废墟中找到的$(l:sin_alignments/ashes_of_sin)罪孽灰烬$()和铭文模板，你现在可以将空白草药符石与七宗罪中的一宗匹配——傲慢、愤怒、嫉妒、懒惰、贪婪、暴食或淫欲。$(br2)不过，空白草药符石也可以在标准制作中用于制作精通和配置草药符石，它们是游戏后期制作的关键组件。"
+    },
+    {
+      "type": "patchouli:smithing",
+      "recipe": "hibernalherbs:smithing/pride_herbal_sigil",
+      "text": "制作草药符石时，请确保使用$(l:sin_alignments/arcane_ruins)铭文锻造模板$()而非下界合金锻造模版"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:configuration_herbal_sigil",
+      "recipe2": "hibernalherbs:mastery_herbal_sigil"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:advanced_configuration_herbal_sigil",
+      "recipe2": "hibernalherbs:advanced_mastery_herbal_sigil"
+    }
+  ]
+}

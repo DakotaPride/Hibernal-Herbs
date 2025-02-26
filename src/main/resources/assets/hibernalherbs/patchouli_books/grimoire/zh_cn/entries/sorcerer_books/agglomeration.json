@@ -1,0 +1,26 @@
+{
+  "name": "巫师凝聚册",
+  "icon": "hibernalherbs:agglomeration",
+  "category": "hibernalherbs:sorcerer_books",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:pride_herbal_sigil",
+      "text": "与草药符石结合使用，可获得与$(l:sin_alignments/herbal_sigils)七宗罪$()之一相关的特殊状态效果。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:sacrificial_rune_block",
+      "text": "与某些物品（如磁石或凋零玫瑰）结合使用，可将其转换为该物品的另一个版本。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:froze_state_copper_block",
+      "text": "可以冻结或解冻方块状态。$(br2)使用巫师凝聚册冻结方块状态，无论从功能是还是从纹理上来说，都与给方块打蜡不同，如果你使用的是冻结纹理内置资源包的话。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hibernalherbs:sorcerer_agglomeration"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "干草药",
+  "icon": "hibernalherbs:dried_chamomile",
+  "category": "hibernalherbs:herbs",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:dried_chamomile",
+      "text": "可用于制作装饰灯笼和某些$(l:sin_alignments/herbal_sigils)草药符石$()。"
+    },
+    {
+      "type": "hibernalherbs:mystical_campfire_conversion",
+      "recipe": "hibernalherbs:mystical_campfire_conversion/dried_rosemary",
+      "text": "使用神秘营火可以将捣碎的草药制成干草药。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hibernalherbs:incense_provider",
+      "text": "可在$(l:utilities/incense_provider)供香盘$()身上使用，为周围半径10米内的实体提供正面状态效果。 "
+    }
+  ]
+}
