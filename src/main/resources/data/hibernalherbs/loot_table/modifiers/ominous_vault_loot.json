@@ -5,17 +5,44 @@
       "bonus_rolls": 0,
       "entries": [
         {
-          "type": "minecraft:tag",
-          "expand": true,
-          "weight": 35,
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "hibernalherbs:greed_herbal_sigil"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "hibernalherbs:pride_herbal_sigil"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "hibernalherbs:envy_herbal_sigil"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "hibernalherbs:gluttony_herbal_sigil"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "hibernalherbs:envy_herbal_sigil"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "hibernalherbs:lust_herbal_sigil"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "hibernalherbs:wrath_herbal_sigil"
+            }
+          ],
           "functions": [
             {
               "add": false,
               "count": 1,
               "function": "minecraft:set_count"
             }
-          ],
-          "name": "hibernalherbs:herbal_sigils"
+          ]
         }
       ],
       "rolls": 1
