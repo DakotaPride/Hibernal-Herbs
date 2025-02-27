@@ -206,6 +206,6 @@ public class HibernalHerbsMod {
         builder.addContainerRecipe(Items.POTION, Items.CLOCK, ItemInit.SOLAR_POTION.get());
         builder.addContainerRecipe(ItemInit.SOLAR_POTION.get(), Items.SCULK, ItemInit.LUNAR_POTION.get());
 
-        HibernalHerbsMod.LOGGER.info("[Hibernal Herbs Dev Environment] POTION RECIPES REGISTRAR");
+        //HibernalHerbsMod.LOGGER.info("[Hibernal Herbs Dev Environment] POTION RECIPES REGISTRAR");
     }
 }
