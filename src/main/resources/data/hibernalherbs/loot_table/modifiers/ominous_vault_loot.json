@@ -45,7 +45,13 @@
           ]
         }
       ],
-      "rolls": 1
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.35
+        }
+      ]
     }
   ],
   "random_sequence": "hibernalherbs:modifiers/ominous_vault_loot"
