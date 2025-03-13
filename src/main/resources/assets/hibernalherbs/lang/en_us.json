@@ -20,7 +20,7 @@
   "tag.hibernalherbs.herbal_blends.description": "An item that can be consumed to provide a status effect. Force feeding other players is on the table!",
   "tag.hibernalherbs.ashes.description": "An item that can be found buried in Suspicious End Stone, it can be used to make Herbal Sigils that are aligned with the ashes.",
   "tag.hibernalherbs.bound_herbal_padlocks.description": "An item that provides certain buffs or debuffs while equipped in your necklace slot.",
-  "tag.hibernalherbs.grimoires.description": "A book providing documentation on Hibernal Herbs.",
+  "tag.hibernalherbs.herbal_grimoires.description": "A book providing documentation on Hibernal Herbs.",
   "tag.hibernalherbs.herbal_sigils.description": "An item that can be used alongside a Sorcerer's Agglomeration or Tome to provide the user effects that may prove useful.",
 
   "advancements.hibernalherbs.arkonium.description": "Conjure Arkonium Ingots from Iron",
