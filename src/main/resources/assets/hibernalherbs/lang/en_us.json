@@ -821,5 +821,18 @@
   "item.hibernalherbs.lunar_potion.effect.frost_resistance": "Lunar Potion of Frost Resistance",
   "item.hibernalherbs.lunar_potion.effect.swarming": "Lunar Potion of Swarming",
   "item.hibernalherbs.lunar_potion.effect.instability": "Lunar Potion of Instability",
-  "item.hibernalherbs.lunar_potion.effect.shrieking": "Lunar Potion of Shrieking"
+  "item.hibernalherbs.lunar_potion.effect.shrieking": "Lunar Potion of Shrieking",
+
+  "item.hibernalherbs.enigmatic_potion.effect.gravity_increase": "Enigmatic Potion of Gravity Increase",
+  "item.hibernalherbs.enigmatic_potion.effect.transfiguring": "Enigmatic Potion of Transfiguring",
+  "item.hibernalherbs.enigmatic_potion.effect.reach": "Enigmatic Potion of Reaching",
+  "item.hibernalherbs.enigmatic_potion.effect.scorching": "Enigmatic Potion of Scorching",
+  "item.hibernalherbs.solar_potion.effect.gravity_increase": "Enigmatic Potion of Gravity Increase",
+  "item.hibernalherbs.solar_potion.effect.transfiguring": "Enigmatic Potion of Transfiguring",
+  "item.hibernalherbs.solar_potion.effect.reach": "Enigmatic Potion of Reaching",
+  "item.hibernalherbs.solar_potion.effect.scorching": "Enigmatic Potion of Scorching",
+  "item.hibernalherbs.lunar_potion.effect.gravity_increase": "Enigmatic Potion of Gravity Increase",
+  "item.hibernalherbs.lunar_potion.effect.transfiguring": "Enigmatic Potion of Transfiguring",
+  "item.hibernalherbs.lunar_potion.effect.reach": "Enigmatic Potion of Reaching",
+  "item.hibernalherbs.lunar_potion.effect.scorching": "Enigmatic Potion of Scorching"
 }
