@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalherbs.item;
 
+import net.dakotapride.hibernalherbs.HibernalHerbsClientMod;
 import net.dakotapride.hibernalherbs.food.FoodComponentList;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalBlendTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
@@ -107,9 +108,9 @@ public class HerbalBlendItem extends Item implements FoodComponentList {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
-        if (!Screen.hasShiftDown()) {
+        if (!HibernalHerbsClientMod.hasShiftDown()) {
             tooltip.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
-        } else if (Screen.hasShiftDown()) {
+        } else if (HibernalHerbsClientMod.hasShiftDown()) {
             HerbalBlendTypes.applyToTooltip(stack, tooltip);
 
 //                if (stack.is(Tags.Items.SMOKED_BLENDS.getTag())) {

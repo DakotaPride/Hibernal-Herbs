@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalherbs.item;
 
+import net.dakotapride.hibernalherbs.HibernalHerbsClientMod;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalSigilTypes;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -18,9 +19,9 @@ public class HerbalSigilItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable TooltipContext ctx, List<Component> tooltip, TooltipFlag tooltipFlag) {
-        if (!Screen.hasShiftDown()) {
+        if (!HibernalHerbsClientMod.hasShiftDown()) {
             tooltip.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
-        } else if (Screen.hasShiftDown()) {
+        } else if (HibernalHerbsClientMod.hasShiftDown()) {
             HerbalSigilTypes.applyHerbalSigilAssistanceTooltip(stack, tooltip);
 
             if (!Screen.hasAltDown()) {

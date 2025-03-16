@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalherbs.item;
 
+import net.dakotapride.hibernalherbs.HibernalHerbsClientMod;
 import net.dakotapride.hibernalherbs.HibernalHerbsMod;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -36,9 +37,9 @@ public class HerbalGrimoireItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-        if (!Screen.hasShiftDown()) {
+        if (!HibernalHerbsClientMod.hasShiftDown()) {
             list.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
-        } else if (Screen.hasShiftDown()) {
+        } else if (HibernalHerbsClientMod.hasShiftDown()) {
             list.add(Component.translatable("text.hibernalherbs.grimoire.description.one").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
             list.add(Component.translatable("text.hibernalherbs.grimoire.description.two").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         }

@@ -10,11 +10,14 @@ import net.dakotapride.hibernalherbs.init.enum_registry.HerbTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.WoodTypes;
 import net.dakotapride.hibernalherbs.item.HerbalPadlockItem;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -27,6 +30,11 @@ import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.resources.model.Material;
 
 public class HibernalHerbsClientMod implements ClientModInitializer {
+
+    @Environment(EnvType.CLIENT)
+    public static boolean hasShiftDown() {
+        return Screen.hasShiftDown();
+    }
 
     @Override
     public void onInitializeClient() {

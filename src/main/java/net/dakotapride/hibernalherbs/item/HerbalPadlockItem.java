@@ -8,6 +8,7 @@ import io.wispforest.accessories.api.client.AccessoriesRendererRegistry;
 import io.wispforest.accessories.api.client.AccessoryRenderer;
 import io.wispforest.accessories.api.client.SimpleAccessoryRenderer;
 import io.wispforest.accessories.api.slot.SlotReference;
+import net.dakotapride.hibernalherbs.HibernalHerbsClientMod;
 import net.dakotapride.hibernalherbs.HibernalHerbsMod;
 import net.dakotapride.hibernalherbs.init.enum_registry.PadlockTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
@@ -170,10 +171,10 @@ public class HerbalPadlockItem extends Item implements Accessory {
             tooltip.add(Component.literal(""));
         }
 
-        if (!Screen.hasShiftDown()) {
+        if (!HibernalHerbsClientMod.hasShiftDown()) {
             tooltip.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
             //tooltip.add(Component.literal(""));
-        } else if (Screen.hasShiftDown()) {
+        } else if (HibernalHerbsClientMod.hasShiftDown()) {
             PadlockTypes.applyPadlockTypeTooltip(stack, tooltip);
             //tooltip.add(Component.literal(""));
 

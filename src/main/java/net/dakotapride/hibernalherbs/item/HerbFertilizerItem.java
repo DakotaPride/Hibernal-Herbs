@@ -1,5 +1,6 @@
 package net.dakotapride.hibernalherbs.item;
 
+import net.dakotapride.hibernalherbs.HibernalHerbsClientMod;
 import net.dakotapride.hibernalherbs.init.enum_registry.FertilizerTypes;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -19,9 +20,9 @@ public class HerbFertilizerItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
 
-        if (!Screen.hasShiftDown()) {
+        if (!HibernalHerbsClientMod.hasShiftDown()) {
             list.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
-        } else if (Screen.hasShiftDown()) {
+        } else if (HibernalHerbsClientMod.hasShiftDown()) {
             FertilizerTypes.applyFertilizerAssistanceTooltip(stack, list);
 
             FertilizerTypes.applyProductionValueTooltip(stack, list);
