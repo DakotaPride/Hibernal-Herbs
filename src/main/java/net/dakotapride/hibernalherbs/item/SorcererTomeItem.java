@@ -1,8 +1,5 @@
 package net.dakotapride.hibernalherbs.item;
 
-import dev.emi.emi.api.EmiRegistry;
-import net.dakotapride.hibernalherbs.emi.AbstractTomeUsageRecipe;
-import net.dakotapride.hibernalherbs.emi.HibernalHerbsEmiPlugin;
 import net.dakotapride.hibernalherbs.init.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalSigilTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.PadlockTypes;
@@ -27,7 +24,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -230,14 +226,6 @@ public class SorcererTomeItem extends Item {
                 itemStack.set(DataComponentInit.IS_BEING_USED, false);
             }
         }
-    }
-
-    public static void createEmiRecipe(EmiRegistry registry, Item item0, Item item1) {
-        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractTomeUsageRecipe.CustomTomeUsageRecipe(item0.getDefaultInstance(), item1.getDefaultInstance(), false));
-    }
-
-    public static void createBoundPadlockRecipe(EmiRegistry registry, PadlockTypes types) {
-        createEmiRecipe(registry, types.getUnboundPadlockItem(), types.getBoundPadlockItem());
     }
 
     @Override

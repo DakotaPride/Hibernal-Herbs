@@ -35,9 +35,11 @@
 		"minecraft": "~1.21",
 		"java": ">=21",
 		"fabric-api": "*",
-		"emi": "*",
 		"accessories": "*",
 		"patchouli": "*"
+	},
+	"suggests": {
+		"emi": "*"
 	},
 	"custom": {
 		"catalogue": {
