@@ -32,7 +32,7 @@ public class HerbFertilizerItem extends Item {
 
             //HerbHumusItem.getProductionValueTooltip(stack, list);
 
-            if (!Screen.hasAltDown()) {
+            if (!HibernalHerbsClientMod.hasAltDown()) {
                 list.add(Component.literal(""));
                 list.add(Component.translatable("text.hibernalherbs.controls.left_alt").withStyle(ChatFormatting.DARK_GRAY));
             } else {

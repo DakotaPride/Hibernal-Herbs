@@ -36,6 +36,11 @@ public class HibernalHerbsClientMod implements ClientModInitializer {
         return Screen.hasShiftDown();
     }
 
+    @Environment(EnvType.CLIENT)
+    public static boolean hasAltDown() {
+        return Screen.hasAltDown();
+    }
+
     @Override
     public void onInitializeClient() {
         FabricModelPredicateProviderRegistry.register(ItemInit.SORCERER_AGGLOMERATION, HibernalHerbsMod.asResource("is_using_agglomeration"),

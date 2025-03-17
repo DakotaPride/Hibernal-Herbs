@@ -119,53 +119,30 @@ public class HerbalBlendItem extends Item implements FoodComponentList {
 //                    tooltip.add(Component.translatable("text.hibernalherbs.blend.modifier.smoked.false").withStyle(ChatFormatting.GRAY));
 //                }
 
-            if (!Screen.hasAltDown()) {
+            if (!HibernalHerbsClientMod.hasAltDown()) {
                 tooltip.add(Component.literal(""));
                 tooltip.add(Component.translatable("text.hibernalherbs.controls.left_alt").withStyle(ChatFormatting.DARK_GRAY));
             } else {
-                if (!stack.is(HerbalBlendTypes.FIRE.getHerbalBlend())) {
-                    tooltip.add(Component.literal(""));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.ability.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.ability.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.literal(""));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.ability.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.ability.help.two").withStyle(ChatFormatting.DARK_PURPLE));
 
-                    tooltip.add(Component.literal(""));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.effect.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.effect.help.two").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.effect.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.literal(""));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.effect.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.effect.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.effect.help.three").withStyle(ChatFormatting.DARK_PURPLE));
 
-                    tooltip.add(Component.literal(""));
-                    tooltip.add(Component.translatable("text.hibernalherbs.controls.left_click.player").withStyle(ChatFormatting.DARK_GRAY));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.two").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.three").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.literal(""));
+                tooltip.add(Component.translatable("text.hibernalherbs.controls.left_click.player").withStyle(ChatFormatting.DARK_GRAY));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.three").withStyle(ChatFormatting.DARK_PURPLE));
 
-                    tooltip.add(Component.literal(""));
-                    tooltip.add(Component.translatable("text.hibernalherbs.controls.right_click.player").withStyle(ChatFormatting.DARK_GRAY));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.two").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.three").withStyle(ChatFormatting.DARK_PURPLE));
-                } else {
-                    tooltip.add(Component.literal(""));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.ability.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.ability.help.two").withStyle(ChatFormatting.DARK_PURPLE));
-
-                    tooltip.add(Component.literal(""));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.effect.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.effect.help.two").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.effect.help.three").withStyle(ChatFormatting.DARK_PURPLE));
-
-                    tooltip.add(Component.literal(""));
-                    tooltip.add(Component.translatable("text.hibernalherbs.controls.left_click.player").withStyle(ChatFormatting.DARK_GRAY));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.two").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.attacking.help.three").withStyle(ChatFormatting.DARK_PURPLE));
-
-                    tooltip.add(Component.literal(""));
-                    tooltip.add(Component.translatable("text.hibernalherbs.controls.right_click.player").withStyle(ChatFormatting.DARK_GRAY));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.one").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.two").withStyle(ChatFormatting.DARK_PURPLE));
-                    tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.three").withStyle(ChatFormatting.DARK_PURPLE));
-                }
+                tooltip.add(Component.literal(""));
+                tooltip.add(Component.translatable("text.hibernalherbs.controls.right_click.player").withStyle(ChatFormatting.DARK_GRAY));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.one").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.two").withStyle(ChatFormatting.DARK_PURPLE));
+                tooltip.add(Component.translatable("text.hibernalherbs.blend.player_pour.help.three").withStyle(ChatFormatting.DARK_PURPLE));
             }
         }
     }
