@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "hibernalherbs:block/marjoram_herb_barrel",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "hibernalherbs:block/marjoram_herb_barrel"
+    },
+    "axis=z": {
+      "model": "hibernalherbs:block/marjoram_herb_barrel",
+      "x": 90
     }
   }
 }
