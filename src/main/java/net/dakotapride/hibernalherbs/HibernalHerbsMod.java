@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.dakotapride.hibernalherbs.init.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
@@ -16,6 +17,8 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -36,6 +39,16 @@ public class HibernalHerbsMod {
     public static final String MOD_ID = "hibernalherbs";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
+
+    @OnlyIn(Dist.CLIENT)
+    public static boolean hasShiftDown() {
+        return Screen.hasShiftDown();
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static boolean hasAltDown() {
+        return Screen.hasAltDown();
+    }
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -108,78 +121,6 @@ public class HibernalHerbsMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {}
-
-//    @SubscribeEvent
-//    public void lootTableEvents(LootTableLoadEvent event) {
-////        if (event.getTable().getLootTableId().equals(BuiltInLootTables.SPAWNER_TRIAL_ITEMS_TO_DROP_WHEN_OMINOUS)) {
-////            LootPool swarming_potion = LootPool.lootPool()
-////                    .setRolls(ConstantValue.exactly(1))
-////                    .when(LootItemRandomChanceCondition.randomChance(1.00F))//0.15
-////                    .add(
-////                            LootItem.lootTableItem(Items.LINGERING_POTION)
-////                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                                    .apply(SetPotionFunction.setPotion(PotionsInit.SWARMING))
-////                    )
-////                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))).build();
-////            LootPool instability_potion = LootPool.lootPool()
-////                    .setRolls(ConstantValue.exactly(1))
-////                    .when(LootItemRandomChanceCondition.randomChance(0.05F))//0.05
-////                    .add(
-////                            LootItem.lootTableItem(Items.LINGERING_POTION)
-////                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                                    .apply(SetPotionFunction.setPotion(PotionsInit.INSTABILITY))
-////                    )
-////                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))).build();
-////            LootPool shrieking_potion = LootPool.lootPool()
-////                    .setRolls(ConstantValue.exactly(1))
-////                    .when(LootItemRandomChanceCondition.randomChance(0.35F))//0.35
-////                    .add(
-////                            LootItem.lootTableItem(Items.LINGERING_POTION)
-////                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                                    .apply(SetPotionFunction.setPotion(PotionsInit.SHRIEKING))
-////                    )
-////                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))).build();
-////
-////            event.setTable((LootTable) List.of(swarming_potion, instability_potion, shrieking_potion));
-////        }
-//
-////        if (event.getTable().getLootTableId().equals(BuiltInLootTables.TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE)) {
-////                LootPool herbal_sigils = LootPool.lootPool()
-////                        .setRolls(ConstantValue.exactly(1))
-////                        .when(LootItemRandomChanceCondition.randomChance(0.35F))//35%
-////                        .add(
-////                                LootItem.lootTableItem(HerbalSigilTypes.PRIDE.getHerbalSigilItem())
-////                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                        )
-////                        .add(
-////                                LootItem.lootTableItem(HerbalSigilTypes.ENVY.getHerbalSigilItem())
-////                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                        )
-////                        .add(
-////                                LootItem.lootTableItem(HerbalSigilTypes.WRATH.getHerbalSigilItem())
-////                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                        )
-////                        .add(
-////                                LootItem.lootTableItem(HerbalSigilTypes.GREED.getHerbalSigilItem())
-////                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                        )
-////                        .add(
-////                                LootItem.lootTableItem(HerbalSigilTypes.GLUTTONY.getHerbalSigilItem())
-////                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                        )
-////                        .add(
-////                                LootItem.lootTableItem(HerbalSigilTypes.SLOTH.getHerbalSigilItem())
-////                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                        )
-////                        .add(
-////                                LootItem.lootTableItem(HerbalSigilTypes.LUST.getHerbalSigilItem())
-////                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-////                        )
-////                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))).build();
-////
-////                event.setTable((LootTable) List.of(herbal_sigils));
-////            }
-//    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent

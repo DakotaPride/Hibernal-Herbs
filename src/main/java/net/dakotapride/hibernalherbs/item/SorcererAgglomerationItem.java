@@ -3,9 +3,6 @@ package net.dakotapride.hibernalherbs.item;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
-import dev.emi.emi.api.EmiRegistry;
-import net.dakotapride.hibernalherbs.emi.AbstractAgglomerationUsageRecipe;
-import net.dakotapride.hibernalherbs.emi.HibernalHerbsEmiPlugin;
 import net.dakotapride.hibernalherbs.init.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.FrozeBlockstates;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbTypes;
@@ -315,33 +312,6 @@ public class SorcererAgglomerationItem extends Item {
                 itemStack.set(DataComponentInit.IS_BEING_USED, false);
             }
         }
-    }
-
-    public static void createStoneConversionEmiRecipe(EmiRegistry registry,
-                                                      Item base, Item cobbled, Item bricks, Item polished,
-                                                      StoneTypes types) {
-        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
-                CustomAgglomerationUsageRecipe(base.getDefaultInstance(), types.getBaseBlock().asItem().getDefaultInstance(), false));
-        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
-                CustomAgglomerationUsageRecipe(cobbled.getDefaultInstance(), types.getCobbledBlock().asItem().getDefaultInstance(), false));
-        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
-                CustomAgglomerationUsageRecipe(bricks.getDefaultInstance(), types.getBricksBlock().asItem().getDefaultInstance(), false));
-        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
-                CustomAgglomerationUsageRecipe(polished.getDefaultInstance(), types.getPolishedBlock().asItem().getDefaultInstance(), false));
-    }
-
-    public static void createEmiRecipe(EmiRegistry registry, Item item0, Item item1) {
-        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
-                CustomAgglomerationUsageRecipe(item0.getDefaultInstance(), item1.getDefaultInstance(), false));
-    }
-
-    @Override
-    public int getUseDuration(ItemStack itemStack, LivingEntity livingEntity) {
-        if (livingEntity instanceof Player player) {
-            ItemStack itemStack1 = player.getOffhandItem();
-            return getDuration(itemStack1);
-        }
-        return 60;
     }
 
     @Override

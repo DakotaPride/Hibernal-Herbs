@@ -169,17 +169,17 @@ public class HerbalPadlockItem extends Item implements Accessory {
             tooltip.add(Component.literal(""));
         }
 
-        if (!Screen.hasShiftDown()) {
+        if (!HibernalHerbsMod.hasShiftDown()) {
             tooltip.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
             //tooltip.add(Component.literal(""));
-        } else if (Screen.hasShiftDown()) {
+        } else if (HibernalHerbsMod.hasShiftDown()) {
             PadlockTypes.applyPadlockTypeTooltip(stack, tooltip);
             //tooltip.add(Component.literal(""));
 
-            if (!Screen.hasAltDown()) {
+            if (!HibernalHerbsMod.hasAltDown()) {
                 tooltip.add(Component.literal(""));
                 tooltip.add(Component.translatable("text.hibernalherbs.controls.left_alt").withStyle(ChatFormatting.DARK_GRAY));
-            } else if (Screen.hasAltDown()) {
+            } else if (HibernalHerbsMod.hasAltDown()) {
 
                 if (stack.is(Tags.Items.BOUND_PADLOCKS.getTag())) {
                     tooltip.add(Component.literal(""));

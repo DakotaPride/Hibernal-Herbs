@@ -92,7 +92,7 @@ description='''[MMD Winterjam 2022] Wanna celebrate the holidays with a touch of
     side = "BOTH"
 [[dependencies.hibernalherbs]]
     modId = "emi"
-    type = "required"
+    type = "optional"
     versionRange = "${emi_version_range}"
     ordering = "NONE"
     side = "BOTH"

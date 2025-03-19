@@ -26,6 +26,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.block.Block;
@@ -82,6 +83,32 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
     public static final EmiTexture BARBARIC_ICON = new EmiTexture(AGGLOMERATION_EFFECTS, 72, 0, 18, 18);
     public static final EmiTexture ESURIENT_ICON = new EmiTexture(AGGLOMERATION_EFFECTS, 90, 0, 18, 18);
     public static final EmiTexture MIMICRY_ICON = new EmiTexture(AGGLOMERATION_EFFECTS, 108, 0, 18, 18);
+
+    public static void createStoneConversionEmiRecipe(EmiRegistry registry,
+                                                      Item base, Item cobbled, Item bricks, Item polished,
+                                                      StoneTypes types) {
+        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
+                CustomAgglomerationUsageRecipe(base.getDefaultInstance(), types.getBaseBlock().asItem().getDefaultInstance(), false));
+        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
+                CustomAgglomerationUsageRecipe(cobbled.getDefaultInstance(), types.getCobbledBlock().asItem().getDefaultInstance(), false));
+        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
+                CustomAgglomerationUsageRecipe(bricks.getDefaultInstance(), types.getBricksBlock().asItem().getDefaultInstance(), false));
+        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
+                CustomAgglomerationUsageRecipe(polished.getDefaultInstance(), types.getPolishedBlock().asItem().getDefaultInstance(), false));
+    }
+
+    public static void createAgglomerationEmiRecipe(EmiRegistry registry, Item item0, Item item1) {
+        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
+                CustomAgglomerationUsageRecipe(item0.getDefaultInstance(), item1.getDefaultInstance(), false));
+    }
+
+    public static void createTomeEmiRecipe(EmiRegistry registry, Item item0, Item item1) {
+        HibernalHerbsEmiPlugin.addRecipeSafe(registry, () -> new AbstractTomeUsageRecipe.CustomTomeUsageRecipe(item0.getDefaultInstance(), item1.getDefaultInstance(), false));
+    }
+
+    public static void createBoundPadlockRecipe(EmiRegistry registry, PadlockTypes types) {
+        createTomeEmiRecipe(registry, types.getUnboundPadlockItem(), types.getBoundPadlockItem());
+    }
 
     @Override
     public void register(EmiRegistry registry) {
@@ -175,11 +202,11 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
                         Component.literal(StatusEffectInit.MIMICRY.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), MIMICRY_ICON));
         // Agglomeration Usages - item
-        SorcererAgglomerationItem.createEmiRecipe(registry, Items.WITHER_ROSE, HerbTypes.SAGE.getBaseBlock().asItem());
-        SorcererAgglomerationItem.createEmiRecipe(registry, Items.LODESTONE, BlockInit.SACRIFICIAL_RUNE_BLOCK.asItem());
-        SorcererAgglomerationItem.createEmiRecipe(registry, BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.asItem(), ItemInit.BLANK_HERBAL_SIGIL.get());
-        SorcererAgglomerationItem.createStoneConversionEmiRecipe(registry, Items.STONE, Items.COBBLESTONE, Items.STONE_BRICKS, Items.SMOOTH_STONE, StoneTypes.IDIOSYNCRATIC_STONE);
-        SorcererAgglomerationItem.createStoneConversionEmiRecipe(registry, Items.DEEPSLATE, Items.COBBLED_DEEPSLATE, Items.DEEPSLATE_BRICKS, Items.POLISHED_DEEPSLATE, StoneTypes.NECROMANTIC_STONE);
+        createAgglomerationEmiRecipe(registry, Items.WITHER_ROSE, HerbTypes.SAGE.getBaseBlock().asItem());
+        createAgglomerationEmiRecipe(registry, Items.LODESTONE, BlockInit.SACRIFICIAL_RUNE_BLOCK.asItem());
+        createAgglomerationEmiRecipe(registry, BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.asItem(), ItemInit.BLANK_HERBAL_SIGIL.get());
+        createStoneConversionEmiRecipe(registry, Items.STONE, Items.COBBLESTONE, Items.STONE_BRICKS, Items.SMOOTH_STONE, StoneTypes.IDIOSYNCRATIC_STONE);
+        createStoneConversionEmiRecipe(registry, Items.DEEPSLATE, Items.COBBLED_DEEPSLATE, Items.DEEPSLATE_BRICKS, Items.POLISHED_DEEPSLATE, StoneTypes.NECROMANTIC_STONE);
 
 
         // Tome Usages - effect
@@ -233,13 +260,13 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
                         Component.literal(StatusEffectInit.MIMICRY.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), MIMICRY_ICON));
         // Tome Usages - item
-        SorcererTomeItem.createBoundPadlockRecipe(registry, PadlockTypes.PRIDE);
-        SorcererTomeItem.createBoundPadlockRecipe(registry, PadlockTypes.SLOTH);
-        SorcererTomeItem.createBoundPadlockRecipe(registry, PadlockTypes.WRATH);
-        SorcererTomeItem.createBoundPadlockRecipe(registry, PadlockTypes.LUST);
-        SorcererTomeItem.createBoundPadlockRecipe(registry, PadlockTypes.GREED);
-        SorcererTomeItem.createBoundPadlockRecipe(registry, PadlockTypes.GLUTTONY);
-        SorcererTomeItem.createBoundPadlockRecipe(registry, PadlockTypes.ENVY);
+        createBoundPadlockRecipe(registry, PadlockTypes.PRIDE);
+        createBoundPadlockRecipe(registry, PadlockTypes.SLOTH);
+        createBoundPadlockRecipe(registry, PadlockTypes.WRATH);
+        createBoundPadlockRecipe(registry, PadlockTypes.LUST);
+        createBoundPadlockRecipe(registry, PadlockTypes.GREED);
+        createBoundPadlockRecipe(registry, PadlockTypes.GLUTTONY);
+        createBoundPadlockRecipe(registry, PadlockTypes.ENVY);
 
         createDeteriorationRecipes(registry, BlockInit.SACRIFICIAL_RUNE_BLOCK.get(), BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK.get());
 
