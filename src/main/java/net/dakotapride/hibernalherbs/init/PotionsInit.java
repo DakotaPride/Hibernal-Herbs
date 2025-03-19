@@ -35,19 +35,19 @@ public class PotionsInit {
     private static void potionRecipes() {
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 
-            builder.addContainer(ItemInit.ENIGMATIC_POTION);
-            builder.addContainer(ItemInit.SOLAR_POTION);
-            builder.addContainer(ItemInit.LUNAR_POTION);
+            builder.addContainer(ItemInit.ENIGMATIC_POTION.asItem());
+            builder.addContainer(ItemInit.SOLAR_POTION.asItem());
+            builder.addContainer(ItemInit.LUNAR_POTION.asItem());
 
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(HerbTypes.SAGE.getDriedHerb()), FROST_RESISTANCE);
+            builder.addMix(Potions.AWKWARD, HerbTypes.SAGE.getDriedHerb(), PotionsInit.FROST_RESISTANCE);
 
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.BEE_NEST), SWARMING);
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.END_ROD), INSTABILITY);
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.SCULK_SHRIEKER), SHRIEKING);
+            builder.addMix(Potions.AWKWARD, Items.BEE_NEST, PotionsInit.SWARMING);
+            builder.addMix(Potions.AWKWARD, Items.END_ROD, PotionsInit.INSTABILITY);
+            builder.addMix(Potions.AWKWARD, Items.SCULK_SHRIEKER, PotionsInit.SHRIEKING);
 
-            builder.registerItemRecipe(Items.POTION, Ingredient.of(ItemInit.MYSTICAL_ASHES), ItemInit.ENIGMATIC_POTION);
-            builder.registerItemRecipe(Items.POTION, Ingredient.of(Items.CLOCK), ItemInit.SOLAR_POTION);
-            builder.registerItemRecipe(ItemInit.SOLAR_POTION, Ingredient.of(Items.SCULK), ItemInit.LUNAR_POTION);
+            builder.addContainerRecipe(Items.POTION, ItemInit.MYSTICAL_ASHES, ItemInit.ENIGMATIC_POTION);
+            builder.addContainerRecipe(Items.POTION, Items.CLOCK, ItemInit.SOLAR_POTION);
+            builder.addContainerRecipe(ItemInit.SOLAR_POTION, Items.SCULK, ItemInit.LUNAR_POTION);
         });
     }
 
