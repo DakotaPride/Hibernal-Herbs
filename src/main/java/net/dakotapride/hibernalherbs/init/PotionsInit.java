@@ -48,6 +48,8 @@ public class PotionsInit {
             builder.addContainerRecipe(Items.POTION, ItemInit.MYSTICAL_ASHES, ItemInit.ENIGMATIC_POTION);
             builder.addContainerRecipe(Items.POTION, Items.CLOCK, ItemInit.SOLAR_POTION);
             builder.addContainerRecipe(ItemInit.SOLAR_POTION, Items.SCULK, ItemInit.LUNAR_POTION);
+
+            //builder.build();
         });
     }
 

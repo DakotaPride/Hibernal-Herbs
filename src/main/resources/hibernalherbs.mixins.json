@@ -11,7 +11,8 @@
     "PiglinAiMixin",
     "PlayerMixin",
     "VillagerMixin",
-    "WoodTypeAccessor"
+    "WoodTypeAccessor",
+    "PotionSlotMixin"
   ],
   "injectors": {
     "defaultRequire": 1
