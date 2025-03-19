@@ -23,7 +23,7 @@ license="MIT"
 modId="hibernalherbs" #mandatory
 
 # The version number of the mod
-version="1.4.1.6" #mandatory
+version="1.4.1.7" #mandatory
 
 # A display name for the mod
 displayName="Hibernal Herbs" #mandatory
@@ -35,7 +35,7 @@ displayName="Hibernal Herbs" #mandatory
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 
 # A file name (in the root of the mod JAR) containing a logo for display
-#logoFile="examplemod.png" #optional
+logoFile="assets/hibernalherbs/icon.png" #optional
 
 # A text field displayed in the mod UI
 #credits="" #optional
