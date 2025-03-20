@@ -14,6 +14,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 import java.util.List;
 import java.util.Locale;
@@ -52,7 +53,7 @@ public enum HerbalBlendTypes {
 
         this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1)
                 .food(food_properties
-                        .effect(new MobEffectInstance(effect0, ticks, amplifier), 1.0f).build())));
+                        .effect(new MobEffectInstance(effect0, ticks, amplifier), 1.0f).usingConvertsTo(Items.BOWL).build())));
 //        this.smoked_herbal_blend = ItemInit.register("smoked_" + herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1)
 //                .food(food_properties
 //                        .effect(new MobEffectInstance(effect0, (int) (ticks * 1.5f), amplifier + 1), 1.0f).build())));
@@ -70,7 +71,7 @@ public enum HerbalBlendTypes {
                 // .effect(new MobEffectInstance(effect0, ticks, amplifier), 1.0f)
                 .alwaysEdible().nutrition(7).saturationModifier(0.6f);
 
-        this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1).food(food_properties.build())));
+        this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1).food(food_properties.usingConvertsTo(Items.BOWL).build())));
 //        this.smoked_herbal_blend = ItemInit.register("smoked_" + herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1).food(food_properties.build())));
 
     }
