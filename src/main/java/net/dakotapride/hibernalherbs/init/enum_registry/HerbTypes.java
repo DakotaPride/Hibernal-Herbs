@@ -90,7 +90,7 @@ public enum HerbTypes {
 
         this.lantern_block = BlockInit.register(herb_id + "_lantern", () -> new LanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN)));
         this.herb_pile_block = BlockInit.register(herb_id + "_herb_pile", () -> new LeafPileBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).noOcclusion().sound(SoundType.GRASS)));
-        this.herb_barrel_block = BlockInit.register(herb_id + "_herb_barrel", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
+        this.herb_barrel_block = BlockInit.register(herb_id + "_herb_barrel", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
 
     }
 

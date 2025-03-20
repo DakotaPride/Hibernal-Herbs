@@ -25,9 +25,9 @@ public class HerbalBlendItem extends Item implements FoodComponentList {
         super(properties);
     }
 
-    @Override
-    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
-        if (entity instanceof Player player) {
+//    @Override
+//    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
+//        if (entity instanceof Player player) {
 //            HerbalBlendTypes.applyFromConsumption(stack, player, HerbalBlendTypes.REGENERATION);
 //            HerbalBlendTypes.applyFromConsumption(stack, player, HerbalBlendTypes.POISON);
 //            HerbalBlendTypes.applyFromConsumption(stack, player, HerbalBlendTypes.SLOWNESS);
@@ -41,12 +41,12 @@ public class HerbalBlendItem extends Item implements FoodComponentList {
 //            HerbalBlendTypes.applyFromConsumption(stack, player, HerbalBlendTypes.BLINDNESS);
 //            HerbalBlendTypes.applyFromConsumption(stack, player, HerbalBlendTypes.REGENERATION_SLOWNESS);
 //            HerbalBlendTypes.applyFromConsumption(stack, player, HerbalBlendTypes.REGENERATION_SPEED_WEAKNESS);
-
-            return player.getAbilities().instabuild ? super.finishUsingItem(stack, level, entity) : new ItemStack(Items.BOWL);
-        } else {
-            return super.finishUsingItem(stack, level, entity);
-        }
-    }
+//
+//            return player.getAbilities().instabuild ? super.finishUsingItem(stack, level, entity) : new ItemStack(Items.BOWL);
+//        } else {
+//            return super.finishUsingItem(stack, level, entity);
+//        }
+//    }
 
     @Override
     public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack stack, Player player, @NotNull LivingEntity livingEntity, @NotNull InteractionHand hand) {
