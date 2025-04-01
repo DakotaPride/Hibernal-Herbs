@@ -1,11 +1,9 @@
 package net.dakotapride.hibernalherbs.client;
 
 import com.google.common.collect.Maps;
+import net.dakotapride.hibernalherbs.HibernalHerbsMod;
 import net.dakotapride.hibernalherbs.entity.render.ModBoatRenderer;
-import net.dakotapride.hibernalherbs.init.BlockEntityTypeInit;
-import net.dakotapride.hibernalherbs.init.EntityTypeInit;
-import net.dakotapride.hibernalherbs.init.ItemInit;
-import net.dakotapride.hibernalherbs.init.ParticleTypeInit;
+import net.dakotapride.hibernalherbs.init.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.FrozeBlockstates;
 import net.dakotapride.hibernalherbs.init.enum_registry.WoodTypes;
 import net.dakotapride.hibernalherbs.item.HerbalPadlockItem;
@@ -22,8 +20,10 @@ import net.minecraft.client.renderer.block.ModelBlockRenderer;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.level.block.Block;
@@ -90,6 +90,11 @@ public class ClientEvents {
 //            ItemBlockRenderTypes.setRenderLayer(frozeBlockstates.getTrapdoorBlock(), RenderType.cutout());
 //            ItemBlockRenderTypes.setRenderLayer(frozeBlockstates.getGrateBlock(), RenderType.cutout());
 //        }
+
+        ItemProperties.register(ItemInit.SORCERER_AGGLOMERATION.get(), HibernalHerbsMod.asResource("is_using_agglomeration"),
+                (stack, world, entity, seed) -> Boolean.TRUE.equals(stack.get(DataComponentInit.IS_BEING_USED)) ? 1f : 0f);
+        ItemProperties.register(ItemInit.SORCERER_TOME.get(), HibernalHerbsMod.asResource("is_using_tome"),
+                (stack, world, entity, seed) -> Boolean.TRUE.equals(stack.get(DataComponentInit.IS_BEING_USED)) ? 1f : 0f);
 
         for (WoodTypes types : WoodTypes.values()) {
             Sheets.addWoodType(types.getWoodType());

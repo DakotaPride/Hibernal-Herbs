@@ -188,7 +188,7 @@ public class SorcererAgglomerationItem extends Item {
         //ItemStack itemStack0 = livingEntity.getItemInHand(InteractionHand.MAIN_HAND);
         ItemStack itemStack1 = livingEntity.getOffhandItem();
 
-        if (itemStack1.is(Tags.Items.SIGILS.getTag())) {
+        if (itemStack1.is(Tags.Items.USABLE_HERBAL_SIGILS.getTag())) {
             //duration = 60;
 
             if (itemStack1.is(HerbalSigilTypes.PRIDE.getHerbalSigilItem())) {
@@ -312,6 +312,15 @@ public class SorcererAgglomerationItem extends Item {
                 itemStack.set(DataComponentInit.IS_BEING_USED, false);
             }
         }
+    }
+
+    @Override
+    public int getUseDuration(ItemStack itemStack, LivingEntity livingEntity) {
+        if (livingEntity instanceof Player player) {
+            ItemStack itemStack1 = player.getOffhandItem();
+            return getDuration(itemStack1);
+        }
+        return 60;
     }
 
     @Override

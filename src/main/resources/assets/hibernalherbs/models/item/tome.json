@@ -6,7 +6,7 @@
   "overrides": [
     {
       "predicate": {
-        "hibernalherbs:is_using_agglomeration": 1
+        "hibernalherbs:is_using_tome": 1
       },
       "model": "hibernalherbs:item/active_tome"
     }
