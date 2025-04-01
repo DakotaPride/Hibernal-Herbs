@@ -1,7 +1,7 @@
 {
   "values": [
     "minecraft:wither_rose",
-    "#hibernalherbs:herbal_sigils",
+    "#hibernalherbs:usable_herbal_sigils",
     "minecraft:stone",
     "minecraft:cobblestone",
     "minecraft:stone_bricks",

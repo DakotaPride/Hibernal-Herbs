@@ -4,12 +4,6 @@
     "hibernalherbs:mastery_herbal_sigil",
     "hibernalherbs:advanced_configuration_herbal_sigil",
     "hibernalherbs:advanced_mastery_herbal_sigil",
-    "hibernalherbs:pride_herbal_sigil",
-    "hibernalherbs:sloth_herbal_sigil",
-    "hibernalherbs:wrath_herbal_sigil",
-    "hibernalherbs:lust_herbal_sigil",
-    "hibernalherbs:greed_herbal_sigil",
-    "hibernalherbs:gluttony_herbal_sigil",
-    "hibernalherbs:envy_herbal_sigil"
+    "#hibernalherbs:usable_herbal_sigils"
   ]
 }

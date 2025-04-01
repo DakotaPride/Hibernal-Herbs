@@ -188,7 +188,7 @@ public class SorcererAgglomerationItem extends Item {
         //ItemStack itemStack0 = livingEntity.getItemInHand(InteractionHand.MAIN_HAND);
         ItemStack itemStack1 = livingEntity.getOffhandItem();
 
-        if (itemStack1.is(Tags.Items.SIGILS.getTag())) {
+        if (itemStack1.is(Tags.Items.USABLE_HERBAL_SIGILS.getTag())) {
             //duration = 60;
 
             if (itemStack1.is(HerbalSigilTypes.PRIDE.getHerbalSigilItem())) {

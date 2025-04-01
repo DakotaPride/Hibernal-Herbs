@@ -24,6 +24,7 @@ public class Tags {
         POUCHES("pouches"),
         CANISTERS("canisters"),
         SIGILS("herbal_sigils"),
+        USABLE_HERBAL_SIGILS("usable_herbal_sigils"),
         BOUND_PADLOCKS("bound_herbal_padlocks"),
         UNBOUND_PADLOCKS("unbound_herbal_padlocks"),
         GRIMOIRES("herbal_grimoires"),

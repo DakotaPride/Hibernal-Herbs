@@ -113,7 +113,7 @@ public class SorcererTomeItem extends Item {
         //ItemStack itemStack0 = livingEntity.getItemInHand(InteractionHand.MAIN_HAND);
         ItemStack itemStack1 = livingEntity.getOffhandItem();
 
-        if (itemStack1.is(Tags.Items.SIGILS.getTag())) {
+        if (itemStack1.is(Tags.Items.USABLE_HERBAL_SIGILS.getTag())) {
             //duration = 60;
 
             if (itemStack1.is(HerbalSigilTypes.PRIDE.getHerbalSigilItem())) {
@@ -199,7 +199,8 @@ public class SorcererTomeItem extends Item {
         // Fake recipes!
         if (livingEntity instanceof ServerPlayer player) {
             for (PadlockTypes types : PadlockTypes.values()) {
-                createItemConversion(level, player, types.getUnboundPadlockItem(), types.getBoundPadlockItem(), itemStack, itemStack1);
+                if (types != PadlockTypes.NONE)
+                    createItemConversion(level, player, types.getUnboundPadlockItem(), types.getBoundPadlockItem(), itemStack, itemStack1);
             }
         }
 
