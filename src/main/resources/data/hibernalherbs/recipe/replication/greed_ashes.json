@@ -5,17 +5,11 @@
       "item": "hibernalherbs:greed_ashes"
     },
     {
-      "item": "hibernalherbs:extract_mystical_ashes"
-    },
-    {
-      "item": "hibernalherbs:extract_vile_ashes"
-    },
-    {
-      "item": "hibernalherbs:extract_virtuous_ashes"
+      "item": "hibernalherbs:charred_paper"
     }
   ],
   "result": {
-    "count": 3,
+    "count": 2,
     "id": "hibernalherbs:greed_ashes"
   }
 }

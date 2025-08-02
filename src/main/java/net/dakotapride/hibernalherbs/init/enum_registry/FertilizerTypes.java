@@ -87,12 +87,16 @@ public enum FertilizerTypes {
 
     public static void register() {}
 
+    private static boolean isValidType(FertilizerTypes type) {
+        return type != FertilizerTypes.NONE;
+    }
+
     public static boolean checkHerbalFertilizer(ItemStack stack, FertilizerTypes type) {
-        return stack.getItem() == type.getFertilizerItem();
+        return isValidType(type) && stack.getItem() == type.getFertilizerItem();
     }
 
     public static boolean checkHerbalHumus(ItemStack stack, FertilizerTypes type) {
-        return stack.getItem() == type.getHerbHumusItem();
+        return isValidType(type) && stack.getItem() == type.getHerbHumusItem();
     }
 
     // Tooltips
@@ -104,9 +108,9 @@ public enum FertilizerTypes {
     }
 
     public static void getUniversalAssistance(ItemStack stack, List<Component> tooltip, FertilizerTypes type) {
-        if (type.getFertilizerItem() != null && checkHerbalFertilizer(stack, type)) {
+        if (isValidType(type) && checkHerbalFertilizer(stack, type)) {
             tooltip.add(Component.translatable("text.hibernalherbs.association." + type.getFertilizerId()).withStyle(ChatFormatting.GRAY));
-        } else if (type.getHerbHumusItem() != null && checkHerbalHumus(stack, type)) {
+        } else if (isValidType(type) && checkHerbalHumus(stack, type)) {
             tooltip.add(Component.translatable("text.hibernalherbs.association." + type.getFertilizerId()).withStyle(ChatFormatting.GRAY));
         }
     }
@@ -133,7 +137,7 @@ public enum FertilizerTypes {
     }
 
     public static void getProductionValue(ItemStack stack, List<Component> tooltip, FertilizerTypes type) {
-        if (checkHerbalHumus(stack, type) || (type.getFertilizerItem() != null && checkHerbalFertilizer(stack, type))) {
+        if (checkHerbalHumus(stack, type) || (isValidType(type) && checkHerbalFertilizer(stack, type))) {
             tooltip.add(Component.translatable("text.hibernalherbs.humus.production", type.getProductionValue()).withStyle(ChatFormatting.GRAY));
         }
     }

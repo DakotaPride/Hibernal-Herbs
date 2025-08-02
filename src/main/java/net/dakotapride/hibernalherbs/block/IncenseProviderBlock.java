@@ -1,17 +1,20 @@
 package net.dakotapride.hibernalherbs.block;
 
-import net.dakotapride.hibernalherbs.init.CriteriaTriggersInit;
-import net.dakotapride.hibernalherbs.init.PropertiesInit;
-import net.dakotapride.hibernalherbs.init.StatsInit;
+import dev.emi.emi.EmiPort;
+import net.dakotapride.hibernalherbs.HibernalHerbsMod;
+import net.dakotapride.hibernalherbs.init.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbTypes;
+import net.minecraft.Util;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
+import net.minecraft.client.Minecraft;
+import net.minecraft.core.*;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
@@ -20,7 +23,10 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -41,6 +47,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.Random;
 
 public class IncenseProviderBlock extends Block {
     public static final BooleanProperty FED = PropertiesInit.FED;
@@ -92,7 +100,6 @@ public class IncenseProviderBlock extends Block {
     protected void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
         if (blockState.getValue(FED)) {
             if (randomSource.nextInt(1) == 0) {
-                //blockState.setValue(FED, Boolean.FALSE);
                 serverLevel.setBlock(blockPos, this.defaultBlockState().setValue(FED, false).setValue(FACING, blockState.getValue(FACING)), 3);
             }
         }
@@ -109,51 +116,108 @@ public class IncenseProviderBlock extends Block {
 
     @Override
     protected @NotNull ItemInteractionResult useItemOn(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-        if (blockState.is(this) && !blockState.getValue(FED) && !player.getCooldowns().isOnCooldown(itemStack.getItem())) {
-            for (HerbTypes types : HerbTypes.values()) {
-                if (itemStack.is(types.getPoundedHerb())) {
-                    if (types.getIncenseEffect() != null) {
-                        provideEffectForIncenseFromPoundedHerb(itemStack, blockState, level, blockPos, player, types.getIncenseEffect());
-                    } else {
-                        if (types == HerbTypes.ROSEMARY || types == HerbTypes.CALENDULA) {
-                            final List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10F), Objects::nonNull);
-                            list.forEach(livingEntity -> {
-                                if (!level.isClientSide) {
-                                    livingEntity.removeAllEffects();
-                                }
-                            });
+        if (blockState.is(this) && !player.getCooldowns().isOnCooldown(itemStack.getItem())) {
+            if (!blockState.getValue(FED)) {
+                for (HerbTypes types : HerbTypes.values()) {
+                    if (itemStack.is(types.getPoundedHerb())) {
+                        if (types.getIncenseEffect() != null) {
+                            provideEffectForIncenseFromPoundedHerb(itemStack, blockState, level, blockPos, player, types.getIncenseEffect());
+                        } else {
+                            if (types == HerbTypes.ROSEMARY || types == HerbTypes.CALENDULA) {
+                                final List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10F), Objects::nonNull);
+                                list.forEach(livingEntity -> {
+                                    if (!level.isClientSide) {
+                                        livingEntity.removeAllEffects();
+                                    }
+                                });
 
-                            activate(player, itemStack, blockPos, blockState);
+                                activate(player, itemStack, blockPos, blockState);
+                            }
                         }
+
+                        level.setBlock(blockPos, this.defaultBlockState().setValue(FED, true).setValue(FACING, blockState.getValue(FACING)), 3);
+                        return ItemInteractionResult.SUCCESS;
+                    } else if (itemStack.is(types.getDriedHerb())) {
+                        if (types.getIncenseEffect() != null) {
+                            provideEffectForIncenseFromDriedHerb(itemStack, blockState, level, blockPos, player, types.getIncenseEffect());
+                        } else {
+                            if (types == HerbTypes.ROSEMARY || types == HerbTypes.CALENDULA) {
+                                final List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10F), Objects::nonNull);
+                                list.forEach(livingEntity -> {
+                                    if (!level.isClientSide) {
+                                        livingEntity.removeAllEffects();
+                                    }
+                                });
+
+                                activate(player, itemStack, blockPos, blockState);
+                            }
+                        }
+
+                        level.setBlock(blockPos, this.defaultBlockState().setValue(FED, true).setValue(FACING, blockState.getValue(FACING)), 3);
+                        return ItemInteractionResult.SUCCESS;
+                    }
+                }
+
+                //HibernalHerbsMod.LOGGER.info("[Hibernal Herbs] THIS IS CHECKING FOR AN HERB TYPE");
+            } else if (blockState.getValue(FED) && level.getBlockState(blockPos.below()).is(BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK)) {
+                if (itemStack.is(Items.PAPER)) {
+                    if (!player.getAbilities().instabuild) {
+                        itemStack.shrink(1);
+                        player.getCooldowns().addCooldown(itemStack.getItem(), 40);
                     }
 
-                    level.setBlock(blockPos, this.defaultBlockState().setValue(FED, true).setValue(FACING, blockState.getValue(FACING)), 3);
-                    //this.defaultBlockState().setValue(FED, Boolean.TRUE);
+                    player.addItem(new ItemStack(ItemInit.CHARRED_PAPER.get(), 1));
+
+                    level.setBlock(blockPos, this.defaultBlockState().setValue(FED, false).setValue(FACING, blockState.getValue(FACING)), 3);
+
                     return ItemInteractionResult.SUCCESS;
-                } else if (itemStack.is(types.getDriedHerb())) {
-                    if (types.getIncenseEffect() != null) {
-                        provideEffectForIncenseFromDriedHerb(itemStack, blockState, level, blockPos, player, types.getIncenseEffect());
-                    } else {
-                        if (types == HerbTypes.ROSEMARY || types == HerbTypes.CALENDULA) {
-                            final List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10F), Objects::nonNull);
-                            list.forEach(livingEntity -> {
-                                if (!level.isClientSide) {
-                                    livingEntity.removeAllEffects();
-                                }
-                            });
+                }
+                if (itemStack.is(Items.BOOK)) {
 
-                            activate(player, itemStack, blockPos, blockState);
-                        }
+                    if (!player.getAbilities().instabuild) {
+                        itemStack.shrink(1);
+                        player.getCooldowns().addCooldown(itemStack.getItem(), 40);
                     }
 
-                    level.setBlock(blockPos, this.defaultBlockState().setValue(FED, true).setValue(FACING, blockState.getValue(FACING)), 3);
-                    //this.defaultBlockState().setValue(FED, Boolean.TRUE);
+                    int random = new Random().nextInt(100);
+                    int source = RandomSource.create().nextInt(100);
+                    RandomSource source0 = RandomSource.create(source);
+
+                    if (random < 75) {
+                        ItemStack enchantedStack = Items.ENCHANTED_BOOK.getDefaultInstance();
+
+                        Registry<Enchantment> enchantments = level.registryAccess().registryOrThrow(Registries.ENCHANTMENT);
+
+                        List<Enchantment> list = enchantments.stream().toList();
+                        Optional<Enchantment> optional = Util.getRandomSafe(list, source0);
+                        if (optional.isEmpty()) {
+                            HibernalHerbsMod.LOGGER.warn("Couldn't find a compatible enchantment for {}", enchantedStack);
+                        } else {
+                            enchantItem(enchantedStack, enchantments.wrapAsHolder(optional.get()));
+                        }
+
+                        player.addItem(enchantedStack);
+                    } else {
+                        player.addItem(new ItemStack(ItemInit.CHARRED_PAPER.get(), 1));
+                    }
+
+                    level.setBlock(blockPos, this.defaultBlockState().setValue(FED, false).setValue(FACING, blockState.getValue(FACING)), 3);
+
                     return ItemInteractionResult.SUCCESS;
                 }
             }
         }
 
         return super.useItemOn(itemStack, blockState, level, blockPos, player, interactionHand, blockHitResult);
+    }
+
+    private static ItemStack enchantItem(ItemStack stack, Holder<Enchantment> enchantment) {
+        if (stack.is(Items.BOOK)) {
+            stack = new ItemStack(Items.ENCHANTED_BOOK);
+        }
+
+        stack.enchant(enchantment, enchantment.value().getMinLevel());
+        return stack;
     }
 
     private static void provideEffectForIncenseFromPoundedHerb(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, Holder<MobEffect> effect) {
@@ -184,15 +248,11 @@ public class IncenseProviderBlock extends Block {
     }
 
     private static void makeParticles(Level level, BlockPos blockPos, RandomSource randomSource) {
-        //int i = (blockState.getValue(FACING)).get2DDataValue();
-
         for(int j = 0; j < 20; ++j) {
             if (randomSource.nextFloat() < 0.2F) {
-                //Direction direction = Direction.from2DDataValue(Math.floorMod(j + i, 4));
-                //float f = 0.3125F;
-                double d = (double)blockPos.getX() + 0.5 /*- (double)((float)direction.getStepX() * 0.3125F) + (double)((float)direction.getClockWise().getStepX() * 0.3125F)*/;
+                double d = (double)blockPos.getX() + 0.5;
                 double e = (double)blockPos.getY() + 0.5;
-                double g = (double)blockPos.getZ() + 0.5 /*- (double)((float)direction.getStepZ() * 0.3125F) + (double)((float)direction.getClockWise().getStepZ() * 0.3125F)*/;
+                double g = (double)blockPos.getZ() + 0.5;
 
                 for(int k = 0; k < 1; ++k) {
                     level.addParticle(ParticleTypes.SMOKE, d, e, g, 0.0, 5.0E-4, 0.0);

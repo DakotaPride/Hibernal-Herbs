@@ -1,6 +1,8 @@
 package net.dakotapride.hibernalherbs.emi;
 
+import com.google.common.collect.Lists;
 import dev.emi.emi.EmiPort;
+import dev.emi.emi.EmiUtil;
 import dev.emi.emi.api.EmiEntrypoint;
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;
@@ -10,30 +12,33 @@ import dev.emi.emi.api.render.EmiTexture;
 import dev.emi.emi.api.stack.Comparison;
 import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
+import dev.emi.emi.recipe.EmiAnvilRecipe;
 import dev.emi.emi.recipe.EmiCookingRecipe;
+import dev.emi.emi.recipe.special.EmiGrindstoneDisenchantingBookRecipe;
+import dev.emi.emi.recipe.special.EmiGrindstoneDisenchantingRecipe;
 import dev.emi.emi.runtime.EmiReloadLog;
 import net.dakotapride.hibernalherbs.HibernalHerbsMod;
-import net.dakotapride.hibernalherbs.init.BlockInit;
-import net.dakotapride.hibernalherbs.init.ItemInit;
-import net.dakotapride.hibernalherbs.init.RecipeInit;
-import net.dakotapride.hibernalherbs.init.StatusEffectInit;
+import net.dakotapride.hibernalherbs.init.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
-import net.dakotapride.hibernalherbs.item.SorcererAgglomerationItem;
-import net.dakotapride.hibernalherbs.item.SorcererTomeItem;
 import net.dakotapride.hibernalherbs.recipe.MysticalCampfireCookingRecipe;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.tags.EnchantmentTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.TallFlowerBlock;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 @EmiEntrypoint
@@ -46,6 +51,7 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
     public static final EmiStack DETERIORATED_SACRIFICIAL_RUNE = EmiStack.of(BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK);
     public static final EmiStack FROZE_STATE_SACRIFICIAL_RUNE = EmiStack.of(BlockInit.FROZE_STATE_SACRIFICIAL_RUNE_BLOCK);
     public static final EmiStack WEATHERED_COPPER_BLOCK = EmiStack.of(Blocks.WEATHERED_COPPER);
+    public static final EmiStack INCENSE_PROVIDER = EmiStack.of(BlockInit.INCENSE_PROVIDER);
     public static final EmiStack IRON_SICKLE = EmiStack.of(Sickles.IRON.getSickleItem());
     public static final EmiRecipeCategory MYSTICAL_CAMPFIRE_CONVERSION =
             new EmiRecipeCategory(HibernalHerbsMod.asResource("mystical_campfire_conversion"),
@@ -74,6 +80,9 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
     public static final EmiRecipeCategory UNFREEZING_STATE =
             new EmiRecipeCategory(HibernalHerbsMod.asResource("unfreezing_state"),
                     WEATHERED_COPPER_BLOCK, new EmiTexture(SPRITE_SHEET, 16, 0, 16, 16));
+    public static final EmiRecipeCategory INCENSE_BURNING =
+            new EmiRecipeCategory(HibernalHerbsMod.asResource("incense_item_burning"),
+                    INCENSE_PROVIDER, new EmiTexture(SPRITE_SHEET, 64, 0, 16, 16));
 
     public static final ResourceLocation AGGLOMERATION_EFFECTS = HibernalHerbsMod.asResource("textures/gui/recipe_viewer/agglomeration_effect_icons.png");
     public static final EmiTexture SANGUINE_ICON = new EmiTexture(AGGLOMERATION_EFFECTS, 0, 0, 18, 18);
@@ -122,6 +131,7 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         registry.addCategory(FREEZING_STATE);
         registry.addCategory(UNFREEZING_STATE);
         registry.addCategory(REVERT_DETERIORATION);
+        registry.addCategory(INCENSE_BURNING);
 
         Comparison potionComparison = Comparison.compareData(stack -> stack.get(DataComponents.POTION_CONTENTS));
 
@@ -146,6 +156,8 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         registry.addWorkstation(UNFREEZING_STATE, SORCERER_AGGLOMERATION);
         registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Tags.Items.SICKLES.getTag()));
         registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Ingredient.of(Items.WIND_CHARGE)));
+        registry.addWorkstation(INCENSE_BURNING, INCENSE_PROVIDER);
+        registry.addWorkstation(INCENSE_BURNING, DETERIORATED_SACRIFICIAL_RUNE);
 
         for (MysticalCampfireCookingRecipe recipe : getRecipes(registry, RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE.get())) {
             addRecipeSafe(registry, () -> new EmiCookingRecipe(recipe, MYSTICAL_CAMPFIRE_CONVERSION, 1, true), recipe);
@@ -285,10 +297,19 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
             createFreezingRecipes(registry, states.getTrapdoorBlock(), states.getFrozeTrapdoorState());
             createFreezingRecipes(registry, states.getBulbBlock(), states.getFrozeBulbState());
         }
+
+        // Incense Item Burning
+        createItemBurningFromIncenseRecipe(registry, Items.PAPER, ItemInit.CHARRED_PAPER.asItem(), false, 100);
+        createItemBurningFromIncenseRecipe(registry, Items.BOOK, Items.ENCHANTED_BOOK, true, 75);
+        createItemBurningFromIncenseRecipe(registry, Items.BOOK, ItemInit.CHARRED_PAPER.asItem(), false, 25);
     }
 
     private static <C extends RecipeInput, T extends Recipe<C>> Iterable<T> getRecipes(EmiRegistry registry, RecipeType<T> type) {
         return registry.getRecipeManager().getAllRecipesFor(type).stream().map(RecipeHolder::value)::iterator;
+    }
+
+    private static void createItemBurningFromIncenseRecipe(EmiRegistry registry, Item input, Item result, boolean ench, int chance) {
+        addRecipeSafe(registry, () -> new IncenseItemBurningFakeRecipe(input.getDefaultInstance(), result.getDefaultInstance(), ench, chance));
     }
 
     private static void createDeteriorationRecipes(EmiRegistry registry, Block block, Block block2) {

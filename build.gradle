@@ -160,6 +160,7 @@ dependencies {
 
     // EMI
     //modCompileOnly "dev.emi:emi-fabric:${emi_version}+${minecraft_version}:api"
+    //implementation "dev.emi:emi-neoforge:${emi_version}+${minecraft_version}"
     implementation "dev.emi:emi-neoforge:${emi_version}+${minecraft_version}"
 
     // Terraform API
