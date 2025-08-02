@@ -45,6 +45,7 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
     public static final EmiStack FROZE_STATE_SACRIFICIAL_RUNE = EmiStack.of(BlockInit.FROZE_STATE_SACRIFICIAL_RUNE_BLOCK);
     public static final EmiStack WEATHERED_COPPER_BLOCK = EmiStack.of(Blocks.WEATHERED_COPPER);
     public static final EmiStack IRON_SICKLE = EmiStack.of(Sickles.IRON.getSickleItem());
+    public static final EmiStack INCENSE_PROVIDER = EmiStack.of(BlockInit.INCENSE_PROVIDER);
     public static final EmiRecipeCategory MYSTICAL_CAMPFIRE_CONVERSION =
             new EmiRecipeCategory(HibernalHerbsMod.asResource("mystical_campfire_conversion"),
                     MYSTICAL_CAMPFIRE, new EmiTexture(SPRITE_SHEET, 0, 0, 16, 16));
@@ -72,6 +73,9 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
     public static final EmiRecipeCategory UNFREEZING_STATE =
             new EmiRecipeCategory(HibernalHerbsMod.asResource("unfreezing_state"),
                     WEATHERED_COPPER_BLOCK, new EmiTexture(SPRITE_SHEET, 16, 0, 16, 16));
+    public static final EmiRecipeCategory INCENSE_BURNING =
+            new EmiRecipeCategory(HibernalHerbsMod.asResource("incense_item_burning"),
+                    INCENSE_PROVIDER, new EmiTexture(SPRITE_SHEET, 64, 0, 16, 16));
 
     public static final ResourceLocation AGGLOMERATION_EFFECTS = HibernalHerbsMod.asResource("textures/gui/recipe_viewer/agglomeration_effect_icons.png");
     public static final EmiTexture SANGUINE_ICON = new EmiTexture(AGGLOMERATION_EFFECTS, 0, 0, 18, 18);
@@ -120,6 +124,7 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         registry.addCategory(FREEZING_STATE);
         registry.addCategory(UNFREEZING_STATE);
         registry.addCategory(REVERT_DETERIORATION);
+        registry.addCategory(INCENSE_BURNING);
 
         //registry.addRecipe(new EmiInfoRecipe(List.of(EmiIngredient.of(Ingredient.of(ItemInit.LIFE_FORCE_BOTTLE))), List.of(Component.translatable("emi.hibernalherbs.information.life_force"), Component.translatable("emi.hibernalherbs.information.life_force.usage"), Component.translatable("emi.hibernalherbs.information.life_force.slashing")), HibernalHerbsMod.asResource("life_force")));
 
@@ -136,6 +141,8 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         registry.addWorkstation(UNFREEZING_STATE, SORCERER_AGGLOMERATION);
         registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Tags.Items.SICKLES.getTag()));
         registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Ingredient.of(Items.WIND_CHARGE)));
+        registry.addWorkstation(INCENSE_BURNING, INCENSE_PROVIDER);
+        registry.addWorkstation(INCENSE_BURNING, DETERIORATED_SACRIFICIAL_RUNE);
 
         //Comparison potionComparison = Comparison.compareData(stack -> stack.get(DataComponents.POTION_CONTENTS));
 
@@ -282,6 +289,15 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
             createFreezingRecipes(registry, states.getTrapdoorBlock(), states.getFrozeTrapdoorState());
             createFreezingRecipes(registry, states.getBulbBlock(), states.getFrozeBulbState());
         }
+
+        // Incense Item Burning
+        createItemBurningFromIncenseRecipe(registry, Items.PAPER, ItemInit.CHARRED_PAPER.asItem(), false, 100);
+        createItemBurningFromIncenseRecipe(registry, Items.BOOK, Items.ENCHANTED_BOOK, true, 75);
+        createItemBurningFromIncenseRecipe(registry, Items.BOOK, ItemInit.CHARRED_PAPER.asItem(), false, 25);
+    }
+
+    private static void createItemBurningFromIncenseRecipe(EmiRegistry registry, Item input, Item result, boolean ench, int chance) {
+        addRecipeSafe(registry, () -> new IncenseItemBurningFakeRecipe(input.getDefaultInstance(), result.getDefaultInstance(), ench, chance));
     }
 
     private static <C extends RecipeInput, T extends Recipe<C>> Iterable<T> getRecipes(EmiRegistry registry, RecipeType<T> type) {
