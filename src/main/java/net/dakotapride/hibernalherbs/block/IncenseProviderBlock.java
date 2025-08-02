@@ -180,8 +180,6 @@ public class IncenseProviderBlock extends Block {
                     }
 
                     int random = new Random().nextInt(100);
-                    int source = RandomSource.create().nextInt(100);
-                    RandomSource source0 = RandomSource.create(source);
 
                     if (random < 75) {
                         ItemStack enchantedStack = Items.ENCHANTED_BOOK.getDefaultInstance();
@@ -189,7 +187,7 @@ public class IncenseProviderBlock extends Block {
                         Registry<Enchantment> enchantments = level.registryAccess().registryOrThrow(Registries.ENCHANTMENT);
 
                         List<Enchantment> list = enchantments.stream().toList();
-                        Optional<Enchantment> optional = Util.getRandomSafe(list, source0);
+                        Optional<Enchantment> optional = Util.getRandomSafe(list, RandomSource.create(random));
                         if (optional.isEmpty()) {
                             HibernalHerbsMod.LOGGER.warn("Couldn't find a compatible enchantment for {}", enchantedStack);
                         } else {
