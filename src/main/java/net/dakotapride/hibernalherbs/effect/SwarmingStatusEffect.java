@@ -20,25 +20,20 @@ public class SwarmingStatusEffect extends BasicStatusEffect {
     private final ToIntFunction<RandomSource> spawnedCount;
 
     public SwarmingStatusEffect(MobEffectCategory mobEffectCategory, int i, float f, ToIntFunction<RandomSource> toIntFunction) {
-        super(mobEffectCategory, i, ParticleTypeInit.SWARMING);
+        super(mobEffectCategory, i);
         this.chanceToSpawn = f;
         this.spawnedCount = toIntFunction;
     }
 
-    @Override
-    public void onMobHurt(LivingEntity livingEntity, int i, DamageSource damageSource, float f) {
-        if (livingEntity.getRandom().nextFloat() <= this.chanceToSpawn) {
-            int j = this.spawnedCount.applyAsInt(livingEntity.getRandom());
-
-            for (int k = 0; k < j; k++) {
-                this.spawnBees(
-                        livingEntity.level(), livingEntity, livingEntity.getX(), livingEntity.getY() + (double)livingEntity.getBbHeight() / 2.0, livingEntity.getZ()
-                );
-            }
-        }
+    public float getChanceToSpawn() {
+        return chanceToSpawn;
     }
 
-    private void spawnBees(Level level, LivingEntity livingEntity, double d, double e, double f) {
+    public ToIntFunction<RandomSource> getSpawnedCount() {
+        return spawnedCount;
+    }
+
+    public void spawnBees(Level level, LivingEntity livingEntity, double d, double e, double f) {
         Bee bee = EntityType.BEE.create(level);
         if (bee != null) {
             bee.setAggressive(true);

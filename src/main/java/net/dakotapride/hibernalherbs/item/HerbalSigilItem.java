@@ -3,11 +3,11 @@ package net.dakotapride.hibernalherbs.item;
 import net.dakotapride.hibernalherbs.HibernalHerbsClientMod;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalSigilTypes;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -18,11 +18,11 @@ public class HerbalSigilItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable TooltipContext ctx, List<Component> tooltip, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> tooltip, TooltipFlag tooltipFlag) {
         if (!HibernalHerbsClientMod.hasShiftDown()) {
             tooltip.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
         } else if (HibernalHerbsClientMod.hasShiftDown()) {
-            HerbalSigilTypes.applyHerbalSigilAssistanceTooltip(stack, tooltip);
+            HerbalSigilTypes.applyHerbalSigilAssistanceTooltip(itemStack, tooltip);
 
             if (!HibernalHerbsClientMod.hasAltDown()) {
                 tooltip.add(Component.literal(""));
@@ -42,33 +42,4 @@ public class HerbalSigilItem extends Item {
         }
     }
 
-//    public static void getSigilAlignment(ItemStack stack, List<Component> tooltip) {
-//        MutableComponent alignment = SigilAlignments.NONE.getAlignment();
-//
-//        if (stack.is(ItemRegistry.SIGIL_PRIDE.get())) {
-//            alignment = SigilAlignments.PRIDE.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_ENVY.get())) {
-//            alignment = SigilAlignments.ENVY.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_SLOTH.get())) {
-//            alignment = SigilAlignments.SLOTH.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_WRATH.get())) {
-//            alignment = SigilAlignments.WRATH.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_GREED.get())) {
-//            alignment = SigilAlignments.GREED.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_LUST.get())) {
-//            alignment = SigilAlignments.LUST.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_GLUTTONY.get())) {
-//            alignment = SigilAlignments.GLUTTONY.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_MASTERY.get())) {
-//            alignment = SigilAlignments.MASTERY.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_MASTERY_ADV.get())) {
-//            alignment = SigilAlignments.ADVANCED_MASTERY.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_CONFIGURATION.get())) {
-//            alignment = SigilAlignments.CONFIGURATION.getAlignment();
-//        } else if (stack.is(ItemRegistry.SIGIL_CONFIGURATION_ADV.get())) {
-//            alignment = SigilAlignments.ADVANCED_CONFIGURATION.getAlignment();
-//        }
-//
-//        tooltip.add(Component.translatable("text.hibernalherbs.sigil.alignment", alignment).withStyle(ChatFormatting.GRAY));
-//    }
 }

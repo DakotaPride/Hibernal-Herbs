@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_Block{hibernalherbs:chervil}": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:chervil"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:chervil_herb_barrel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_Block{hibernalherbs:chervil}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:chervil_herb_barrel"
+    ]
+  }
+}

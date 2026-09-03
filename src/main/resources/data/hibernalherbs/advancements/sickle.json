@@ -1,0 +1,32 @@
+{
+  "parent": "hibernalherbs:root",
+  "criteria": {
+    "sickle": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:tools/sickles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.sickle.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:iron_sickle"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.sickle.title"
+    }
+  },
+  "requirements": [
+    [
+      "sickle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

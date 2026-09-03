@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:gluttony_ashes"
+    },
+    {
+      "item": "hibernalherbs:charred_paper"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "hibernalherbs:gluttony_ashes"
+  }
+}

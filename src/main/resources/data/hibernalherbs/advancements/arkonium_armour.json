@@ -1,0 +1,38 @@
+{
+  "parent": "hibernalherbs:arkonium",
+  "criteria": {
+    "arkonium_armour": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:arkonium_helmet",
+              "hibernalherbs:arkonium_chestplate",
+              "hibernalherbs:arkonium_leggings",
+              "hibernalherbs:arkonium_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.arkonium_armour.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "item": "hibernalherbs:arkonium_helmet"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.arkonium_armour.title"
+    }
+  },
+  "requirements": [
+    [
+      "arkonium_armour"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

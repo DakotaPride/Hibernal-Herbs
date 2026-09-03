@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:rosemary"
+    },
+    {
+      "item": "hibernalherbs:rosemary"
+    },
+    {
+      "item": "hibernalherbs:rosemary"
+    },
+    {
+      "item": "hibernalherbs:rosemary"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "hibernalherbs:rosemary_herb_barrel"
+  }
+}

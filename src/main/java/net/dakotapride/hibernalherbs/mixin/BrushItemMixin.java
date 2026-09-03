@@ -30,9 +30,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BrushItem.class)
 public abstract class BrushItemMixin extends Item {
-    @Shadow protected abstract HitResult calculateHitResult(Player player);
+    @Shadow
+    public abstract void spawnDustParticles(Level level, BlockHitResult blockHitResult, BlockState blockState, Vec3 vec3, HumanoidArm humanoidArm);
 
-    @Shadow protected abstract void spawnDustParticles(Level level, BlockHitResult blockHitResult, BlockState blockState, Vec3 vec3, HumanoidArm humanoidArm);
+    @Shadow
+    protected abstract HitResult calculateHitResult(LivingEntity livingEntity);
 
     public BrushItemMixin(Properties properties) {
         super(properties);
@@ -43,13 +45,13 @@ public abstract class BrushItemMixin extends Item {
         if (i >= 0 && livingEntity instanceof Player player) {
             HitResult hitResult = this.calculateHitResult(player);
             if (hitResult instanceof BlockHitResult blockHitResult && hitResult.getType() == HitResult.Type.BLOCK) {
-                int j = this.getUseDuration(itemStack, livingEntity) - i + 1;
+                int j = this.getUseDuration(itemStack) - i + 1;
                 boolean bl = j % 10 == 5;
                 if (bl) {
                     BlockPos blockPos = blockHitResult.getBlockPos();
                     BlockState blockState = level.getBlockState(blockPos);
                     HumanoidArm humanoidArm = livingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? player.getMainArm() : player.getMainArm().getOpposite();
-                    if (blockState.shouldSpawnTerrainParticles() && blockState.getRenderShape() != RenderShape.INVISIBLE) {
+                    if (blockState.shouldSpawnParticlesOnBreak() && blockState.getRenderShape() != RenderShape.INVISIBLE) {
                         this.spawnDustParticles(level, blockHitResult, blockState, livingEntity.getViewVector(0.0F), humanoidArm);
                     }
 
@@ -66,7 +68,7 @@ public abstract class BrushItemMixin extends Item {
                         boolean bl2 = brushableBlockEntity.brush(level.getGameTime(), player, blockHitResult.getDirection());
                         if (bl2) {
                             EquipmentSlot equipmentSlot = itemStack.equals(player.getItemBySlot(EquipmentSlot.OFFHAND)) ? EquipmentSlot.OFFHAND : EquipmentSlot.MAINHAND;
-                            itemStack.hurtAndBreak(1, livingEntity, equipmentSlot);
+                            itemStack.hurtAndBreak(1, player, (entity) -> entity.getItemBySlot(equipmentSlot));
                         }
                     }
                 }

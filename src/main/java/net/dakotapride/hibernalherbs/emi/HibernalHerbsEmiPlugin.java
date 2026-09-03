@@ -24,6 +24,8 @@ import net.dakotapride.hibernalherbs.recipe.MysticalCampfireCookingRecipe;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.Container;
+import net.minecraft.world.inventory.RecipeHolder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
@@ -140,16 +142,15 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         registry.addWorkstation(FREEZING_STATE, SORCERER_AGGLOMERATION);
         registry.addWorkstation(UNFREEZING_STATE, SORCERER_AGGLOMERATION);
         registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Tags.Items.SICKLES.getTag()));
-        registry.addWorkstation(REVERT_DETERIORATION, EmiIngredient.of(Ingredient.of(Items.WIND_CHARGE)));
         registry.addWorkstation(INCENSE_BURNING, INCENSE_PROVIDER);
         registry.addWorkstation(INCENSE_BURNING, DETERIORATED_SACRIFICIAL_RUNE);
 
         //Comparison potionComparison = Comparison.compareData(stack -> stack.get(DataComponents.POTION_CONTENTS));
 
         //registry.setDefaultComparison(ItemInit.MYSTERIOUS_POTION, potionComparison);
-        registry.setDefaultComparison(ItemInit.ENIGMATIC_POTION, Comparison.compareComponents());
-        registry.setDefaultComparison(ItemInit.SOLAR_POTION, Comparison.compareComponents());
-        registry.setDefaultComparison(ItemInit.LUNAR_POTION, Comparison.compareComponents());
+        registry.setDefaultComparison(ItemInit.ENIGMATIC_POTION, Comparison.compareNbt());
+        registry.setDefaultComparison(ItemInit.SOLAR_POTION, Comparison.compareNbt());
+        registry.setDefaultComparison(ItemInit.LUNAR_POTION, Comparison.compareNbt());
 
         for (MysticalCampfireCookingRecipe recipe : getRecipes(registry, RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE)) {
             addRecipeSafe(registry, () -> new EmiCookingRecipe(recipe, MYSTICAL_CAMPFIRE_CONVERSION, 1, true), recipe);
@@ -161,49 +162,49 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
                 List.of(Component.translatable(StatusEffectInit.SANGUINE.value().getDescriptionId()),
                         Component.translatable("text.hibernalherbs.effect.health_loss").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.lifesteal").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.SANGUINE.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.SANGUINE.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), SANGUINE_ICON));
         addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
                 AgglomerationUsageRecipe(StatusEffectInit.LETHARGY, HerbalSigilTypes.SLOTH.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.LETHARGY.value().getDescriptionId()),
                         Component.translatable("text.hibernalherbs.effect.movement_slowness").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.apply_slowness_on_attack").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.LETHARGY.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.LETHARGY.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), LETHARGY_ICON));
         addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
                 AgglomerationUsageRecipe(StatusEffectInit.BARBARIC, HerbalSigilTypes.WRATH.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.BARBARIC.value().getDescriptionId()),
                         Component.translatable("text.hibernalherbs.effect.movement_speed").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.damage_increase").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.BARBARIC.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.BARBARIC.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), BARBARIC_ICON));
         addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
                 AgglomerationUsageRecipe(StatusEffectInit.DEVOTION, HerbalSigilTypes.LUST.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.DEVOTION.value().getDescriptionId()),
                         Component.translatable("text.hibernalherbs.effect.breed_entities").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.health_increase").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.DEVOTION.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.DEVOTION.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), DEVOTION_ICON));
         addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
                 AgglomerationUsageRecipe(StatusEffectInit.RAPACITY, HerbalSigilTypes.GREED.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.RAPACITY.value().getDescriptionId()),
                         Component.translatable("text.hibernalherbs.effect.villager_discount").withStyle(ChatFormatting.GRAY),
                         //Component.translatable("text.hibernalherbs.effect.villager_gifting").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.RAPACITY.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.RAPACITY.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), RAPACITY_ICON));
         addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
                 AgglomerationUsageRecipe(StatusEffectInit.ESURIENT, HerbalSigilTypes.GLUTTONY.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.ESURIENT.value().getDescriptionId()),
                         Component.translatable("text.hibernalherbs.effect.movement_slowness").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.consume_food_buff").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.ESURIENT.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.ESURIENT.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), ESURIENT_ICON));
         addRecipeSafe(registry, () -> new AbstractAgglomerationUsageRecipe.
                 AgglomerationUsageRecipe(StatusEffectInit.MIMICRY, HerbalSigilTypes.ENVY.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.MIMICRY.value().getDescriptionId()),
                         Component.translatable("text.hibernalherbs.effect.mimicry_damage").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.apply_strength_health").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.MIMICRY.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.MIMICRY.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), MIMICRY_ICON));
         // Agglomeration Usages - item
         createAgglomerationEmiRecipe(registry, Items.WITHER_ROSE, HerbTypes.SAGE.getBaseBlock().asItem());
@@ -219,49 +220,49 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
                 List.of(Component.translatable(StatusEffectInit.SANGUINE.value().getDescriptionId() + ".level", "II"),
                         Component.translatable("text.hibernalherbs.effect.health_loss").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.lifesteal").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.SANGUINE.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.SANGUINE.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), SANGUINE_ICON));
         addRecipeSafe(registry, () -> new AbstractTomeUsageRecipe.
                 TomeUsageRecipe(StatusEffectInit.LETHARGY, HerbalSigilTypes.SLOTH.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.LETHARGY.value().getDescriptionId() + ".level", "II"),
                         Component.translatable("text.hibernalherbs.effect.movement_slowness").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.apply_slowness_on_attack").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.LETHARGY.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.LETHARGY.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), LETHARGY_ICON));
         addRecipeSafe(registry, () -> new AbstractTomeUsageRecipe.
                 TomeUsageRecipe(StatusEffectInit.BARBARIC, HerbalSigilTypes.WRATH.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.BARBARIC.value().getDescriptionId() + ".level", "II"),
                         Component.translatable("text.hibernalherbs.effect.movement_speed").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.damage_increase").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.BARBARIC.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.BARBARIC.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), BARBARIC_ICON));
         addRecipeSafe(registry, () -> new AbstractTomeUsageRecipe.
                 TomeUsageRecipe(StatusEffectInit.DEVOTION, HerbalSigilTypes.LUST.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.DEVOTION.value().getDescriptionId() + ".level", "II"),
                         Component.translatable("text.hibernalherbs.effect.breed_entities").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.health_increase").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.DEVOTION.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.DEVOTION.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), DEVOTION_ICON));
         addRecipeSafe(registry, () -> new AbstractTomeUsageRecipe.
                 TomeUsageRecipe(StatusEffectInit.RAPACITY, HerbalSigilTypes.GREED.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.RAPACITY.value().getDescriptionId() + ".level", "II"),
                         Component.translatable("text.hibernalherbs.effect.villager_discount").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.villager_gifting").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.RAPACITY.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.RAPACITY.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), RAPACITY_ICON));
         addRecipeSafe(registry, () -> new AbstractTomeUsageRecipe.
                 TomeUsageRecipe(StatusEffectInit.ESURIENT, HerbalSigilTypes.GLUTTONY.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.ESURIENT.value().getDescriptionId() + ".level", "II"),
                         Component.translatable("text.hibernalherbs.effect.movement_slowness").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.consume_food_buff").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.ESURIENT.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.ESURIENT.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), ESURIENT_ICON));
         addRecipeSafe(registry, () -> new AbstractTomeUsageRecipe.
                 TomeUsageRecipe(StatusEffectInit.MIMICRY, HerbalSigilTypes.ENVY.getHerbalSigilItem(),
                 List.of(Component.translatable(StatusEffectInit.MIMICRY.value().getDescriptionId() + ".level", "II"),
                         Component.translatable("text.hibernalherbs.effect.mimicry_damage").withStyle(ChatFormatting.GRAY),
                         Component.translatable("text.hibernalherbs.effect.apply_strength_health").withStyle(ChatFormatting.GRAY),
-                        Component.literal(StatusEffectInit.MIMICRY.getRegisteredName().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
+                        Component.literal(StatusEffectInit.MIMICRY.toString().toLowerCase(Locale.ROOT)).withStyle(ChatFormatting.DARK_GRAY),
                         Component.translatable("text.hibernalherbs.mod_id").withStyle(ChatFormatting.BLUE, ChatFormatting.ITALIC)), MIMICRY_ICON));
         // Tome Usages - item
         createBoundPadlockRecipe(registry, PadlockTypes.PRIDE);
@@ -277,19 +278,6 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         // Freeze/Unfreeze blockstates
         createFreezingRecipes(registry, BlockInit.SACRIFICIAL_RUNE_BLOCK, BlockInit.FROZE_STATE_SACRIFICIAL_RUNE_BLOCK);
 
-        for (FrozeBlockstates states : FrozeBlockstates.values()) {
-            // Copper
-            createFreezingRecipes(registry, states.getBaseBlock(), states.getFrozeState());
-            createFreezingRecipes(registry, states.getChiseledBlock(), states.getFrozeChiseledState());
-            createFreezingRecipes(registry, states.getGrateBlock(), states.getFrozeGrateState());
-            createFreezingRecipes(registry, states.getCutBlock(), states.getFrozeCutState());
-            createFreezingRecipes(registry, states.getCutSlabBlock(), states.getFrozeCutSlabState());
-            createFreezingRecipes(registry, states.getCutStairsBlock(), states.getFrozeCutStairsState());
-            createFreezingRecipes(registry, states.getDoorBlock(), states.getFrozeDoorState());
-            createFreezingRecipes(registry, states.getTrapdoorBlock(), states.getFrozeTrapdoorState());
-            createFreezingRecipes(registry, states.getBulbBlock(), states.getFrozeBulbState());
-        }
-
         // Incense Item Burning
         createItemBurningFromIncenseRecipe(registry, Items.PAPER, ItemInit.CHARRED_PAPER.asItem(), false, 100);
         createItemBurningFromIncenseRecipe(registry, Items.BOOK, Items.ENCHANTED_BOOK, true, 75);
@@ -300,8 +288,8 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
         addRecipeSafe(registry, () -> new IncenseItemBurningFakeRecipe(input.getDefaultInstance(), result.getDefaultInstance(), ench, chance));
     }
 
-    private static <C extends RecipeInput, T extends Recipe<C>> Iterable<T> getRecipes(EmiRegistry registry, RecipeType<T> type) {
-        return registry.getRecipeManager().getAllRecipesFor(type).stream().map(RecipeHolder::value)::iterator;
+    private static <C extends Container, T extends Recipe<C>> Iterable<T> getRecipes(EmiRegistry registry, RecipeType<T> type) {
+        return registry.getRecipeManager().getAllRecipesFor(type).stream()::iterator;
     }
 
     private static void createDeteriorationRecipes(EmiRegistry registry, Block block, Block block2) {
@@ -327,7 +315,7 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
             registry.addRecipe(supplier.get());
         } catch (Throwable e) {
             EmiReloadLog.warn("Exception thrown when parsing vanilla recipe " + EmiPort.getId(recipe));
-            EmiReloadLog.error(e);
+            EmiReloadLog.warn(e.toString());
         }
     }
 
@@ -336,7 +324,7 @@ public class HibernalHerbsEmiPlugin implements EmiPlugin {
             registry.addRecipe(supplier.get());
         } catch (Throwable e) {
             EmiReloadLog.warn("Exception thrown when parsing EMI recipe (no ID available)");
-            EmiReloadLog.error(e);
+            EmiReloadLog.warn(e.toString());
         }
     }
 }

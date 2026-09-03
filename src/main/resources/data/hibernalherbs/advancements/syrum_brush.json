@@ -1,0 +1,34 @@
+{
+  "parent": "hibernalherbs:syrum",
+  "criteria": {
+    "syrum_brush": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:syrum_brush"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.syrum_brush.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:syrum_brush"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.syrum_brush.title"
+    }
+  },
+  "requirements": [
+    [
+      "syrum_brush"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

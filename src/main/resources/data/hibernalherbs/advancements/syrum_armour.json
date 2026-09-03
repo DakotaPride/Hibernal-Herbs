@@ -1,0 +1,38 @@
+{
+  "parent": "hibernalherbs:syrum",
+  "criteria": {
+    "syrum_armour": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:syrum_helmet",
+              "hibernalherbs:syrum_chestplate",
+              "hibernalherbs:syrum_leggings",
+              "hibernalherbs:syrum_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.syrum_armour.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "item": "hibernalherbs:syrum_helmet"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.syrum_armour.title"
+    }
+  },
+  "requirements": [
+    [
+      "syrum_armour"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

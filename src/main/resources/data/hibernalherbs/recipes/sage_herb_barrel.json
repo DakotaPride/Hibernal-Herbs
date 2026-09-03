@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:sage"
+    },
+    {
+      "item": "hibernalherbs:sage"
+    },
+    {
+      "item": "hibernalherbs:sage"
+    },
+    {
+      "item": "hibernalherbs:sage"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "hibernalherbs:sage_herb_barrel"
+  }
+}

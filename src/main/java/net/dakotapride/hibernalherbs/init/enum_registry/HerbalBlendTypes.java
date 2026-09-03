@@ -41,19 +41,19 @@ public enum HerbalBlendTypes {
 
     public FoodProperties.Builder food_properties;
 
-    public Holder<MobEffect> effect0;
+    public MobEffect effect0;
     public int duration_ticks;
     public int effect_amplifier;
 
-    HerbalBlendTypes(Holder<MobEffect> effect0, int ticks, int amplifier) {
+    HerbalBlendTypes(MobEffect effect0, int ticks, int amplifier) {
         this.herbal_blend_id = name().toLowerCase(Locale.ROOT);
 
         this.food_properties = new FoodProperties.Builder()
-                .alwaysEdible().nutrition(7).saturationModifier(0.6f);
+                .alwaysEat().nutrition(7).saturationMod(0.6f);
 
         this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1)
                 .food(food_properties
-                        .effect(new MobEffectInstance(effect0, ticks, amplifier), 1.0f).usingConvertsTo(Items.BOWL).build())));
+                        .effect(new MobEffectInstance(effect0, ticks, amplifier), 1.0f).build())));
 //        this.smoked_herbal_blend = ItemInit.register("smoked_" + herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1)
 //                .food(food_properties
 //                        .effect(new MobEffectInstance(effect0, (int) (ticks * 1.5f), amplifier + 1), 1.0f).build())));
@@ -69,9 +69,9 @@ public enum HerbalBlendTypes {
         this.food_properties = new FoodProperties.Builder()
                 // No status effects to provide
                 // .effect(new MobEffectInstance(effect0, ticks, amplifier), 1.0f)
-                .alwaysEdible().nutrition(7).saturationModifier(0.6f);
+                .alwaysEat().nutrition(7).saturationMod(0.6f);
 
-        this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1).food(food_properties.usingConvertsTo(Items.BOWL).build())));
+        this.herbal_blend = ItemInit.register(herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1).food(food_properties.build())));
 //        this.smoked_herbal_blend = ItemInit.register("smoked_" + herbal_blend_id + "_herbal_blend", new HerbalBlendItem(new Item.Properties().stacksTo(1).food(food_properties.build())));
 
     }
@@ -95,7 +95,7 @@ public enum HerbalBlendTypes {
 //    }
 
     public MobEffect getEffect0() {
-        return effect0.value();
+        return effect0;
     }
 
     public int getDurationTicks() {
@@ -143,7 +143,7 @@ public enum HerbalBlendTypes {
     // Tooltips
 
     public static void effectFromType(ItemStack stack, List<Component> tooltip, HerbalBlendTypes type) {
-        MobEffect effect = MobEffects.REGENERATION.value();
+        MobEffect effect = MobEffects.REGENERATION;
         String ability;
 
         if (!HerbalBlendTypes.checkHerbBlendType(stack, HerbalBlendTypes.FIRE)) {

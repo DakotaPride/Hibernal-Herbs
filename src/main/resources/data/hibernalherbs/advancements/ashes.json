@@ -1,0 +1,32 @@
+{
+  "parent": "hibernalherbs:syrum_brush",
+  "criteria": {
+    "ashes": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:ashes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.ashes.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:pride_ashes"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.ashes.title"
+    }
+  },
+  "requirements": [
+    [
+      "ashes"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

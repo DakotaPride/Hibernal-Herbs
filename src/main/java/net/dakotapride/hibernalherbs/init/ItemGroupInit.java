@@ -13,7 +13,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
 
 public class ItemGroupInit {
     public static final CreativeModeTab HIBERNAL_HERBS_TAB = register("hibernal_herbs",
@@ -165,42 +166,30 @@ public class ItemGroupInit {
                             entries.accept(sickles.getSickleItem());
                         }
 
-                        for (FrozeBlockstates blockstates : FrozeBlockstates.values()) {
-                            entries.accept(blockstates.getFrozeState());
-                            entries.accept(blockstates.getFrozeCutState());
-                            entries.accept(blockstates.getFrozeCutSlabState());
-                            entries.accept(blockstates.getFrozeCutStairsState());
-                            entries.accept(blockstates.getFrozeDoorState());
-                            entries.accept(blockstates.getFrozeTrapdoorState());
-                            entries.accept(blockstates.getFrozeBulbState());
-                            entries.accept(blockstates.getFrozeGrateState());
-                            entries.accept(blockstates.getFrozeChiseledState());
-                        }
-
                         displayContext.holders().lookup(Registries.POTION).ifPresent(
                                 registryLookup -> generatePotionEffectTypes(
-                                        entries, registryLookup, ItemInit.ENIGMATIC_POTION, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, displayContext.enabledFeatures()
+                                        entries, registryLookup, ItemInit.ENIGMATIC_POTION, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
                                 )
                         );
                         displayContext.holders().lookup(Registries.POTION).ifPresent(
                                 registryLookup -> generatePotionEffectTypes(
-                                        entries, registryLookup, ItemInit.SOLAR_POTION, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, displayContext.enabledFeatures()
+                                        entries, registryLookup, ItemInit.SOLAR_POTION, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
                                 )
                         );
                         displayContext.holders().lookup(Registries.POTION).ifPresent(
                                 registryLookup -> generatePotionEffectTypes(
-                                        entries, registryLookup, ItemInit.LUNAR_POTION, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, displayContext.enabledFeatures()
+                                        entries, registryLookup, ItemInit.LUNAR_POTION, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
                                 )
                         );
 
                     }).build());
 
     private static void generatePotionEffectTypes(
-            CreativeModeTab.Output output, HolderLookup<Potion> holderLookup, Item item, CreativeModeTab.TabVisibility tabVisibility, FeatureFlagSet featureFlagSet
+            CreativeModeTab.Output output, HolderLookup<Potion> holderLookup, Item item, CreativeModeTab.TabVisibility tabVisibility
     ) {
         holderLookup.listElements()
-                .filter(reference -> (reference.value()).isEnabled(featureFlagSet))
-                .map(reference -> PotionContents.createItemStack(item, reference))
+                .filter(reference -> !reference.is(Potions.EMPTY_ID))
+                .map(reference -> PotionUtils.setPotion(new ItemStack(item), reference.value()))
                 .forEach(itemStack -> output.accept(itemStack, tabVisibility));
     }
 

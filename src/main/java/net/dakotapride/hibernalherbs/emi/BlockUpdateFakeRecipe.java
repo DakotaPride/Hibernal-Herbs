@@ -45,7 +45,7 @@ public class BlockUpdateFakeRecipe implements EmiRecipe {
 
     @Override
     public @Nullable ResourceLocation getId() {
-        return HibernalHerbsMod.asResource(type.getId() + "/" + BuiltInRegistries.ITEM.getKey(input.getItem()).getPath());
+        return HibernalHerbsMod.asResource("/" + type.getId() + "/" + BuiltInRegistries.ITEM.getKey(input.getItem()).getPath());
     }
 
     @Override

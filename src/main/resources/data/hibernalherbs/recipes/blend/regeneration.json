@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "hibernalherbs:extract_virtuous_ashes"
+    },
+    {
+      "item": "hibernalherbs:pounded_thyme"
+    },
+    {
+      "item": "hibernalherbs:pounded_verbena"
+    },
+    {
+      "item": "hibernalherbs:pounded_rosemary"
+    },
+    {
+      "item": "hibernalherbs:rosemary"
+    },
+    {
+      "item": "hibernalherbs:rosemary"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "hibernalherbs:regeneration_herbal_blend"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "hibernalherbs:arkonium",
+  "criteria": {
+    "sorcerer_agglomeration": {
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:agglomeration"
+          ]
+        }
+      },
+      "trigger": "hibernalherbs:agglomeration_uses"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.sorcerer_agglomeration.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:agglomeration"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.sorcerer_agglomeration.title"
+    }
+  },
+  "requirements": [
+    [
+      "sorcerer_agglomeration"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

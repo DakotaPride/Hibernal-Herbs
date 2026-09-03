@@ -1,0 +1,10 @@
+{
+  "type": "hibernalherbs:mystical_campfire_conversion",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.4,
+  "ingredient": {
+    "item": "minecraft:pink_petals"
+  },
+  "result": "hibernalherbs:siliptium_petals"
+}

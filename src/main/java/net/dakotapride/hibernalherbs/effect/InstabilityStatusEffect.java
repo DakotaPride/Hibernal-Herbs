@@ -1,6 +1,5 @@
 package net.dakotapride.hibernalherbs.effect;
 
-import net.dakotapride.hibernalherbs.init.ParticleTypeInit;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -15,11 +14,11 @@ import net.minecraft.world.phys.Vec3;
 
 public class InstabilityStatusEffect extends BasicStatusEffect {
     public InstabilityStatusEffect(MobEffectCategory category, int colour) {
-        super(category, colour, ParticleTypeInit.INSTABILITY);
+        super(category, colour);
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity livingEntity, int j) {
+    public void applyEffectTick(LivingEntity livingEntity, int j) {
         Level level = livingEntity.level();
 
         if (!level.isClientSide) {
@@ -48,19 +47,13 @@ public class InstabilityStatusEffect extends BasicStatusEffect {
                         soundSource = SoundSource.PLAYERS;
                     }
 
-                    level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), soundEvent, soundSource);
+                    level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), soundEvent, soundSource, 1.0F, 1.0F);
                     livingEntity.resetFallDistance();
                     break;
                 }
             }
         }
 
-        return true;
     }
 
-    @Override
-    public boolean shouldApplyEffectTickThisTick(int i, int j) {
-        int k = 50 >> j;
-        return k > 0 ? i % k == 0 : true;
-    }
 }

@@ -1,0 +1,10 @@
+{
+  "type": "hibernalherbs:mystical_campfire_conversion",
+  "category": "misc",
+  "cookingtime": 400,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "hibernalherbs:pounded_chives"
+  },
+  "result": "hibernalherbs:dried_chives"
+}

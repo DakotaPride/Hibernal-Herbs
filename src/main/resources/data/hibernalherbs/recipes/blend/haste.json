@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "hibernalherbs:extract_virtuous_ashes"
+    },
+    {
+      "item": "hibernalherbs:pounded_sorrel"
+    },
+    {
+      "item": "hibernalherbs:pounded_chamomile"
+    },
+    {
+      "item": "hibernalherbs:pounded_marjoram"
+    },
+    {
+      "item": "hibernalherbs:marjoram"
+    },
+    {
+      "item": "hibernalherbs:marjoram"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:haste_herbal_blend",
+    "count": 1
+  }
+}

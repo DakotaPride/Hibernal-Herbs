@@ -93,7 +93,7 @@ public abstract class AbstractTomeUsageRecipe implements EmiRecipe {
 
         @Override
         public @Nullable ResourceLocation getId() {
-            return HibernalHerbsMod.asResource("tome_usage/" + BuiltInRegistries.MOB_EFFECT.getKey(effect.value()).getPath());
+            return HibernalHerbsMod.asResource("/tome_usage/" + BuiltInRegistries.MOB_EFFECT.getKey(effect.value()).getPath());
         }
 
         @Override
@@ -134,7 +134,7 @@ public abstract class AbstractTomeUsageRecipe implements EmiRecipe {
 
         @Override
         public @Nullable ResourceLocation getId() {
-            return HibernalHerbsMod.asResource("tome_usage/" + BuiltInRegistries.ITEM.getKey(stack1.getItem()).getPath());
+            return HibernalHerbsMod.asResource("/tome_usage/" + BuiltInRegistries.ITEM.getKey(stack1.getItem()).getPath());
         }
 
         @Override

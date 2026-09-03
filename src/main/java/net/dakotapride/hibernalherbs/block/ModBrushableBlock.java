@@ -1,12 +1,9 @@
 package net.dakotapride.hibernalherbs.block;
 
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
@@ -25,25 +22,10 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 public class ModBrushableBlock extends BaseEntityBlock implements Fallable {
-    public static final MapCodec<ModBrushableBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(
-                            BuiltInRegistries.BLOCK.byNameCodec().fieldOf("turns_into").forGetter(ModBrushableBlock::getTurnsInto),
-                            BuiltInRegistries.SOUND_EVENT.byNameCodec().fieldOf("brush_sound").forGetter(ModBrushableBlock::getBrushSound),
-                            BuiltInRegistries.SOUND_EVENT.byNameCodec().fieldOf("brush_comleted_sound").forGetter(ModBrushableBlock::getBrushCompletedSound),
-                            propertiesCodec()
-                    )
-                    .apply(instance, ModBrushableBlock::new)
-    );
     private static final IntegerProperty DUSTED = BlockStateProperties.DUSTED;
-    public static final int TICK_DELAY = 2;
     private final Block turnsInto;
     private final SoundEvent brushSound;
     private final SoundEvent brushCompletedSound;
-
-    @Override
-    public MapCodec<ModBrushableBlock> codec() {
-        return CODEC;
-    }
 
     public ModBrushableBlock(Block block, SoundEvent soundEvent, SoundEvent soundEvent2, BlockBehaviour.Properties properties) {
         super(properties);

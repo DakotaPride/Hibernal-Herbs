@@ -8,7 +8,6 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
@@ -30,7 +29,7 @@ public enum HerbTypes {
     PUNUEL(MobEffects.DIG_SPEED),
     ESSITTE(MobEffects.MOVEMENT_SPEED),
     THYOCIELLE(MobEffects.FIRE_RESISTANCE),
-    FENNKYSTRAL(StatusEffectInit.FROST_RESISTANCE),
+    FENNKYSTRAL(StatusEffectInit.FROST_RESISTANCE.value()),
     CALENDULA(),
     SAGE(MobEffects.LEVITATION);
 
@@ -50,25 +49,25 @@ public enum HerbTypes {
     public final Block herb_pile_block;
     public final Block herb_barrel_block;
 
-    public Holder<MobEffect> incense_effect;
+    public MobEffect incense_effect;
 
-    HerbTypes(Holder<MobEffect> incense_effect) {
+    HerbTypes(MobEffect incense_effect) {
         this.herb_id = name().toLowerCase(Locale.ROOT);
 
         this.incense_effect = incense_effect;
 
-        this.base_block = BlockInit.register(herb_id, new FlowerBlock(SuspiciousStewEffects.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
-        this.pounded_herb_block = BlockInit.register("pounded_" + herb_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
-        this.dried_herb_block = BlockInit.register("dried_" + herb_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
+        this.base_block = BlockInit.register(herb_id, new FlowerBlock(incense_effect, 100, BlockBehaviour.Properties.copy(Blocks.POPPY)));
+        this.pounded_herb_block = BlockInit.register("pounded_" + herb_id + "_block", new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
+        this.dried_herb_block = BlockInit.register("dried_" + herb_id + "_block", new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 
-        this.potted_block = BlockInit.registerWithoutBlockItem("potted_" + herb_id, new FlowerPotBlock(base_block, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
+        this.potted_block = BlockInit.registerWithoutBlockItem("potted_" + herb_id, new FlowerPotBlock(base_block, BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY)));
 
         this.pounded_herb = ItemInit.register("pounded_" + herb_id, new Item(new Item.Properties()));
         this.dried_herb = ItemInit.register("dried_" + herb_id, new Item(new Item.Properties()));
 
-        this.lantern_block = BlockInit.register(herb_id + "_lantern", new LanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN)));
-        this.herb_pile_block = BlockInit.register(herb_id + "_herb_pile", new LeafPileBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).noOcclusion().sound(SoundType.GRASS)));
-        this.herb_barrel_block = BlockInit.register(herb_id + "_herb_barrel", new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
+        this.lantern_block = BlockInit.register(herb_id + "_lantern", new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+        this.herb_pile_block = BlockInit.register(herb_id + "_herb_pile", new LeafPileBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET).noOcclusion().sound(SoundType.GRASS)));
+        this.herb_barrel_block = BlockInit.register(herb_id + "_herb_barrel", new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)));
 
     }
 
@@ -77,18 +76,18 @@ public enum HerbTypes {
 
         //this.incense_effect = incense_effect;
 
-        this.base_block = BlockInit.register(herb_id, new FlowerBlock(SuspiciousStewEffects.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
-        this.pounded_herb_block = BlockInit.register("pounded_" + herb_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
-        this.dried_herb_block = BlockInit.register("dried_" + herb_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
+        this.base_block = BlockInit.register(herb_id, new FlowerBlock(MobEffects.REGENERATION, 100, BlockBehaviour.Properties.copy(Blocks.POPPY)));
+        this.pounded_herb_block = BlockInit.register("pounded_" + herb_id + "_block", new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
+        this.dried_herb_block = BlockInit.register("dried_" + herb_id + "_block", new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 
-        this.potted_block = BlockInit.registerWithoutBlockItem("potted_" + herb_id, new FlowerPotBlock(base_block, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
+        this.potted_block = BlockInit.registerWithoutBlockItem("potted_" + herb_id, new FlowerPotBlock(base_block, BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY)));
 
         this.pounded_herb = ItemInit.register("pounded_" + herb_id, new Item(new Item.Properties()));
         this.dried_herb = ItemInit.register("dried_" + herb_id, new Item(new Item.Properties()));
 
-        this.lantern_block = BlockInit.register(herb_id + "_lantern", new LanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN)));
-        this.herb_pile_block = BlockInit.register(herb_id + "_herb_pile", new LeafPileBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).noOcclusion().sound(SoundType.GRASS)));
-        this.herb_barrel_block = BlockInit.register(herb_id + "_herb_barrel", new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
+        this.lantern_block = BlockInit.register(herb_id + "_lantern", new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+        this.herb_pile_block = BlockInit.register(herb_id + "_herb_pile", new LeafPileBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET).noOcclusion().sound(SoundType.GRASS)));
+        this.herb_barrel_block = BlockInit.register(herb_id + "_herb_barrel", new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)));
 
     }
 
@@ -96,7 +95,7 @@ public enum HerbTypes {
         return herb_id;
     }
 
-    public Holder<MobEffect> getIncenseEffect() {
+    public MobEffect getIncenseEffect() {
         return incense_effect;
     }
 

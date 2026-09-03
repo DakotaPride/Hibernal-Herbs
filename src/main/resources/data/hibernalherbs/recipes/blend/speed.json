@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "hibernalherbs:extract_virtuous_ashes"
+    },
+    {
+      "item": "hibernalherbs:pounded_fennel"
+    },
+    {
+      "item": "hibernalherbs:pounded_ceillis"
+    },
+    {
+      "item": "hibernalherbs:pounded_chives"
+    },
+    {
+      "item": "hibernalherbs:chives"
+    },
+    {
+      "item": "hibernalherbs:chives"
+    }
+  ],
+  "result": {
+    "item": "hibernalherbs:speed_herbal_blend",
+    "count": 1
+  }
+}

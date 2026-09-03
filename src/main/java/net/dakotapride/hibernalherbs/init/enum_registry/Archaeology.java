@@ -39,7 +39,7 @@ public class Archaeology {
 
             this.ingot = ItemInit.register(metal_id + "_ingot", new Item(new Item.Properties()));
             this.nugget = ItemInit.register(metal_id + "_nugget", new Item(new Item.Properties()));
-            this.block = BlockInit.register(metal_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
+            this.block = BlockInit.register(metal_id + "_block", new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
         }
 
         Metals(Item alloy_ingredient0, Item alloy_ingredient1) {
@@ -51,7 +51,7 @@ public class Archaeology {
             //this.scrap_item = ItemInit.register(metal_id + "_scrap", new Item(new Item.Properties()));
 
             this.nugget = ItemInit.register(metal_id + "_nugget", new Item(new Item.Properties()));
-            this.block = BlockInit.register(metal_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
+            this.block = BlockInit.register(metal_id + "_block", new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
         }
 
         Metals(Item alloy_ingredient0) {
@@ -63,7 +63,7 @@ public class Archaeology {
             this.scrap_item = ItemInit.register(metal_id + "_scrap", new Item(new Item.Properties()));
 
             this.nugget = ItemInit.register(metal_id + "_nugget", new Item(new Item.Properties()));
-            this.block = BlockInit.register(metal_id + "_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
+            this.block = BlockInit.register(metal_id + "_block", new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops()));
         }
 
         public String getMetalId() {
@@ -114,7 +114,7 @@ public class Archaeology {
 
             this.metal = metal;
 
-            this.brush = ItemInit.register(brush_id + "_brush", new ModBrushItem(new Item.Properties().durability(96).stacksTo(1)));
+            this.brush = ItemInit.register(brush_id + "_brush", new ModBrushItem(new Item.Properties().durability(96)));
         }
 
         public String getBrushId() {
@@ -149,7 +149,7 @@ public class Archaeology {
             this.block = BlockInit.register("suspicious_" + block_id,
                     new ModBrushableBlock(turns_to,
                             SoundEvents.BRUSH_GRAVEL, SoundEvents.BRUSH_GRAVEL_COMPLETED,
-                            BlockBehaviour.Properties.ofFullCopy(turns_to).pushReaction(PushReaction.DESTROY)));
+                            BlockBehaviour.Properties.copy(turns_to).pushReaction(PushReaction.DESTROY)));
         }
 
         SuspiciousBlocks(Block turns_to, TagKey<Block> brushable_by, boolean requires_tier_above_basic) {
@@ -162,7 +162,7 @@ public class Archaeology {
             this.block = BlockInit.register("suspicious_" + block_id,
                     new ModBrushableBlock(turns_to,
                             SoundEvents.BRUSH_GRAVEL, SoundEvents.BRUSH_GRAVEL_COMPLETED,
-                            BlockBehaviour.Properties.ofFullCopy(turns_to).pushReaction(PushReaction.DESTROY)));
+                            BlockBehaviour.Properties.copy(turns_to).pushReaction(PushReaction.DESTROY)));
         }
 
         public String getBlockId() {

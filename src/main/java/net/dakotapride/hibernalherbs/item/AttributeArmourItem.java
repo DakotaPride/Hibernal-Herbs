@@ -1,48 +1,39 @@
 package net.dakotapride.hibernalherbs.item;
 
-import com.google.common.base.Suppliers;
-import net.minecraft.core.Holder;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EquipmentSlotGroup;
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.function.Supplier;
+import net.minecraft.world.item.ItemStack;
 
 public class AttributeArmourItem extends ArmorItem {
-    private final Supplier<ItemAttributeModifiers> modifiers;
-    Holder<Attribute> attribute;
+    private final Multimap<Attribute, AttributeModifier> modifiers;
+    Attribute attribute;
     float value;
 
-    public AttributeArmourItem(Holder<ArmorMaterial> holder, Type type, Holder<Attribute> attribute, float value, Properties properties) {
-        super(holder, type, properties);
+    public AttributeArmourItem(ArmorMaterial material, Type type, Attribute attribute, float value, Properties properties) {
+        super(material, type, properties);
         this.attribute = attribute;
         this.value = value;
-        this.modifiers = Suppliers.memoize(() -> {
-            ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-            EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
-            ResourceLocation resourceLocation = ResourceLocation.withDefaultNamespace("armor." + type.getName());
-            int i = holder.value().getDefense(type);
-            float f = holder.value().toughness();
-            builder.add(Attributes.ARMOR, new AttributeModifier(resourceLocation, i, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-            builder.add(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(resourceLocation, f, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-            float g = holder.value().knockbackResistance();
-            if (g > 0.0F) {
-                builder.add(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(resourceLocation, g, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-            }
-            builder.add(attribute, new AttributeModifier(resourceLocation, value, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-
-            return builder.build();
-        });
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+        int i = material.getDefenseForType(type);
+        float f = material.getToughness();
+        builder.put(Attributes.ARMOR, new AttributeModifier("armor." + type.getName(), i, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier("armor." + type.getName(), f, AttributeModifier.Operation.ADDITION));
+        float g = material.getKnockbackResistance();
+        if (g > 0.0F) {
+            builder.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier("armor." + type.getName(), g, AttributeModifier.Operation.ADDITION));
+        }
+        builder.put(attribute, new AttributeModifier("armor." + type.getName(), value, AttributeModifier.Operation.ADDITION));
+        this.modifiers = builder.build();
     }
 
     @Override
-    public @NotNull ItemAttributeModifiers getDefaultAttributeModifiers() {
-        return this.modifiers.get();
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(ItemStack stack, EquipmentSlot slot) {
+        return this.modifiers;
     }
 }

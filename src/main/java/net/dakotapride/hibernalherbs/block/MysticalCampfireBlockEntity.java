@@ -7,22 +7,16 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.component.DataComponentMap;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.Clearable;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.Containers;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.component.ItemContainerContents;
-import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.CampfireCookingRecipe;
 import net.minecraft.world.item.crafting.RecipeManager;
-import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -37,7 +31,7 @@ public class MysticalCampfireBlockEntity extends BlockEntity implements Clearabl
     private final NonNullList<ItemStack> items;
     private final int[] cookingProgress;
     private final int[] cookingTime;
-    private final RecipeManager.CachedCheck<SingleRecipeInput, MysticalCampfireCookingRecipe> quickCheck;
+    private final RecipeManager.CachedCheck<Container, MysticalCampfireCookingRecipe> quickCheck;
 
     public MysticalCampfireBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(BlockEntityTypeInit.MYSTICAL_CAMPFIRE, blockPos, blockState);
@@ -56,8 +50,8 @@ public class MysticalCampfireBlockEntity extends BlockEntity implements Clearabl
                 bl = true;
                 int var10002 = campfireBlockEntity.cookingProgress[i]++;
                 if (campfireBlockEntity.cookingProgress[i] >= campfireBlockEntity.cookingTime[i]) {
-                    SingleRecipeInput singleRecipeInput = new SingleRecipeInput(itemStack);
-                    ItemStack itemStack2 = campfireBlockEntity.quickCheck.getRecipeFor(singleRecipeInput, level).map((recipeHolder) -> (recipeHolder.value()).assemble(singleRecipeInput, level.registryAccess())).orElse(itemStack);
+                    Container container = new SimpleContainer(itemStack);
+                    ItemStack itemStack2 = campfireBlockEntity.quickCheck.getRecipeFor(container, level).map((recipeHolder) -> (recipeHolder).assemble(container, level.registryAccess())).orElse(itemStack);
                     if (itemStack2.isItemEnabled(level.enabledFeatures())) {
                         Containers.dropItemStack(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), itemStack2);
                         campfireBlockEntity.items.set(i, ItemStack.EMPTY);
@@ -121,10 +115,11 @@ public class MysticalCampfireBlockEntity extends BlockEntity implements Clearabl
         return this.items;
     }
 
-    protected void loadAdditional(CompoundTag compoundTag, HolderLookup.Provider provider) {
-        super.loadAdditional(compoundTag, provider);
+    @Override
+    public void load(CompoundTag compoundTag) {
+        super.load(compoundTag);
         this.items.clear();
-        ContainerHelper.loadAllItems(compoundTag, this.items, provider);
+        ContainerHelper.loadAllItems(compoundTag, this.items);
         int[] is;
         if (compoundTag.contains("CookingTimes", 11)) {
             is = compoundTag.getIntArray("CookingTimes");
@@ -135,12 +130,11 @@ public class MysticalCampfireBlockEntity extends BlockEntity implements Clearabl
             is = compoundTag.getIntArray("CookingTotalTimes");
             System.arraycopy(is, 0, this.cookingTime, 0, Math.min(this.cookingTime.length, is.length));
         }
-
     }
 
-    protected void saveAdditional(CompoundTag compoundTag, HolderLookup.Provider provider) {
-        super.saveAdditional(compoundTag, provider);
-        ContainerHelper.saveAllItems(compoundTag, this.items, true, provider);
+    protected void saveAdditional(CompoundTag compoundTag) {
+        super.saveAdditional(compoundTag);
+        ContainerHelper.saveAllItems(compoundTag, this.items, true);
         compoundTag.putIntArray("CookingTimes", this.cookingProgress);
         compoundTag.putIntArray("CookingTotalTimes", this.cookingTime);
     }
@@ -149,23 +143,24 @@ public class MysticalCampfireBlockEntity extends BlockEntity implements Clearabl
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    public CompoundTag getUpdateTag(HolderLookup.Provider provider) {
+    @Override
+    public CompoundTag getUpdateTag() {
         CompoundTag compoundTag = new CompoundTag();
-        ContainerHelper.saveAllItems(compoundTag, this.items, true, provider);
+        ContainerHelper.saveAllItems(compoundTag, this.items, true);
         return compoundTag;
     }
 
-    public Optional<RecipeHolder<MysticalCampfireCookingRecipe>> getCookableRecipe(ItemStack itemStack) {
-        return this.items.stream().noneMatch(ItemStack::isEmpty) ? Optional.empty() : this.quickCheck.getRecipeFor(new SingleRecipeInput(itemStack), this.level);
+    public Optional<MysticalCampfireCookingRecipe> getCookableRecipe(ItemStack itemStack) {
+        return this.items.stream().noneMatch(ItemStack::isEmpty) ? Optional.empty() : this.quickCheck.getRecipeFor(new SimpleContainer(itemStack), this.level);
     }
 
     public boolean placeFood(@Nullable LivingEntity livingEntity, ItemStack itemStack, int i) {
         for(int j = 0; j < this.items.size(); ++j) {
-            ItemStack itemStack2 = (ItemStack)this.items.get(j);
+            ItemStack itemStack2 = this.items.get(j);
             if (itemStack2.isEmpty()) {
                 this.cookingTime[j] = i;
                 this.cookingProgress[j] = 0;
-                this.items.set(j, itemStack.consumeAndReturn(1, livingEntity));
+                this.items.set(j, itemStack.split(1));
                 this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(livingEntity, this.getBlockState()));
                 this.markUpdated();
                 return true;
@@ -188,20 +183,5 @@ public class MysticalCampfireBlockEntity extends BlockEntity implements Clearabl
         if (this.level != null) {
             this.markUpdated();
         }
-
-    }
-
-    protected void applyImplicitComponents(DataComponentInput dataComponentInput) {
-        super.applyImplicitComponents(dataComponentInput);
-        (dataComponentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY)).copyInto(this.getItems());
-    }
-
-    protected void collectImplicitComponents(DataComponentMap.Builder builder) {
-        super.collectImplicitComponents(builder);
-        builder.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(this.getItems()));
-    }
-
-    public void removeComponentsFromTag(CompoundTag compoundTag) {
-        compoundTag.remove("Items");
     }
 }

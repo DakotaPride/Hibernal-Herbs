@@ -1,0 +1,32 @@
+{
+  "parent": "hibernalherbs:ashes",
+  "criteria": {
+    "herbal_sigil": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbal_sigils"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.herbal_sigil.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:pride_herbal_sigil"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.herbal_sigil.title"
+    }
+  },
+  "requirements": [
+    [
+      "herbal_sigil"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

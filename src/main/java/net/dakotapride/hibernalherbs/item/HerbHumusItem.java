@@ -14,6 +14,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -35,15 +36,14 @@ public class HerbHumusItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
-
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> tooltip, TooltipFlag tooltipFlag) {
         if (!HibernalHerbsClientMod.hasShiftDown()) {
             tooltip.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
         } else if (HibernalHerbsClientMod.hasShiftDown()) {
 
-            FertilizerTypes.applyFertilizerAssistanceTooltip(stack, tooltip);
+            FertilizerTypes.applyFertilizerAssistanceTooltip(itemStack, tooltip);
 
-            FertilizerTypes.applyProductionValueTooltip(stack, tooltip);
+            FertilizerTypes.applyProductionValueTooltip(itemStack, tooltip);
 
             if (!HibernalHerbsClientMod.hasAltDown()) {
                 tooltip.add(Component.literal(""));
@@ -57,10 +57,8 @@ public class HerbHumusItem extends Item {
                 tooltip.add(Component.literal(""));
                 tooltip.add(Component.translatable("text.hibernalherbs.controls.right_click").withStyle(ChatFormatting.DARK_GRAY));
 
-                FertilizerTypes.applyHumusAssistanceTooltip(stack, tooltip);
+                FertilizerTypes.applyHumusAssistanceTooltip(itemStack, tooltip);
             }
         }
-
     }
-
 }

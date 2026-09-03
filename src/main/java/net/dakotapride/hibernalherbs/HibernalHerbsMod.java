@@ -7,28 +7,15 @@ import net.dakotapride.hibernalherbs.mixin.WoodTypeAccessor;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.List;
 
 public class HibernalHerbsMod implements ModInitializer {
 	public static final String MOD_ID = "hibernalherbs";
@@ -52,11 +39,10 @@ public class HibernalHerbsMod implements ModInitializer {
 		StatusEffectInit.register();
 		PotionsInit.register();
 		ItemGroupInit.register();
-		EnchantmentKeys.load();
+		EnchantmentsInit.load();
 		StructureKeys.load();
 
 		ParticleTypeInit.load();
-		DataComponentInit.load();
 		StatsInit.load();
 		CriteriaTriggersInit.load();
 		PropertiesInit.load();
@@ -81,8 +67,6 @@ public class HibernalHerbsMod implements ModInitializer {
 		HerbalSigilTypes.register();
 		// Sickles
 		Sickles.register();
-		// Frozen States
-		FrozeBlockstates.register();
 
 		// Resource Packs
 		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> {
@@ -100,84 +84,10 @@ public class HibernalHerbsMod implements ModInitializer {
 				GenerationStep.Decoration.VEGETAL_DECORATION, ResourceKey.create(Registries.PLACED_FEATURE, asResource("myqueste")));
 
 		WoodTypeAccessor.invokeRegister(WoodTypes.MYQUESTE.getWoodType());
-
-		LOGGER.info("Running Hibernal Herbs v1.4 on Minecraft version 1.21");
-
-		LootTableEvents.MODIFY.register(((key, tableBuilder, source, registries) ->
-				{
-					if (key.equals(BuiltInLootTables.SPAWNER_TRIAL_ITEMS_TO_DROP_WHEN_OMINOUS)) {
-						LootPool swarming_potion = LootPool.lootPool()
-								.setRolls(ConstantValue.exactly(1))
-								.when(LootItemRandomChanceCondition.randomChance(0.15F))//0.05
-								.add(
-										LootItem.lootTableItem(Items.LINGERING_POTION)
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-												.apply(SetPotionFunction.setPotion(PotionsInit.SWARMING))
-								)
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))).build();
-						LootPool instability_potion = LootPool.lootPool()
-								.setRolls(ConstantValue.exactly(1))
-								.when(LootItemRandomChanceCondition.randomChance(0.05F))//0.05
-								.add(
-										LootItem.lootTableItem(Items.LINGERING_POTION)
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-												.apply(SetPotionFunction.setPotion(PotionsInit.INSTABILITY))
-								)
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))).build();
-						LootPool shrieking_potion = LootPool.lootPool()
-								.setRolls(ConstantValue.exactly(1))
-								.when(LootItemRandomChanceCondition.randomChance(0.35F))//0.001
-								.add(
-										LootItem.lootTableItem(Items.LINGERING_POTION)
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-												.apply(SetPotionFunction.setPotion(PotionsInit.SHRIEKING))
-								)
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))).build();
-
-						tableBuilder.pools(List.of(swarming_potion, instability_potion, shrieking_potion));
-					}
-
-					if (key.equals(BuiltInLootTables.TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE)) {
-						LootPool herbal_sigils = LootPool.lootPool()
-								.setRolls(ConstantValue.exactly(1))
-								.when(LootItemRandomChanceCondition.randomChance(0.35F))//35%
-								.add(
-										LootItem.lootTableItem(HerbalSigilTypes.PRIDE.getHerbalSigilItem())
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-								)
-								.add(
-										LootItem.lootTableItem(HerbalSigilTypes.ENVY.getHerbalSigilItem())
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-								)
-								.add(
-										LootItem.lootTableItem(HerbalSigilTypes.WRATH.getHerbalSigilItem())
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-								)
-								.add(
-										LootItem.lootTableItem(HerbalSigilTypes.GREED.getHerbalSigilItem())
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-								)
-								.add(
-										LootItem.lootTableItem(HerbalSigilTypes.GLUTTONY.getHerbalSigilItem())
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-								)
-								.add(
-										LootItem.lootTableItem(HerbalSigilTypes.SLOTH.getHerbalSigilItem())
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-								)
-								.add(
-										LootItem.lootTableItem(HerbalSigilTypes.LUST.getHerbalSigilItem())
-												.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-								)
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))).build();
-
-						tableBuilder.pools(List.of(herbal_sigils));
-					}
-				}));
 	}
 
 	public static ResourceLocation fromModId(String modId, String id) {
-		return ResourceLocation.fromNamespaceAndPath(modId, id);
+		return new ResourceLocation(modId, id);
 	}
 
 	public static ResourceLocation asResource(String id) {

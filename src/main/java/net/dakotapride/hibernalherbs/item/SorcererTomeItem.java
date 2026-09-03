@@ -1,14 +1,19 @@
 package net.dakotapride.hibernalherbs.item;
 
-import net.dakotapride.hibernalherbs.init.*;
+import net.dakotapride.hibernalherbs.init.CriteriaTriggersInit;
+import net.dakotapride.hibernalherbs.init.DamageSourceKeysInit;
+import net.dakotapride.hibernalherbs.init.StatsInit;
+import net.dakotapride.hibernalherbs.init.StatusEffectInit;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalSigilTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.PadlockTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -29,28 +34,31 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Objects;
 
 public class SorcererTomeItem extends Item {
+    private static final String TAG_IS_BEING_USED = "IsBeingUsed";
     public SorcererTomeItem(Properties properties) {
         super(properties);
     }
 
+    public static boolean isBeingUsed(ItemStack itemStack) {
+        CompoundTag compoundTag = itemStack.getTag();
+        return compoundTag != null && compoundTag.getBoolean(TAG_IS_BEING_USED);
+    }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-        if (!isNotActive(itemStack)) {
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+        if (isBeingUsed(itemStack)) {
             list.add(Component.translatable("text.hibernalherbs.tome.is_active"));
             list.add(Component.literal(""));
             list.add(Component.translatable("text.hibernalherbs.tome.cannot_utilise"));
-        } else if (isNotActive(itemStack)) {
+        } else if (!isBeingUsed(itemStack)) {
             list.add(Component.translatable("text.hibernalherbs.not_active").withStyle(ChatFormatting.GRAY));
         }
-    }
-
-    public static boolean isNotActive(ItemStack itemStack) {
-        return Boolean.FALSE.equals(itemStack.get(DataComponentInit.IS_BEING_USED)) || !(itemStack.has(DataComponentInit.IS_BEING_USED));
     }
 
     @Override
@@ -60,7 +68,7 @@ public class SorcererTomeItem extends Item {
         BlockState blockState = level.getBlockState(blockPos);
         Player player = ctx.getPlayer();
 
-        if (blockState.getBlock() instanceof BonemealableBlock block && level instanceof ServerLevel serverLevel && block.isValidBonemealTarget(serverLevel, blockPos, blockState)) {
+        if (blockState.getBlock() instanceof BonemealableBlock block && level instanceof ServerLevel serverLevel && block.isValidBonemealTarget(serverLevel, blockPos, blockState, level.isClientSide)) {
             block.performBonemeal(serverLevel, level.getRandom(), blockPos, blockState);
 
             player.getCooldowns().addCooldown(this, (20 * 3));
@@ -85,8 +93,11 @@ public class SorcererTomeItem extends Item {
         if (!itemStack0.is(this))
             return InteractionResultHolder.fail(this.getDefaultInstance());
 
-        if (itemStack1.is(Tags.Items.CAN_USE_WITH_TOME.getTag()) && !player.getCooldowns().isOnCooldown(itemStack0.getItem()) && isNotActive(itemStack0)) {
-            itemStack0.set(DataComponentInit.IS_BEING_USED, true);
+        if (itemStack1.is(Tags.Items.CAN_USE_WITH_TOME.getTag()) && !player.getCooldowns().isOnCooldown(itemStack0.getItem()) && !isBeingUsed(itemStack0)) {
+            //itemStack0.set(DataComponentInit.IS_BEING_USED, true);
+            CompoundTag compoundTag = new CompoundTag();
+            compoundTag.putBoolean(TAG_IS_BEING_USED, true);
+            itemStack0.setTag(compoundTag);
 
             return ItemUtils.startUsingInstantly(level, player, interactionHand);
         } else {
@@ -117,19 +128,19 @@ public class SorcererTomeItem extends Item {
             //duration = 60;
 
             if (itemStack1.is(HerbalSigilTypes.PRIDE.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.SANGUINE, (20 * 10), 1));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.SANGUINE.value(), (20 * 10), 1));
             }
 
             if (itemStack1.is(HerbalSigilTypes.SLOTH.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.LETHARGY, (20 * 10), 1));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.LETHARGY.value(), (20 * 10), 1));
             }
 
             if (itemStack1.is(HerbalSigilTypes.WRATH.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.BARBARIC, (20 * 10), 1));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.BARBARIC.value(), (20 * 10), 1));
             }
 
             if (itemStack1.is(HerbalSigilTypes.LUST.getHerbalSigilItem())) {
-                MobEffectInstance instance = new MobEffectInstance(StatusEffectInit.DEVOTION, (20 * 10), 1);
+                MobEffectInstance instance = new MobEffectInstance(StatusEffectInit.DEVOTION.value(), (20 * 10), 1);
                 livingEntity.addEffect(instance);
 
                 final List<Animal> animalList = level.getEntitiesOfClass(Animal.class, livingEntity.getBoundingBox().inflate(8F * instance.getAmplifier()), Objects::nonNull);
@@ -140,15 +151,15 @@ public class SorcererTomeItem extends Item {
             }
 
             if (itemStack1.is(HerbalSigilTypes.GREED.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.RAPACITY, (20 * 10), 1));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.RAPACITY.value(), (20 * 10), 1));
             }
 
             if (itemStack1.is(HerbalSigilTypes.GLUTTONY.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.ESURIENT, (20 * 10), 1));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.ESURIENT.value(), (20 * 10), 1));
             }
 
             if (itemStack1.is(HerbalSigilTypes.ENVY.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.MIMICRY, (20 * 10), 1));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.MIMICRY.value(), (20 * 10), 1));
             }
 
 
@@ -186,10 +197,12 @@ public class SorcererTomeItem extends Item {
 
                     player.getCooldowns().addCooldown(this, (20 * 12));
 
-                    player.hurt(player.damageSources().source(DamageSourceKeysInit.TOME_HUNGER_SACRIFICE), 1.0F);
+                    player.hurt(DamageSourceKeysInit.getDamageSourceFromKey(level, DamageSourceKeysInit.TOME_HUNGER_SACRIFICE), 1.0F);
                     player.causeFoodExhaustion(0.20F);
 
-                    itemStack.set(DataComponentInit.IS_BEING_USED, false);
+                    CompoundTag tag = new CompoundTag();
+                    tag.putBoolean(TAG_IS_BEING_USED, false);
+                    itemStack.setTag(tag);
                 }
 
             }
@@ -224,14 +237,17 @@ public class SorcererTomeItem extends Item {
 
                 player.getCooldowns().addCooldown(this, (20 * 12));
 
-                itemStack.set(DataComponentInit.IS_BEING_USED, false);
+                CompoundTag tag = new CompoundTag();
+                tag.putBoolean(TAG_IS_BEING_USED, false);
+                itemStack.setTag(tag);
             }
         }
     }
 
     @Override
-    public int getUseDuration(ItemStack itemStack, LivingEntity livingEntity) {
-        if (livingEntity instanceof Player player) {
+    public int getUseDuration(ItemStack itemStack) {
+        Player player = Minecraft.getInstance().player;
+        if (player != null) {
             ItemStack itemStack1 = player.getOffhandItem();
             return getDuration(itemStack1);
         }

@@ -15,7 +15,7 @@
     },
     {
       "type": "patchouli:spotlight",
-      "item": "hibernalherbs:froze_state_copper_block",
+      "item": "hibernalherbs:froze_state_sacrificial_rune_block",
       "text": "Can freeze or unfreeze a blockstate.$(br2)Freezing a blockstate using the Sorcerer's Agglomeration is DIFFERENT than waxing a block functionality wise and texture wise if you're using the built-in resource pack for frozen over textures."
     },
     {

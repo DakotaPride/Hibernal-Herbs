@@ -1,6 +1,6 @@
 {
   "name": "Brewing",
   "description": "Expanded brewing systems for you to explore.",
-  "icon": "hibernalherbs:enigmatic_potion[potion_contents={potion:'regeneration'}]",
+  "icon": "hibernalherbs:enigmatic_potion{CustomPotionEffects:[{Id:10,Duration:0}]}",
   "sortnum": 5
 }

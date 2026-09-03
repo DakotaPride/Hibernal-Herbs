@@ -1,0 +1,25 @@
+{
+  "parent": "hibernalherbs:sorcerer_agglomeration",
+  "criteria": {
+    "froze_state": {
+      "trigger": "hibernalherbs:froze_blockstate"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.froze_state.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:froze_state_sacrificial_rune_block"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.froze_state.title"
+    }
+  },
+  "requirements": [
+    [
+      "froze_state"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

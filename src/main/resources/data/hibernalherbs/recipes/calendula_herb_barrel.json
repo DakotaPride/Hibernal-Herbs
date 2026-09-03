@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:calendula"
+    },
+    {
+      "item": "hibernalherbs:calendula"
+    },
+    {
+      "item": "hibernalherbs:calendula"
+    },
+    {
+      "item": "hibernalherbs:calendula"
+    },
+    {
+      "item": "minecraft:barrel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "hibernalherbs:calendula_herb_barrel"
+  }
+}

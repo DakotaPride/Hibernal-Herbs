@@ -5,10 +5,11 @@ import net.dakotapride.hibernalherbs.client.MysticalCampfireRenderer;
 import net.dakotapride.hibernalherbs.entity.boat.ModBoatEntity;
 import net.dakotapride.hibernalherbs.entity.render.ModBoatRenderer;
 import net.dakotapride.hibernalherbs.init.*;
-import net.dakotapride.hibernalherbs.init.enum_registry.FrozeBlockstates;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.WoodTypes;
 import net.dakotapride.hibernalherbs.item.HerbalPadlockItem;
+import net.dakotapride.hibernalherbs.item.SorcererAgglomerationItem;
+import net.dakotapride.hibernalherbs.item.SorcererTomeItem;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -27,7 +28,11 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.resources.model.Material;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CrossbowItem;
+import net.minecraft.world.item.Items;
 
 public class HibernalHerbsClientMod implements ClientModInitializer {
 
@@ -44,9 +49,9 @@ public class HibernalHerbsClientMod implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         FabricModelPredicateProviderRegistry.register(ItemInit.SORCERER_AGGLOMERATION, HibernalHerbsMod.asResource("is_using_agglomeration"),
-                (stack, world, entity, seed) -> Boolean.TRUE.equals(stack.get(DataComponentInit.IS_BEING_USED)) ? 1f : 0f);
+                (stack, world, entity, seed) -> SorcererAgglomerationItem.isBeingUsed(stack) ? 1f : 0f);
         FabricModelPredicateProviderRegistry.register(ItemInit.SORCERER_TOME, HibernalHerbsMod.asResource("is_using_tome"),
-                (stack, world, entity, seed) -> Boolean.TRUE.equals(stack.get(DataComponentInit.IS_BEING_USED)) ? 1f : 0f);
+                (stack, world, entity, seed) -> SorcererTomeItem.isBeingUsed(stack) ? 1f : 0f);
 
         EntityRendererRegistry.register(EntityTypeInit.MOD_BOAT, context -> new ModBoatRenderer<>(context, false));
         EntityRendererRegistry.register(EntityTypeInit.MOD_CHEST_BOAT, context -> new ModBoatRenderer<>(context, true));
@@ -65,12 +70,6 @@ public class HibernalHerbsClientMod implements ClientModInitializer {
         for (ModBoatEntity.Type type : ModBoatEntity.Type.values()) {
             EntityModelLayerRegistry.registerModelLayer(new ModelLayerLocation(HibernalHerbsMod.asResource(type.getModelLocation()), "main"), BoatModel::createBodyModel);
             EntityModelLayerRegistry.registerModelLayer(new ModelLayerLocation(HibernalHerbsMod.asResource(type.getChestModelLocation()), "main"), ChestBoatModel::createBodyModel);
-        }
-
-        for (FrozeBlockstates states : FrozeBlockstates.values()) {
-            BlockRenderLayerMap.INSTANCE.putBlock(states.getFrozeTrapdoorState(), RenderType.cutoutMipped());
-            BlockRenderLayerMap.INSTANCE.putBlock(states.getFrozeDoorState(), RenderType.cutout());
-            BlockRenderLayerMap.INSTANCE.putBlock(states.getFrozeGrateState(), RenderType.cutoutMipped());
         }
 
         for (HerbTypes types : HerbTypes.values()) {

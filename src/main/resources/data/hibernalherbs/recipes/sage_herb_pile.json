@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:sage"
+    },
+    {
+      "item": "hibernalherbs:sage"
+    },
+    {
+      "item": "hibernalherbs:myqueste_leaves"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "hibernalherbs:sage_herb_pile"
+  }
+}

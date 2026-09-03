@@ -1,0 +1,43 @@
+{
+  "parent": "hibernalherbs:pounded_herbs",
+  "criteria": {
+    "herb_humus": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "tag": "hibernalherbs:acceptable_herb_humus_blocks"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "tag": "hibernalherbs:herbal_humus"
+            }
+          }
+        ]
+      },
+      "trigger": "hibernalherbs:use_herb_humus_on_log"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.herb_humus.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:herb_humus"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.herb_humus.title"
+    }
+  },
+  "requirements": [
+    [
+      "herb_humus"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

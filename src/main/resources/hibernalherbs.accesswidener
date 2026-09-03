@@ -11,3 +11,7 @@ accessible field net/minecraft/world/effect/MobEffectInstance duration I
 accessible field net/minecraft/world/effect/MobEffectInstance amplifier I
 
 accessible class net/minecraft/world/inventory/BrewingStandMenu$PotionSlot
+
+accessible method net/minecraft/advancements/critereon/SimpleCriterionTrigger trigger (Lnet/minecraft/server/level/ServerPlayer;Ljava/util/function/Predicate;)V
+accessible field net/minecraft/world/item/SwordItem defaultModifiers Lcom/google/common/collect/Multimap;
+accessible field net/minecraft/world/item/SwordItem attackDamage F

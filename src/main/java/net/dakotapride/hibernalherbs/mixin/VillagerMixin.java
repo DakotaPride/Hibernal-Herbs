@@ -22,8 +22,8 @@ public abstract class VillagerMixin extends AbstractVillager {
 
     @Inject(method = "updateSpecialPrices", at = @At("RETURN"))
     private void updateSpecialPrices(Player player, CallbackInfo ci) {
-        if (player.hasEffect(StatusEffectInit.RAPACITY)) {
-            MobEffectInstance mobEffectInstance = player.getEffect(StatusEffectInit.RAPACITY);
+        if (player.hasEffect(StatusEffectInit.RAPACITY.value())) {
+            MobEffectInstance mobEffectInstance = player.getEffect(StatusEffectInit.RAPACITY.value());
             int j = mobEffectInstance.getAmplifier();
 
             for (MerchantOffer merchantOffer2 : this.getOffers()) {

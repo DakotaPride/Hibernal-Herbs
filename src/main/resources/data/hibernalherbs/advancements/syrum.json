@@ -1,0 +1,34 @@
+{
+  "parent": "hibernalherbs:mystical_campfire",
+  "criteria": {
+    "syrum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:syrum_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.syrum.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:syrum_ingot"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.syrum.title"
+    }
+  },
+  "requirements": [
+    [
+      "syrum"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

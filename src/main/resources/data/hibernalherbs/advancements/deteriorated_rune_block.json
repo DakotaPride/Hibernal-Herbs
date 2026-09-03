@@ -1,0 +1,25 @@
+{
+  "parent": "hibernalherbs:sacrificial_rune_block",
+  "criteria": {
+    "deteriorated_rune_block": {
+      "trigger": "hibernalherbs:deteriorated_rune_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.deteriorated_rune_block.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:deteriorated_sacrificial_rune_block"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.deteriorated_rune_block.title"
+    }
+  },
+  "requirements": [
+    [
+      "deteriorated_rune_block"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

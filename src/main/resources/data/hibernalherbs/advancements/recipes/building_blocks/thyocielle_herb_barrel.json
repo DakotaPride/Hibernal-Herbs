@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_Block{hibernalherbs:thyocielle}": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:thyocielle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:thyocielle_herb_barrel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_Block{hibernalherbs:thyocielle}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:thyocielle_herb_barrel"
+    ]
+  }
+}

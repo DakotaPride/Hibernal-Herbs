@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:pounded_fennel_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "hibernalherbs:pounded_fennel"
+  }
+}

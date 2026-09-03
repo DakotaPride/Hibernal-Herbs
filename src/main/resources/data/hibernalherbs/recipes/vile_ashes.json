@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:extract_mystical_ashes"
+    },
+    {
+      "tag": "hibernalherbs:ashes"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "hibernalherbs:extract_vile_ashes"
+  }
+}

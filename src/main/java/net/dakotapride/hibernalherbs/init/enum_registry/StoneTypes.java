@@ -59,28 +59,28 @@ public enum StoneTypes {
         this.tag = stone_tag;
         this.tag0 = item_tag;
 
-        this.base_block = BlockInit.register(stone_id, new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).requiresCorrectToolForDrops()));
-        this.cobbled_block = BlockInit.register("cobbled_" + stone_id, new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).requiresCorrectToolForDrops()));
-        this.polished_block = BlockInit.register("polished_" + stone_id, new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).requiresCorrectToolForDrops()));
-        this.bricks_block = BlockInit.register(stone_id + "_bricks", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).requiresCorrectToolForDrops()));
+        this.base_block = BlockInit.register(stone_id, new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
+        this.cobbled_block = BlockInit.register("cobbled_" + stone_id, new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
+        this.polished_block = BlockInit.register("polished_" + stone_id, new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
+        this.bricks_block = BlockInit.register(stone_id + "_bricks", new Block(BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops()));
 
-        this.slab_block = BlockInit.register(stone_id + "_slab", new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-        this.cobbled_slab_block = BlockInit.register("cobbled_" + stone_id + "_slab", new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-        this.polished_slab_block = BlockInit.register("polished_" + stone_id + "_slab", new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-        this.brick_slab_block = BlockInit.register(stone_id + "_brick_slab", new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+        this.slab_block = BlockInit.register(stone_id + "_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+        this.cobbled_slab_block = BlockInit.register("cobbled_" + stone_id + "_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+        this.polished_slab_block = BlockInit.register("polished_" + stone_id + "_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+        this.brick_slab_block = BlockInit.register(stone_id + "_brick_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
 
-        this.stairs_block = BlockInit.register(stone_id + "_stairs", new StairBlock(base_block.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-        this.cobbled_stairs_block = BlockInit.register("cobbled_" + stone_id + "_stairs", new StairBlock(cobbled_block.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-        this.polished_stairs_block = BlockInit.register("polished_" + stone_id + "_stairs", new StairBlock(polished_block.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-        this.brick_stairs_block = BlockInit.register(stone_id + "_brick_stairs", new StairBlock(bricks_block.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+        this.stairs_block = BlockInit.register(stone_id + "_stairs", new StairBlock(base_block.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+        this.cobbled_stairs_block = BlockInit.register("cobbled_" + stone_id + "_stairs", new StairBlock(cobbled_block.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+        this.polished_stairs_block = BlockInit.register("polished_" + stone_id + "_stairs", new StairBlock(polished_block.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+        this.brick_stairs_block = BlockInit.register(stone_id + "_brick_stairs", new StairBlock(bricks_block.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
 
-        this.wall_block = BlockInit.register(stone_id + "_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-        this.cobbled_wall_block = BlockInit.register("cobbled_" + stone_id + "_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-        this.polished_wall_block = BlockInit.register("polished_" + stone_id + "_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-        this.brick_wall_block = BlockInit.register(stone_id + "_brick_wall", new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+        this.wall_block = BlockInit.register(stone_id + "_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+        this.cobbled_wall_block = BlockInit.register("cobbled_" + stone_id + "_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+        this.polished_wall_block = BlockInit.register("polished_" + stone_id + "_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+        this.brick_wall_block = BlockInit.register(stone_id + "_brick_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
 
-        this.button_block = BlockInit.register(stone_id + "_button", new ButtonBlock(set_type, 20, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BUTTON).requiresCorrectToolForDrops()));
-        this.pressure_plate_block = BlockInit.register(stone_id + "_pressure_plate", new PressurePlateBlock(set_type, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_PRESSURE_PLATE).requiresCorrectToolForDrops()));
+        this.button_block = BlockInit.register(stone_id + "_button", new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).requiresCorrectToolForDrops(), set_type, 20, false));
+        this.pressure_plate_block = BlockInit.register(stone_id + "_pressure_plate", new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE).requiresCorrectToolForDrops(), set_type));
     }
 
     public String getStoneId() {

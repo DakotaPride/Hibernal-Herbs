@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:blank_herbal_sigil"
+    },
+    {
+      "item": "hibernalherbs:dried_rosemary"
+    },
+    {
+      "item": "hibernalherbs:dried_thyme"
+    },
+    {
+      "item": "hibernalherbs:dried_tarragon"
+    },
+    {
+      "item": "hibernalherbs:dried_chamomile"
+    },
+    {
+      "item": "hibernalherbs:dried_chives"
+    },
+    {
+      "item": "hibernalherbs:dried_verbena"
+    },
+    {
+      "item": "hibernalherbs:dried_sorrel"
+    },
+    {
+      "item": "hibernalherbs:dried_marjoram"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "hibernalherbs:configuration_herbal_sigil"
+  }
+}

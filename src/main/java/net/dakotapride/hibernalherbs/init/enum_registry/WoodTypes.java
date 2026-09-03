@@ -7,8 +7,8 @@ import net.dakotapride.hibernalherbs.block.ModSignBlock;
 import net.dakotapride.hibernalherbs.block.ModWallHangingSignBlock;
 import net.dakotapride.hibernalherbs.block.ModWallSignBlock;
 import net.dakotapride.hibernalherbs.entity.boat.ModBoatEntity;
+import net.dakotapride.hibernalherbs.grower.MyquesteTreeGrower;
 import net.dakotapride.hibernalherbs.init.BlockInit;
-import net.dakotapride.hibernalherbs.init.FeaturesInit;
 import net.dakotapride.hibernalherbs.init.ItemInit;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
 import net.dakotapride.hibernalherbs.item.ModBoatItem;
@@ -18,7 +18,6 @@ import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -27,7 +26,6 @@ import net.minecraft.world.level.material.MapColor;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.stream.Stream;
 
 @SuppressWarnings({"unused"})
@@ -64,7 +62,7 @@ public enum WoodTypes {
     public final Block sapling;
     public final Block potted_sapling;
 
-    public final TreeGrower grower;
+    public final MyquesteTreeGrower grower;
 
     public final TagKey<Block> logs_block_tag;
     public final TagKey<Item> logs_item_tag;
@@ -79,27 +77,27 @@ public enum WoodTypes {
 
         this.log_block = BlockInit.register(wood_id + "_log", Blocks.log(MapColor.PODZOL, MapColor.COLOR_BROWN));
         this.stripped_log_block = BlockInit.register("stripped_" + wood_id + "_log", Blocks.log(MapColor.PODZOL, MapColor.PODZOL));
-        this.wood_block = BlockInit.register(wood_id + "_wood", new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).mapColor(MapColor.PODZOL)));
-        this.stripped_wood_block = BlockInit.register("stripped_" + wood_id + "_wood", new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.PODZOL)));
+        this.wood_block = BlockInit.register(wood_id + "_wood", new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).mapColor(MapColor.PODZOL)));
+        this.stripped_wood_block = BlockInit.register("stripped_" + wood_id + "_wood", new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.PODZOL)));
 
-        this.planks_block = BlockInit.register(wood_id + "_planks", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.PODZOL)));
+        this.planks_block = BlockInit.register(wood_id + "_planks", new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).mapColor(MapColor.PODZOL)));
 
-        this.slab_block = BlockInit.register(wood_id + "_slab", new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.PODZOL)));
-        this.stairs_block = BlockInit.register(wood_id + "_stairs", new StairBlock(planks_block.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.PODZOL)));
+        this.slab_block = BlockInit.register(wood_id + "_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).mapColor(MapColor.PODZOL)));
+        this.stairs_block = BlockInit.register(wood_id + "_stairs", new StairBlock(planks_block.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).mapColor(MapColor.PODZOL)));
 
-        this.fence_block = BlockInit.register(wood_id + "_fence", new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE).mapColor(MapColor.PODZOL)));
-        this.fence_gate_block = BlockInit.register(wood_id + "_fence_gate", new FenceGateBlock(wood_type, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE).mapColor(MapColor.PODZOL)));
+        this.fence_block = BlockInit.register(wood_id + "_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE).mapColor(MapColor.PODZOL)));
+        this.fence_gate_block = BlockInit.register(wood_id + "_fence_gate", new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE).mapColor(MapColor.PODZOL), wood_type));
 
         this.button_block = BlockInit.register(wood_id + "_button", Blocks.woodenButton(wood_set));
-        this.pressure_plate_block = BlockInit.register(wood_id + "_pressure_plate", new PressurePlateBlock(wood_set, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE).mapColor(MapColor.PODZOL)));
+        this.pressure_plate_block = BlockInit.register(wood_id + "_pressure_plate", new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE).mapColor(MapColor.PODZOL), wood_set));
 
-        this.door_block = BlockInit.register(wood_id + "_door", new DoorBlock(wood_set, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR).mapColor(MapColor.PODZOL)));
-        this.trapdoor_block = BlockInit.register(wood_id + "_trapdoor", new TrapDoorBlock(wood_set, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR).mapColor(MapColor.PODZOL)));
+        this.door_block = BlockInit.register(wood_id + "_door", new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).mapColor(MapColor.PODZOL), wood_set));
+        this.trapdoor_block = BlockInit.register(wood_id + "_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).mapColor(MapColor.PODZOL), wood_set));
 
-        this.sign_block = BlockInit.registerWithoutBlockItem(wood_id + "_sign", new ModSignBlock(wood_type, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN).mapColor(MapColor.PODZOL)));
-        this.wall_sign_block = BlockInit.registerWithoutBlockItem(wood_id + "_wall_sign", new ModWallSignBlock(wood_type, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN).dropsLike(sign_block).mapColor(MapColor.PODZOL)));
-        this.hanging_sign_block = BlockInit.registerWithoutBlockItem(wood_id + "_hanging_sign", new ModHangingSignBlock(wood_type, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN).mapColor(MapColor.PODZOL)));
-        this.wall_hanging_sign_block = BlockInit.registerWithoutBlockItem(wood_id + "_wall_hanging_sign", new ModWallHangingSignBlock(wood_type, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN).dropsLike(hanging_sign_block).mapColor(MapColor.PODZOL)));
+        this.sign_block = BlockInit.registerWithoutBlockItem(wood_id + "_sign", new ModSignBlock(wood_type, BlockBehaviour.Properties.copy(Blocks.OAK_SIGN).mapColor(MapColor.PODZOL)));
+        this.wall_sign_block = BlockInit.registerWithoutBlockItem(wood_id + "_wall_sign", new ModWallSignBlock(wood_type, BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN).dropsLike(sign_block).mapColor(MapColor.PODZOL)));
+        this.hanging_sign_block = BlockInit.registerWithoutBlockItem(wood_id + "_hanging_sign", new ModHangingSignBlock(wood_type, BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN).mapColor(MapColor.PODZOL)));
+        this.wall_hanging_sign_block = BlockInit.registerWithoutBlockItem(wood_id + "_wall_hanging_sign", new ModWallHangingSignBlock(wood_type, BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN).dropsLike(hanging_sign_block).mapColor(MapColor.PODZOL)));
 
         this.sign_block_item = ItemInit.register(wood_id + "_sign", new SignItem(new Item.Properties().stacksTo(16), sign_block, wall_sign_block));
         this.hanging_sign_block_item = ItemInit.register(wood_id + "_hanging_sign", new HangingSignItem(hanging_sign_block, wall_hanging_sign_block, new Item.Properties().stacksTo(16)));
@@ -107,10 +105,10 @@ public enum WoodTypes {
         this.boat = ItemInit.register(wood_id + "_boat", new ModBoatItem(false, ModBoatEntity.Type.MYQUESTE, new Item.Properties().stacksTo(1)));
         this.chest_boat = ItemInit.register(wood_id + "_chest_boat", new ModBoatItem(true, ModBoatEntity.Type.MYQUESTE, new Item.Properties().stacksTo(1)));
 
-        this.grower  = new TreeGrower(wood_id, Optional.empty(), Optional.of(FeaturesInit.MYQUESTE_CONFIGURED), Optional.empty());
+        this.grower  = new MyquesteTreeGrower();
 
-        this.sapling = BlockInit.register(wood_id + "_sapling", new SaplingBlock(grower, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).mapColor(MapColor.PODZOL)));
-        this.potted_sapling = BlockInit.registerWithoutBlockItem("potted_" + wood_id + "_sapling", new FlowerPotBlock(sapling, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING)));
+        this.sapling = BlockInit.register(wood_id + "_sapling", new SaplingBlock(grower, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).mapColor(MapColor.PODZOL)));
+        this.potted_sapling = BlockInit.registerWithoutBlockItem("potted_" + wood_id + "_sapling", new FlowerPotBlock(sapling, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
 
         this.logs_block_tag = Tags.Blocks.create(wood_id + "_logs");
         this.logs_item_tag = Tags.Items.create(wood_id + "_logs");

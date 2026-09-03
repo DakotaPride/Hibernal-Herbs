@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:mastery_herbal_sigil"
+    },
+    {
+      "item": "hibernalherbs:dried_chervil_block"
+    },
+    {
+      "item": "hibernalherbs:dried_ceillis_block"
+    },
+    {
+      "item": "hibernalherbs:dried_punuel_block"
+    },
+    {
+      "item": "hibernalherbs:dried_essitte_block"
+    },
+    {
+      "item": "hibernalherbs:dried_thyocielle_block"
+    },
+    {
+      "item": "hibernalherbs:dried_fennkystral_block"
+    },
+    {
+      "item": "hibernalherbs:dried_calendula_block"
+    },
+    {
+      "item": "hibernalherbs:dried_sage_block"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "hibernalherbs:advanced_mastery_herbal_sigil"
+  }
+}

@@ -24,7 +24,7 @@ public class InscriptionSmithingTemplate extends SmithingTemplateItem {
     // private static final List<ResourceLocation> SLOT_LIST_1 = List.of(EMPTY_SLOT_CATALYST);
 
     public InscriptionSmithingTemplate(Component applies_to, Component ingredients, Component upgrade, Component base_slot_description, Component additions_slot_description, List<ResourceLocation> icon_list, List<ResourceLocation> material_list, FeatureFlag... featureFlags) {
-        super(applies_to, ingredients, upgrade, base_slot_description, additions_slot_description, icon_list, material_list, featureFlags);
+        super(applies_to, ingredients, upgrade, base_slot_description, additions_slot_description, icon_list, material_list);
     }
 
     public static SmithingTemplateItem createInscriptionSmithingTemplateItem() {

@@ -1,31 +1,31 @@
 {
   "name": "Time Dependent Potions",
-  "icon": "hibernalherbs:solar_potion[potion_contents={potion:'fire_resistance'}]",
+  "icon": "hibernalherbs:solar_potion{CustomPotionEffects:[{Id:12,Duration:0}]}",
   "category": "hibernalherbs:brewing",
   "pages": [
     {
       "type": "patchouli:spotlight",
-      "item": "hibernalherbs:solar_potion[potion_contents={potion:'fire_resistance'}]",
+      "item": "hibernalherbs:solar_potion{CustomPotionEffects:[{Id:12,Duration:0}]}",
       "title": "Time Dependent Potions",
       "text": "When combining a Clock with a given potion, you can make a potion that has its amplifier and duration increased during the day, but decreased during the night! Perhaps you should try to sleep more often if you take this option."
     },
     {
       "type": "hibernalherbs:brewing",
-      "input": "minecraft:potion[potion_contents={potion:'fire_resistance'}]",
+      "input": "minecraft:potion{CustomPotionEffects:[{Id:12,Duration:0}]}",
       "ingredient": "minecraft:clock",
-      "output": "hibernalherbs:solar_potion[potion_contents={potion:'fire_resistance'}]"
+      "output": "hibernalherbs:solar_potion{CustomPotionEffects:[{Id:12,Duration:0}]}"
     },
     {
       "type": "patchouli:spotlight",
-      "item": "hibernalherbs:lunar_potion[potion_contents={potion:'water_breathing'}]",
+      "item": "hibernalherbs:lunar_potion{CustomPotionEffects:[{Id:13,Duration:0}]}",
       "title": "Time Dependent Potions",
       "text": "When combining a Clock with any Solar Potion, you can make a potion that has its amplifier and duration increased during the night, but decreased during the day! Finally, someone else who may like phantoms."
     },
     {
       "type": "hibernalherbs:brewing",
-      "input": "minecraft:potion[potion_contents={potion:'water_breathing'}]",
+      "input": "minecraft:potion{CustomPotionEffects:[{Id:13,Duration:0}]}",
       "ingredient": "minecraft:sculk",
-      "output": "hibernalherbs:lunar_potion[potion_contents={potion:'water_breathing'}]"
+      "output": "hibernalherbs:lunar_potion{CustomPotionEffects:[{Id:13,Duration:0}]}"
     }
   ]
 }

@@ -6,11 +6,8 @@ import net.dakotapride.hibernalherbs.init.BlockEntityTypeInit;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -49,7 +46,7 @@ public class ModBrushableBlockEntity extends BlockEntity {
     @Nullable
     private Direction hitDirection;
     @Nullable
-    private ResourceKey<LootTable> lootTable;
+    private ResourceLocation lootTable;
     private long lootTableSeed;
 
     public ModBrushableBlockEntity(BlockPos blockPos, BlockState blockState) {
@@ -87,7 +84,7 @@ public class ModBrushableBlockEntity extends BlockEntity {
 
     public void unpackLootTable(Player player) {
         if (this.lootTable != null && this.level != null && !this.level.isClientSide() && this.level.getServer() != null) {
-            LootTable lootTable = this.level.getServer().reloadableRegistries().getLootTable(this.lootTable);
+            LootTable lootTable = this.level.getServer().getLootData().getLootTable(this.lootTable);
             if (player instanceof ServerPlayer serverPlayer) {
                 CriteriaTriggers.GENERATE_LOOT.trigger(serverPlayer, this.lootTable);
             }
@@ -101,9 +98,9 @@ public class ModBrushableBlockEntity extends BlockEntity {
 
             this.item = switch (objectArrayList.size()) {
                 case 0 -> ItemStack.EMPTY;
-                case 1 -> (ItemStack)objectArrayList.get(0);
+                case 1 -> objectArrayList.get(0);
                 default -> {
-                    LOGGER.warn("Expected max 1 loot from loot table {}, but got {}", this.lootTable.location(), objectArrayList.size());
+                    LOGGER.warn("Expected max 1 loot from loot table {}, but got {}", this.lootTable, objectArrayList.size());
                     yield objectArrayList.get(0);
                 }
             };
@@ -174,7 +171,7 @@ public class ModBrushableBlockEntity extends BlockEntity {
 
     private boolean tryLoadLootTable(CompoundTag compoundTag) {
         if (compoundTag.contains("LootTable", 8)) {
-            this.lootTable = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.parse(compoundTag.getString("LootTable")));
+            this.lootTable = new ResourceLocation(compoundTag.getString("LootTable"));
             this.lootTableSeed = compoundTag.getLong("LootTableSeed");
             return true;
         } else {
@@ -186,7 +183,7 @@ public class ModBrushableBlockEntity extends BlockEntity {
         if (this.lootTable == null) {
             return false;
         } else {
-            compoundTag.putString("LootTable", this.lootTable.location().toString());
+            compoundTag.putString("LootTable", this.lootTable.toString());
             if (this.lootTableSeed != 0L) {
                 compoundTag.putLong("LootTableSeed", this.lootTableSeed);
             }
@@ -196,16 +193,15 @@ public class ModBrushableBlockEntity extends BlockEntity {
     }
 
     @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider provider) {
-        CompoundTag compoundTag = super.getUpdateTag(provider);
+    public CompoundTag getUpdateTag() {
+        CompoundTag compoundTag = super.getUpdateTag();
         if (this.hitDirection != null) {
             compoundTag.putInt("hit_direction", this.hitDirection.ordinal());
         }
 
         if (!this.item.isEmpty()) {
-            compoundTag.put("item", this.item.save(provider));
+            compoundTag.put("item", this.item.save(new CompoundTag()));
         }
-
         return compoundTag;
     }
 
@@ -214,10 +210,10 @@ public class ModBrushableBlockEntity extends BlockEntity {
     }
 
     @Override
-    protected void loadAdditional(CompoundTag compoundTag, HolderLookup.Provider provider) {
-        super.loadAdditional(compoundTag, provider);
+    public void load(CompoundTag compoundTag) {
+        super.load(compoundTag);
         if (!this.tryLoadLootTable(compoundTag) && compoundTag.contains("item")) {
-            this.item = (ItemStack)ItemStack.parse(provider, compoundTag.getCompound("item")).orElse(ItemStack.EMPTY);
+            this.item = ItemStack.of(compoundTag.getCompound("item"));
         } else {
             this.item = ItemStack.EMPTY;
         }
@@ -228,15 +224,15 @@ public class ModBrushableBlockEntity extends BlockEntity {
     }
 
     @Override
-    protected void saveAdditional(CompoundTag compoundTag, HolderLookup.Provider provider) {
-        super.saveAdditional(compoundTag, provider);
+    protected void saveAdditional(CompoundTag compoundTag) {
+        super.saveAdditional(compoundTag);
         if (!this.trySaveLootTable(compoundTag) && !this.item.isEmpty()) {
-            compoundTag.put("item", this.item.save(provider));
+            compoundTag.put("item", this.item.save(new CompoundTag()));
         }
     }
 
-    public void setLootTable(ResourceKey<LootTable> resourceKey, long l) {
-        this.lootTable = resourceKey;
+    public void setLootTable(ResourceLocation resourceLocation, long l) {
+        this.lootTable = resourceLocation;
         this.lootTableSeed = l;
     }
 

@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:unbound_padlock",
+  "criteria": {
+    "bound_padlock": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:bound_herbal_padlocks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.bound_padlock.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "item": "hibernalherbs:bound_pride_padlock"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.bound_padlock.title"
+    }
+  },
+  "requirements": [
+    [
+      "bound_padlock"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

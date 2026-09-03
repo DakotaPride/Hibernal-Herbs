@@ -1,0 +1,10 @@
+{
+  "type": "hibernalherbs:mystical_campfire_conversion",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "hibernalherbs:extract_mystical_ashes"
+  },
+  "result": "hibernalherbs:extract_virtuous_ashes"
+}

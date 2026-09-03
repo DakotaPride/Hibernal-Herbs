@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "hibernalherbs:necromantic_stone",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.find_arcane_ruins.title"
+    },
+    "description": {
+      "translate": "advancements.hibernalherbs.find_arcane_ruins.description"
+    }
+  },
+  "parent": "hibernalherbs:root",
+  "criteria": {
+    "arcane_ruins": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "hibernalherbs:arcane_ruins"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arcane_ruins"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

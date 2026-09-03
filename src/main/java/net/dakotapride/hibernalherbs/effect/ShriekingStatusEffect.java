@@ -1,6 +1,5 @@
 package net.dakotapride.hibernalherbs.effect;
 
-import net.dakotapride.hibernalherbs.init.ParticleTypeInit;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -11,7 +10,6 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -21,20 +19,15 @@ public class ShriekingStatusEffect extends BasicStatusEffect {
     private final float chanceToSpawn;
 
     public ShriekingStatusEffect(MobEffectCategory mobEffectCategory, int i, float f) {
-        super(mobEffectCategory, i, ParticleTypeInit.SHRIEKING);
+        super(mobEffectCategory, i);
         this.chanceToSpawn = f;
     }
 
-    @Override
-    public void onMobHurt(LivingEntity livingEntity, int i, DamageSource damageSource, float f) {
-        if (livingEntity.getRandom().nextFloat() <= this.chanceToSpawn) {
-            this.spawnWarden(
-                    livingEntity.level(), livingEntity, livingEntity.getX(), livingEntity.getY() + (double)livingEntity.getBbHeight() / 2.0, livingEntity.getZ()
-            );
-        }
+    public float getChanceToSpawn() {
+        return chanceToSpawn;
     }
 
-    private void spawnWarden(Level level, LivingEntity livingEntity, double d, double e, double f) {
+    public void spawnWarden(Level level, LivingEntity livingEntity, double d, double e, double f) {
         Warden warden = EntityType.WARDEN.create(level);
         if (warden != null) {
             //warden.setAggressive(true);

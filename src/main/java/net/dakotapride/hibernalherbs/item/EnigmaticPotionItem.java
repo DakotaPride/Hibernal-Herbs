@@ -3,19 +3,20 @@ package net.dakotapride.hibernalherbs.item;
 import net.dakotapride.hibernalherbs.init.ItemInit;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -25,8 +26,8 @@ public class EnigmaticPotionItem extends PotionItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-        super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+        super.appendHoverText(itemStack, level, list, tooltipFlag);
 
         list.add(Component.literal(""));
         list.add(Component.translatable("text.hibernalherbs.mysterious_potion.no_particles").withStyle(ChatFormatting.GRAY));
@@ -51,8 +52,7 @@ public class EnigmaticPotionItem extends PotionItem {
         }
 
         if (!level.isClientSide) {
-            PotionContents potionContents = itemStack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY);
-            potionContents.forEachEffect(mobEffectInstance -> {
+            for (MobEffectInstance mobEffectInstance : PotionUtils.getMobEffects(itemStack)) {
                 mobEffectInstance.visible = false;
                 // Controlled by Enigmatic Extracts
                 // mobEffectInstance.duration = 1;
@@ -69,21 +69,21 @@ public class EnigmaticPotionItem extends PotionItem {
                         player.getCooldowns().addCooldown(player.getOffhandItem().getItem(), 2400);
                     }
 
-                    if (mobEffectInstance.getEffect().value().isInstantenous()) {
-                        mobEffectInstance.getEffect().value().applyInstantenousEffect(player, player, livingEntity, mobEffectInstance.getAmplifier(), 1.0);
+                    if (mobEffectInstance.getEffect().isInstantenous()) {
+                        mobEffectInstance.getEffect().applyInstantenousEffect(player, player, livingEntity, mobEffectInstance.getAmplifier(), 1.0);
                     } else {
                         livingEntity.addEffect(mobEffectInstance);
                     }
                 }
-            });
+            }
         }
 
         if (player != null) {
             player.awardStat(Stats.ITEM_USED.get(this));
-            itemStack.consume(1, player);
+            itemStack.shrink(1);
         }
 
-        if (player == null || !player.hasInfiniteMaterials()) {
+        if (player == null || !player.isCreative()) {
             if (itemStack.isEmpty()) {
                 return new ItemStack(Items.GLASS_BOTTLE);
             }

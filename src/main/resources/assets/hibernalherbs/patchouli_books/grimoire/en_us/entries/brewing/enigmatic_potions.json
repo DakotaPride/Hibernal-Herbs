@@ -1,23 +1,23 @@
 {
   "name": "Enigmatic Potions",
-  "icon": "hibernalherbs:enigmatic_potion[potion_contents={potion:'fire_resistance'}]",
+  "icon": "hibernalherbs:enigmatic_potion{CustomPotionEffects:[{Id:12,Duration:0}]}",
   "category": "hibernalherbs:brewing",
   "pages": [
     {
       "type": "patchouli:spotlight",
-      "item": "hibernalherbs:enigmatic_potion[potion_contents={potion:'fire_resistance'}]",
+      "item": "hibernalherbs:enigmatic_potion{CustomPotionEffects:[{Id:12,Duration:0}]}",
       "title": "Enigmatic Potions",
       "text": "When combining an Enigmatic Extract that contains Mystical Ashes within with a given potion, you can make a secretive Enigmatic Potion! This type of potion makes it so that any effects given to the affected entity by the potion will not show any sort of particles."
     },
     {
       "type": "hibernalherbs:brewing2",
-      "input": "minecraft:potion[potion_contents={potion:'fire_resistance'}]",
+      "input": "minecraft:potion{CustomPotionEffects:[{Id:12,Duration:0}]}",
       "ingredient": "hibernalherbs:extract_mystical_ashes",
-      "output": "hibernalherbs:enigmatic_potion[potion_contents={potion:'fire_resistance'}]",
+      "output": "hibernalherbs:enigmatic_potion{CustomPotionEffects:[{Id:12,Duration:0}]}",
 
-      "input2": "minecraft:potion[potion_contents={potion:'regeneration'}]",
+      "input2": "minecraft:potion{CustomPotionEffects:[{Id:10,Duration:0}]}",
       "ingredient2": "hibernalherbs:extract_mystical_ashes",
-      "output2": "hibernalherbs:enigmatic_potion[potion_contents={potion:'regeneration'}]"
+      "output2": "hibernalherbs:enigmatic_potion{CustomPotionEffects:[{Id:10,Duration:0}]}"
     },
     {
       "type": "patchouli:text",

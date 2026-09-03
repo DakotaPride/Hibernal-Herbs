@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:thyocielle"
+    },
+    {
+      "item": "hibernalherbs:thyocielle"
+    },
+    {
+      "item": "hibernalherbs:myqueste_leaves"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "hibernalherbs:thyocielle_herb_pile"
+  }
+}

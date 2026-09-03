@@ -8,7 +8,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -18,14 +20,13 @@ public class HerbFertilizerItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
-
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
         if (!HibernalHerbsClientMod.hasShiftDown()) {
             list.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
         } else if (HibernalHerbsClientMod.hasShiftDown()) {
-            FertilizerTypes.applyFertilizerAssistanceTooltip(stack, list);
+            FertilizerTypes.applyFertilizerAssistanceTooltip(itemStack, list);
 
-            FertilizerTypes.applyProductionValueTooltip(stack, list);
+            FertilizerTypes.applyProductionValueTooltip(itemStack, list);
 //            else if (!stack.is(Tags.Items.FERTILIZER.getTag())) {
 //                list.add(Component.translatable("text.hibernalherbs.association.none").withStyle(ChatFormatting.GRAY));
 //            }
@@ -44,5 +45,4 @@ public class HerbFertilizerItem extends Item {
             }
         }
     }
-
 }

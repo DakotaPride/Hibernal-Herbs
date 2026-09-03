@@ -1,8 +1,5 @@
 package net.dakotapride.hibernalherbs.block;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.dakotapride.hibernalherbs.init.BlockEntityTypeInit;
 import net.dakotapride.hibernalherbs.init.CriteriaTriggersInit;
 import net.dakotapride.hibernalherbs.init.StatsInit;
@@ -15,13 +12,12 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -29,7 +25,6 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -51,32 +46,20 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
-    public static final MapCodec<MysticalCampfireBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
-        return instance.group(Codec.BOOL.fieldOf("spawn_particles").forGetter((campfireBlock) -> {
-            return campfireBlock.spawnParticles;
-        }), Codec.intRange(0, 1000).fieldOf("fire_damage").forGetter((campfireBlock) -> {
-            return campfireBlock.fireDamage;
-        }), propertiesCodec()).apply(instance, MysticalCampfireBlock::new);
-    });
+
     protected static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
     public static final BooleanProperty LIT;
     public static final BooleanProperty SIGNAL_FIRE;
     public static final BooleanProperty WATERLOGGED;
     public static final DirectionProperty FACING;
     private static final VoxelShape VIRTUAL_FENCE_POST;
-    private static final int SMOKE_DISTANCE = 5;
     private final boolean spawnParticles;
     private final int fireDamage;
-
-    public MapCodec<MysticalCampfireBlock> codec() {
-        return CODEC;
-    }
 
     public MysticalCampfireBlock(boolean bl, int i, Properties properties) {
         super(properties);
@@ -86,56 +69,57 @@ public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWate
     }
 
     @Override
-    protected @NotNull ItemInteractionResult useItemOn(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
         BlockEntity blockEntity = level.getBlockEntity(blockPos);
+        ItemStack itemStack = player.getItemInHand(interactionHand);
         if (blockEntity instanceof MysticalCampfireBlockEntity campfireBlockEntity) {
             ItemStack itemStack2 = player.getItemInHand(interactionHand);
-            Optional<RecipeHolder<MysticalCampfireCookingRecipe>> optional = campfireBlockEntity.getCookableRecipe(itemStack2);
+            Optional<MysticalCampfireCookingRecipe> optional = campfireBlockEntity.getCookableRecipe(itemStack2);
             if (optional.isPresent()) {
-                if (!level.isClientSide && campfireBlockEntity.placeFood(player, itemStack2, ((MysticalCampfireCookingRecipe)((RecipeHolder)optional.get()).value()).getCookingTime())) {
+                if (!level.isClientSide && campfireBlockEntity.placeFood(player, itemStack2, optional.get().getCookingTime())) {
                     if (player instanceof ServerPlayer player1) {
-                        CriteriaTriggersInit.MYSTICAL_CAMPFIRE_INTERACTIONS.trigger(player1, blockPos);
+                        CriteriaTriggersInit.MYSTICAL_CAMPFIRE_INTERACTIONS.trigger(player1, blockPos, itemStack);
                         player1.awardStat(StatsInit.MYSTICAL_CAMPFIRE_INTERACTIONS.get(this));
                     }
-                    return ItemInteractionResult.SUCCESS;
+                    return InteractionResult.SUCCESS;
                 }
 
-                return ItemInteractionResult.CONSUME;
+                return InteractionResult.CONSUME;
             }
         }
 
         if (itemStack.is(ItemTags.SHOVELS) && blockState.getValue(LIT)) {
             level.setBlock(blockPos, this.defaultBlockState().setValue(LIT, false).setValue(FACING, blockState.getValue(FACING)), 3);
             //this.defaultBlockState().setValue(LIT, false);
-            itemStack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+            itemStack.hurtAndBreak(1, player, (entity) -> LivingEntity.getEquipmentSlotForItem(itemStack));
             dowse(null, level, blockPos, blockState);
-            return ItemInteractionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
 
         }
 
         if (!blockState.getValue(LIT) && (itemStack.is(Items.FLINT_AND_STEEL) || itemStack.is(Items.FIRE_CHARGE))) {
             level.setBlock(blockPos, this.defaultBlockState().setValue(LIT, true).setValue(FACING, blockState.getValue(FACING)), 3);
             //this.defaultBlockState().setValue(LIT, true);
-            itemStack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+            itemStack.hurtAndBreak(1, player, (entity) -> LivingEntity.getEquipmentSlotForItem(itemStack));
 
             level.gameEvent(player, GameEvent.BLOCK_CHANGE, blockPos);
-            return ItemInteractionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
         }
 
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        return InteractionResult.PASS;
     }
 
     @Override
-    protected void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
+    public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
         if (blockState.getValue(LIT) && entity instanceof LivingEntity) {
-            entity.hurt(level.damageSources().campfire(), (float)this.fireDamage);
+            entity.hurt(level.damageSources().inFire(), (float)this.fireDamage);
         }
 
         super.entityInside(blockState, level, blockPos, entity);
     }
 
     @Override
-    protected void onRemove(BlockState blockState, Level level, BlockPos blockPos, BlockState blockState2, boolean bl) {
+    public void onRemove(BlockState blockState, Level level, BlockPos blockPos, BlockState blockState2, boolean bl) {
         if (!blockState.is(blockState2.getBlock())) {
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
             if (blockEntity instanceof MysticalCampfireBlockEntity) {
@@ -156,7 +140,7 @@ public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWate
     }
 
     @Override
-    protected BlockState updateShape(BlockState blockState, Direction direction, BlockState blockState2, LevelAccessor levelAccessor, BlockPos blockPos, BlockPos blockPos2) {
+    public BlockState updateShape(BlockState blockState, Direction direction, BlockState blockState2, LevelAccessor levelAccessor, BlockPos blockPos, BlockPos blockPos2) {
         if (blockState.getValue(WATERLOGGED)) {
             levelAccessor.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         }
@@ -169,12 +153,12 @@ public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWate
     }
 
     @Override
-    protected VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         return SHAPE;
     }
 
     @Override
-    protected RenderShape getRenderShape(BlockState blockState) {
+    public RenderShape getRenderShape(BlockState blockState) {
         return RenderShape.MODEL;
     }
 
@@ -230,7 +214,7 @@ public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWate
     }
 
     @Override
-    protected void onProjectileHit(Level level, BlockState blockState, BlockHitResult blockHitResult, Projectile projectile) {
+    public void onProjectileHit(Level level, BlockState blockState, BlockHitResult blockHitResult, Projectile projectile) {
         BlockPos blockPos = blockHitResult.getBlockPos();
         if (!level.isClientSide && projectile.isOnFire() && projectile.mayInteract(level, blockPos) && !(Boolean)blockState.getValue(LIT) && !(Boolean)blockState.getValue(WATERLOGGED)) {
             level.setBlock(blockPos, blockState.setValue(BlockStateProperties.LIT, true), 11);
@@ -271,17 +255,17 @@ public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWate
     }
 
     @Override
-    protected FluidState getFluidState(BlockState blockState) {
+    public FluidState getFluidState(BlockState blockState) {
         return blockState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(blockState);
     }
 
     @Override
-    protected BlockState rotate(BlockState blockState, Rotation rotation) {
+    public BlockState rotate(BlockState blockState, Rotation rotation) {
         return blockState.setValue(FACING, rotation.rotate(blockState.getValue(FACING)));
     }
 
     @Override
-    protected BlockState mirror(BlockState blockState, Mirror mirror) {
+    public BlockState mirror(BlockState blockState, Mirror mirror) {
         return blockState.rotate(mirror.getRotation(blockState.getValue(FACING)));
     }
 
@@ -306,7 +290,7 @@ public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWate
     }
 
     @Override
-    protected boolean isPathfindable(BlockState blockState, PathComputationType pathComputationType) {
+    public boolean isPathfindable(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, PathComputationType pathComputationType) {
         return false;
     }
 

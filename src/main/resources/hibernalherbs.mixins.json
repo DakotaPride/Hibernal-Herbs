@@ -1,13 +1,12 @@
 {
   "required": true,
   "package": "net.dakotapride.hibernalherbs.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BrushItemMixin",
     "EnderManMixin",
     "GiveGiftToHeroMixin",
     "LivingEntityMixin",
-    "MaceItemMixin",
     "PiglinAiMixin",
     "PlayerMixin",
     "VillagerMixin",

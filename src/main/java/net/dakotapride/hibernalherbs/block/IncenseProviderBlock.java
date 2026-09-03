@@ -16,7 +16,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -59,12 +59,12 @@ public class IncenseProviderBlock extends Block {
     }
 
     @Override
-    protected boolean hasAnalogOutputSignal(BlockState blockState) {
+    public boolean hasAnalogOutputSignal(BlockState blockState) {
         return blockState.getValue(FED);
     }
 
     @Override
-    protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos blockPos) {
+    public int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos blockPos) {
         return 5;
     }
 
@@ -75,12 +75,14 @@ public class IncenseProviderBlock extends Block {
     }
 
     @Override
-    protected @NotNull BlockState rotate(BlockState blockState, Rotation rotation) {
+    @NotNull
+    public BlockState rotate(BlockState blockState, Rotation rotation) {
         return blockState.setValue(FACING, rotation.rotate(blockState.getValue(FACING)));
     }
 
     @Override
-    protected @NotNull BlockState mirror(BlockState blockState, Mirror mirror) {
+    @NotNull
+    public BlockState mirror(BlockState blockState, Mirror mirror) {
         return blockState.rotate(mirror.getRotation(blockState.getValue(FACING)));
     }
 
@@ -90,12 +92,12 @@ public class IncenseProviderBlock extends Block {
     }
 
     @Override
-    protected boolean isRandomlyTicking(BlockState blockState) {
+    public boolean isRandomlyTicking(BlockState blockState) {
         return blockState.getValue(FED);
     }
 
     @Override
-    protected void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+    public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
         if (blockState.getValue(FED)) {
             if (randomSource.nextInt(1) == 0) {
                 serverLevel.setBlock(blockPos, this.defaultBlockState().setValue(FED, false).setValue(FACING, blockState.getValue(FACING)), 3);
@@ -113,7 +115,8 @@ public class IncenseProviderBlock extends Block {
     }
 
     @Override
-    protected @NotNull ItemInteractionResult useItemOn(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+        ItemStack itemStack = player.getItemInHand(interactionHand);
         if (blockState.is(this) && !player.getCooldowns().isOnCooldown(itemStack.getItem())) {
             if (!blockState.getValue(FED)) {
                 for (HerbTypes types : HerbTypes.values()) {
@@ -134,7 +137,7 @@ public class IncenseProviderBlock extends Block {
                         }
 
                         level.setBlock(blockPos, this.defaultBlockState().setValue(FED, true).setValue(FACING, blockState.getValue(FACING)), 3);
-                        return ItemInteractionResult.SUCCESS;
+                        return InteractionResult.SUCCESS;
                     } else if (itemStack.is(types.getDriedHerb())) {
                         if (types.getIncenseEffect() != null) {
                             provideEffectForIncenseFromDriedHerb(itemStack, blockState, level, blockPos, player, types.getIncenseEffect());
@@ -152,7 +155,7 @@ public class IncenseProviderBlock extends Block {
                         }
 
                         level.setBlock(blockPos, this.defaultBlockState().setValue(FED, true).setValue(FACING, blockState.getValue(FACING)), 3);
-                        return ItemInteractionResult.SUCCESS;
+                        return InteractionResult.SUCCESS;
                     }
                 }
             } else if (blockState.getValue(FED) && level.getBlockState(blockPos.below()).is(BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK)) {
@@ -166,7 +169,7 @@ public class IncenseProviderBlock extends Block {
 
                     level.setBlock(blockPos, this.defaultBlockState().setValue(FED, false).setValue(FACING, blockState.getValue(FACING)), 3);
 
-                    return ItemInteractionResult.SUCCESS;
+                    return InteractionResult.SUCCESS;
                 }
                 if (itemStack.is(Items.BOOK)) {
 
@@ -197,12 +200,12 @@ public class IncenseProviderBlock extends Block {
 
                     level.setBlock(blockPos, this.defaultBlockState().setValue(FED, false).setValue(FACING, blockState.getValue(FACING)), 3);
 
-                    return ItemInteractionResult.SUCCESS;
+                    return InteractionResult.SUCCESS;
                 }
             }
         }
 
-        return super.useItemOn(itemStack, blockState, level, blockPos, player, interactionHand, blockHitResult);
+        return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
     }
 
     private static ItemStack enchantItem(ItemStack stack, Holder<Enchantment> enchantment) {
@@ -210,17 +213,17 @@ public class IncenseProviderBlock extends Block {
             stack = new ItemStack(Items.ENCHANTED_BOOK);
         }
 
-        stack.enchant(enchantment, enchantment.value().getMinLevel());
+        stack.enchant(enchantment.value(), enchantment.value().getMinLevel());
         return stack;
     }
 
-    private static void provideEffectForIncenseFromPoundedHerb(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, Holder<MobEffect> effect) {
+    private static void provideEffectForIncenseFromPoundedHerb(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, MobEffect effect) {
         final List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10F), Objects::nonNull);
         list.forEach(livingEntity -> livingEntity.addEffect(new MobEffectInstance(effect, 600, 1 /*, false, false, false*/)));
         activate(player, itemStack, blockPos, blockState);
     }
 
-    private static void provideEffectForIncenseFromDriedHerb(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, Holder<MobEffect> effect) {
+    private static void provideEffectForIncenseFromDriedHerb(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, MobEffect effect) {
         final List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10F), Objects::nonNull);
         list.forEach(livingEntity -> livingEntity.addEffect(new MobEffectInstance(effect, 1200, 2)));
         activate(player, itemStack, blockPos, blockState);
@@ -235,7 +238,7 @@ public class IncenseProviderBlock extends Block {
         if (player instanceof ServerPlayer player1) {
 
             CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(player1, blockPos, itemStack);
-            CriteriaTriggersInit.INCENSE_PROVIDER_INTERACTIONS.trigger(player1, blockPos);
+            CriteriaTriggersInit.INCENSE_PROVIDER_INTERACTIONS.trigger(player1, blockPos, itemStack);
             player1.awardStat(Stats.ITEM_USED.get(itemStack.getItem()));
             player1.awardStat(StatsInit.INCENSE_PROVIDER_INTERACTIONS.get(blockState.getBlock()));
         }
@@ -257,7 +260,7 @@ public class IncenseProviderBlock extends Block {
     }
 
     @Override
-    protected VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         return makeShape();
     }
 

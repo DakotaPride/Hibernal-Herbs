@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:syrum_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "hibernalherbs:syrum_ingot"
+  }
+}

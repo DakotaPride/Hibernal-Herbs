@@ -48,7 +48,7 @@ public class IncenseItemBurningFakeRecipe implements EmiRecipe {
 
     @Override
     public @Nullable ResourceLocation getId() {
-        return HibernalHerbsMod.asResource("incense_burning/" + BuiltInRegistries.ITEM.getKey(result.getItem()).getPath() + "_from_" + BuiltInRegistries.ITEM.getKey(input.getItem()).getPath());
+        return HibernalHerbsMod.asResource("/incense_burning/" + BuiltInRegistries.ITEM.getKey(result.getItem()).getPath() + "_from_" + BuiltInRegistries.ITEM.getKey(input.getItem()).getPath());
     }
 
     @Override

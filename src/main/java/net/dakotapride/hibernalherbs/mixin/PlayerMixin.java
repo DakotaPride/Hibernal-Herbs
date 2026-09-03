@@ -22,8 +22,8 @@ public abstract class PlayerMixin extends LivingEntity {
     }
 
     @Inject(method = "eat", at = @At("HEAD"))
-    private void eat(Level level, ItemStack itemStack, FoodProperties foodProperties, CallbackInfoReturnable<ItemStack> cir) {
-        if (player != null && player.hasEffect(StatusEffectInit.ESURIENT)) {
+    private void eat(Level level, ItemStack itemStack, CallbackInfoReturnable<ItemStack> cir) {
+        if (player != null && player.hasEffect(StatusEffectInit.ESURIENT.value())) {
             player.getFoodData().eat(10, 1.2F);
         }
     }

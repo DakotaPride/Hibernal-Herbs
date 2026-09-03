@@ -1,0 +1,25 @@
+{
+  "parent": "hibernalherbs:syrum",
+  "criteria": {
+    "interacted_with_incense_provider": {
+      "trigger": "hibernalherbs:incense_provider_interactions"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.interacted_with_incense_provider.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:incense_provider"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.interacted_with_incense_provider.title"
+    }
+  },
+  "requirements": [
+    [
+      "interacted_with_incense_provider"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

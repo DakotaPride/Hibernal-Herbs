@@ -3,9 +3,7 @@ package net.dakotapride.hibernalherbs.item;
 import net.dakotapride.hibernalherbs.HibernalHerbsClientMod;
 import net.dakotapride.hibernalherbs.food.FoodComponentList;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalBlendTypes;
-import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -26,7 +24,16 @@ public class HerbalBlendItem extends Item implements FoodComponentList {
         super(properties);
     }
 
-//    @Override
+    @Override
+    public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity livingEntity) {
+        if (livingEntity instanceof Player player && !player.isCreative()) {
+            itemStack.shrink(1);
+            player.addItem(new ItemStack(Items.BOWL, 1));
+        }
+        return super.finishUsingItem(itemStack, level, livingEntity);
+    }
+
+    //    @Override
 //    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
 //        if (entity instanceof Player player) {
 //            HerbalBlendTypes.applyFromConsumption(stack, player, HerbalBlendTypes.REGENERATION);
@@ -105,13 +112,12 @@ public class HerbalBlendItem extends Item implements FoodComponentList {
         return super.hurtEnemy(stack, target, attacker);
     }
 
-
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable TooltipContext level, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> tooltip, TooltipFlag tooltipFlag) {
         if (!HibernalHerbsClientMod.hasShiftDown()) {
             tooltip.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
         } else if (HibernalHerbsClientMod.hasShiftDown()) {
-            HerbalBlendTypes.applyToTooltip(stack, tooltip);
+            HerbalBlendTypes.applyToTooltip(itemStack, tooltip);
 
 //                if (stack.is(Tags.Items.SMOKED_BLENDS.getTag())) {
 //                    tooltip.add(Component.translatable("text.hibernalherbs.blend.modifier.smoked.true").withStyle(ChatFormatting.GRAY));

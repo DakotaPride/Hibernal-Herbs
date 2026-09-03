@@ -1,0 +1,32 @@
+{
+  "parent": "hibernalherbs:sickle",
+  "criteria": {
+    "pounded_herbs": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:pounded_herbs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.pounded_herbs.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:pounded_tarragon"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.pounded_herbs.title"
+    }
+  },
+  "requirements": [
+    [
+      "pounded_herbs"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

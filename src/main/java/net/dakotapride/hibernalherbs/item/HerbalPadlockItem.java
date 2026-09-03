@@ -9,13 +9,11 @@ import io.wispforest.accessories.api.client.AccessoryRenderer;
 import io.wispforest.accessories.api.client.SimpleAccessoryRenderer;
 import io.wispforest.accessories.api.slot.SlotReference;
 import net.dakotapride.hibernalherbs.HibernalHerbsClientMod;
-import net.dakotapride.hibernalherbs.HibernalHerbsMod;
 import net.dakotapride.hibernalherbs.init.enum_registry.PadlockTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -29,7 +27,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -67,55 +65,55 @@ public class HerbalPadlockItem extends Item implements Accessory {
     public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
         if (PadlockTypes.checkPadlockType(stack, PadlockTypes.PRIDE)) {
             builder.addExclusive(Attributes.MAX_HEALTH, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.pride.health"),
+                    "e462aac2-b1d8-4007-b0e8-9b2295782ecc",
                     10.0d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
         } else if (PadlockTypes.checkPadlockType(stack, PadlockTypes.SLOTH)) {
             builder.addExclusive(Attributes.MAX_HEALTH, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.sloth.health"),
+                    "7cf67d31-f8e0-46d2-b6a5-488cabfe85cd",
                     8.0d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
             builder.addExclusive(Attributes.MOVEMENT_SPEED, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.sloth.movement_speed"),
+                    "42c5c615-fcf3-4d6f-8c51-535b01cdc30f",
                     -0.04d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
         } else if (PadlockTypes.checkPadlockType(stack, PadlockTypes.WRATH)) {
             builder.addExclusive(Attributes.MAX_HEALTH, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.wrath.health"),
+                    "d543b553-0ec2-4652-8cab-a9343d5136bd",
                     8.0d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
             builder.addExclusive(Attributes.ATTACK_DAMAGE, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.wrath.attack_damage"),
+                    "3c0aeb2e-81dd-48b4-8bfa-77d5eace8d7f",
                     4.0d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
         } else if (PadlockTypes.checkPadlockType(stack, PadlockTypes.LUST)) {
             builder.addExclusive(Attributes.MAX_HEALTH, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.lust.health"),
+                    "0b97b64a-1930-4c9f-abfa-ba20cefefbb1",
                     10.0d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
         } else if (PadlockTypes.checkPadlockType(stack, PadlockTypes.GREED)) {
             builder.addExclusive(Attributes.MAX_HEALTH, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.greed.health"),
+                    "fc384e9a-32e0-49c1-b801-c260a3e6dbe3",
                     8.0d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
         } else if (PadlockTypes.checkPadlockType(stack, PadlockTypes.GLUTTONY)) {
             builder.addExclusive(Attributes.MAX_HEALTH, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.gluttony.health"),
+                    "c87ee3da-fb81-4140-a830-3e6f9a43fc18",
                     8.0d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
             builder.addExclusive(Attributes.MOVEMENT_SPEED, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.gluttony.movement_speed"),
+                    "3a1aab48-0bef-411d-bf52-dfb0190a4fa7",
                     -0.02d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
         } else if (PadlockTypes.checkPadlockType(stack, PadlockTypes.ENVY)) {
             builder.addExclusive(Attributes.MAX_HEALTH, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.envy.health"),
+                    "0577de8b-24b6-46ab-b9e4-301ddaf7cae2",
                     6.0d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
             builder.addExclusive(Attributes.MOVEMENT_SPEED, new AttributeModifier(
-                    HibernalHerbsMod.asResource("sin.envy.movement_speed"),
+                    "c20907b0-93c7-4388-af72-bce87a95e6c3",
                     0.04d,
-                    AttributeModifier.Operation.ADD_VALUE));
+                    AttributeModifier.Operation.ADDITION));
         }
 
         Accessory.super.getDynamicModifiers(stack, reference, builder);
@@ -165,9 +163,10 @@ public class HerbalPadlockItem extends Item implements Accessory {
 
     // End of rendering, continue on adventurer
 
+
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @Nullable TooltipContext tooltipContext, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
-        if (stack.is(Tags.Items.BOUND_PADLOCKS.getTag())) {
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> tooltip, TooltipFlag tooltipFlag) {
+        if (itemStack.is(Tags.Items.BOUND_PADLOCKS.getTag())) {
             tooltip.add(Component.literal(""));
         }
 
@@ -175,7 +174,7 @@ public class HerbalPadlockItem extends Item implements Accessory {
             tooltip.add(Component.translatable("text.hibernalherbs.controls.shift").withStyle(ChatFormatting.DARK_GRAY));
             //tooltip.add(Component.literal(""));
         } else if (HibernalHerbsClientMod.hasShiftDown()) {
-            PadlockTypes.applyPadlockTypeTooltip(stack, tooltip);
+            PadlockTypes.applyPadlockTypeTooltip(itemStack, tooltip);
             //tooltip.add(Component.literal(""));
 
             if (!HibernalHerbsClientMod.hasAltDown()) {
@@ -183,14 +182,14 @@ public class HerbalPadlockItem extends Item implements Accessory {
                 tooltip.add(Component.translatable("text.hibernalherbs.controls.left_alt").withStyle(ChatFormatting.DARK_GRAY));
             } else if (HibernalHerbsClientMod.hasAltDown()) {
 
-                if (stack.is(Tags.Items.BOUND_PADLOCKS.getTag())) {
+                if (itemStack.is(Tags.Items.BOUND_PADLOCKS.getTag())) {
                     tooltip.add(Component.literal(""));
-                    PadlockTypes.getBoundPadlockAssistance(stack, tooltip);
+                    PadlockTypes.getBoundPadlockAssistance(itemStack, tooltip);
                 }
 
-                if (stack.is(Tags.Items.UNBOUND_PADLOCKS.getTag())) {
+                if (itemStack.is(Tags.Items.UNBOUND_PADLOCKS.getTag())) {
                     tooltip.add(Component.literal(""));
-                    PadlockTypes.applyUnboundPadlockAssistanceTooltip(stack, tooltip);
+                    PadlockTypes.applyUnboundPadlockAssistanceTooltip(itemStack, tooltip);
                 }
             }
 
@@ -200,6 +199,6 @@ public class HerbalPadlockItem extends Item implements Accessory {
 
         }
 
-        super.appendHoverText(stack, tooltipContext, tooltip, tooltipFlag);
+        super.appendHoverText(itemStack, level, tooltip, tooltipFlag);
     }
 }

@@ -17,16 +17,16 @@ import java.util.function.ToIntFunction;
 public class BlockInit {
     // WIP
     public static Block SACRIFICIAL_RUNE_BLOCK = register("sacrificial_rune_block",
-            new SacrificialRuneBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).requiresCorrectToolForDrops()));
+            new SacrificialRuneBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).requiresCorrectToolForDrops()));
     public static Block FROZE_STATE_SACRIFICIAL_RUNE_BLOCK = register("froze_state_sacrificial_rune_block",
-            new FrozeStateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).requiresCorrectToolForDrops()));
+            new FrozeStateBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).requiresCorrectToolForDrops()));
     public static Block DETERIORATED_SACRIFICIAL_RUNE_BLOCK = register("deteriorated_sacrificial_rune_block",
-            new DeterioratedSacrificialRuneBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).requiresCorrectToolForDrops()));
+            new DeterioratedSacrificialRuneBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).requiresCorrectToolForDrops()));
 
     public static Block MYSTICAL_CAMPFIRE = register("mystical_campfire",
-            new MysticalCampfireBlock(true, 10, BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE).noOcclusion()));
+            new MysticalCampfireBlock(true, 10, BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).noOcclusion()));
     public static Block INCENSE_PROVIDER = register("incense_provider",
-            new IncenseProviderBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).noOcclusion().lightLevel(incenseLightEmission(7)).requiresCorrectToolForDrops()));
+            new IncenseProviderBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).noOcclusion().lightLevel(incenseLightEmission(7)).requiresCorrectToolForDrops()));
 
     public static ToIntFunction<BlockState> incenseLightEmission(int i) {
         return blockState -> blockState.getValue(PropertiesInit.FED) ? i : 0;

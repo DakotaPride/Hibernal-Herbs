@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:agglomeration"
+    }
+  ],
+  "result": {
+    "components": {
+      "minecraft:custom_data": {
+        "hibernalherbs:is_being_used": false
+      }
+    },
+    "count": 1,
+    "item": "hibernalherbs:agglomeration"
+  }
+}

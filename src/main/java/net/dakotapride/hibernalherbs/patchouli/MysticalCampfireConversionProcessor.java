@@ -1,8 +1,6 @@
 package net.dakotapride.hibernalherbs.patchouli;
 
 import net.dakotapride.hibernalherbs.recipe.MysticalCampfireCookingRecipe;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
@@ -19,9 +17,9 @@ public class MysticalCampfireConversionProcessor implements IComponentProcessor 
 
     @Override
     public void setup(Level level, IVariableProvider vars) {
-        String recipeId = vars.get("recipe", level.registryAccess()).asString();
+        String recipeId = vars.get("recipe").asString();
         RecipeManager manager = level.getRecipeManager();
-        this.recipe = (MysticalCampfireCookingRecipe) manager.byKey(ResourceLocation.tryParse(recipeId)).orElseThrow(IllegalArgumentException::new).value();
+        this.recipe = (MysticalCampfireCookingRecipe) manager.byKey(ResourceLocation.tryParse(recipeId)).orElseThrow(IllegalArgumentException::new);
         //this.recipe = PatchouliUtils.getRecipe(MysticalCampfireCookingRecipe.class, RecipeInit.MYSTICAL_CAMPFIRE_CONVERSION_TYPE, vars.get("recipe").asString());
     }
 
@@ -30,11 +28,11 @@ public class MysticalCampfireConversionProcessor implements IComponentProcessor 
         if (recipe == null) return IVariable.empty();
 
         return switch (key) {
-            case "output" -> IVariable.from(this.recipe.getResultItem(level.registryAccess()), level.registryAccess());
-            case "input" -> IVariable.from(this.recipe.getIngredients().getFirst(), level.registryAccess());
+            case "output" -> IVariable.from(this.recipe.getResultItem(level.registryAccess()));
+            case "input" -> IVariable.from(this.recipe.getIngredients().getFirst());
             //case "time" -> IVariable.from(this.recipe.getCookingTime(), RegistryAccess.EMPTY);
             //case "experience" -> IVariable.from(this.recipe.getExperience(), RegistryAccess.EMPTY);
-            case "header" -> IVariable.from(this.recipe.getResultItem(level.registryAccess()).getHoverName(), level.registryAccess());
+            case "header" -> IVariable.from(this.recipe.getResultItem(level.registryAccess()).getHoverName());
             default -> null;
         };
 

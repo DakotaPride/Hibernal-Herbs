@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -36,13 +37,13 @@ public class ModBrushItem extends BrushItem {
         if (i >= 0 && livingEntity instanceof Player player) {
             HitResult hitResult = this.calculateHitResult(player);
             if (hitResult instanceof BlockHitResult blockHitResult && hitResult.getType() == HitResult.Type.BLOCK) {
-                int j = this.getUseDuration(itemStack, livingEntity) - i + 1;
+                int j = this.getUseDuration(itemStack) - i + 1;
                 boolean bl = j % 10 == 5;
                 if (bl) {
                     BlockPos blockPos = blockHitResult.getBlockPos();
                     BlockState blockState = level.getBlockState(blockPos);
                     HumanoidArm humanoidArm = livingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? player.getMainArm() : player.getMainArm().getOpposite();
-                    if (blockState.shouldSpawnTerrainParticles() && blockState.getRenderShape() != RenderShape.INVISIBLE) {
+                    if (blockState.shouldSpawnParticlesOnBreak() && blockState.getRenderShape() != RenderShape.INVISIBLE) {
                         this.spawnDustParticles(level, blockHitResult, blockState, livingEntity.getViewVector(0.0F), humanoidArm);
                     }
 
@@ -60,13 +61,13 @@ public class ModBrushItem extends BrushItem {
                         boolean bl2 = brushableBlockEntity.brush(level.getGameTime(), player, blockHitResult.getDirection());
                         if (bl2) {
                             EquipmentSlot equipmentSlot = itemStack.equals(player.getItemBySlot(EquipmentSlot.OFFHAND)) ? EquipmentSlot.OFFHAND : EquipmentSlot.MAINHAND;
-                            itemStack.hurtAndBreak(1, livingEntity, equipmentSlot);
+                            itemStack.hurtAndBreak(1, livingEntity, (f) -> livingEntity.getItemBySlot(equipmentSlot));
                         }
                     } else if (!level.isClientSide() && level.getBlockEntity(blockPos) instanceof BrushableBlockEntity brushableBlockEntity) {
                         boolean bl2 = brushableBlockEntity.brush(level.getGameTime(), player, blockHitResult.getDirection());
                         if (bl2) {
                             EquipmentSlot equipmentSlot = itemStack.equals(player.getItemBySlot(EquipmentSlot.OFFHAND)) ? EquipmentSlot.OFFHAND : EquipmentSlot.MAINHAND;
-                            itemStack.hurtAndBreak(1, livingEntity, equipmentSlot);
+                            itemStack.hurtAndBreak(1, livingEntity, (f) -> livingEntity.getItemBySlot(equipmentSlot));
                         }
                     }
 
@@ -84,10 +85,10 @@ public class ModBrushItem extends BrushItem {
     }
 
     private HitResult calculateHitResult(Player player) {
-        return ProjectileUtil.getHitResultOnViewVector(player, entity -> !entity.isSpectator() && entity.isPickable(), player.blockInteractionRange());
+        return ProjectileUtil.getHitResultOnViewVector(player, entity -> !entity.isSpectator() && entity.isPickable(), Math.sqrt(ServerGamePacketListenerImpl.MAX_INTERACTION_DISTANCE) - 1.0);
     }
 
-    private void spawnDustParticles(Level level, BlockHitResult blockHitResult, BlockState blockState, Vec3 vec3, HumanoidArm humanoidArm) {
+    public void spawnDustParticles(Level level, BlockHitResult blockHitResult, BlockState blockState, Vec3 vec3, HumanoidArm humanoidArm) {
         double d = 3.0;
         int i = humanoidArm == HumanoidArm.RIGHT ? 1 : -1;
         int j = level.getRandom().nextInt(7, 12);

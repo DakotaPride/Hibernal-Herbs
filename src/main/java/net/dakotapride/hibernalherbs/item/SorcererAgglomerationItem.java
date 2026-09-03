@@ -4,16 +4,17 @@ import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
 import net.dakotapride.hibernalherbs.init.*;
-import net.dakotapride.hibernalherbs.init.enum_registry.FrozeBlockstates;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.HerbalSigilTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.StoneTypes;
 import net.dakotapride.hibernalherbs.init.enum_registry.tag.Tags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -35,6 +36,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Objects;
@@ -42,45 +44,10 @@ import java.util.Optional;
 import java.util.function.Supplier;
 
 public class SorcererAgglomerationItem extends Item {
+    private static final String TAG_IS_BEING_USED = "IsBeingUsed";
     public static final Supplier<BiMap<Block, Block>> FREEZE_STATE = Suppliers.memoize(
             () -> ImmutableBiMap.<Block, Block>builder()
                     .put(BlockInit.SACRIFICIAL_RUNE_BLOCK, BlockInit.FROZE_STATE_SACRIFICIAL_RUNE_BLOCK)
-                    .put(Blocks.COPPER_BLOCK, FrozeBlockstates.COPPER.getFrozeState())
-                    .put(Blocks.EXPOSED_COPPER, FrozeBlockstates.EXPOSED_COPPER.getFrozeState())
-                    .put(Blocks.WEATHERED_COPPER, FrozeBlockstates.WEATHERED_COPPER.getFrozeState())
-                    .put(Blocks.OXIDIZED_COPPER, FrozeBlockstates.OXIDISED_COPPER.getFrozeState())
-                    .put(Blocks.CUT_COPPER, FrozeBlockstates.COPPER.getFrozeCutState())
-                    .put(Blocks.EXPOSED_CUT_COPPER, FrozeBlockstates.EXPOSED_COPPER.getFrozeCutState())
-                    .put(Blocks.WEATHERED_CUT_COPPER, FrozeBlockstates.WEATHERED_COPPER.getFrozeCutState())
-                    .put(Blocks.OXIDIZED_CUT_COPPER, FrozeBlockstates.OXIDISED_COPPER.getFrozeCutState())
-                    .put(Blocks.CUT_COPPER_SLAB, FrozeBlockstates.COPPER.getFrozeCutSlabState())
-                    .put(Blocks.EXPOSED_CUT_COPPER_SLAB, FrozeBlockstates.EXPOSED_COPPER.getFrozeCutSlabState())
-                    .put(Blocks.WEATHERED_CUT_COPPER_SLAB, FrozeBlockstates.WEATHERED_COPPER.getFrozeCutSlabState())
-                    .put(Blocks.OXIDIZED_CUT_COPPER_SLAB, FrozeBlockstates.OXIDISED_COPPER.getFrozeCutSlabState())
-                    .put(Blocks.CUT_COPPER_STAIRS, FrozeBlockstates.COPPER.getFrozeCutStairsState())
-                    .put(Blocks.EXPOSED_CUT_COPPER_STAIRS, FrozeBlockstates.EXPOSED_COPPER.getFrozeCutStairsState())
-                    .put(Blocks.WEATHERED_CUT_COPPER_STAIRS, FrozeBlockstates.WEATHERED_COPPER.getFrozeCutStairsState())
-                    .put(Blocks.OXIDIZED_CUT_COPPER_STAIRS, FrozeBlockstates.OXIDISED_COPPER.getFrozeCutStairsState())
-                    .put(Blocks.CHISELED_COPPER, FrozeBlockstates.COPPER.getFrozeChiseledState())
-                    .put(Blocks.EXPOSED_CHISELED_COPPER, FrozeBlockstates.EXPOSED_COPPER.getFrozeChiseledState())
-                    .put(Blocks.WEATHERED_CHISELED_COPPER, FrozeBlockstates.WEATHERED_COPPER.getFrozeChiseledState())
-                    .put(Blocks.OXIDIZED_CHISELED_COPPER, FrozeBlockstates.OXIDISED_COPPER.getFrozeChiseledState())
-                    .put(Blocks.COPPER_DOOR, FrozeBlockstates.COPPER.getFrozeDoorState())
-                    .put(Blocks.EXPOSED_COPPER_DOOR, FrozeBlockstates.EXPOSED_COPPER.getFrozeDoorState())
-                    .put(Blocks.WEATHERED_COPPER_DOOR, FrozeBlockstates.WEATHERED_COPPER.getFrozeDoorState())
-                    .put(Blocks.OXIDIZED_COPPER_DOOR, FrozeBlockstates.OXIDISED_COPPER.getFrozeDoorState())
-                    .put(Blocks.COPPER_TRAPDOOR, FrozeBlockstates.COPPER.getFrozeTrapdoorState())
-                    .put(Blocks.EXPOSED_COPPER_TRAPDOOR, FrozeBlockstates.EXPOSED_COPPER.getFrozeTrapdoorState())
-                    .put(Blocks.WEATHERED_COPPER_TRAPDOOR, FrozeBlockstates.WEATHERED_COPPER.getFrozeTrapdoorState())
-                    .put(Blocks.OXIDIZED_COPPER_TRAPDOOR, FrozeBlockstates.OXIDISED_COPPER.getFrozeTrapdoorState())
-                    .put(Blocks.COPPER_GRATE, FrozeBlockstates.COPPER.getFrozeGrateState())
-                    .put(Blocks.EXPOSED_COPPER_GRATE, FrozeBlockstates.EXPOSED_COPPER.getFrozeGrateState())
-                    .put(Blocks.WEATHERED_COPPER_GRATE, FrozeBlockstates.WEATHERED_COPPER.getFrozeGrateState())
-                    .put(Blocks.OXIDIZED_COPPER_GRATE, FrozeBlockstates.OXIDISED_COPPER.getFrozeGrateState())
-                    .put(Blocks.COPPER_BULB, FrozeBlockstates.COPPER.getFrozeBulbState())
-                    .put(Blocks.EXPOSED_COPPER_BULB, FrozeBlockstates.EXPOSED_COPPER.getFrozeBulbState())
-                    .put(Blocks.WEATHERED_COPPER_BULB, FrozeBlockstates.WEATHERED_COPPER.getFrozeBulbState())
-                    .put(Blocks.OXIDIZED_COPPER_BULB, FrozeBlockstates.OXIDISED_COPPER.getFrozeBulbState())
                     .build()
     );
     public static final Supplier<BiMap<Block, Block>> UNFREEZE_STATE = Suppliers.memoize(() -> ((BiMap)FREEZE_STATE.get()).inverse());
@@ -89,19 +56,20 @@ public class SorcererAgglomerationItem extends Item {
         super(properties);
     }
 
+    public static boolean isBeingUsed(ItemStack itemStack) {
+        CompoundTag compoundTag = itemStack.getTag();
+        return compoundTag != null && compoundTag.getBoolean(TAG_IS_BEING_USED);
+    }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-        if (!isNotActive(itemStack)) {
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+        if (isBeingUsed(itemStack)) {
             list.add(Component.translatable("text.hibernalherbs.agglomeration.is_active"));
             list.add(Component.literal(""));
             list.add(Component.translatable("text.hibernalherbs.agglomeration.cannot_utilise"));
-        } else if (isNotActive(itemStack)) {
+        } else if (!isBeingUsed(itemStack)) {
             list.add(Component.translatable("text.hibernalherbs.not_active").withStyle(ChatFormatting.GRAY));
         }
-    }
-
-    public static boolean isNotActive(ItemStack itemStack) {
-        return Boolean.FALSE.equals(itemStack.get(DataComponentInit.IS_BEING_USED)) || !(itemStack.has(DataComponentInit.IS_BEING_USED));
     }
 
     public static Optional<BlockState> getFreezeState(BlockState blockState) {
@@ -119,30 +87,27 @@ public class SorcererAgglomerationItem extends Item {
         BlockState blockState = level.getBlockState(blockPos);
         Player player = useOnContext.getPlayer();
 
-        Vec3 vec3 = blockPos.getCenter().add(0.0, 0.5, 0.0);
-        int i = (int)Mth.clamp(50.0F * 0.5F, 0.0F, 200.0F);
-
         if (getFreezeState(blockState).isPresent()) {
-            return (InteractionResult)getFreezeState(blockState).map(blockStatex -> {
+            return getFreezeState(blockState).map(blockStatex -> {
                 level.setBlock(blockPos, blockStatex, 11);
                 level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(player, blockStatex));
 
                 if (player instanceof ServerPlayer) {
                     player.getCooldowns().addCooldown(this, 10);
 
-                    CriteriaTriggersInit.FROZE_BLOCKSTATE.trigger((ServerPlayer) player, blockPos);
+                    CriteriaTriggersInit.FROZE_BLOCKSTATE.trigger((ServerPlayer) player, blockPos, useOnContext.getItemInHand());
                     player.awardStat(StatsInit.FROZE_BLOCKSTATE.get(blockState.getBlock()));
                 }
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }).orElse(InteractionResult.PASS);
         } else if (getUnfreezeState(blockState).isPresent()) {
-            return (InteractionResult)getUnfreezeState(blockState).map(blockStatex -> {
+            return getUnfreezeState(blockState).map(blockStatex -> {
                 level.setBlock(blockPos, blockStatex, 11);
                 level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(player, blockStatex));
                 if (player instanceof ServerPlayer) {
                     player.getCooldowns().addCooldown(this, 10);
 
-                    CriteriaTriggersInit.UNFROZE_BLOCKSTATE.trigger((ServerPlayer) player, blockPos);
+                    CriteriaTriggersInit.UNFROZE_BLOCKSTATE.trigger((ServerPlayer) player, blockPos, useOnContext.getItemInHand());
                     player.awardStat(StatsInit.UNFROZE_BLOCKSTATE.get(blockStatex.getBlock()));
                 }
                 return InteractionResult.sidedSuccess(level.isClientSide);
@@ -160,8 +125,10 @@ public class SorcererAgglomerationItem extends Item {
         if (!itemStack0.is(this))
             return InteractionResultHolder.fail(this.getDefaultInstance());
 
-        if (itemStack1.is(Tags.Items.CAN_USE_WITH_AGGLOMERATION.getTag()) && !player.getCooldowns().isOnCooldown(itemStack0.getItem()) && isNotActive(itemStack0)) {
-            itemStack0.set(DataComponentInit.IS_BEING_USED, true);
+        if (itemStack1.is(Tags.Items.CAN_USE_WITH_AGGLOMERATION.getTag()) && !player.getCooldowns().isOnCooldown(itemStack0.getItem()) && !isBeingUsed(itemStack0)) {
+            CompoundTag tag = new CompoundTag();
+            tag.putBoolean(TAG_IS_BEING_USED, true);
+            itemStack0.setTag(tag);
 
             return ItemUtils.startUsingInstantly(level, player, interactionHand);
         } else {
@@ -192,19 +159,19 @@ public class SorcererAgglomerationItem extends Item {
             //duration = 60;
 
             if (itemStack1.is(HerbalSigilTypes.PRIDE.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.SANGUINE, (20 * 10), 0));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.SANGUINE.value(), (20 * 10), 0));
             }
 
             if (itemStack1.is(HerbalSigilTypes.SLOTH.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.LETHARGY, (20 * 10), 0));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.LETHARGY.value(), (20 * 10), 0));
             }
 
             if (itemStack1.is(HerbalSigilTypes.WRATH.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.BARBARIC, (20 * 10), 0));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.BARBARIC.value(), (20 * 10), 0));
             }
 
             if (itemStack1.is(HerbalSigilTypes.LUST.getHerbalSigilItem())) {
-                MobEffectInstance instance = new MobEffectInstance(StatusEffectInit.DEVOTION, (20 * 10), 0);
+                MobEffectInstance instance = new MobEffectInstance(StatusEffectInit.DEVOTION.value(), (20 * 10), 0);
                 livingEntity.addEffect(instance);
 
                 final List<Animal> animalList = level.getEntitiesOfClass(Animal.class, livingEntity.getBoundingBox().inflate(8F * instance.getAmplifier()), Objects::nonNull);
@@ -215,15 +182,15 @@ public class SorcererAgglomerationItem extends Item {
             }
 
             if (itemStack1.is(HerbalSigilTypes.GREED.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.RAPACITY, (20 * 10), 0));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.RAPACITY.value(), (20 * 10), 0));
             }
 
             if (itemStack1.is(HerbalSigilTypes.GLUTTONY.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.ESURIENT, (20 * 10), 0));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.ESURIENT.value(), (20 * 10), 0));
             }
 
             if (itemStack1.is(HerbalSigilTypes.ENVY.getHerbalSigilItem())) {
-                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.MIMICRY, (20 * 10), 0));
+                livingEntity.addEffect(new MobEffectInstance(StatusEffectInit.MIMICRY.value(), (20 * 10), 0));
             }
 
 
@@ -261,9 +228,11 @@ public class SorcererAgglomerationItem extends Item {
 
                     player.getCooldowns().addCooldown(this, (20 * 12));
 
-                    player.hurt(player.damageSources().source(DamageSourceKeysInit.AGGLOMERATION_BLOOD_SACRIFICE), 4.0F);
+                    player.hurt(DamageSourceKeysInit.getDamageSourceFromKey(level, DamageSourceKeysInit.AGGLOMERATION_BLOOD_SACRIFICE), 4.0F);
 
-                    itemStack.set(DataComponentInit.IS_BEING_USED, false);
+                    CompoundTag tag = new CompoundTag();
+                    tag.putBoolean(TAG_IS_BEING_USED, false);
+                    itemStack.setTag(tag);
                 }
 
             }
@@ -309,14 +278,17 @@ public class SorcererAgglomerationItem extends Item {
 
                 player.getCooldowns().addCooldown(this, (20 * 12));
 
-                itemStack.set(DataComponentInit.IS_BEING_USED, false);
+                CompoundTag tag = new CompoundTag();
+                tag.putBoolean(TAG_IS_BEING_USED, false);
+                itemStack.setTag(tag);
             }
         }
     }
 
     @Override
-    public int getUseDuration(ItemStack itemStack, LivingEntity livingEntity) {
-        if (livingEntity instanceof Player player) {
+    public int getUseDuration(ItemStack itemStack) {
+        Player player = Minecraft.getInstance().player;
+        if (player != null) {
             ItemStack itemStack1 = player.getOffhandItem();
             return getDuration(itemStack1);
         }

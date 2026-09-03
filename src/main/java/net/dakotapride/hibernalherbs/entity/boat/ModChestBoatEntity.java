@@ -4,6 +4,7 @@ import net.dakotapride.hibernalherbs.init.EntityTypeInit;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -30,7 +31,7 @@ public class ModChestBoatEntity extends ModBoatEntity implements HasCustomInvent
     private static final int CONTAINER_SIZE = 27;
     private NonNullList<ItemStack> itemStacks = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
     @Nullable
-    private ResourceKey<LootTable> lootTable;
+    private ResourceLocation lootTable;
     private long lootTableSeed;
 
     public ModChestBoatEntity(EntityType<? extends Boat> entityType, Level level) {
@@ -58,13 +59,13 @@ public class ModChestBoatEntity extends ModBoatEntity implements HasCustomInvent
     @Override
     protected void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
-        this.addChestVehicleSaveData(pCompound, this.registryAccess());
+        this.addChestVehicleSaveData(pCompound);
     }
 
     @Override
     protected void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
-        this.readChestVehicleSaveData(pCompound, this.registryAccess());
+        this.readChestVehicleSaveData(pCompound);
     }
 
     @Override
@@ -161,12 +162,12 @@ public class ModChestBoatEntity extends ModBoatEntity implements HasCustomInvent
     }
 
     @Override
-    public void setLootTable(@Nullable ResourceKey<LootTable> resourceKey) {
-        this.lootTable = resourceKey;
+    public void setLootTable(@Nullable ResourceLocation resourceLocation) {
+        this.lootTable = resourceLocation;
     }
 
-    @Nullable
-    public ResourceKey<LootTable> getLootTable() {
+    @Override
+    public @Nullable ResourceLocation getLootTable() {
         return this.lootTable;
     }
 

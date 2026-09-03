@@ -1,0 +1,32 @@
+{
+  "parent": "hibernalherbs:syrum",
+  "criteria": {
+    "sorcerer_tome": {
+      "conditions": {
+        "item": {
+          "items": [
+            "hibernalherbs:tome"
+          ]
+        }
+      },
+      "trigger": "hibernalherbs:tome_uses"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.sorcerer_tome.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:tome"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.sorcerer_tome.title"
+    }
+  },
+  "requirements": [
+    [
+      "sorcerer_tome"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

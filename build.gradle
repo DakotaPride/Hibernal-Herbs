@@ -63,9 +63,8 @@ dependencies {
 
 	// Moving over to Accessories - recommended to utilise the Trinkets Compatibility Layer
 	modImplementation("io.wispforest:accessories-fabric:${accessories_version}+${minecraft_version}")
-
 	// Patchouli
-	modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC-SNAPSHOT"
+	modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC"
 	
 }
 

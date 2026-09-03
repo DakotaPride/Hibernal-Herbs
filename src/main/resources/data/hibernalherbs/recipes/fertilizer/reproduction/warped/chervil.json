@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hibernalherbs:warped_herb_fertilizer"
+    },
+    {
+      "item": "hibernalherbs:pounded_chervil"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "hibernalherbs:chervil"
+  }
+}

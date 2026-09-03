@@ -17,17 +17,17 @@ public class StatusEffectInit {
     //public static MobEffect SANGUINE = register("sanguine", new SanguineStatusEffect());
 
     public static final Holder<MobEffect> SANGUINE = register("sanguine", new SiphonHealthStatusEffect(0.76F, 0xE05974)
-            .addAttributeModifier(Attributes.MAX_HEALTH, HibernalHerbsMod.asResource("effect.sanguine.max_health"), -4.0D, AttributeModifier.Operation.ADD_VALUE));
+            .addAttributeModifier(Attributes.MAX_HEALTH, "bfcd00a2-5970-4f0a-aeb3-f153086a6966", -4.0D, AttributeModifier.Operation.ADDITION));
     public static final Holder<MobEffect> LETHARGY = register("lethargy", new ApplyEffectOnAttackStatusEffect(MobEffects.MOVEMENT_SLOWDOWN, 0x92C8D1)
-            .addAttributeModifier(Attributes.MOVEMENT_SPEED, HibernalHerbsMod.asResource("effect.lethargy.movement_speed"), -0.15F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            .addAttributeModifier(Attributes.MOVEMENT_SPEED, "7aed2452-6b87-45cc-ad52-eb50e6b1f56f", -0.15F, AttributeModifier.Operation.MULTIPLY_BASE));
     public static final Holder<MobEffect> BARBARIC = register("barbaric", new BasicStatusEffect(MobEffectCategory.NEUTRAL, 0xD69489)
-            .addAttributeModifier(Attributes.MOVEMENT_SPEED, HibernalHerbsMod.asResource("effect.barbaric.movement_speed"), 0.05F, AttributeModifier.Operation.ADD_VALUE)
-            .addAttributeModifier(Attributes.ATTACK_DAMAGE, HibernalHerbsMod.asResource("effect.barbaric.attack_damage"), 0.15F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            .addAttributeModifier(Attributes.MOVEMENT_SPEED, "168b2f7a-2a71-44b7-b441-549aa7c77707", 0.05F, AttributeModifier.Operation.ADDITION)
+            .addAttributeModifier(Attributes.ATTACK_DAMAGE, "934cebbe-8fff-483a-ba1f-ea7c0681431e", 0.15F, AttributeModifier.Operation.MULTIPLY_BASE));
     public static final Holder<MobEffect> DEVOTION = register("devotion", new BasicStatusEffect(MobEffectCategory.NEUTRAL, 0xC095D6)
-            .addAttributeModifier(Attributes.MAX_HEALTH, HibernalHerbsMod.asResource("effect.devotion.max_health"), 4.0D, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            .addAttributeModifier(Attributes.MAX_HEALTH, "dd456724-b004-4b26-b55b-d5ccdfe46bb2", 4.0D, AttributeModifier.Operation.MULTIPLY_TOTAL));
     public static final Holder<MobEffect> RAPACITY = register("rapacity", new BasicStatusEffect(MobEffectCategory.NEUTRAL, 0xAEDB7A));
     public static final Holder<MobEffect> ESURIENT = register("esurient", new BasicStatusEffect(MobEffectCategory.NEUTRAL, 0xAEDB7A)
-            .addAttributeModifier(Attributes.SNEAKING_SPEED, HibernalHerbsMod.asResource("effect.esurient.sneaking_speed"), -0.15F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            .addAttributeModifier(Attributes.MOVEMENT_SPEED, "6ffa9b24-91ba-4660-a892-4e0d31b947e2", -0.15F, AttributeModifier.Operation.MULTIPLY_BASE));
     public static final Holder<MobEffect> MIMICRY = register("mimicry", new MimicryStatusEffect());
 
     public static final Holder<MobEffect> FROST_RESISTANCE = register("frost_resistance", new BasicStatusEffect(MobEffectCategory.BENEFICIAL, 0xAEC9E5));

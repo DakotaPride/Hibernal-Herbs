@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:fertilizer/warped"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_warped_herb_humus": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:warped_herb_humus"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_warped_herb_humus"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:fertilizer/warped"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "root": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "hibernalherbs:herbs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "hibernalherbs:textures/block/myqueste_planks.png",
+    "description": {
+      "translate": "advancements.hibernalherbs.root.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:grimoire"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "root"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
