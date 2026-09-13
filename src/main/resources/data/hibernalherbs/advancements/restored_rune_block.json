@@ -2,6 +2,9 @@
   "parent": "hibernalherbs:deteriorated_rune_block",
   "criteria": {
     "restored_rune_block": {
+      "conditions": {
+        "location": []
+      },
       "trigger": "hibernalherbs:sacrificial_rune_restoration"
     }
   },
@@ -20,6 +23,5 @@
     [
       "restored_rune_block"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

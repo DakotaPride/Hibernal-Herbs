@@ -2,6 +2,9 @@
   "parent": "hibernalherbs:froze_state",
   "criteria": {
     "unfroze_state": {
+      "conditions": {
+        "location": []
+      },
       "trigger": "hibernalherbs:unfroze_blockstate"
     }
   },
@@ -20,6 +23,5 @@
     [
       "unfroze_state"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

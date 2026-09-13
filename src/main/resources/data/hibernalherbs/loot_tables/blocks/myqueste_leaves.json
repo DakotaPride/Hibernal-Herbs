@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -16,22 +16,19 @@
                     {
                       "condition": "minecraft:match_tool",
                       "predicate": {
-                        "items": "minecraft:shears"
+                        "items": [
+                          "minecraft:shears"
+                        ]
                       }
                     },
                     {
                       "condition": "minecraft:match_tool",
                       "predicate": {
-                        "predicates": {
-                          "minecraft:enchantments": [
-                            {
-                              "enchantments": "minecraft:silk_touch",
-                              "levels": {
-                                "min": 1
-                              }
-                            }
-                          ]
-                        }
+                        "enchantments": [
+                          {
+                            "enchantment": "minecraft:silk_touch"
+                          }
+                        ]
                       }
                     }
                   ]
@@ -61,10 +58,10 @@
           ]
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -74,22 +71,19 @@
               {
                 "condition": "minecraft:match_tool",
                 "predicate": {
-                  "items": "minecraft:shears"
+                  "items": [
+                    "minecraft:shears"
+                  ]
                 }
               },
               {
                 "condition": "minecraft:match_tool",
                 "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
+                  "enchantments": [
+                    {
+                      "enchantment": "minecraft:silk_touch"
+                    }
+                  ]
                 }
               }
             ]
@@ -117,8 +111,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
+                "max": 2,
+                "min": 1
               },
               "function": "minecraft:set_count"
             },
@@ -129,7 +123,7 @@
           "name": "minecraft:stick"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ]
 }

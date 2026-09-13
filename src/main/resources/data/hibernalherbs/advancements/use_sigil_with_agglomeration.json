@@ -27,6 +27,5 @@
     [
       "use_sigil_with_agglomeration"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

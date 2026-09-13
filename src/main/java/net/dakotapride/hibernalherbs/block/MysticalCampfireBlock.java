@@ -79,7 +79,7 @@ public class MysticalCampfireBlock extends BaseEntityBlock implements SimpleWate
                 if (!level.isClientSide && campfireBlockEntity.placeFood(player, itemStack2, optional.get().getCookingTime())) {
                     if (player instanceof ServerPlayer player1) {
                         CriteriaTriggersInit.MYSTICAL_CAMPFIRE_INTERACTIONS.trigger(player1, blockPos, itemStack);
-                        player1.awardStat(StatsInit.MYSTICAL_CAMPFIRE_INTERACTIONS.get(this));
+                        player1.awardStat(StatsInit.MYSTICAL_CAMPFIRE_INTERACTIONS, 1);
                     }
                     return InteractionResult.SUCCESS;
                 }

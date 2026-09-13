@@ -27,6 +27,5 @@
     [
       "herbal_sigil"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

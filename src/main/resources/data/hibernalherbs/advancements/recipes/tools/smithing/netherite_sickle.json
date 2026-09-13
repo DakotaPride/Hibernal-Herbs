@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "#hibernalherbs:herbal_sigils"
+            "tag": "hibernalherbs:herbal_sigils"
           }
         ]
       },

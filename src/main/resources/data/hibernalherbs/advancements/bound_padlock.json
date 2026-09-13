@@ -28,6 +28,5 @@
     [
       "bound_padlock"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

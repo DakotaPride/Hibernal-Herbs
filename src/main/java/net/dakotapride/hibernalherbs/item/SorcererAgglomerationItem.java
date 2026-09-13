@@ -96,7 +96,7 @@ public class SorcererAgglomerationItem extends Item {
                     player.getCooldowns().addCooldown(this, 10);
 
                     CriteriaTriggersInit.FROZE_BLOCKSTATE.trigger((ServerPlayer) player, blockPos, useOnContext.getItemInHand());
-                    player.awardStat(StatsInit.FROZE_BLOCKSTATE.get(blockState.getBlock()));
+                    player.awardStat(StatsInit.FROZE_BLOCKSTATE, 1);
                 }
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }).orElse(InteractionResult.PASS);
@@ -108,7 +108,7 @@ public class SorcererAgglomerationItem extends Item {
                     player.getCooldowns().addCooldown(this, 10);
 
                     CriteriaTriggersInit.UNFROZE_BLOCKSTATE.trigger((ServerPlayer) player, blockPos, useOnContext.getItemInHand());
-                    player.awardStat(StatsInit.UNFROZE_BLOCKSTATE.get(blockStatex.getBlock()));
+                    player.awardStat(StatsInit.UNFROZE_BLOCKSTATE, 1);
                 }
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }).orElse(InteractionResult.PASS);
@@ -221,10 +221,10 @@ public class SorcererAgglomerationItem extends Item {
                     CriteriaTriggersInit.USED_SIGIL.trigger(player, itemStack);
                     CriteriaTriggersInit.USED_SIGIL_WITH_AGGLOMERATION.trigger(player, itemStack);
                     player.awardStat(Stats.ITEM_USED.get(this));
-                    player.awardStat(StatsInit.USED_AGGLOMERATION.get(this));
-                    player.awardStat(StatsInit.SACRIFICED_BLOOD_FROM_AGGLOMERATION.get(this));
-                    player.awardStat(StatsInit.USED_SIGIL.get(this));
-                    player.awardStat(StatsInit.USED_SIGIL_WITH_AGGLOMERATION.get(this));
+                    player.awardStat(StatsInit.USED_AGGLOMERATION, 1);
+                    player.awardStat(StatsInit.SACRIFICED_BLOOD_FROM_AGGLOMERATION, 1);
+                    player.awardStat(StatsInit.USED_SIGIL, 1);
+                    player.awardStat(StatsInit.USED_SIGIL_WITH_AGGLOMERATION, 1);
 
                     player.getCooldowns().addCooldown(this, (20 * 12));
 
@@ -272,8 +272,8 @@ public class SorcererAgglomerationItem extends Item {
                 CriteriaTriggersInit.CONJURED_ITEMS_FROM_AGGLOMERATION.trigger(player, itemStack);
 
                 player.awardStat(Stats.ITEM_USED.get(this));
-                player.awardStat(StatsInit.USED_AGGLOMERATION.get(this));
-                player.awardStat(StatsInit.CONJURED_ITEMS_FROM_AGGLOMERATION.get(this));
+                player.awardStat(StatsInit.USED_AGGLOMERATION, 1);
+                player.awardStat(StatsInit.CONJURED_ITEMS_FROM_AGGLOMERATION, 1);
                 player.awardStat(Stats.ITEM_CRAFTED.get(result));
 
                 player.getCooldowns().addCooldown(this, (20 * 12));

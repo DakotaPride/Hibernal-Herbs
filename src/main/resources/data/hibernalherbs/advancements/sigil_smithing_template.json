@@ -29,6 +29,5 @@
     [
       "sigil_smithing_template"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

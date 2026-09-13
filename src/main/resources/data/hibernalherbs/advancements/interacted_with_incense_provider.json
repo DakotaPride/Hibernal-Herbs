@@ -2,6 +2,9 @@
   "parent": "hibernalherbs:syrum",
   "criteria": {
     "interacted_with_incense_provider": {
+      "conditions": {
+        "location": []
+      },
       "trigger": "hibernalherbs:incense_provider_interactions"
     }
   },
@@ -20,6 +23,5 @@
     [
       "interacted_with_incense_provider"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

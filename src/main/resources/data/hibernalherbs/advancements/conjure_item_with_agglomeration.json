@@ -29,6 +29,5 @@
     [
       "conjure_item_with_agglomeration"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

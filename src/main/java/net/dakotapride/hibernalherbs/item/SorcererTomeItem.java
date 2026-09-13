@@ -190,10 +190,10 @@ public class SorcererTomeItem extends Item {
                     CriteriaTriggersInit.USED_SIGIL.trigger(player, itemStack);
                     CriteriaTriggersInit.USED_SIGIL_WITH_TOME.trigger(player, itemStack);
                     player.awardStat(Stats.ITEM_USED.get(this));
-                    player.awardStat(StatsInit.USED_TOME.get(this));
-                    player.awardStat(StatsInit.SACRIFICED_HUNGER_FROM_TOME.get(this));
-                    player.awardStat(StatsInit.USED_SIGIL.get(this));
-                    player.awardStat(StatsInit.USED_SIGIL_WITH_TOME.get(this));
+                    player.awardStat(StatsInit.USED_TOME, 1);
+                    player.awardStat(StatsInit.SACRIFICED_HUNGER_FROM_TOME, 1);
+                    player.awardStat(StatsInit.USED_SIGIL, 1);
+                    player.awardStat(StatsInit.USED_SIGIL_WITH_TOME, 1);
 
                     player.getCooldowns().addCooldown(this, (20 * 12));
 
@@ -231,8 +231,8 @@ public class SorcererTomeItem extends Item {
                 CriteriaTriggersInit.CONJURED_ITEMS_FROM_TOME.trigger(player, itemStack);
 
                 player.awardStat(Stats.ITEM_USED.get(this));
-                player.awardStat(StatsInit.USED_TOME.get(this));
-                player.awardStat(StatsInit.CONJURED_ITEMS_FROM_TOME.get(this));
+                player.awardStat(StatsInit.USED_TOME, 1);
+                player.awardStat(StatsInit.CONJURED_ITEMS_FROM_TOME, 1);
                 player.awardStat(Stats.ITEM_CRAFTED.get(result));
 
                 player.getCooldowns().addCooldown(this, (20 * 12));

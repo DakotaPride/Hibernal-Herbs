@@ -240,7 +240,7 @@ public class IncenseProviderBlock extends Block {
             CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(player1, blockPos, itemStack);
             CriteriaTriggersInit.INCENSE_PROVIDER_INTERACTIONS.trigger(player1, blockPos, itemStack);
             player1.awardStat(Stats.ITEM_USED.get(itemStack.getItem()));
-            player1.awardStat(StatsInit.INCENSE_PROVIDER_INTERACTIONS.get(blockState.getBlock()));
+            player1.awardStat(StatsInit.INCENSE_PROVIDER_INTERACTIONS, 1);
         }
     }
 

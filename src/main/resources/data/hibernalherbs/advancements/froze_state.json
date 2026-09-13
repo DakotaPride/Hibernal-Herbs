@@ -2,6 +2,9 @@
   "parent": "hibernalherbs:sorcerer_agglomeration",
   "criteria": {
     "froze_state": {
+      "conditions": {
+        "location": []
+      },
       "trigger": "hibernalherbs:froze_blockstate"
     }
   },
@@ -20,6 +23,5 @@
     [
       "froze_state"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

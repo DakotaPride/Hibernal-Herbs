@@ -29,6 +29,5 @@
     [
       "life_force"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

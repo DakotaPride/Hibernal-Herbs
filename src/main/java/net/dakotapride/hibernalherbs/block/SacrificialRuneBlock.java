@@ -43,7 +43,7 @@ public class SacrificialRuneBlock extends Block {
 
             for (ServerPlayer player : serverLevel.players()) {
                 CriteriaTriggersInit.DETERIORATED_RUNE_BLOCK.trigger(player, blockPos, player.getMainHandItem());
-                player.awardStat(StatsInit.DETERIORATED_RUNE_BLOCK.get(BlockInit.DETERIORATED_SACRIFICIAL_RUNE_BLOCK));
+                player.awardStat(StatsInit.DETERIORATED_RUNE_BLOCK, 1);
             }
         }
     }

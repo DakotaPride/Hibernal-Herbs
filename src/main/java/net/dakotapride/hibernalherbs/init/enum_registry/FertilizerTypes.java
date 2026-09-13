@@ -1,11 +1,13 @@
 package net.dakotapride.hibernalherbs.init.enum_registry;
 
+import net.dakotapride.hibernalherbs.HibernalHerbsMod;
 import net.dakotapride.hibernalherbs.init.CriteriaTriggersInit;
 import net.dakotapride.hibernalherbs.init.ItemInit;
 import net.dakotapride.hibernalherbs.init.StatsInit;
 import net.dakotapride.hibernalherbs.item.HerbFertilizerItem;
 import net.dakotapride.hibernalherbs.item.HerbHumusItem;
 import net.minecraft.ChatFormatting;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -195,7 +197,7 @@ public enum FertilizerTypes {
                 CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, blockPos, itemStack);
                 CriteriaTriggersInit.USE_HERB_HUMUS_ON_LOG.trigger(serverPlayer, blockPos, itemStack);
                 serverPlayer.awardStat(Stats.ITEM_USED.get(itemStack.getItem()));
-                serverPlayer.awardStat(StatsInit.USE_HERB_HUMUS_ON_LOG.get(type.getBlockFrom()));
+                serverPlayer.awardStat(StatsInit.USE_HERB_HUMUS_ON_LOG, 1);
             }
         }
     }

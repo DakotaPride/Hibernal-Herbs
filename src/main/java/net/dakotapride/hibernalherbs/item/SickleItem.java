@@ -114,7 +114,7 @@ public class SickleItem extends SwordItem {
 
                     if (player instanceof ServerPlayer serverPlayer) {
                         CriteriaTriggersInit.SACRIFICIAL_RUNE_RESTORATION.trigger(serverPlayer, blockPos, useOnContext.getItemInHand());
-                        serverPlayer.awardStat(StatsInit.SACRIFICIAL_RUNE_RESTORATION.get(useOnContext.getLevel().getBlockState(blockPos).getBlock()));
+                        serverPlayer.awardStat(StatsInit.SACRIFICIAL_RUNE_RESTORATION, 1);
                     }
 
                 } else {

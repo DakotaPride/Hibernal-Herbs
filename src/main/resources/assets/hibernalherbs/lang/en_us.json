@@ -902,5 +902,22 @@
   "item.hibernalherbs.lunar_potion.effect.invigoration_potion": "Lunar Potion of Invigoration",
   "item.hibernalherbs.lunar_potion.effect.invigoration_potion_strong": "Lunar Potion of Invigoration",
   "item.hibernalherbs.lunar_potion.effect.rejuvenation_potion": "Lunar Potion of Rejuvenation",
-  "item.hibernalherbs.lunar_potion.effect.rejuvenation_potion_strong": "Lunar Potion of Rejuvenation"
+  "item.hibernalherbs.lunar_potion.effect.rejuvenation_potion_strong": "Lunar Potion of Rejuvenation",
+
+  "stat.hibernalherbs.agglomeration_conjured_items": "Items conjured with Agglomeration",
+  "stat.hibernalherbs.agglomeration_sacrifices": "Sacrifices completed with Agglomeration",
+  "stat.hibernalherbs.agglomeration_uses": "Times Agglomeration used",
+  "stat.hibernalherbs.deteriorated_rune_block": "Times Sacrificial Rune Block deteriorated",
+  "stat.hibernalherbs.froze_blockstate": "Times blockstates were frozen",
+  "stat.hibernalherbs.incense_provider_interactions": "Interactions with Incense Provider",
+  "stat.hibernalherbs.mystical_campfire_interactions": "Interactions with Mystical Campfire",
+  "stat.hibernalherbs.sacrificial_rune_restoration": "Times Sacrificial Rune Blocks restored",
+  "stat.hibernalherbs.tome_conjured_items": "Items conjured with Tome",
+  "stat.hibernalherbs.tome_sacrifices": "Sacrifices completed with Tome",
+  "stat.hibernalherbs.tome_uses": "Times Tome used",
+  "stat.hibernalherbs.unfroze_blockstate": "Times blockstates were unfrozen",
+  "stat.hibernalherbs.use_herb_humus_on_log": "Times Herb Humus used on logs",
+  "stat.hibernalherbs.used_sigil": "Times Sigils used",
+  "stat.hibernalherbs.used_sigil_with_agglomeration": "Times Sigils used with Agglomeration",
+  "stat.hibernalherbs.used_sigil_with_tome": "Times Sigils used with Tome"
 }
