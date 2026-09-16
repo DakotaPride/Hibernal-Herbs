@@ -28,6 +28,8 @@ public class BlockInit {
     public static Block INCENSE_PROVIDER = register("incense_provider",
             new IncenseProviderBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).noOcclusion().lightLevel(incenseLightEmission(7)).requiresCorrectToolForDrops()));
 
+    public static Block SACRED_ALTAR = register("sacred_altar", new SacredAltarBlock(20*60*30, "vaults/arcane_ruins/common", "vaults/arcane_ruins/rare", BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
+
     public static ToIntFunction<BlockState> incenseLightEmission(int i) {
         return blockState -> blockState.getValue(PropertiesInit.FED) ? i : 0;
     }

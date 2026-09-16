@@ -5,7 +5,7 @@
       "conditions": {
         "location": []
       },
-      "trigger": "minecraft:item_used_on_block"
+      "trigger": "hibernalherbs:use_herb_humus_on_log"
     }
   },
   "display": {

@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "is_sealed=true,rare_loot=false": {
+      "model": "hibernalherbs:block/sacred_altar_sealed"
+    },
+    "is_sealed=false,rare_loot=false": {
+      "model": "hibernalherbs:block/sacred_altar"
+    },
+
+    "is_sealed=true,rare_loot=true": {
+      "model": "hibernalherbs:block/sacred_altar_sealed_rare"
+    },
+    "is_sealed=false,rare_loot=true": {
+      "model": "hibernalherbs:block/sacred_altar_rare"
+    }
+  }
+}

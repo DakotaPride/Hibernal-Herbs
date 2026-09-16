@@ -38,11 +38,11 @@
           "weight": 10,
           "functions": [
             {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 1,
-              "options": [
+              "function": "minecraft:enchant_randomly",
+              "enchantments": [
                 "hibernalherbs:culling"
-              ]
+              ],
+              "options": []
             }
           ]
         },
@@ -52,11 +52,11 @@
           "weight": 5,
           "functions": [
             {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 1,
-              "options": [
+              "function": "minecraft:enchant_randomly",
+              "enchantments": [
                 "hibernalherbs:rapid"
-              ]
+              ],
+              "options": []
             }
           ]
         },
@@ -66,11 +66,11 @@
           "weight": 15,
           "functions": [
             {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 1,
-              "options": [
+              "function": "minecraft:enchant_randomly",
+              "enchantments": [
                 "hibernalherbs:slashing"
-              ]
+              ],
+              "options": []
             }
           ]
         }

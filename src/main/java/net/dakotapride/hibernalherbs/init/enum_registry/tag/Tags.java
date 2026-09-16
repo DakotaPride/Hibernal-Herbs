@@ -152,7 +152,8 @@ public class Tags {
     }
 
     public enum EntityTypes {
-        LIVESTOCK("livestock");
+        LIVESTOCK("livestock"),
+        SINFUL("sinful");
 
         public String mod_id;
         public final String id;

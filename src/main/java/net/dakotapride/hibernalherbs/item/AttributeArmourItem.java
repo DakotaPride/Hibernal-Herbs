@@ -34,6 +34,6 @@ public class AttributeArmourItem extends ArmorItem {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(ItemStack stack, EquipmentSlot slot) {
-        return this.modifiers;
+        return slot == this.type.getSlot() ? this.modifiers : super.getDefaultAttributeModifiers(slot);
     }
 }

@@ -1,0 +1,33 @@
+{
+  "parent": "hibernalherbs:sickle",
+  "criteria": {
+    "forgotten_blessing": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hibernalherbs:forgotten_blessing"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.forgotten_blessing.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:forgotten_blessing"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.forgotten_blessing.title"
+    }
+  },
+  "requirements": [
+    [
+      "forgotten_blessing"
+    ]
+  ]
+}

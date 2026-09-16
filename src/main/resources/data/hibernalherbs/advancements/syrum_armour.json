@@ -6,9 +6,21 @@
         "items": [
           {
             "items": [
-              "hibernalherbs:syrum_helmet",
-              "hibernalherbs:syrum_chestplate",
-              "hibernalherbs:syrum_leggings",
+              "hibernalherbs:syrum_helmet"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:syrum_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:syrum_leggings"
+            ]
+          },
+          {
+            "items": [
               "hibernalherbs:syrum_boots"
             ]
           }

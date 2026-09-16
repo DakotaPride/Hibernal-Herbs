@@ -31,6 +31,8 @@ public class StatsInit {
 
     public static final Stat<?> USE_HERB_HUMUS_ON_LOG = makeRegistryStat("use_herb_humus_on_log");
 
+    public static final Stat<?> BLESSINGS_USED_ON_ALTARS = makeRegistryStat("blessings_used_on_altars");
+
     //public static final Stat<EntityType<?>> COMPLETED_SACRIFICIAL_RITUAL = makeRegistryStat("sacrificial_ritual_completed", BuiltInRegistries.ENTITY_TYPE);
 
     private static Stat<?> makeRegistryStat(String key) {

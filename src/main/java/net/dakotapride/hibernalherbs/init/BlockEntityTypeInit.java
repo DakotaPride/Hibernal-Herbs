@@ -2,10 +2,7 @@ package net.dakotapride.hibernalherbs.init;
 
 import com.mojang.datafixers.types.Type;
 import net.dakotapride.hibernalherbs.HibernalHerbsMod;
-import net.dakotapride.hibernalherbs.block.ModBrushableBlockEntity;
-import net.dakotapride.hibernalherbs.block.ModHangingSignBlockEntity;
-import net.dakotapride.hibernalherbs.block.ModSignBlockEntity;
-import net.dakotapride.hibernalherbs.block.MysticalCampfireBlockEntity;
+import net.dakotapride.hibernalherbs.block.*;
 import net.dakotapride.hibernalherbs.init.enum_registry.Archaeology;
 import net.dakotapride.hibernalherbs.init.enum_registry.WoodTypes;
 import net.minecraft.Util;
@@ -19,7 +16,8 @@ import net.minecraft.world.level.block.entity.SignBlockEntity;
 
 public class BlockEntityTypeInit {
     public static final BlockEntityType<MysticalCampfireBlockEntity> MYSTICAL_CAMPFIRE =
-            register("mystical_campfire", BlockEntityType.Builder.of(MysticalCampfireBlockEntity::new, BlockInit.MYSTICAL_CAMPFIRE));
+            register("mystical_campfire", BlockEntityType.Builder.of(MysticalCampfireBlockEntity::new,
+                    BlockInit.MYSTICAL_CAMPFIRE));
 
     public static final BlockEntityType<SignBlockEntity> MOD_SIGN =
             register("sign", BlockEntityType.Builder.of(ModSignBlockEntity::new,

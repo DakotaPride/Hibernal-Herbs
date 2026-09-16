@@ -37,7 +37,9 @@ public class ItemInit {
     public static Item SOLAR_POTION = register("solar_potion", new TimeOfDayPotion(TimeOfDayPotion.Time.DAY, new Item.Properties().stacksTo(1)));
     public static Item LUNAR_POTION = register("lunar_potion", new TimeOfDayPotion(TimeOfDayPotion.Time.NIGHT, new Item.Properties().stacksTo(1)));
 
-    public static Item CHARRED_PAPER = register("charred_paper",new Item(new Item.Properties()));
+    public static Item CHARRED_PAPER = register("charred_paper", new Item(new Item.Properties()));
+
+    public static Item FORGOTTEN_BLESSING = register("forgotten_blessing", new Item(new Item.Properties()));
 
     // Collective Registration
     public static void register() {}

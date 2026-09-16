@@ -6,9 +6,21 @@
         "items": [
           {
             "items": [
-              "hibernalherbs:arkonium_helmet",
-              "hibernalherbs:arkonium_chestplate",
-              "hibernalherbs:arkonium_leggings",
+              "hibernalherbs:arkonium_helmet"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:arkonium_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "hibernalherbs:arkonium_leggings"
+            ]
+          },
+          {
+            "items": [
               "hibernalherbs:arkonium_boots"
             ]
           }

@@ -29,6 +29,8 @@ public class CriteriaTriggersInit {
 
     public static final BlockInteractionTrigger USE_HERB_HUMUS_ON_LOG = register(new BlockInteractionTrigger("use_herb_humus_on_log"));
 
+    public static final BlockInteractionTrigger USE_BLESSING_ON_ALTAR = register(new BlockInteractionTrigger("use_blessing_on_altar"));
+
     //public static final SummonedEntityTrigger COMPLETED_SACRIFICIAL_RITUAL = register("sacrificial_ritual_completed", new SummonedEntityTrigger());
 
     public static <T extends CriterionTrigger<?>> T register(T criterionTrigger) {

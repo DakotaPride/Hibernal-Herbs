@@ -1,5 +1,8 @@
 {
 
+  "item.hibernalherbs.forgotten_blessing": "Forgotten Blessing",
+  "block.hibernalherbs.sacred_altar": "Sacred Altar",
+
   "lore.hibernalherbs.life_force": "A bottle with the life force of a mob extracted into it.",
   "lore.hibernalherbs.agglomeration": "An ancient relic used to convert certain items into other items. Can also be used to provide the user with effects while using certain Herbal Sigils.",
   "lore.hibernalherbs.tome": "An ancient relic used to convert certain items into other items. Can also be used to provide the user with effects while using certain Herbal Sigils.",
@@ -95,6 +98,10 @@
   "advancements.hibernalherbs.use_sigil_with_tome.title": "A Sinner Like Me",
   "advancements.hibernalherbs.singed_grimoire.description": "Burn your Herbal Grimoire to unlock more knowledge",
   "advancements.hibernalherbs.singed_grimoire.title": "Burned as Hell",
+  "advancements.hibernalherbs.forgotten_blessing.description": "\"Find\" some lost papers from mysterious figures",
+  "advancements.hibernalherbs.forgotten_blessing.title": "Scrounging for Hope",
+  "advancements.hibernalherbs.unseal_altar.description": "Unseal a Sacred Altar to reap the rewards",
+  "advancements.hibernalherbs.unseal_altar.title": "Awakening",
   "block.hibernalherbs.arkonium_block": "Block of Arkonium",
   "block.hibernalherbs.calendula": "Calendula",
   "block.hibernalherbs.calendula_herb_barrel": "Barrel of Calendula",

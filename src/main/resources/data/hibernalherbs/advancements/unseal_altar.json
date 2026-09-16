@@ -1,0 +1,27 @@
+{
+  "parent": "hibernalherbs:forgotten_blessing",
+  "criteria": {
+    "unseal_altar": {
+      "conditions": {
+        "location": []
+      },
+      "trigger": "hibernalherbs:use_blessing_on_altar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.hibernalherbs.unseal_altar.description"
+    },
+    "icon": {
+      "item": "hibernalherbs:sacred_altar"
+    },
+    "title": {
+      "translate": "advancements.hibernalherbs.unseal_altar.title"
+    }
+  },
+  "requirements": [
+    [
+      "unseal_altar"
+    ]
+  ]
+}

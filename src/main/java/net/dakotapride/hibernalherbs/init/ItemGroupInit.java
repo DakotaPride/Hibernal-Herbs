@@ -25,6 +25,8 @@ public class ItemGroupInit {
 //                            entries.accept(item);
 //                        }
 
+                        entries.accept(ItemInit.FORGOTTEN_BLESSING);
+                        entries.accept(BlockInit.SACRED_ALTAR);
                         entries.accept(ItemInit.GROUND_HERBS);
                         entries.accept(ItemInit.LIFE_FORCE_BOTTLE);
                         entries.accept(ItemInit.INSCRIPTION_SMITHING_TEMPLATE);
